@@ -35,7 +35,8 @@ Background, in other repos:
    - **takeoff** and a **climb case** (MODEL_DETAILS §2 says "Climb, launch, and reserve are
      outside the model");
    - the **structural envelope**: g limits, speeds and weights the structure is checked against.
-   **Loads per part do not come from here**; CFD and FEA produce them. **Mass budgets per part**
+   **Loads per part do not come from here**; CFD and FEA produce them, *except wing structural
+   loads (item 9, OQ-E6)*. **Mass budgets per part**
    are set by the user and tracked by the Systems tool, not produced here.
 3. **The parts list is a shared data file that no tool owns** (OQ-A3). This tool and the
    planned Systems tool both read it. It starts from this repo's equipment-manifest format
@@ -58,9 +59,12 @@ Background, in other repos:
    **wings and tails included**, without re-optimizing it. Today only a fuselage can be imported
    (MODEL_DETAILS §7.5, which also re-optimizes it), and the wing is one parametric family (§9.1),
    which may not represent a wing reshaped in Plane-Builder.
-9. **Wing structural loads come from here** (OQ-E6): the vortex-lattice span loading at each
+9. **Wing structural loads come from here** (OQ-E6): the span loading at each
    point of the structural envelope, with that point's trimmed state (attitude, elevator). CFD
    supplies local loads and spot-checks; near the stall it is not the source.
+   *Corrected after the third review:* the in-loop model is a lifting line (MODEL_DETAILS §3.4),
+   with spanwise lift but no chordwise pressure, and trim is solved at cruise only today, so trim
+   per envelope point is a new capability. How the near-stall case is checked is open (OQ-H1).
 10. **What a re-run produces** (OQ-F1): the verify-as-is verdict on the user's design, plus
     optional suggestions ("wing area +4% would gain 1.2 min"), which the user carries into
     Plane-Builder if they agree. It never overwrites the design.
@@ -94,7 +98,7 @@ To decide, after reviewing the code:
 
 - **§7 (the parametric loft) vs Plane-Builder's shape.** How the rough fuselage relates to the
   detailed one; what the brief sent to Plane-Builder contains; how the imported design is
-  verified (sized by scale variables, or checked as-is).
+  verified: *settled by item 8, checked as-is.*
 - **§5 (objectives).** How the SAE score is written as an objective, and what takeoff and climb
   need from the aero and propulsion models.
 - **The structural envelope.** What it contains and how it is exported (today the only
