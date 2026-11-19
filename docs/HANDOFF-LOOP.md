@@ -45,8 +45,8 @@ Background, in other repos:
 4. **The propulsion model is extended, as the one copy** (OQ-A4): battery internal resistance,
    wire losses, climb, and an honest ESC efficiency estimate instead of a constant. The Systems
    tool reuses it for the electrical budget and the heat that drives cooling studies.
-   **There is no thrust stand,** and the design does not assume one; §2.3's "no measurement path"
-   stands. A thrust stand may be considered in the future.
+   **There is no thrust stand,** and the design does not assume one; §2.3 becomes "no bench
+   measurement" (item 13). A thrust stand may be considered in the future.
 5. **One route for measured masses** (OQ-A5). Every mass goes into the Systems ledger (slicer
    grams, weighed parts, datasheets, allowances), and this tool calibrates from the ledger only.
    §1.4's reality factor would read from it.
@@ -60,8 +60,23 @@ Background, in other repos:
    which may not represent a wing reshaped in Plane-Builder.
 9. **Wing structural loads come from here** (OQ-E6): the vortex-lattice span loading at each
    point of the structural envelope, with that point's trimmed state (attitude, elevator). CFD
-   supplies local loads and spot-checks; near the stall it is not the source. What a re-size
-   produces after item 1 is still open (OQ-F1).
+   supplies local loads and spot-checks; near the stall it is not the source.
+10. **What a re-run produces** (OQ-F1): the verify-as-is verdict on the user's design, plus
+    optional suggestions ("wing area +4% would gain 1.2 min"), which the user carries into
+    Plane-Builder if they agree. It never overwrites the design.
+11. **The parts list, the ledger and positions** (OQ-F2), refining item 3: the parts list says
+    what each component is; Claude drafts it and every actual edit needs the user's OK. Masses
+    live in a separate **ledger** of measurements (source and date, never overwritten), from which
+    this tool calibrates; it keeps the weighed-vs-slicer pairs §1.4's reality factor needs.
+    Positions come in 3D from the user's SolidWorks assembly once a part is placed. The manifest
+    today is Python code (`Item(...)` objects with computed masses, x-only positions), so
+    extracting it is a redesign of that part of this tool.
+12. **The frame** (OQ-F3): the SolidWorks frame is the shared frame everywhere (mm; origin at the
+    nose; +Z forward, +Y up, −X starboard). While this tool keeps its own frame, it converts at
+    its own edge.
+13. **Flight data** (OQ-F4): §2.3's "no measurement path" becomes "no bench measurement"; flight
+    data is allowed once a plane flies. A motor-off glide gives drag; a powered cruise at the same
+    speed then gives the propulsion chain's efficiency.
 
 Charter-wide rules that apply here too:
 
