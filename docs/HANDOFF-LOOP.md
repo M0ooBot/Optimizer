@@ -54,6 +54,14 @@ Background, in other repos:
    where CFD can see them: the fuselage form factor, the interference margin, the prop-wash and
    tail-efficiency effects.
 7. **Later, an MCP server** that Claude uses from the terminal, beside the others (charter A2).
+8. **A "verify as-is" mode** (OQ-E3, second review): evaluate the design the user gives it,
+   **wings and tails included**, without re-optimizing it. Today only a fuselage can be imported
+   (MODEL_DETAILS §7.5, which also re-optimizes it), and the wing is one parametric family (§9.1),
+   which may not represent a wing reshaped in Plane-Builder.
+9. **Wing structural loads come from here** (OQ-E6): the vortex-lattice span loading at each
+   point of the structural envelope, with that point's trimmed state (attitude, elevator). CFD
+   supplies local loads and spot-checks; near the stall it is not the source. What a re-size
+   produces after item 1 is still open (OQ-F1).
 
 Charter-wide rules that apply here too:
 
