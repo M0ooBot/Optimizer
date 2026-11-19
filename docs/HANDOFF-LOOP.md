@@ -81,6 +81,11 @@ Background, in other repos:
 13. **Flight data** (OQ-F4): §2.3's "no measurement path" becomes "no bench measurement"; flight
     data is allowed once a plane flies. A motor-off glide gives drag; a powered cruise at the same
     speed then gives the propulsion chain's efficiency.
+14. **After the third review** (OQ-H1, H2, H8): the spar this tool sizes (§1.3) goes into
+    stage-1 FEA as a beam, at its size and position, until the user's detailed part declares the
+    real one. The governing wing case is checked by a static load test of the printed wing, not
+    by software, so this tool's span loading is checked for its *shape* only (against CFD at one
+    moderate angle). Positions are measured from a fixed datum per plane, not the nose.
 
 Charter-wide rules that apply here too:
 
