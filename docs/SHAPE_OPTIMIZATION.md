@@ -20,7 +20,7 @@ Each agent updates the aircraft's shared design record when a decision is made o
 
 Save the input revisions actually used by each run. A change to a dependency such as measured mass, available elevator travel or airfoil evidence marks the affected verdicts as needing re-evaluation. Keep the original run available for comparison.
 
-**Proposed aircraft workbook.** One master XLSX per aircraft would show its mission and cases, geometry and mounts, controls, component masses and loading-case CGs, and study results and decisions on separate sheets. Identify units, frame or sign convention, source and revision. Distinguish editable design intent from values read from CAD, Systems or the slicer. Keep candidate values separate from the accepted design. Store predicted control deflections by candidate, flight case and command, with a link to the originating run. A coordinator can refresh the workbook from approved edits and revisioned results so several agents can contribute without overwriting one another's work. Workbook editing and synchronization details are open.
+**Aircraft workbook (accepted design).** Keep one master XLSX per aircraft with separate sheets for mission and flight cases, geometry and mounts, controls, component masses and loading-case CGs, and results and decisions. Identify units, frame or sign convention, source and revision. Distinguish editable design intent from values read from CAD, Systems or the slicer. Keep candidate values separate from the accepted design. Store predicted control deflections by candidate, flight case and command, with a link to the originating run. The coordinator updates the workbook from approved edits and revisioned results. Workbook editing and synchronization details are open.
 
 ## Optimizer MCP server
 
@@ -53,7 +53,7 @@ For a study that needs a control, define it on its parent surface for analysis. 
 
 Use the same declared control layout for baseline and candidate when comparing wing shapes, and record how its span and chord coordinates map onto each geometry. When comparing control layouts, identify the layout on each candidate. Tie predicted trim deflection and control margins to the layout and travel used. If the study has no declared pitch control, it can report the pitching moment at a specified condition and flag elevator trim and remaining travel as unevaluated. A proposed layout can be handed back to the designer as an annotated outline for detailed CAD work.
 
-### Proposed first aileron and rudder studies
+### First aileron and rudder studies
 
 Start with the accepted wing and tail placement and a trimmed baseline for each declared speed and loading case. The designer supplies a required authority or asks for a comparison of available authority. With no target, report the trade-off curve and the limiting condition. Keep static stability, control effectiveness and time response as separate reported quantities. The current sideslip check measures static stability derivatives. Control-deflection sweeps need their own implementation and verification. [Current model limits](MODEL_DETAILS.md#34-stability-quantities)
 
@@ -92,6 +92,8 @@ Treat spar fit as a hard geometric constraint on each half-wing. The working int
 | Evidence | Show the axis and cut planes on the wing. Report chosen stock, minimum clearance and its location, and actual tip engagement. A fit check establishes geometry. Strength and stiffness require separate evidence about material, wall thickness and loading. |
 
 A wing may keep bending beyond the end of the required spar engagement. The proposed first study fixes the print split so every candidate faces the same tip joint. Whether the optimizer may later move joints is open.
+
+For a profile-only airfoil swap, spar placement is free by default. Passing requires a verified placement of the full straight spar through the candidate wing. Start with the baseline axis, then search permitted positions and directions if needed. Honor any explicitly fixed interface, such as a root socket. Apply the same stock assumptions to all profiles; resizing stock is a separate study freedom. Save a passing axis, its change from baseline, worst clearance and tip engagement. Carry the actual spar position and length into the candidate mass and CG calculation before re-trimming. If a bounded search finds no passing placement, report what was searched and leave feasibility unresolved unless a geometric check establishes that none can fit.
 
 ## Candidate mass, CG and endurance
 
@@ -140,6 +142,7 @@ The proposed first slice uses one designer-supplied wing, a fixed tail geometry 
 - Start a study with a known control-travel shortfall. Recover the limiting case and compare two authorized remedies across the full set of flight cases. Include a run that fails numerically and verify the report marks its outcome as unresolved.
 - Exercise a flat wing, a smooth upsweep, and a wing with a ripple between ribs. Locate the ripple. Check both a tilted tip and a raised tip whose guide levels off.
 - Exercise the spar engagement boundary at 20 mm and just below it. Include an oblique cut and a square spar whose centerline clears but whose corner intersects the skin.
+- Swap to a profile that fails at the baseline spar axis but admits the same stock at another position. The candidate must pass with the verified new axis and retain its locked external geometry.
 - Compare an agent-guided study with a fixed numerical search using the same freedoms, constraints and evaluation budget. Judge feasible performance, persistence of the gain under cross-checks, and which evidence helped the designer decide.
 
 ## Decisions still open
