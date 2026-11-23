@@ -31,6 +31,8 @@ The coordinator needs a small set of operations it can combine across questions:
 
 ## What the designer authorizes
 
+For the first import trial, the designer will supply a SolidWorks aircraft with the wings, tail surfaces and fuselage as separate bodies. Use that real design to decide how bodies are identified, how their placement is read, and how they are matched to Airfoil Converter sections. Body naming, part or assembly organization, and the exchange format remain open until that trial.
+
 A study records a CAD revision, the flight conditions and objective, which regions or dimensions may change, and the limits that must hold for every candidate. The original aircraft is the zero-change candidate. Show the reconstructed baseline overlaid on the CAD geometry and quantify the discrepancy before using it to score changes.
 
 For example, the designer might free outer-wing sweep, dihedral and twist while locking the projected span, root attachment and airfoil profiles. If the study also defines an aileron hinge axis, the designer can lock it. A fixed tail with a modeled elevator can still use elevator deflection to trim each candidate. Changing elevator chord, tail incidence or tail shape is a separate design permission.
