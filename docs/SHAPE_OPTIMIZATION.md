@@ -165,9 +165,22 @@ Every claim in the report should say **how the tool knows it**. The coordinator 
 | What else was tried? | For a family search, show nearby feasible and rejected candidates, including how much performance and clearance changed. Preserve useful simpler alternatives when their scores are close. |
 | How reliable is the comparison? | Identify the model, geometry and resolution behind the prediction. Give the result of any finer-resolution, second-condition, CFD or physical check and list outstanding checks. Label causal explanations as hypotheses until a controlled comparison supports them. |
 
+## Phase 0 — Can the agent shape a wing and tail in CAD?
+
+Before the optimizer MVP, test the geometry workflow on a simple wing and tail in a SolidWorks study copy. The designer describes a desired form in ordinary language. The agent chooses section placements, guide curves and twist through the Airfoil Converter tooling, builds the candidate through the SolidWorks bridge, inspects the rebuilt geometry, and revises it. Record any step at which a person has to construct a curve or repair the loft. This phase establishes what the tools let the agent do and how closely the result matches the designer's intent.
+
+**Suggested hands-on trial**
+
+1. Start with a straight wing and simple tail. Have the designer mark the root, projected span and other features to preserve, supply a sketch or silhouette if helpful, and agree on tolerances for the locked dimensions before the run.
+2. Request a 787-inspired swept, tapered wing with a smoothly rising outer span and a raked tip. The reference conveys visual intent for the modeled shape. Let the agent choose the intermediate stations and guides. Ask it to outline an aileron with a usable hinge axis, then reshape the horizontal tail and revise the elevator's extent while preserving a declared tail attachment.
+3. After seeing the loft, give a fresh local edit such as “begin the rise farther outboard, keep tip height and span, and leave the tail as it was.” Compare the rebuilt revisions in front and plan views and at intermediate sections. Check the locks, section orientation, skin smoothness and hinge placement on the CAD result. If an instruction conflicts with a lock, the agent should identify the conflict.
+4. Deliver the editable CAD candidate, the original brief and follow-up, overlays of the baseline and revisions, and the measured deviations and any manual intervention. Rebuild once from the saved definition to check reproducibility. The designer judges whether the silhouette and the response to the follow-up match the request.
+
+Success means the agent can turn a brief into a valid loft and make a targeted second edit with the locks intact. Record unsupported operations as findings for the Converter or bridge. Aerodynamic ranking, loaded wing deflection and physical print validation are separate studies.
+
 ## First end-to-end study
 
-The current milestone ends with a documented CAD candidate and its predicted performance. Printing, weighing the completed aircraft, flight testing, and reconciling predictions with measurements are deferred to the designer's first full aircraft project. The report identifies predictions and the assumptions a later measurement can update.
+The first optimizer study after Phase 0 ends with a documented CAD candidate and its predicted performance. Printing, weighing the completed aircraft, flight testing, and reconciling predictions with measurements are deferred to the designer's first full aircraft project. The report identifies predictions and the assumptions a later measurement can update.
 
 Steady motor-off glide is a future study of interest. The first design reports glide duration, sink rate and requirements that depend on them as unevaluated.
 
