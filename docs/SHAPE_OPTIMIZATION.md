@@ -8,6 +8,8 @@ Start with an aircraft the designer has drawn in SolidWorks. Answer a specific q
 
 The current optimizer searches a parametric aircraft through a series of studies defined in Python. Its STEP importer measures a fuselage. This draft describes the intended overhaul. The proposed Airfoil Converter MCP interface, lifting-surface import and candidate verification are design work. [Current solver](../src/planeopt/solve.py) · [Current STEP importer](../src/planeopt/cadimport.py)
 
+**Flow deflectors belong to CFD.** When the design question is whether a vane redirects airflow onto another surface or around a junction, the coordinator takes the placement and shape study to the CFD tool. For example, a vane intended to improve flow onto the tail needs evidence of what changed at the tail. A canard being studied for its contribution to lift and pitch trim falls within the optimizer's lifting-surface scope.
+
 ## What the designer authorizes
 
 A study records a CAD revision, the flight conditions and objective, which regions or dimensions may change, and the limits that must hold for every candidate. The original aircraft is the zero-change candidate. Show the reconstructed baseline overlaid on the CAD geometry and quantify the discrepancy before using it to score changes.
