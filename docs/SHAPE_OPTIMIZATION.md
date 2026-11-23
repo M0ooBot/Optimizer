@@ -77,6 +77,14 @@ Treat spar fit as a hard geometric constraint on each half-wing. The working int
 
 A wing may keep bending beyond the end of the required spar engagement. The proposed first study fixes the print split so every candidate faces the same tip joint. Whether the optimizer may later move joints is open.
 
+## Candidate mass, CG and endurance
+
+For each loading case, the optimizer reads component masses and positions, payload and battery configuration, propulsion data, usable battery energy and the mission reserve. Record the source of each input. Designer estimates can supply the first study. Slicer estimates and weighed parts from the Systems mass ledger can refine later revisions. Record whether usable energy already includes the reserve so the calculation charges it once.
+
+Estimate printed wing and tail mass from candidate geometry and a construction profile for the material and print settings. For a hollow skin-and-rib build, use skin mass per unit external surface area plus estimated ribs, joints and local reinforcement. Account separately for the selected spar and hardware and identify any items already included in a weighed assembly. Wing and tail may use different profiles. Start with provisional coefficients, then calibrate against representative sliced and weighed sections as the manufacturing method settles. The current per-surface mass model is a starting point. [Printed-surface calculation](../src/planeopt/massmodel.py)
+
+Recompute each affected component's mass and mass location when its geometry or placement changes, then update aircraft mass, CG, trim, power and endurance for each loading case. A rigid translation of the same wing changes its mass location while preserving its own mass. Report which values were fixed, estimated, recomputed or measured. When plausible print-mass variation changes the preferred candidate, show that sensitivity alongside the ranking.
+
 ## Who chooses the next shape
 
 1. **Evaluate the baseline.** Record trim and the performance measures relevant to the question. Apply common flight conditions, mass assumptions and trim rules to the comparison. If a candidate changes estimated mass or CG, record the change and its source.
