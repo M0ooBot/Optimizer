@@ -10,6 +10,8 @@ The docs are the spec, in reading order:
 3. `docs/EXECUTION_PLAN.md` — this codebase's structure and milestones
 4. `docs/DESIGN_SPEC.md` — the sample/test aircraft (a fixture, not the scope)
 
+The M0ooBot fork's proposed redesign is tracked in the [CAD-based wing and tail optimization spec](docs/SHAPE_OPTIMIZATION.md).
+
 ## Quick start
 
 Needs [uv](https://docs.astral.sh/uv/) and nothing else — it fetches the Python
