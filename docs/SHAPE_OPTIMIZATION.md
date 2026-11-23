@@ -10,6 +10,12 @@ The current optimizer searches a parametric aircraft through a series of studies
 
 **Flow deflectors belong to CFD.** When the design question is whether a vane redirects airflow onto another surface or around a junction, the coordinator takes the placement and shape study to the CFD tool. For example, a vane intended to improve flow onto the tail needs evidence of what changed at the tail. A canard being studied for its contribution to lift and pitch trim falls within the optimizer's lifting-surface scope.
 
+## Coordinator and agent handoffs
+
+The coordinator is an AI agent. Starting with the rough mission, it works with the designer to record requirements, identify assumptions and choose the next engineering question. Different agents may handle CAD, optimization and CFD, and another agent may take over coordination later.
+
+Each agent updates the aircraft's shared design record when a decision is made or work passes to another agent. Keep the handoff short: identify the aircraft revision, the question and constraints, what the designer approved, what was tried and why, and the next unresolved question. Link the CAD revision or run that supports each finding and identify assumptions still awaiting a check. A new agent should be able to resume from that record without access to an earlier chat.
+
 ## What the designer authorizes
 
 A study records a CAD revision, the flight conditions and objective, which regions or dimensions may change, and the limits that must hold for every candidate. The original aircraft is the zero-change candidate. Show the reconstructed baseline overlaid on the CAD geometry and quantify the discrepancy before using it to score changes.
