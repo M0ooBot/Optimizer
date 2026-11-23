@@ -51,6 +51,14 @@ For example, the designer might free outer-wing sweep, dihedral and twist while 
 
 The coordinator can generate and evaluate candidates within an approved study. A wider envelope or an additional editable feature goes back to the designer. This revises the harness charter's earlier assumption that the designer reshapes the plane at every iteration. The existing design-loop handoff provides the context for that change. [Harness charter](https://github.com/M0ooBot/Engineering-Harness/blob/HEAD/CHARTER.md) · [Optimizer handoff](https://github.com/M0ooBot/Optimizer/blob/handoff-loop/docs/HANDOFF-LOOP.md)
 
+### Exploring wing placement when the fuselage can change
+
+Distinguish the mounts available on the current CAD revision from the region the designer is willing to explore for a revised fuselage. A preliminary fuselage may have no mount yet. Record any hard keep-outs and fixed interfaces, such as a payload bay or spar socket, separately from details the designer is willing to move. Only an explicitly locked feature constrains both studies. Current attachment geometry constrains the as-drawn fit check.
+
+Within the authorized region, compare placements that work with the current mounts and placements that require a fuselage change. Report the wing-root reference and displacement from baseline, the affected attachment footprint or conflict, and the predicted performance or control-margin difference relative to the best current-mount option when one exists. Account for the moved wing mass. Identify assumptions about reinforcement mass, CG, and wing–body interference; show whether plausible changes overturn the preference when there is enough information. Keep a promising result labeled **requires fuselage redesign** while its mounting and aerodynamic assumptions remain unverified.
+
+The designer can take a dimensioned placement and interface outline back to SolidWorks. After reimport of the revised fuselage, recheck fit and affected constraints, update mass and CG, and re-trim before reporting the revised aircraft's performance. Detailed fuselage design stays in CAD; CFD can investigate a junction effect that matters to the choice.
+
 ## Controls on continuous CAD surfaces
 
 The expected input can have a continuous wing, horizontal tail and vertical fin. Import accepts these surfaces without modeled ailerons, elevators, rudders, hinge gaps or moving parts.
@@ -152,6 +160,8 @@ Every claim in the report should say **how the tool knows it**. The coordinator 
 | How reliable is the comparison? | Identify the model, geometry and resolution behind the prediction. Give the result of any finer-resolution, second-condition, CFD or physical check and list outstanding checks. Label causal explanations as hypotheses until a controlled comparison supports them. |
 
 ## First end-to-end study
+
+The current milestone ends with a documented CAD candidate and its predicted performance. Printing, weighing the completed aircraft, flight testing, and reconciling predictions with measurements are deferred to the designer's first full aircraft project. The report identifies predictions and the assumptions a later measurement can update.
 
 The proposed first slice uses one designer-supplied wing, a fixed tail geometry and a declared cruise condition. Evaluate the baseline, tune one authorized wing family, rebuild a shortlisted loft, and deliver the baseline-versus-candidate report. Tail tuning uses the same design permissions in a subsequent study.
 
