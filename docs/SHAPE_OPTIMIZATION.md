@@ -36,6 +36,12 @@ The proposed Airfoil Converter MCP server exposes a lifting surface through its 
 - **Proposed transition rule.** Where an editable region leaves a fixed flat panel in a smooth bend, match position, tangent and curvature at the join. Express the initial search with a few controls such as onset, rise and bend distribution. Validate intermediate geometry for ripples and local curvature peaks even when all control stations pass.
 - **CAD readback.** Inspect the actual loft between its sections and guides. Report the worst sampled surface deviation and its location. Compare rebuilt section-plane normals against the designated guide tangents and report the worst alignment error. Record the sampling and tolerance used so the designer can interpret a pass.
 
+## Airfoil sources and wind-tunnel evidence
+
+The imported aircraft's baseline uses the section coordinates that shaped its CAD wing. When the designer opens airfoil selection to the coordinator, the default source for new candidate profiles is the UIUC Airfoil Coordinates Database. Save the exact coordinates used and their source with the study. [UIUC coordinate database](https://m-selig.web.engr.illinois.edu/ads/coord_database.html)
+
+For each candidate, look for UIUC Low-Speed Airfoil Tests covering the relevant section operating range. Link the physical model and test run, and report the Reynolds number, incidence or section lift coefficient, and surface condition used in the comparison. Coverage varies by profile and condition. Where a suitable measurement is unavailable, record the gap and label any NeuralFoil or CFD result as a prediction. [UIUC low-speed airfoil tests](https://m-selig.web.engr.illinois.edu/uiuc_lsat.html) · [UIUC wind-tunnel data](https://m-selig.web.engr.illinois.edu/pd.html)
+
 ## Straight spar and printable wing sections
 
 Treat spar fit as a hard geometric constraint on each half-wing. The working interpretation of a printable section is a physical print piece with a maximum **250 mm build height** in its print orientation. Use the piece boundaries and cut planes from the study.
