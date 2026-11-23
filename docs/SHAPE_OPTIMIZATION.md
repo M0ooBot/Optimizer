@@ -53,9 +53,9 @@ The coordinator can generate and evaluate candidates within an approved study. A
 
 ### Exploring wing placement when the fuselage can change
 
-Distinguish the mounts available on the current CAD revision from the region the designer is willing to explore for a revised fuselage. A preliminary fuselage may have no mount yet. Record any hard keep-outs and fixed interfaces, such as a payload bay or spar socket, separately from details the designer is willing to move. Only an explicitly locked feature constrains both studies. Current attachment geometry constrains the as-drawn fit check.
+Distinguish the mounts available on the current CAD revision from the region the designer is willing to explore for a revised fuselage. A preliminary fuselage may have no mount yet. Name the mount features that may change. Mission limits, hard keep-outs, locked interfaces and manufacturing constraints apply to both studies. Current attachment geometry also constrains the as-drawn fit check.
 
-Within the authorized region, compare placements that work with the current mounts and placements that require a fuselage change. Report the wing-root reference and displacement from baseline, the affected attachment footprint or conflict, and the predicted performance or control-margin difference relative to the best current-mount option when one exists. Account for the moved wing mass. Identify assumptions about reinforcement mass, CG, and wing–body interference; show whether plausible changes overturn the preference when there is enough information. Keep a promising result labeled **requires fuselage redesign** while its mounting and aerodynamic assumptions remain unverified.
+Within the authorized region, compare placements that work with the current mounts and placements that require a fuselage change. Report the wing-root reference and displacement from baseline, the affected attachment footprint or conflict, and the predicted performance or control-margin difference relative to the best current-mount option when one exists. Account for the moved wing mass. Label a placement **requires fuselage redesign** until the revised CAD demonstrates mount fit. Report aerodynamic assumptions separately. CAD fit can be verified while junction drag remains estimated; the coordinator requests CFD evidence if that uncertainty could change the decision.
 
 The designer can take a dimensioned placement and interface outline back to SolidWorks. After reimport of the revised fuselage, recheck fit and affected constraints, update mass and CG, and re-trim before reporting the revised aircraft's performance. Detailed fuselage design stays in CAD; CFD can investigate a junction effect that matters to the choice.
 
@@ -121,6 +121,12 @@ Estimate printed wing and tail mass from candidate geometry and a construction p
 
 Recompute each affected component's mass and mass location when its geometry or placement changes, then update aircraft mass, CG, trim, power and endurance for each loading case. A rigid translation of the same wing changes its mass location while preserving its own mass. Report which values were fixed, estimated, recomputed or measured. When plausible print-mass variation changes the preferred candidate, show that sensitivity alongside the ranking.
 
+### Responding to a CG change
+
+When a CAD revision, loading change or measured value shifts the CG, record its source, aircraft revision and datum in the affected loading cases. Mark dependent verdicts stale. First hold the geometry fixed and re-trim across the affected speed and loading cases. Report the before-and-after static margin, elevator deflection and travel remaining, power and mission margins, including any case that loses trim.
+
+When the designer or coordinator proposes a target CG, run it as a what-if case. If the study permits battery or payload movement, search the available positions and report the physical movement, resulting CG and margins across the required loading cases. A target outside the reachable range remains hypothetical. The accepted configuration changes when the designer adopts a realizable change.
+
 ## Who chooses the next shape
 
 1. **Evaluate the baseline.** Record trim and the performance measures relevant to the question. Apply common flight conditions, mass assumptions and trim rules to the comparison. If a candidate changes estimated mass or CG, record the change and its source.
@@ -163,9 +169,12 @@ Every claim in the report should say **how the tool knows it**. The coordinator 
 
 The current milestone ends with a documented CAD candidate and its predicted performance. Printing, weighing the completed aircraft, flight testing, and reconciling predictions with measurements are deferred to the designer's first full aircraft project. The report identifies predictions and the assumptions a later measurement can update.
 
+Steady motor-off glide is a future study of interest. The first design reports glide duration, sink rate and requirements that depend on them as unevaluated.
+
 The proposed first slice uses one designer-supplied wing, a fixed tail geometry and a declared cruise condition. Evaluate the baseline, tune one authorized wing family, rebuild a shortlisted loft, and deliver the baseline-versus-candidate report. Tail tuning uses the same design permissions in a subsequent study.
 
 - With all freedoms locked, reproduce the baseline within a stated tolerance.
+- Reimport a revised saddle with added reinforcement mass. Verify the mount fit, recalculate CG, and compare the re-trimmed candidate against the original with junction drag still labeled estimated. Exercise a proposed battery move inside its tray and a target CG outside the available travel. A hard payload keep-out violation fails in either mount study.
 - Import a swept reference wing with parallel ribs that depart from the default guide normal. Preserve the planes during baseline evaluation and a locked profile swap, or report unsupported analysis. Check that any authorized refit has a separate candidate ID.
 - Import a continuous tail, evaluate its pitching moment, then add a proposed elevator in the study and evaluate trim. The report must identify the elevator as an analysis assumption and show the travel used.
 - Start a study with a known control-travel shortfall. Recover the limiting case and compare two authorized remedies across the full set of flight cases. Include a run that fails numerically and verify the report marks its outcome as unresolved.
