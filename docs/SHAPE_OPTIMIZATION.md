@@ -14,9 +14,17 @@ The current optimizer searches a parametric aircraft through a series of studies
 
 A study records a CAD revision, the flight conditions and objective, which regions or dimensions may change, and the limits that must hold for every candidate. The original aircraft is the zero-change candidate. Show the reconstructed baseline overlaid on the CAD geometry and quantify the discrepancy before using it to score changes.
 
-For example, the designer might free outer-wing sweep, dihedral and twist while locking the projected span, root attachment, airfoil profiles and aileron hinge axis. A fixed tail can still use elevator deflection to trim each candidate. Changing elevator chord, tail incidence or tail shape is a separate design permission. The same study can be run with different permissions, recorded as a new comparison.
+For example, the designer might free outer-wing sweep, dihedral and twist while locking the projected span, root attachment and airfoil profiles. If the study also defines an aileron hinge axis, the designer can lock it. A fixed tail with a modeled elevator can still use elevator deflection to trim each candidate. Changing elevator chord, tail incidence or tail shape is a separate design permission.
 
 The coordinator can generate and evaluate candidates within an approved study. A wider envelope or an additional editable feature goes back to the designer. This revises the harness charter's earlier assumption that the designer reshapes the plane at every iteration. The existing design-loop handoff provides the context for that change. [Harness charter](https://github.com/M0ooBot/Engineering-Harness/blob/HEAD/CHARTER.md) · [Optimizer handoff](https://github.com/M0ooBot/Optimizer/blob/handoff-loop/docs/HANDOFF-LOOP.md)
+
+## Controls on continuous CAD surfaces
+
+The expected input can have a continuous wing, horizontal tail and vertical fin. Import accepts these surfaces without modeled ailerons, elevators, rudders, hinge gaps or moving parts.
+
+For a study that needs a control, define it on its parent surface for analysis. Record its role, inboard and outboard limits, hinge line or chord fraction, deflection direction and available travel. A designer can supply the layout or authorize the coordinator to propose one. Show the outline on the imported surface and label its source. Placement and sizing become search variables only when the study frees them. Deflection during a flight case is a separate quantity.
+
+Use the same declared control layout for baseline and candidate when comparing wing shapes, and record how its span and chord coordinates map onto each geometry. When comparing control layouts, identify the layout on each candidate. Tie predicted trim deflection and control margins to the layout and travel used. If the study has no declared pitch control, it can report the pitching moment at a specified condition and flag elevator trim and remaining travel as unevaluated. A proposed layout can be handed back to the designer as an annotated outline for detailed CAD work.
 
 ## Geometry shared by the Converter and optimizer
 
@@ -67,6 +75,7 @@ Every claim in the report should say **how the tool knows it**. The coordinator 
 The proposed first slice uses one designer-supplied wing, a fixed tail geometry and a declared cruise condition. Evaluate the baseline, tune one authorized wing family, rebuild a shortlisted loft, and deliver the baseline-versus-candidate report. Tail tuning uses the same design permissions in a subsequent study.
 
 - With all freedoms locked, reproduce the baseline within a stated tolerance.
+- Import a continuous tail, evaluate its pitching moment, then add a proposed elevator in the study and evaluate trim. The report must identify the elevator as an analysis assumption and show the travel used.
 - Exercise a flat wing, a smooth upsweep, and a wing with a ripple between ribs. Locate the ripple. Check both a tilted tip and a raised tip whose guide levels off.
 - Exercise the spar engagement boundary at 20 mm and just below it. Include an oblique cut and a square spar whose centerline clears but whose corner intersects the skin.
 - Compare an agent-guided study with a fixed numerical search using the same freedoms, constraints and evaluation budget. Judge feasible performance, persistence of the gain under cross-checks, and which evidence helped the designer decide.
