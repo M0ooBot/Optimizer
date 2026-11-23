@@ -16,6 +16,19 @@ The coordinator is an AI agent. Starting with the rough mission, it works with t
 
 Each agent updates the aircraft's shared design record when a decision is made or work passes to another agent. Keep the handoff short: identify the aircraft revision, the question and constraints, what the designer approved, what was tried and why, and the next unresolved question. Link the CAD revision or run that supports each finding and identify assumptions still awaiting a check. A new agent should be able to resume from that record without access to an earlier chat.
 
+## Optimizer MCP server
+
+The proposed optimizer exposes numerical aircraft studies through an MCP server. The designer asks the coordinator an engineering question in ordinary language. The coordinator uses the aircraft's intent, revision and approved design freedoms to formulate an experiment, interpret the results and explain the trade-offs. The server enforces study bounds, computes comparable results and preserves the inputs and evidence behind them.
+
+The coordinator needs a small set of operations it can combine across questions:
+
+- Inspect the baseline, flight cases, available analyses, adjustable parameters and their limits.
+- Find earlier runs for the same geometry and conditions, or evaluate a specified candidate.
+- Sweep a parameter or optimize a bounded family against a named objective and constraints.
+- Compare saved candidates at matched conditions and retrieve the margins, spanwise data, model limits and run references behind a result.
+
+**Example study.** A designer asks whether changing wing dihedral helps. For a cruise-power objective, compare the baseline with several permitted dihedral angles while holding other design choices fixed and re-trimming each candidate. Record whether span is fixed in projection or along the wing. Check spar fit and the available static stability measures, then refine promising ranges if the initial differences warrant it. Report the best feasible angle tested for that objective, or a range with indistinguishable predicted performance. If the designer means handling in a gust, identify the required dynamic evidence and the extent of the available model before drawing a conclusion.
+
 ## What the designer authorizes
 
 A study records a CAD revision, the flight conditions and objective, which regions or dimensions may change, and the limits that must hold for every candidate. The original aircraft is the zero-change candidate. Show the reconstructed baseline overlaid on the CAD geometry and quantify the discrepancy before using it to score changes.
