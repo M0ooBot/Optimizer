@@ -10,11 +10,17 @@ The current optimizer searches a parametric aircraft through a series of studies
 
 **Flow deflectors belong to CFD.** When the design question is whether a vane redirects airflow onto another surface or around a junction, the coordinator takes the placement and shape study to the CFD tool. For example, a vane intended to improve flow onto the tail needs evidence of what changed at the tail. A canard being studied for its contribution to lift and pitch trim falls within the optimizer's lifting-surface scope.
 
+The optimizer's design variables focus on lifting surfaces and their controls. Carry the designer's fuselage geometry, mounting interfaces, mass and estimated aerodynamic contribution into the whole-aircraft calculation. Route questions about local fuselage shape, flow separation and wing-root fairings to CFD. Record when a change in wing placement makes an assumed wing–body interaction uncertain.
+
 ## Coordinator and agent handoffs
 
 The coordinator is an AI agent. Starting with the rough mission, it works with the designer to record requirements, identify assumptions and choose the next engineering question. Different agents may handle CAD, optimization and CFD, and another agent may take over coordination later.
 
 Each agent updates the aircraft's shared design record when a decision is made or work passes to another agent. Keep the handoff short: identify the aircraft revision, the question and constraints, what the designer approved, what was tried and why, and the next unresolved question. Link the CAD revision or run that supports each finding and identify assumptions still awaiting a check. A new agent should be able to resume from that record without access to an earlier chat.
+
+Save the input revisions actually used by each run. A change to a dependency such as measured mass, available elevator travel or airfoil evidence marks the affected verdicts as needing re-evaluation. Keep the original run available for comparison.
+
+**Proposed aircraft workbook.** One master XLSX per aircraft would show its mission and cases, geometry and mounts, controls, component masses and loading-case CGs, and study results and decisions on separate sheets. Identify units, frame or sign convention, source and revision. Distinguish editable design intent from values read from CAD, Systems or the slicer. Keep candidate values separate from the accepted design. Store predicted control deflections by candidate, flight case and command, with a link to the originating run. A coordinator can refresh the workbook from approved edits and revisioned results so several agents can contribute without overwriting one another's work. Workbook editing and synchronization details are open.
 
 ## Optimizer MCP server
 
@@ -47,6 +53,14 @@ For a study that needs a control, define it on its parent surface for analysis. 
 
 Use the same declared control layout for baseline and candidate when comparing wing shapes, and record how its span and chord coordinates map onto each geometry. When comparing control layouts, identify the layout on each candidate. Tie predicted trim deflection and control margins to the layout and travel used. If the study has no declared pitch control, it can report the pitching moment at a specified condition and flag elevator trim and remaining travel as unevaluated. A proposed layout can be handed back to the designer as an annotated outline for detailed CAD work.
 
+### Proposed first aileron and rudder studies
+
+Start with the accepted wing and tail placement and a trimmed baseline for each declared speed and loading case. The designer supplies a required authority or asks for a comparison of available authority. With no target, report the trade-off curve and the limiting condition. Keep static stability, control effectiveness and time response as separate reported quantities. The current sideslip check measures static stability derivatives. Control-deflection sweeps need their own implementation and verification. [Current model limits](MODEL_DETAILS.md#34-stability-quantities)
+
+- **Ailerons.** Vary inboard and outboard stations and hinge position within the permitted wing region. Declare independent up/down travel and any differential. Sweep both command directions at each case. Report the change in rolling and yawing moment about the CG, individual left/right surface deflections required for a target rolling moment, remaining travel and proximity to the model's section-lift limits. Check a physical hinge axis and clearances against the curved wing. Report reduced confidence where the deflected outboard section approaches stall.
+- **Rudder.** For a fixed fin and tail placement, vary the movable span and hinge position. Specify a sideslip range or an external yawing moment to oppose. Sweep rudder both ways, find the deflection that balances yawing moment where attainable, and report remaining travel, side force and accompanying roll moment. Identify fin or fuselage wake uncertainty. For mixed controls such as ruddervators, enforce physical travel on each surface under simultaneous commands, or mark the configuration unsupported.
+- **How to choose.** Compare feasible outlines by the designer's priority, for example least movable area that achieves the specified moment and reserve across all cases. Treat predicted roll rate, bank response time and gust recovery as separate dynamic questions requiring suitable inertia, damping and validation. A candidate needing uncertain local wake or hinge-load predictions can be referred for focused CFD evidence.
+
 ## Geometry shared by the Converter and optimizer
 
 The proposed Airfoil Converter MCP server exposes a lifting surface through its sections, placements, leading and trailing edges, and surface guides. The agent can propose a particular loft or a family with bounded parameters. The numerical evaluator samples that same definition. Shortlisted candidates are rebuilt in a study copy through the harness's SolidWorks bridge and checked against the geometry that earned the score. The Converter already supports section placement, pitch, edge curves and derived surface guides. [Airfoil Converter wing workflow](https://github.com/Trying-to-Fly/Airfoil-Converter#shape-between-ribs)
@@ -60,6 +74,8 @@ The proposed Airfoil Converter MCP server exposes a lifting surface through its 
 ## Airfoil sources and wind-tunnel evidence
 
 The imported aircraft's baseline uses the section coordinates that shaped its CAD wing. When the designer opens airfoil selection to the coordinator, the default source for new candidate profiles is the UIUC Airfoil Coordinates Database. Save the exact coordinates used and their source with the study. [UIUC coordinate database](https://m-selig.web.engr.illinois.edu/ads/coord_database.html)
+
+For a profile-only swap, lock the leading-edge and trailing-edge guides, section stations and planes, chord lengths, and installed incidence and twist. Use the same trailing-edge chord reference for finite-thickness profiles. Rebuild derived upper and lower skin guides from the new profile. Check any independently locked guide or hinge for compatibility and report a conflict. Recheck spar clearance and re-trim the airplane at matched flight conditions. An experiment that also varies planform or twist is a separate study.
 
 For each candidate, look for UIUC Low-Speed Airfoil Tests covering the relevant section operating range. Link the physical model and test run, and report the Reynolds number, incidence or section lift coefficient, and surface condition used in the comparison. Coverage varies by profile and condition. Where a suitable measurement is unavailable, record the gap and label any NeuralFoil or CFD result as a prediction. [UIUC low-speed airfoil tests](https://m-selig.web.engr.illinois.edu/uiuc_lsat.html) · [UIUC wind-tunnel data](https://m-selig.web.engr.illinois.edu/pd.html)
 
