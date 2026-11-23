@@ -35,6 +35,12 @@ The coordinator needs a small set of operations it can combine across questions:
 
 **Example study.** A designer asks whether changing wing dihedral helps. For a cruise-power objective, compare the baseline with several permitted dihedral angles while holding other design choices fixed and re-trimming each candidate. Record whether span is fixed in projection or along the wing. Check spar fit and the available static stability measures, then refine promising ranges if the initial differences warrant it. Report the best feasible angle tested for that objective, or a range with indistinguishable predicted performance. If the designer means handling in a gust, identify the required dynamic evidence and the extent of the available model before drawing a conclusion.
 
+### From mission requirements to flight cases
+
+The coordinator translates the designer's brief into numerical requirements before submitting a study. For a camera mission, record the payload, outbound and return distances, time and task on station, applicable speed and wind assumptions, and minimum reserve on landing. Keep assumptions distinguishable from designer requirements. Record the units and link each requirement to the flight cases or mission segments that test it. The designer can bring a rough CAD layout directly to this step. Preliminary sizing from the mission alone is a separate capability whose scope remains open.
+
+For each requirement the optimizer returns its target, predicted value, margin, and the case or segment that determines the verdict. Aggregate energy across the mission before checking landing reserve. A segment outside the model's coverage leaves the dependent mission verdict unresolved. For acceptance, exercise a mission whose individual legs trim successfully but whose combined energy use misses the requested landing reserve.
+
 ## What the designer authorizes
 
 For the first import trial, the designer will supply a SolidWorks aircraft with the wings, tail surfaces and fuselage as separate bodies. Use that real design to decide how bodies are identified, how their placement is read, and how they are matched to Airfoil Converter sections. Body naming, part or assembly organization, and the exchange format remain open until that trial.
