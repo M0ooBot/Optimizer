@@ -69,6 +69,16 @@ A wing may keep bending beyond the end of the required spar engagement. The prop
 3. **Use code for numerical search and enforcement.** The solver tunes continuous variables, can enumerate small discrete choices such as stock sizes, and records infeasibility or failed convergence. The Converter's geometry checks apply to candidates from every search method. Save enough inputs, settings and versions to repeat the evaluation.
 4. **Spend the next run on a question the results leave open.** The coordinator can change family within the authorized freedoms, hold one variable fixed to test an explanation, or stop when remaining differences are small relative to model sensitivity. A finer aerodynamic evaluation or a targeted CFD comparison can check a shortlisted result. The CFD app supplies aerodynamic evidence at recorded poses and conditions. The coordinator interprets that evidence alongside whole-aircraft performance.
 
+### When the rough layout misses a requirement
+
+The first CAD layout is a starting estimate. During study setup the designer identifies which preliminary dimensions the coordinator may resize or move, the permitted ranges, and which features are fixed. If a required flight case misses a modeled limit, first search for layouts that meet the requirements. Rank those layouts on the mission objective afterward.
+
+Identify the case, the failed check and its margin. For example, at minimum speed distinguish an estimated section lift limit from insufficient pitching moment at the allowed elevator travel. If the solver fails to converge, check the force and moment balance across the permitted angle and control range before assigning a cause. Record an unresolved case when the available model or numerical evidence is insufficient.
+
+- **Wing example.** Compare additional wing area with a planform or twist change at fixed area. This tests whether lowering the overall lift demand per unit area or redistributing it along the span addresses the limiting section.
+- **Trim example.** Compare increasing elevator chord or span with changing wing position or tail incidence. Record required deflection, remaining travel and static margin across the declared CG and speed cases. Check control effectiveness within the model's range.
+- **Coupled changes.** Use single changes to understand the response and test combinations when one change cannot satisfy all cases. Recompute dependent mass, CG, trim and spar fit for each candidate and identify estimates. Report the least extensive tested change that passes and any useful alternatives. If the search finds none, report the ranges explored and propose a specific freedom to revisit with the designer.
+
 ## What comes back after a run
 
 Every claim in the report should say **how the tool knows it**. The coordinator gets a compact comparison first and can request spanwise curves, geometry, solver records or CAD evidence as needed.
@@ -88,6 +98,7 @@ The proposed first slice uses one designer-supplied wing, a fixed tail geometry 
 
 - With all freedoms locked, reproduce the baseline within a stated tolerance.
 - Import a continuous tail, evaluate its pitching moment, then add a proposed elevator in the study and evaluate trim. The report must identify the elevator as an analysis assumption and show the travel used.
+- Start a study with a known control-travel shortfall. Recover the limiting case and compare two authorized remedies across the full set of flight cases. Include a run that fails numerically and verify the report marks its outcome as unresolved.
 - Exercise a flat wing, a smooth upsweep, and a wing with a ripple between ribs. Locate the ripple. Check both a tilted tip and a raised tip whose guide levels off.
 - Exercise the spar engagement boundary at 20 mm and just below it. Include an oblique cut and a square spar whose centerline clears but whose corner intersects the skin.
 - Compare an agent-guided study with a fixed numerical search using the same freedoms, constraints and evaluation budget. Judge feasible performance, persistence of the gain under cross-checks, and which evidence helped the designer decide.
