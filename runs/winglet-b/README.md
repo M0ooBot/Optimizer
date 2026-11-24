@@ -43,7 +43,7 @@ The span lock sets the bend length: the bend is lengthened until the outermost s
 
 ![Laws along the leading edge](stage1/laws.png)
 
-The [oblique view](stage1/oblique.png) shows the section outlines in 3D. [report.json](stage1/report.json) has every station; [curves.json](stage1/curves.json) holds the leading-edge, trailing-edge and quarter-chord polylines and 13 section outlines in Wing B's study coordinates (−X outboard, +Y up, +Z forward, mm).
+[stage1/viewer.html](stage1/viewer.html) is an offline 3D review (download and open it locally): shaded or isophote-striped skin, camera presets, the 600 mm span plane and a mirror toggle. Its skin is the law's sections joined by flat facets, not the CAD surface. The [oblique view](stage1/oblique.png) shows the section outlines in 3D. [report.json](stage1/report.json) has every station; [curves.json](stage1/curves.json) holds the leading-edge, trailing-edge and quarter-chord polylines and 13 section outlines in Wing B's study coordinates (−X outboard, +Y up, +Z forward, mm).
 
 ## For the designer to judge
 
