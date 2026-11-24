@@ -40,6 +40,47 @@
   "trailing_edge_gap_mm": 0.0,
   "note": "the trailing-edge gap is the distance to the attachment's trailing edge (point or blunt segment)"
  },
+ "section_areas": {
+  "note": "reference = shoelace area of 40,001 parent.py points around the section",
+  "stations": [
+   {
+    "station_mm": -389.0,
+    "step_area_mm2": 556.4851264689019,
+    "reference_area_mm2": 556.4860352781684,
+    "relative_difference": -1.6331214243159309e-06
+   },
+   {
+    "station_mm": -195.0,
+    "step_area_mm2": 1425.1290349733483,
+    "reference_area_mm2": 1425.1313623858043,
+    "relative_difference": -1.6331213510412113e-06
+   },
+   {
+    "station_mm": 1.0,
+    "step_area_mm2": 2694.837628881952,
+    "reference_area_mm2": 2694.8420298870096,
+    "relative_difference": -1.6331217225218353e-06
+   },
+   {
+    "station_mm": 195.0,
+    "step_area_mm2": 1425.1290349733483,
+    "reference_area_mm2": 1425.1313623858043,
+    "relative_difference": -1.6331213510412113e-06
+   },
+   {
+    "station_mm": 389.0,
+    "step_area_mm2": 556.4851264689019,
+    "reference_area_mm2": 556.4860352781684,
+    "relative_difference": -1.6331214243159309e-06
+   }
+  ],
+  "max_abs_relative_difference": 1.6331217225218353e-06
+ },
+ "volume_note": {
+  "precise_mm3": 1164279.8607295519,
+  "occt_default_mm3": 1164279.723633557,
+  "explanation": "volume_mm3 uses BRepGProp with a 1e-9 tolerance; OCCT's default integration (cadquery Solid.Volume()) can be badly wrong on these B-spline skins (Wing B sharp: 17% low)"
+ },
  "accepted_model_sha256": "571329692cb001e1fad29f9a1bc878f6dc5c94ca1fa5e1b2311d8c417c2c23e9",
  "accepted_retained_faces": 4,
  "max_deviation_parent_py_to_accepted_retained_skin_mm": 3.5829310992692084e-09,

@@ -29,6 +29,25 @@ Each folder `S/V/` holds one locked parent: the part of an accepted model that i
 
 Chord fractions are measured from each section's 2D origin, the leading-edge point, along the chord. Thickness is taken perpendicular to the chord line, as the Converter measures it. Sharp fidelity is the largest distance from about 1,700 sampled `parent.py` points (and 1,700 to 3,400 points sampled on `parent.step`'s curved faces) to the accepted model's retained skin faces. Blunt TE thickness was measured on the reimported STEP at five stations, including both ends: on the planar end-face edge at the attachment and root, and by plane sections in between. Converter agreement is the largest distance from the Converter's own output points to the analytic blunt section, at the root and the attachment. For `wingb` it is the largest distance from the Converter's output points to the blunt STEP skin, at five loft stations and at the 540 mm attachment (the attachment gives the 9.1e-6 mm). Every `parent.step` reimports as one solid with one closed shell. It passes standard and strict BRepCheck.
 
+### Volumes and section areas
+
+All volumes here use `BRepGProp` with a 1e-9 tolerance (`check.json` `reimport.volume_mm3`). Don't use OCCT's default integration, which is what CadQuery's `Solid.Volume()` and slab-cut volumes use. On the Wing B sharp parent it reports 589,733 mm³ instead of 711,013 mm³, 17% low, and that once made the blunt Wing B look 27% larger than the sharp one. `check.json` records both values under `volume_note`.
+
+`check.json` also compares each reimported STEP section with the section it was built from (`section_areas`), at five stations:
+
+- **Analytic parents:** the reference is the shoelace area of 40,001 `parent.py` points around the section.
+- **Wing B:** the reference is the spline face through that station's loft points: the Converter output for blunt, the resampled SD7037 for sharp. The check also compares the thickness distribution with the Converter's points.
+
+| Parent | Volume sharp → blunt (mm³) | Increase | Blunt/sharp section area, root → attachment | Largest STEP area error vs reference, sharp / blunt |
+| --- | --- | ---: | --- | --- |
+| flat | 864,000.0 → 864,047.8 | +0.006% | 1.0001 | 1.5e-6 / 1.5e-6 |
+| twisted | 1,448,878 → 1,476,610 | +1.91% | 1.0153 → 1.0275 | 1.6e-6 / 1.6e-6 |
+| swept55 | 1,164,280 → 1,191,108 | +2.30% | 1.0175 → 1.0387 | 1.6e-6 / 1.5e-6 |
+| fin40, fin5 | 350,036.3 → 350,160.4 | +0.035% | 1.0002 → 1.0008 | 1.6e-6 / 1.6e-6 |
+| wingb | 711,013 → 747,481 | +5.13% | 1.0413 → 1.0787 | 3.0e-4 / 1.7e-5 |
+
+Each area ratio is close to the square of the keep-chord scale below, less the small cut-off tip. At the attachment that gives 1.0395 against 1.0387 measured for swept55, 1.0279 against 1.0275 for twisted, and 1.0798 against 1.0787 for Wing B. Wing B grows most because SD7037 has a thin, cusped trailing edge. The 0.4 mm cut therefore falls 2.0% of chord from the TE at the root and 3.8% at the attachment, which makes the scale 1.021 → 1.039. The 3.0e-4 on Wing B sharp is the accepted loft's own approximation of its sections (degree 7, 8 rows); the surface was left as accepted. On Wing B blunt the STEP thickness agrees with the Converter's points to 0.0045 mm or better at x/c = 0.01–0.95. Most of that is the Converter polyline's chord error near the nose.
+
 Keep-chord cut of the blunt variants (cut chord fraction of the original section → uniform scale):
 
 | Parent | Root | Attachment |

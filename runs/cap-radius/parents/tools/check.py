@@ -299,6 +299,101 @@ def outline_endpoints(module):
             "note": "the trailing-edge gap is the distance to the attachment's trailing edge (point or blunt segment)"}
 
 
+def gprop_volume(solid, tolerance=None):
+    from OCP.BRepGProp import BRepGProp
+    from OCP.GProp import GProp_GProps
+    props = GProp_GProps()
+    if tolerance is None:
+        BRepGProp.VolumeProperties_s(solid.wrapped, props)
+    else:
+        BRepGProp.VolumeProperties_s(solid.wrapped, props, tolerance, True, False)
+    return props.Mass()
+
+
+def face_area(face):
+    from OCP.BRepGProp import BRepGProp
+    from OCP.GProp import GProp_GProps
+    props = GProp_GProps()
+    BRepGProp.SurfaceProperties_s(face.wrapped, props, 1e-9, True)
+    return props.Mass()
+
+
+def step_section_area(solid, origin, normal):
+    wire = cq.Wire.assembleEdges(section_edges(solid, origin, normal))
+    return face_area(cq.Face.makeFromWires(wire))
+
+
+def shoelace(points):
+    x, y = np.asarray(points).T
+    return 0.5 * abs(np.dot(x, np.roll(y, -1)) - np.dot(y, np.roll(x, -1)))
+
+
+def polyline_thickness(points, x):
+    ys = []
+    for (x0, y0), (x1, y1) in zip(points, list(points[1:]) + [points[0]]):
+        if (x0 <= x < x1) or (x1 <= x < x0):
+            ys.append(y0 + (y1 - y0) * (x - x0) / (x1 - x0))
+    return max(ys) - min(ys)
+
+
+def section_area_check(shape, variant, module, solid):
+    """Cross-section area of the reimported STEP against the section it was built from.
+
+    Analytic parents: shoelace area of 40,001 parent.py points around the
+    section. Wing B: area of the cq spline face through the section points
+    (Converter output for blunt, the Converter-resampled SD7037 for sharp) at
+    the definition frame, i.e. exactly what each loft station is built from.
+    Wing B also compares the thickness distribution with the Converter's points.
+    """
+    rows = []
+    if shape == "wingb":
+        sys.path.insert(0, str(REPO / "src"))
+        from planeopt.phase0_evidence import _profile_wire
+        from planeopt.phase0_geometry import _profile, load_definition, section_frame
+        geometry = converter()
+        wing = load_definition(REPO / "runs/paired-wing-trial/a/bowed/definition.json").wing
+        profile = _profile(REPO / "aircraft/phase0_sd7037")
+        fractions = np.array([0.01, 0.05, 0.1, 0.3, 0.5, 0.7, 0.9, 0.95])
+        for station in (1.0, 100.0, 300.0, 500.0, 539.0):
+            frame = section_frame(wing, station / 600)
+            c = frame.chord_mm
+            flat = [(x * c, y * c) for x, y in profile]
+            if variant == "blunt":
+                flat = geometry.blunt_trailing_edge(flat, 0.4, keep_chord=True)
+            le, ca, ua = (np.array(a) for a in (frame.le, frame.chord_axis, frame.up_axis))
+            points = [tuple(le + ca * x + ua * y) for x, y in flat]
+            reference = face_area(cq.Face.makeFromWires(_profile_wire(cq, points)))
+            area = step_section_area(solid, (-station, 0, 0), (1, 0, 0))
+            converter_thickness = np.array([polyline_thickness(flat, f * c) for f in fractions])
+            parent_thickness = module.section_thickness(fractions, station)
+            rows.append({"station_mm": station, "step_area_mm2": area, "reference_area_mm2": reference,
+                         "relative_difference": float(area / reference - 1),
+                         "chord_fractions": fractions.tolist(),
+                         "step_thickness_mm": parent_thickness.tolist(),
+                         "converter_points_thickness_mm": converter_thickness.tolist(),
+                         "max_thickness_difference_mm": float(np.abs(parent_thickness - converter_thickness).max())})
+        note = ("reference = spline face through the loft-station points; converter thickness is read off the "
+                "Converter's point polyline, so it differs from the smooth section by up to a few micrometres near the nose")
+    else:
+        lo, hi = module.SPAN_LIMITS
+        span = hi - lo
+        stations = [lo + 1.0, lo + 0.25 * span, lo + 0.5 * span + (1.0 if module.FULL_SPAN else 0.0),
+                    lo + 0.75 * span, hi - 1.0]
+        s = (1 - np.cos(np.linspace(0, np.pi, 20001))) / 2
+        for station in stations:
+            frame = module.section_frame(station)
+            upper = to_2d(module.skin(s, np.full_like(s, station), +1), frame)
+            lower = to_2d(module.skin(s, np.full_like(s, station), -1), frame)
+            reference = shoelace(np.concatenate([upper[::-1], lower[1:]]))
+            normal = np.cross(frame["chord_direction"], frame["up_direction"])
+            area = step_section_area(solid, frame["origin"], normal)
+            rows.append({"station_mm": station, "step_area_mm2": area, "reference_area_mm2": float(reference),
+                         "relative_difference": float(area / reference - 1)})
+        note = "reference = shoelace area of 40,001 parent.py points around the section"
+    return {"note": note, "stations": rows,
+            "max_abs_relative_difference": max(abs(r["relative_difference"]) for r in rows)}
+
+
 def derivative_check(module):
     """Largest relative mismatch between the analytic jets and central differences."""
     rng = np.random.default_rng(1)
@@ -341,6 +436,13 @@ def check(shape, variant):
         report["parent_py_to_parent_step_max_mm"] = float(project(exact, step_surfaces).max())
     report["derivative_check_max_relative_error"] = derivative_check(module)
     report["tip_outline_endpoints"] = outline_endpoints(module)
+    report["section_areas"] = section_area_check(shape, variant, module, solid)
+    report["volume_note"] = {
+        "precise_mm3": report["reimport"]["volume_mm3"],
+        "occt_default_mm3": gprop_volume(solid),
+        "explanation": "volume_mm3 uses BRepGProp with a 1e-9 tolerance; OCCT's default integration (cadquery "
+                       "Solid.Volume()) can be badly wrong on these B-spline skins (Wing B sharp: 17% low)",
+    }
     att = module.ATTACHMENT
     if variant == "sharp":
         accepted = read(ACCEPTED[shape]).Solids()[0]
