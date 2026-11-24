@@ -4,7 +4,7 @@ The twisted Wing B ([definition](../wing-b-spar/shape/constrained/redistributed/
 
 | Stage | Status |
 | --- | --- |
-| 1. Law and outline: edge curves, section planes, checks on the law | **Revised after review; choose a bend distribution** ([stage1](stage1/)) |
+| 1. Law and outline: edge curves, section planes, checks on the law | **In tuning.** Bend: centred, chosen 2026-11-24 ([stage1](stage1/)) |
 | 2. Surface with the tip open; locked blunt parent; STEP readback | Next |
 | 3. Close the winglet tip with the [rounded wingtip skill](../../.agents/skills/close-rounded-wingtip/SKILL.md) | |
 | 4. Whole-surface curvature map and zebra review | |
@@ -26,6 +26,8 @@ The whole winglet is the transition. From the attachment to the tip:
 Solving order: the winglet's length meets the 65 mm height; the attachment station meets the 600 mm span (with the tip extended 12 mm along its tangent as an allowance for the cap); the trailing-edge sweep meets the tip chord. The attachment may not come within 10 mm of the aileron hinge's 510 mm end.
 
 ## Bend distributions
+
+**Chosen: centred (35% / 35%), the default in `WingletDefinition`.** The ramps are continuous settings, not modes. The flat top's width is `1 − ramp_in − ramp_out`: zero is a pure bell, larger values approach an even turn. The peak sits at `ramp_in + width / 2` along the winglet. The variants below are sample points; any pair with each ramp above zero and a sum of at most 1 is valid, and the span lock rejects a pair that does not fit.
 
 [Open the viewer](stage1/viewer.html) (download it and open it locally) to switch between them at a fixed camera, shaded or with isophote stripes.
 
