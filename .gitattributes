@@ -8,3 +8,6 @@ runs/cap-trials/**/*.step -text -diff
 # The standalone section inspector embeds Plotly and tessellated model data.
 runs/wing-b-rounded-tip-g2/review.html -diff
 runs/cap-trials/review.html -diff
+# Cap-radius trial: STEP evidence is hashed, keep bytes exact.
+runs/cap-radius/**/*.step -text -diff
+runs/cap-radius/**/*.html -diff
