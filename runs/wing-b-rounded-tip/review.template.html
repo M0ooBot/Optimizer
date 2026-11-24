@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wing B rounded tip</title>
+<style>
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  background: #f4f6f5;
+  color: #132e34;
+  --muted: #50676c;
+  --border: #cedad8;
+  --teal: #007b78;
+  --original: #62747c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, p { margin: 0; }
+header, main { max-width: 1570px; margin: auto; }
+header { padding: 32px clamp(16px, 4vw, 54px) 24px; display: flex; align-items: end;
+         justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+h1 { font-size: clamp(29px, 5vw, 46px); line-height: 1.05; letter-spacing: -.048em; }
+header p { font-size: 14px; color: var(--muted); margin-top: 7px; }
+.key { display: flex; gap: 19px; padding-bottom: 3px; }
+.key span { display: flex; align-items: center; gap: 7px; font-size: 13px; white-space: nowrap; }
+.key span::before { content: ""; width: 21px; border-top: 3px solid var(--teal); }
+.key span:first-child::before { border-top: 3px dashed var(--original); }
+main { padding: 0 clamp(16px, 4vw, 54px) 30px; display: grid;
+       grid-template-columns: minmax(0, 1.32fr) minmax(0, 1fr); gap: 17px; }
+main.full-wing { grid-template-columns: minmax(0, 1fr); }
+section { min-width: 0; background: #fff; border: 1px solid var(--border); border-radius: 13px;
+          display: flex; flex-direction: column; overflow: hidden; }
+section[hidden] { display: none; }
+.panel-top { padding: 18px 18px 8px; display: grid; gap: 11px; }
+.full-wing .panel-top { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 22px; }
+.full-wing .panel-top h2 { margin-right: auto; }
+.full-wing .control-label { flex-basis: auto; margin-right: 3px; }
+h2 { font-size: 19px; letter-spacing: -.021em; }
+.controls { display: flex; flex-wrap: wrap; gap: 6px; }
+.control-label { color: var(--muted); flex: 0 0 68px; font-size: 12px; line-height: 32px; }
+button { font: inherit; font-size: 12px; font-weight: 550; padding: 7px 10px; cursor: pointer;
+         color: #2b4b4f; background: #fff; border: 1px solid #bbcdcb; border-radius: 6px; }
+button:hover { border-color: var(--teal); }
+button[aria-pressed="true"] { color: #075f5d; background: #e4f3f1; border-color: #6da9a7; }
+button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.view { height: clamp(360px, 58vh, 700px); min-width: 0; }
+.view[hidden], .key[hidden], .zebra-labels[hidden], .stripe-control[hidden] { display: none; }
+.zebra-view { position: relative; }
+.zebra-view canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
+.zebra-view canvas:active { cursor: grabbing; }
+.zebra-labels { position: absolute; top: 12px; width: 100%; display: flex;
+                text-align: center; pointer-events: none; color: var(--muted); font-size: 13px; }
+.zebra-labels span { flex: 1; }
+.stripe-control { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.stripe-control input { width: 100px; accent-color: var(--teal); }
+.stripe-control output { min-width: 31px; font-variant-numeric: tabular-nums; }
+.canvas-error { color: #8d4029; font-size: 12px; }
+.full-wing .view { height: clamp(365px, 64vh, 730px); }
+.section-view { margin-top: auto; }
+.help { padding: 4px 18px 15px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.span-note { display: none; }
+.full-wing .span-note { display: inline; }
+.position { color: var(--muted); font-size: 13px; }
+@media (max-width: 890px) {
+  main { grid-template-columns: minmax(0, 1fr); }
+  .view { height: clamp(280px, 65vw, 520px); }
+  .full-wing .view { height: clamp(265px, 55vw, 470px); }
+  .section-view { height: clamp(205px, 48vw, 420px); }
+}
+@media (pointer: coarse) { button { min-height: 39px; } }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Wing B rounded tip</h1>
+    <p>STEP geometry comparison</p>
+  </div>
+  <div id="solid-key" class="key" aria-label="Model colors" hidden><span>Original</span><span>Rounded tip</span></div>
+</header>
+<main id="review" class="full-wing">
+  <section aria-labelledby="geometry-title">
+    <div class="panel-top">
+      <h2 id="geometry-title">3D geometry</h2>
+      <div class="controls" aria-label="3D scope" role="group">
+        <span class="control-label" aria-hidden="true">Scope</span>
+        <button data-scope="Full wing" aria-pressed="true">Full wing</button>
+        <button data-scope="Full half-wing" aria-pressed="false">Full half-wing</button>
+        <button data-scope="Tip detail" aria-pressed="false">Tip detail</button>
+      </div>
+      <div class="controls" aria-label="3D camera" role="group">
+        <span class="control-label" aria-hidden="true">Camera</span>
+        <button data-camera="Angled" aria-pressed="true">Angled</button>
+        <button data-camera="Top" aria-pressed="false">Top</button>
+        <button data-camera="Front" aria-pressed="false">Front</button>
+        <button data-camera="Lip" aria-pressed="false">Lip</button>
+      </div>
+      <div class="controls" aria-label="Visible 3D models" role="group">
+        <span class="control-label" aria-hidden="true">Model</span>
+        <button data-model="Rounded tip" aria-pressed="true">Rounded tip</button>
+        <button data-model="Original" aria-pressed="false">Original</button>
+        <button data-model="Overlay" aria-pressed="false">Overlay</button>
+      </div>
+      <div class="controls" aria-label="Surface shading" role="group">
+        <span class="control-label" aria-hidden="true">Shading</span>
+        <button data-shading="Zebra" aria-pressed="true">Mirrored zebra</button>
+        <button data-shading="Solid" aria-pressed="false">Solid</button>
+        <label class="stripe-control">
+          Stripe angle <input id="stripe-angle" type="range" min="0" max="180" value="38"
+                              aria-label="Stripe angle in degrees">
+          <output id="stripe-value" for="stripe-angle">38°</output>
+        </label>
+      </div>
+      <p class="canvas-error" id="zebra-error" role="status" hidden></p>
+    </div>
+    <div id="solid-view" class="view" aria-label="Orthographic CAD models" role="region" hidden>{{VIEW}}</div>
+    <div id="zebra-view" class="view zebra-view" aria-label="Zebra reflection inspection" role="region">
+      <div id="zebra-labels" class="zebra-labels" hidden><span>Original</span><span>Rounded tip</span></div>
+      <canvas id="zebra-canvas" aria-label="Wing surfaces with view-dependent reflection bands">
+        The zebra inspection uses WebGL.
+      </canvas>
+    </div>
+    <p class="help"><span class="span-note">1,200 mm span · </span><span id="zebra-note">Reflections mirrored with the wing · </span>Drag to orbit · Scroll to zoom</p>
+  </section>
+  <section id="lip-panel" aria-labelledby="section-title" hidden>
+    <div class="panel-top">
+      <h2 id="section-title">Tip lip section</h2>
+      <p class="position">Spanwise cuts at fixed chordwise positions</p>
+      <div class="controls" aria-label="Section coordinate" role="group">
+        <button data-cut="90" aria-pressed="false">90 mm aft</button>
+        <button data-cut="110" aria-pressed="true">110 mm aft</button>
+        <button data-cut="135" aria-pressed="false">135 mm aft</button>
+      </div>
+    </div>
+    <div class="view section-view" aria-label="Equal-scale tip lip profiles" role="region">{{SECTION}}</div>
+    <p class="help">Equal axis scale · Drag to pan · Scroll to zoom</p>
+  </section>
+</main>
+<script>
+const view = document.getElementById("wing");
+const section = document.getElementById("cut");
+const cameras = {{CAMERAS}};
+const scopes = {{SCOPES}};
+const cutRanges = {{CUTS}};
+const zebraData = {{ZEBRA_DATA}};
+{{ZEBRA_RENDERER}}
+const labels = ["Original", "Rounded tip"];
+const review = document.getElementById("review");
+const lipPanel = document.getElementById("lip-panel");
+const solidView = document.getElementById("solid-view");
+const solidKey = document.getElementById("solid-key");
+const zebraView = document.getElementById("zebra-view");
+const stripeSlider = document.getElementById("stripe-angle");
+const stripeValue = document.getElementById("stripe-value");
+const stripeControl = stripeSlider.closest("label");
+const zebraLabels = document.getElementById("zebra-labels");
+const zebraError = document.getElementById("zebra-error");
+const zebraNote = document.getElementById("zebra-note");
+let model = "Rounded tip";
+let scope = "Full wing";
+let camera = "Angled";
+let shading = "Zebra";
+let paintZebra;
+
+function addControls(group, action) {
+    const buttons = [...document.querySelectorAll("[data-" + group + "]")];
+    buttons.forEach(button => button.addEventListener("click", async () => {
+        await action(button.dataset[group]);
+        const active = group === "shading" ? shading : button.dataset[group];
+        buttons.forEach(item => item.setAttribute("aria-pressed", String(item.dataset[group] === active)));
+    }));
+}
+
+async function updateModels() {
+    const visibility = labels.flatMap(label => Object.keys(scopes).flatMap(item => {
+        const show = scope === item && (model === "Overlay" || label === model);
+        return [show, show];
+    }));
+    const opacity = visibility.map((_, index) => index % 2 || model !== "Overlay" ? 1 : .25);
+    await Plotly.restyle(view, {visible: visibility, opacity});
+}
+
+function cameraSettings() {
+    const full = scope === "Full wing";
+    const displayAxes = !full || camera !== "Angled";
+    return {
+        "scene.camera": cameras[full && camera === "Angled" ? "Full angled" : camera],
+        "scene.xaxis.visible": displayAxes,
+        "scene.yaxis.visible": displayAxes && camera !== "Front",
+        "scene.zaxis.visible": displayAxes && camera !== "Top",
+    };
+}
+
+function updateZebra(reset = false) {
+    zebraLabels.hidden = model !== "Overlay" || shading !== "Zebra";
+    if (paintZebra) {
+        paintZebra({model, scope, camera, shading, rotation: Number(stripeSlider.value), reset});
+    }
+}
+
+async function fitSolid() {
+    if (solidView.hidden || !view._fullLayout) return;
+    const width = solidView.clientWidth;
+    const height = solidView.clientHeight;
+    const layout = {width, height};
+    if (scope === "Full wing") {
+        const scale = Math.min(5.65, Math.max(2, 2.23 * width / height));
+        const ratio = scopes[scope]["scene.aspectratio"];
+        layout["scene.aspectratio"] = Object.fromEntries(
+            Object.entries(ratio).map(([axis, value]) => [axis, value * scale / ratio.x])
+        );
+    }
+    await Plotly.relayout(view, layout);
+}
+
+async function updateSolid() {
+    if (solidView.hidden) return;
+    await Plotly.relayout(view, scopes[scope]);
+    await Plotly.relayout(view, cameraSettings());
+    await updateModels();
+    await fitSolid();
+}
+
+async function selectShading(mode) {
+    shading = mode;
+    if (shading === "Zebra" && !paintZebra) {
+        try {
+            paintZebra = createZebraRenderer(document.getElementById("zebra-canvas"), zebraData, cameras);
+        } catch (error) {
+            shading = "Solid";
+            zebraError.textContent = "Zebra inspection needs a browser with WebGL 2.";
+            zebraError.hidden = false;
+            document.querySelector('[data-shading="Zebra"]').disabled = true;
+        }
+    }
+    solidView.hidden = Boolean(paintZebra);
+    solidKey.hidden = shading !== "Solid";
+    zebraView.hidden = !paintZebra;
+    zebraView.setAttribute("aria-label", shading === "Zebra" ? "Zebra reflection inspection" : "Shaded CAD models");
+    stripeControl.hidden = shading !== "Zebra";
+    zebraNote.hidden = shading !== "Zebra" || scope !== "Full wing";
+    updateZebra();
+    await updateSolid();
+    document.querySelectorAll("[data-shading]").forEach(button => {
+        button.setAttribute("aria-pressed", String(button.dataset.shading === shading));
+    });
+}
+
+addControls("scope", async value => {
+    scope = value;
+    const full = scope === "Full wing";
+    review.classList.toggle("full-wing", full);
+    lipPanel.hidden = full;
+    zebraNote.hidden = shading !== "Zebra" || !full;
+    updateZebra(true);
+    await updateSolid();
+    if (!full) await Plotly.Plots.resize(section);
+});
+addControls("model", async value => {
+    model = value;
+    updateZebra();
+    if (!solidView.hidden) await updateModels();
+});
+addControls("camera", async value => {
+    camera = value;
+    updateZebra(true);
+    if (!solidView.hidden) await Plotly.relayout(view, cameraSettings());
+});
+addControls("shading", selectShading);
+stripeSlider.addEventListener("input", () => {
+    stripeValue.value = stripeSlider.value + "°";
+    updateZebra();
+});
+addControls("cut", async value => {
+    const [span, height] = cutRanges[value];
+    const visibility = labels.flatMap(() => Object.keys(cutRanges).map(item => item === value));
+    await Plotly.update(section, {visible: visibility}, {"xaxis.range": span, "yaxis.range": height});
+});
+new ResizeObserver(fitSolid).observe(solidView);
+selectShading(shading);
+</script>
+</body>
+</html>

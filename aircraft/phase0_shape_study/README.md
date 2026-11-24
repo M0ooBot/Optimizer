@@ -12,4 +12,6 @@ On this geometry the longest verified straight spar measures 430.4405 mm from ro
 
 ## Possible next trial
 
+The [rounded wingtip case study](../../docs/studies/WING_B_ROUNDED_TIP.md) uses the earlier untwisted Wing B. It includes the rolled-cap construction, two STEP revisions, a full-wing viewer and a numerical zebra comparison.
+
 Explore whether an agent can add a winglet to this half-wing using the offline geometry workflow. First establish the intended winglet shape and which dimensions to hold fixed, especially whether the 600 mm projected half-span includes the winglet. Compare the new tip against the saved STEP and inspect the leading edge, trailing edge and surface through the junction from both the front and the top. SolidWorks work is deferred.
