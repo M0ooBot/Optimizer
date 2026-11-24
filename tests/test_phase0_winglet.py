@@ -34,12 +34,14 @@ def _family(thickness, chords):
     return ProfileFamily(lambda c: _blunt(naca_symmetric(thickness), TE_MM / c), chords)
 
 
+def _winglet(**overrides):
+    return BlendedWinglet(load_definition(WING_B).wing, WingletDefinition(**overrides),
+                          _family(0.12, np.linspace(55, 205, 31)), _family(0.10, np.linspace(18, 100, 42)))
+
+
 @pytest.fixture(scope="module")
 def winglet():
-    parent = load_definition(WING_B).wing
-    definition = WingletDefinition(bend_length_mm=70.0)
-    return BlendedWinglet(parent, definition, _family(0.12, np.linspace(55, 205, 31)),
-                          _family(0.10, np.linspace(18, 100, 42)))
+    return _winglet(attach_fraction=0.87)
 
 
 def _one_sided(f, h, side):
@@ -80,19 +82,26 @@ def test_bend_reaches_cant_with_rising_dihedral(winglet):
     gamma = np.array([winglet.gamma(float(t)) for t in s])
     assert np.all(np.diff(gamma) >= -1e-12)
     assert math.degrees(gamma[-1]) == pytest.approx(75.0, abs=1e-9)
-    assert winglet.kappa(winglet.L) == 0.0
-    chord = np.array([winglet.chord(float(t)) for t in s])
+    assert winglet.kappa(0.0) == pytest.approx(winglet.kappa0)
+    assert winglet.kappa(winglet.s_tip) == pytest.approx(0.0, abs=1e-15)
+
+
+def test_drawn_edges_give_a_tapering_chord_and_a_one_way_trailing_edge(winglet):
+    s = np.linspace(0, winglet.s_tip, 200)
+    chord = np.array([winglet.frame(float(t)).chord_mm for t in s])
     assert np.all(np.diff(chord) < 0)
-    assert chord[-1] == pytest.approx(32.0)
+    assert chord[-1] == pytest.approx(32.0, abs=1e-6)
+    te_z = np.array([winglet.frame(float(t)).te[2] for t in s])
+    assert np.all(np.diff(te_z) > 0) or np.all(np.diff(te_z) < 0)
 
 
 def test_trailing_edge_holds_its_thickness_and_height_is_met(winglet):
-    for s in winglet.stations(21, 11):
+    for s in winglet.stations(21):
         frame = winglet.frame(float(s))
         upper, lower = frame.section()[0], frame.section()[-2]
         assert np.linalg.norm(upper - lower) == pytest.approx(TE_MM, abs=1e-9)
     tip = winglet.frame(winglet.s_tip)
-    assert tip.le[1] - winglet.le0[1] == pytest.approx(65.0, abs=1e-9)
+    assert tip.le[1] - winglet.le0[1] == pytest.approx(65.0, abs=1e-6)
 
 
 def test_toe_out_points_the_nose_outboard(winglet):
@@ -103,12 +112,20 @@ def test_toe_out_points_the_nose_outboard(winglet):
     assert toe == pytest.approx(2.0, abs=1e-9)
 
 
-def test_span_lock_solves_the_bend_length():
-    parent = load_definition(WING_B).wing
-    solved = BlendedWinglet(parent, WingletDefinition(), _family(0.12, np.linspace(55, 205, 31)),
-                            _family(0.10, np.linspace(18, 100, 42)))
+def test_span_lock_solves_the_attachment_outboard_of_the_hinge():
+    solved = _winglet()
     assert solved.projected_span(True) == pytest.approx(600.0, abs=1e-5)
-    assert solved.projected_span(False) < 600.0
+    assert solved.f0 >= solved.min_attach_fraction()
+
+
+def test_a_bend_that_cannot_fit_names_the_way_out():
+    with pytest.raises(ValueError, match="toward the winglet root"):
+        _winglet(ramp_in=0.6, ramp_out=0.3)
+
+
+def test_ramps_must_fit_in_the_winglet():
+    with pytest.raises(ValueError, match="together at most 1"):
+        WingletDefinition(ramp_in=0.7, ramp_out=0.4)
 
 
 def test_out_of_family_chord_is_refused():

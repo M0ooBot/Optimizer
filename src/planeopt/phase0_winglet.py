@@ -29,6 +29,7 @@ adds back a ramp that holds the trailing edge at its specified thickness in mm.
 
 from __future__ import annotations
 
+import itertools
 import math
 from collections.abc import Callable, Sequence
 from dataclasses import asdict, dataclass, replace
@@ -184,26 +185,33 @@ def naca_symmetric(thickness_ratio: float, points_per_side: int = 401) -> np.nda
 
 @dataclass(frozen=True)
 class WingletDefinition:
-    attach_fraction: float = 0.9
-    cant_deg: float = 75.0  # front-view angle of the straight leg above horizontal
+    cant_deg: float = 75.0  # front-view angle of the leading edge at the winglet tip, above horizontal
     height_mm: float = 65.0  # LE rise from the attachment to the winglet tip station
-    sweep_deg: float = 35.0  # LE sweep of the leg, against its front-view direction
-    tip_chord_mm: float = 32.0  # the target chord tapers linearly from the join chord to this
+    sweep_deg: float = 35.0  # LE sweep at the winglet tip, against its front-view direction
+    tip_chord_mm: float = 32.0  # the trailing-edge law is solved to give this chord at the tip
     toe_out_deg: float = 2.0  # nose outboard is positive
     target_thickness_ratio: float = 0.10
     trailing_edge_mm: float = 0.4
     projected_span_mm: float = 600.0  # outboard skin extent, winglet and cap allowance included
-    cap_allowance_mm: float = 12.0  # leg extended this far when checking the span lock
-    bend_length_mm: float | None = None  # solved from the span lock when None
+    cap_allowance_mm: float = 12.0  # tip extended this far along its tangent for the span lock
+    # Bend distribution, as fractions of the winglet's leading-edge length: curvature ramps up
+    # from Wing B's over ramp_in, holds its peak, and ramps down to zero over the last ramp_out.
+    # 0.5 / 0.5 is a pure bell; short ramps spread the turn evenly; unequal ramps move the peak.
+    ramp_in: float = 0.35
+    ramp_out: float = 0.35
+    hinge_clearance_mm: float = 10.0  # the winglet starts at least this far outboard of the hinge end
+    attach_fraction: float | None = None  # solved from the span lock when None
 
     def __post_init__(self):
-        if not 0 < self.attach_fraction < 1:
-            raise ValueError("attach_fraction must lie inside the parent span")
         if not 0 < self.cant_deg < 90:
             raise ValueError("cant_deg must be between 0 and 90")
-        if min(self.height_mm, self.tip_chord_mm,
-               self.target_thickness_ratio, self.projected_span_mm) <= 0:
+        if min(self.height_mm, self.tip_chord_mm, self.target_thickness_ratio,
+               self.projected_span_mm) <= 0:
             raise ValueError("Lengths and thickness must be positive")
+        if not (0 < self.ramp_in and 0 < self.ramp_out and self.ramp_in + self.ramp_out <= 1):
+            raise ValueError("ramp_in and ramp_out must be positive and together at most 1")
+        if self.attach_fraction is not None and not 0 < self.attach_fraction < 1:
+            raise ValueError("attach_fraction must lie inside the parent span")
 
 
 @dataclass(frozen=True)
@@ -245,18 +253,25 @@ class _Taylor:
         return self.value + self.d1 * s + 0.5 * self.d2 * s * s
 
 
+def _quad(f, a, b):
+    nodes = a + 0.5 * (b - a) * (_GAUSS_X + 1)
+    return 0.5 * (b - a) * float(np.dot(_GAUSS_W, [f(t) for t in nodes]))
+
+
 class BlendedWinglet:
-    """The parent wing continued into a winglet. frame(s) gives the section frame at s;
-    negative s returns the parent itself."""
+    """The parent wing continued into a winglet. frame(s) gives the section frame at s, the
+    front-view leading-edge arc length from the attachment; negative s returns the parent.
+
+    The whole winglet is the transition: the bend, section-plane rotation, sweep, twist and
+    profile morph all run from the attachment to the tip. Solving order: the winglet length
+    meets the height; the attachment station meets the projected span; the trailing-edge sweep
+    meets the tip chord.
+    """
 
     def __init__(self, parent: SurfaceDefinition, definition: WingletDefinition,
                  parent_profiles: ProfileFamily, target_profiles: ProfileFamily):
         if parent.span_curve != "full_span" or parent.section_orientation != "parallel":
             raise ValueError("The winglet law continues a full_span wing with parallel sections")
-        self.parent = parent
-        self.d = definition
-        self.parent_profiles = parent_profiles
-        self.target_profiles = target_profiles
         for name, family in (("parent", parent_profiles), ("target", target_profiles)):
             for chord, profile in family.source.items():
                 expected = definition.trailing_edge_mm / 2 / chord
@@ -264,19 +279,23 @@ class BlendedWinglet:
                     raise ValueError(f"The {name} profile at {chord:g} mm ends "
                                      f"{2 * profile.half_thickness[-1] * chord:.9f} mm thick, not "
                                      f"the {definition.trailing_edge_mm:g} mm trailing edge")
-        self._join()
-        if definition.bend_length_mm is None:
-            self.d = replace(definition, bend_length_mm=self._solve_bend_length())
-        self._configure(self.d.bend_length_mm)
+        self.parent = parent
+        self.d = definition
+        self.parent_profiles = parent_profiles
+        self.target_profiles = target_profiles
+        self.guide_span = parent.projected_span_mm - parent.tip_span_trim_mm
+        if definition.attach_fraction is None:
+            self.d = replace(definition, attach_fraction=self._solve_attachment())
+        self._configure(self.d.attach_fraction)
 
     # -------------------------------------------------------------- parent side
 
     def _parent_q(self, f):
         frame = section_frame(self.parent, f)
-        return np.array([*frame.le, frame.chord_mm, _twist_deg(self.parent, f)])
+        return np.array([*frame.le, frame.chord_mm, _twist_deg(self.parent, f), frame.te[2]])
 
-    def _join(self):
-        f0, h = self.d.attach_fraction, 1e-3
+    def _join(self, f0):
+        h = 1e-3
         stencil = np.array([self._parent_q(f0 + k * h) for k in (-2, -1, 0, 1, 2)])
         q = stencil[2]
         q_f = (stencil[0] - 8 * stencil[1] + 8 * stencil[3] - stencil[4]) / (12 * h)
@@ -291,25 +310,22 @@ class BlendedWinglet:
         self.le0 = q[:3]
         self.gamma0 = math.atan2(y_f, -x_f)
         self.kappa0 = (-x_f * y_ff + y_f * x_ff) / g**3
-        self.aft = _Taylor(q_s[2], q_ss[2], 0.0)  # dZ/ds and its slope
+        self.le_aft = _Taylor(q_s[2], q_ss[2], 0.0)  # dZ/ds of the leading edge and its slope
+        self.te_aft = _Taylor(q_s[5], q_ss[5], 0.0)  # the same for the trailing edge
+        self.te_z0 = q[5]
         self.chord_p = _Taylor(q[3], q_s[3], q_ss[3])
         self.twist_p = _Taylor(q[4], q_s[4], q_ss[4])
 
     def _parent_speed(self, f):
         frame = section_frame(self.parent, f)
-        span = self.parent.projected_span_mm - self.parent.tip_span_trim_mm
         slope = frame.leading_edge_tangent[1] / -frame.leading_edge_tangent[0]
-        return span * math.hypot(1.0, slope)
-
-    def _parent_arc(self, f_from, f_to):
-        nodes = f_from + 0.5 * (f_to - f_from) * (_GAUSS_X + 1)
-        return 0.5 * (f_to - f_from) * sum(w * self._parent_speed(t) for w, t in zip(_GAUSS_W, nodes))
+        return self.guide_span * math.hypot(1.0, slope)
 
     def parent_fraction(self, s):
         """Parent span fraction at front-view arc length s <= 0 (Newton on the exact arc)."""
         f = self.f0 + s / self.ds_df
         for _ in range(30):
-            step = (self._parent_arc(self.f0, f) - s) / self._parent_speed(f)
+            step = (_quad(self._parent_speed, self.f0, f) - s) / self._parent_speed(f)
             f -= step
             if abs(step) < 1e-15:
                 break
@@ -317,77 +333,96 @@ class BlendedWinglet:
 
     # -------------------------------------------------------------- winglet side
 
-    def _configure(self, bend_length):
+    def _configure(self, f0):
+        self._join(f0)
+        self.gamma_c = math.radians(self.d.cant_deg)
+        lo, hi = 1.0, 600.0
+        for _ in range(100):  # the winglet length that meets the height
+            mid = 0.5 * (lo + hi)
+            self._set_length(mid)
+            lo, hi = (lo, mid) if self._front(mid)[1] - self.le0[1] > self.d.height_mm else (mid, hi)
+            if hi - lo < 1e-10:
+                break
+        self._set_length(0.5 * (lo + hi))
+        if self.kappa_peak <= 0:
+            raise ValueError("The winglet turns less than Wing B already bends; raise the cant")
+        # The trailing-edge sweep that gives the tip chord: Z_te(S) is linear in tan(sweep).
+        S = self.s_tip
+        base = self.te_z0 + _quad(lambda t: (1 - smoothstep(t / S)) * self.te_aft(t), 0, S)
+        weight = _quad(lambda t: float(smoothstep(t / S)), 0, S)
+        cos_toe = math.cos(math.radians(self.d.toe_out_deg))
+        self.te_tan = (base - self._z(S) + self.d.tip_chord_mm * cos_toe) / weight
+
+    def _set_length(self, S):
         d = self.d
-        self.L = float(bend_length)
-        self.gamma_c = math.radians(d.cant_deg)
-        self.K = (self.gamma_c - self.gamma0 - self.kappa0 * self.L / 2) / self.L
-        self.bend_end = self._front(self.L)
-        rise = self.bend_end[1] - self.le0[1]
-        leg_rise = d.height_mm - rise
-        if leg_rise <= 0:
-            raise ValueError(f"A {self.L:.1f} mm bend already rises {rise:.1f} mm, "
-                             f"more than the {d.height_mm:g} mm winglet height")
-        self.leg_length = leg_rise / math.sin(self.gamma_c)
-        self.s_tip = self.L + self.leg_length
+        self.s_tip = float(S)
+        turn = self.gamma_c - self.gamma0
+        self.kappa_peak = ((turn / S - self.kappa0 * d.ramp_in / 2)
+                           / (1 - (d.ramp_in + d.ramp_out) / 2))
 
     def kappa(self, s):
-        if s >= self.L:
-            return 0.0
-        x = s / self.L
-        return self.kappa0 * (1 - smoothstep(x)) + self.K * 30 * x * x * (1 - x) ** 2
+        d, x = self.d, s / self.s_tip
+        rise = float(smoothstep(x / d.ramp_in))
+        fall = float(smoothstep((1 - x) / d.ramp_out))
+        return self.kappa0 * (1 - rise) + self.kappa_peak * min(rise, fall)
 
     def gamma(self, s):
-        x = min(s / self.L, 1.0)
-        return float(self.gamma0 + self.kappa0 * self.L * (x - _smoothstep_integral(x))
-                     + self.K * self.L * smoothstep(x))
+        """Front-view LE angle: the closed-form integral of kappa."""
+        d, S = self.d, self.s_tip
+        x = min(max(s / S, 0.0), 1.0)
+        a, b = d.ramp_in, d.ramp_out
+        xa = min(x, a)
+        k0 = xa - a * _smoothstep_integral(xa / a)
+        peak = a * _smoothstep_integral(xa / a) + max(0.0, min(x, 1 - b) - a)
+        if x > 1 - b:
+            peak += b * (0.5 - _smoothstep_integral((1 - x) / b))
+        return float(self.gamma0 + S * (self.kappa0 * k0 + self.kappa_peak * peak))
 
     def _front(self, s):
-        """Front-view LE (X, Y) at s, by Gauss quadrature of the tangent."""
-        s_bend = min(s, self.L)
-        nodes = 0.5 * s_bend * (_GAUSS_X + 1)
-        angles = np.array([self.gamma(t) for t in nodes])
-        dx = -0.5 * s_bend * np.dot(_GAUSS_W, np.cos(angles))
-        dy = 0.5 * s_bend * np.dot(_GAUSS_W, np.sin(angles))
-        x, y = self.le0[0] + dx, self.le0[1] + dy
-        if s > self.L:
-            x -= math.cos(self.gamma_c) * (s - self.L)
-            y += math.sin(self.gamma_c) * (s - self.L)
+        """Front-view LE (X, Y) at s, by Gauss quadrature of the tangent on each piece of the
+        curvature law (its ramps join with a jump in the third derivative of the angle)."""
+        S, d = self.s_tip, self.d
+        cuts = [0.0] + [c for c in (d.ramp_in * S, (1 - d.ramp_out) * S) if 0 < c < s] + [s]
+        x, y = self.le0[0], self.le0[1]
+        for a, b in itertools.pairwise(cuts):
+            nodes = a + 0.5 * (b - a) * (_GAUSS_X + 1)
+            angles = np.array([self.gamma(t) for t in nodes])
+            x -= 0.5 * (b - a) * np.dot(_GAUSS_W, np.cos(angles))
+            y += 0.5 * (b - a) * np.dot(_GAUSS_W, np.sin(angles))
         return np.array([x, y])
 
-    def _blend(self, s, taylor, target):
-        w = float(smoothstep(s / self.L))
-        return (1 - w) * taylor(s) + w * target(s)
+    def _weight(self, s):
+        return float(smoothstep(s / self.s_tip))
 
-    def aft_rate(self, s):
-        return self._blend(s, self.aft, lambda _: -math.tan(math.radians(self.d.sweep_deg)))
+    def le_aft_rate(self, s):
+        w = self._weight(s)
+        return (1 - w) * self.le_aft(s) - w * math.tan(math.radians(self.d.sweep_deg))
+
+    def te_aft_rate(self, s):
+        w = self._weight(s)
+        return (1 - w) * self.te_aft(s) - w * self.te_tan
 
     def _z(self, s):
-        if s > self.L:
-            return self._z(self.L) - math.tan(math.radians(self.d.sweep_deg)) * (s - self.L)
-        nodes = 0.5 * s * (_GAUSS_X + 1)
-        return self.le0[2] + 0.5 * s * np.dot(_GAUSS_W, [self.aft_rate(t) for t in nodes])
+        return self.le0[2] + _quad(self.le_aft_rate, 0, s)
 
-    def chord(self, s):
-        """Blend of the parent's Taylor chord into a linear taper from the join chord to the
-        tip chord. Both decrease and the taper falls faster, so the blend only decreases."""
-        start, tip = self.chord_p.value, self.d.tip_chord_mm
-
-        def taper(t):
-            return start + (tip - start) * t / self.s_tip
-
-        return self._blend(s, self.chord_p, taper)
+    def _te_z(self, s):
+        return self.te_z0 + _quad(self.te_aft_rate, 0, s)
 
     def twist_deg(self, s):
-        return self._blend(s, self.twist_p, lambda _: -self.d.toe_out_deg)
+        w = self._weight(s)
+        return (1 - w) * self.twist_p(s) - w * self.d.toe_out_deg
+
+    def chord(self, s):
+        """From the two drawn edges: the chord spans their aft separation at the section's twist."""
+        return (self._z(s) - self._te_z(s)) / math.cos(math.radians(self.twist_deg(s)))
 
     def morph(self, s):
-        return float(smoothstep(s / self.L))
+        return self._weight(s)
 
-    def profile(self, s):
+    def profile(self, s, chord=None):
         """Camber fades and thickness blends; the TE ramp is re-added at the specified mm."""
         m = self.morph(s)
-        chord = self.chord(s)
+        chord = self.chord(s) if chord is None else chord
         par = self.parent_profiles.at(self.chord_p(s))
         tgt = self.target_profiles.at(chord)
         te_half = self.d.trailing_edge_mm / 2 / chord
@@ -403,14 +438,15 @@ class BlendedWinglet:
         front = self._front(s)
         le = np.array([front[0], front[1], self._z(s)])
         gamma = self.gamma(s)
-        phi = float(smoothstep(s / self.L)) * gamma
+        phi = self._weight(s) * gamma
         theta_deg = self.twist_deg(s)
         theta = math.radians(theta_deg)
         up = np.array([math.sin(phi), math.cos(phi), 0.0])
         chord_axis = np.array([-up[0] * math.sin(theta), -up[1] * math.sin(theta), -math.cos(theta)])
         up_axis = np.array([up[0] * math.cos(theta), up[1] * math.cos(theta), -math.sin(theta)])
         normal = np.array([-math.cos(phi), math.sin(phi), 0.0])
-        return Frame(float(s), le, chord_axis, up_axis, normal, self.chord(s), self.profile(s),
+        chord = (le[2] - self._te_z(s)) / math.cos(theta)
+        return Frame(float(s), le, chord_axis, up_axis, normal, chord, self.profile(s, chord),
                      gamma, phi, theta_deg)
 
     def parent_frame(self, f, s=float("nan")) -> Frame:
@@ -420,13 +456,14 @@ class BlendedWinglet:
                      math.atan2(pf.leading_edge_tangent[1], -pf.leading_edge_tangent[0]), 0.0,
                      _twist_deg(self.parent, f))
 
-    def stations(self, bend=81, leg=41, extend_mm=0.0):
-        s_bend = self.L * (1 - np.cos(np.linspace(0, math.pi, bend))) / 2
-        s_leg = np.linspace(self.L, self.s_tip + extend_mm, leg + 1)[1:]
-        return np.concatenate([s_bend, s_leg])
+    def stations(self, n=161, extend_mm=0.0):
+        s = self.s_tip * (1 - np.cos(np.linspace(0, math.pi, n))) / 2
+        if extend_mm:
+            s = np.concatenate([s, self.s_tip + np.linspace(0, extend_mm, 9)[1:]])
+        return s
 
     def extended_frame(self, s):
-        """Past the tip station the leg continues unchanged (used for the cap allowance)."""
+        """Past the tip station the winglet continues along its tip tangent (cap allowance)."""
         if s <= self.s_tip:
             return self.frame(s)
         tip = self.frame(self.s_tip)
@@ -437,41 +474,38 @@ class BlendedWinglet:
     def projected_span(self, include_allowance=True):
         extra = self.d.cap_allowance_mm if include_allowance else 0.0
         outboard = max(float(-self.extended_frame(float(s)).section()[:, 0].min())
-                       for s in self.stations(41, 21, extra))
+                       for s in self.stations(41, extra))
         return outboard + self.parent.root_le_mm[0]
 
-    def _solve_bend_length(self):
+    def min_attach_fraction(self):
+        hinge_end = self.parent.hinge.end * self.guide_span
+        return (hinge_end + self.d.hinge_clearance_mm) / self.guide_span
+
+    def _solve_attachment(self):
+        """Inboard starts leave more room, so the span falls as the attachment moves inboard."""
         target = self.d.projected_span_mm
-
-        def excess(L):
-            self._configure(L)
-            return self.projected_span() - target
-
-        # A longer, gentler bend reaches farther outboard before the leg turns up.
-        lo, hi = 5.0, 400.0
-        if excess(lo) > 0:
-            raise ValueError("Even the tightest bend reaches past the projected span")
-        reached = False
-        for _ in range(80):
+        lo, hi = self.min_attach_fraction(), 0.98
+        self._configure(lo)
+        if self.projected_span() > target:
+            raise ValueError(
+                f"Starting at the hinge clearance ({lo * self.guide_span:.1f} mm) the winglet still "
+                f"reaches {self.projected_span():.2f} mm; lower the height, steepen the cant or "
+                "move the peak of the bend toward the winglet root (shorter ramp_in)")
+        for _ in range(60):
             mid = 0.5 * (lo + hi)
-            try:
-                over = excess(mid) > 0
-            except ValueError:  # the bend alone rises past the winglet height
-                hi = mid
-                continue
-            reached |= over
-            lo, hi = (lo, mid) if over else (mid, hi)
-            if hi - lo < 1e-7:
+            self._configure(mid)
+            lo, hi = (lo, mid) if self.projected_span() > target else (mid, hi)
+            if hi - lo < 1e-11:
                 break
-        if not reached:
-            raise ValueError("No bend within the winglet height reaches the projected span")
         return 0.5 * (lo + hi)
 
     def to_dict(self):
         out = asdict(self.d)
-        out.update(bend_length_mm=self.L, leg_length_mm=self.leg_length, tip_s_mm=self.s_tip,
-                   chord_at_bend_end_mm=self.chord(self.L),
-                   parent_dihedral_deg=math.degrees(self.gamma0),
-                   parent_curvature_per_mm=self.kappa0,
-                   peak_curvature_per_mm=max(self.kappa(s) for s in np.linspace(0, self.L, 2001)))
+        s = np.linspace(0, self.s_tip, 2001)
+        kappa = np.array([self.kappa(float(t)) for t in s])
+        out.update(attach_mm=self.f0 * self.guide_span, length_mm=self.s_tip,
+                   peak_curvature_per_mm=float(kappa.max()), peak_at_fraction=float(s[kappa.argmax()] / self.s_tip),
+                   tightest_bend_radius_mm=float(1 / kappa.max()),
+                   trailing_edge_tip_sweep_deg=math.degrees(math.atan(self.te_tan)),
+                   parent_dihedral_deg=math.degrees(self.gamma0), parent_curvature_per_mm=self.kappa0)
         return out

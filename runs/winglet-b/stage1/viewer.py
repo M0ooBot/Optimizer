@@ -1,16 +1,17 @@
-"""Offline 3D review of the Stage 1 winglet: a skin mesh built from the law's sections.
+"""Offline 3D review of the Stage 1 winglet variants: a skin mesh built from each law's sections.
 
 Run from the repository root (same Converter argument as build.py):
 
     uv run --locked --extra phase0 --extra cad python runs/winglet-b/stage1/viewer.py \
         --converter-src <dir>/src
 
-Writes viewer.html next to this file: one self-contained page, no network needed.
-The skin is the law's own sections joined by straight facets. It is a review mesh,
-not the CAD surface (Stage 2 builds that).
+Writes viewer.html next to this file: one self-contained page, no network needed. Each skin
+is the law's own sections joined by flat facets. It is a review mesh, not the CAD surface
+(Stage 2 builds that).
 """
 
 import argparse
+import json
 import math
 import sys
 from pathlib import Path
@@ -22,13 +23,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import build
 
-from planeopt.phase0_geometry import load_definition
-from planeopt.phase0_winglet import BlendedWinglet, WingletDefinition
-
 STRIPE_PERIOD_DEG = 7.0
 LIGHT = np.array([0.35, -0.55, 0.76])  # display axes: outboard, aft, up
 WING = "#7fa7c9"
 WINGLET = "#e8a868"
+PROFILE_STEP = 3  # every third profile point; TE corners kept
 
 
 def display(points):
@@ -37,14 +36,12 @@ def display(points):
     return np.stack([-p[..., 0], -p[..., 2], p[..., 1]], axis=-1)
 
 
-def grid(w):
-    parent = [w.parent_frame(float(f)) for f in np.linspace(0.0, w.f0, 46)]
-    bend = w.L * (1 - np.cos(np.linspace(0, math.pi, 121))) / 2
-    leg = np.linspace(w.L, w.s_tip, 41)[1:]
-    winglet = [w.frame(float(s)) for s in np.concatenate([bend, leg])]
-    keep = np.r_[np.arange(0, 481, 2), 481]  # every other profile point, TE corners kept
-    rings = [display(f.section()[keep]) for f in parent + winglet]
-    return np.array(rings), len(parent)
+def rings(w):
+    parent = [w.parent_frame(float(f)) for f in np.linspace(0.0, w.f0, 31)]
+    winglet = [w.frame(float(s)) for s in w.stations(101)]
+    n = len(parent[0].section())  # closed loop: upper TE ... lower TE, back to upper TE
+    keep = np.unique(np.r_[np.arange(0, n - 1, PROFILE_STEP), n - 2, n - 1])
+    return np.array([display(f.section()[keep]) for f in parent + winglet]), len(parent)
 
 
 def triangles(n_rings, n_ring, skip=()):
@@ -58,7 +55,7 @@ def triangles(n_rings, n_ring, skip=()):
             i += [a + p, a + p + 1]
             j += [b + p, b + p]
             k += [a + p + 1, b + p + 1]
-    return np.array(i), np.array(j), np.array(k)
+    return np.array(i, np.int32), np.array(j, np.int32), np.array(k, np.int32)
 
 
 def vertex_normals(verts, i, j, k):
@@ -69,172 +66,232 @@ def vertex_normals(verts, i, j, k):
     return normals / np.linalg.norm(normals, axis=1, keepdims=True)
 
 
-def stripes(normals, light):
-    light = light / np.linalg.norm(light)
-    angle = np.degrees(np.arccos(np.clip(normals @ light, -1, 1)))
-    return np.sin(2 * math.pi * angle / STRIPE_PERIOD_DEG)
+def variant_traces(name, w):
+    ring_pts, n_parent = rings(w)
+    n_rings, n_ring = ring_pts.shape[:2]
+    verts = ring_pts.reshape(-1, 3)
+    # The parent's last ring and the winglet's first are the same section, kept twice so each
+    # body has its own colour; normals average both sides there, so shading stays seamless.
+    i, j, k = triangles(n_rings, n_ring, skip={n_parent - 1})
+    normals = vertex_normals(verts, *triangles(n_rings, n_ring))
+    angle = np.degrees(np.arccos(np.clip(normals @ (LIGHT / np.linalg.norm(LIGHT)), -1, 1)))
+    xyz = {"x": verts[:, 0].astype(np.float32), "y": verts[:, 1].astype(np.float32),
+           "z": verts[:, 2].astype(np.float32), "i": i, "j": j, "k": k}
+    colours = np.where(np.arange(n_rings).repeat(n_ring) < n_parent, WING, WINGLET)
+    shaded = go.Mesh3d(**xyz, vertexcolor=colours, hoverinfo="skip", showlegend=False, visible=False,
+                       lighting={"ambient": 0.62, "diffuse": 0.6, "specular": 0.25, "roughness": 0.5,
+                                 "fresnel": 0.05},
+                       lightposition={"x": 1500, "y": -2500, "z": 4000},
+                       meta={"variant": name, "kind": "shaded"})
+    stripes = go.Mesh3d(**xyz, intensity=np.sin(2 * math.pi * angle / STRIPE_PERIOD_DEG).astype(np.float32),
+                        intensitymode="vertex", cmin=-1, cmax=1, showscale=False,
+                        colorscale=[[0, "#111"], [0.5, "#111"], [0.5, "#f4f4f4"], [1, "#f4f4f4"]],
+                        lighting={"ambient": 1.0, "diffuse": 0.0, "specular": 0.0},
+                        hoverinfo="skip", showlegend=False, visible=False,
+                        meta={"variant": name, "kind": "stripes"})
+
+    s = np.linspace(0, w.s_tip, 160)
+    fr = np.linspace(0, w.f0, 60)
+    le = np.array([w.parent_frame(float(f)).le for f in fr] + [w.frame(float(t)).le for t in s])
+    te = np.array([w.parent_frame(float(f)).te for f in fr] + [w.frame(float(t)).te for t in s])
+    edges = np.vstack([display(le), [[np.nan] * 3], display(te)]).astype(np.float32)
+    edge_trace = go.Scatter3d(x=edges[:, 0], y=edges[:, 1], z=edges[:, 2], mode="lines",
+                              line={"color": "#b03a2e", "width": 5}, hoverinfo="skip", showlegend=False,
+                              visible=False, meta={"variant": name, "kind": "edges"})
+    outlines = []
+    for t in np.linspace(0, w.s_tip, 12):
+        outlines += [display(w.frame(float(t)).section()), [[np.nan] * 3]]
+    outlines = np.vstack(outlines).astype(np.float32)
+    section_trace = go.Scatter3d(x=outlines[:, 0], y=outlines[:, 1], z=outlines[:, 2], mode="lines",
+                                 line={"color": "#1f4e79", "width": 3}, hoverinfo="skip", showlegend=False,
+                                 visible=False, meta={"variant": name, "kind": "sections"})
+    return [shaded, stripes, edge_trace, section_trace], ring_pts
 
 
-def mesh(verts, i, j, k, name, color=None, intensity=None, visible=True, mirror=False):
-    v = verts * (-1, 1, 1) if mirror else verts
-    common = {"x": v[:, 0], "y": v[:, 1], "z": v[:, 2], "i": i, "j": k if mirror else j, "k": j if mirror else k,
-                  "name": name, "hoverinfo": "skip", "showlegend": False, "visible": visible, "flatshading": False}
-    if intensity is None:
-        return go.Mesh3d(color=color, opacity=1.0,
-                         lighting={"ambient": 0.62, "diffuse": 0.6, "specular": 0.25, "roughness": 0.5,
-                                   "fresnel": 0.05},
-                         lightposition={"x": 1500, "y": -2500, "z": 4000}, **common)
-    return go.Mesh3d(intensity=intensity, intensitymode="vertex", showscale=False, cmin=-1, cmax=1,
-                     colorscale=[[0, "#111"], [0.5, "#111"], [0.5, "#f4f4f4"], [1, "#f4f4f4"]],
-                     lighting={"ambient": 1.0, "diffuse": 0.0, "specular": 0.0}, **common)
+PAGE = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wing B winglet · Stage 1 bend variants</title>
+<style>
+:root { font-family: system-ui, sans-serif; color: #223646; background: #eef2f5; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { display: grid; grid-template-columns: 300px 1fr; height: 100vh; }
+aside { padding: 16px 16px 12px; overflow-y: auto; border-right: 1px solid #d3dde5; background: #f7f9fb; }
+h1 { font-size: 17px; margin: 0 0 4px; letter-spacing: -.01em; }
+.note { font-size: 12px; color: #52687a; line-height: 1.45; margin: 0 0 12px; }
+h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #5d7385; margin: 14px 0 6px; }
+.group { display: flex; flex-wrap: wrap; gap: 5px; }
+.group.column { flex-direction: column; }
+button { font: inherit; font-size: 12.5px; color: #233749; background: #fff; border: 1px solid #c3d1dc;
+         border-radius: 6px; padding: 6px 9px; cursor: pointer; text-align: left; }
+button:hover { border-color: #5a7489; }
+button[aria-pressed="true"] { background: #dfeaf3; border-color: #4f6f88; color: #10314a; }
+button small { display: block; color: #5c7183; font-size: 11px; margin-top: 2px; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 12px; margin: 0;
+     font-variant-numeric: tabular-nums; }
+dt { color: #5d7385; } dd { margin: 0; text-align: right; }
+#plot { width: 100%; height: 100vh; }
+.legend { font-size: 12px; line-height: 1.6; }
+.swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+</style></head>
+<body>
+<aside>
+  <h1>Wing B blended winglet</h1>
+  <p class="note">Stage 1 law: review mesh from the generated sections. The winglet tip is still open (Stage 3 caps it).</p>
+  <h2>Bend distribution</h2>
+  <div class="group column" id="variants"></div>
+  <h2>Selected variant</h2>
+  <dl id="facts"></dl>
+  <h2>Surface</h2>
+  <div class="group" id="modes">
+    <button data-mode="shaded" aria-pressed="true">Shaded</button>
+    <button data-mode="stripes" aria-pressed="false">Stripes</button>
+  </div>
+  <p class="note" style="margin-top:6px">Stripes are isophotes, fixed to the surface. A kink or a jump in a stripe marks a break in the skin.</p>
+  <h2>Show</h2>
+  <div class="group" id="layers">
+    <button data-layer="edges" aria-pressed="true">LE and TE</button>
+    <button data-layer="sections" aria-pressed="true">Sections</button>
+    <button data-layer="span" aria-pressed="true">600 mm span</button>
+  </div>
+  <h2>Camera</h2>
+  <div class="group" id="cameras"></div>
+  <h2>Frame</h2>
+  <div class="group" id="frames">
+    <button data-frame="tip" aria-pressed="true">Tip</button>
+    <button data-frame="whole" aria-pressed="false">Whole half-wing</button>
+  </div>
+  <h2>Colours</h2>
+  <div class="legend"><span class="swatch" style="background:WING_COLOUR"></span>Wing B<br>
+  <span class="swatch" style="background:WINGLET_COLOUR"></span>Winglet<br>
+  <span class="swatch" style="background:#b03a2e"></span>Leading and trailing edges<br>
+  <span class="swatch" style="background:#7d3c98"></span>600 mm projected half-span</div>
+</aside>
+PLOT
+<script>
+const VARIANTS = VARIANTS_JSON;
+const FRAMES = FRAMES_JSON;
+const CAMERAS = {
+  "Oblique": {eye: {x: 1.4, y: -1.6, z: 0.9}, up: {x: 0, y: 0, z: 1}},
+  "Front": {eye: {x: 0, y: -2.5, z: 0}, up: {x: 0, y: 0, z: 1}},
+  "Plan": {eye: {x: 0, y: 0, z: 2.5}, up: {x: 0, y: -1, z: 0}},
+  "From behind": {eye: {x: 0, y: 2.5, z: 0.25}, up: {x: 0, y: 0, z: 1}},
+  "From outboard": {eye: {x: 2.5, y: 0, z: 0.2}, up: {x: 0, y: 0, z: 1}},
+  "Below": {eye: {x: 0.3, y: -0.6, z: -2.4}, up: {x: 0, y: -1, z: 0}},
+};
+const gd = document.getElementById("plot");
+const state = {variant: "DEFAULT_VARIANT", mode: "shaded", edges: true, sections: true, span: true};
+
+function apply() {
+  const visible = gd.data.map(t => {
+    const m = t.meta || {};
+    if (m.kind === "span") return state.span;
+    if (m.variant !== state.variant) return false;
+    if (m.kind === "shaded" || m.kind === "stripes") return m.kind === state.mode;
+    return state[m.kind];
+  });
+  Plotly.restyle(gd, {visible});
+  const v = VARIANTS[state.variant];
+  document.getElementById("facts").innerHTML = v.facts.map(([k, val]) => "<dt>" + k + "</dt><dd>" + val + "</dd>").join("");
+  document.querySelectorAll("#variants button").forEach(b => b.setAttribute("aria-pressed", b.dataset.variant === state.variant));
+  document.querySelectorAll("#modes button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === state.mode));
+}
+for (const [name, v] of Object.entries(VARIANTS)) {
+  const b = document.createElement("button");
+  b.dataset.variant = name;
+  b.innerHTML = v.label + "<small>" + v.detail + "</small>";
+  b.onclick = () => { state.variant = name; apply(); };
+  document.getElementById("variants").append(b);
+}
+document.querySelectorAll("#modes button").forEach(b => b.onclick = () => { state.mode = b.dataset.mode; apply(); });
+document.querySelectorAll("#layers button").forEach(b => b.onclick = () => {
+  state[b.dataset.layer] = !state[b.dataset.layer];
+  b.setAttribute("aria-pressed", state[b.dataset.layer]);
+  apply();
+});
+for (const [name, cam] of Object.entries(CAMERAS)) {
+  const b = document.createElement("button");
+  b.textContent = name;
+  b.onclick = () => Plotly.relayout(gd, {"scene.camera": {...cam, center: {x: 0, y: 0, z: 0}, projection: {type: "orthographic"}}});
+  document.getElementById("cameras").append(b);
+}
+document.querySelectorAll("#frames button").forEach(b => b.onclick = () => {
+  const r = FRAMES[b.dataset.frame];
+  Plotly.relayout(gd, {"scene.xaxis.range": r.x, "scene.yaxis.range": r.y, "scene.zaxis.range": r.z,
+                       "scene.aspectratio": r.aspect});
+  document.querySelectorAll("#frames button").forEach(x => x.setAttribute("aria-pressed", x === b));
+});
+apply();
+</script>
+</body></html>
+"""
 
 
-def line(points, name, color, width=5, visible=True, dash=None):
-    p = np.asarray(points)
-    return go.Scatter3d(x=p[:, 0], y=p[:, 1], z=p[:, 2], mode="lines", name=name, visible=visible,
-                        line={"color": color, "width": width, "dash": dash}, hoverinfo="name",
-                        showlegend=False)
+def frame_ranges(x, y, z):
+    span = [x[1] - x[0], y[1] - y[0], z[1] - z[0]]
+    largest = max(span)
+    return {"x": x, "y": y, "z": z, "aspect": {a: s / largest * 1.55 for a, s in zip("xyz", span, strict=True)}}
 
 
 def main():
     args = argparse.ArgumentParser()
     args.add_argument("--converter-src", required=True, type=Path)
-    args.add_argument("--open-with", choices=("shaded", "stripes_a", "stripes_b"), default="shaded",
-                      help="surface shown when the page opens (for screenshots)")
+    args.add_argument("--variant", default=build.DEFAULT_VARIANT, choices=list(build.VARIANTS))
+    args.add_argument("--mode", default="shaded", choices=("shaded", "stripes"))
     args.add_argument("--output", type=Path, default=HERE / "viewer.html")
     opts = args.parse_args()
     sys.path.insert(0, str(opts.converter_src))
     from airfoil_converter import geometry as converter
 
-    definition = WingletDefinition()
-    parent_family, target_family = build.families(converter, definition)
-    w = BlendedWinglet(load_definition(build.PARENT).wing, definition, parent_family, target_family)
-    rings, n_parent = grid(w)
-    n_rings, n_ring = rings.shape[:2]
-    verts = rings.reshape(-1, 3)
-    # The parent's last ring and the winglet's first are the same 540 mm section, kept twice so
-    # each body has its own colour. Normals average both sides there, so shading stays seamless.
-    i, j, k = triangles(n_rings, n_ring, skip={n_parent - 1})
-    bridge = triangles(n_rings, n_ring)
-    normals = vertex_normals(verts, *bridge)
-    color = np.where(np.arange(n_rings) < n_parent, 0, 1).repeat(n_ring)
-    zebra_a = stripes(normals, LIGHT)
-    zebra_b = stripes(normals, np.array([-0.8, -0.2, 0.55]))
-
-    traces, groups = [], {}
-
-    def add(group, *items):
-        groups.setdefault(group, [])
-        for item in items:
-            groups[group].append(len(traces))
-            traces.append(item)
-
-    shade = {"vertexcolor": np.where(color[:, None] == 0, [WING], [WINGLET]).ravel()}
-    shaded = mesh(verts, i, j, k, "skin", color=WING)
-    shaded.update(vertexcolor=shade["vertexcolor"], color=None)
-    add("shaded", shaded)
-    mirrored = mesh(verts, i, j, k, "mirrored skin", color=WING, mirror=True, visible=False)
-    mirrored.update(vertexcolor=shade["vertexcolor"], color=None)
-    add("mirror", mirrored)
-    add("stripes_a", mesh(verts, i, j, k, "stripes A", intensity=zebra_a, visible=False))
-    add("stripes_b", mesh(verts, i, j, k, "stripes B", intensity=zebra_b, visible=False))
-
-    le = np.array([w.parent_frame(float(f)).le for f in np.linspace(0, w.f0, 60)]
-                  + [w.frame(float(s)).le for s in np.linspace(0, w.s_tip, 160)])
-    te = np.array([w.parent_frame(float(f)).te for f in np.linspace(0, w.f0, 60)]
-                  + [w.frame(float(s)).te for s in np.linspace(0, w.s_tip, 160)])
-    add("edges", line(display(le), "leading edge", "#c0392b"), line(display(te), "trailing edge", "#1e8449"))
-    outlines = []
-    for s in np.concatenate([np.linspace(0, w.L, 9), np.linspace(w.L, w.s_tip, 4)[1:]]):
-        outlines.append(display(w.frame(float(s)).section()))
-        outlines.append(np.full((1, 3), np.nan))
-    add("sections", line(np.vstack(outlines), "winglet sections", "#1f4e79", width=3))
-    attach = display(w.frame(0.0).section())
-    add("sections", line(attach, "attachment, 540 mm", "#000", width=6))
-    top = float(rings[..., 2].max()) + 15
-    aft = rings[n_parent:, :, 1]
-    plane = np.array([[600, aft.min() - 5, 30], [600, aft.max() + 5, 30], [600, aft.max() + 5, top],
-                      [600, aft.min() - 5, top], [600, aft.min() - 5, 30]])
-    add("span", line(plane, "600 mm projected half-span", "#7d3c98", width=4, dash="dash"))
-
-    n = len(traces)
-
-    def toggle(label, group):
-        return {"label": label, "method": "restyle",
-                    "args": [{"visible": True}, groups[group]], "args2": [{"visible": False}, groups[group]]}
-
-    def surface(label, group):
-        vis = [traces[t].visible for t in range(n)]
-        for g in ("shaded", "stripes_a", "stripes_b"):
-            for t in groups[g]:
-                vis[t] = g == group
-        return {"label": label, "method": "restyle", "args": [{"visible": [vis[t] for t in groups["shaded"] + groups["stripes_a"] + groups["stripes_b"]]},
-                                                         groups["shaded"] + groups["stripes_a"] + groups["stripes_b"]]}
-
-    ortho = {"type": "orthographic"}
-
-    def camera(label, eye, up, center=(0, 0, 0)):
-        return {"label": label, "method": "relayout", "args": [{
-            "scene.camera": {"eye": dict(zip("xyz", eye)), "up": dict(zip("xyz", up)),
-                             "center": dict(zip("xyz", center)), "projection": ortho}}]}
-
-    extent = {
-        "whole": {"x": [-10, 620], "y": [-10, 260], "z": [-40, top]},
-        "tip": {"x": [500, 620], "y": [50, 190], "z": [30, 135]},
-    }
-
-    def zoom(label, key):
-        r = extent[key]
-        span = [r[a][1] - r[a][0] for a in "xyz"]
-        largest = max(span)
-        return {"label": label, "method": "relayout", "args": [{
-            "scene.xaxis.range": r["x"], "scene.yaxis.range": r["y"], "scene.zaxis.range": r["z"],
-            "scene.aspectmode": "manual",
-            "scene.aspectratio": {a: s / largest * 2.2 for a, s in zip("xyz", span)}}]}
-
-    menus = [
-        {"type": "buttons", "direction": "right", "x": 0.0, "y": 1.11, "xanchor": "left", "buttons": [
-            surface("Shaded", "shaded"), surface("Stripes A", "stripes_a"), surface("Stripes B", "stripes_b")]},
-        {"type": "buttons", "direction": "right", "x": 0.0, "y": 1.05, "xanchor": "left", "buttons": [
-            camera("Oblique", (1.4, -1.6, 0.9), (0, 0, 1)), camera("Front", (0, -2.5, 0), (0, 0, 1)),
-            camera("Plan", (0, 0, 2.5), (0, -1, 0)), camera("From behind", (0, 2.5, 0.3), (0, 0, 1)),
-            camera("Outboard", (2.5, 0, 0.2), (0, 0, 1)), camera("Below", (0.3, -0.6, -2.4), (0, -1, 0))]},
-        {"type": "buttons", "direction": "right", "x": 0.62, "y": 1.05, "xanchor": "left", "buttons": [
-            zoom("Whole half-wing", "whole"), zoom("Tip", "tip")]},
-        {"type": "buttons", "direction": "right", "x": 0.62, "y": 1.11, "xanchor": "left", "buttons": [
-            toggle("Edges", "edges"), toggle("Sections", "sections"), toggle("Span line", "span"),
-            toggle("Mirror", "mirror")]},
-    ]
-    tip = extent["tip"]
-    span = [tip[a][1] - tip[a][0] for a in "xyz"]
-    largest = max(span)
+    summary = json.loads((HERE / "variants" / "summary.json").read_text())
+    traces, variants, tops = [], {}, []
+    for name, (title, overrides) in build.VARIANTS.items():
+        w = build.make(converter, **overrides)
+        items, ring_pts = variant_traces(name, w)
+        traces += items
+        tops.append(float(ring_pts[..., 2].max()))
+        m = summary[name]
+        label, _, detail = title.partition(": ")
+        variants[name] = {"label": label, "detail": detail, "facts": [
+            ["Starts at", f"{m['attach_mm']:.1f} mm"],
+            ["Height", f"{m['height_mm']:.1f} mm"],
+            ["Tightest bend radius", f"{m['tightest_bend_radius_mm']:.1f} mm"],
+            ["Bend ramps in / out", f"{overrides['ramp_in']:.0%} / {overrides['ramp_out']:.0%}"],
+            ["Tip cant", f"{m['tip_cant_deg']:.1f}°"],
+            ["Tip LE sweep", f"{m['tip_le_sweep_deg']:.1f}°"],
+            ["Tip TE sweep", (f"{-m['trailing_edge_tip_sweep_deg']:.1f}° forward"
+                              if m["trailing_edge_tip_sweep_deg"] < 0
+                              else f"{m['trailing_edge_tip_sweep_deg']:.1f}° aft")],
+            ["Toe-out", f"{m['toe_out_deg']:.1f}°"],
+            ["Tip chord", f"{m['tip_chord_mm']:.1f} mm"],
+            ["Smallest LE radius", f"{m['le_radius_min_mm']:.2f} mm"],
+            ["Trailing edge", "0.4 mm"],
+        ]}
+    top = max(tops) + 12
+    plane = np.array([[600, 55, 35], [600, 165, 35], [600, 165, top], [600, 55, top], [600, 55, 35]])
+    traces.append(go.Scatter3d(x=plane[:, 0], y=plane[:, 1], z=plane[:, 2], mode="lines",
+                               line={"color": "#7d3c98", "width": 4, "dash": "dash"}, hoverinfo="skip",
+                               showlegend=False, meta={"kind": "span"}))
+    frames = {"tip": frame_ranges([495, 620], [50, 190], [30, 135]),
+              "whole": frame_ranges([-10, 620], [-10, 260], [-40, top])}
+    tip = frames["tip"]
     fig = go.Figure(traces)
     fig.update_layout(
-        title={"text": "Wing B blended winglet · Stage 1 law (review mesh; winglet tip still open)<br>"
-                       "<sup>Blue: Wing B · Amber: winglet from 540 mm · Stripes: isophotes, view-independent; "
-                       "a kink or step in a stripe marks a break in the surface</sup>",
-               "x": 0.01, "y": 0.975, "font": {"size": 16}},
-        updatemenus=menus, margin={"l": 0, "r": 0, "t": 120, "b": 0}, paper_bgcolor="#eef2f5",
+        margin={"l": 0, "r": 0, "t": 0, "b": 0}, paper_bgcolor="#eef2f5",
         scene={"xaxis": {"title": "outboard (mm)", "range": tip["x"]},
                "yaxis": {"title": "aft (mm)", "range": tip["y"]},
                "zaxis": {"title": "up (mm)", "range": tip["z"]},
-               "aspectmode": "manual",
-               "aspectratio": {a: s / largest * 2.2 for a, s in zip("xyz", span)},
-               "camera": {"eye": {"x": 1.4, "y": -1.6, "z": 0.9}, "projection": ortho},
-               "bgcolor": "#eef2f5"},
+               "aspectmode": "manual", "aspectratio": tip["aspect"], "bgcolor": "#eef2f5",
+               "camera": {"eye": {"x": 1.4, "y": -1.6, "z": 0.9}, "projection": {"type": "orthographic"}}},
     )
-    for group in ("shaded", "stripes_a", "stripes_b"):
-        for t in groups[group]:
-            traces[t].visible = group == opts.open_with
-    fig.data = []
-    fig.add_traces(traces)
-    out = opts.output
-    page = fig.to_html(include_plotlyjs=True, full_html=True, default_height="100vh", default_width="100%",
+    plot = fig.to_html(include_plotlyjs=True, full_html=False, div_id="plot", default_height="100vh",
                        config={"displaylogo": False, "responsive": True})
-    style = "<style>html, body { margin: 0; height: 100%; overflow: hidden; background: #eef2f5; }</style>"
-    out.write_text(page.replace("<head>", "<head><meta charset=\"utf-8\"><title>Wing B winglet · Stage 1</title>"
-                                + style, 1), encoding="utf-8")
-    print(out, f"{out.stat().st_size / 1e6:.1f} MB", f"{len(verts)} vertices")
+    page = (PAGE.replace("PLOT", plot).replace("VARIANTS_JSON", json.dumps(variants))
+            .replace("FRAMES_JSON", json.dumps(frames)).replace("DEFAULT_VARIANT", opts.variant)
+            .replace("WING_COLOUR", WING).replace("WINGLET_COLOUR", WINGLET)
+            .replace('mode: "shaded"', f'mode: "{opts.mode}"'))
+    opts.output.write_text(page, encoding="utf-8")
+    print(opts.output, f"{opts.output.stat().st_size / 1e6:.1f} MB")
 
 
 if __name__ == "__main__":

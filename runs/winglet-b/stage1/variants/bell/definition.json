@@ -1,0 +1,23 @@
+{
+  "cant_deg": 75.0,
+  "height_mm": 65.0,
+  "sweep_deg": 35.0,
+  "tip_chord_mm": 32.0,
+  "toe_out_deg": 2.0,
+  "target_thickness_ratio": 0.1,
+  "trailing_edge_mm": 0.4,
+  "projected_span_mm": 600.0,
+  "cap_allowance_mm": 12.0,
+  "ramp_in": 0.5,
+  "ramp_out": 0.5,
+  "hinge_clearance_mm": 10.0,
+  "attach_fraction": 0.8686399961711142,
+  "attach_mm": 521.1839977026685,
+  "length_mm": 110.1376807347637,
+  "peak_curvature_per_mm": 0.021440655526361947,
+  "peak_at_fraction": 0.5,
+  "tightest_bend_radius_mm": 46.640365019179065,
+  "trailing_edge_tip_sweep_deg": -9.582201571976787,
+  "parent_dihedral_deg": 7.170414060988079,
+  "parent_curvature_per_mm": 0.00011395076874786024
+}

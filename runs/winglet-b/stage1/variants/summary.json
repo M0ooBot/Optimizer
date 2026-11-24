@@ -1,0 +1,147 @@
+{
+  "even": {
+    "title": "Even: short ramps, turn spread almost evenly",
+    "attach_mm": 521.0929876224836,
+    "length_mm": 107.28584532073995,
+    "tightest_bend_radius_mm": 72.57394988435907,
+    "height_mm": 64.99999999999244,
+    "tip_cant_deg": 75.00000000007114,
+    "tip_le_sweep_deg": 34.999999999967926,
+    "trailing_edge_tip_sweep_deg": -11.187121450447414,
+    "toe_out_deg": 1.9999999999999802,
+    "tip_chord_mm": 32.00000000000002,
+    "span_mm": 600.0000000002755,
+    "le_radius_min_mm": 0.45224058773830195,
+    "le_radius_passes": true,
+    "trailing_edge_mm": {
+      "min": 0.39999999999990365,
+      "max": 0.4000000000000769
+    },
+    "checks": {
+      "chord_decreases_throughout": true,
+      "bend_curvature_never_negative": true,
+      "dihedral_rises_throughout": true,
+      "trailing_edge_moves_one_way": true,
+      "trailing_edge_counter_bend_ratio": 0.08121456652756573,
+      "every_section_has_positive_thickness": true
+    },
+    "join_max_second_derivative_jump": 2.7809383915792697e-08,
+    "join_max_position_gap_mm": 2.9790647863443947e-09
+  },
+  "centred": {
+    "title": "Centred: 35% ramps, broad middle",
+    "attach_mm": 521.1441377029988,
+    "length_mm": 108.87619916032548,
+    "tightest_bend_radius_mm": 59.88875802194294,
+    "height_mm": 64.99999999999596,
+    "tip_cant_deg": 74.9999999999302,
+    "tip_le_sweep_deg": 34.999999999976026,
+    "trailing_edge_tip_sweep_deg": -10.28367600477824,
+    "toe_out_deg": 1.9999999999999802,
+    "tip_chord_mm": 32.00000000000002,
+    "span_mm": 599.9999999982214,
+    "le_radius_min_mm": 0.4522405877382277,
+    "le_radius_passes": true,
+    "trailing_edge_mm": {
+      "min": 0.39999999999991576,
+      "max": 0.4000000000000906
+    },
+    "checks": {
+      "chord_decreases_throughout": true,
+      "bend_curvature_never_negative": true,
+      "dihedral_rises_throughout": true,
+      "trailing_edge_moves_one_way": true,
+      "trailing_edge_counter_bend_ratio": 0.09052573041293632,
+      "every_section_has_positive_thickness": true
+    },
+    "join_max_second_derivative_jump": 4.077080107939461e-09,
+    "join_max_position_gap_mm": 2.846348570220233e-09
+  },
+  "bell": {
+    "title": "Bell: 50% ramps, single peak in the middle",
+    "attach_mm": 521.1839977026685,
+    "length_mm": 110.1376807347637,
+    "tightest_bend_radius_mm": 46.640365019179065,
+    "height_mm": 65.00000000000395,
+    "tip_cant_deg": 74.9999999998526,
+    "tip_le_sweep_deg": 35.000000000008974,
+    "trailing_edge_tip_sweep_deg": -9.582201571976787,
+    "toe_out_deg": 1.999999999999981,
+    "tip_chord_mm": 32.00000000000001,
+    "span_mm": 599.9999999998557,
+    "le_radius_min_mm": 0.45224058773825165,
+    "le_radius_passes": true,
+    "trailing_edge_mm": {
+      "min": 0.3999999999999174,
+      "max": 0.4000000000000884
+    },
+    "checks": {
+      "chord_decreases_throughout": true,
+      "bend_curvature_never_negative": true,
+      "dihedral_rises_throughout": true,
+      "trailing_edge_moves_one_way": true,
+      "trailing_edge_counter_bend_ratio": 0.09905394191107346,
+      "every_section_has_positive_thickness": true
+    },
+    "join_max_second_derivative_jump": 1.7426958347210912e-09,
+    "join_max_position_gap_mm": 2.7441449839168767e-09
+  },
+  "early": {
+    "title": "Early peak: turns soon after the wing, long straighter top",
+    "attach_mm": 532.5403745445656,
+    "length_mm": 100.16997709718765,
+    "tightest_bend_radius_mm": 46.65641115073453,
+    "height_mm": 65.00000000001272,
+    "tip_cant_deg": 75.0000000001085,
+    "tip_le_sweep_deg": 35.000000000020854,
+    "trailing_edge_tip_sweep_deg": -12.897384436786728,
+    "toe_out_deg": 1.9999999999999825,
+    "tip_chord_mm": 31.999999999999975,
+    "span_mm": 599.9999999987202,
+    "le_radius_min_mm": 0.4522405877382938,
+    "le_radius_passes": true,
+    "trailing_edge_mm": {
+      "min": 0.39999999999992214,
+      "max": 0.40000000000009206
+    },
+    "checks": {
+      "chord_decreases_throughout": true,
+      "bend_curvature_never_negative": true,
+      "dihedral_rises_throughout": true,
+      "trailing_edge_moves_one_way": true,
+      "trailing_edge_counter_bend_ratio": 0.06668858353987683,
+      "every_section_has_positive_thickness": true
+    },
+    "join_max_second_derivative_jump": 1.1796254616837594e-08,
+    "join_max_position_gap_mm": 1.2613811822528061e-08
+  },
+  "late": {
+    "title": "Late peak, 56 mm tall: flat longer, flares near the tip (65 mm does not fit)",
+    "attach_mm": 521.5172203074908,
+    "length_mm": 102.2162493135192,
+    "tightest_bend_radius_mm": 54.098725035456134,
+    "height_mm": 56.00000000001623,
+    "tip_cant_deg": 74.99999999979336,
+    "tip_le_sweep_deg": 34.99999999989915,
+    "trailing_edge_tip_sweep_deg": -14.082727825581195,
+    "toe_out_deg": 1.9999999999999818,
+    "tip_chord_mm": 31.99999999999999,
+    "span_mm": 600.0000000003754,
+    "le_radius_min_mm": 0.4522405877381159,
+    "le_radius_passes": true,
+    "trailing_edge_mm": {
+      "min": 0.39999999999991803,
+      "max": 0.40000000000010144
+    },
+    "checks": {
+      "chord_decreases_throughout": true,
+      "bend_curvature_never_negative": true,
+      "dihedral_rises_throughout": true,
+      "trailing_edge_moves_one_way": true,
+      "trailing_edge_counter_bend_ratio": 0.060012970843758104,
+      "every_section_has_positive_thickness": true
+    },
+    "join_max_second_derivative_jump": 2.134384712461364e-09,
+    "join_max_position_gap_mm": 1.9370066975421866e-09
+  }
+}
