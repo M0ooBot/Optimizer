@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<style>
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #20394d; background: #f2f6f9; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(100% - 32px, 1440px); margin: auto; padding: 24px 0; }
+h1, p { margin: 0; }
+h1 { font-size: clamp(25px, 4vw, 38px); letter-spacing: -.04em; }
+p { margin-top: 6px; font-size: 13px; color: #426077; }
+.fit { color: {{COLOR}}; font-weight: 650; }
+.length:empty { display: none; }
+section { margin-top: 16px; overflow: hidden; border: 1px solid #d1dfe9; border-radius: 12px; background: white; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 14px 0; }
+button { border: 1px solid #bdcedb; color: #28445a; background: white; border-radius: 5px;
+         padding: 6px 9px; font: inherit; font-size: 13px; cursor: pointer; }
+button[aria-pressed="true"] { background: #e4edf4; border-color: #7291aa; }
+button:focus-visible { outline: 2px solid #176391; outline-offset: 2px; }
+.viewport { height: clamp(300px, 67vh, 700px); }
+.viewport > div { height: 100%; }
+.detail { margin: 0; padding: 8px 14px 14px; }
+@media (max-width: 680px) { .viewport { height: min(65vh, 80vw); min-height: 280px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>{{TITLE}}</h1>
+  <p>{{SPAN}} mm tip to tip · Revised half-wing reflected at the root plane</p>
+  <p class="fit">{{FIT}}</p>
+  <p class="length">{{LENGTH}}</p>
+  <section aria-label="Full-wing spar fit study">
+    <nav class="toolbar" aria-label="3D model controls">
+      <button data-camera="Top" aria-pressed="true">Top</button>
+      <button data-camera="Oblique" aria-pressed="false">Oblique</button>
+      <button data-camera="Front" aria-pressed="false">Front</button>
+      <button id="spar" aria-pressed="true">Spar and dimensions</button>
+    </nav>
+    <div class="viewport" role="region" aria-label="Interactive full wing with mirrored spar overlays">{{PLOT}}</div>
+    <p class="detail">Ø6.4 mm channel envelope · Spanwise dimensions run from each cap center to its tip. The outermost channel edge is {{EDGE}} mm inboard. {{WITNESS}}</p>
+  </section>
+</main>
+<script>
+const {cameras, overlayStart} = {{DATA}};
+const wing = document.getElementById("wing-view");
+const spar = document.getElementById("spar");
+const cameraButtons = [...document.querySelectorAll("[data-camera]")];
+for (const button of cameraButtons) {
+  button.addEventListener("click", () => {
+    cameraButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+    Plotly.relayout(wing, {"scene.camera": cameras[button.dataset.camera]});
+  });
+}
+spar.addEventListener("click", () => {
+  const shown = spar.getAttribute("aria-pressed") !== "true";
+  spar.setAttribute("aria-pressed", String(shown));
+  const overlay = wing.data.map((_, index) => index).slice(overlayStart);
+  Plotly.restyle(wing, {visible: shown}, overlay);
+  Plotly.restyle(wing, {opacity: shown ? .48 : 1}, [0, 2]);
+});
+</script>
+</body>
+</html>

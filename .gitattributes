@@ -1,0 +1,4 @@
+# Preserve CAD fixture bytes used by the Converter and STEP evidence hashes.
+aircraft/phase0_sd7037/curves/*.sldcrv -text
+aircraft/phase0_sd7037/*.step -text
+runs/wing-b-spar/**/*.step -text

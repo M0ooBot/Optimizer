@@ -85,7 +85,7 @@ The proposed Airfoil Converter MCP server exposes a lifting surface through its 
 - **Proposed transition rule.** Where an editable region leaves a fixed flat panel in a smooth bend, match position, tangent and curvature at the join. Express the initial search with a few controls such as onset, rise and bend distribution. Validate intermediate geometry for ripples and local curvature peaks even when all control stations pass.
 - **CAD readback.** Inspect the actual loft between its sections and guides. Report the worst sampled surface deviation and its location. Check rebuilt section planes against the source planes for an as-drawn baseline or profile swap, and against the guide tangents for a generated bend. Record the sampling and tolerance used so the designer can interpret a pass.
 
-On each shortlisted CAD rebuild, recheck the selected spar's full envelope, locked interfaces, minimum clearance and 20 mm tip engagement against the rebuilt geometry and its actual cut planes. Record the CAD revision and limiting location. Until that check runs, label a passing fit as verified on generated geometry only. A clearance failure on the rebuild fails CAD fit even when the loft meets its overall surface-deviation tolerance.
+On each shortlisted CAD rebuild, recheck the selected spar's full envelope, locked interfaces, minimum clearance and configured minimum tip engagement against the rebuilt geometry and its actual cut planes. Record the CAD revision and limiting location. Until that check runs, label a passing fit as verified on generated geometry only. A clearance failure on the rebuild fails CAD fit even when the loft meets its overall surface-deviation tolerance.
 
 ## Airfoil sources and wind-tunnel evidence
 
@@ -97,17 +97,17 @@ For each candidate, look for UIUC Low-Speed Airfoil Tests covering the relevant 
 
 ## Straight spar and printable wing sections
 
-Treat spar fit as a hard geometric constraint on each half-wing. The working interpretation of a printable section is a physical print piece with a maximum **250 mm build height** in its print orientation. Use the piece boundaries and cut planes from the study.
+Treat spar fit as a hard geometric constraint on each half-wing. Record the maximum build height in the print orientation, the tip piece's spanwise length and the minimum tip engagement for each study. The default build-height limit is **250 mm**. Each piece must fit within that limit. The chosen tip-piece length determines the location of its inboard cut and can be adjusted independently of the printer limit.
 
 | Requirement | Rule |
 | --- | --- |
 | Continuous path | One straight spar axis runs from the root through every intervening print joint into the final tip piece. The coordinator or solver may choose its placement and direction. |
-| Tip engagement | The full spar extends at least **20 mm** into that final piece, measured along its axis from the entry cut face. Account for the full cross-section at an oblique joint. |
+| Tip engagement | The configured minimum is a hard requirement for that run and defaults to **20 mm**. Measure full-diameter engagement along the spar axis into the tip piece from the entry cut face. Account for the full cross-section at an oblique joint. |
 | Stock dimensions | Allow round or square stock in whole-millimetre increments, provisionally **6 mm minimum**. Round sizes use outside diameter. Square sizes use side length, such as 6×6 or 7×7 mm. |
 | Outer skin | Leave at least **1.0 mm** from the finished spar channel to the exterior wing skin everywhere along the path. Measure the shortest 3D distance, including square-channel corners; a square spar keeps one rotation about its axis. The channel envelope includes any installation allowance around the stock. Intentional channel openings at root and print-joint cut faces are excluded from the skin measurement. |
 | Evidence | Show the axis and cut planes on the wing. Report chosen stock, minimum clearance and its location, and actual tip engagement. A fit check establishes geometry. Strength and stiffness require separate evidence about material, wall thickness and loading. |
 
-A wing may keep bending beyond the end of the required spar engagement. The proposed first study fixes the print split so every candidate faces the same tip joint. Whether the optimizer may later move joints is open.
+A wing may keep bending beyond the end of the required spar engagement. Compare candidate wings at the same print settings when isolating a geometry change. Changing the tip-piece length moves the physical last joint and requires a fresh clearance and engagement check.
 
 The 1.0 mm floor is a geometric wall allowance intended to accommodate two adjacent perimeter paths. If the selected print profile requires a thicker wall for two paths, use that larger minimum. Record minimum wall thickness and location separately from any slicer verification of two paths in the critical region. Until the print orientation, settings and toolpaths are available, only the geometric clearance can be verified.
 

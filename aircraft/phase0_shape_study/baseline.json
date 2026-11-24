@@ -1,0 +1,46 @@
+{
+  "name": "Phase 0 straight wing and tail",
+  "wing": {
+    "root_le_mm": [0, 0, 0],
+    "root_chord_mm": 200,
+    "projected_span_mm": 600,
+    "tip_chord_mm": 200,
+    "sweep_mm": 0,
+    "rake_mm": 0,
+    "rake_start": 0.8,
+    "rise_mm": 0,
+    "rise_start": 0.5,
+    "tip_twist_deg": 0,
+    "section_orientation": "parallel",
+    "span_curve": "onset",
+    "station_fractions": [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
+    "hinge": {
+      "start": 0.45,
+      "end": 0.85,
+      "inboard_chord_fraction": 0.72,
+      "outboard_chord_fraction": 0.72
+    }
+  },
+  "tail": {
+    "root_le_mm": [0, 2, -700],
+    "root_chord_mm": 105,
+    "projected_span_mm": 235,
+    "tip_chord_mm": 105,
+    "sweep_mm": 0,
+    "rake_mm": 0,
+    "rake_start": 0.8,
+    "rise_mm": 0,
+    "rise_start": 0.5,
+    "tip_twist_deg": 0,
+    "section_orientation": "parallel",
+    "span_curve": "onset",
+    "station_fractions": [0, 0.25, 0.5, 0.75, 1],
+    "hinge": {
+      "start": 0.12,
+      "end": 0.87,
+      "inboard_chord_fraction": 0.7,
+      "outboard_chord_fraction": 0.7
+    }
+  },
+  "tolerance_mm": 0.25
+}

@@ -1,0 +1,210 @@
+{
+  "input_step": "runs/wing-b-spar/shape/constrained/redistributed/wing.step",
+  "input_sha256": "e6816674e8b4aa0e01e9065f94410a908ee4b8cf205e39ad9269f0f738e5c5df",
+  "coordinates": "CAD xyz, mm. Span grows along -X, up +Y, aft -Z.",
+  "cut_plane_x_mm": [
+    -175.0,
+    -350.0
+  ],
+  "stock_diameter_mm": 6.0,
+  "channel_diameter_mm": 6.4,
+  "radial_installation_allowance_mm": 0.2,
+  "required_wall_mm": 1.0,
+  "required_full_diameter_engagement_mm": 20.0,
+  "tip_piece_length_mm": 250.0,
+  "max_print_height_mm": 250.0,
+  "projected_span_mm": 600.0,
+  "split_span_mm": [
+    175.0,
+    350.0
+  ],
+  "axis_root_mm": [
+    0.0,
+    0.14993865300752024,
+    -29.261655895386937
+  ],
+  "axis_direction": [
+    -0.9905434047074961,
+    0.09234730743818886,
+    -0.10146791709401647
+  ],
+  "axis_channel_end_mm": [
+    -426.3700421206413,
+    39.89996391694376,
+    -72.93756134250353
+  ],
+  "axis_length_mm": 430.44054414409715,
+  "tool_start_mm": [
+    5.2,
+    -0.33485181290889776,
+    -28.72898547793593
+  ],
+  "axis_last_joint_mm": [
+    -350.0,
+    32.78006616661258,
+    -65.11447245458946
+  ],
+  "axis_last_joint_to_end_mm": 77.09913746101121,
+  "joint_obliquity_deg": 7.8858383868898745,
+  "radial_span_projection_mm": 0.43903910659362827,
+  "channel_farthest_span_mm": 426.8090812272349,
+  "full_diameter_engagement_mm": 76.65590690240356,
+  "full_diameter_stock_engagement_mm": 76.68360881231649,
+  "min_wall_mm": 1.0001006620971502,
+  "cad_brep_boundary_distance_mm": 1.000103125013539,
+  "signed_sampled_wall_mm": 1.0001425436273248,
+  "continuous_skin_clearance_mm": 1.0001006620971502,
+  "worst_channel_point_mm": [
+    -323.12425379185095,
+    33.488340670141945,
+    -62.386276250012294
+  ],
+  "worst_skin_point_mm": [
+    -323.0315929556839,
+    34.48413800998583,
+    -62.38455528289519
+  ],
+  "min_wall_minus_requirement_mm": 0.00010066209715020591,
+  "center_inside_cad": true,
+  "geometry_pass": true,
+  "clearance_envelope_contained": true,
+  "failure_reason": null,
+  "search": {
+    "root_yz_bounds_mm": [
+      [
+        -4.068504760054734,
+        67.77605882815446
+      ],
+      [
+        -200.0000001,
+        -0.021756062843401442
+      ]
+    ],
+    "yz_delta_at_search_reference_span_mm_bounds_mm": [
+      [
+        -99.0,
+        99.0
+      ],
+      [
+        -299.0,
+        299.0
+      ]
+    ],
+    "span_station_range_mm": [
+      0.0,
+      600.0
+    ],
+    "span_station_count": 601,
+    "points_per_section": 481,
+    "search_reference_span_mm": 450.0,
+    "seed_planar_axis_radius_mm": 430.44054414409715,
+    "params_yz_root_delta_at_search_reference_span_mm": [
+      0.14993865300752024,
+      -29.261655895386937,
+      41.95302108892079,
+      -46.09647843326039
+    ],
+    "method": "SLSQP on four axis placement/direction variables and physical length with exchanged sampled skin constraints and continuous local B-spline minima. B-rep envelope containment determines feasibility.",
+    "signed_wall_when_intersecting": "Negative continuous clearance is a breach witness. CAD boundary distance is zero when the bore touches or intersects the skin."
+  },
+  "print_pieces": [
+    {
+      "file": "print-01.step",
+      "span_mm": [
+        0.0,
+        175.0
+      ],
+      "span_print_height_mm": 175.0000002,
+      "reimported_cylindrical_bore_faces": 1
+    },
+    {
+      "file": "print-02.step",
+      "span_mm": [
+        175.0,
+        350.0
+      ],
+      "span_print_height_mm": 175.00000020000002,
+      "reimported_cylindrical_bore_faces": 1
+    },
+    {
+      "file": "print-03.step",
+      "span_mm": [
+        350.0,
+        600.0
+      ],
+      "span_print_height_mm": 250.00000020000004,
+      "reimported_cylindrical_bore_faces": 1
+    }
+  ],
+  "physical_length_optimization": {
+    "physical_length": {
+      "params": [
+        0.15086741214488053,
+        -29.196574596040193,
+        41.950521588313315,
+        -46.21694615647732,
+        430.3986691398762
+      ],
+      "alternatives": [
+        [
+          0.15086741214488053,
+          -29.196574596040193,
+          41.950521588313315,
+          -46.21694615647732,
+          430.3986691398762
+        ],
+        [
+          0.18223922555997846,
+          -30.04657459604019,
+          41.86360714403939,
+          -45.36694615647732,
+          429.2168431621818
+        ],
+        [
+          0.27267472241838125,
+          -29.20919189228032,
+          41.60991305499796,
+          -46.5744617032764,
+          424.27815636813466
+        ]
+      ]
+    },
+    "projected_reach": {
+      "params": [
+        0.18223922555997846,
+        -30.04657459604019,
+        41.86360714403939,
+        -45.36694615647732,
+        429.2168431621818
+      ],
+      "alternatives": [
+        [
+          0.18223922555997846,
+          -30.04657459604019,
+          41.86360714403939,
+          -45.36694615647732,
+          429.2168431621818
+        ],
+        [
+          0.18223922555997846,
+          -30.04657459604019,
+          41.86360714403939,
+          -45.36694615647732,
+          429.2168431621818
+        ],
+        [
+          0.27267472241838125,
+          -29.20919189228032,
+          41.60991305499796,
+          -46.5744617032764,
+          424.27815636813466
+        ]
+      ]
+    }
+  },
+  "projected_reach_mm": 426.3700421206413,
+  "tip_setback_cap_center_mm": 173.6299578793587,
+  "tip_setback_farthest_channel_point_mm": 173.1909187727651,
+  "clearance_proof": "B-rep Boolean subtract using a one-millimetre offset envelope with rounded blind-cap edge.",
+  "length_adjustment_from_searched_candidate_mm": 0.0
+}

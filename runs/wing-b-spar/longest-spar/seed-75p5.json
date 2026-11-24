@@ -1,0 +1,110 @@
+{
+  "input_step": "runs/wing-b-spar/shape/constrained/redistributed/wing.step",
+  "input_sha256": "e6816674e8b4aa0e01e9065f94410a908ee4b8cf205e39ad9269f0f738e5c5df",
+  "coordinates": "CAD xyz, mm. Span grows along -X, up +Y, aft -Z.",
+  "cut_plane_x_mm": [
+    -175.0,
+    -350.0
+  ],
+  "stock_diameter_mm": 6.0,
+  "channel_diameter_mm": 6.4,
+  "radial_installation_allowance_mm": 0.2,
+  "required_wall_mm": 1.0,
+  "required_full_diameter_engagement_mm": 75.5,
+  "tip_piece_length_mm": 250.0,
+  "max_print_height_mm": 250.0,
+  "projected_span_mm": 600.0,
+  "split_span_mm": [
+    175.0,
+    350.0
+  ],
+  "axis_root_mm": [
+    0.0,
+    0.18223922555997846,
+    -30.04657459604019
+  ],
+  "axis_direction": [
+    -0.9907215617536691,
+    0.0921670627786328,
+    -0.09988002610697738
+  ],
+  "axis_channel_end_mm": [
+    -425.2343811886164,
+    39.741894954935375,
+    -72.91676409663333
+  ],
+  "axis_length_mm": 429.2168431621818,
+  "tool_start_mm": [
+    5.2,
+    -0.30151801254892113,
+    -29.52233432934312
+  ],
+  "axis_last_joint_mm": [
+    -350.0,
+    32.742822559812836,
+    -65.33197716218922
+  ],
+  "axis_last_joint_to_end_mm": 75.93897629061848,
+  "joint_obliquity_deg": 7.811086398920981,
+  "radial_span_projection_mm": 0.43490327621442254,
+  "channel_farthest_span_mm": 425.6692844648308,
+  "full_diameter_engagement_mm": 75.5,
+  "full_diameter_stock_engagement_mm": 75.5274360181636,
+  "min_wall_mm": 1.0015461465481301,
+  "cad_brep_boundary_distance_mm": 1.0015461465481599,
+  "signed_sampled_wall_mm": 1.0322850721055765,
+  "continuous_skin_clearance_mm": 1.0015461465481301,
+  "worst_channel_point_mm": [
+    -425.5314904385509,
+    36.55572515328736,
+    -72.90982949717727
+  ],
+  "worst_skin_point_mm": [
+    -425.67074757477144,
+    35.563910729856985,
+    -72.91233611891553
+  ],
+  "min_wall_minus_requirement_mm": 0.0015461465481301229,
+  "center_inside_cad": true,
+  "geometry_pass": false,
+  "clearance_envelope_contained": false,
+  "failure_reason": "Minimum wall could not be certified by expanded channel containment",
+  "search": {
+    "root_yz_bounds_mm": [
+      [
+        -4.068504760054734,
+        67.77605882815446
+      ],
+      [
+        -200.0000001,
+        -0.021756062843401442
+      ]
+    ],
+    "yz_delta_at_search_reference_span_mm_bounds_mm": [
+      [
+        -87.34246230509433,
+        87.34246230509433
+      ],
+      [
+        -243.11640810802893,
+        243.11640810802893
+      ]
+    ],
+    "span_station_range_mm": [
+      0.0,
+      445.5
+    ],
+    "span_station_count": 447,
+    "points_per_section": 481,
+    "search_reference_span_mm": 425.5,
+    "seed_planar_axis_radius_mm": 4.250358599871705,
+    "params_yz_root_delta_at_search_reference_span_mm": [
+      0.18223922555997846,
+      -30.04657459604019,
+      39.584366310641684,
+      -42.89696797684688
+    ],
+    "method": "Sampled section convex hull linear program, then sequential constrained maximization of signed 3D clearance to the finite cylinder. Continuous skin optimization, B-rep distance and clearance-envelope containment evaluated separately.",
+    "signed_wall_when_intersecting": "Negative continuous clearance is a breach witness. CAD boundary distance is zero when the bore touches or intersects the skin."
+  }
+}
