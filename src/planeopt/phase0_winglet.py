@@ -203,6 +203,11 @@ class WingletDefinition:
     # 0.5 / 0.5 is a pure bell; short ramps spread the turn evenly; unequal ramps move the peak.
     ramp_in: float = 0.35
     ramp_out: float = 0.35
+    # Fraction of the winglet's leading-edge length the bend occupies (the ramps are fractions
+    # of this part). Below 1 the turn finishes early and a straight leg runs to the tip, which
+    # saves room sideways at the price of a tighter bend.
+    # None solves it: the gentlest bend that fits, starting as far inboard as the hinge allows.
+    bend_fraction: float | None = 1.0
     hinge_clearance_mm: float = 10.0  # the winglet starts at least this far outboard of the hinge end
     # True: sweep, taper, twist, morph and plane rotation advance with the turn already made,
     # so each section changes while the skin is already rising. False: with distance along it.
@@ -220,6 +225,8 @@ class WingletDefinition:
             raise ValueError("tip_chord_mm must be positive")
         if not (0 < self.ramp_in and 0 < self.ramp_out and self.ramp_in + self.ramp_out <= 1):
             raise ValueError("ramp_in and ramp_out must be positive and together at most 1")
+        if self.bend_fraction is not None and not 0 < self.bend_fraction <= 1:
+            raise ValueError("bend_fraction must be in (0, 1] or None to solve")
         if self.attach_fraction is not None and not 0 < self.attach_fraction < 1:
             raise ValueError("attach_fraction must lie inside the parent span")
 
@@ -294,8 +301,10 @@ class BlendedWinglet:
         self.parent_profiles = parent_profiles
         self.target_profiles = target_profiles
         self.guide_span = parent.projected_span_mm - parent.tip_span_trim_mm
-        if definition.attach_fraction is None:
-            self.d = replace(definition, attach_fraction=self._solve_attachment())
+        if definition.bend_fraction is None:
+            self.d = replace(self.d, bend_fraction=self._solve_bend_fraction())
+        if self.d.attach_fraction is None:
+            self.d = replace(self.d, attach_fraction=self._solve_attachment())
         self._configure(self.d.attach_fraction)
 
     # -------------------------------------------------------------- parent side
@@ -372,19 +381,22 @@ class BlendedWinglet:
     def _set_length(self, S):
         d = self.d
         self.s_tip = float(S)
+        self.s_bend = d.bend_fraction * self.s_tip
         turn = self.gamma_c - self.gamma0
-        self.kappa_peak = ((turn / S - self.kappa0 * d.ramp_in / 2)
+        self.kappa_peak = ((turn / self.s_bend - self.kappa0 * d.ramp_in / 2)
                            / (1 - (d.ramp_in + d.ramp_out) / 2))
 
     def kappa(self, s):
-        d, x = self.d, s / self.s_tip
+        d, x = self.d, s / self.s_bend
+        if x >= 1:
+            return 0.0
         rise = float(smoothstep(x / d.ramp_in))
         fall = float(smoothstep((1 - x) / d.ramp_out))
         return self.kappa0 * (1 - rise) + self.kappa_peak * min(rise, fall)
 
     def gamma(self, s):
-        """Front-view LE angle: the closed-form integral of kappa."""
-        d, S = self.d, self.s_tip
+        """Front-view LE angle: the closed-form integral of kappa (constant past the bend)."""
+        d, S = self.d, self.s_bend
         x = min(max(s / S, 0.0), 1.0)
         a, b = d.ramp_in, d.ramp_out
         xa = min(x, a)
@@ -397,8 +409,8 @@ class BlendedWinglet:
     def _front(self, s):
         """Front-view LE (X, Y) at s, by Gauss quadrature of the tangent on each piece of the
         curvature law (its ramps join with a jump in the third derivative of the angle)."""
-        S, d = self.s_tip, self.d
-        cuts = [0.0] + [c for c in (d.ramp_in * S, (1 - d.ramp_out) * S) if 0 < c < s] + [s]
+        S, d = self.s_bend, self.d
+        cuts = [0.0] + [c for c in (d.ramp_in * S, (1 - d.ramp_out) * S, S) if 0 < c < s] + [s]
         x, y = self.le0[0], self.le0[1]
         for a, b in itertools.pairwise(cuts):
             nodes = a + 0.5 * (b - a) * (_GAUSS_X + 1)
@@ -503,6 +515,28 @@ class BlendedWinglet:
         hinge_end = self.parent.hinge.end * self.guide_span
         return (hinge_end + self.d.hinge_clearance_mm) / self.guide_span
 
+    def _solve_bend_fraction(self):
+        """The longest bend whose winglet, started at the hinge clearance, fits the span. A
+        shorter bend turns sooner and stands the rest of the winglet up, saving room sideways."""
+        target, start = self.d.projected_span_mm, self.min_attach_fraction()
+
+        def fits(fraction):
+            self.d = replace(self.d, bend_fraction=fraction)
+            self._configure(start)
+            return self.projected_span() <= target
+
+        if fits(1.0):
+            return 1.0
+        lo, hi = 0.05, 1.0
+        if not fits(lo):
+            raise ValueError("Even a bend over the first 5% of the winglet does not fit the span")
+        for _ in range(50):
+            mid = 0.5 * (lo + hi)
+            lo, hi = (mid, hi) if fits(mid) else (lo, mid)
+            if hi - lo < 1e-9:
+                break
+        return lo
+
     def _solve_attachment(self):
         """Inboard starts leave more room, so the span falls as the attachment moves inboard."""
         target = self.d.projected_span_mm
@@ -525,7 +559,7 @@ class BlendedWinglet:
         out = asdict(self.d)
         s = np.linspace(0, self.s_tip, 2001)
         kappa = np.array([self.kappa(float(t)) for t in s])
-        out.update(attach_mm=self.f0 * self.guide_span, length_mm=self.s_tip,
+        out.update(attach_mm=self.f0 * self.guide_span, length_mm=self.s_tip, bend_length_mm=self.s_bend,
                    peak_curvature_per_mm=float(kappa.max()), peak_at_fraction=float(s[kappa.argmax()] / self.s_tip),
                    tightest_bend_radius_mm=float(1 / kappa.max()),
                    trailing_edge_tip_sweep_deg=math.degrees(math.atan(self.te_tan)),

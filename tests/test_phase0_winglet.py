@@ -139,6 +139,23 @@ def test_shape_changes_that_follow_the_turn_sag_less_in_front_view():
     assert _top_outline_sag(by_turn) < 0.5 * _top_outline_sag(by_distance)
 
 
+def test_a_bend_can_finish_early_and_leave_a_straight_leg():
+    w = _winglet(attach_fraction=0.87, bend_fraction=0.7)
+    assert w.s_bend == pytest.approx(0.7 * w.s_tip)
+    assert w.kappa(0.8 * w.s_tip) == 0.0
+    assert w.gamma(0.8 * w.s_tip) == pytest.approx(w.gamma_c, abs=1e-12)
+    assert w.frame(w.s_tip).le[1] - w.le0[1] == pytest.approx(65.0, abs=1e-6)
+
+
+def test_solving_the_bend_fits_a_winglet_that_a_full_length_bend_cannot():
+    with pytest.raises(ValueError, match="hinge clearance"):
+        _winglet(height_mm=70.0, cant_deg=70.0)
+    w = _winglet(height_mm=70.0, cant_deg=70.0, bend_fraction=None)
+    assert 0 < w.d.bend_fraction < 1
+    assert w.f0 == pytest.approx(w.min_attach_fraction(), abs=1e-9)
+    assert w.projected_span(True) == pytest.approx(600.0, abs=1e-4)
+
+
 def test_a_bend_that_cannot_fit_names_the_way_out():
     with pytest.raises(ValueError, match="toward the winglet root"):
         _winglet(ramp_in=0.6, ramp_out=0.3)

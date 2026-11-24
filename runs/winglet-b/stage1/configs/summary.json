@@ -1,0 +1,1510 @@
+{
+  "baseline": {
+    "height_mm": 60.0,
+    "te_sweep_deg": 10.0,
+    "tip_chord_mm": null,
+    "bend_fraction": null,
+    "ramp_in": 0.35,
+    "ramp_out": 0.35
+  },
+  "baseline_label": "Baseline: 60 mm, 75\u00b0 cant, 35\u00b0 LE / 10\u00b0 TE sweep aft, 2\u00b0 toe-out, centred bend",
+  "groups": {
+    "bend": "Bend distribution (ramps in / out)",
+    "te": "Trailing-edge sweep at the tip",
+    "le": "Leading-edge sweep at the tip",
+    "height": "Height",
+    "cant": "Cant at the tip",
+    "toe": "Toe-out",
+    "combined": "Combinations"
+  },
+  "configs": {
+    "bend-even": {
+      "group": "bend",
+      "label": "Even 20 / 20",
+      "overrides": {
+        "ramp_in": 0.2,
+        "ramp_out": 0.2
+      },
+      "fits": true,
+      "attach_mm": 525.9818142437143,
+      "length_mm": 98.99922005089053,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 66.9948702634014,
+      "height_mm": 60.00000000001131,
+      "tip_cant_deg": 74.99999999984345,
+      "tip_le_sweep_deg": 35.000020640444816,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999456,
+      "tip_chord_mm": 54.08332639796556,
+      "span_mm": 600.000000000608,
+      "le_radius_min_mm": 0.7314173644969518,
+      "le_radius_streamwise_min_mm": 0.6129006833350469,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999990343,
+        "max": 0.40000000000009284
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.0001535345378926765,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.002967052735385778,
+        "wing_outline_top_curvature_per_mm": -0.0002686821764855897,
+        "outline_bottom_below_tangent_mm": 4.875744252785807e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.2649732522441319e-05,
+        "upper_skin_lines_below_tangent_mm": 0.011339252732371796,
+        "lower_skin_lines_below_tangent_mm": 0.011344717723440811
+      },
+      "join_max_second_derivative_jump": 4.0553879650119246e-08,
+      "join_max_position_gap_mm": 6.593626537356004e-09,
+      "same_as": null
+    },
+    "bend-centred": {
+      "group": "bend",
+      "label": "Centred 35 / 35",
+      "overrides": {},
+      "fits": true,
+      "attach_mm": 526.0475632239833,
+      "length_mm": 100.46890967094447,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28270085816013,
+      "height_mm": 60.00000000000224,
+      "tip_cant_deg": 75.00000000031834,
+      "tip_le_sweep_deg": 34.99997180979415,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000019,
+      "tip_chord_mm": 53.525240194331325,
+      "span_mm": 600.0000000016373,
+      "le_radius_min_mm": 0.7230523668651676,
+      "le_radius_streamwise_min_mm": 0.6067711951808574,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999165,
+        "max": 0.40000000000008284
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011439568327183453,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006700525578295924,
+        "wing_outline_top_curvature_per_mm": -0.00026666721265905096,
+        "outline_bottom_below_tangent_mm": 5.038884864916326e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.4156987047755663e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02898453283272584,
+        "lower_skin_lines_below_tangent_mm": 0.029004946108372565
+      },
+      "join_max_second_derivative_jump": 5.06665228076033e-09,
+      "join_max_position_gap_mm": 6.814398396122645e-09,
+      "same_as": null
+    },
+    "bend-bell": {
+      "group": "bend",
+      "label": "Bell 50 / 50",
+      "overrides": {
+        "ramp_in": 0.5,
+        "ramp_out": 0.5
+      },
+      "fits": true,
+      "attach_mm": 526.0990561806831,
+      "length_mm": 101.6347433132567,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 43.051324520643874,
+      "height_mm": 60.000000000004604,
+      "tip_cant_deg": 75.0000000002618,
+      "tip_le_sweep_deg": 35.00004724711792,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000052,
+      "tip_chord_mm": 53.08396690531322,
+      "span_mm": 599.9999999997498,
+      "le_radius_min_mm": 0.7168743659683519,
+      "le_radius_streamwise_min_mm": 0.6019247219918032,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999991503,
+        "max": 0.40000000000010544
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 6.344737205675191e-05,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.010405443361165112,
+        "wing_outline_top_curvature_per_mm": -0.0002655115225108429,
+        "outline_bottom_below_tangent_mm": 5.167208882994601e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.533605648526319e-05,
+        "upper_skin_lines_below_tangent_mm": 0.048618678556739514,
+        "lower_skin_lines_below_tangent_mm": 0.04866027298833986
+      },
+      "join_max_second_derivative_jump": 1.5014236351118587e-09,
+      "join_max_position_gap_mm": 6.987382575442374e-09,
+      "same_as": null
+    },
+    "bend-early": {
+      "group": "bend",
+      "label": "Early peak 30 / 60",
+      "overrides": {
+        "ramp_in": 0.3,
+        "ramp_out": 0.6
+      },
+      "fits": true,
+      "attach_mm": 536.6101175450021,
+      "length_mm": 92.44486931474029,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 43.07048684037894,
+      "height_mm": 59.99999999999052,
+      "tip_cant_deg": 75.00000000020589,
+      "tip_le_sweep_deg": 35.00000239658158,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.0000000000000457,
+      "tip_chord_mm": 52.13785868513055,
+      "span_mm": 599.9999999999837,
+      "le_radius_min_mm": 0.7120352059198828,
+      "le_radius_streamwise_min_mm": 0.5915338503031922,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999991126,
+        "max": 0.40000000000009167
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 6.862116541426382e-05,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.003999954495725433,
+        "wing_outline_top_curvature_per_mm": -0.00026783337527129075,
+        "outline_bottom_below_tangent_mm": 4.887112936557969e-11,
+        "wing_outline_bottom_curvature_per_mm": 3.600531472554293e-05,
+        "upper_skin_lines_below_tangent_mm": 0.014288541710267832,
+        "lower_skin_lines_below_tangent_mm": 0.014310909076901579
+      },
+      "join_max_second_derivative_jump": 1.821615517395903e-08,
+      "join_max_position_gap_mm": 6.928372677947498e-10,
+      "same_as": null
+    },
+    "bend-late": {
+      "group": "bend",
+      "label": "Late peak 50 / 25",
+      "overrides": {
+        "ramp_in": 0.5,
+        "ramp_out": 0.25
+      },
+      "fits": true,
+      "attach_mm": 520.0000000415603,
+      "length_mm": 106.0453788030789,
+      "bend_fraction": 0.9568773627746849,
+      "tightest_bend_radius_mm": 53.69617074289391,
+      "height_mm": 60.00000000001377,
+      "tip_cant_deg": 75.00000000000927,
+      "tip_le_sweep_deg": 35.00003953369297,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.0000000000000426,
+      "tip_chord_mm": 53.98795974264526,
+      "span_mm": 600.0000000018147,
+      "le_radius_min_mm": 0.7242997435791171,
+      "le_radius_streamwise_min_mm": 0.6118532617064644,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999992125,
+        "max": 0.4000000000000822
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00017262184726276125,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.009422879045530408,
+        "wing_outline_top_curvature_per_mm": -0.0002710952100636717,
+        "outline_bottom_below_tangent_mm": 4.703508693637559e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.340537810902026e-05,
+        "upper_skin_lines_below_tangent_mm": 0.05772404399326536,
+        "lower_skin_lines_below_tangent_mm": 0.05773585679510784
+      },
+      "join_max_second_derivative_jump": 1.2038436804962086e-09,
+      "join_max_position_gap_mm": 6.079022039937698e-09,
+      "same_as": null
+    },
+    "te-te-10": {
+      "group": "te",
+      "label": "10\u00b0 forward",
+      "overrides": {
+        "te_sweep_deg": -10.0
+      },
+      "fits": true,
+      "attach_mm": 526.7601316293002,
+      "length_mm": 100.46283401214151,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.2831785198445,
+      "height_mm": 60.00000000001395,
+      "tip_cant_deg": 74.99999999982752,
+      "tip_le_sweep_deg": 34.99997181952141,
+      "trailing_edge_tip_sweep_deg": -10.0,
+      "toe_out_deg": 1.9999999999999216,
+      "tip_chord_mm": 35.63492480742675,
+      "span_mm": 599.9999999996538,
+      "le_radius_min_mm": 0.5009332573133396,
+      "le_radius_streamwise_min_mm": 0.4103406406769064,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.399999999999899,
+        "max": 0.4000000000000942
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.058751889382775827,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006334050057560603,
+        "wing_outline_top_curvature_per_mm": -0.00025431161145686296,
+        "outline_bottom_below_tangent_mm": 6.787672646169085e-10,
+        "wing_outline_bottom_curvature_per_mm": 2.9742273526290384e-05,
+        "upper_skin_lines_below_tangent_mm": 0.028882797733795318,
+        "lower_skin_lines_below_tangent_mm": 0.028906151479128894
+      },
+      "join_max_second_derivative_jump": 5.303477948498214e-09,
+      "join_max_position_gap_mm": 9.179681889908545e-09,
+      "same_as": null
+    },
+    "te-te+0": {
+      "group": "te",
+      "label": "0\u00b0",
+      "overrides": {
+        "te_sweep_deg": 0.0
+      },
+      "fits": true,
+      "attach_mm": 526.4039524811088,
+      "length_mm": 100.4658708225183,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28293969332583,
+      "height_mm": 60.000000000018304,
+      "tip_cant_deg": 75.0000000000165,
+      "tip_le_sweep_deg": 34.99997181465727,
+      "trailing_edge_tip_sweep_deg": 0.0,
+      "toe_out_deg": 2.000000000000048,
+      "tip_chord_mm": 44.579790609437396,
+      "span_mm": 600.0000000004896,
+      "le_radius_min_mm": 0.6208066620007838,
+      "le_radius_streamwise_min_mm": 0.508535218450331,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.399999999999911,
+        "max": 0.40000000000009855
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.02195140557388186,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006516773496201722,
+        "wing_outline_top_curvature_per_mm": -0.0002586868965095048,
+        "outline_bottom_below_tangent_mm": 5.921805268371827e-10,
+        "wing_outline_bottom_curvature_per_mm": 2.2120992221054693e-05,
+        "upper_skin_lines_below_tangent_mm": 0.028934751749255305,
+        "lower_skin_lines_below_tangent_mm": 0.028956638933870016
+      },
+      "join_max_second_derivative_jump": 5.15745584680776e-09,
+      "join_max_position_gap_mm": 8.008608675839758e-09,
+      "same_as": null
+    },
+    "te-te+10": {
+      "group": "te",
+      "label": "10\u00b0 aft",
+      "overrides": {
+        "te_sweep_deg": 10.0
+      },
+      "fits": true,
+      "attach_mm": 526.0475632239833,
+      "length_mm": 100.46890967094447,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28270085816013,
+      "height_mm": 60.00000000000224,
+      "tip_cant_deg": 75.00000000031834,
+      "tip_le_sweep_deg": 34.99997180979415,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000019,
+      "tip_chord_mm": 53.525240194331325,
+      "span_mm": 600.0000000016373,
+      "le_radius_min_mm": 0.7230523668651676,
+      "le_radius_streamwise_min_mm": 0.6067711951808574,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999165,
+        "max": 0.40000000000008284
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011439568327183453,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006700525578295924,
+        "wing_outline_top_curvature_per_mm": -0.00026666721265905096,
+        "outline_bottom_below_tangent_mm": 5.038884864916326e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.4156987047755663e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02898453283272584,
+        "lower_skin_lines_below_tangent_mm": 0.029004946108372565
+      },
+      "join_max_second_derivative_jump": 5.06665228076033e-09,
+      "join_max_position_gap_mm": 6.814398396122645e-09,
+      "same_as": "bend-centred"
+    },
+    "te-te+15": {
+      "group": "te",
+      "label": "15\u00b0 aft",
+      "overrides": {
+        "te_sweep_deg": 15.0
+      },
+      "fits": true,
+      "attach_mm": 525.862318283529,
+      "length_mm": 100.47048930896852,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28257676805673,
+      "height_mm": 59.999999999996234,
+      "tip_cant_deg": 74.9999999994654,
+      "tip_le_sweep_deg": 34.99997180720411,
+      "trailing_edge_tip_sweep_deg": 14.999999999999998,
+      "toe_out_deg": 1.999999999999987,
+      "tip_chord_mm": 58.17365933144452,
+      "span_mm": 599.9999999998956,
+      "le_radius_min_mm": 0.7233622779268688,
+      "le_radius_streamwise_min_mm": 0.6578269602643922,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999176,
+        "max": 0.40000000000008956
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011714639908566982,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006650770550820084,
+        "wing_outline_top_curvature_per_mm": -0.00027276232539724475,
+        "outline_bottom_below_tangent_mm": 4.5797321490681497e-10,
+        "wing_outline_bottom_curvature_per_mm": 9.905321636261108e-06,
+        "upper_skin_lines_below_tangent_mm": 0.029009537940551944,
+        "lower_skin_lines_below_tangent_mm": 0.029029182154468813
+      },
+      "join_max_second_derivative_jump": 5.175318670332858e-09,
+      "join_max_position_gap_mm": 6.193193810864838e-09,
+      "same_as": null
+    },
+    "te-te+20": {
+      "group": "te",
+      "label": "20\u00b0 aft",
+      "overrides": {
+        "te_sweep_deg": 20.0
+      },
+      "fits": true,
+      "attach_mm": 525.6681651842082,
+      "length_mm": 100.47214498098487,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28244674902761,
+      "height_mm": 59.999999999997335,
+      "tip_cant_deg": 75.00000000007675,
+      "tip_le_sweep_deg": 34.999971804581904,
+      "trailing_edge_tip_sweep_deg": 20.0,
+      "toe_out_deg": 1.9999999999999973,
+      "tip_chord_mm": 63.04541139925555,
+      "span_mm": 599.9999999996028,
+      "le_radius_min_mm": 0.7236870839509044,
+      "le_radius_streamwise_min_mm": 0.6898912809897064,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999005,
+        "max": 0.40000000000009756
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011854864236219599,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.0065631988765346705,
+        "wing_outline_top_curvature_per_mm": -0.00027940950187629464,
+        "outline_bottom_below_tangent_mm": 4.1021053220902104e-10,
+        "wing_outline_bottom_curvature_per_mm": 5.76843719971992e-06,
+        "upper_skin_lines_below_tangent_mm": 0.02903510686413191,
+        "lower_skin_lines_below_tangent_mm": 0.0290539426200358
+      },
+      "join_max_second_derivative_jump": 5.299354773024344e-09,
+      "join_max_position_gap_mm": 5.547165692904849e-09,
+      "same_as": null
+    },
+    "te-te+25": {
+      "group": "te",
+      "label": "25\u00b0 aft",
+      "overrides": {
+        "te_sweep_deg": 25.0
+      },
+      "fits": true,
+      "attach_mm": 525.4612270098878,
+      "length_mm": 100.47390976041919,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.282308211424954,
+      "height_mm": 60.00000000000675,
+      "tip_cant_deg": 75.00000000011734,
+      "tip_le_sweep_deg": 34.99997180170842,
+      "trailing_edge_tip_sweep_deg": 25.000000000000004,
+      "toe_out_deg": 1.9999999999999576,
+      "tip_chord_mm": 68.23781292441008,
+      "span_mm": 599.9999999989253,
+      "le_radius_min_mm": 0.7240332694567795,
+      "le_radius_streamwise_min_mm": 0.6903120466900516,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999439,
+        "max": 0.400000000000103
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011939267972909247,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006406502396501423,
+        "wing_outline_top_curvature_per_mm": -0.0002825187873461479,
+        "outline_bottom_below_tangent_mm": 3.601030584832188e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.646065056304865e-06,
+        "upper_skin_lines_below_tangent_mm": 0.029061640133029476,
+        "lower_skin_lines_below_tangent_mm": 0.029079611240053316
+      },
+      "join_max_second_derivative_jump": 5.438004332455105e-09,
+      "join_max_position_gap_mm": 4.869408724943537e-09,
+      "same_as": null
+    },
+    "le-le20": {
+      "group": "le",
+      "label": "20\u00b0",
+      "overrides": {
+        "sweep_deg": 20.0
+      },
+      "fits": true,
+      "attach_mm": 525.367686704849,
+      "length_mm": 100.47470750428221,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28224560418588,
+      "height_mm": 59.999999999986365,
+      "tip_cant_deg": 75.00000000025813,
+      "tip_le_sweep_deg": 19.999987876865667,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000005,
+      "tip_chord_mm": 70.58484476614505,
+      "span_mm": 600.000000001201,
+      "le_radius_min_mm": 0.7241137294035049,
+      "le_radius_streamwise_min_mm": 0.6905022394593964,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999084,
+        "max": 0.400000000000082
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011446742303837442,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006308340965034631,
+        "wing_outline_top_curvature_per_mm": -0.00028367723636647975,
+        "outline_bottom_below_tangent_mm": 3.3780622743506683e-10,
+        "wing_outline_bottom_curvature_per_mm": -2.2277467317349737e-07,
+        "upper_skin_lines_below_tangent_mm": 0.02907339018490429,
+        "lower_skin_lines_below_tangent_mm": 0.029090969383875676
+      },
+      "join_max_second_derivative_jump": 5.477565511242241e-09,
+      "join_max_position_gap_mm": 4.568216185207839e-09,
+      "same_as": null
+    },
+    "le-le25": {
+      "group": "le",
+      "label": "25\u00b0",
+      "overrides": {
+        "sweep_deg": 25.0
+      },
+      "fits": true,
+      "attach_mm": 525.5746306501096,
+      "length_mm": 100.4729426380224,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.282384125527464,
+      "height_mm": 60.00000000000468,
+      "tip_cant_deg": 74.99999999955195,
+      "tip_le_sweep_deg": 24.999981652296142,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999618,
+      "tip_chord_mm": 65.39235955279165,
+      "span_mm": 599.9999999979939,
+      "le_radius_min_mm": 0.7237906658805443,
+      "le_radius_streamwise_min_mm": 0.6900814648192134,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999141,
+        "max": 0.40000000000007563
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.0001144473066741889,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006506510511528063,
+        "wing_outline_top_curvature_per_mm": -0.0002813637706701659,
+        "outline_bottom_below_tangent_mm": 3.8745895380998263e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.907209548749124e-06,
+        "upper_skin_lines_below_tangent_mm": 0.029047191621437873,
+        "lower_skin_lines_below_tangent_mm": 0.02906563695459985
+      },
+      "join_max_second_derivative_jump": 5.353782577247354e-09,
+      "join_max_position_gap_mm": 5.2391103904996e-09,
+      "same_as": null
+    },
+    "le-le35": {
+      "group": "le",
+      "label": "35\u00b0",
+      "overrides": {
+        "sweep_deg": 35.0
+      },
+      "fits": true,
+      "attach_mm": 526.0475632239833,
+      "length_mm": 100.46890967094447,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28270085816013,
+      "height_mm": 60.00000000000224,
+      "tip_cant_deg": 75.00000000031834,
+      "tip_le_sweep_deg": 34.99997180979415,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000019,
+      "tip_chord_mm": 53.525240194331325,
+      "span_mm": 600.0000000016373,
+      "le_radius_min_mm": 0.7230523668651676,
+      "le_radius_streamwise_min_mm": 0.6067711951808574,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999165,
+        "max": 0.40000000000008284
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011439568327183453,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006700525578295924,
+        "wing_outline_top_curvature_per_mm": -0.00026666721265905096,
+        "outline_bottom_below_tangent_mm": 5.038884864916326e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.4156987047755663e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02898453283272584,
+        "lower_skin_lines_below_tangent_mm": 0.029004946108372565
+      },
+      "join_max_second_derivative_jump": 5.06665228076033e-09,
+      "join_max_position_gap_mm": 6.814398396122645e-09,
+      "same_as": null
+    },
+    "le-le45": {
+      "group": "le",
+      "label": "45\u00b0",
+      "overrides": {
+        "sweep_deg": 45.0
+      },
+      "fits": true,
+      "attach_mm": 526.6533625834854,
+      "length_mm": 100.4637443072275,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28310691480579,
+      "height_mm": 60.000000000006864,
+      "tip_cant_deg": 74.99999999979825,
+      "tip_le_sweep_deg": 44.99996638565788,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.999999999999921,
+      "tip_chord_mm": 38.31646919762237,
+      "span_mm": 600.0000000018241,
+      "le_radius_min_mm": 0.621932248816093,
+      "le_radius_streamwise_min_mm": 0.4397727641403311,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999990205,
+        "max": 0.4000000000000945
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011438246772676714,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.00638872724179862,
+        "wing_outline_top_curvature_per_mm": -0.00025507784684583823,
+        "outline_bottom_below_tangent_mm": 6.531166718559689e-10,
+        "wing_outline_bottom_curvature_per_mm": 2.746340094962617e-05,
+        "upper_skin_lines_below_tangent_mm": 0.028898602720970556,
+        "lower_skin_lines_below_tangent_mm": 0.02892151746019289
+      },
+      "join_max_second_derivative_jump": 5.253514640343804e-09,
+      "join_max_position_gap_mm": 8.832420523349123e-09,
+      "same_as": null
+    },
+    "le-le50": {
+      "group": "le",
+      "label": "50\u00b0",
+      "overrides": {
+        "sweep_deg": 50.0
+      },
+      "fits": true,
+      "attach_mm": 527.0406073842896,
+      "length_mm": 100.46044282786323,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.283366678486466,
+      "height_mm": 60.00000000000078,
+      "tip_cant_deg": 75.00000000021757,
+      "tip_le_sweep_deg": 49.99996555847662,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999094,
+      "tip_chord_mm": 28.58948593638483,
+      "span_mm": 599.999999999562,
+      "le_radius_min_mm": 0.5181224674811705,
+      "le_radius_streamwise_min_mm": 0.3330429368695365,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999991787,
+        "max": 0.4000000000000809
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011444506185750154,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006190808891588517,
+        "wing_outline_top_curvature_per_mm": -0.0002526320089480756,
+        "outline_bottom_below_tangent_mm": 7.446345762218698e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.377704468590413e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02884033597944957,
+        "lower_skin_lines_below_tangent_mm": 0.028864840732984565
+      },
+      "join_max_second_derivative_jump": 5.397048096308669e-09,
+      "join_max_position_gap_mm": 1.0070772084621779e-08,
+      "same_as": null
+    },
+    "height-h45": {
+      "group": "height",
+      "label": "45 mm",
+      "overrides": {
+        "height_mm": 45.0
+      },
+      "fits": true,
+      "attach_mm": 543.0686916973209,
+      "length_mm": 75.26458491470879,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 41.46501452000444,
+      "height_mm": 45.000000000006686,
+      "tip_cant_deg": 75.00000000016341,
+      "tip_le_sweep_deg": 34.99997183723198,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999687,
+      "tip_chord_mm": 59.210164262780665,
+      "span_mm": 600.0000000016155,
+      "le_radius_min_mm": 0.7023462768585887,
+      "le_radius_streamwise_min_mm": 0.6692120464395838,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999991703,
+        "max": 0.4000000000000749
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.0001164659478753004,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.0034099432392906692,
+        "wing_outline_top_curvature_per_mm": -0.0002763128484538362,
+        "outline_bottom_below_tangent_mm": 1.148109163295885e-09,
+        "wing_outline_bottom_curvature_per_mm": 4.453876333758561e-05,
+        "upper_skin_lines_below_tangent_mm": 0.01156906307053085,
+        "lower_skin_lines_below_tangent_mm": 0.011572689244713885
+      },
+      "join_max_second_derivative_jump": 2.204215338454944e-08,
+      "join_max_position_gap_mm": 1.6278758545314443e-08,
+      "same_as": null
+    },
+    "height-h50": {
+      "group": "height",
+      "label": "50 mm",
+      "overrides": {
+        "height_mm": 50.0
+      },
+      "fits": true,
+      "attach_mm": 537.400834583561,
+      "length_mm": 83.65950789126788,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 46.071115768067344,
+      "height_mm": 50.00000000001924,
+      "tip_cant_deg": 75.0000000003118,
+      "tip_le_sweep_deg": 34.99997182819751,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999551,
+      "tip_chord_mm": 57.318631300803816,
+      "span_mm": 599.9999999983539,
+      "le_radius_min_mm": 0.7093198097503342,
+      "le_radius_streamwise_min_mm": 0.6484354456752232,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999166,
+        "max": 0.4000000000000965
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011570710804101736,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.004324817403926318,
+        "wing_outline_top_curvature_per_mm": -0.0002834781132347978,
+        "outline_bottom_below_tangent_mm": 0.0,
+        "wing_outline_bottom_curvature_per_mm": 4.227920788266856e-05,
+        "upper_skin_lines_below_tangent_mm": 0.016411461590319032,
+        "lower_skin_lines_below_tangent_mm": 0.016434805881002212
+      },
+      "join_max_second_derivative_jump": 2.4923575684544174e-08,
+      "join_max_position_gap_mm": 3.413537894109135e-11,
+      "same_as": null
+    },
+    "height-h55": {
+      "group": "height",
+      "label": "55 mm",
+      "overrides": {
+        "height_mm": 55.0
+      },
+      "fits": true,
+      "attach_mm": 531.727123353514,
+      "length_mm": 92.06094275071274,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 50.677009632487305,
+      "height_mm": 55.00000000001537,
+      "tip_cant_deg": 75.00000000049845,
+      "tip_le_sweep_deg": 34.9999718189688,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.00000000000001,
+      "tip_chord_mm": 55.423827376963494,
+      "span_mm": 600.0000000005499,
+      "le_radius_min_mm": 0.7162143153316423,
+      "le_radius_streamwise_min_mm": 0.6276237490179591,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999989444,
+        "max": 0.40000000000008645
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011501568552392041,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.00541941447283989,
+        "wing_outline_top_curvature_per_mm": -0.00026453160186372474,
+        "outline_bottom_below_tangent_mm": 3.8233192185543885e-05,
+        "wing_outline_bottom_curvature_per_mm": 3.123539438610215e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02225445782462021,
+        "lower_skin_lines_below_tangent_mm": 0.02228547261479541
+      },
+      "join_max_second_derivative_jump": 8.55796958677086e-09,
+      "join_max_position_gap_mm": 1.4348551318814955e-08,
+      "same_as": null
+    },
+    "height-h60": {
+      "group": "height",
+      "label": "60 mm",
+      "overrides": {
+        "height_mm": 60.0
+      },
+      "fits": true,
+      "attach_mm": 526.0475632239833,
+      "length_mm": 100.46890967094447,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28270085816013,
+      "height_mm": 60.00000000000224,
+      "tip_cant_deg": 75.00000000031834,
+      "tip_le_sweep_deg": 34.99997180979415,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000019,
+      "tip_chord_mm": 53.525240194331325,
+      "span_mm": 600.0000000016373,
+      "le_radius_min_mm": 0.7230523668651676,
+      "le_radius_streamwise_min_mm": 0.6067711951808574,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999165,
+        "max": 0.40000000000008284
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011439568327183453,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006700525578295924,
+        "wing_outline_top_curvature_per_mm": -0.00026666721265905096,
+        "outline_bottom_below_tangent_mm": 5.038884864916326e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.4156987047755663e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02898453283272584,
+        "lower_skin_lines_below_tangent_mm": 0.029004946108372565
+      },
+      "join_max_second_derivative_jump": 5.06665228076033e-09,
+      "join_max_position_gap_mm": 6.814398396122645e-09,
+      "same_as": "bend-centred"
+    },
+    "height-h65": {
+      "group": "height",
+      "label": "65 mm",
+      "overrides": {
+        "height_mm": 65.0
+      },
+      "fits": true,
+      "attach_mm": 520.3621569616954,
+      "length_mm": 108.88342888638584,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 59.88819421207488,
+      "height_mm": 65.00000000000762,
+      "tip_cant_deg": 74.99999999972704,
+      "tip_le_sweep_deg": 34.999971800603234,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000012,
+      "tip_chord_mm": 51.62239219369277,
+      "span_mm": 599.9999999986153,
+      "le_radius_min_mm": 0.7152182674041262,
+      "le_radius_streamwise_min_mm": 0.5858727043066143,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999990654,
+        "max": 0.40000000000010005
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011391435662527657,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006499869970241434,
+        "wing_outline_top_curvature_per_mm": -0.0002756284014428838,
+        "outline_bottom_below_tangent_mm": 3.9745947333358345e-05,
+        "wing_outline_bottom_curvature_per_mm": 3.338464336879028e-05,
+        "upper_skin_lines_below_tangent_mm": 0.036348609151024336,
+        "lower_skin_lines_below_tangent_mm": 0.03635168822289869
+      },
+      "join_max_second_derivative_jump": 3.5604682032446346e-09,
+      "join_max_position_gap_mm": 5.016388395694165e-09,
+      "same_as": null
+    },
+    "height-h70": {
+      "group": "height",
+      "label": "70 mm",
+      "overrides": {
+        "height_mm": 70.0
+      },
+      "fits": true,
+      "attach_mm": 520.000000065309,
+      "length_mm": 113.42234611660484,
+      "bend_fraction": 0.9451918623875826,
+      "tightest_bend_radius_mm": 58.96176327860261,
+      "height_mm": 69.99999999998948,
+      "tip_cant_deg": 74.9999999999775,
+      "tip_le_sweep_deg": 34.99994899071547,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999654,
+      "tip_chord_mm": 49.052986195152236,
+      "span_mm": 599.9999999986665,
+      "le_radius_min_mm": 0.6807708168682798,
+      "le_radius_streamwise_min_mm": 0.55765515052723,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999990177,
+        "max": 0.40000000000008984
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.000115866903651036,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.005925221605991737,
+        "wing_outline_top_curvature_per_mm": -0.00027109521056454096,
+        "outline_bottom_below_tangent_mm": 4.703508693637559e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.34053781152939e-05,
+        "upper_skin_lines_below_tangent_mm": 0.03486849748874987,
+        "lower_skin_lines_below_tangent_mm": 0.034870843520928396
+      },
+      "join_max_second_derivative_jump": 3.64633810286323e-09,
+      "join_max_position_gap_mm": 6.079014944412511e-09,
+      "same_as": null
+    },
+    "cant-cant60": {
+      "group": "cant",
+      "label": "60\u00b0",
+      "overrides": {
+        "cant_deg": 60.0
+      },
+      "fits": true,
+      "attach_mm": 520.0000000257278,
+      "length_mm": 100.01437171997708,
+      "bend_fraction": 0.7741460411343724,
+      "tightest_bend_radius_mm": 54.664806222236535,
+      "height_mm": 59.999999999992355,
+      "tip_cant_deg": 60.00000000046569,
+      "tip_le_sweep_deg": 35.0000882719204,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.999999999999971,
+      "tip_chord_mm": 51.37504016905762,
+      "span_mm": 600.0000000002808,
+      "le_radius_min_mm": 0.7119029989709166,
+      "le_radius_streamwise_min_mm": 0.5831561684293534,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999399,
+        "max": 0.4000000000000962
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.0001361688509439547,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.003156837666850265,
+        "wing_outline_top_curvature_per_mm": -0.0002710952097353607,
+        "outline_bottom_below_tangent_mm": 4.703366585090407e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.340537811441413e-05,
+        "upper_skin_lines_below_tangent_mm": 0.01786538826162376,
+        "lower_skin_lines_below_tangent_mm": 0.017864682072632698
+      },
+      "join_max_second_derivative_jump": 1.4330698305992026e-08,
+      "join_max_position_gap_mm": 6.079022039937698e-09,
+      "same_as": null
+    },
+    "cant-cant65": {
+      "group": "cant",
+      "label": "65\u00b0",
+      "overrides": {
+        "cant_deg": 65.0
+      },
+      "fits": true,
+      "attach_mm": 520.0000000534346,
+      "length_mm": 101.80350023658292,
+      "bend_fraction": 0.8885731078684331,
+      "tightest_bend_radius_mm": 58.35258419541146,
+      "height_mm": 59.99999999998637,
+      "tip_cant_deg": 65.0000000000545,
+      "tip_le_sweep_deg": 34.99998110965564,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.0000000000000306,
+      "tip_chord_mm": 52.49580208491331,
+      "span_mm": 599.9999999980105,
+      "le_radius_min_mm": 0.7269283964864198,
+      "le_radius_streamwise_min_mm": 0.5954650268854097,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999990254,
+        "max": 0.40000000000009595
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00010976145697733914,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.0042990502061428515,
+        "wing_outline_top_curvature_per_mm": -0.00027109521032215304,
+        "outline_bottom_below_tangent_mm": 4.703366585090407e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.340537812487269e-05,
+        "upper_skin_lines_below_tangent_mm": 0.025118703871122028,
+        "lower_skin_lines_below_tangent_mm": 0.02511850058989129
+      },
+      "join_max_second_derivative_jump": 7.233231070417596e-09,
+      "join_max_position_gap_mm": 6.079022039937698e-09,
+      "same_as": null
+    },
+    "cant-cant70": {
+      "group": "cant",
+      "label": "70\u00b0",
+      "overrides": {
+        "cant_deg": 70.0
+      },
+      "fits": true,
+      "attach_mm": 520.000000065309,
+      "length_mm": 103.43031370015416,
+      "bend_fraction": 0.9848223305307326,
+      "tightest_bend_radius_mm": 60.48237200771424,
+      "height_mm": 59.999999999993925,
+      "tip_cant_deg": 70.00000000005579,
+      "tip_le_sweep_deg": 34.999986649180535,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.0000000000000546,
+      "tip_chord_mm": 53.44483847823033,
+      "span_mm": 599.9999999991483,
+      "le_radius_min_mm": 0.7319743982860926,
+      "le_radius_streamwise_min_mm": 0.6058881452267494,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.39999999999992464,
+        "max": 0.400000000000078
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 8.181590515732461e-05,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.005474447857167775,
+        "wing_outline_top_curvature_per_mm": -0.00027109521056454096,
+        "outline_bottom_below_tangent_mm": 4.703508693637559e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.34053781152939e-05,
+        "upper_skin_lines_below_tangent_mm": 0.03227250803084214,
+        "lower_skin_lines_below_tangent_mm": 0.03227406099817465
+      },
+      "join_max_second_derivative_jump": 4.355868428306548e-09,
+      "join_max_position_gap_mm": 6.079014944412511e-09,
+      "same_as": null
+    },
+    "cant-cant75": {
+      "group": "cant",
+      "label": "75\u00b0",
+      "overrides": {
+        "cant_deg": 75.0
+      },
+      "fits": true,
+      "attach_mm": 526.0475632239833,
+      "length_mm": 100.46890967094447,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28270085816013,
+      "height_mm": 60.00000000000224,
+      "tip_cant_deg": 75.00000000031834,
+      "tip_le_sweep_deg": 34.99997180979415,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000019,
+      "tip_chord_mm": 53.525240194331325,
+      "span_mm": 600.0000000016373,
+      "le_radius_min_mm": 0.7230523668651676,
+      "le_radius_streamwise_min_mm": 0.6067711951808574,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999165,
+        "max": 0.40000000000008284
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011439568327183453,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006700525578295924,
+        "wing_outline_top_curvature_per_mm": -0.00026666721265905096,
+        "outline_bottom_below_tangent_mm": 5.038884864916326e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.4156987047755663e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02898453283272584,
+        "lower_skin_lines_below_tangent_mm": 0.029004946108372565
+      },
+      "join_max_second_derivative_jump": 5.06665228076033e-09,
+      "join_max_position_gap_mm": 6.814398396122645e-09,
+      "same_as": null
+    },
+    "cant-cant80": {
+      "group": "cant",
+      "label": "80\u00b0",
+      "overrides": {
+        "cant_deg": 80.0
+      },
+      "fits": true,
+      "attach_mm": 532.8440267877886,
+      "length_mm": 97.20376673020911,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 49.83472710606293,
+      "height_mm": 60.00000000001328,
+      "tip_cant_deg": 79.99999999998332,
+      "tip_le_sweep_deg": 34.99997186913293,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999512,
+      "tip_chord_mm": 53.31290621509609,
+      "span_mm": 599.9999999988114,
+      "le_radius_min_mm": 0.7133752920884116,
+      "le_radius_streamwise_min_mm": 0.6044391400755196,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999227,
+        "max": 0.40000000000009983
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011449218525020487,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.005427170029435047,
+        "wing_outline_top_curvature_per_mm": -0.0002956165994981944,
+        "outline_bottom_below_tangent_mm": 8.340492740899208e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.2963012107122992e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02415334229757904,
+        "lower_skin_lines_below_tangent_mm": 0.024190066028769053
+      },
+      "join_max_second_derivative_jump": 6.910364400385696e-09,
+      "join_max_position_gap_mm": 1.1815149881472494e-08,
+      "same_as": null
+    },
+    "cant-cant85": {
+      "group": "cant",
+      "label": "85\u00b0",
+      "overrides": {
+        "cant_deg": 85.0
+      },
+      "fits": true,
+      "attach_mm": 539.1637702320004,
+      "length_mm": 94.54457240975404,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 45.3724294350959,
+      "height_mm": 59.9999999999909,
+      "tip_cant_deg": 85.00000000024242,
+      "tip_le_sweep_deg": 34.999971928399255,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999603,
+      "tip_chord_mm": 52.976913660674626,
+      "span_mm": 599.9999999989424,
+      "le_radius_min_mm": 0.7042166446207295,
+      "le_radius_streamwise_min_mm": 0.6007489712486168,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999086,
+        "max": 0.40000000000008124
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011459847820822458,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.004828626127789448,
+        "wing_outline_top_curvature_per_mm": -0.0003291440599378663,
+        "outline_bottom_below_tangent_mm": 2.2285462364379782e-10,
+        "wing_outline_bottom_curvature_per_mm": 4.288669294492204e-05,
+        "upper_skin_lines_below_tangent_mm": 0.020010211382012866,
+        "lower_skin_lines_below_tangent_mm": 0.020030773748536124
+      },
+      "join_max_second_derivative_jump": 8.821612209878419e-09,
+      "join_max_position_gap_mm": 3.158684440533186e-09,
+      "same_as": null
+    },
+    "toe-toe0": {
+      "group": "toe",
+      "label": "0\u00b0",
+      "overrides": {
+        "toe_out_deg": 0.0
+      },
+      "fits": true,
+      "attach_mm": 525.5572776779301,
+      "length_mm": 100.47309062493702,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28237250835827,
+      "height_mm": 60.00000000001792,
+      "tip_cant_deg": 75.00000000019357,
+      "tip_le_sweep_deg": 34.999971803088094,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 0.0,
+      "tip_chord_mm": 53.59261834159429,
+      "span_mm": 599.999999998841,
+      "le_radius_min_mm": 0.7238636718912205,
+      "le_radius_streamwise_min_mm": 0.6075112088290487,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999998972,
+        "max": 0.4000000000000957
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011483440165241234,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006496322696264656,
+        "wing_outline_top_curvature_per_mm": -0.00028147748148351796,
+        "outline_bottom_below_tangent_mm": 3.8322411910485243e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.5615330615487982e-06,
+        "upper_skin_lines_below_tangent_mm": 0.029066890533943734,
+        "lower_skin_lines_below_tangent_mm": 0.02908526786990473
+      },
+      "join_max_second_derivative_jump": 5.353271725550435e-09,
+      "join_max_position_gap_mm": 5.18225279133183e-09,
+      "same_as": null
+    },
+    "toe-toe2": {
+      "group": "toe",
+      "label": "2\u00b0",
+      "overrides": {
+        "toe_out_deg": 2.0
+      },
+      "fits": true,
+      "attach_mm": 526.0475632239833,
+      "length_mm": 100.46890967094447,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28270085816013,
+      "height_mm": 60.00000000000224,
+      "tip_cant_deg": 75.00000000031834,
+      "tip_le_sweep_deg": 34.99997180979415,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 2.000000000000019,
+      "tip_chord_mm": 53.525240194331325,
+      "span_mm": 600.0000000016373,
+      "le_radius_min_mm": 0.7230523668651676,
+      "le_radius_streamwise_min_mm": 0.6067711951808574,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999165,
+        "max": 0.40000000000008284
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011439568327183453,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006700525578295924,
+        "wing_outline_top_curvature_per_mm": -0.00026666721265905096,
+        "outline_bottom_below_tangent_mm": 5.038884864916326e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.4156987047755663e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02898453283272584,
+        "lower_skin_lines_below_tangent_mm": 0.029004946108372565
+      },
+      "join_max_second_derivative_jump": 5.06665228076033e-09,
+      "join_max_position_gap_mm": 6.814398396122645e-09,
+      "same_as": null
+    },
+    "toe-toe4": {
+      "group": "toe",
+      "label": "4\u00b0",
+      "overrides": {
+        "toe_out_deg": 4.0
+      },
+      "fits": true,
+      "attach_mm": 526.4147457861108,
+      "length_mm": 100.46577879445539,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.282946928494276,
+      "height_mm": 59.99999999999501,
+      "tip_cant_deg": 75.00000000026495,
+      "tip_le_sweep_deg": 34.9999718148276,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 3.999999999999976,
+      "tip_chord_mm": 53.54820043906123,
+      "span_mm": 600.0000000007077,
+      "le_radius_min_mm": 0.722445400285421,
+      "le_radius_streamwise_min_mm": 0.6070233672403204,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999173,
+        "max": 0.40000000000008773
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011403374331367313,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006510873629906655,
+        "wing_outline_top_curvature_per_mm": -0.0002584458810076662,
+        "outline_bottom_below_tangent_mm": 5.948521675236407e-10,
+        "wing_outline_bottom_curvature_per_mm": 2.235273806864017e-05,
+        "upper_skin_lines_below_tangent_mm": 0.028915790683953224,
+        "lower_skin_lines_below_tangent_mm": 0.028937717829492282
+      },
+      "join_max_second_derivative_jump": 5.165169778259635e-09,
+      "join_max_position_gap_mm": 8.04454778098072e-09,
+      "same_as": null
+    },
+    "toe-toe6": {
+      "group": "toe",
+      "label": "6\u00b0",
+      "overrides": {
+        "toe_out_deg": 6.0
+      },
+      "fits": true,
+      "attach_mm": 526.6947400317296,
+      "length_mm": 100.46339152740228,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.28313466329956,
+      "height_mm": 59.99999999999353,
+      "tip_cant_deg": 74.99999999964587,
+      "tip_le_sweep_deg": 34.999971818680635,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 6.000000000000026,
+      "tip_chord_mm": 53.65459298585133,
+      "span_mm": 600.0000000010093,
+      "le_radius_min_mm": 0.7219831701282047,
+      "le_radius_streamwise_min_mm": 0.6081918768106803,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999101,
+        "max": 0.40000000000009756
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00011360467031158619,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006366830415743152,
+        "wing_outline_top_curvature_per_mm": -0.0002547808779396155,
+        "outline_bottom_below_tangent_mm": 6.630784810113255e-10,
+        "wing_outline_bottom_curvature_per_mm": 2.8347137899630037e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02885769992289866,
+        "lower_skin_lines_below_tangent_mm": 0.02888077567177838
+      },
+      "join_max_second_derivative_jump": 5.27271471573724e-09,
+      "join_max_position_gap_mm": 8.96744928563342e-09,
+      "same_as": null
+    },
+    "combined-tall-canted": {
+      "group": "combined",
+      "label": "70 mm and 70\u00b0 cant",
+      "overrides": {
+        "height_mm": 70.0,
+        "cant_deg": 70.0
+      },
+      "fits": true,
+      "attach_mm": 520.0000000098953,
+      "length_mm": 111.45480470940589,
+      "bend_fraction": 0.8533728045877069,
+      "tightest_bend_radius_mm": 56.46863561368861,
+      "height_mm": 70.0000000000121,
+      "tip_cant_deg": 69.99999999995264,
+      "tip_le_sweep_deg": 34.999947329244385,
+      "trailing_edge_tip_sweep_deg": 10.0,
+      "toe_out_deg": 1.9999999999999785,
+      "tip_chord_mm": 48.17264911331304,
+      "span_mm": 599.9999999989263,
+      "le_radius_min_mm": 0.668968974767007,
+      "le_radius_streamwise_min_mm": 0.5479876475702083,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999092,
+        "max": 0.4000000000000973
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "trailing_edge_turns_one_way": true,
+        "trailing_edge_counter_bend_ratio": 0.00025892465041559226,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.004581238260499276,
+        "wing_outline_top_curvature_per_mm": -0.00027109520939874797,
+        "outline_bottom_below_tangent_mm": 4.703366585090407e-10,
+        "wing_outline_bottom_curvature_per_mm": 3.34053781115109e-05,
+        "upper_skin_lines_below_tangent_mm": 0.02696290596881301,
+        "lower_skin_lines_below_tangent_mm": 0.026962947305926965
+      },
+      "join_max_second_derivative_jump": 6.1276659183523516e-09,
+      "join_max_position_gap_mm": 6.079022039937698e-09,
+      "same_as": null
+    }
+  }
+}

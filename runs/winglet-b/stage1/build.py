@@ -36,18 +36,32 @@ FIXTURE = REPO / "aircraft/phase0_sd7037"
 CONVERTER_REVISION = "d77bbdf45a8c0aa92efbc2a3d3007cfe4f904105"
 RULE_MM = 0.4
 
-# Bend distributions to compare. Curvature ramps up over ramp_in of the winglet's
-# leading-edge length, holds its peak, and ramps down over the last ramp_out.
-VARIANTS = {
-    "even": ("Even: short ramps, turn spread almost evenly", {"ramp_in": 0.2, "ramp_out": 0.2}),
-    "centred": ("Centred: 35% ramps, broad middle", {"ramp_in": 0.35, "ramp_out": 0.35}),
-    "bell": ("Bell: 50% ramps, single peak in the middle", {"ramp_in": 0.5, "ramp_out": 0.5}),
-    "early": ("Early peak: turns soon after the wing, long straighter top",
-              {"ramp_in": 0.3, "ramp_out": 0.6}),
-    "late": ("Late peak, 56 mm tall: flat longer, flares near the tip (65 mm does not fit)",
-             {"ramp_in": 0.5, "ramp_out": 0.25, "height_mm": 56.0}),
+# The configuration study: one setting at a time around the baseline. bend_fraction=None lets
+# the law finish the bend early (a straight leg after it) only when the full-length bend does
+# not fit the span; it then picks the gentlest bend that does.
+BASELINE = {"height_mm": 60.0, "te_sweep_deg": 10.0, "tip_chord_mm": None, "bend_fraction": None,
+            "ramp_in": 0.35, "ramp_out": 0.35}
+BASELINE_LABEL = "Baseline: 60 mm, 75° cant, 35° LE / 10° TE sweep aft, 2° toe-out, centred bend"
+GROUPS = {
+    "bend": ("Bend distribution (ramps in / out)", [
+        ("even", "Even 20 / 20", {"ramp_in": 0.2, "ramp_out": 0.2}),
+        ("centred", "Centred 35 / 35", {}),
+        ("bell", "Bell 50 / 50", {"ramp_in": 0.5, "ramp_out": 0.5}),
+        ("early", "Early peak 30 / 60", {"ramp_in": 0.3, "ramp_out": 0.6}),
+        ("late", "Late peak 50 / 25", {"ramp_in": 0.5, "ramp_out": 0.25}),
+    ]),
+    "te": ("Trailing-edge sweep at the tip", [
+        (f"te{v:+d}", f"{abs(v)}° {'forward' if v < 0 else 'aft'}" if v else "0°", {"te_sweep_deg": float(v)})
+        for v in (-10, 0, 10, 15, 20, 25)]),
+    "le": ("Leading-edge sweep at the tip", [
+        (f"le{v}", f"{v}°", {"sweep_deg": float(v)}) for v in (20, 25, 35, 45, 50)]),
+    "height": ("Height", [(f"h{v}", f"{v} mm", {"height_mm": float(v)}) for v in (45, 50, 55, 60, 65, 70)]),
+    "cant": ("Cant at the tip", [(f"cant{v}", f"{v}°", {"cant_deg": float(v)}) for v in (60, 65, 70, 75, 80, 85)]),
+    "toe": ("Toe-out", [(f"toe{v}", f"{v}°", {"toe_out_deg": float(v)}) for v in (0, 2, 4, 6)]),
+    "combined": ("Combinations", [
+        ("tall-canted", "70 mm and 70° cant", {"height_mm": 70.0, "cant_deg": 70.0}),
+    ]),
 }
-DEFAULT_VARIANT = "centred"
 
 
 def families(converter, definition):
@@ -64,7 +78,7 @@ def families(converter, definition):
 
 
 def make(converter, **overrides):
-    definition = WingletDefinition(**overrides)
+    definition = WingletDefinition(**{**BASELINE, **overrides})
     parent_family, target_family = families(converter, definition)
     return BlendedWinglet(load_definition(PARENT).wing, definition, parent_family, target_family)
 
@@ -202,7 +216,12 @@ def measure(w):
             "chord_decreases_throughout": bool(np.all(np.diff(chords) < 0)),
             "bend_curvature_never_negative": bool(kappa.min() >= 0),
             "dihedral_rises_throughout": bool(np.all(np.diff(dihedral) >= -1e-7)),
-            "trailing_edge_moves_one_way": bool(np.all(te_rate > 0) or np.all(te_rate < 0)),
+            # Informational: an aft-swept trailing edge must turn Wing B's slightly forward-running
+            # edge around once, so it cannot also keep one direction.
+            "trailing_edge_keeps_one_direction": bool(np.all(te_rate > 0) or np.all(te_rate < 0)),
+            # The S the first revision had: the edge's bend reverses. Wing B's own bend carried
+            # through the join leaves a small reversal; past 10% of the main bend counts as an S.
+            "trailing_edge_turns_one_way": bool(te_reversal < 0.1),
             # Wing B's own trailing-edge bend is carried through the join for smoothness, so a
             # small opposite bend can remain near it; this is its size against the main bend.
             "trailing_edge_counter_bend_ratio": te_reversal,
@@ -231,7 +250,8 @@ def write_variant(w, name, title, out):
         "sections": {f"s{float(s):07.2f}": w.frame(float(s)).section().tolist()
                      for s in np.linspace(0, w.s_tip, 13)},
     }
-    (out / "curves.json").write_text(json.dumps(curves) + "\n")
+    if name == "bend-centred":
+        (out / "curves.json").write_text(json.dumps(curves) + "\n")
     plot_views(w, frames, pframes, title, out / "views.png")
     plot_laws(w, frames, report, title, out / "laws.png")
     return report
@@ -303,30 +323,58 @@ def plot_laws(w, frames, report, title, path):
     plt.close(fig)
 
 
-def plot_comparison(winglets, path):
-    fig, axes = plt.subplots(1, 3, figsize=(17, 5.6))
-    for name, (title, w) in winglets.items():
-        x = np.linspace(0, 1, 401)
-        kappa = [w.kappa(float(t * w.s_tip)) * 1000 for t in x]
-        axes[0].plot(x, kappa, label=f"{name} (tightest {1000 / max(kappa):.0f} mm)")
+def plot_group(title, members, path):
+    """Front and plan views of one group's leading and trailing edges, overlaid."""
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+    for label, w in members:
         s = np.linspace(0, w.s_tip, 161)
-        axes[1].plot(s / w.s_tip, [math.degrees(w.gamma(float(t))) for t in s], label=name)
-        le = np.array([w.frame(float(t)).le for t in s])
-        axes[2].plot(-le[:, 0], le[:, 1], label=f"{name}: starts {-w.le0[0]:.1f} mm")
-    axes[0].set_title("Bend curvature along the winglet (1/m)")
-    axes[0].set_xlabel("fraction of the winglet's LE length")
-    axes[1].set_title("LE dihedral (deg)")
-    axes[1].set_xlabel("fraction of the winglet's LE length")
-    axes[2].set_title("Leading edge, front view (mm)")
-    axes[2].set_xlabel("outboard (mm)")
-    axes[2].axvline(600, color="tab:purple", ls="--", lw=0.8)
-    axes[2].set_aspect("equal")
+        frames = [w.frame(float(t)) for t in s]
+        le, te = np.array([f.le for f in frames]), np.array([f.te for f in frames])
+        line = axes[0].plot(-le[:, 0], le[:, 1], label=label)[0]
+        axes[0].plot(-te[:, 0], te[:, 1], color=line.get_color(), lw=0.8, ls="--")
+        axes[1].plot(-le[:, 0], le[:, 2], color=line.get_color())
+        axes[1].plot(-te[:, 0], te[:, 2], color=line.get_color(), lw=0.8, ls="--")
+        axes[2].plot(s / w.s_tip, [w.kappa(float(t)) * 1000 for t in s], color=line.get_color())
+    axes[0].set_title("Front view: LE solid, TE dashed (mm)")
+    axes[1].set_title("Plan view: LE solid, TE dashed (mm)")
+    axes[2].set_title("Bend curvature (1/m) along the winglet")
+    for ax in axes[:2]:
+        ax.axvline(600, color="tab:purple", ls="--", lw=0.8)
+        ax.set_aspect("equal")
+        ax.set_xlabel("outboard (mm)")
+    axes[2].set_xlabel("fraction of the winglet's LE length")
     for ax in axes:
         ax.grid(alpha=0.3)
-        ax.legend(fontsize=8)
+    axes[0].legend(fontsize=8)
+    fig.suptitle(title)
     fig.tight_layout()
-    fig.savefig(path, dpi=110)
+    fig.savefig(path, dpi=105)
     plt.close(fig)
+
+
+def summarise(name, group, label, overrides, w, report):
+    m, law = report["measured"], report["law"]
+    return {
+        "group": group, "label": label, "overrides": overrides, "fits": True,
+        "attach_mm": m["attach_mm"], "length_mm": law["length_mm"], "bend_fraction": law["bend_fraction"],
+        "tightest_bend_radius_mm": law["tightest_bend_radius_mm"], "height_mm": m["height_mm"],
+        "tip_cant_deg": m["tip_cant_deg"], "tip_le_sweep_deg": m["tip_le_sweep_deg"],
+        "trailing_edge_tip_sweep_deg": law["trailing_edge_tip_sweep_deg"],
+        "toe_out_deg": m["toe_out_deg"], "tip_chord_mm": m["tip_chord_mm"],
+        "span_mm": report["span"]["with_cap_allowance_mm"],
+        "le_radius_min_mm": report["le_radius"]["worst"]["normal_to_le_mm"],
+        "le_radius_streamwise_min_mm": min(r["streamwise_mm"] for r in report["le_radius"]["stations"]),
+        "le_radius_passes": report["le_radius"]["passes"],
+        "trailing_edge_mm": m["trailing_edge_mm"],
+        "checks": {k: m[k] for k in ("chord_decreases_throughout", "bend_curvature_never_negative",
+                                     "dihedral_rises_throughout", "trailing_edge_turns_one_way",
+                                     "trailing_edge_counter_bend_ratio",
+                                     "every_section_has_positive_thickness")},
+        "front_view_sag": m["front_view_sag"],
+        "join_max_second_derivative_jump": max(j["second_derivative_jump_per_mm"]
+                                               for j in report["join_continuity"].values()),
+        "join_max_position_gap_mm": max(j["position_gap_mm"] for j in report["join_continuity"].values()),
+    }
 
 
 def main():
@@ -336,34 +384,38 @@ def main():
     sys.path.insert(0, str(opts.converter_src))
     from airfoil_converter import geometry as converter
 
-    winglets, summary = {}, {}
-    for name, (title, overrides) in VARIANTS.items():
-        w = make(converter, **overrides)
-        winglets[name] = (title, w)
-        report = write_variant(w, name, title, HERE / "variants" / name)
-        m, law = report["measured"], report["law"]
-        summary[name] = {
-            "title": title, "attach_mm": m["attach_mm"], "length_mm": law["length_mm"],
-            "tightest_bend_radius_mm": law["tightest_bend_radius_mm"], "height_mm": m["height_mm"],
-            "tip_cant_deg": m["tip_cant_deg"], "tip_le_sweep_deg": m["tip_le_sweep_deg"],
-            "trailing_edge_tip_sweep_deg": law["trailing_edge_tip_sweep_deg"],
-            "toe_out_deg": m["toe_out_deg"], "tip_chord_mm": m["tip_chord_mm"],
-            "span_mm": report["span"]["with_cap_allowance_mm"],
-            "le_radius_min_mm": report["le_radius"]["worst"]["normal_to_le_mm"],
-            "le_radius_passes": report["le_radius"]["passes"],
-            "trailing_edge_mm": m["trailing_edge_mm"],
-            "checks": {k: m[k] for k in ("chord_decreases_throughout", "bend_curvature_never_negative",
-                                         "dihedral_rises_throughout", "trailing_edge_moves_one_way",
-                                         "trailing_edge_counter_bend_ratio",
-                                         "every_section_has_positive_thickness")},
-            "front_view_sag": m["front_view_sag"],
-            "join_max_second_derivative_jump": max(j["second_derivative_jump_per_mm"]
-                                                   for j in report["join_continuity"].values()),
-            "join_max_position_gap_mm": max(j["position_gap_mm"] for j in report["join_continuity"].values()),
-        }
-    plot_comparison(winglets, HERE / "variants" / "comparison.png")
-    (HERE / "variants" / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
-    print(json.dumps(summary, indent=1))
+    out = HERE / "configs"
+    summary, built = {}, {}
+    for group, (group_title, members) in GROUPS.items():
+        drawn = []
+        for name, label, overrides in members:
+            key = json.dumps({**BASELINE, **overrides}, sort_keys=True)
+            config = f"{group}-{name}"
+            try:
+                if key not in built:
+                    w = make(converter, **overrides)
+                    title = f"{group_title}: {label}"
+                    built[key] = (config, w, write_variant(w, config, title, out / config))
+                first, w, report = built[key]
+                summary[config] = summarise(config, group, label, overrides, w, report)
+                summary[config]["same_as"] = first if first != config else None
+                drawn.append((label, w))
+            except ValueError as error:
+                summary[config] = {"group": group, "label": label, "overrides": overrides,
+                                   "fits": False, "reason": str(error)}
+        plot_group(group_title, drawn, out / f"group-{group}.png")
+    (out / "summary.json").write_text(json.dumps({"baseline": BASELINE, "baseline_label": BASELINE_LABEL,
+                                                  "groups": {g: t for g, (t, _) in GROUPS.items()},
+                                                  "configs": summary}, indent=2) + "\n")
+    for config, row in summary.items():
+        if row["fits"]:
+            print(f"{config:22s} start {row['attach_mm']:6.1f}  bend {row['bend_fraction']:.2f}  "
+                  f"R {row['tightest_bend_radius_mm']:5.1f}  tip chord {row['tip_chord_mm']:5.1f}  "
+                  f"LE r {row['le_radius_min_mm']:.2f}/{row['le_radius_streamwise_min_mm']:.2f}  "
+                  f"sag {row['front_view_sag']['outline_top_below_tangent_mm']:.3f}  "
+                  f"checks {all(v for k, v in row['checks'].items() if k != 'trailing_edge_counter_bend_ratio')}")
+        else:
+            print(f"{config:22s} does not fit: {row['reason'][:90]}")
 
 
 if __name__ == "__main__":
