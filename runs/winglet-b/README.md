@@ -20,6 +20,7 @@ The whole winglet is the transition. From the attachment to the tip:
 - **Section planes** start spanwise-parallel like Wing B's and rotate until they are normal to the leading edge in the front view at the tip.
 - **Leading and trailing edges are drawn.** Each edge's direction in side view blends from Wing B's into its tip direction: 35° sweep for the leading edge, and for the trailing edge whatever sweep gives the 32 mm tip chord. The chord is the distance between them. (The first version tapered the chord independently of the sweep. Its trailing edge came out as an S: forward through the bend, aft up the leg.)
 - **Twist** blends from Wing B's washout into 2° toe-out.
+- **Sweep, taper, twist, morph and plane rotation advance with the turn**, not with distance: each is blended by how much of the 7°-to-75° turn the leading edge has already made. Each section then changes while the skin is already rising. Advancing them with distance instead made the winglet sag below Wing B's line in the front view before the bend lifted it (see [Front view](#front-view)).
 - **Section morph.** Each section is split into a camber line and a thickness distribution. The SD7037 camber fades to zero and its thickness blends into a symmetric 10% section (NACA 0010 thickness). The trailing-edge thickness is put back as a ramp fixed at 0.4 mm, so it never scales with the chord. The Airfoil Converter ([d77bbdf](https://github.com/Trying-to-Fly/Airfoil-Converter/tree/d77bbdf45a8c0aa92efbc2a3d3007cfe4f904105)) cuts both end sections' blunt trailing edges with keep-chord, as the cap-radius parents do.
 
 Solving order: the winglet's length meets the 65 mm height; the attachment station meets the 600 mm span (with the tip extended 12 mm along its tangent as an allowance for the cap); the trailing-edge sweep meets the tip chord. The attachment may not come within 10 mm of the aileron hinge's 510 mm end.
@@ -31,14 +32,28 @@ Solving order: the winglet's length meets the 65 mm height; the attachment stati
 | Variant | Ramps in / out (%) | Starts at (mm) | Height (mm) | Tightest bend radius (mm) | Tip trailing-edge sweep | Smallest LE radius (mm) |
 | --- | --- | ---: | ---: | ---: | --- | ---: |
 | [even](stage1/variants/even/) | 20 / 20 | 521.1 | 65.0 | 72.6 | 11.2° forward | 0.45 |
-| [centred](stage1/variants/centred/) | 35 / 35 | 521.1 | 65.0 | 59.9 | 10.3° forward | 0.45 |
-| [bell](stage1/variants/bell/) | 50 / 50 | 521.2 | 65.0 | 46.6 | 9.6° forward | 0.45 |
-| [early](stage1/variants/early/) | 30 / 60 | 532.5 | 65.0 | 46.7 | 12.9° forward | 0.45 |
-| [late](stage1/variants/late/) | 50 / 25 | 521.5 | 56.0 | 54.1 | 14.1° forward | 0.45 |
+| [centred](stage1/variants/centred/) | 35 / 35 | 521.1 | 65.0 | 59.9 | 10.2° forward | 0.45 |
+| [bell](stage1/variants/bell/) | 50 / 50 | 521.2 | 65.0 | 46.6 | 9.5° forward | 0.45 |
+| [early](stage1/variants/early/) | 30 / 60 | 532.5 | 65.0 | 46.7 | 7.8° forward | 0.45 |
+| [late](stage1/variants/late/) | 50 / 25 | 521.5 | 56.0 | 54.1 | 19.5° forward | 0.45 |
 
 ![Curvature, dihedral and front view of the five bends](stage1/variants/comparison.png)
 
 A late peak keeps the wing flat longer, so it needs more room sideways. At 65 mm it would have to start inboard of the hinge clearance; the late variant is 56 mm tall instead. The first Stage 1 version was a single 73 mm bend from 540 mm with a 22 mm straight leg; its tightest radius was 33 mm.
+
+## Front view
+
+A review of the bell variant saw the winglet first droop below Wing B and then curve up. It did. With the sections changing in step with distance along the winglet, the shrinking chord and the fading camber lowered the upper outline before the bend had lifted the skin. The upper outline fell up to 0.09 mm below Wing B's tangent line (0.12 mm on the late variant), about 20 mm along. Skin lines near the trailing edge fell up to 0.22 mm. The lower outline barely moved (0.007 mm at most).
+
+Tying those changes to the turn instead fixes it. What remains is Wing B's own shape carried through the join for curvature continuity. Wing B's washout makes its trailing edge curve down in the front view (curvature −8.3e-4 per mm; it would fall 0.09 mm below its tangent over 15 mm). Its upper outline curves down too (−2.7e-4 per mm). The winglet now lifts both sooner than Wing B alone would:
+
+| Below Wing B's front-view tangent, largest over all variants | Advancing with distance (first revision) | Advancing with the turn (now) |
+| --- | ---: | ---: |
+| Upper outline | 0.12 mm | 0.012 mm |
+| Lower outline | 0.007 mm | 0.0002 mm |
+| Any skin line (deepest at the trailing edge) | 0.22 mm | 0.061 mm |
+
+Each variant's report.json records these under measured.front_view_sag.
 
 ## Checks, every variant
 
@@ -50,7 +65,7 @@ A late peak keeps the wing flat longer, so it needs more room sideways. At 65 mm
 | Join to Wing B (LE and three skin points) | largest gap 1.3e-8 mm; largest second-derivative jump 2.8e-8 per mm against values of about 3e-4 to 9e-4 |
 | Bend curvature never negative; dihedral rises throughout; chord decreases throughout; every section has positive thickness | pass |
 | Trailing edge moves one way in side view (no S) | pass |
-| Trailing edge's opposite bend near the join | 6–10% of its main bend. This is Wing B's own trailing-edge curve carried through the join to keep it smooth. |
+| Trailing edge's opposite bend near the join | 3–7% of its main bend. This is Wing B's own trailing-edge curve carried through the join to keep it smooth. |
 | Leading-edge radius | at least 0.45 mm normal to the leading edge, at the winglet tip (0.37 mm in the streamwise section). Sweep makes the cross-section normal to the edge rounder; Stage 4 measures the true principal curvature on the STEP. |
 
 Each variant's folder holds its views, laws along the leading edge, report and curves: [even](stage1/variants/even/), [centred](stage1/variants/centred/), [bell](stage1/variants/bell/), [early](stage1/variants/early/), [late](stage1/variants/late/).

@@ -95,6 +95,51 @@ def angle_along(points):
     return np.degrees(np.arctan2(seg[:, 1], -seg[:, 0]))
 
 
+def front_view_sag(w, upto=0.6):
+    """How far the winglet falls below the wing's own front-view tangent lines at the join.
+
+    Outline: each section's highest and lowest point along the wing's up-inboard normal at
+    the join, compared with the outline's tangent from the wing side. Skin lines: every
+    sixth profile point on each surface, compared with that line's own tangent. Also the
+    wing's own outline curvature, which the join carries on for curvature continuity."""
+    g0 = w.gamma0
+    normal, along = np.array([math.sin(g0), math.cos(g0)]), np.array([math.cos(g0), math.sin(g0)])
+
+    def front(points):
+        return np.column_stack([-points[..., 0], points[..., 1]])
+
+    wing_side = [w.parent_frame(w.parent_fraction(-h)) for h in np.linspace(6, 0, 13)]
+    winglet_side = [w.frame(float(s)) for s in np.linspace(0, upto * w.s_tip, 121)]
+    out = {}
+    for name, pick in (("top", np.argmax), ("bottom", np.argmin)):
+        def outline(frames, pick=pick):
+            rows = []
+            for f in frames:
+                p = front(f.section())
+                k = pick(p @ normal)
+                rows.append((p[k] @ along, p[k] @ normal))
+            return np.array(rows)
+
+        wing, winglet = outline(wing_side), outline(winglet_side)
+        slope = np.polyfit(wing[-5:, 0], wing[-5:, 1], 1)[0]
+        tangent = wing[-1, 1] + slope * (winglet[:, 0] - wing[-1, 0])
+        out[f"outline_{name}_below_tangent_mm"] = float(max(0.0, (tangent - winglet[:, 1]).max()))
+        out[f"wing_outline_{name}_curvature_per_mm"] = float(2 * np.polyfit(wing[:, 0], wing[:, 1], 2)[0])
+    for side in ("upper", "lower"):
+        deepest = 0.0
+        for index in range(2, len(winglet_side[0].profile.camber), 6):
+            def line(frame, index=index, side=side):
+                x, y = (frame.profile.upper() if side == "upper" else frame.profile.lower())[index]
+                point = frame.point(x, y)
+                return np.array([-point[0], point[1]])
+            pts = np.array([line(f) for f in winglet_side])
+            before = line(w.parent_frame(w.parent_fraction(-0.5)))
+            t = (pts[0] - before) / np.linalg.norm(pts[0] - before)
+            deepest = max(deepest, float(-(((pts - pts[0]) @ np.array([-t[1], t[0]])).min())))
+        out[f"{side}_skin_lines_below_tangent_mm"] = deepest
+    return out
+
+
 def measure(w):
     stations = w.stations(161)
     frames = [w.frame(float(s)) for s in stations]
@@ -164,6 +209,7 @@ def measure(w):
             "trailing_edge_mm": {"min": min(te_gap), "max": max(te_gap)},
             "every_section_has_positive_thickness": bool(all((f.profile.half_thickness[1:] > 0).all()
                                                              for f in frames)),
+            "front_view_sag": front_view_sag(w),
         },
         "le_radius": {"rule_mm": RULE_MM, "worst": worst_le,
                       "passes": bool(worst_le["normal_to_le_mm"] >= RULE_MM), "stations": le_rows},
@@ -310,6 +356,7 @@ def main():
                                          "dihedral_rises_throughout", "trailing_edge_moves_one_way",
                                          "trailing_edge_counter_bend_ratio",
                                          "every_section_has_positive_thickness")},
+            "front_view_sag": m["front_view_sag"],
             "join_max_second_derivative_jump": max(j["second_derivative_jump_per_mm"]
                                                    for j in report["join_continuity"].values()),
             "join_max_position_gap_mm": max(j["position_gap_mm"] for j in report["join_continuity"].values()),

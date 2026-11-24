@@ -200,6 +200,9 @@ class WingletDefinition:
     ramp_in: float = 0.35
     ramp_out: float = 0.35
     hinge_clearance_mm: float = 10.0  # the winglet starts at least this far outboard of the hinge end
+    # True: sweep, taper, twist, morph and plane rotation advance with the turn already made,
+    # so each section changes while the skin is already rising. False: with distance along it.
+    shape_follows_turn: bool = True
     attach_fraction: float | None = None  # solved from the span lock when None
 
     def __post_init__(self):
@@ -348,8 +351,8 @@ class BlendedWinglet:
             raise ValueError("The winglet turns less than Wing B already bends; raise the cant")
         # The trailing-edge sweep that gives the tip chord: Z_te(S) is linear in tan(sweep).
         S = self.s_tip
-        base = self.te_z0 + _quad(lambda t: (1 - smoothstep(t / S)) * self.te_aft(t), 0, S)
-        weight = _quad(lambda t: float(smoothstep(t / S)), 0, S)
+        base = self.te_z0 + _quad(lambda t: (1 - self._weight(t)) * self.te_aft(t), 0, S)
+        weight = _quad(self._weight, 0, S)
         cos_toe = math.cos(math.radians(self.d.toe_out_deg))
         self.te_tan = (base - self._z(S) + self.d.tip_chord_mm * cos_toe) / weight
 
@@ -392,7 +395,13 @@ class BlendedWinglet:
         return np.array([x, y])
 
     def _weight(self, s):
-        return float(smoothstep(s / self.s_tip))
+        """Blend weight for everything but the bend. Following the turn, it is W of the fraction
+        of the turn made so far; W' and W'' vanish at both ends either way, so the join keeps
+        its curvature continuity."""
+        if not self.d.shape_follows_turn:
+            return float(smoothstep(s / self.s_tip))
+        progress = (self.gamma(s) - self.gamma0) / (self.gamma_c - self.gamma0)
+        return float(smoothstep(progress))
 
     def le_aft_rate(self, s):
         w = self._weight(s)

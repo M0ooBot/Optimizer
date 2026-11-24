@@ -11,13 +11,14 @@
   "ramp_in": 0.5,
   "ramp_out": 0.5,
   "hinge_clearance_mm": 10.0,
+  "shape_follows_turn": true,
   "attach_fraction": 0.8686399961711142,
   "attach_mm": 521.1839977026685,
   "length_mm": 110.1376807347637,
   "peak_curvature_per_mm": 0.021440655526361947,
   "peak_at_fraction": 0.5,
   "tightest_bend_radius_mm": 46.640365019179065,
-  "trailing_edge_tip_sweep_deg": -9.582201571976787,
+  "trailing_edge_tip_sweep_deg": -9.524778922028664,
   "parent_dihedral_deg": 7.170414060988079,
   "parent_curvature_per_mm": 0.00011395076874786024
 }

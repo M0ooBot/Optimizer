@@ -118,6 +118,27 @@ def test_span_lock_solves_the_attachment_outboard_of_the_hinge():
     assert solved.f0 >= solved.min_attach_fraction()
 
 
+def _top_outline_sag(w):
+    g0 = w.gamma0
+    normal, along = np.array([math.sin(g0), math.cos(g0)]), np.array([math.cos(g0), math.sin(g0)])
+
+    def top(frame):
+        p = np.column_stack([-frame.section()[:, 0], frame.section()[:, 1]])
+        k = np.argmax(p @ normal)
+        return p[k] @ along, p[k] @ normal
+
+    wing = np.array([top(w.parent_frame(w.parent_fraction(-h))) for h in (2.0, 1.0, 0.0)])
+    winglet = np.array([top(w.frame(float(s))) for s in np.linspace(0, 0.6 * w.s_tip, 61)])
+    slope = np.polyfit(wing[:, 0], wing[:, 1], 1)[0]
+    return float((wing[-1, 1] + slope * (winglet[:, 0] - wing[-1, 0]) - winglet[:, 1]).max())
+
+
+def test_shape_changes_that_follow_the_turn_sag_less_in_front_view():
+    by_distance = _winglet(attach_fraction=0.87, shape_follows_turn=False, ramp_in=0.5, ramp_out=0.5)
+    by_turn = _winglet(attach_fraction=0.87, shape_follows_turn=True, ramp_in=0.5, ramp_out=0.5)
+    assert _top_outline_sag(by_turn) < 0.5 * _top_outline_sag(by_distance)
+
+
 def test_a_bend_that_cannot_fit_names_the_way_out():
     with pytest.raises(ValueError, match="toward the winglet root"):
         _winglet(ramp_in=0.6, ramp_out=0.3)
