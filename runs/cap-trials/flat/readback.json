@@ -1,0 +1,197 @@
+{
+  "step_sha256": "d031b5252546183c237719e3cfbe1b7b0fb457fb663d9c95c580477bc916fd1a",
+  "solid_count": 1,
+  "shell_closed": true,
+  "strict_occt_valid": true,
+  "face_count": 6,
+  "chord_mm": 120.00000019999999,
+  "span_mm": 800.0000002,
+  "thickness_mm": 12.482678838642297,
+  "volume_mm3": 958040.8163265307,
+  "cap_start_abs_span_mm": 350.0,
+  "parent_interior_readback_gap_mm": 1.563241722839913e-13,
+  "cap_reflection_symmetry_gap_mm": 0.0,
+  "outline_endpoint_tangent_gap_deg": 0.0,
+  "sampling": {
+    "chord_range_mm": [
+      0.12,
+      119.88
+    ],
+    "stations_per_join": 1001,
+    "view_settings_per_join": 84,
+    "stripe_crossings": 3924,
+    "endpoints": "Cap surface parameters collapse at 0 and 120 mm aft."
+  },
+  "maxima": {
+    "join_separation_mm": {
+      "value": 0.0,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 0.12
+    },
+    "join_angle_deg": {
+      "value": 9.54166404439055e-15,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 0.83856
+    },
+    "join_curvature_gap_per_mm": {
+      "value": 1.4686870114880517e-16,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 119.64048
+    },
+    "lip_separation_mm": {
+      "value": 0.0,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 0.12
+    },
+    "lip_angle_deg": {
+      "value": 0.0,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 0.12
+    },
+    "lip_curvature_gap_per_mm": {
+      "value": 0.0,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 0.12
+    },
+    "parent_position_error_mm": {
+      "value": 1.0379608283983544e-10,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 54.850319999999996
+    },
+    "zebra_phase_gap_cycles": {
+      "value": 2.220446049250313e-15,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 34.251599999999996,
+      "view_elevation_azimuth_stripe_deg": [
+        40,
+        -35,
+        90
+      ]
+    },
+    "zebra_gradient_gap_cycles_per_mm": {
+      "value": 1.9860273225978185e-15,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 119.64048,
+      "view_elevation_azimuth_stripe_deg": [
+        40,
+        0,
+        90
+      ]
+    },
+    "zebra_crossing_angle_deg": {
+      "value": 0.0,
+      "side": -1,
+      "skin": 1,
+      "aft_mm": 3.1947828656067783,
+      "view_elevation_azimuth_stripe_deg": [
+        15,
+        -35,
+        0
+      ],
+      "stripe_crossing_level_cycles": 0.0
+    }
+  },
+  "study_acceptance_limits": {
+    "join_separation_mm": 1e-06,
+    "join_angle_deg": 1e-05,
+    "join_curvature_gap_per_mm": 1e-05,
+    "lip_separation_mm": 1e-06,
+    "lip_angle_deg": 1e-05,
+    "lip_curvature_gap_per_mm": 1e-05,
+    "parent_position_error_mm": 1e-06,
+    "zebra_phase_gap_cycles": 1e-06,
+    "zebra_gradient_gap_cycles_per_mm": 1e-05,
+    "zebra_crossing_angle_deg": 0.0001
+  },
+  "fixed_aft_sections": [
+    {
+      "aft_mm": 0.12,
+      "rim_abs_span_mm": 359.05814303107366,
+      "radius_at_rim_mm": 0.4347778189881818,
+      "peak_curvature_per_mm": 2.300025337831648,
+      "peak_curvature_abs_span_mm": 359.05814303107366,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 6,
+      "rim_abs_span_mm": 380.6875559097315,
+      "radius_at_rim_mm": 1.2311669917502077,
+      "peak_curvature_per_mm": 0.8122375004372199,
+      "peak_curvature_abs_span_mm": 380.6875559097315,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 18,
+      "rim_abs_span_mm": 391.17309309982926,
+      "radius_at_rim_mm": 1.439046769786951,
+      "peak_curvature_per_mm": 0.6949044471626511,
+      "peak_curvature_abs_span_mm": 391.17309309982926,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 36,
+      "rim_abs_span_mm": 397.5720008240563,
+      "radius_at_rim_mm": 1.435446434655087,
+      "peak_curvature_per_mm": 0.6966473815097689,
+      "peak_curvature_abs_span_mm": 397.5720008240563,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 60,
+      "rim_abs_span_mm": 400.0,
+      "radius_at_rim_mm": 1.2656250000000004,
+      "peak_curvature_per_mm": 0.7901234567901232,
+      "peak_curvature_abs_span_mm": 400.0,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 84,
+      "rim_abs_span_mm": 397.5720008240562,
+      "radius_at_rim_mm": 0.9931896814610128,
+      "peak_curvature_per_mm": 1.006857017009046,
+      "peak_curvature_abs_span_mm": 397.5720008240562,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 102,
+      "rim_abs_span_mm": 391.17309309982926,
+      "radius_at_rim_mm": 0.7092254343344708,
+      "peak_curvature_per_mm": 1.4099889140868005,
+      "peak_curvature_abs_span_mm": 391.17309309982926,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 114,
+      "rim_abs_span_mm": 380.6875559097314,
+      "radius_at_rim_mm": 0.4265675841870243,
+      "peak_curvature_per_mm": 2.3442944027400827,
+      "peak_curvature_abs_span_mm": 380.6875559097314,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 118.8,
+      "rim_abs_span_mm": 368.89601340099216,
+      "radius_at_rim_mm": 0.21558801292041,
+      "peak_curvature_per_mm": 4.63847681721143,
+      "peak_curvature_abs_span_mm": 368.89601340099216,
+      "curvature_non_decreasing": true
+    },
+    {
+      "aft_mm": 119.88,
+      "rim_abs_span_mm": 359.05814303107684,
+      "radius_at_rim_mm": 0.08898041351153878,
+      "peak_curvature_per_mm": 11.238428329739357,
+      "peak_curvature_abs_span_mm": 359.05814303107684,
+      "curvature_non_decreasing": true
+    }
+  ]
+}

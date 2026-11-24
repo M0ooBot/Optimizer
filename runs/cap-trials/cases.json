@@ -1,0 +1,166 @@
+[
+  {
+    "name": "Straight wing",
+    "detail": "800 mm span Â· 120 mm chord Â· 10.4% symmetric polynomial section Â· 50 mm tip reach",
+    "cut": 350,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": false,
+    "stripeCycles": 3,
+    "stripeOffset": 0,
+    "step": "flat/flat-wing.step",
+    "report": "flat/readback.json",
+    "revision": "Control"
+  },
+  {
+    "name": "Straight wing",
+    "detail": "800 mm span Â· 120 mm chord Â· 10.4% symmetric polynomial section Â· 50 mm tip reach",
+    "cut": 350,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": false,
+    "stripeCycles": 3,
+    "stripeOffset": 0,
+    "step": "retest/flat/wing.step",
+    "report": "retest/flat/readback.json",
+    "revision": "Rebuilt"
+  },
+  {
+    "name": "Twisted wing",
+    "detail": "1,000 mm span Â· 5Â° dihedral Â· 3Â° washout Â· modified closed-edge NACA 2412 Â· 60 mm tip reach",
+    "cut": 440,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": false,
+    "stripeCycles": 8,
+    "stripeOffset": 0,
+    "step": "twisted/twisted-wing.step",
+    "report": "twisted/checks.json",
+    "revision": "Control"
+  },
+  {
+    "name": "Twisted wing",
+    "detail": "1,000 mm span Â· 5Â° dihedral Â· 3Â° washout Â· modified closed-edge NACA 2412 Â· 60 mm tip reach",
+    "cut": 440,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": false,
+    "stripeCycles": 8,
+    "stripeOffset": 0,
+    "step": "retest/twisted/wing.step",
+    "report": "retest/twisted/readback.json",
+    "revision": "Rebuilt"
+  },
+  {
+    "name": "55Â° swept wing",
+    "detail": "900 mm span Â· 55Â° leading-edge sweep Â· closed-edge NACA 0009 Â· 60 mm tip reach",
+    "cut": 390,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": false,
+    "stripeCycles": 4,
+    "stripeOffset": 0.25,
+    "step": "swept55/swept55-wing.step",
+    "report": "swept55/readback.json",
+    "revision": "Control"
+  },
+  {
+    "name": "55Â° swept wing",
+    "detail": "900 mm span Â· 55Â° leading-edge sweep Â· closed-edge NACA 0009 Â· 60 mm tip reach",
+    "cut": 390,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": false,
+    "stripeCycles": 4,
+    "stripeOffset": 0.25,
+    "step": "retest/swept55/wing.step",
+    "report": "retest/swept55/readback.json",
+    "revision": "Rebuilt"
+  },
+  {
+    "name": "Vertical fin",
+    "detail": "280 mm height Â· 240 mm attachment Â· 12% elliptical section Â· 40 mm cap reach",
+    "cut": 240,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": true,
+    "reach": 40,
+    "stripeCycles": 3,
+    "stripeOffset": 0,
+    "step": "fin/vertical-fin.step",
+    "report": "fin/readback.json",
+    "revision": "Control"
+  },
+  {
+    "name": "Vertical fin",
+    "detail": "280 mm height Â· 240 mm attachment Â· 12% elliptical section Â· 40 mm cap reach",
+    "cut": 240,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": true,
+    "reach": 40,
+    "stripeCycles": 3,
+    "stripeOffset": 0,
+    "step": "retest/fin/40/wing.step",
+    "report": "retest/fin/40/readback.json",
+    "revision": "Rebuilt"
+  },
+  {
+    "name": "Vertical fin",
+    "detail": "245 mm height Â· 240 mm attachment Â· 12% elliptical section Â· 5 mm cap reach",
+    "cut": 240,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": true,
+    "reach": 5,
+    "stripeCycles": 3,
+    "stripeOffset": 0,
+    "step": "fin/cap-5.0mm/vertical-fin.step",
+    "report": "fin/cap-5.0mm/readback.json",
+    "revision": "Control"
+  },
+  {
+    "name": "Vertical fin",
+    "detail": "245 mm height Â· 240 mm attachment Â· 12% elliptical section Â· 5 mm cap reach",
+    "cut": 240,
+    "axes": [
+      2,
+      3,
+      -1
+    ],
+    "fin": true,
+    "reach": 5,
+    "stripeCycles": 3,
+    "stripeOffset": 0,
+    "step": "retest/fin/5/wing.step",
+    "report": "retest/fin/5/readback.json",
+    "revision": "Rebuilt"
+  }
+]

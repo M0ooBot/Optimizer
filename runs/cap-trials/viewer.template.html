@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rounded tip studies · 3D review</title>
+<style>
+:root{color-scheme:light dark;font:16px/1.45 "Segoe UI",system-ui,sans-serif;color:#183439;background:#f7f9f8}
+*{box-sizing:border-box}body{margin:0}main{max-width:1320px;margin:auto;padding:clamp(12px,3vw,38px)}
+h1{font-size:clamp(1.35rem,3vw,2rem);font-weight:600;letter-spacing:-.035em;margin:0 0 .8rem}
+.controls,footer{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem 1rem;margin:.75rem 0}
+label{display:inline-flex;align-items:center;gap:.45rem}button,select{font:inherit;color:inherit;background:#fff;border:1px solid #acbab8;border-radius:5px;padding:.35rem .65rem}
+button{cursor:pointer}input{accent-color:#11655c}output{font-variant-numeric:tabular-nums}
+canvas{display:block;width:100%;height:clamp(290px,55vh,670px);background:#e6eeec;border-radius:8px;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}
+footer,p{font-size:.92rem}a{color:#08695d}#error{color:#a42424}#detail{font-weight:600;margin-bottom:.25em}
+@media(prefers-color-scheme:dark){:root{background:#142022;color:#e4eeeb}canvas{background:#202f30}button,select{background:#243839;border-color:#506667}a{color:#8ed9c7}#error{color:#ff9999}}
+</style></head><body><main>
+<h1>Rounded tip studies</h1>
+<div class="controls"><label>Model <select id="model"></select></label>
+<label id="reachLabel" style="display:none">Cap reach <select id="reach"></select></label>
+<label>Skill version <select id="revision"><option>Control</option><option selected>Rebuilt</option></select></label>
+<label>Frame <select id="frame"><option>Whole model</option><option>Tip close-up</option></select></label>
+<label>View <select id="view"><option>Angled</option><option>Plan</option><option>Front</option><option>Side</option><option>Custom</option></select></label>
+<button id="reset" type="button">Fit view</button></div>
+<canvas id="stage" aria-label="Interactive 3D view of the complete CAD study"></canvas>
+<div class="controls"><label><input type="checkbox" id="zebra"> Zebra reflections</label>
+<label>Stripe angle <input type="range" id="angle" min="0" max="180" value="51"><output id="degrees">51°</output></label>
+<button id="out" aria-label="Zoom out">−</button><button id="in" aria-label="Zoom in">+</button></div>
+<p id="detail" aria-live="polite"></p><p id="error" role="alert" hidden></p>
+<footer><a id="step">Open STEP</a><a id="notes">Study notes</a><a id="checks">Measured checks</a><span>Drag to orbit · Shift-drag to pan · Scroll to zoom</span></footer>
+</main><script>
+const models = /* MODELS */ [];
+const byId = id => document.getElementById(id);
+const select = byId('model'), frame = byId('frame'), view = byId('view'), canvas = byId('stage');
+const gl = canvas.getContext('webgl2', {antialias:true,alpha:true});
+const dot = (a,b) => a.reduce((s,x,i) => s+x*b[i],0);
+let yaw=0, pitch=0, zoom=1, pan=[0,0], center=[0,0,0], radius=1, current, buffers=[], serial=0;
+function fail(e){byId('error').textContent=String(e);byId('error').hidden=false}
+if(!gl) fail('WebGL 2 is unavailable. Open the STEP link below to inspect the solid in CAD.');
+function shader(type, source){
+  const s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);
+  if (!gl.getShaderParameter(s,gl.COMPILE_STATUS)) throw Error(gl.getShaderInfoLog(s));return s;
+}
+const vs=`#version 300 es
+precision highp float;
+in vec3 position,normal;
+uniform vec3 lo,extent,center,right,up,eye;
+uniform vec2 scale,pan;
+uniform float depth;
+out vec3 N,P;
+void main(){P=lo+position*extent;N=normal;vec3 q=P-center;
+gl_Position=vec4(vec2(dot(q,right),dot(q,up))*scale+pan,-dot(q,eye)/depth,1.0);}`;
+const fs=`#version 300 es
+precision highp float;
+in vec3 N,P;uniform vec3 eye,right,up,axis;uniform vec2 stripeField;uniform bool zebra,mirrorLight;
+out vec4 color;
+void main(){vec3 n=normalize(N);
+if(zebra){if(mirrorLight && P.x<0.) n.x=-n.x;
+float phase=2.*(stripeField.x*dot(reflect(-eye,n),axis)+stripeField.y);float w=clamp(1.57*fwidth(phase),0.025,1.);
+float band=smoothstep(-w,w,sin(3.14159265*phase));band=mix(band,0.5,smoothstep(.55,1.05,fwidth(phase)));
+color=vec4(mix(vec3(.064,.088,.084),vec3(.94,.96,.94),band),1.);}
+else {vec3 light=normalize(eye*.65+up*.72-right*.4);
+float d=.22+.74*max(dot(n,light),0.);float shine=.24*pow(max(dot(n,normalize(light+eye)),0.),28.);
+color=vec4(vec3(.24,.60,.57)*d+vec3(.11,.14,.14)+shine,1.);}}`;
+let program,U={},A={};
+if(gl){
+ program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vs));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fs));gl.linkProgram(program);
+ if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));
+ gl.useProgram(program);gl.enable(gl.DEPTH_TEST);
+ for(const key of ['lo','extent','center','right','up','eye','scale','pan','depth','axis','zebra','mirrorLight','stripeField'])U[key]=gl.getUniformLocation(program,key);
+ for(const key of ['position','normal'])A[key]=gl.getAttribLocation(program,key);
+}
+async function unpack(data,Type){const bytes=Uint8Array.from(atob(data),c=>c.charCodeAt(0));
+ const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+ return new Type(await new Response(stream).arrayBuffer());}
+function gridIndices(n,m){const out=new Uint32Array((n-1)*(m-1)*6);let k=0;
+ for(let i=0;i<n-1;i++)for(let j=0;j<m-1;j++){const a=i*m+j,b=a+m;out.set([a,b,a+1,b,b+1,a+1],k);k+=6;}return out;}
+function upload(target,data){const b=gl.createBuffer();gl.bindBuffer(target,b);gl.bufferData(target,data,gl.STATIC_DRAW);return b;}
+function axes(){const a=Math.cos(yaw),b=Math.sin(yaw),c=Math.cos(pitch),s=Math.sin(pitch);
+ return [[a,0,-b],[-s*b,c,-s*a],[c*b,s,c*a]];}
+function preset(){if(view.value==='Plan'){yaw=0;pitch=Math.PI/2;}else if(view.value==='Front'){yaw=0;pitch=0;}
+ else if(view.value==='Side'){yaw=Math.PI/2;pitch=0;}else if(view.value==='Angled'){yaw=current.fin?1.17:0;pitch=current.fin?.23:.85;}}
+function fit(){
+ if(!current?.points)return;
+ const [right,up]=axes();
+ const group=models.filter(m=>m.name===current.name);
+ const boxes=group.map(m=>frame.selectedIndex===1?m.tipBounds:m.wholeBounds);
+ const min=[0,1,2].map(j=>Math.min(...boxes.map(b=>b[0][j])));
+ const max=[0,1,2].map(j=>Math.max(...boxes.map(b=>b[1][j])));
+ center=min.map((x,i)=>(x+max[i])/2);
+ const h=max.map((x,i)=>(x-min[i])/2);
+ const halfWidth=h.reduce((a,v,i)=>a+v*Math.abs(right[i]),0);
+ const halfHeight=h.reduce((a,v,i)=>a+v*Math.abs(up[i]),0);
+ radius=Math.max(halfWidth*canvas.clientHeight/canvas.clientWidth,halfHeight,1)*1.14;
+ zoom=1;pan=[0,0];draw();
+}
+function draw(){
+ if(!gl || !current?.points || !buffers.length)return;
+ const dpr=Math.min(devicePixelRatio||1,2);
+ const w=Math.round(canvas.clientWidth*dpr),h=Math.round(canvas.clientHeight*dpr);
+ if(canvas.width!==w || canvas.height!==h){canvas.width=w;canvas.height=h;}
+ gl.viewport(0,0,w,h);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+ const [r,u,e]=axes(),theta=byId('angle').value*Math.PI/180;
+ for(const [key,value] of Object.entries({right:r,up:u,eye:e,center,lo:current.minimum,extent:current.extent,
+  axis:r.map((v,i)=>v*Math.cos(theta)+u[i]*Math.sin(theta))})) gl.uniform3fv(U[key],value);
+ gl.uniform2f(U.scale,zoom/radius*h/w,zoom/radius);gl.uniform2fv(U.pan,pan);
+ gl.uniform1f(U.depth,2*Math.hypot(...current.extent));gl.uniform1i(U.zebra,byId('zebra').checked);
+ gl.uniform2f(U.stripeField,current.stripeCycles,current.stripeOffset);
+ gl.uniform1i(U.mirrorLight,!current.fin);
+ for(const [j,name,type] of [[0,'position',gl.UNSIGNED_SHORT],[1,'normal',gl.SHORT]]){
+  gl.bindBuffer(gl.ARRAY_BUFFER,buffers[j]);gl.enableVertexAttribArray(A[name]);gl.vertexAttribPointer(A[name],3,type,true,0,0);}
+ gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,buffers[2]);gl.drawElements(gl.TRIANGLES,current.indexCount,gl.UNSIGNED_INT,0);
+}
+async function choose(){
+ const id=++serial, variants=models.filter(m=>m.name===select.value), reach=byId('reach');
+ if(reach.dataset.model!==select.value){
+   reach.replaceChildren();for(const value of new Set(variants.map(m=>m.reach).filter(Boolean)))reach.add(new Option(value+' mm',value));
+   if(!current && select.value==='Vertical fin')reach.value='5';
+   reach.dataset.model=select.value;
+ }
+ byId('reachLabel').style.display=reach.options.length?'inline-flex':'none';
+ const m=variants.find(v=>(!v.reach || v.reach===Number(reach.value)) && v.revision===byId('revision').value);
+ if(!m)throw Error('This revision is missing from the viewer.');
+ byId('detail').textContent=m.detail;byId('step').href=m.step;byId('checks').href=m.report;
+ byId('notes').href=m.report.slice(0,m.report.lastIndexOf('/')+1)+'README.md';
+ if(!gl)return;
+ const [points,normals,indices]=await Promise.all([unpack(m.positions,Uint16Array),unpack(m.normals,Int16Array),
+ Promise.all(m.faces.map(f=>f.grid?gridIndices(...f.grid):unpack(f.triangles,Uint32Array)))]);
+ if(id!==serial)return;
+ let count=0,offset=0;const joined=new Uint32Array(indices.reduce((n,a)=>n+a.length,0));
+ for(let f=0;f<indices.length;f++){for(const idx of indices[f])joined[count++]=offset+idx;offset+=m.faces[f].count;}
+ for(const b of buffers)gl.deleteBuffer(b);
+ buffers=[upload(gl.ARRAY_BUFFER,points),upload(gl.ARRAY_BUFFER,normals),upload(gl.ELEMENT_ARRAY_BUFFER,joined)];
+ const previous=current;current={...m,points,indexCount:count};
+ if(!previous || previous.fin!==current.fin){view.value='Angled';preset();}
+ if(previous?.name===current.name)draw();else fit();
+ canvas.dataset.model=m.name;canvas.dataset.reach=m.reach??'';canvas.dataset.revision=m.revision;
+}
+for(const name of new Set(models.map(m=>m.name)))select.add(new Option(name,name));
+select.value='55° swept wing';
+select.onchange=byId('revision').onchange=byId('reach').onchange=()=>choose().catch(fail);frame.onchange=fit;view.onchange=()=>{preset();fit();};byId('reset').onclick=fit;
+byId('zebra').oninput=draw;byId('angle').oninput=()=>{byId('degrees').value=byId('angle').value+'°';draw();};
+function magnify(f){zoom=Math.max(.08,Math.min(80,zoom*f));draw();}
+byId('in').onclick=()=>magnify(1.35);byId('out').onclick=()=>magnify(1/1.35);
+canvas.onwheel=e=>{e.preventDefault();magnify(Math.exp(-e.deltaY*.0015));};
+let drag=null;canvas.onpointerdown=e=>{canvas.setPointerCapture(e.pointerId);drag=[e.clientX,e.clientY];};
+canvas.onpointermove=e=>{if(!drag)return;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];drag=[e.clientX,e.clientY];
+ if(e.shiftKey){pan[0]+=2*dx/canvas.clientWidth;pan[1]-=2*dy/canvas.clientHeight;}else{yaw-=dx*.009;pitch=Math.max(-1.57,Math.min(1.57,pitch+dy*.009));view.value='Custom';}draw();};
+canvas.onpointerup=canvas.onpointercancel=()=>drag=null;
+new ResizeObserver(()=>fit()).observe(canvas);choose().catch(fail);
+</script></body></html>

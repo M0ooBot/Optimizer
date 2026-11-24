@@ -1,0 +1,739 @@
+{
+  "step_sha256": "0a30d2d6ba4d67c1e4c47a17dae817a57822e7323af815948f9ab2f70e28aaf1",
+  "reach_mm": 40,
+  "solid_count": 1,
+  "valid": true,
+  "shells_closed": true,
+  "faces": 5,
+  "volume_mm3": 368159.3149187601,
+  "parent_ellipse_equation_max_residual": 2.2026824808563106e-13,
+  "joins": {
+    "maxima": {
+      "gap_mm": {
+        "value": 0.0,
+        "side": -1,
+        "u": 0.0,
+        "point_mm": [
+          150.0,
+          0.0,
+          240.0
+        ]
+      },
+      "normal_angle_deg": {
+        "value": 7.618744416604579e-10,
+        "side": -1,
+        "u": 0.0,
+        "point_mm": [
+          150.0,
+          0.0,
+          240.0
+        ]
+      },
+      "shape_operator_gap_per_mm": {
+        "value": 2.6433611274724624e-11,
+        "side": -1,
+        "u": 0.011111111111111112,
+        "point_mm": [
+          149.9787417666516,
+          -0.16128722850450142,
+          240.0
+        ]
+      },
+      "zebra_phase_rad": {
+        "value": 3.070228515866802e-10,
+        "side": -1,
+        "u": 0.036111111111111115,
+        "camera": 0,
+        "stripe_angle_deg": 90.0,
+        "point_mm": [
+          149.7692610976765,
+          -0.5307143808992189,
+          240.00000000000003
+        ]
+      },
+      "zebra_gradient_rad_per_mm": {
+        "value": 9.523128952094409e-10,
+        "side": -1,
+        "u": 0.0,
+        "camera": 3,
+        "stripe_angle_deg": 90.0,
+        "point_mm": [
+          150.0,
+          0.0,
+          240.0
+        ]
+      },
+      "zebra_crossing_direction_deg": {
+        "value": 1.6419295810146777e-07,
+        "side": 1,
+        "u": 0.3300461218226,
+        "camera": 2,
+        "stripe_angle_deg": 53.0,
+        "point_mm": [
+          128.679619331379,
+          4.4215949203523675,
+          239.99999999999997
+        ]
+      }
+    },
+    "crossing_count": 928,
+    "camera_vectors": [
+      [
+        0.15,
+        1,
+        0.25
+      ],
+      [
+        0.35,
+        1,
+        0.65
+      ],
+      [
+        -0.55,
+        1,
+        -0.25
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "stripe_angles_deg": [
+      0.0,
+      27.0,
+      53.0,
+      90.0,
+      123.00000000000001,
+      158.0
+    ],
+    "stripe_wave_number": 21.991148575128552,
+    "samples_per_side": 361,
+    "note": "Angles and derivatives compared in common physical frame."
+  },
+  "perimeter": {
+    "maxima": {
+      "locked_outline_error_mm": {
+        "value": 7.203269092315168e-09,
+        "u": 1.0,
+        "v": 0.139986,
+        "point_mm": [
+          68.18309445041353,
+          0.0,
+          250.41503679216
+        ]
+      },
+      "side_gap_mm": {
+        "value": 0.0,
+        "u": 0.0,
+        "v": 0.0,
+        "point_mm": [
+          150.0,
+          0.0,
+          240.0
+        ]
+      },
+      "normal_angle_deg": {
+        "value": 9.169591125794086e-09,
+        "u": 0.0,
+        "v": 0.9999,
+        "point_mm": [
+          112.08961197165355,
+          0.0,
+          279.9999995999999
+        ]
+      },
+      "shape_operator_gap_per_mm": {
+        "value": 2.5492299519016295e-08,
+        "u": 0.0,
+        "v": 0.9999,
+        "point_mm": [
+          112.08961197165355,
+          0.0,
+          279.9999995999999
+        ]
+      }
+    },
+    "crown_mm": [
+      112.08333333333,
+      0.0,
+      280.0
+    ],
+    "samples_per_branch": 501,
+    "excluded": "Crown is a collapsed UV boundary. Ordinary surface derivatives are undefined exactly there."
+  },
+  "sections": [
+    {
+      "fraction": -0.99,
+      "cutting_plane": "x = 0.800000000 + 0.269270833333 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -1.495530690066589e-12,
+          "lip_point_mm": [
+            68.34377308670841,
+            0.0,
+            250.83954415179906
+          ],
+          "lip_radius_mm": 0.06376035313819797,
+          "min_radius_mm": 0.06376035313819797,
+          "min_radius_point_mm": [
+            68.34377308670841,
+            0.0,
+            250.83954415179906
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -1.495530690066589e-12,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 3.1166837572216805e-13
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -1.495530690066589e-12,
+          "lip_point_mm": [
+            68.34377308670841,
+            0.0,
+            250.83954415179906
+          ],
+          "lip_radius_mm": 0.06376035313819797,
+          "min_radius_mm": 0.06376035313819797,
+          "min_radius_point_mm": [
+            68.34377308670841,
+            0.0,
+            250.83954415179906
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -1.495530690066589e-12,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 3.1166837572216805e-13
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": -0.97,
+      "cutting_plane": "x = 2.400000000 + 0.266145833333 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -6.607580063299863e-13,
+          "lip_point_mm": [
+            70.4217592591653,
+            0.0,
+            255.58077842974046
+          ],
+          "lip_radius_mm": 0.12709612046483723,
+          "min_radius_mm": 0.12709612046483723,
+          "min_radius_point_mm": [
+            70.4217592591653,
+            0.0,
+            255.58077842974046
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -6.607580063299863e-13,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 8.526512829121202e-14
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -6.607580063299863e-13,
+          "lip_point_mm": [
+            70.4217592591653,
+            0.0,
+            255.58077842974046
+          ],
+          "lip_radius_mm": 0.12709612046483723,
+          "min_radius_mm": 0.12709612046483723,
+          "min_radius_point_mm": [
+            70.4217592591653,
+            0.0,
+            255.58077842974046
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -6.607580063299863e-13,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 8.526512829121202e-14
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": -0.9,
+      "cutting_plane": "x = 8.000000000 + 0.255208333333 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -1.5407105510085695e-14,
+          "lip_point_mm": [
+            75.11866576821956,
+            0.0,
+            262.99558831628894
+          ],
+          "lip_radius_mm": 0.2617672965568892,
+          "min_radius_mm": 0.2617672965568892,
+          "min_radius_point_mm": [
+            75.11866576821956,
+            0.0,
+            262.99558831628894
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -1.5407105510085695e-14,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 7.105427357601002e-14
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -1.5407105510085695e-14,
+          "lip_point_mm": [
+            75.11866576821956,
+            0.0,
+            262.99558831628894
+          ],
+          "lip_radius_mm": 0.2617672965568892,
+          "min_radius_mm": 0.2617672965568892,
+          "min_radius_point_mm": [
+            75.11866576821956,
+            0.0,
+            262.99558831628894
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -1.5407105510085695e-14,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 7.105427357601002e-14
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": -0.7,
+      "cutting_plane": "x = 24.000000000 + 0.223958333333 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": 4.581117217601572e-13,
+          "lip_point_mm": [
+            84.90732289259209,
+            0.0,
+            271.9582789622717
+          ],
+          "lip_radius_mm": 0.473180539509714,
+          "min_radius_mm": 0.473180539509714,
+          "min_radius_point_mm": [
+            84.90732289259209,
+            0.0,
+            271.9582789622717
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": 4.581117217601572e-13,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 1.1457157353758233e-13
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": 4.581117217601572e-13,
+          "lip_point_mm": [
+            84.90732289259209,
+            0.0,
+            271.9582789622717
+          ],
+          "lip_radius_mm": 0.473180539509714,
+          "min_radius_mm": 0.473180539509714,
+          "min_radius_point_mm": [
+            84.90732289259209,
+            0.0,
+            271.9582789622717
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": 4.581117217601572e-13,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 1.1457157353758233e-13
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": -0.35,
+      "cutting_plane": "x = 52.000000000 + 0.169270833333 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": 4.931734650583033e-13,
+          "lip_point_mm": [
+            99.10723092853515,
+            0.0,
+            278.29502579319234
+          ],
+          "lip_radius_mm": 0.6507289177527635,
+          "min_radius_mm": 0.6507289177527635,
+          "min_radius_point_mm": [
+            99.10723092853515,
+            0.0,
+            278.29502579319234
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": 4.931734650583033e-13,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 5.859285502108464e-14
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": 4.931734650583033e-13,
+          "lip_point_mm": [
+            99.10723092853515,
+            0.0,
+            278.29502579319234
+          ],
+          "lip_radius_mm": 0.6507289177527635,
+          "min_radius_mm": 0.6507289177527635,
+          "min_radius_point_mm": [
+            99.10723092853515,
+            0.0,
+            278.29502579319234
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": 4.931734650583033e-13,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 5.859285502108464e-14
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": 0,
+      "cutting_plane": "x = 80.000000000 + 0.114583333333 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -3.6691302380538794e-14,
+          "lip_point_mm": [
+            112.08333333333,
+            -2.0816681711721685e-17,
+            280.0
+          ],
+          "lip_radius_mm": 0.7049808747481395,
+          "min_radius_mm": 0.7049808747481395,
+          "min_radius_point_mm": [
+            112.08333333333,
+            -2.0816681711721685e-17,
+            280.0
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -3.6691302380538794e-14,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 2.0816681711721685e-17
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -3.6691302380538794e-14,
+          "lip_point_mm": [
+            112.08333333333,
+            2.0816681711721685e-17,
+            280.0
+          ],
+          "lip_radius_mm": 0.7049808747481395,
+          "min_radius_mm": 0.7049808747481395,
+          "min_radius_point_mm": [
+            112.08333333333,
+            2.0816681711721685e-17,
+            280.0
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -3.6691302380538794e-14,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 2.0816681711721685e-17
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": 0.35,
+      "cutting_plane": "x = 108.000000000 + 0.059895833333 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -9.485583327187737e-13,
+          "lip_point_mm": [
+            124.66871248240459,
+            0.0,
+            278.2950257931899
+          ],
+          "lip_radius_mm": 0.6588049444586127,
+          "min_radius_mm": 0.6588049444586127,
+          "min_radius_point_mm": [
+            124.66871248240459,
+            0.0,
+            278.2950257931899
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -9.485583327187737e-13,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 2.842170943040401e-14
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -9.485583327187737e-13,
+          "lip_point_mm": [
+            124.66871248240459,
+            0.0,
+            278.2950257931899
+          ],
+          "lip_radius_mm": 0.6588049444586127,
+          "min_radius_mm": 0.6588049444586127,
+          "min_radius_point_mm": [
+            124.66871248240459,
+            0.0,
+            278.2950257931899
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -9.485583327187737e-13,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 2.842170943040401e-14
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": 0.7,
+      "cutting_plane": "x = 136.000000000 + 0.005208333333 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -2.8300696807895398e-12,
+          "lip_point_mm": [
+            137.4164493695951,
+            0.0,
+            271.9582789622681
+          ],
+          "lip_radius_mm": 0.4848955178958217,
+          "min_radius_mm": 0.4848955178958217,
+          "min_radius_point_mm": [
+            137.4164493695951,
+            0.0,
+            271.9582789622681
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -2.8300696807895398e-12,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 5.684341886080802e-14
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -2.8300696807895398e-12,
+          "lip_point_mm": [
+            137.4164493695951,
+            0.0,
+            271.9582789622681
+          ],
+          "lip_radius_mm": 0.4848955178958217,
+          "min_radius_mm": 0.4848955178958217,
+          "min_radius_point_mm": [
+            137.4164493695951,
+            0.0,
+            271.9582789622681
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -2.8300696807895398e-12,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 5.684341886080802e-14
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": 0.9,
+      "cutting_plane": "x = 152.000000000 + -0.026041666667 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -6.3553255295275795e-12,
+          "lip_point_mm": [
+            145.15115655426374,
+            0.0,
+            262.9955883162741
+          ],
+          "lip_radius_mm": 0.27006589765668726,
+          "min_radius_mm": 0.27006589765668726,
+          "min_radius_point_mm": [
+            145.15115655426374,
+            0.0,
+            262.9955883162741
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -6.3553255295275795e-12,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 1.4210854715202004e-13
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -6.3553255295275795e-12,
+          "lip_point_mm": [
+            145.15115655426374,
+            0.0,
+            262.9955883162741
+          ],
+          "lip_radius_mm": 0.27006589765668726,
+          "min_radius_mm": 0.27006589765668726,
+          "min_radius_point_mm": [
+            145.15115655426374,
+            0.0,
+            262.9955883162741
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -6.3553255295275795e-12,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 1.4210854715202004e-13
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": 0.97,
+      "cutting_plane": "x = 157.600000000 + -0.036979166667 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -1.2533111473916837e-11,
+          "lip_point_mm": [
+            148.1488357976508,
+            0.0,
+            255.58077842972236
+          ],
+          "lip_radius_mm": 0.13143061888750737,
+          "min_radius_mm": 0.13143061888750737,
+          "min_radius_point_mm": [
+            148.1488357976508,
+            0.0,
+            255.58077842972236
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -1.2533111473916837e-11,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 2.898457019905882e-13
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -1.2533111473916837e-11,
+          "lip_point_mm": [
+            148.1488357976508,
+            0.0,
+            255.58077842972236
+          ],
+          "lip_radius_mm": 0.13143061888750737,
+          "min_radius_mm": 0.13143061888750737,
+          "min_radius_point_mm": [
+            148.1488357976508,
+            0.0,
+            255.58077842972236
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -1.2533111473916837e-11,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 2.898457019905882e-13
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    },
+    {
+      "fraction": 0.99,
+      "cutting_plane": "x = 159.200000000 + -0.040104166667 z",
+      "total_edges": 5,
+      "cap_samples_per_side": 2001,
+      "reversal_threshold_per_mm": 2e-05,
+      "halves": [
+        {
+          "side": -1,
+          "join_curvature_per_mm": -2.214846856041063e-11,
+          "lip_point_mm": [
+            149.14028911474645,
+            0.0,
+            250.8395441517782
+          ],
+          "lip_radius_mm": 0.06597839859548932,
+          "min_radius_mm": 0.06597839859548932,
+          "min_radius_point_mm": [
+            149.14028911474645,
+            0.0,
+            250.8395441517782
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -2.214846856041063e-11,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 3.1776437161565096e-13
+        },
+        {
+          "side": 1,
+          "join_curvature_per_mm": -2.214846856041063e-11,
+          "lip_point_mm": [
+            149.14028911474645,
+            0.0,
+            250.8395441517782
+          ],
+          "lip_radius_mm": 0.06597839859548932,
+          "min_radius_mm": 0.06597839859548932,
+          "min_radius_point_mm": [
+            149.14028911474645,
+            0.0,
+            250.8395441517782
+          ],
+          "min_radius_sample": 2000,
+          "signed_curvature_reversals": 0,
+          "minimum_signed_curvature_per_mm": -2.214846856041063e-11,
+          "interior_curvature_maxima": [],
+          "occ_section_lip_gap_mm": 3.1776437161565096e-13
+        }
+      ],
+      "method": "OCC solid-plane section with curvature evaluated by implicit differentiation on the original STEP faces. The center section uses the stable span derivative at the collapsed UV crown."
+    }
+  ]
+}

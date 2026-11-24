@@ -38,4 +38,6 @@ python runs/wing-b-rounded-tip-g2/analyze_zebra.py --output zebra-local.json
 
 To regenerate either CAD revision, run its `build.py` in a working copy. It writes `wing-b-rounded.step` in its own study directory. STEP headers include export timestamps, so rerun the checks and record the hash of the file measured. The archived numerical zebra results use the [paired viewer's shader](../../runs/wing-b-rounded-tip-g2/zebra-viewer.html); the separate section viewer has its own lighting model.
 
-Use the [wingtip cap skill](../../.agents/skills/shape-wingtip-caps/SKILL.md) for future designs.
+Use the [wingtip cap skill](../../.agents/skills/close-rounded-wingtip/SKILL.md) for future designs.
+
+For subsequent winglet work, start with the [accepted whole-wing and fin models](../../runs/cap-trials/README.md).
