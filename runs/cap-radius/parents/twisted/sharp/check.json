@@ -1,0 +1,51 @@
+{
+ "step_sha256": "7093c5ca8d951280a16a675361ddd27c7ee932cb2202511e1184636468ab1089",
+ "step_bytes": 1292204,
+ "reimport": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 6,
+  "face_types": [
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_Plane",
+   "GeomAbs_Plane"
+  ],
+  "brepcheck_valid": true,
+  "brepcheck_strict_valid": true,
+  "shell_closed": true,
+  "volume_mm3": 1448878.2750837924,
+  "bounding_box_mm": [
+   -0.01402801,
+   189.862953575,
+   -440.0000001,
+   440.0000001,
+   -7.627509511,
+   48.405772249
+  ]
+ },
+ "parent_py_to_parent_step_max_mm": 8.793224108741713e-08,
+ "derivative_check_max_relative_error": {
+  "d_chord": 1.093665798330334e-10,
+  "d_span": 2.6443014444739378e-11,
+  "d_chord_chord": 3.575322950630347e-09,
+  "d_chord_span": 2.6064928386149745e-10,
+  "d_span_span": 5.536639118290911e-10
+ },
+ "tip_outline_endpoints": {
+  "plane": "3D",
+  "leading_edge_gap_mm": 0.0,
+  "trailing_edge_gap_mm": 0.0,
+  "note": "the trailing-edge gap is the distance to the attachment's trailing edge (point or blunt segment)"
+ },
+ "accepted_model_sha256": "5b6bb3ae59aab34b85ef5d1631a79c9d5670c42c4a56dfbd00b4fc05743160f9",
+ "accepted_retained_faces": 4,
+ "max_deviation_parent_py_to_accepted_retained_skin_mm": 1.2212134419480238e-06,
+ "max_deviation_parent_step_to_accepted_retained_skin_mm": 1.6269366561279783e-07,
+ "sample_points": {
+  "parent_py": 1722,
+  "parent_step": 3444
+ }
+}

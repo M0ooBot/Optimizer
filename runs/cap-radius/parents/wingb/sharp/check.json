@@ -1,0 +1,47 @@
+{
+ "step_sha256": "40dbbe909d4277f125c40fb0e015b721e6c130107b6444251b0e8a8353828498",
+ "step_bytes": 349959,
+ "reimport": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 3,
+  "face_types": [
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_Plane",
+   "GeomAbs_Plane"
+  ],
+  "brepcheck_valid": true,
+  "brepcheck_strict_valid": true,
+  "shell_closed": true,
+  "volume_mm3": 711012.7207982835,
+  "bounding_box_mm": [
+   -540.0000001,
+   1e-07,
+   -4.06850476,
+   55.172142942,
+   -200.0000001,
+   -0.021756063
+  ]
+ },
+ "derivative_check_max_relative_error": {
+  "d_chord": 3.120070544361434e-10,
+  "d_span": 1.1846168490580544e-10,
+  "d_chord_chord": 2.7662441971870352e-11,
+  "d_chord_span": 2.4860248332289224e-10,
+  "d_span_span": 2.0385886650935457e-10
+ },
+ "tip_outline_endpoints": {
+  "plane": "plan (STEP X, Z)",
+  "leading_edge_gap_mm": 7.936908918453578e-11,
+  "trailing_edge_gap_mm": 4.192202140984591e-11
+ },
+ "accepted_model_sha256": "9a94846474d84959e4b2643c8cb2470998fa9083312d19be45456107a02b3001",
+ "accepted_retained_faces": 1,
+ "max_deviation_parent_py_to_accepted_retained_skin_mm": 1.6370953975083884e-11,
+ "max_deviation_parent_step_to_accepted_retained_skin_mm": 1.2760627476197878e-11,
+ "sample_points": {
+  "parent_py": 1722,
+  "parent_step": 861
+ },
+ "note": "parent.py evaluates the B-spline faces of parent.step, so parent.py and parent.step are the same surface by construction"
+}

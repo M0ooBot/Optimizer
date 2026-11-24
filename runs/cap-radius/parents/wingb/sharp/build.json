@@ -1,0 +1,26 @@
+{
+  "v_attachment_in_source": 0.8985950931008375,
+  "attachment_plane_x_spread_mm": 2.751221472863108e-11,
+  "source_skin_poles": [
+    322,
+    8
+  ],
+  "source_skin_degrees": [
+    3,
+    7
+  ],
+  "faces": 3,
+  "volume_mm3": 711012.7207985923,
+  "step_bytes": 349959,
+  "surface_data": {
+    "u_reference": 0.5,
+    "v_attachment": 0.898595093101,
+    "nose_bracket": [
+      0.4155,
+      0.5755
+    ],
+    "nose_sign": 1.0,
+    "u_end_upper": 1.0,
+    "u_end_lower": 0.0
+  }
+}

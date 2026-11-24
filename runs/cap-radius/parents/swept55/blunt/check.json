@@ -1,0 +1,108 @@
+{
+ "step_sha256": "3d35923a9c76cda3e906222d041ce9276ef4074def8bd4dc9a2118af17c51aa4",
+ "step_bytes": 231224,
+ "reimport": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 8,
+  "face_types": [
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_Plane",
+   "GeomAbs_Plane"
+  ],
+  "brepcheck_valid": true,
+  "brepcheck_strict_valid": true,
+  "shell_closed": true,
+  "volume_mm3": 1191108.3301464894,
+  "bounding_box_mm": [
+   -1e-07,
+   651.977722729,
+   -390.0000001,
+   390.0000001,
+   -9.534156161,
+   9.534156161
+  ]
+ },
+ "parent_py_to_parent_step_max_mm": 1.1503699680989156e-07,
+ "derivative_check_max_relative_error": {
+  "d_chord": 1.585031290926541e-10,
+  "d_span": 8.828104163385138e-11,
+  "d_chord_chord": 6.47010382583581e-11,
+  "d_chord_span": 1.680746464503571e-09,
+  "d_span_span": 2.1336165593795354e-08
+ },
+ "tip_outline_endpoints": {
+  "plane": "3D",
+  "leading_edge_gap_mm": 0.0,
+  "trailing_edge_gap_mm": 0.0,
+  "note": "the trailing-edge gap is the distance to the attachment's trailing edge (point or blunt segment)"
+ },
+ "te_thickness": [
+  {
+   "station_mm": -390.0,
+   "measured_on": "planar end face edge",
+   "step_te_thickness_mm": 0.4,
+   "parent_py_te_thickness_mm": 0.39999999999999997
+  },
+  {
+   "station_mm": -195.0,
+   "measured_on": "plane section of the STEP",
+   "step_te_thickness_mm": 0.4,
+   "parent_py_te_thickness_mm": 0.39999999999999536
+  },
+  {
+   "station_mm": 0.0,
+   "measured_on": "plane section of the STEP",
+   "step_te_thickness_mm": 0.4,
+   "parent_py_te_thickness_mm": 0.3999999999999892
+  },
+  {
+   "station_mm": 195.0,
+   "measured_on": "plane section of the STEP",
+   "step_te_thickness_mm": 0.4,
+   "parent_py_te_thickness_mm": 0.39999999999999536
+  },
+  {
+   "station_mm": 390.0,
+   "measured_on": "planar end face edge",
+   "step_te_thickness_mm": 0.4,
+   "parent_py_te_thickness_mm": 0.39999999999999997
+  }
+ ],
+ "converter_agreement": {
+  "revision": "d77bbdf45a8c0aa92efbc2a3d3007cfe4f904105",
+  "root": {
+   "station_mm": 0.0,
+   "sampled_points": 5001,
+   "converter_points": 4249,
+   "converter_te_thickness_mm": 0.4000000000000011,
+   "converter_te_chord_position_mm": 209.99999999999997,
+   "analytic_te_chord_position_mm": 210.0,
+   "converter_scale": 1.0087858567204175,
+   "analytic_scale": 1.0087858554884743,
+   "scale_difference": 1.2319432141083553e-09,
+   "converter_cut_chord_fraction": 0.9912906622729817,
+   "analytic_cut_chord_fraction": 0.9912906634835597,
+   "max_distance_converter_points_to_analytic_section_mm": 2.7724976602964375e-08
+  },
+  "attachment": {
+   "station_mm": 390.0,
+   "sampled_points": 5001,
+   "converter_points": 4077,
+   "converter_te_thickness_mm": 0.39999999999999974,
+   "converter_te_chord_position_mm": 95.0,
+   "analytic_te_chord_position_mm": 95.0,
+   "converter_scale": 1.01955253510604,
+   "analytic_scale": 1.01955253386619,
+   "scale_difference": 1.2398500004451307e-09,
+   "converter_cut_chord_fraction": 0.980822434908657,
+   "analytic_cut_chord_fraction": 0.9808224361014084,
+   "max_distance_converter_points_to_analytic_section_mm": 1.2458971171971885e-08
+  }
+ }
+}

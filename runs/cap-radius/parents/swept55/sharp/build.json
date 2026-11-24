@@ -1,0 +1,21 @@
+{
+  "faces": 6,
+  "volume_mm3": 1164279.8607295733,
+  "fit_tolerance_mm": 2e-07,
+  "skin_fit_max_midpoint_error_mm": 1.884528995077522e-07,
+  "chord_break_joints_reduced_to_C1": {
+    "upper": [],
+    "lower": []
+  },
+  "skin_poles": {
+    "upper": [
+      33,
+      5
+    ],
+    "lower": [
+      33,
+      5
+    ]
+  },
+  "step_bytes": 92877
+}

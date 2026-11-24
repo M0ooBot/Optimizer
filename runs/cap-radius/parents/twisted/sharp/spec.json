@@ -1,0 +1,923 @@
+{
+ "shape": "twisted",
+ "variant": "sharp",
+ "units": "mm",
+ "axes": {
+  "X": "aft, along the root chord",
+  "Y": "span (+Y is the right tip)",
+  "Z": "up"
+ },
+ "span_axis": "Y",
+ "extent": {
+  "parent": "Y from -440 to +440 mm (full span between the attachments; left half mirrors the right in XZ)",
+  "finished_projected_span_mm": 1000.0
+ },
+ "attachment_stations": {
+  "Y_mm": [
+   -440.0,
+   440.0
+  ]
+ },
+ "cap_reach_mm": 60.0,
+ "locked_outline": {
+  "kind": "3D rim on the continued camber surface (its plan view is the locked outline), mirrored for the left tip",
+  "formula": "|Y| = 440 + 60 sin(pi p); point = camber-line point of native parameter u = p placed with the parent's taper, twist, dihedral and sweep at that |Y|; p in [0, 1] from LE to TE. Blunt variant only: plus end corrections (le_shift, te_shift) times 1 - x^3(10 - 15x + 6x^2), x = min(p/0.18, 1) and min((1-p)/0.18, 1), which move the ends onto the blunt attachment's LE point and TE face (each under 0.0002 mm)",
+  "reach_max_mm": 60.0,
+  "reach_at": "p = 0.5, tip at |Y| = 500 mm (1000 mm projected span)",
+  "parameters": {
+   "reach_mm": 60.0
+  },
+  "samples": {
+   "p": [
+    0.0,
+    0.05,
+    0.1,
+    0.15000000000000002,
+    0.2,
+    0.25,
+    0.30000000000000004,
+    0.35000000000000003,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6000000000000001,
+    0.65,
+    0.7000000000000001,
+    0.75,
+    0.8,
+    0.8500000000000001,
+    0.9,
+    0.9500000000000001,
+    1.0
+   ],
+   "right_tip_XYZ": [
+    [
+     90.0,
+     440.0,
+     38.49501195140656
+    ],
+    [
+     92.52088089698533,
+     449.38606790241386,
+     39.40848503832302
+    ],
+    [
+     96.1411371636509,
+     458.54101966249686,
+     40.47500166526452
+    ],
+    [
+     100.71664443395655,
+     467.2394299843728,
+     41.64795346121049
+    ],
+    [
+     106.0917914536949,
+     475.2671151375484,
+     42.87140460990746
+    ],
+    [
+     112.10750159512594,
+     482.42640687119285,
+     44.08456893568822
+    ],
+    [
+     118.60774921473445,
+     488.54101966249686,
+     45.22634021527311
+    ],
+    [
+     125.44416217634802,
+     493.4603914513021,
+     46.239460273817166
+    ],
+    [
+     132.47852662310115,
+     497.0633909777092,
+     47.07404745086439
+    ],
+    [
+     139.5830846472976,
+     499.2613004357083,
+     47.693047107083004
+    ],
+    [
+     146.63634223897807,
+     500.0,
+     48.12247424221646
+    ],
+    [
+     153.5255514286464,
+     499.2613004357083,
+     48.36725025325388
+    ],
+    [
+     160.1427870162891,
+     497.0633909777092,
+     48.422567596298855
+    ],
+    [
+     166.38054002570078,
+     493.4603914513021,
+     48.29117667867462
+    ],
+    [
+     172.1289226019178,
+     488.54101966249686,
+     47.98334130417358
+    ],
+    [
+     177.27409198946302,
+     482.42640687119285,
+     47.51623749866591
+    ],
+    [
+     181.69833948347738,
+     475.2671151375484,
+     46.9130096116785
+    ],
+    [
+     185.2821096534355,
+     467.2394299843728,
+     46.201466766744794
+    ],
+    [
+     187.90798675396644,
+     458.54101966249686,
+     45.41243507525814
+    ],
+    [
+     189.46644710768487,
+     449.38606790241386,
+     44.577833914289485
+    ],
+    [
+     189.8629534754574,
+     440.0,
+     43.72860757570094
+    ]
+   ]
+  },
+  "function": "parent.py tip_outline / tip_outline_jet"
+ },
+ "chord_parameter": "s in [0, 1] from the leading edge to the trailing-edge end of each skin; native u = s + (u_end - 1) max(0, 2s - 1)^5 (u = s sharp)",
+ "attachment_section": {
+  "frame_origin_mm": [
+   90.0,
+   440.0,
+   38.49501195140656
+  ],
+  "chord_direction": [
+   0.9986295347545738,
+   0.0,
+   0.052335956242943835
+  ],
+  "thickness_direction": [
+   -0.052335956242943835,
+   0.0,
+   0.9986295347545738
+  ],
+  "chord_mm": 100.0,
+  "leading_point_chord_fraction": 0.0,
+  "trailing_edge_chord_fraction": 1.0,
+  "trailing_edge_thickness_mm": 7.105427357601002e-15
+ },
+ "trailing_edge": "sharp (closed to a point)",
+ "keep_chord_cut": {
+  "root": {
+   "u_end_upper": 1.0,
+   "u_end_lower": 1.0,
+   "cut_chord_fraction": 1.0,
+   "scale": 1.0
+  },
+  "attachment": {
+   "u_end_upper": 1.0,
+   "u_end_lower": 1.0,
+   "cut_chord_fraction": 1.0,
+   "scale": 1.0
+  }
+ },
+ "attachment_thickness": {
+  "definition": "thickness across the finished attachment section, perpendicular to the chord line, at chord fraction measured from the section's 2D origin (leading-edge point) along the chord",
+  "rule_threshold_mm": 0.8,
+  "chord_fractions_where_thickness_is_0p8_mm": [
+   0.0004354921102783377,
+   0.9720394353183992
+  ],
+  "table": [
+   {
+    "chord_fraction": 0.0,
+    "thickness_mm": 0.3123767944430465
+   },
+   {
+    "chord_fraction": 1e-06,
+    "thickness_mm": 0.31437453224197065
+   },
+   {
+    "chord_fraction": 3e-06,
+    "thickness_mm": 0.3183323906895015
+   },
+   {
+    "chord_fraction": 1e-05,
+    "thickness_mm": 0.3318130880715255
+   },
+   {
+    "chord_fraction": 3e-05,
+    "thickness_mm": 0.3676107581795237
+   },
+   {
+    "chord_fraction": 9.637975896759077e-05,
+    "thickness_mm": 0.4670809897805277
+   },
+   {
+    "chord_fraction": 0.0001,
+    "thickness_mm": 0.4718991440030457
+   },
+   {
+    "chord_fraction": 0.0003,
+    "thickness_mm": 0.6869620459308853
+   },
+   {
+    "chord_fraction": 0.0003854818796385495,
+    "thickness_mm": 0.7602814472243804
+   },
+   {
+    "chord_fraction": 0.0008671949076420327,
+    "thickness_mm": 1.0825978706410289
+   },
+   {
+    "chord_fraction": 0.001,
+    "thickness_mm": 1.155303885859722
+   },
+   {
+    "chord_fraction": 0.001541333133436018,
+    "thickness_mm": 1.412069494591809
+   },
+   {
+    "chord_fraction": 0.0024076366639015356,
+    "thickness_mm": 1.7427902654692697
+   },
+   {
+    "chord_fraction": 0.003,
+    "thickness_mm": 1.9348613889567046
+   },
+   {
+    "chord_fraction": 0.0034657715225368535,
+    "thickness_mm": 2.0725557477762955
+   },
+   {
+    "chord_fraction": 0.0047153297782113746,
+    "thickness_mm": 2.400333251347179
+   },
+   {
+    "chord_fraction": 0.006155829702431115,
+    "thickness_mm": 2.72554745259524
+   },
+   {
+    "chord_fraction": 0.007786715955054202,
+    "thickness_mm": 3.04782821905544
+   },
+   {
+    "chord_fraction": 0.009607359798384785,
+    "thickness_mm": 3.366906568308477
+   },
+   {
+    "chord_fraction": 0.011617059339563807,
+    "thickness_mm": 3.682566589293971
+   },
+   {
+    "chord_fraction": 0.013815039801161721,
+    "thickness_mm": 3.994621264389881
+   },
+   {
+    "chord_fraction": 0.01620045381987012,
+    "thickness_mm": 4.302899518568863
+   },
+   {
+    "chord_fraction": 0.01877238177317636,
+    "thickness_mm": 4.607238960470542
+   },
+   {
+    "chord_fraction": 0.021529832133895588,
+    "thickness_mm": 4.907481696295232
+   },
+   {
+    "chord_fraction": 0.024471741852423234,
+    "thickness_mm": 5.2034718927120585
+   },
+   {
+    "chord_fraction": 0.027596976766560977,
+    "thickness_mm": 5.495054381465623
+   },
+   {
+    "chord_fraction": 0.03090433203875792,
+    "thickness_mm": 5.782073909291908
+   },
+   {
+    "chord_fraction": 0.034392532620598215,
+    "thickness_mm": 6.064374801505624
+   },
+   {
+    "chord_fraction": 0.03806023374435663,
+    "thickness_mm": 6.341800898715277
+   },
+   {
+    "chord_fraction": 0.04190602144143202,
+    "thickness_mm": 6.614195678394948
+   },
+   {
+    "chord_fraction": 0.045928413087459374,
+    "thickness_mm": 6.881402504034785
+   },
+   {
+    "chord_fraction": 0.05012585797388924,
+    "thickness_mm": 7.143264963511571
+   },
+   {
+    "chord_fraction": 0.05449673790581605,
+    "thickness_mm": 7.399627270176731
+   },
+   {
+    "chord_fraction": 0.059039367825822475,
+    "thickness_mm": 7.65033470776908
+   },
+   {
+    "chord_fraction": 0.06375199646360141,
+    "thickness_mm": 7.895234105255655
+   },
+   {
+    "chord_fraction": 0.06863280701110408,
+    "thickness_mm": 8.134174331053861
+   },
+   {
+    "chord_fraction": 0.07367991782295391,
+    "thickness_mm": 8.36700679838367
+   },
+   {
+    "chord_fraction": 0.07889138314185673,
+    "thickness_mm": 8.593585975105515
+   },
+   {
+    "chord_fraction": 0.08426519384872738,
+    "thickness_mm": 8.813769892551134
+   },
+   {
+    "chord_fraction": 0.08979927823724321,
+    "thickness_mm": 9.02742064870131
+   },
+   {
+    "chord_fraction": 0.09549150281252627,
+    "thickness_mm": 9.234404901704671
+   },
+   {
+    "chord_fraction": 0.10133967311364644,
+    "thickness_mm": 9.434594350231164
+   },
+   {
+    "chord_fraction": 0.10734153455962753,
+    "thickness_mm": 9.627866197557399
+   },
+   {
+    "chord_fraction": 0.1134947733186315,
+    "thickness_mm": 9.814103596617867
+   },
+   {
+    "chord_fraction": 0.11979701719998453,
+    "thickness_mm": 9.993196073548237
+   },
+   {
+    "chord_fraction": 0.12624583656870159,
+    "thickness_mm": 10.16503992750791
+   },
+   {
+    "chord_fraction": 0.13283874528215722,
+    "thickness_mm": 10.329538604809105
+   },
+   {
+    "chord_fraction": 0.1395732016485406,
+    "thickness_mm": 10.48660304560594
+   },
+   {
+    "chord_fraction": 0.1464466094067262,
+    "thickness_mm": 10.636152001614082
+   },
+   {
+    "chord_fraction": 0.15345631872718207,
+    "thickness_mm": 10.778112323542178
+   },
+   {
+    "chord_fraction": 0.1605996272335291,
+    "thickness_mm": 10.912419217123336
+   },
+   {
+    "chord_fraction": 0.16787378104435913,
+    "thickness_mm": 11.039016466839001
+   },
+   {
+    "chord_fraction": 0.17527597583490817,
+    "thickness_mm": 11.157856626629432
+   },
+   {
+    "chord_fraction": 0.18280335791817726,
+    "thickness_mm": 11.268901177084976
+   },
+   {
+    "chord_fraction": 0.19045302534508302,
+    "thickness_mm": 11.372120648810089
+   },
+   {
+    "chord_fraction": 0.19822202902321429,
+    "thickness_mm": 11.467494711847099
+   },
+   {
+    "chord_fraction": 0.20610737385376343,
+    "thickness_mm": 11.555012231238667
+   },
+   {
+    "chord_fraction": 0.21410601988619388,
+    "thickness_mm": 11.634671288995897
+   },
+   {
+    "chord_fraction": 0.22221488349019886,
+    "thickness_mm": 11.706479172921954
+   },
+   {
+    "chord_fraction": 0.2304308385444998,
+    "thickness_mm": 11.77045233291884
+   },
+   {
+    "chord_fraction": 0.23875071764202555,
+    "thickness_mm": 11.826616305575396
+   },
+   {
+    "chord_fraction": 0.24717131331100772,
+    "thickness_mm": 11.875005607998363
+   },
+   {
+    "chord_fraction": 0.2556893792515225,
+    "thickness_mm": 11.915663602002775
+   },
+   {
+    "chord_fraction": 0.2643016315870011,
+    "thickness_mm": 11.948642329924084
+   },
+   {
+    "chord_fraction": 0.2730047501302266,
+    "thickness_mm": 11.974002323449543
+   },
+   {
+    "chord_fraction": 0.281795379663329,
+    "thickness_mm": 11.991812386991562
+   },
+   {
+    "chord_fraction": 0.29067013123128593,
+    "thickness_mm": 12.002149357238705
+   },
+   {
+    "chord_fraction": 0.2996255834484295,
+    "thickness_mm": 12.00509784062155
+   },
+   {
+    "chord_fraction": 0.3086582838174551,
+    "thickness_mm": 12.000749930519305
+   },
+   {
+    "chord_fraction": 0.3177647500604252,
+    "thickness_mm": 11.989204906108949
+   },
+   {
+    "chord_fraction": 0.3269414714612535,
+    "thickness_mm": 11.970568914821406
+   },
+   {
+    "chord_fraction": 0.3361849102191532,
+    "thickness_mm": 11.944954640418706
+   },
+   {
+    "chord_fraction": 0.3454915028125263,
+    "thickness_mm": 11.912480958741853
+   },
+   {
+    "chord_fraction": 0.35485766137276886,
+    "thickness_mm": 11.873272583201896
+   },
+   {
+    "chord_fraction": 0.36427977506746284,
+    "thickness_mm": 11.827463598084995
+   },
+   {
+    "chord_fraction": 0.37375421149242094,
+    "thickness_mm": 11.775197027603319
+   },
+   {
+    "chord_fraction": 0.38327731807204724,
+    "thickness_mm": 11.716567552561372
+   },
+   {
+    "chord_fraction": 0.39284542346747464,
+    "thickness_mm": 11.65176369463405
+   },
+   {
+    "chord_fraction": 0.40245483899193585,
+    "thickness_mm": 11.580938864644875
+   },
+   {
+    "chord_fraction": 0.4121018600328227,
+    "thickness_mm": 11.504199383871624
+   },
+   {
+    "chord_fraction": 0.4217827674798845,
+    "thickness_mm": 11.421670526366942
+   },
+   {
+    "chord_fraction": 0.431493829159016,
+    "thickness_mm": 11.333517439601016
+   },
+   {
+    "chord_fraction": 0.4412313012710811,
+    "thickness_mm": 11.239919683129495
+   },
+   {
+    "chord_fraction": 0.4509914298352196,
+    "thickness_mm": 11.141016538868517
+   },
+   {
+    "chord_fraction": 0.4607704521360775,
+    "thickness_mm": 11.036982388643917
+   },
+   {
+    "chord_fraction": 0.4705645981744055,
+    "thickness_mm": 10.927984797672092
+   },
+   {
+    "chord_fraction": 0.48037009212046566,
+    "thickness_mm": 10.814192761417416
+   },
+   {
+    "chord_fraction": 0.49018315376968574,
+    "thickness_mm": 10.695776398793441
+   },
+   {
+    "chord_fraction": 0.49999999999999994,
+    "thickness_mm": 10.572906659745916
+   },
+   {
+    "chord_fraction": 0.5098168462303142,
+    "thickness_mm": 10.44575504824565
+   },
+   {
+    "chord_fraction": 0.5196299078795342,
+    "thickness_mm": 10.314493361593819
+   },
+   {
+    "chord_fraction": 0.5294354018255945,
+    "thickness_mm": 10.179293446812835
+   },
+   {
+    "chord_fraction": 0.5392295478639224,
+    "thickness_mm": 10.040326974764351
+   },
+   {
+    "chord_fraction": 0.5490085701647803,
+    "thickness_mm": 9.897765232501984
+   },
+   {
+    "chord_fraction": 0.5587686987289188,
+    "thickness_mm": 9.75177893423227
+   },
+   {
+    "chord_fraction": 0.568506170840984,
+    "thickness_mm": 9.60253805112226
+   },
+   {
+    "chord_fraction": 0.5782172325201154,
+    "thickness_mm": 9.450211660058603
+   },
+   {
+    "chord_fraction": 0.5878981399671772,
+    "thickness_mm": 9.294967811330352
+   },
+   {
+    "chord_fraction": 0.5975451610080641,
+    "thickness_mm": 9.136973415077925
+   },
+   {
+    "chord_fraction": 0.6071545765325252,
+    "thickness_mm": 8.97639414622358
+   },
+   {
+    "chord_fraction": 0.6167226819279527,
+    "thickness_mm": 8.813394367475997
+   },
+   {
+    "chord_fraction": 0.626245788507579,
+    "thickness_mm": 8.648137069883019
+   },
+   {
+    "chord_fraction": 0.6357202249325371,
+    "thickness_mm": 8.4807838302937
+   },
+   {
+    "chord_fraction": 0.645142338627231,
+    "thickness_mm": 8.311494784983552
+   },
+   {
+    "chord_fraction": 0.6545084971874737,
+    "thickness_mm": 8.140428618596637
+   },
+   {
+    "chord_fraction": 0.6638150897808468,
+    "thickness_mm": 7.967742567464466
+   },
+   {
+    "chord_fraction": 0.6730585285387465,
+    "thickness_mm": 7.793592436276237
+   },
+   {
+    "chord_fraction": 0.6822352499395747,
+    "thickness_mm": 7.618132626997347
+   },
+   {
+    "chord_fraction": 0.6913417161825448,
+    "thickness_mm": 7.441516178863916
+   },
+   {
+    "chord_fraction": 0.7003744165515705,
+    "thickness_mm": 7.263894818221248
+   },
+   {
+    "chord_fraction": 0.709329868768714,
+    "thickness_mm": 7.085419016923145
+   },
+   {
+    "chord_fraction": 0.718204620336671,
+    "thickness_mm": 6.906238057967509
+   },
+   {
+    "chord_fraction": 0.7269952498697734,
+    "thickness_mm": 6.7265001070122645
+   },
+   {
+    "chord_fraction": 0.7356983684129988,
+    "thickness_mm": 6.546352288393133
+   },
+   {
+    "chord_fraction": 0.7443106207484775,
+    "thickness_mm": 6.365940764253112
+   },
+   {
+    "chord_fraction": 0.7528286866889922,
+    "thickness_mm": 6.185410815391015
+   },
+   {
+    "chord_fraction": 0.7612492823579744,
+    "thickness_mm": 6.00490692244383
+   },
+   {
+    "chord_fraction": 0.7695691614555001,
+    "thickness_mm": 5.824572846034891
+   },
+   {
+    "chord_fraction": 0.777785116509801,
+    "thickness_mm": 5.644551704546333
+   },
+   {
+    "chord_fraction": 0.7858939801138061,
+    "thickness_mm": 5.464986048210106
+   },
+   {
+    "chord_fraction": 0.7938926261462365,
+    "thickness_mm": 5.286017928256666
+   },
+   {
+    "chord_fraction": 0.8017779709767857,
+    "thickness_mm": 5.107788959913391
+   },
+   {
+    "chord_fraction": 0.8095469746549171,
+    "thickness_mm": 4.930440378106526
+   },
+   {
+    "chord_fraction": 0.8171966420818226,
+    "thickness_mm": 4.7541130847894495
+   },
+   {
+    "chord_fraction": 0.8247240241650917,
+    "thickness_mm": 4.578947686896257
+   },
+   {
+    "chord_fraction": 0.8321262189556409,
+    "thickness_mm": 4.405084524002699
+   },
+   {
+    "chord_fraction": 0.8394003727664707,
+    "thickness_mm": 4.232663684865463
+   },
+   {
+    "chord_fraction": 0.8465436812728179,
+    "thickness_mm": 4.061825012104977
+   },
+   {
+    "chord_fraction": 0.8535533905932737,
+    "thickness_mm": 3.892708094396555
+   },
+   {
+    "chord_fraction": 0.8604267983514594,
+    "thickness_mm": 3.7254522456371917
+   },
+   {
+    "chord_fraction": 0.8671612547178429,
+    "thickness_mm": 3.5601964706625857
+   },
+   {
+    "chord_fraction": 0.8737541634312983,
+    "thickness_mm": 3.3970794171976966
+   },
+   {
+    "chord_fraction": 0.8802029828000155,
+    "thickness_mm": 3.2362393138352457
+   },
+   {
+    "chord_fraction": 0.8865052266813684,
+    "thickness_mm": 3.0778138939492736
+   },
+   {
+    "chord_fraction": 0.8926584654403724,
+    "thickness_mm": 2.92194030556256
+   },
+   {
+    "chord_fraction": 0.8986603268863536,
+    "thickness_mm": 2.768755007299661
+   },
+   {
+    "chord_fraction": 0.9045084971874737,
+    "thickness_mm": 2.618393650667883
+   },
+   {
+    "chord_fraction": 0.9102007217627568,
+    "thickness_mm": 2.470990949017791
+   },
+   {
+    "chord_fraction": 0.9157348061512727,
+    "thickness_mm": 2.3266805336412384
+   },
+   {
+    "chord_fraction": 0.9211086168581433,
+    "thickness_mm": 2.1855947975681587
+   },
+   {
+    "chord_fraction": 0.9263200821770461,
+    "thickness_mm": 2.0478647277221858
+   },
+   {
+    "chord_fraction": 0.9313671929888959,
+    "thickness_mm": 1.9136197261899772
+   },
+   {
+    "chord_fraction": 0.9362480035363985,
+    "thickness_mm": 1.7829874214475425
+   },
+   {
+    "chord_fraction": 0.9409606321741775,
+    "thickness_mm": 1.6560934704708083
+   },
+   {
+    "chord_fraction": 0.9455032620941839,
+    "thickness_mm": 1.5330613527333798
+   },
+   {
+    "chord_fraction": 0.9498741420261108,
+    "thickness_mm": 1.4140121571647772
+   },
+   {
+    "chord_fraction": 0.9540715869125407,
+    "thickness_mm": 1.2990643632043224
+   },
+   {
+    "chord_fraction": 0.9580939785585679,
+    "thickness_mm": 1.1883336171398975
+   },
+   {
+    "chord_fraction": 0.9619397662556434,
+    "thickness_mm": 1.081932504967328
+   },
+   {
+    "chord_fraction": 0.9656074673794017,
+    "thickness_mm": 0.9799703230430967
+   },
+   {
+    "chord_fraction": 0.969095667961242,
+    "thickness_mm": 0.8825528478319334
+   },
+   {
+    "chord_fraction": 0.972403023233439,
+    "thickness_mm": 0.7897821060705157
+   },
+   {
+    "chord_fraction": 0.9755282581475768,
+    "thickness_mm": 0.7017561466790047
+   },
+   {
+    "chord_fraction": 0.9784701678661044,
+    "thickness_mm": 0.6185688157532132
+   },
+   {
+    "chord_fraction": 0.9812276182268236,
+    "thickness_mm": 0.5403095359624837
+   },
+   {
+    "chord_fraction": 0.9837995461801299,
+    "thickness_mm": 0.4670630916611496
+   },
+   {
+    "chord_fraction": 0.9861849601988383,
+    "thickness_mm": 0.39890942099544396
+   },
+   {
+    "chord_fraction": 0.9883829406604362,
+    "thickness_mm": 0.3359234162521744
+   },
+   {
+    "chord_fraction": 0.9903926402016152,
+    "thickness_mm": 0.2781747336527247
+   },
+   {
+    "chord_fraction": 0.9922132840449458,
+    "thickness_mm": 0.22572761374282901
+   },
+   {
+    "chord_fraction": 0.9938441702975689,
+    "thickness_mm": 0.17864071346961763
+   },
+   {
+    "chord_fraction": 0.9952846702217886,
+    "thickness_mm": 0.13696695096910944
+   },
+   {
+    "chord_fraction": 0.9965342284774632,
+    "thickness_mm": 0.10075336401301044
+   },
+   {
+    "chord_fraction": 0.997,
+    "thickness_mm": 0.08723959382800663
+   },
+   {
+    "chord_fraction": 0.9975923633360984,
+    "thickness_mm": 0.07004098298252782
+   },
+   {
+    "chord_fraction": 0.998458666866564,
+    "thickness_mm": 0.04486471914920448
+   },
+   {
+    "chord_fraction": 0.999,
+    "thickness_mm": 0.029118095445738276
+   },
+   {
+    "chord_fraction": 0.999132805092358,
+    "thickness_mm": 0.025253268950690966
+   },
+   {
+    "chord_fraction": 0.9996145181203615,
+    "thickness_mm": 0.011229034851211636
+   },
+   {
+    "chord_fraction": 0.9997,
+    "thickness_mm": 0.008739450672183112
+   },
+   {
+    "chord_fraction": 0.9999,
+    "thickness_mm": 0.0029135335237193342
+   },
+   {
+    "chord_fraction": 0.9999036202410324,
+    "thickness_mm": 0.0028080632755887206
+   },
+   {
+    "chord_fraction": 0.99997,
+    "thickness_mm": 0.0008741003114132381
+   },
+   {
+    "chord_fraction": 0.99999,
+    "thickness_mm": 0.0002913706044547086
+   },
+   {
+    "chord_fraction": 0.999997,
+    "thickness_mm": 8.741158391203687e-05
+   },
+   {
+    "chord_fraction": 0.999999,
+    "thickness_mm": 2.91372329857644e-05
+   },
+   {
+    "chord_fraction": 1.0,
+    "thickness_mm": -3.3232921676449607e-15
+   }
+  ]
+ },
+ "files": {
+  "parent.py": "exact definition (see its docstring)",
+  "parent.step": "parent alone, one closed solid"
+ }
+}
