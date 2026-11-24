@@ -1,0 +1,1210 @@
+{
+ "sections": {
+  "flat": {
+   "cuts": [
+    {
+     "fraction": 0.02,
+     "previous_min_mm": 1.1455516294763646,
+     "previous_lip_mm": 1.1455516294763646,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      2.400000000000001,
+      373.3939881551879,
+      0.0
+     ],
+     "min_mm": 1.145551629476365,
+     "lip_mm": 1.145551629476365,
+     "reversals": 0,
+     "min_xyz": [
+      2.400000000000001,
+      373.3939881551879,
+      0.0
+     ],
+     "min_relative_difference": 4.440892098500626e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 4.440892098500626e-16
+    },
+    {
+     "fraction": 0.05,
+     "previous_min_mm": 1.4007944439465485,
+     "previous_lip_mm": 1.4007944439465485,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      6.0,
+      380.68755590973154,
+      0.0
+     ],
+     "min_mm": 1.4007944439465485,
+     "lip_mm": 1.4007944439465485,
+     "reversals": 0,
+     "min_xyz": [
+      6.0,
+      380.68755590973154,
+      0.0
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.25,
+     "previous_min_mm": 1.6550807098819846,
+     "previous_lip_mm": 1.6550807098819846,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      29.999999999999968,
+      396.0483616461914,
+      0.0
+     ],
+     "min_mm": 1.6550807098819846,
+     "lip_mm": 1.6550807098819846,
+     "reversals": 0,
+     "min_xyz": [
+      29.999999999999968,
+      396.0483616461914,
+      0.0
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.4,
+     "previous_min_mm": 1.5537165332424587,
+     "previous_lip_mm": 1.5537165332424587,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      48.000000000000014,
+      399.4222755926013,
+      0.0
+     ],
+     "min_mm": 1.553716533242458,
+     "lip_mm": 1.553716533242458,
+     "reversals": 0,
+     "min_xyz": [
+      48.000000000000014,
+      399.4222755926013,
+      0.0
+     ],
+     "min_relative_difference": -4.440892098500626e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -4.440892098500626e-16
+    },
+    {
+     "fraction": 0.5,
+     "previous_min_mm": 1.439999999999821,
+     "previous_lip_mm": 1.439999999999821,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      60.0,
+      400.0,
+      0.0
+     ],
+     "min_mm": 1.439999999999821,
+     "lip_mm": 1.439999999999821,
+     "reversals": 0,
+     "min_xyz": [
+      60.0,
+      400.0,
+      0.0
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.65,
+     "previous_min_mm": 1.2180178481789274,
+     "previous_lip_mm": 1.2180178481789274,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      78.00000000000003,
+      398.67388570947514,
+      0.0
+     ],
+     "min_mm": 1.2180178481789277,
+     "lip_mm": 1.2180178481789277,
+     "reversals": 0,
+     "min_xyz": [
+      78.00000000000003,
+      398.67388570947514,
+      0.0
+     ],
+     "min_relative_difference": 2.220446049250313e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 2.220446049250313e-16
+    },
+    {
+     "fraction": 0.8,
+     "previous_min_mm": 0.9271471051860415,
+     "previous_lip_mm": 0.9271471051860415,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      95.99999999999999,
+      393.9863449678298,
+      0.0
+     ],
+     "min_mm": 0.9271471051860415,
+     "lip_mm": 0.9271471051860415,
+     "reversals": 0,
+     "min_xyz": [
+      95.99999999999999,
+      393.9863449678298,
+      0.0
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.9,
+     "previous_min_mm": 0.6660215913478283,
+     "previous_lip_mm": 0.6660215913478283,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      107.99999999999993,
+      387.1613826395506,
+      0.0
+     ],
+     "min_mm": 0.6660215913478286,
+     "lip_mm": 0.6660215913478286,
+     "reversals": 0,
+     "min_xyz": [
+      107.99999999999993,
+      387.1613826395506,
+      0.0
+     ],
+     "min_relative_difference": 4.440892098500626e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 4.440892098500626e-16
+    },
+    {
+     "fraction": 0.97,
+     "previous_min_mm": 0.38794217753268834,
+     "previous_lip_mm": 0.38794217753268834,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      116.40000000000003,
+      376.42895386260426,
+      0.0
+     ],
+     "min_mm": 0.38794217753268834,
+     "lip_mm": 0.38794217753268834,
+     "reversals": 0,
+     "min_xyz": [
+      116.40000000000003,
+      376.42895386260426,
+      0.0
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.99,
+     "previous_min_mm": 0.2452912502573165,
+     "previous_lip_mm": 0.2452912502573165,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      118.8,
+      368.89601340106856,
+      0.0
+     ],
+     "min_mm": 0.2452912502573165,
+     "lip_mm": 0.2452912502573165,
+     "reversals": 0,
+     "min_xyz": [
+      118.8,
+      368.89601340106856,
+      0.0
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    }
+   ],
+   "plane_normal_at_0.5": {
+    "legacy": [
+     1.0,
+     -0.0,
+     0.0
+    ],
+    "native": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "native_equals_legacy_planes": true
+  },
+  "twisted": {
+   "cuts": [
+    {
+     "fraction": 0.02,
+     "previous_min_mm": 0.5210480651188533,
+     "previous_lip_mm": 1.0153382024314004,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      95.40221798281378,
+      456.94828479498426,
+      40.68574795806036
+     ],
+     "min_mm": 0.5210480651064038,
+     "lip_mm": 1.0153376663312188,
+     "reversals": 0,
+     "min_xyz": [
+      95.40221798279973,
+      456.94828479545725,
+      40.68574795051881
+     ],
+     "min_relative_difference": -2.3893109712957994e-11,
+     "min_location_difference_mm": 7.556382613776062e-09,
+     "lip_relative_difference": -5.280015863418086e-07,
+     "native_min_mm": 0.5257000874100523,
+     "native_lip_mm": 0.7400018846692534,
+     "native_reversals": 0
+    },
+    {
+     "fraction": 0.05,
+     "previous_min_mm": 0.7497560825369387,
+     "previous_lip_mm": 1.0163698065930944,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      100.12666198414486,
+      466.2665846950101,
+      41.87796731365075
+     ],
+     "min_mm": 0.7497560825369611,
+     "lip_mm": 1.0163698326258337,
+     "reversals": 0,
+     "min_xyz": [
+      100.12666198617313,
+      466.26658470538814,
+      41.87796721911561
+     ],
+     "min_relative_difference": 2.9976021664879227e-14,
+     "min_location_difference_mm": 9.512470548294252e-08,
+     "lip_relative_difference": 2.561345202600762e-08,
+     "native_min_mm": 0.7481839910560254,
+     "native_lip_mm": 0.8679666153330861,
+     "native_reversals": 0
+    },
+    {
+     "fraction": 0.25,
+     "previous_min_mm": 0.962024673348383,
+     "previous_lip_mm": 1.0001496096213973,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      123.23923939142578,
+      492.030329912121,
+      46.09371318853857
+     ],
+     "min_mm": 0.9620246733495232,
+     "lip_mm": 1.0001496144218753,
+     "reversals": 1,
+     "min_xyz": [
+      123.23923939019829,
+      492.03032990511434,
+      46.093713265354275
+     ],
+     "min_relative_difference": 1.1852741010898171e-12,
+     "min_location_difference_mm": 7.714435661960322e-08,
+     "lip_relative_difference": 4.799759922846647e-09,
+     "native_min_mm": 0.958540848980101,
+     "native_lip_mm": 0.9765636885021812,
+     "native_reversals": 1
+    },
+    {
+     "fraction": 0.4,
+     "previous_min_mm": 0.7875428735440295,
+     "previous_lip_mm": 0.7998288049626936,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      137.690614901795,
+      498.8140491295168,
+      47.63078772426392
+     ],
+     "min_mm": 0.7875428735443455,
+     "lip_mm": 0.799828731968691,
+     "reversals": 1,
+     "min_xyz": [
+      137.69061490151063,
+      498.8140491275008,
+      47.63078774754967
+     ],
+     "min_relative_difference": 4.0123460109953157e-13,
+     "min_location_difference_mm": 2.337458203225299e-08,
+     "lip_relative_difference": -9.126203281972778e-08,
+     "native_min_mm": 0.7876180075300316,
+     "native_lip_mm": 0.7950612900437539,
+     "native_reversals": 1
+    },
+    {
+     "fraction": 0.5,
+     "previous_min_mm": 0.6383372669004562,
+     "previous_lip_mm": 0.6452661461628556,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      146.7400298320027,
+      499.9974917075429,
+      48.18237373035778
+     ],
+     "min_mm": 0.6383372668990044,
+     "lip_mm": 0.6452660245015746,
+     "reversals": 1,
+     "min_xyz": [
+      146.7400298314533,
+      499.99749170196674,
+      48.18237379550636
+     ],
+     "min_relative_difference": -2.2744028882470957e-12,
+     "min_location_difference_mm": 6.538908537166332e-08,
+     "lip_relative_difference": -1.885443421389965e-07,
+     "native_min_mm": 0.6392284898743744,
+     "native_lip_mm": 0.645083572043153,
+     "native_reversals": 1
+    },
+    {
+     "fraction": 0.65,
+     "previous_min_mm": 0.4093840862756471,
+     "previous_lip_mm": 0.41255041138123427,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      159.83911067575394,
+      497.1973462299221,
+      48.45379429470736
+     ],
+     "min_mm": 0.40938408627557055,
+     "lip_mm": 0.4125505247499733,
+     "reversals": 1,
+     "min_xyz": [
+      159.83911067591623,
+      497.19734623175,
+      48.45379427328652
+     ],
+     "min_relative_difference": -1.8696155734687636e-13,
+     "min_location_difference_mm": 2.14992957518907e-08,
+     "lip_relative_difference": 2.747997236429711e-07,
+     "native_min_mm": 0.4108136668203143,
+     "native_lip_mm": 0.41567362573542244,
+     "native_reversals": 1
+    },
+    {
+     "fraction": 0.8,
+     "previous_min_mm": 0.19837538409302624,
+     "previous_lip_mm": 0.19994282389467932,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      172.7112197644486,
+      487.9397327693706,
+      47.954985501352425
+     ],
+     "min_mm": 0.1983753840931693,
+     "lip_mm": 0.19994294347890923,
+     "reversals": 1,
+     "min_xyz": [
+      172.71121976419292,
+      487.93973276516334,
+      47.954985550215966
+     ],
+     "min_relative_difference": 7.212008767965017e-13,
+     "min_location_difference_mm": 4.9045000498058166e-08,
+     "lip_relative_difference": 5.980921324866273e-07,
+     "native_min_mm": 0.1995291277451369,
+     "native_lip_mm": 0.20391288736636706,
+     "native_reversals": 1
+    },
+    {
+     "fraction": 0.9,
+     "previous_min_mm": 0.07812411078798978,
+     "previous_lip_mm": 0.07897944028331286,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      181.33693192909953,
+      475.94186720612345,
+      46.978201491960476
+     ],
+     "min_mm": 0.0781241107875147,
+     "lip_mm": 0.07897956923325554,
+     "reversals": 1,
+     "min_xyz": [
+      181.33693192959353,
+      475.9418672182822,
+      46.978201352859514
+     ],
+     "min_relative_difference": -6.08102457277937e-12,
+     "min_location_difference_mm": 1.396322199089086e-07,
+     "lip_relative_difference": 1.632702665732566e-06,
+     "native_min_mm": 0.07872099583471454,
+     "native_lip_mm": 0.08227547234971949,
+     "native_reversals": 1
+    },
+    {
+     "fraction": 0.97,
+     "previous_min_mm": 0.014310117762321274,
+     "previous_lip_mm": 0.014609496472385207,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      187.4366900031852,
+      460.43154256598115,
+      45.58636914470725
+     ],
+     "min_mm": 0.014310117762333976,
+     "lip_mm": 0.014609556677881204,
+     "reversals": 1,
+     "min_xyz": [
+      187.43669000318846,
+      460.431542566166,
+      45.586369142695226
+     ],
+     "min_relative_difference": 8.875122858853501e-13,
+     "min_location_difference_mm": 2.020499125319511e-09,
+     "lip_relative_difference": 4.120983642996734e-06,
+     "native_min_mm": 0.014443275283087382,
+     "native_lip_mm": 0.0163921568523616,
+     "native_reversals": 1
+    },
+    {
+     "fraction": 0.99,
+     "previous_min_mm": 0.0028862830676141173,
+     "previous_lip_mm": 0.0029983032770830244,
+     "previous_branches_with_reversal": 1,
+     "previous_min_xyz": [
+      189.15310450193934,
+      451.91481500854746,
+      44.80857529239632
+     ],
+     "min_mm": 0.0028862830674134224,
+     "lip_mm": 0.0029982767254208664,
+     "reversals": 1,
+     "min_xyz": [
+      189.15310450189844,
+      451.9148150068004,
+      44.80857531188365
+     ],
+     "min_relative_difference": -6.953404518839079e-11,
+     "min_location_difference_mm": 1.9565531783049323e-08,
+     "lip_relative_difference": -8.85556253127362e-06,
+     "native_min_mm": 0.002915565348753932,
+     "native_lip_mm": 0.003962942467195314,
+     "native_reversals": 1
+    }
+   ],
+   "plane_normal_at_0.5": {
+    "legacy": [
+     0.9936226031327288,
+     -0.11275691794182564,
+     0.0
+    ],
+    "native": [
+     0.9917563663843989,
+     -0.11712314578118373,
+     0.05197574875202453
+    ]
+   },
+   "native_equals_legacy_planes": false
+  },
+  "swept55": {
+   "cuts": [
+    {
+     "fraction": 0.02,
+     "previous_min_mm": 0.12927863410461427,
+     "previous_lip_mm": 0.12927863410461427,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      586.0221275438014,
+      409.00671694126333,
+      -1.736607422368667e-17
+     ],
+     "min_mm": 0.12927863410461427,
+     "lip_mm": 0.12927863410461427,
+     "reversals": 0,
+     "min_xyz": [
+      586.0221275438014,
+      409.00671694126333,
+      1.736607422368667e-17
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 3.473214844737334e-17,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.05,
+     "previous_min_mm": 0.17925433694852258,
+     "previous_lip_mm": 0.17925433694852258,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      603.566797074855,
+      419.29603531840775,
+      -4.477583011574611e-17
+     ],
+     "min_mm": 0.17925433694852708,
+     "lip_mm": 0.17925433694852708,
+     "reversals": 0,
+     "min_xyz": [
+      603.5667970748569,
+      419.2960353184088,
+      4.477583011574947e-17
+     ],
+     "min_relative_difference": 2.5091040356528538e-14,
+     "min_location_difference_mm": 2.213976371204026e-12,
+     "lip_relative_difference": 2.5091040356528538e-14
+    },
+    {
+     "fraction": 0.25,
+     "previous_min_mm": 0.2037104200968884,
+     "previous_lip_mm": 0.2037104200968884,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      660.1524347565387,
+      445.6137821515414,
+      -1.0654095038946694e-16
+     ],
+     "min_mm": 0.2037104200968884,
+     "lip_mm": 0.2037104200968884,
+     "reversals": 0,
+     "min_xyz": [
+      660.1524347565387,
+      445.6137821515414,
+      1.0654095038946694e-16
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 2.1308190077893389e-16,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.4,
+     "previous_min_mm": 0.15220867651049305,
+     "previous_lip_mm": 0.15220867651049305,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      680.6556680639505,
+      449.99234325157516,
+      -1.034399217586514e-16
+     ],
+     "min_mm": 0.15220867651049305,
+     "lip_mm": 0.15220867651049305,
+     "reversals": 0,
+     "min_xyz": [
+      680.6556680639505,
+      449.99234325157516,
+      1.034399217586514e-16
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 2.068798435173028e-16,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.5,
+     "previous_min_mm": 0.11592382110820569,
+     "previous_lip_mm": 0.11592382110820569,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      688.2510579384198,
+      448.658720884328,
+      -8.997307853754518e-17
+     ],
+     "min_mm": 0.11592382110820529,
+     "lip_mm": 0.11592382110820529,
+     "reversals": 0,
+     "min_xyz": [
+      688.2510579384195,
+      448.658720884328,
+      8.997307853751475e-17
+     ],
+     "min_relative_difference": -3.4416913763379853e-15,
+     "min_location_difference_mm": 2.273737466489561e-13,
+     "lip_relative_difference": -3.4416913763379853e-15
+    },
+    {
+     "fraction": 0.65,
+     "previous_min_mm": 0.06665463961273559,
+     "previous_lip_mm": 0.06665463961273559,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      691.8803397420548,
+      441.2220139420322,
+      -5.2720687576530856e-17
+     ],
+     "min_mm": 0.06665463961273554,
+     "lip_mm": 0.06665463961273554,
+     "reversals": 0,
+     "min_xyz": [
+      691.8803397420548,
+      441.2220139420322,
+      5.2720687576530856e-17
+     ],
+     "min_relative_difference": -6.661338147750939e-16,
+     "min_location_difference_mm": 1.0544137515306171e-16,
+     "lip_relative_difference": -6.661338147750939e-16
+    },
+    {
+     "fraction": 0.8,
+     "previous_min_mm": 0.026487243347802808,
+     "previous_lip_mm": 0.026487243347802808,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      686.004841038254,
+      427.12998803940116,
+      -1.3572751805765749e-17
+     ],
+     "min_mm": 0.026487243347802808,
+     "lip_mm": 0.026487243347802808,
+     "reversals": 0,
+     "min_xyz": [
+      686.004841038254,
+      427.12998803940116,
+      1.3572751805765749e-17
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 2.7145503611531498e-17,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.9,
+     "previous_min_mm": 0.007661578086878948,
+     "previous_lip_mm": 0.007661578086878948,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      675.0304547508562,
+      412.7936684207475,
+      -1.452367668630057e-18
+     ],
+     "min_mm": 0.0076615780868778925,
+     "lip_mm": 0.0076615780868778925,
+     "reversals": 0,
+     "min_xyz": [
+      675.0304547508565,
+      412.7936684207481,
+      1.452367670296296e-18
+     ],
+     "min_relative_difference": -1.3777867735598193e-13,
+     "min_location_difference_mm": 6.629024818381912e-13,
+     "lip_relative_difference": -1.3777867735598193e-13
+    },
+    {
+     "fraction": 0.97,
+     "previous_min_mm": 0.0007579396521685736,
+     "previous_lip_mm": 0.0007579396521685736,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      661.1833790362725,
+      398.4414614941411,
+      -1.1974821657923836e-20
+     ],
+     "min_mm": 0.0007579396521685736,
+     "lip_mm": 0.0007579396521685736,
+     "reversals": 0,
+     "min_xyz": [
+      661.1833790362725,
+      398.4414614941411,
+      1.1974821657923836e-20
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 2.3949643315847672e-20,
+     "lip_relative_difference": 0.0
+    }
+   ],
+   "plane_normal_at_0.5": {
+    "legacy": [
+     0.5735764363510462,
+     -0.8191520442889918,
+     0.0
+    ],
+    "native": [
+     0.6154314037094395,
+     -0.7881904511780315,
+     0.0
+    ]
+   },
+   "native_equals_legacy_planes": false
+  },
+  "fin40": {
+   "cuts": [
+    {
+     "fraction": 0.05,
+     "previous_min_mm": 0.26176729655688913,
+     "previous_lip_mm": 0.26176729655688913,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      75.11866576821954,
+      0.0,
+      262.99558831628894
+     ],
+     "min_mm": 0.26176729655688913,
+     "lip_mm": 0.26176729655688913,
+     "reversals": 0,
+     "min_xyz": [
+      75.11866576821954,
+      0.0,
+      262.99558831628894
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.15,
+     "previous_min_mm": 0.4731805395097144,
+     "previous_lip_mm": 0.4731805395097144,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      84.90732289259209,
+      0.0,
+      271.9582789622717
+     ],
+     "min_mm": 0.4731805395097143,
+     "lip_mm": 0.4731805395097143,
+     "reversals": 0,
+     "min_xyz": [
+      84.90732289259209,
+      0.0,
+      271.9582789622717
+     ],
+     "min_relative_difference": -2.220446049250313e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -2.220446049250313e-16
+    },
+    {
+     "fraction": 0.25,
+     "previous_min_mm": 0.5934528474710516,
+     "previous_lip_mm": 0.5934528474710516,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      93.25348561822155,
+      0.0,
+      276.3424118567171
+     ],
+     "min_mm": 0.5934528474710512,
+     "lip_mm": 0.5934528474710512,
+     "reversals": 0,
+     "min_xyz": [
+      93.25348561822155,
+      0.0,
+      276.3424118567171
+     ],
+     "min_relative_difference": -7.771561172376096e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -7.771561172376096e-16
+    },
+    {
+     "fraction": 0.36,
+     "previous_min_mm": 0.6698940575761154,
+     "previous_lip_mm": 0.6698940575761154,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      101.76329802218338,
+      0.0,
+      278.9260927716845
+     ],
+     "min_mm": 0.6698940575761152,
+     "lip_mm": 0.6698940575761152,
+     "reversals": 0,
+     "min_xyz": [
+      101.76329802218338,
+      0.0,
+      278.9260927716845
+     ],
+     "min_relative_difference": -3.3306690738754696e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -3.3306690738754696e-16
+    },
+    {
+     "fraction": 0.45,
+     "previous_min_mm": 0.6997613156291851,
+     "previous_lip_mm": 0.6997613156291851,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      108.44091402819072,
+      0.0,
+      279.8662197365046
+     ],
+     "min_mm": 0.6997613156291849,
+     "lip_mm": 0.6997613156291849,
+     "reversals": 0,
+     "min_xyz": [
+      108.44091402819072,
+      0.0,
+      279.8662197365046
+     ],
+     "min_relative_difference": -3.3306690738754696e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -3.3306690738754696e-16
+    },
+    {
+     "fraction": 0.55,
+     "previous_min_mm": 0.7022382881554945,
+     "previous_lip_mm": 0.7022382881554945,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      115.69509466142485,
+      0.0,
+      279.86621973650364
+     ],
+     "min_mm": 0.7022382881554945,
+     "lip_mm": 0.7022382881554945,
+     "reversals": 0,
+     "min_xyz": [
+      115.69509466142485,
+      0.0,
+      279.86621973650364
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.64,
+     "previous_min_mm": 0.6765439074155204,
+     "previous_lip_mm": 0.6765439074155204,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      122.1572649046608,
+      0.0,
+      278.9260927716823
+     ],
+     "min_mm": 0.6765439074155202,
+     "lip_mm": 0.6765439074155202,
+     "reversals": 0,
+     "min_xyz": [
+      122.1572649046608,
+      0.0,
+      278.9260927716823
+     ],
+     "min_relative_difference": -3.3306690738754696e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -3.3306690738754696e-16
+    },
+    {
+     "fraction": 0.75,
+     "previous_min_mm": 0.6039705116131734,
+     "previous_lip_mm": 0.6039705116131734,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      130.07498376560943,
+      0.0,
+      276.34241185671516
+     ],
+     "min_mm": 0.6039705116131732,
+     "lip_mm": 0.6039705116131732,
+     "reversals": 0,
+     "min_xyz": [
+      130.07498376560943,
+      0.0,
+      276.34241185671516
+     ],
+     "min_relative_difference": -3.3306690738754696e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -3.3306690738754696e-16
+    },
+    {
+     "fraction": 0.85,
+     "previous_min_mm": 0.48489551789582,
+     "previous_lip_mm": 0.48489551789582,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      137.41644936959514,
+      0.0,
+      271.958278962268
+     ],
+     "min_mm": 0.48489551789582014,
+     "lip_mm": 0.48489551789582014,
+     "reversals": 0,
+     "min_xyz": [
+      137.41644936959514,
+      0.0,
+      271.958278962268
+     ],
+     "min_relative_difference": 2.220446049250313e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 2.220446049250313e-16
+    },
+    {
+     "fraction": 0.95,
+     "previous_min_mm": 0.2700658976566876,
+     "previous_lip_mm": 0.2700658976566876,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      145.1511565542637,
+      0.0,
+      262.9955883162741
+     ],
+     "min_mm": 0.2700658976566875,
+     "lip_mm": 0.2700658976566875,
+     "reversals": 0,
+     "min_xyz": [
+      145.1511565542637,
+      0.0,
+      262.9955883162741
+     ],
+     "min_relative_difference": -4.440892098500626e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -4.440892098500626e-16
+    }
+   ],
+   "plane_normal_at_0.5": {
+    "legacy": [
+     0.9934992729729999,
+     0.0,
+     -0.11383845836148956
+    ],
+    "native": [
+     0.9934992729729988,
+     -0.0,
+     -0.11383845836149885
+    ]
+   },
+   "native_equals_legacy_planes": true
+  },
+  "fin5": {
+   "cuts": [
+    {
+     "fraction": 0.05,
+     "previous_min_mm": 2.0035413768604955,
+     "previous_lip_mm": 2.0035413768605843,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      69.98358322102416,
+      -1.0195729432242292e-07,
+      242.87444853952326
+     ],
+     "min_mm": 2.003541376860494,
+     "lip_mm": 2.003541376860584,
+     "reversals": 0,
+     "min_xyz": [
+      69.98358322102415,
+      9.471874219890886e-08,
+      242.87444853952326
+     ],
+     "min_relative_difference": -6.661338147750939e-16,
+     "min_location_difference_mm": 1.966760365213323e-07,
+     "lip_relative_difference": -2.220446049250313e-16
+    },
+    {
+     "fraction": 0.15,
+     "previous_min_mm": 2.6190418253838765,
+     "previous_lip_mm": 2.6190418253841012,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      78.64466536157116,
+      -1.47345181046216e-07,
+      243.9947848702712
+     ],
+     "min_mm": 2.6190418253839125,
+     "lip_mm": 2.6190418253841012,
+     "reversals": 0,
+     "min_xyz": [
+      78.64466536157114,
+      1.7587765977366133e-07,
+      243.99478487027116
+     ],
+     "min_relative_difference": 1.3766765505351941e-14,
+     "min_location_difference_mm": 3.2322284081987885e-07,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.25,
+     "previous_min_mm": 2.3888119639784344,
+     "previous_lip_mm": 2.3888119639784344,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      87.12543570227727,
+      0.0,
+      244.54280148208753
+     ],
+     "min_mm": 2.3888119639784335,
+     "lip_mm": 2.3888119639784335,
+     "reversals": 0,
+     "min_xyz": [
+      87.12543570227727,
+      0.0,
+      244.54280148208753
+     ],
+     "min_relative_difference": -3.3306690738754696e-16,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": -3.3306690738754696e-16
+    },
+    {
+     "fraction": 0.36,
+     "previous_min_mm": 2.0467635580044057,
+     "previous_lip_mm": 2.0467635580044057,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      96.37041225277281,
+      0.0,
+      244.86576159646
+     ],
+     "min_mm": 2.0467635580044057,
+     "lip_mm": 2.0467635580044057,
+     "reversals": 0,
+     "min_xyz": [
+      96.37041225277281,
+      0.0,
+      244.86576159646
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.45,
+     "previous_min_mm": 1.8889606342770913,
+     "previous_lip_mm": 1.8889606342770913,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      103.89886425352387,
+      0.0,
+      244.98327746706306
+     ],
+     "min_mm": 1.8889606342770913,
+     "lip_mm": 1.8889606342770913,
+     "reversals": 0,
+     "min_xyz": [
+      103.89886425352387,
+      0.0,
+      244.98327746706306
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.55,
+     "previous_min_mm": 1.8956470621960984,
+     "previous_lip_mm": 1.8956470621960984,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      112.2431368326781,
+      0.0,
+      244.98327746706292
+     ],
+     "min_mm": 1.8956470621960984,
+     "lip_mm": 1.8956470621960984,
+     "reversals": 0,
+     "min_xyz": [
+      112.2431368326781,
+      0.0,
+      244.98327746706292
+     ],
+     "min_relative_difference": 0.0,
+     "min_location_difference_mm": 0.0,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.64,
+     "previous_min_mm": 2.0670812040024384,
+     "previous_lip_mm": 2.06708120400244,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      119.7446581130826,
+      1.2916735612382132e-07,
+      244.86576159645995
+     ],
+     "min_mm": 2.067081204002441,
+     "lip_mm": 2.067081204002441,
+     "reversals": 0,
+     "min_xyz": [
+      119.74465811308256,
+      0.0,
+      244.86576159645992
+     ],
+     "min_relative_difference": 1.3322676295501878e-15,
+     "min_location_difference_mm": 1.2916735612382756e-07,
+     "lip_relative_difference": 4.440892098500626e-16
+    },
+    {
+     "fraction": 0.75,
+     "previous_min_mm": 2.431148473176091,
+     "previous_lip_mm": 2.4311484731760946,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      128.91562297070112,
+      -1.6695263409064051e-07,
+      244.54280148208738
+     ],
+     "min_mm": 2.4311484731760946,
+     "lip_mm": 2.4311484731760946,
+     "reversals": 0,
+     "min_xyz": [
+      128.9156229707011,
+      0.0,
+      244.54280148208738
+     ],
+     "min_relative_difference": 1.5543122344752192e-15,
+     "min_location_difference_mm": 1.6695263409064292e-07,
+     "lip_relative_difference": 0.0
+    },
+    {
+     "fraction": 0.85,
+     "previous_min_mm": 2.683883922245863,
+     "previous_lip_mm": 2.6838839222460793,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      137.27080617119933,
+      -9.058604751672258e-08,
+      243.99478487027088
+     ],
+     "min_mm": 2.6838839222458644,
+     "lip_mm": 2.6838839222460775,
+     "reversals": 0,
+     "min_xyz": [
+      137.27080617119933,
+      1.7363942094452204e-07,
+      243.9947848702709
+     ],
+     "min_relative_difference": 4.440892098500626e-16,
+     "min_location_difference_mm": 2.6422546846124613e-07,
+     "lip_relative_difference": -6.661338147750939e-16
+    },
+    {
+     "fraction": 0.95,
+     "previous_min_mm": 2.067058060925068,
+     "previous_lip_mm": 2.067058060925174,
+     "previous_branches_with_reversal": 0,
+     "previous_min_xyz": [
+      145.67514456928325,
+      9.93723415736355e-08,
+      242.8744485395227
+     ],
+     "min_mm": 2.0670580609250697,
+     "lip_mm": 2.0670580609251736,
+     "reversals": 0,
+     "min_xyz": [
+      145.67514456928322,
+      1.0217215978560178e-07,
+      242.8744485395227
+     ],
+     "min_relative_difference": 8.881784197001252e-16,
+     "min_location_difference_mm": 2.7998182121105344e-09,
+     "lip_relative_difference": -2.220446049250313e-16
+    }
+   ],
+   "plane_normal_at_0.5": {
+    "legacy": [
+     0.9934992729729999,
+     0.0,
+     -0.11383845836148956
+    ],
+    "native": [
+     0.9934992729729988,
+     -0.0,
+     -0.11383845836149885
+    ]
+   },
+   "native_equals_legacy_planes": true
+  }
+ },
+ "wingb_joins": {
+  "previous (check_g2.py, 85 points per side, chord fractions 1e-8 to 1)": {
+   "gap_mm": 1.4549150869142504e-08,
+   "angle_deg": 3.454272087343922e-05,
+   "ii_difference_norm_per_mm": 0.016910641940111323
+  },
+  "audit.py (399 points per edge)": {
+   "gap_mm": 1.8179088061397423e-08,
+   "angle_deg": 0.0002204420729727633,
+   "curvature_mismatch_per_mm": 0.0012264838973858672,
+   "curvature_mismatch_including_near_collapse_per_mm": 0.001551282659189982
+  }
+ }
+}

@@ -1,0 +1,63 @@
+flat sharp  /home/m0obot/repos/Optimizer-cap-radius/runs/cap-radius/audit/calibration/synthetic/flat-sharp-revolved.step  sha256 2230b12a6e25  family native
+OVERALL FAIL
+  [PASS] 1 validity: solids 1, shells 1, closed True, valid True, strict True, faces 4
+  [FAIL] 1 extent: projected span (Y) 712.482679 mm vs spec 800.000 (diff -8.75e+01); volume 874503.527 mm3 (cap adds 10503.527; OCCT default integration gives 874450.397)
+  [PASS] 2 retained skin: max deviation 5.43e-12 mm (parent->model 5.43e-12, model->parent 2.85e-14)
+  [FAIL] 2 locked outline: max outermost lip deviation 4.40e+01 mm over 202 cut planes; outline-to-surface max 4.40e+01 mm
+  [PASS] 3 joins G1: 4 edges, 1596 samples: gap 1.71e-13 mm, angle 1.16e-11 deg; curvature mismatch 7.261e-01 /mm (cross-join normal curvature 7.261e-01 /mm); closest sample to an edge end 0.00022 mm, 96 samples near collapsed corners not judged
+  [PASS] 4 section rule: 48 cuts (0 failed to trace); thick zone min radius 0.4 mm at x/c 1.69371e-05 (0 of 26 below 0.4); thin zone min ratio 1 at x/c 0.99999994, t 0.05 mm (0 of 22 below 0.9); bending reversals 0 on 0 cuts
+  [INFO] 4b lip-normal radius (informational): radius across the lip, perpendicular to the locked outline, at each cut's lip point; thick zone min 1.672 mm at x/c 0.99 (0 below 0.4); thin zone min ratio 5.358 at x/c 0.99978374 (0 below 0.9)
+  [PASS] 5 whole-cap map: worst point radius 0.991325 mm at x/c 0.999289, t 1.204 mm, margin 0.5913 mm; tightest 0.991325 mm at x/c 0.999289; points within 0.05 mm of collapsed corners not judged (grid reaches 0.0054 mm; worst there 7.99 mm, score 263)
+  [PASS] 6 TE closure: sharp point; right (+Y): closes True, 0.02 mm before TE: t 0.732, section min R 0.366, ratio 1.0; principal R within 0.1 mm of the TE point min 4.563; left (-Y): closes True, 0.02 mm before TE: t 0.732, section min R 0.366, ratio 1.0; principal R within 0.1 mm of the TE point min 4.563
+  sections, right (+Y):
+      x/c          t(mm)   zone  minR(mm)  at-arc  lipR(mm)   ratio  rev outline-dev(mm) obliq(deg) lipNormalR(mm) verdict  note
+    2.0753708e-06      0.4  thin        0.2  0.029       0.2       1   0      9.806e-01     89.96        53.189   pass   thin zone, t = 0.4 mm (LE side)
+    7.0740721e-06      0.6  thin        0.3  0.014       0.3       1   0      1.474e+00     89.92        34.993   pass   thin zone, t = 0.6 mm (LE side)
+    1.6937144e-05      0.8  thick       0.4  0.993       0.4     nan   0      1.970e+00     89.85        25.896   pass   0.8 mm thickness crossing
+    0.02            7.321  thick    3.6605  0.101    3.6605     nan   0      1.973e+01     71.34        3.9646   pass   listed
+    0.05            9.272  thick    4.6361  0.140    4.6361     nan   0      2.605e+01     55.71        4.7151   pass   listed
+    0.1              10.8  thick    5.4009  0.133    5.4009     nan   0      3.176e+01     39.19        5.4221   pass   listed
+    0.25            12.35  thick    6.1731  0.867    6.1731     nan   0      3.988e+01     16.42        6.1738   pass   listed
+    0.4             12.39  thick    6.1963  0.211    6.1963     nan   0      4.323e+01      5.59        6.1966   pass   listed
+    0.5                12  thick         6  0.172         6     nan   0      4.400e+01      0.00        6.0015   pass   listed
+    0.65            10.89  thick    5.4445  0.148    5.4445     nan   0      4.323e+01      8.69        5.4489   pass   listed
+    0.8             9.031  thick    4.5156  0.211    4.5156     nan   0      3.947e+01     21.72        4.5255   pass   listed
+    0.9             7.036  thick    3.5178  0.101    3.5178     nan   0      3.364e+01     39.19        3.5379   pass   listed
+    0.95            5.458  thick    2.7289  0.093    2.7289     nan   0      2.796e+01     55.71        2.7665   pass   listed
+    0.97            4.528  thick    2.2642  0.876    2.2642     nan   0      2.416e+01     65.40        2.3229   pass   listed
+    0.99            3.045  thick    1.5223  0.916    1.5223     nan   0      1.737e+01     78.49        1.6721   pass   listed
+    0.99978374        0.8  thin        0.4  0.000       0.4       1   0      5.093e+00     89.18        2.1431   pass   0.8 mm thickness crossing
+    0.99985381        0.7  thin       0.35  0.000      0.35       1   0      4.479e+00     89.37        2.4036   pass   thin zone, t = 0.7 mm (TE side)
+    0.99990709        0.6  thin        0.3  1.000       0.3       1   0      3.859e+00     89.53        2.7576   pass   thin zone, t = 0.6 mm (TE side)
+    0.99994573        0.5  thin       0.25  0.029      0.25       1   0      3.233e+00     89.68        3.2593   pass   thin zone, t = 0.5 mm (TE side)
+    0.99997195        0.4  thin        0.2  0.036       0.2       1   0      2.600e+00     89.79        4.0172   pass   thin zone, t = 0.4 mm (TE side)
+    0.99998806        0.3  thin       0.15  0.993      0.15       1   0      1.961e+00     89.88         5.285   pass   thin zone, t = 0.3 mm (TE side)
+    0.99999643        0.2  thin        0.1  0.043       0.1       1   0      1.314e+00     89.95        7.8245   pass   thin zone, t = 0.2 mm (TE side)
+    0.99999955        0.1  thin       0.05  0.000      0.05       1   0      6.607e-01     89.99        15.446   pass   thin zone, t = 0.1 mm (TE side)
+    0.99999994       0.05  thin      0.025  1.000     0.025       1   0      3.312e-01     90.00        30.691   pass   thin zone, t = 0.05 mm (TE side)
+  sections, left (-Y):
+      x/c          t(mm)   zone  minR(mm)  at-arc  lipR(mm)   ratio  rev outline-dev(mm) obliq(deg) lipNormalR(mm) verdict  note
+    2.0753708e-06      0.4  thin        0.2  1.000       0.2       1   0      9.806e-01     89.96        53.189   pass   thin zone, t = 0.4 mm (LE side)
+    7.0740721e-06      0.6  thin        0.3  0.000       0.3       1   0      1.474e+00     89.92        34.993   pass   thin zone, t = 0.6 mm (LE side)
+    1.6937144e-05      0.8  thick       0.4  0.000       0.4     nan   0      1.970e+00     89.85        25.896   pass   0.8 mm thickness crossing
+    0.02            7.321  thick    3.6605  0.023    3.6605     nan   0      1.973e+01     71.34        3.9646   pass   listed
+    0.05            9.272  thick    4.6361  0.977    4.6361     nan   0      2.605e+01     55.71        4.7151   pass   listed
+    0.1              10.8  thick    5.4009  0.016    5.4009     nan   0      3.176e+01     39.19        5.4221   pass   listed
+    0.25            12.35  thick    6.1731  0.969    6.1731     nan   0      3.988e+01     16.42        6.1738   pass   listed
+    0.4             12.39  thick    6.1963  0.016    6.1963     nan   0      4.323e+01      5.59        6.1966   pass   listed
+    0.5                12  thick         6  0.023         6     nan   0      4.400e+01      0.00        6.0015   pass   listed
+    0.65            10.89  thick    5.4445  0.016    5.4445     nan   0      4.323e+01      8.69        5.4489   pass   listed
+    0.8             9.031  thick    4.5156  0.016    4.5156     nan   0      3.947e+01     21.72        4.5255   pass   listed
+    0.9             7.036  thick    3.5178  0.008    3.5178     nan   0      3.364e+01     39.19        3.5379   pass   listed
+    0.95            5.458  thick    2.7289  0.023    2.7289     nan   0      2.796e+01     55.71        2.7665   pass   listed
+    0.97            4.528  thick    2.2642  0.023    2.2642     nan   0      2.416e+01     65.40        2.3229   pass   listed
+    0.99            3.045  thick    1.5223  0.015    1.5223     nan   0      1.737e+01     78.49        1.6721   pass   listed
+    0.99978374        0.8  thin        0.4  0.000       0.4       1   0      5.093e+00     89.18        2.1431   pass   0.8 mm thickness crossing
+    0.99985381        0.7  thin       0.35  0.000      0.35       1   0      4.479e+00     89.37        2.4036   pass   thin zone, t = 0.7 mm (TE side)
+    0.99990709        0.6  thin        0.3  1.000       0.3       1   0      3.859e+00     89.53        2.7576   pass   thin zone, t = 0.6 mm (TE side)
+    0.99994573        0.5  thin       0.25  0.000      0.25       1   0      3.233e+00     89.68        3.2593   pass   thin zone, t = 0.5 mm (TE side)
+    0.99997195        0.4  thin        0.2  0.007       0.2       1   0      2.600e+00     89.79        4.0172   pass   thin zone, t = 0.4 mm (TE side)
+    0.99998806        0.3  thin       0.15  0.007      0.15       1   0      1.961e+00     89.88         5.285   pass   thin zone, t = 0.3 mm (TE side)
+    0.99999643        0.2  thin        0.1  0.993       0.1       1   0      1.314e+00     89.95        7.8245   pass   thin zone, t = 0.2 mm (TE side)
+    0.99999955        0.1  thin       0.05  0.000      0.05       1   0      6.607e-01     89.99        15.446   pass   thin zone, t = 0.1 mm (TE side)
+    0.99999994       0.05  thin      0.025  1.000     0.025       1   0      3.312e-01     90.00        30.691   pass   thin zone, t = 0.05 mm (TE side)
