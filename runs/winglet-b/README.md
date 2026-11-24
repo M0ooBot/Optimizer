@@ -10,6 +10,11 @@ The twisted Wing B ([definition](../wing-b-spar/shape/constrained/redistributed/
 | 4. Whole-surface curvature map and zebra review | |
 | 5. A follow-up edit, e.g. move the bend's peak and keep the height | |
 
+## Decisions
+
+- **Shared code for geometry, a skill for judgment** (2026-11-24). The winglet's laws, join continuity, solvers and checks live in one tested module, [phase0_winglet](../../src/planeopt/phase0_winglet.py). The skill to come will teach an agent which settings to tune, how to read the checks and the viewer, and how to extend the laws. A new winglet is a new `WingletDefinition`, not new geometry code. Insights found in review (draw both edges; change sections with the turn) become code and checks once, so no later agent has to rediscover them. Open: make the laws pluggable, so an agent with a new idea (another curvature shape, a split tip) writes only that piece and inherits the join and the checks. A parent adapter is also needed, so the law can continue a wing imported from CAD and not only a Phase 0 definition.
+- **Suggestion for the rounded cap** (not yet discussed with whoever owns the cap work). The cap trials went the other way: each agent wrote its own geometry-specific construction from the [rounded wingtip skill](../../.agents/skills/close-rounded-wingtip/SKILL.md) ([cap trials](../cap-trials/README.md)). The cap could try this format too: one shared cap generator (attachment curves from the parent, the 3D perimeter, wrap guides, the thickness-gated 0.4 mm rule), the [independent cap audit](https://github.com/M0ooBot/Optimizer/tree/cap-radius-trials/runs/cap-radius/audit) as its standard check, and the skill reduced to judgment. Repository issues are disabled, so this note stands in for one.
+
 ## How the winglet is defined
 
 The winglet is not a second body blended onto the wing. Wing B is generated from rules: a leading-edge path, a chord, a twist about the leading edge and the SD7037 section in spanwise-parallel planes ([phase0_geometry](../../src/planeopt/phase0_geometry.py)). [phase0_winglet](../../src/planeopt/phase0_winglet.py) continues each rule past the attachment, starting from the parent's value and its first and second derivatives along the leading edge, so the skin is curvature-continuous with Wing B by construction. The checks below measure it.

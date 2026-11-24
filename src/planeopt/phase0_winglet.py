@@ -188,7 +188,11 @@ class WingletDefinition:
     cant_deg: float = 75.0  # front-view angle of the leading edge at the winglet tip, above horizontal
     height_mm: float = 65.0  # LE rise from the attachment to the winglet tip station
     sweep_deg: float = 35.0  # LE sweep at the winglet tip, against its front-view direction
-    tip_chord_mm: float = 32.0  # the trailing-edge law is solved to give this chord at the tip
+    # The trailing edge's tip direction is set one of two ways: by its sweep (aft positive, in the
+    # same sense as the leading edge's), with the tip chord following; or by the tip chord, with
+    # the sweep solved to give it. Set exactly one.
+    te_sweep_deg: float | None = None
+    tip_chord_mm: float | None = 32.0
     toe_out_deg: float = 2.0  # nose outboard is positive
     target_thickness_ratio: float = 0.10
     trailing_edge_mm: float = 0.4
@@ -208,9 +212,12 @@ class WingletDefinition:
     def __post_init__(self):
         if not 0 < self.cant_deg < 90:
             raise ValueError("cant_deg must be between 0 and 90")
-        if min(self.height_mm, self.tip_chord_mm, self.target_thickness_ratio,
-               self.projected_span_mm) <= 0:
+        if min(self.height_mm, self.target_thickness_ratio, self.projected_span_mm) <= 0:
             raise ValueError("Lengths and thickness must be positive")
+        if (self.te_sweep_deg is None) == (self.tip_chord_mm is None):
+            raise ValueError("Set exactly one of te_sweep_deg and tip_chord_mm")
+        if self.tip_chord_mm is not None and self.tip_chord_mm <= 0:
+            raise ValueError("tip_chord_mm must be positive")
         if not (0 < self.ramp_in and 0 < self.ramp_out and self.ramp_in + self.ramp_out <= 1):
             raise ValueError("ramp_in and ramp_out must be positive and together at most 1")
         if self.attach_fraction is not None and not 0 < self.attach_fraction < 1:
@@ -349,12 +356,18 @@ class BlendedWinglet:
         self._set_length(0.5 * (lo + hi))
         if self.kappa_peak <= 0:
             raise ValueError("The winglet turns less than Wing B already bends; raise the cant")
-        # The trailing-edge sweep that gives the tip chord: Z_te(S) is linear in tan(sweep).
         S = self.s_tip
-        base = self.te_z0 + _quad(lambda t: (1 - self._weight(t)) * self.te_aft(t), 0, S)
-        weight = _quad(self._weight, 0, S)
-        cos_toe = math.cos(math.radians(self.d.toe_out_deg))
-        self.te_tan = (base - self._z(S) + self.d.tip_chord_mm * cos_toe) / weight
+        if self.d.te_sweep_deg is not None:
+            self.te_tan = math.tan(math.radians(self.d.te_sweep_deg))
+        else:  # the trailing-edge sweep that gives the tip chord: Z_te(S) is linear in tan(sweep)
+            base = self.te_z0 + _quad(lambda t: (1 - self._weight(t)) * self.te_aft(t), 0, S)
+            weight = _quad(self._weight, 0, S)
+            cos_toe = math.cos(math.radians(self.d.toe_out_deg))
+            self.te_tan = (base - self._z(S) + self.d.tip_chord_mm * cos_toe) / weight
+        tip_chord = self.chord(S)
+        if tip_chord <= 0:
+            raise ValueError(f"The drawn edges cross before the tip (tip chord {tip_chord:.1f} mm); "
+                             "sweep the trailing edge less than the leading edge")
 
     def _set_length(self, S):
         d = self.d
