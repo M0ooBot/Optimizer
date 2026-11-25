@@ -126,4 +126,4 @@ uv run --locked --extra phase0 --extra cad python -m pytest tests/test_phase0_wi
 
 The tests use a NACA stand-in for the Converter so they run without it.
 
-[Airfoil Converter tools this work needs](CONVERTER_TOOLS.md)
+[Airfoil Converter tools this work needs](CONVERTER_TOOLS.md), now served by the [Converter MCP server](CONVERTER_TOOLS.md#converter-mcp-server)

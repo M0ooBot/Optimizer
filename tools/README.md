@@ -101,3 +101,7 @@ saved part in `targets`, effect `writes-new-files`, an existing `outputFolder`
 inside the study directory and one STEP filename in `params.fileName`. Use
 the bridge approvals and poll `sw_change` when the bridge returns a pending
 ID. Give the measured export to `phase0_report` as a supplied STEP.
+
+## Airfoil Converter MCP server
+
+The Converter's own server (sections, ribs, wings, NACA and UIUC profiles, camber and thickness, morphs, nose radius, sections along a law) is registered in the repository's [.mcp.json](../.mcp.json) as `airfoil-converter`. It runs from a pinned commit through `uvx`, separately from this project's environment. [runs/winglet-b/CONVERTER_TOOLS.md](../runs/winglet-b/CONVERTER_TOOLS.md#converter-mcp-server) covers starting it, its workspace and what each tool is for.
