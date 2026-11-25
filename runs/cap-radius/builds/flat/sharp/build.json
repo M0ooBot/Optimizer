@@ -1,0 +1,96 @@
+{
+ "r_coefficient_fit_max_err_mm": 3.552713678800501e-14,
+ "wrap": {
+  "P": 5.0,
+  "NV": 33,
+  "degree": 5,
+  "bspline_fit_max_dev": {
+   "eta": 1.0327039223767542e-10,
+   "zeta": 3.4623933387045724e-08
+  },
+  "guides_units_of_h": [
+   {
+    "k": 5.88,
+    "R_min_over_h": 0.42516994242505474,
+    "R_lip_over_h": 0.42516994242505474,
+    "R_lip_over_h_formula": 0.4251700680272109,
+    "min_kappa_h": -0.0,
+    "largest_relative_kappa_drop_towards_lip": 0.0,
+    "lip": [
+     5.88,
+     -1.1882855810441129e-16
+    ],
+    "speed_ratio": 3.718838710443969
+   },
+   {
+    "k": 8.33,
+    "R_min_over_h": 0.30011995935886354,
+    "R_lip_over_h": 0.30011995935886354,
+    "R_lip_over_h_formula": 0.30012004801920766,
+    "min_kappa_h": -0.0,
+    "largest_relative_kappa_drop_towards_lip": 0.0,
+    "lip": [
+     8.33,
+     -1.1882855810441129e-16
+    ],
+    "speed_ratio": 5.268354839795622
+   },
+   {
+    "k": 10,
+    "R_min_over_h": 0.2499999261459303,
+    "R_lip_over_h": 0.2499999261459303,
+    "R_lip_over_h_formula": 0.25,
+    "min_kappa_h": -0.0,
+    "largest_relative_kappa_drop_towards_lip": 0.0,
+    "lip": [
+     10.0,
+     -1.1882855810441129e-16
+    ],
+    "speed_ratio": 6.324555630006748
+   },
+   {
+    "k": 12,
+    "R_min_over_h": 0.20833327178827596,
+    "R_lip_over_h": 0.20833327178827596,
+    "R_lip_over_h_formula": 0.20833333333333334,
+    "min_kappa_h": -0.0,
+    "largest_relative_kappa_drop_towards_lip": 0.0,
+    "lip": [
+     12.0,
+     -1.1882855810441129e-16
+    ],
+    "speed_ratio": 7.5894667560081
+   },
+   {
+    "k": 14.29,
+    "R_min_over_h": 0.1749474640629328,
+    "R_lip_over_h": 0.1749474640629328,
+    "R_lip_over_h_formula": 0.17494751574527642,
+    "min_kappa_h": -0.0,
+    "largest_relative_kappa_drop_towards_lip": 0.0,
+    "lip": [
+     14.29,
+     -1.1882855810441129e-16
+    ],
+    "speed_ratio": 9.037789995279645
+   }
+  ]
+ },
+ "cap_poles_right": [
+  33,
+  33
+ ],
+ "cap_poles_left": [
+  33,
+  33
+ ],
+ "sewing": {
+  "free_edges": 0,
+  "multiple_edges": 0,
+  "degenerated_shapes": 4
+ },
+ "brepcheck_valid": true,
+ "volume_mm3": 962251.5427535058,
+ "step_bytes": 232522,
+ "step_sha256": "d32211f9c4f4d57c49638fcf189fb86ae2ed59961b16527d6657d1cd445671a6"
+}

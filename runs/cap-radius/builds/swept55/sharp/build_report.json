@@ -1,0 +1,31 @@
+{
+ "parent_Pvv_max_mm_per_mm2": 7.713663151131344e-16,
+ "product_fit_max_up": [
+  1.0231815394945443e-12,
+  1.1894628444993294e-15
+ ],
+ "product_fit_max_lo": [
+  1.0231815394945443e-12,
+  1.1894628444993294e-15
+ ],
+ "le_point_vs_step_edge": 4.661160346586257e-12,
+ "te_point_vs_step_edge": 4.661160346586257e-12,
+ "fit_max_error_over_local_thickness": 2.9077757046601866,
+ "fit_max_error_mm": 0.005201307927114115,
+ "fit_max_error_at_q_w": [
+  0.719375,
+  0.6783333333333333
+ ],
+ "fit_rms_error_mm": 0.0004018618433165101,
+ "cap_poles_u_w": [
+  89,
+  139
+ ],
+ "sewing_free_edges": 0,
+ "sewing_multiple_edges": 0,
+ "sewing_degenerated_shapes": 4,
+ "volume_mm3": 1208744.4958599275,
+ "brepcheck_valid": true,
+ "step_bytes": 2362162,
+ "step_sha256": "5d511033d025d9084c9e6b5b5d0763e7ce853632b304e4ade9df16d91f6f2420"
+}

@@ -1,0 +1,57 @@
+{
+ "fit": {
+  "max_mm": 0.0009671753749840001,
+  "rms_mm": 4.039876539227452e-05,
+  "at_U": 0.6179077253218884,
+  "at_v": 0.8044571428571429,
+  "at_xyz": [
+   675.18141,
+   413.31238,
+   0.44962
+  ]
+ },
+ "valid": true,
+ "volume_mm3": 1239793.3596403354,
+ "faces": 12,
+ "free_edges": 0,
+ "multiple_edges": 0,
+ "degenerated_shapes": 4,
+ "poles": [
+  200,
+  40
+ ],
+ "degree": [
+  5,
+  5
+ ],
+ "sew_tol_mm": 1e-05,
+ "step_bytes": 3398091,
+ "step_sha256": "7f7e6fb63931f08bb8c52ca41814bcfd0e18149c1a56afec1cc75172e7b17b7a",
+ "design": {
+  "R_design": 0.6,
+  "kappa": 1.08,
+  "kappa_te": 1.0,
+  "wedge_p": [
+   0.75,
+   0.9
+  ],
+  "m_max": 0.5,
+  "D_taper": 3.0,
+  "k_floor": 1.3,
+  "h_max": 0.3,
+  "F0": 2.0,
+  "fan_beta": 0.06,
+  "rho0": 60.0,
+  "rho1": 90.0,
+  "kappa0": 0.36,
+  "kappa_c": [
+   0.0,
+   0.0
+  ],
+  "w_te": [
+   2.0,
+   6.0
+  ],
+  "h_te_d": 0.5
+ }
+}

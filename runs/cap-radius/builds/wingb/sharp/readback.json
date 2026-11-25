@@ -1,0 +1,7859 @@
+{
+ "step_file": "runs/cap-radius/builds/wingb/sharp/wing.step",
+ "step_sha256": "18881aabebb7e63d17ba7329739efaf24dfa03552ed98ec935e3ab84ff836a20",
+ "step_bytes": 4950559,
+ "reimport": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 3,
+  "face_types": [
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_Plane",
+   "GeomAbs_BSplineSurface"
+  ],
+  "brepcheck_valid": true,
+  "free_boundary_edges": 0,
+  "volume_mm3": 731173.8296207162,
+  "bounding_box_mm": [
+   -600.00358689,
+   -4.069358484168,
+   -200.0000001,
+   1e-07,
+   63.583137777699,
+   -0.02135025834707
+  ]
+ },
+ "parent_preserved": {
+  "skin_poles_identical_shape": true,
+  "skin_max_pole_difference_mm": 0.0,
+  "skin_max_sample_deviation_mm": 0.0,
+  "skin_parameter_range": [
+   0.0,
+   1.0,
+   0.0,
+   0.898595093101
+  ],
+  "skin_v_attachment": 0.898595093101,
+  "root_plane_origin": [
+   0.0,
+   4.243624782963,
+   -99.00579494774
+  ],
+  "root_plane_normal": [
+   -1.0,
+   -0.0,
+   -0.0
+  ]
+ },
+ "locked": {
+  "max_projected_span_mm": 600.0000000001432,
+  "span_location": [
+   -600.0000000001432,
+   62.225497180757344,
+   -117.05407982598418
+  ],
+  "max_outside_outline_mm": 5.646340178403018e-06,
+  "lip_to_outline_max_abs_mm": 4.901850083175157e-06,
+  "attachment_plane_x_spread_mm": 6.673417374258861e-11
+ },
+ "zebra_join": [
+  {
+   "stripes_per_180deg": 24,
+   "views": 60,
+   "stripe_axes": 8,
+   "crossings_checked": 5029,
+   "excluded_within_mm_of_collapsed_points": 0.0,
+   "max_phase_mismatch_stripe_widths": 0.008443092388441542,
+   "at_phase": {
+    "side": "upper",
+    "xi": 0.0027124268623277595,
+    "view": [
+     -9.184850993605151e-17,
+     -0.8660254037844386,
+     -0.5000000000000001
+    ],
+    "axis": [
+     0.0,
+     1.0,
+     0.0
+    ]
+   },
+   "max_direction_change_at_crossing_deg": 4.8546160795293005,
+   "at_direction": {
+    "side": "lower",
+    "xi": 0.009335860223076692,
+    "view": [
+     -0.433,
+     0.5,
+     -0.75
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 0.7247288279605437,
+    "grad_cap_per_mm": 0.6282631558001509
+   },
+   "max_relative_gradient_change_at_crossing": 0.15471553019774156,
+   "at_gradient": {
+    "side": "lower",
+    "xi": 0.009335860223076692,
+    "view": [
+     -0.433,
+     0.5,
+     -0.75
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 0.7247288279605437,
+    "grad_cap_per_mm": 0.6282631558001509
+   },
+   "max_abs_gradient_change_at_crossing_stripes_per_mm": 0.39384721832191605,
+   "at_abs_gradient": {
+    "side": "upper",
+    "xi": 0.0029163675929937145,
+    "view": [
+     0.25,
+     -0.866,
+     -0.433
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 7.538225970805209,
+    "grad_cap_per_mm": 7.149140619710872
+   },
+   "note": "direction and relative-gradient changes are evaluated at crossings where both stripe gradients are at least 0.2 stripe/mm (bands narrower than 5 mm)"
+  },
+  {
+   "stripes_per_180deg": 24,
+   "views": 60,
+   "stripe_axes": 8,
+   "crossings_checked": 5026,
+   "excluded_within_mm_of_collapsed_points": 0.1,
+   "max_phase_mismatch_stripe_widths": 0.008443092388441542,
+   "at_phase": {
+    "side": "upper",
+    "xi": 0.0027124268623277595,
+    "view": [
+     -9.184850993605151e-17,
+     -0.8660254037844386,
+     -0.5000000000000001
+    ],
+    "axis": [
+     0.0,
+     1.0,
+     0.0
+    ]
+   },
+   "max_direction_change_at_crossing_deg": 4.8546160795293005,
+   "at_direction": {
+    "side": "lower",
+    "xi": 0.009335860223076692,
+    "view": [
+     -0.433,
+     0.5,
+     -0.75
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 0.7247288279605437,
+    "grad_cap_per_mm": 0.6282631558001509
+   },
+   "max_relative_gradient_change_at_crossing": 0.15471553019774156,
+   "at_gradient": {
+    "side": "lower",
+    "xi": 0.009335860223076692,
+    "view": [
+     -0.433,
+     0.5,
+     -0.75
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 0.7247288279605437,
+    "grad_cap_per_mm": 0.6282631558001509
+   },
+   "max_abs_gradient_change_at_crossing_stripes_per_mm": 0.39384721832191605,
+   "at_abs_gradient": {
+    "side": "upper",
+    "xi": 0.0029163675929937145,
+    "view": [
+     0.25,
+     -0.866,
+     -0.433
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 7.538225970805209,
+    "grad_cap_per_mm": 7.149140619710872
+   },
+   "note": "direction and relative-gradient changes are evaluated at crossings where both stripe gradients are at least 0.2 stripe/mm (bands narrower than 5 mm)"
+  },
+  {
+   "stripes_per_180deg": 24,
+   "views": 60,
+   "stripe_axes": 8,
+   "crossings_checked": 3666,
+   "excluded_within_mm_of_collapsed_points": 0.5,
+   "max_phase_mismatch_stripe_widths": 0.008443092388441542,
+   "at_phase": {
+    "side": "upper",
+    "xi": 0.0027124268623277595,
+    "view": [
+     -9.184850993605151e-17,
+     -0.8660254037844386,
+     -0.5000000000000001
+    ],
+    "axis": [
+     0.0,
+     1.0,
+     0.0
+    ]
+   },
+   "max_direction_change_at_crossing_deg": 4.8546160795293005,
+   "at_direction": {
+    "side": "lower",
+    "xi": 0.009335860223076692,
+    "view": [
+     -0.433,
+     0.5,
+     -0.75
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 0.7247288279605437,
+    "grad_cap_per_mm": 0.6282631558001509
+   },
+   "max_relative_gradient_change_at_crossing": 0.15471553019774156,
+   "at_gradient": {
+    "side": "lower",
+    "xi": 0.009335860223076692,
+    "view": [
+     -0.433,
+     0.5,
+     -0.75
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 0.7247288279605437,
+    "grad_cap_per_mm": 0.6282631558001509
+   },
+   "max_abs_gradient_change_at_crossing_stripes_per_mm": 0.39384721832191605,
+   "at_abs_gradient": {
+    "side": "upper",
+    "xi": 0.0029163675929937145,
+    "view": [
+     0.25,
+     -0.866,
+     -0.433
+    ],
+    "axis": [
+     0.0,
+     0.7071,
+     -0.7071
+    ],
+    "grad_parent_per_mm": 7.538225970805209,
+    "grad_cap_per_mm": 7.149140619710872
+   },
+   "note": "direction and relative-gradient changes are evaluated at crossings where both stripe gradients are at least 0.2 stripe/mm (bands narrower than 5 mm)"
+  }
+ ],
+ "join": {
+  "upper": {
+   "samples": 785,
+   "xi_range": [
+    0.0003554739799131265,
+    0.9997533070212945
+   ],
+   "max_separation_mm": 1.791466664930453e-05,
+   "max_skin_to_edge_mm": 1.3294117584675054e-10,
+   "max_cap_to_edge_mm": 1.791466662102317e-05,
+   "max_tangent_angle_deg": 0.03169237621324629,
+   "at_xi_tangent": 0.0027124268623277595,
+   "max_dk_cross_per_mm": 0.0010985372059785364,
+   "at_xi_dk_cross": 0.001973389898647411,
+   "parent_k_cross_there": -0.03292199764410194,
+   "cap_k_cross_there": -0.034020534850080476,
+   "max_dk_along_per_mm": 0.026377397293590676,
+   "max_dk_twist_per_mm": 0.0056110793262262385,
+   "max_rel_dk": 0.391021073654456,
+   "rms_dk_cross_per_mm": 9.978894281276949e-05
+  },
+  "lower": {
+   "samples": 785,
+   "xi_range": [
+    0.0003554739799131265,
+    0.9997533070212945
+   ],
+   "max_separation_mm": 1.907784868369246e-05,
+   "max_skin_to_edge_mm": 1.1510367213920934e-10,
+   "max_cap_to_edge_mm": 1.907784868369246e-05,
+   "max_tangent_angle_deg": 0.02455764950627422,
+   "at_xi_tangent": 0.000864150097192657,
+   "max_dk_cross_per_mm": 0.0025437891824012238,
+   "at_xi_dk_cross": 0.0004209949813098822,
+   "parent_k_cross_there": -0.01832793305127601,
+   "cap_k_cross_there": -0.015784143868874785,
+   "max_dk_along_per_mm": 0.020629471192544102,
+   "max_dk_twist_per_mm": 0.0066248600192394536,
+   "max_rel_dk": 0.35322523323396976,
+   "rms_dk_cross_per_mm": 0.00017212776463496835
+  }
+ },
+ "principal_curvature_map": {
+  "grid": [
+   721,
+   1201
+  ],
+  "u_range": [
+   0.0001,
+   0.9999
+  ],
+  "grid_closest_to_LE_point_mm": 5.621886928672075e-06,
+  "grid_closest_to_TE_point_mm": 2.0660135357656224e-06,
+  "smallest_radius_anywhere_mm": 3.308305350130913e-15,
+  "smallest_radius_anywhere_at": {
+   "p": 0.9999999753259892,
+   "v": 1.0,
+   "d_TE_mm": 5.959030459362205e-06,
+   "d_LE_mm": 87.4904870312028
+  },
+  "strict_zone_smallest_radius": {
+   "radius_mm": 0.42647195396297993,
+   "p": 0.8345653031794291,
+   "v": 1.0150000000000001,
+   "xi": 0.9334765714842745,
+   "t_att_mm": 0.8041754537949457,
+   "point": [
+    -573.1350127607091,
+    55.26268371019573,
+    -149.72863566661883
+   ]
+  },
+  "strict_zone_smallest_radius_refined": {
+   "radius_mm": 0.4242399751026809,
+   "p": 0.834896372162262,
+   "v": 1.0333395149529754,
+   "xi": 0.9337470830112634,
+   "t_att_mm": 0.8000000000316051,
+   "point": [
+    -573.078563389081,
+    55.22388988281134,
+    -149.75003842261907
+   ]
+  },
+  "by_attachment_thickness": [
+   {
+    "t_att_band_mm": [
+     0.8,
+     99
+    ],
+    "samples": 570305,
+    "min_ratio_R_over_required": 1.0661798849074497,
+    "radius_mm": 0.42647195396297993,
+    "required_mm": 0.4,
+    "p": 0.8345653031794291,
+    "v": 1.0150000000000001,
+    "d_LE_mm": 88.47654057908386,
+    "d_TE_mm": 34.279067000015075
+   },
+   {
+    "t_att_band_mm": [
+     0.4,
+     0.8
+    ],
+    "samples": 47198,
+    "min_ratio_R_over_required": 1.0499933921228832,
+    "radius_mm": 0.24373929514785422,
+    "required_mm": 0.23213412291582194,
+    "p": 0.8611819810298778,
+    "v": 1.0350000000000001,
+    "d_LE_mm": 88.57883023309928,
+    "d_TE_mm": 29.490122689408288
+   },
+   {
+    "t_att_band_mm": [
+     0.1,
+     0.4
+    ],
+    "samples": 61955,
+    "min_ratio_R_over_required": 1.0558238531001736,
+    "radius_mm": 0.20844183406543149,
+    "required_mm": 0.19742103140916167,
+    "p": 0.8671612547178429,
+    "v": 1.0533333333333335,
+    "d_LE_mm": 88.62209343944451,
+    "d_TE_mm": 28.369640943837926
+   },
+   {
+    "t_att_band_mm": [
+     0.02,
+     0.1
+    ],
+    "samples": 46665,
+    "min_ratio_R_over_required": 1.037027732822768,
+    "radius_mm": 0.011060807972132157,
+    "required_mm": 0.010665874809369723,
+    "p": 0.9297032057507264,
+    "v": 1.1483333333333334,
+    "d_LE_mm": 88.41945579825945,
+    "d_TE_mm": 15.950945196171066
+   },
+   {
+    "t_att_band_mm": [
+     0.005,
+     0.02
+    ],
+    "samples": 32925,
+    "min_ratio_R_over_required": 1.013875801311232,
+    "radius_mm": 0.0026629289069568375,
+    "required_mm": 0.0026264843322159454,
+    "p": 0.9484363707663441,
+    "v": 1.1466666666666667,
+    "d_LE_mm": 88.05961695759294,
+    "d_TE_mm": 11.931410993860355
+   },
+   {
+    "t_att_band_mm": [
+     0.0,
+     0.005
+    ],
+    "samples": 106873,
+    "min_ratio_R_over_required": 2.0821011098208958e-07,
+    "radius_mm": 2.2850225880347522e-11,
+    "required_mm": 0.00010974599539170851,
+    "p": 2.4674010778991118e-08,
+    "v": 0.63,
+    "d_LE_mm": 3.2388852541539943e-05,
+    "d_TE_mm": 87.49048097535574
+   }
+  ],
+  "exclusion_study": [
+   {
+    "exclude_within_mm_of_collapsed_points": 0.0,
+    "min_ratio": 2.0821011098208958e-07,
+    "radius_mm": 2.2850225880347522e-11,
+    "required_mm": 0.00010974599539170851,
+    "xi": 0.0001087819147765125,
+    "d_LE_mm": 3.2388852541539943e-05,
+    "d_TE_mm": 87.49048097535574
+   },
+   {
+    "exclude_within_mm_of_collapsed_points": 0.01,
+    "min_ratio": 0.06314076642808593,
+    "radius_mm": 3.8803781571342415e-11,
+    "required_mm": 6.145598757585231e-10,
+    "xi": 0.9999999998909541,
+    "d_LE_mm": 87.48401493525161,
+    "d_TE_mm": 0.5601119721358802
+   },
+   {
+    "exclude_within_mm_of_collapsed_points": 0.02,
+    "min_ratio": 0.06314076642808593,
+    "radius_mm": 3.8803781571342415e-11,
+    "required_mm": 6.145598757585231e-10,
+    "xi": 0.9999999998909541,
+    "d_LE_mm": 87.48401493525161,
+    "d_TE_mm": 0.5601119721358802
+   },
+   {
+    "exclude_within_mm_of_collapsed_points": 0.05,
+    "min_ratio": 0.06314076642808593,
+    "radius_mm": 3.8803781571342415e-11,
+    "required_mm": 6.145598757585231e-10,
+    "xi": 0.9999999998909541,
+    "d_LE_mm": 87.48401493525161,
+    "d_TE_mm": 0.5601119721358802
+   },
+   {
+    "exclude_within_mm_of_collapsed_points": 0.1,
+    "min_ratio": 0.06314076642808593,
+    "radius_mm": 3.8803781571342415e-11,
+    "required_mm": 6.145598757585231e-10,
+    "xi": 0.9999999998909541,
+    "d_LE_mm": 87.48401493525161,
+    "d_TE_mm": 0.5601119721358802
+   },
+   {
+    "exclude_within_mm_of_collapsed_points": 0.5,
+    "min_ratio": 0.06314076642808593,
+    "radius_mm": 3.8803781571342415e-11,
+    "required_mm": 6.145598757585231e-10,
+    "xi": 0.9999999998909541,
+    "d_LE_mm": 87.48401493525161,
+    "d_TE_mm": 0.5601119721358802
+   }
+  ],
+  "failing_zone": {
+   "failing_samples": 1113,
+   "of": 865921,
+   "near_LE_point_failing": 963,
+   "near_LE_max_distance_mm": 0.0009597354850526769,
+   "near_LE_min_ratio": 2.0821011098208958e-07,
+   "elsewhere_failing": 150,
+   "elsewhere_max_t_att_mm": 1.4256254973847942e-06,
+   "elsewhere_max_required_mm": 7.128127486923971e-07,
+   "elsewhere_min_ratio": 7.0281730855820205e-06,
+   "elsewhere_max_d_TE_mm": 2.219965096858882
+  },
+  "worst_refined_minima": [
+   {
+    "u": 0.0001698237916209748,
+    "v": 0.6308564034971071,
+    "p": 7.116014261177028e-08,
+    "ratio": 1.3201673163147065e-17,
+    "radius_mm": 1.840791434102572e-21,
+    "required_mm": 0.00013943622231469917,
+    "xi": 0.00010878247524591214,
+    "t_att_mm": 0.00027887244462939835,
+    "point": [
+     -540.0000562560574,
+     48.63090550483539,
+     -67.95952934148058
+    ],
+    "d_LE_mm": 5.817011929743865e-05,
+    "d_TE_mm": 87.49047611712469
+   },
+   {
+    "u": 0.00016982783254585897,
+    "v": 0.6308564435453945,
+    "p": 7.11635291250623e-08,
+    "ratio": 1.6931986073845328e-17,
+    "radius_mm": 2.3609567004728618e-21,
+    "required_mm": 0.00013943767081877112,
+    "xi": 0.00010878247527651228,
+    "t_att_mm": 0.00027887534163754225,
+    "point": [
+     -540.0000562575707,
+     48.63090550513084,
+     -67.95952934177579
+    ],
+    "d_LE_mm": 5.817168889745939e-05,
+    "d_TE_mm": 87.49047611682957
+   },
+   {
+    "u": 0.0006909487439526095,
+    "v": 0.9890275792765841,
+    "p": 1.1779619082386006e-06,
+    "ratio": 3.583589519455471e-17,
+    "radius_mm": 7.45198633233672e-22,
+    "required_mm": 2.0794754231419488e-05,
+    "xi": 0.00010878103497458905,
+    "t_att_mm": 4.1589508462838976e-05,
+    "point": [
+     -540.0002846947066,
+     48.630946203405664,
+     -67.95957337509505
+    ],
+    "d_LE_mm": 0.00029434677771274985,
+    "d_TE_mm": 87.49043209834407
+   },
+   {
+    "u": 0.0006624640739466505,
+    "v": 1.0117516511116516,
+    "p": 1.082839923227663e-06,
+    "ratio": 6.308415366179827e-17,
+    "radius_mm": 1.4824718766040656e-21,
+    "required_mm": 2.34999090984366e-05,
+    "xi": 0.00010878104405425558,
+    "t_att_mm": 4.69998181968732e-05,
+    "point": [
+     -540.0002616502208,
+     48.630943281247305,
+     -67.95956892114295
+    ],
+    "d_LE_mm": 0.00027072532966981074,
+    "d_TE_mm": 87.49043655119038
+   },
+   {
+    "u": 2.3683895295229666e-05,
+    "v": 1.028870569966264,
+    "p": 1.3840316670510333e-09,
+    "ratio": 2.9892252442005214e-07,
+    "radius_mm": 2.930209688116695e-12,
+    "required_mm": 9.802572401667208e-06,
+    "xi": 0.00010878100948896235,
+    "t_att_mm": 1.9605144803334416e-05,
+    "point": [
+     -540.0000008266034,
+     48.630895963932865,
+     -67.95951849812153
+    ],
+    "d_LE_mm": 9.139075986158798e-07,
+    "d_TE_mm": 87.49048695709523
+   },
+   {
+    "u": 2.8605721139643512e-05,
+    "v": 0.9693902556857525,
+    "p": 2.0190429328437176e-09,
+    "ratio": 4.293100590447963e-07,
+    "radius_mm": 5.41212407446894e-12,
+    "required_mm": 1.2606562460965333e-05,
+    "xi": 0.00010878101425031592,
+    "t_att_mm": 2.5213124921930667e-05,
+    "point": [
+     -540.0000012002779,
+     48.63089556132462,
+     -67.95951857077343
+    ],
+    "d_LE_mm": 1.2236346541121787e-06,
+    "d_TE_mm": 87.49048688430116
+   },
+   {
+    "u": 0.9999003790967178,
+    "v": 1.8833294216278995,
+    "p": 0.9999999755127114,
+    "ratio": 4.587568501856536e-07,
+    "radius_mm": 9.137066468140704e-14,
+    "required_mm": 1.991701369569313e-07,
+    "xi": 0.9999999259056458,
+    "t_att_mm": 3.983402739138626e-07,
+    "point": [
+     -539.9999883793029,
+     48.59999835627788,
+     -155.4499936910543
+    ],
+    "d_LE_mm": 87.49048080913565,
+    "d_TE_mm": 1.3327576598679227e-05
+   },
+   {
+    "u": 0.9999001926225417,
+    "v": 0.11666757996715926,
+    "p": 0.9999999754209531,
+    "ratio": 1.3440383696390401e-06,
+    "radius_mm": 2.6831047938846085e-13,
+    "required_mm": 1.996300741477487e-07,
+    "xi": 0.9999999257341128,
+    "t_att_mm": 3.992601482954974e-07,
+    "point": [
+     -539.9999883608488,
+     48.59999875217254,
+     -155.44999367632198
+    ],
+    "d_LE_mm": 87.49048079426355,
+    "d_TE_mm": 1.3306990176244752e-05
+   },
+   {
+    "u": -0.00047551674056740367,
+    "v": 1.599947904162387,
+    "p": 5.579191842963738e-07,
+    "ratio": 1.3551650643861762e-06,
+    "radius_mm": 2.4503506096699912e-11,
+    "required_mm": 1.8081565663588597e-05,
+    "xi": 0.00010878102698191207,
+    "t_att_mm": 3.6163131327177193e-05,
+    "point": [
+     -540.000000332311,
+     48.630895656242636,
+     -67.95951840410017
+    ],
+    "d_LE_mm": 3.422172754239538e-07,
+    "d_TE_mm": 87.49048705100792
+   },
+   {
+    "u": 5.214379838572119e-05,
+    "v": 0.948774440098239,
+    "p": 6.708803623745041e-09,
+    "ratio": 1.7295300005026955e-06,
+    "radius_mm": 4.26133841421902e-11,
+    "required_mm": 2.4638707700823017e-05,
+    "xi": 0.00010878104820825366,
+    "t_att_mm": 4.927741540164603e-05,
+    "point": [
+     -540.0000037793859,
+     48.63089572670936,
+     -67.95951907231384
+    ],
+    "d_LE_mm": 3.851945908230837e-06,
+    "d_TE_mm": 87.49048638281926
+   },
+   {
+    "u": 7.320511834186745e-05,
+    "v": 0.9287363276974834,
+    "p": 1.3222776151788906e-08,
+    "ratio": 3.956962574631224e-06,
+    "radius_mm": 1.422026371288764e-10,
+    "required_mm": 3.593732173272557e-05,
+    "xi": 0.0001087811000702452,
+    "t_att_mm": 7.187464346545114e-05,
+    "point": [
+     -540.0000073222836,
+     48.630896070381496,
+     -67.95951976173171
+    ],
+    "d_LE_mm": 7.473763038979414e-06,
+    "d_TE_mm": 87.49048569352301
+   },
+   {
+    "u": 0.00013503656882108488,
+    "v": 1.111864536546626,
+    "p": 4.49927497481184e-08,
+    "ratio": 6.2718556898726054e-06,
+    "radius_mm": 3.6295439381419907e-10,
+    "required_mm": 5.7870335632925166e-05,
+    "xi": 0.00010878125597177505,
+    "t_att_mm": 0.00011574067126585033,
+    "point": [
+     -540.0000213614958,
+     48.630901060690384,
+     -67.95952248930266
+    ],
+    "d_LE_mm": 2.2433775464782344e-05,
+    "d_TE_mm": 87.49048296771693
+   }
+  ]
+ },
+ "sections": {
+  "count": 110,
+  "all_pass": true,
+  "worst": [
+   {
+    "name": "chordwise X=-550",
+    "points": 3356,
+    "smallest_radius_mm": 0.0012521508547104468,
+    "smallest_at": {
+     "point": [
+      -550.0,
+      50.4195,
+      -155.2735
+     ],
+     "xi": 0.999543666566474,
+     "t_att_mm": 0.0024470000230146314,
+     "required_mm": 0.0012235000115073157,
+     "side": "lower",
+     "span_mm": 550.0
+    },
+    "smallest_plane_curve_radius_mm": 0.0012380665167280795,
+    "worst_ratio": 1.022881799038147,
+    "worst_at": {
+     "point": [
+      -550.0,
+      50.4194,
+      -155.2735
+     ],
+     "radius_mm": 0.001252775819376232,
+     "xi": 0.9995432007394206,
+     "t_att_mm": 0.002449502612235867,
+     "required_mm": 0.0012247513061179336
+    },
+    "lips": [
+     {
+      "point": [
+       -550.0,
+       50.4569,
+       -69.9414
+      ],
+      "radius_mm": 0.7738407408221032,
+      "xi": 0.0005331464301579901,
+      "t_att_mm": 0.4866147545997701
+     },
+     {
+      "point": [
+       -550.0,
+       50.4204,
+       -155.2739
+      ],
+      "radius_mm": 0.0014350318780595897,
+      "xi": 0.9995477460485951,
+      "t_att_mm": 0.0024250843510001266
+     }
+    ],
+    "bending_reversals": 12,
+    "reversal_locations": [
+     {
+      "span_mm": 550.0,
+      "xi": 0.99945,
+      "side": "upper",
+      "y": 50.4227,
+      "to": "convex"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99945,
+      "side": "upper",
+      "y": 50.4226,
+      "to": "concave"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99947,
+      "side": "upper",
+      "y": 50.4224,
+      "to": "convex"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99948,
+      "side": "upper",
+      "y": 50.4224,
+      "to": "concave"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99948,
+      "side": "upper",
+      "y": 50.4223,
+      "to": "convex"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99949,
+      "side": "upper",
+      "y": 50.4222,
+      "to": "concave"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99952,
+      "side": "upper",
+      "y": 50.422,
+      "to": "convex"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99949,
+      "side": "lower",
+      "y": 50.4195,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.015916626205495454,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-545",
+    "points": 3524,
+    "smallest_radius_mm": 4.321790626749058e-05,
+    "smallest_at": {
+     "point": [
+      -545.0,
+      49.5043,
+      -155.3768
+     ],
+     "xi": 0.9999842596259912,
+     "t_att_mm": 8.440652731080543e-05,
+     "required_mm": 4.2203263655402715e-05,
+     "side": "lower",
+     "span_mm": 545.0000000000003
+    },
+    "smallest_plane_curve_radius_mm": 4.283579561554575e-05,
+    "worst_ratio": 1.0238366484384969,
+    "worst_at": {
+     "point": [
+      -545.0,
+      49.5043,
+      -155.3768
+     ],
+     "radius_mm": 4.322172310155554e-05,
+     "xi": 0.9999842550812368,
+     "t_att_mm": 8.443089660342809e-05,
+     "required_mm": 4.2215448301714044e-05
+    },
+    "lips": [
+     {
+      "point": [
+       -545.0,
+       49.5442,
+       -68.9305
+      ],
+      "radius_mm": 0.8575235696626013,
+      "xi": 0.00012339601537942469,
+      "t_att_mm": 0.06893842569554637
+     },
+     {
+      "point": [
+       -545.0,
+       49.5043,
+       -155.3768
+      ],
+      "radius_mm": 4.949195521667203e-05,
+      "xi": 0.9999843913771714,
+      "t_att_mm": 8.370006790727063e-05
+     }
+    ],
+    "bending_reversals": 14,
+    "reversal_locations": [
+     {
+      "span_mm": 545.0,
+      "xi": 0.99988,
+      "side": "lower",
+      "y": 49.5048,
+      "to": "convex"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "concave"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99995,
+      "side": "lower",
+      "y": 49.5044,
+      "to": "convex"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "concave"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "convex"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99996,
+      "side": "lower",
+      "y": 49.5044,
+      "to": "concave"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "convex"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.0005310270191850713,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-542",
+    "points": 3676,
+    "smallest_radius_mm": 4.681321780475689e-07,
+    "smallest_at": {
+     "point": [
+      -542.0,
+      48.9607,
+      -155.4205
+     ],
+     "xi": 0.9999998309200406,
+     "t_att_mm": 9.077153604701059e-07,
+     "required_mm": 4.5385768023505293e-07,
+     "side": "lower",
+     "span_mm": 542.0
+    },
+    "smallest_plane_curve_radius_mm": 4.6437640830016235e-07,
+    "worst_ratio": 1.0311387640501413,
+    "worst_at": {
+     "point": [
+      -542.0,
+      48.9607,
+      -155.4205
+     ],
+     "radius_mm": 4.6817761336560396e-07,
+     "xi": 0.9999998308522727,
+     "t_att_mm": 9.080787759868134e-07,
+     "required_mm": 4.540393879934067e-07
+    },
+    "lips": [
+     {
+      "point": [
+       -542.0,
+       48.9915,
+       -68.3467
+      ],
+      "radius_mm": 0.07959982009312574,
+      "xi": 0.00010893801566243506,
+      "t_att_mm": 0.002902833804931652
+     },
+     {
+      "point": [
+       -542.0,
+       48.9607,
+       -155.4205
+      ],
+      "radius_mm": 5.29781948017961e-07,
+      "xi": 0.9999998321653252,
+      "t_att_mm": 9.010373357187607e-07
+     }
+    ],
+    "bending_reversals": 30,
+    "reversal_locations": [
+     {
+      "span_mm": 542.0,
+      "xi": 0.99994,
+      "side": "lower",
+      "y": 48.961,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 0.99999,
+      "side": "lower",
+      "y": 48.9607,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.9607,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.9607,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.9607,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.9607,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.9607,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.9607,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 5.73072778298335e-06,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.95",
+    "points": 1201,
+    "smallest_radius_mm": 0.27991067773252293,
+    "smallest_at": {
+     "point": [
+      -569.5877,
+      54.486,
+      -151.2106
+     ],
+     "xi": 0.9519891792204151,
+     "t_att_mm": 0.5280115232154413,
+     "required_mm": 0.26400576160772066,
+     "side": "upper",
+     "span_mm": 569.5877409511817
+    },
+    "smallest_plane_curve_radius_mm": 0.10553087105896126,
+    "worst_ratio": 1.0602445796180577,
+    "worst_at": {
+     "point": [
+      -569.5877,
+      54.486,
+      -151.2106
+     ],
+     "radius_mm": 0.27991067773252293,
+     "xi": 0.9519891792204151,
+     "t_att_mm": 0.5280115232154413,
+     "required_mm": 0.26400576160772066
+    },
+    "lip_radius_mm": 0.6814071703627018,
+    "lip_point": [
+     -569.5241,
+     54.3314,
+     -151.2103
+    ],
+    "lip_xi": 0.9519874631000315,
+    "lip_t_att_mm": 0.5280360713690423,
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 568.349,
+      "xi": 0.95195,
+      "side": "upper",
+      "y": 54.5046,
+      "to": "convex"
+     },
+     {
+      "span_mm": 568.301,
+      "xi": 0.95195,
+      "side": "lower",
+      "y": 53.9456,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 26.423800700237273,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.95",
+    "points": 1201,
+    "smallest_radius_mm": 0.29282078062980704,
+    "smallest_at": {
+     "point": [
+      -569.9155,
+      54.5626,
+      -151.075
+     ],
+     "xi": 0.9503106484774981,
+     "t_att_mm": 0.5521303283185662,
+     "required_mm": 0.2760651641592831,
+     "side": "upper",
+     "span_mm": 569.9154676057565
+    },
+    "smallest_plane_curve_radius_mm": 0.10968356854431953,
+    "worst_ratio": 1.060694425251193,
+    "worst_at": {
+     "point": [
+      -569.9155,
+      54.5626,
+      -151.075
+     ],
+     "radius_mm": 0.29282078062980704,
+     "xi": 0.9503106484774981,
+     "t_att_mm": 0.5521303283185662,
+     "required_mm": 0.2760651641592831
+    },
+    "lip_radius_mm": 0.7147512747686847,
+    "lip_point": [
+     -569.8492,
+     54.4018,
+     -151.075
+    ],
+    "lip_xi": 0.9503129509036756,
+    "lip_t_att_mm": 0.5520971041021977,
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 568.617,
+      "xi": 0.95035,
+      "side": "upper",
+      "y": 54.5804,
+      "to": "convex"
+     },
+     {
+      "span_mm": 568.551,
+      "xi": 0.95036,
+      "side": "lower",
+      "y": 53.9944,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 27.580876598231335,
+    "pass": true
+   }
+  ],
+  "traces": [
+   {
+    "name": "guide-plane p=0.0007",
+    "points": 1201,
+    "smallest_radius_mm": 0.07469810423056351,
+    "smallest_at": {
+     "point": [
+      -540.1643,
+      48.6605,
+      -67.9913
+     ],
+     "xi": 0.00010878099702587242,
+     "t_att_mm": 0.0,
+     "required_mm": 0.0,
+     "side": "upper",
+     "span_mm": 540.1643431382895
+    },
+    "smallest_plane_curve_radius_mm": 0.0008889608054977331,
+    "worst_ratio": 121.40030957130985,
+    "worst_at": {
+     "point": [
+      -540.0036,
+      48.5921,
+      -67.9622
+     ],
+     "radius_mm": 6.041678057839075,
+     "xi": 0.00013142900217471296,
+     "t_att_mm": 0.09953315735641066,
+     "required_mm": 0.04976657867820533
+    },
+    "lip_radius_mm": 23.878467129660645,
+    "lip_point": [
+     -540.1359,
+     48.6474,
+     -67.9861
+    ],
+    "lip_xi": 0.00011278890477297101,
+    "lip_t_att_mm": 0.01843578244206495,
+    "bending_reversals": 7,
+    "reversal_locations": [
+     {
+      "span_mm": 540.003,
+      "xi": 0.00013,
+      "side": "upper",
+      "y": 48.6916,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.004,
+      "xi": 0.00013,
+      "side": "upper",
+      "y": 48.6916,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.103,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 48.6745,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.149,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 48.6643,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.134,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.6467,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.055,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.6144,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.002,
+      "xi": 0.00013,
+      "side": "lower",
+      "y": 48.5914,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 4.182561437860092,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.0009",
+    "points": 1201,
+    "smallest_radius_mm": 0.07500374782306289,
+    "smallest_at": {
+     "point": [
+      -540.2079,
+      48.6683,
+      -67.9997
+     ],
+     "xi": 0.0001087809884207637,
+     "t_att_mm": 0.0,
+     "required_mm": 0.0,
+     "side": "upper",
+     "span_mm": 540.207946339692
+    },
+    "smallest_plane_curve_radius_mm": 0.0011215728482426117,
+    "worst_ratio": 66.05108044698646,
+    "worst_at": {
+     "point": [
+      -540.0014,
+      48.7105,
+      -67.963
+     ],
+     "radius_mm": 4.547693720584983,
+     "xi": 0.00014528770832665665,
+     "t_att_mm": 0.13770232643612929,
+     "required_mm": 0.06885116321806464
+    },
+    "lip_radius_mm": 22.719427716378625,
+    "lip_point": [
+     -540.0,
+     48.5719,
+     -67.9627
+    ],
+    "lip_xi": 0.00014553649752688865,
+    "lip_t_att_mm": 0.13828245826659383,
+    "bending_reversals": 8,
+    "reversal_locations": [
+     {
+      "span_mm": 540.004,
+      "xi": 0.00014,
+      "side": "upper",
+      "y": 48.7105,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.006,
+      "xi": 0.00014,
+      "side": "upper",
+      "y": 48.7104,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.165,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 48.682,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.195,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 48.6728,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.188,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.6573,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.177,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.6529,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.17,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.6498,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.136,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.6335,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 2.137234144952159,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.0062",
+    "points": 1201,
+    "smallest_radius_mm": 0.07713054627586438,
+    "smallest_at": {
+     "point": [
+      -541.4683,
+      48.8951,
+      -68.2436
+     ],
+     "xi": 0.000108822951948238,
+     "t_att_mm": 0.001491366610539165,
+     "required_mm": 0.0007456833052695825,
+     "side": "lower",
+     "span_mm": 541.4682963786045
+    },
+    "smallest_plane_curve_radius_mm": 0.006660250609509751,
+    "worst_ratio": 15.571339629703427,
+    "worst_at": {
+     "point": [
+      -541.431,
+      48.9685,
+      -68.2397
+     ],
+     "radius_mm": 1.0942373132077017,
+     "xi": 0.00014651843488163596,
+     "t_att_mm": 0.14054504483613817,
+     "required_mm": 0.07027252241806908
+    },
+    "lip_radius_mm": 31.59970600204181,
+    "lip_point": [
+     -540.0,
+     48.2182,
+     -68.0888
+    ],
+    "lip_xi": 0.0015863835064528432,
+    "lip_t_att_mm": 0.8782143480892215,
+    "bending_reversals": 6,
+    "reversal_locations": [
+     {
+      "span_mm": 541.46,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 48.919,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.466,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 48.9019,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.464,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.8863,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.46,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.88,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.46,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.8791,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.453,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.8667,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 0.4766698411507984,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.0067",
+    "points": 1201,
+    "smallest_radius_mm": 0.07742354377727,
+    "smallest_at": {
+     "point": [
+      -541.5921,
+      48.9175,
+      -68.2676
+     ],
+     "xi": 0.00010884001391223636,
+     "t_att_mm": 0.0017704269446351386,
+     "required_mm": 0.0008852134723175693,
+     "side": "lower",
+     "span_mm": 541.5920881850273
+    },
+    "smallest_plane_curve_radius_mm": 0.007123615209332345,
+    "worst_ratio": 14.779224644825106,
+    "worst_at": {
+     "point": [
+      -541.5578,
+      48.9906,
+      -68.2642
+     ],
+     "radius_mm": 1.0267658989383286,
+     "xi": 0.00014582306322439545,
+     "t_att_mm": 0.1389471942694703,
+     "required_mm": 0.06947359713473515
+    },
+    "lip_radius_mm": 32.831917285702204,
+    "lip_point": [
+     -540.0,
+     48.1931,
+     -68.1087
+    ],
+    "lip_xi": 0.0018138049629253927,
+    "lip_t_att_mm": 0.9375334913051645,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 541.584,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 48.9413,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.59,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 48.9241,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.588,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.9087,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.578,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.8891,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 0.4457054229952973,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.0170",
+    "points": 1201,
+    "smallest_radius_mm": 0.23740073383178664,
+    "smallest_at": {
+     "point": [
+      -544.0192,
+      49.3575,
+      -68.7389
+     ],
+     "xi": 0.00011379690642384479,
+     "t_att_mm": 0.02217493175959844,
+     "required_mm": 0.01108746587979922,
+     "side": "lower",
+     "span_mm": 544.019223635319
+    },
+    "smallest_plane_curve_radius_mm": 0.040962251838656004,
+    "worst_ratio": 8.73553303257403,
+    "worst_at": {
+     "point": [
+      -543.9708,
+      49.476,
+      -68.738
+     ],
+     "radius_mm": 1.0584604983846198,
+     "xi": 0.0002111419239539515,
+     "t_att_mm": 0.24233449623227662,
+     "required_mm": 0.12116724811613831
+    },
+    "lip_radius_mm": 11.455907355959246,
+    "lip_point": [
+     -543.0356,
+     48.7171,
+     -68.7193
+    ],
+    "lip_xi": 0.002087181515270237,
+    "lip_t_att_mm": 1.0034174402703349,
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 544.016,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 49.3412,
+      "to": "concave"
+     },
+     {
+      "span_mm": 544.014,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 49.3326,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 3.721741443694962,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.0179",
+    "points": 1201,
+    "smallest_radius_mm": 0.3443862824986788,
+    "smallest_at": {
+     "point": [
+      -544.2177,
+      49.3914,
+      -68.7776
+     ],
+     "xi": 0.00011540098557119097,
+     "t_att_mm": 0.02913858267551063,
+     "required_mm": 0.014569291337755315,
+     "side": "lower",
+     "span_mm": 544.2176656674327
+    },
+    "smallest_plane_curve_radius_mm": 0.061647957191604916,
+    "worst_ratio": 8.819321205218179,
+    "worst_at": {
+     "point": [
+      -544.174,
+      49.5071,
+      -68.777
+     ],
+     "radius_mm": 1.0395005105970607,
+     "xi": 0.00020570389512810698,
+     "t_att_mm": 0.23573254367513308,
+     "required_mm": 0.11786627183756654
+    },
+    "lip_radius_mm": 13.51576892456286,
+    "lip_point": [
+     -543.092,
+     48.6982,
+     -68.7605
+    ],
+    "lip_xi": 0.0024358549611693432,
+    "lip_t_att_mm": 1.0806973077985085,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.0332",
+    "points": 1201,
+    "smallest_radius_mm": 0.77464734518123,
+    "smallest_at": {
+     "point": [
+      -547.701,
+      50.0774,
+      -69.4671
+     ],
+     "xi": 0.00024266803074773975,
+     "t_att_mm": 0.27709565694808663,
+     "required_mm": 0.13854782847404332,
+     "side": "upper",
+     "span_mm": 547.7009986996475
+    },
+    "smallest_plane_curve_radius_mm": 0.18393125444804279,
+    "worst_ratio": 5.244879101435943,
+    "worst_at": {
+     "point": [
+      -547.6803,
+      50.1303,
+      -69.468
+     ],
+     "radius_mm": 0.8665079961028241,
+     "xi": 0.00030049153904678904,
+     "t_att_mm": 0.33042057951939885,
+     "required_mm": 0.16521028975969942
+    },
+    "lip_radius_mm": 4.488542030245157,
+    "lip_point": [
+     -547.2118,
+     49.5433,
+     -69.4889
+    ],
+    "lip_xi": 0.0016055805767592394,
+    "lip_t_att_mm": 0.8834109566209063,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.0344",
+    "points": 1201,
+    "smallest_radius_mm": 0.7723557805522243,
+    "smallest_at": {
+     "point": [
+      -547.9663,
+      50.123,
+      -69.5206
+     ],
+     "xi": 0.0002626043823381168,
+     "t_att_mm": 0.29670389559584065,
+     "required_mm": 0.14835194779792032,
+     "side": "upper",
+     "span_mm": 547.966284493663
+    },
+    "smallest_plane_curve_radius_mm": 0.18639386830300067,
+    "worst_ratio": 4.975513547120747,
+    "worst_at": {
+     "point": [
+      -547.9517,
+      50.1661,
+      -69.5213
+     ],
+     "radius_mm": 0.8291162404320578,
+     "xi": 0.00030391028555129356,
+     "t_att_mm": 0.33327865860675004,
+     "required_mm": 0.16663932930337502
+    },
+    "lip_radius_mm": 4.310253444241517,
+    "lip_point": [
+     -547.4923,
+     49.598,
+     -69.5432
+    ],
+    "lip_xi": 0.001602009016009598,
+    "lip_t_att_mm": 0.8824470207393873,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.0545",
+    "points": 1201,
+    "smallest_radius_mm": 0.6932101491798182,
+    "smallest_at": {
+     "point": [
+      -552.3661,
+      50.9135,
+      -70.4679
+     ],
+     "xi": 0.0012716805423879307,
+     "t_att_mm": 0.7867154498608806,
+     "required_mm": 0.3933577249304403,
+     "side": "upper",
+     "span_mm": 552.3661096502383
+    },
+    "smallest_plane_curve_radius_mm": 0.2116002388858168,
+    "worst_ratio": 1.762289400322321,
+    "worst_at": {
+     "point": [
+      -552.3661,
+      50.9135,
+      -70.4679
+     ],
+     "radius_mm": 0.6932101491798182,
+     "xi": 0.0012716805423879307,
+     "t_att_mm": 0.7867154498608806,
+     "required_mm": 0.3933577249304403
+    },
+    "lip_radius_mm": 2.3864381799520977,
+    "lip_point": [
+     -552.1115,
+     50.5433,
+     -70.4895
+    ],
+    "lip_xi": 0.002113456717202852,
+    "lip_t_att_mm": 1.0094877333754217,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.0560",
+    "points": 1201,
+    "smallest_radius_mm": 0.6844132199014874,
+    "smallest_at": {
+     "point": [
+      -552.6853,
+      50.9748,
+      -70.543
+     ],
+     "xi": 0.001419174729573689,
+     "t_att_mm": 0.831207076529329,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 552.6853120694514
+    },
+    "smallest_plane_curve_radius_mm": 0.212524069399923,
+    "worst_ratio": 1.7110330497537185,
+    "worst_at": {
+     "point": [
+      -552.6853,
+      50.9748,
+      -70.543
+     ],
+     "radius_mm": 0.6844132199014874,
+     "xi": 0.001419174729573689,
+     "t_att_mm": 0.831207076529329,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 2.293434759168118,
+    "lip_point": [
+     -552.4408,
+     50.6116,
+     -70.5642
+    ],
+    "lip_xi": 0.002233557159695365,
+    "lip_t_att_mm": 1.0367021737196878,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.0807",
+    "points": 1201,
+    "smallest_radius_mm": 0.6268582909114554,
+    "smallest_at": {
+     "point": [
+      -557.7977,
+      52.0398,
+      -71.955
+     ],
+     "xi": 0.006259824641118934,
+     "t_att_mm": 1.7013096551313585,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 557.7976981407833
+    },
+    "smallest_plane_curve_radius_mm": 0.24967580737767356,
+    "worst_ratio": 1.5671457272786384,
+    "worst_at": {
+     "point": [
+      -557.7977,
+      52.0398,
+      -71.955
+     ],
+     "radius_mm": 0.6268582909114554,
+     "xi": 0.006259824641118934,
+     "t_att_mm": 1.7013096551313585,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 1.3669664071278997,
+    "lip_point": [
+     -557.6705,
+     51.764,
+     -71.9677
+    ],
+    "lip_xi": 0.006709151564078749,
+    "lip_t_att_mm": 1.7615202529496807,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.0825",
+    "points": 1201,
+    "smallest_radius_mm": 0.6244842184975156,
+    "smallest_at": {
+     "point": [
+      -558.1575,
+      52.1226,
+      -72.0732
+     ],
+     "xi": 0.006827178676988168,
+     "t_att_mm": 1.7770710949673392,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 558.1574792842838
+    },
+    "smallest_plane_curve_radius_mm": 0.25287412245245344,
+    "worst_ratio": 1.5612105462437889,
+    "worst_at": {
+     "point": [
+      -558.1575,
+      52.1226,
+      -72.0732
+     ],
+     "radius_mm": 0.6244842184975156,
+     "xi": 0.006827178676988168,
+     "t_att_mm": 1.7770710949673392,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 1.3374800333969388,
+    "lip_point": [
+     -558.0345,
+     51.8495,
+     -72.0855
+    ],
+    "lip_xi": 0.007261734346639467,
+    "lip_t_att_mm": 1.8334700518525788,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.1114",
+    "points": 1201,
+    "smallest_radius_mm": 0.6132966192959424,
+    "smallest_at": {
+     "point": [
+      -563.7622,
+      53.466,
+      -74.3356
+     ],
+     "xi": 0.0208483580635543,
+     "t_att_mm": 3.181181633923092,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 563.762237148696
+    },
+    "smallest_plane_curve_radius_mm": 0.3068890628950255,
+    "worst_ratio": 1.5332415482398558,
+    "worst_at": {
+     "point": [
+      -563.7622,
+      53.466,
+      -74.3356
+     ],
+     "radius_mm": 0.6132966192959424,
+     "xi": 0.0208483580635543,
+     "t_att_mm": 3.181181633923092,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 1.0149977896527989,
+    "lip_point": [
+     -563.6946,
+     53.2338,
+     -74.3415
+    ],
+    "lip_xi": 0.021078931924338108,
+    "lip_t_att_mm": 3.199045654569403,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1334.6833252835452,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.1135",
+    "points": 1201,
+    "smallest_radius_mm": 0.6121986378693145,
+    "smallest_at": {
+     "point": [
+      -564.1469,
+      53.5603,
+      -74.5213
+     ],
+     "xi": 0.02218998015684651,
+     "t_att_mm": 3.283458355297098,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 564.1468760869184
+    },
+    "smallest_plane_curve_radius_mm": 0.30954045707543404,
+    "worst_ratio": 1.5304965946732862,
+    "worst_at": {
+     "point": [
+      -564.1469,
+      53.5603,
+      -74.5213
+     ],
+     "radius_mm": 0.6121986378693145,
+     "xi": 0.02218998015684651,
+     "t_att_mm": 3.283458355297098,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 1.0017553710107043,
+    "lip_point": [
+     -564.0814,
+     53.3306,
+     -74.5268
+    ],
+    "lip_xi": 0.022412093970136916,
+    "lip_t_att_mm": 3.3000121963326263,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1387.2988259169297,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.1464",
+    "points": 1201,
+    "smallest_radius_mm": 0.6378747293751129,
+    "smallest_at": {
+     "point": [
+      -569.9954,
+      55.0663,
+      -77.7289
+     ],
+     "xi": 0.04759746066481473,
+     "t_att_mm": 4.74943243716571,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 569.9954179438962
+    },
+    "smallest_plane_curve_radius_mm": 0.3479817922084624,
+    "worst_ratio": 1.5946868234377822,
+    "worst_at": {
+     "point": [
+      -569.9954,
+      55.0663,
+      -77.7289
+     ],
+     "radius_mm": 0.6378747293751129,
+     "xi": 0.04759746066481473,
+     "t_att_mm": 4.74943243716571,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.96261938864529,
+    "lip_point": [
+     -569.9492,
+     54.8103,
+     -77.7316
+    ],
+    "lip_xi": 0.047738955655475424,
+    "lip_t_att_mm": 4.755898071050122,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 601.59696196237,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.1488",
+    "points": 1201,
+    "smallest_radius_mm": 0.6408405508491198,
+    "smallest_at": {
+     "point": [
+      -570.3881,
+      55.1642,
+      -77.9607
+     ],
+     "xi": 0.049529482951452715,
+     "t_att_mm": 4.836462045814477,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 570.3880982303276
+    },
+    "smallest_plane_curve_radius_mm": 0.349627056177595,
+    "worst_ratio": 1.6021013771227994,
+    "worst_at": {
+     "point": [
+      -570.3881,
+      55.1642,
+      -77.9607
+     ],
+     "radius_mm": 0.6408405508491198,
+     "xi": 0.049529482951452715,
+     "t_att_mm": 4.836462045814477,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.9681561295016636,
+    "lip_point": [
+     -570.3418,
+     54.9073,
+     -77.9633
+    ],
+    "lip_xi": 0.0496702560257112,
+    "lip_t_att_mm": 4.842698618944934,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 590.420988448128,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.1853",
+    "points": 1201,
+    "smallest_radius_mm": 0.6551457611902705,
+    "smallest_at": {
+     "point": [
+      -576.2328,
+      56.5885,
+      -81.4678
+     ],
+     "xi": 0.07940649323800618,
+     "t_att_mm": 5.917658062702629,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 576.2328416541701
+    },
+    "smallest_plane_curve_radius_mm": 0.3637317511747673,
+    "worst_ratio": 1.6378644029756761,
+    "worst_at": {
+     "point": [
+      -576.2328,
+      56.5885,
+      -81.4678
+     ],
+     "radius_mm": 0.6551457611902705,
+     "xi": 0.07940649323800618,
+     "t_att_mm": 5.917658062702629,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.987359542423982,
+    "lip_point": [
+     -576.1893,
+     56.3319,
+     -81.4695
+    ],
+    "lip_xi": 0.07952917740370037,
+    "lip_t_att_mm": 5.921275490801222,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 486.8399290804386,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.1879",
+    "points": 1201,
+    "smallest_radius_mm": 0.6506045845221391,
+    "smallest_at": {
+     "point": [
+      -576.6165,
+      56.681,
+      -81.7108
+     ],
+     "xi": 0.08155682208552957,
+     "t_att_mm": 5.980264600032059,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 576.6164503744294
+    },
+    "smallest_plane_curve_radius_mm": 0.36393044505932254,
+    "worst_ratio": 1.6265114613053477,
+    "worst_at": {
+     "point": [
+      -576.6165,
+      56.681,
+      -81.7108
+     ],
+     "radius_mm": 0.6506045845221391,
+     "xi": 0.08155682208552957,
+     "t_att_mm": 5.980264600032059,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.9692511526334903,
+    "lip_point": [
+     -576.5752,
+     56.4297,
+     -81.7124
+    ],
+    "lip_xi": 0.08167245018034552,
+    "lip_t_att_mm": 5.983583382873212,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 485.36523556219396,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.2277",
+    "points": 1201,
+    "smallest_radius_mm": 0.5820808450050429,
+    "smallest_at": {
+     "point": [
+      -582.1978,
+      58.0414,
+      -85.657
+     ],
+     "xi": 0.11849013262927835,
+     "t_att_mm": 6.839948838362092,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 582.1977728403823
+    },
+    "smallest_plane_curve_radius_mm": 0.36404120221916814,
+    "worst_ratio": 1.4552021125126071,
+    "worst_at": {
+     "point": [
+      -582.1978,
+      58.0414,
+      -85.657
+     ],
+     "radius_mm": 0.5820808450050429,
+     "xi": 0.11849013262927835,
+     "t_att_mm": 6.839948838362092,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.7796921456695495,
+    "lip_point": [
+     -582.1772,
+     57.8426,
+     -85.6575
+    ],
+    "lip_xi": 0.11854305467726813,
+    "lip_t_att_mm": 6.840936510951213,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 535.6467278180737,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.2304",
+    "points": 1201,
+    "smallest_radius_mm": 0.5783031286414265,
+    "smallest_at": {
+     "point": [
+      -582.5555,
+      58.1287,
+      -85.9398
+     ],
+     "xi": 0.12127034359370169,
+     "t_att_mm": 6.8909739732658855,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 582.5555356985305
+    },
+    "smallest_plane_curve_radius_mm": 0.36432759023729033,
+    "worst_ratio": 1.4457578216035663,
+    "worst_at": {
+     "point": [
+      -582.5555,
+      58.1287,
+      -85.9398
+     ],
+     "radius_mm": 0.5783031286414265,
+     "xi": 0.12127034359370169,
+     "t_att_mm": 6.8909739732658855,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.7658406456669198,
+    "lip_point": [
+     -582.5366,
+     57.9355,
+     -85.9402
+    ],
+    "lip_xi": 0.12131868994618036,
+    "lip_t_att_mm": 6.891845890693658,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 577.5186432469774,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.2730",
+    "points": 1201,
+    "smallest_radius_mm": 0.5390811127186576,
+    "smallest_at": {
+     "point": [
+      -587.6298,
+      59.3773,
+      -90.4607
+     ],
+     "xi": 0.16781608867849176,
+     "t_att_mm": 7.540533260914371,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 587.6297942946851
+    },
+    "smallest_plane_curve_radius_mm": 0.3782323349708931,
+    "worst_ratio": 1.3477027817966438,
+    "worst_at": {
+     "point": [
+      -587.6298,
+      59.3773,
+      -90.4607
+     ],
+     "radius_mm": 0.5390811127186576,
+     "xi": 0.16781608867849176,
+     "t_att_mm": 7.540533260914371,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6580596424676398,
+    "lip_point": [
+     -587.622,
+     59.2256,
+     -90.4607
+    ],
+    "lip_xi": 0.16783355410495826,
+    "lip_t_att_mm": 7.540715331898622,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1934.6111136547486,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.2759",
+    "points": 1201,
+    "smallest_radius_mm": 0.5380413963582038,
+    "smallest_at": {
+     "point": [
+      -587.946,
+      59.4551,
+      -90.78
+     ],
+     "xi": 0.17124017526100557,
+     "t_att_mm": 7.575479389734402,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 587.9460447769094
+    },
+    "smallest_plane_curve_radius_mm": 0.38014616464914025,
+    "worst_ratio": 1.3451034908955095,
+    "worst_at": {
+     "point": [
+      -587.946,
+      59.4551,
+      -90.78
+     ],
+     "radius_mm": 0.5380413963582038,
+     "xi": 0.17124017526100557,
+     "t_att_mm": 7.575479389734402,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6508414389595812,
+    "lip_point": [
+     -587.9392,
+     59.3081,
+     -90.78
+    ],
+    "lip_xi": 0.1712553579834729,
+    "lip_t_att_mm": 7.575631061464544,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1902.3714100268598,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.3208",
+    "points": 1201,
+    "smallest_radius_mm": 0.5536350004314388,
+    "smallest_at": {
+     "point": [
+      -592.2863,
+      60.5585,
+      -95.8102
+     ],
+     "xi": 0.22726098146054854,
+     "t_att_mm": 7.958646542677758,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 592.2863443098757
+    },
+    "smallest_plane_curve_radius_mm": 0.4320741073779103,
+    "worst_ratio": 1.384087501078597,
+    "worst_at": {
+     "point": [
+      -592.2863,
+      60.5585,
+      -95.8102
+     ],
+     "radius_mm": 0.5536350004314388,
+     "xi": 0.22726098146054854,
+     "t_att_mm": 7.958646542677758,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6324983398829935,
+    "lip_point": [
+     -592.2895,
+     60.4075,
+     -95.8103
+    ],
+    "lip_xi": 0.22725511385798688,
+    "lip_t_att_mm": 7.958622685733319,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 802.0510894698672,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.3239",
+    "points": 1201,
+    "smallest_radius_mm": 0.5565426512780756,
+    "smallest_at": {
+     "point": [
+      -592.5473,
+      60.6226,
+      -96.1605
+     ],
+     "xi": 0.2312940027659986,
+     "t_att_mm": 7.974298842068514,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 592.5473183511446
+    },
+    "smallest_plane_curve_radius_mm": 0.43717628982808265,
+    "worst_ratio": 1.3913566281951888,
+    "worst_at": {
+     "point": [
+      -592.5473,
+      60.6226,
+      -96.1605
+     ],
+     "radius_mm": 0.5565426512780756,
+     "xi": 0.2312940027659986,
+     "t_att_mm": 7.974298842068514,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6319743441404473,
+    "lip_point": [
+     -592.5509,
+     60.4751,
+     -96.1605
+    ],
+    "lip_xi": 0.23128747394934793,
+    "lip_t_att_mm": 7.974274671267629,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 785.5470081828568,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.3706",
+    "points": 1201,
+    "smallest_radius_mm": 0.6068199218705609,
+    "smallest_at": {
+     "point": [
+      -595.9725,
+      61.4668,
+      -101.6006
+     ],
+     "xi": 0.2958581836425254,
+     "t_att_mm": 8.056588166442406,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 595.9724760209336
+    },
+    "smallest_plane_curve_radius_mm": 0.5219025610777693,
+    "worst_ratio": 1.517049804676402,
+    "worst_at": {
+     "point": [
+      -595.9725,
+      61.4668,
+      -101.6006
+     ],
+     "radius_mm": 0.6068199218705609,
+     "xi": 0.2958581836425254,
+     "t_att_mm": 8.056588166442406,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6656642664445576,
+    "lip_point": [
+     -595.9793,
+     61.3327,
+     -101.6008
+    ],
+    "lip_xi": 0.2958486806691687,
+    "lip_t_att_mm": 8.056596873004441,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 695.72689843438,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.3738",
+    "points": 1201,
+    "smallest_radius_mm": 0.6098056140058955,
+    "smallest_at": {
+     "point": [
+      -596.1667,
+      61.5134,
+      -101.9741
+     ],
+     "xi": 0.30041326628441245,
+     "t_att_mm": 8.051811663578587,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 596.1666679780977
+    },
+    "smallest_plane_curve_radius_mm": 0.5273813073797956,
+    "worst_ratio": 1.5245140350147386,
+    "worst_at": {
+     "point": [
+      -596.1667,
+      61.5134,
+      -101.9741
+     ],
+     "radius_mm": 0.6098056140058955,
+     "xi": 0.30041326628441245,
+     "t_att_mm": 8.051811663578587,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6689968935860663,
+    "lip_point": [
+     -596.1735,
+     61.3791,
+     -101.9744
+    ],
+    "lip_xi": 0.3004040580656343,
+    "lip_t_att_mm": 8.051822522135307,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 695.8298535796196,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.4218",
+    "points": 1201,
+    "smallest_radius_mm": 0.6403190445748763,
+    "smallest_at": {
+     "point": [
+      -598.5198,
+      62.0867,
+      -107.6949
+     ],
+     "xi": 0.3718447412241461,
+     "t_att_mm": 7.831118091102264,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 598.5198164277413
+    },
+    "smallest_plane_curve_radius_mm": 0.5959911446092346,
+    "worst_ratio": 1.6007976114371907,
+    "worst_at": {
+     "point": [
+      -598.5198,
+      62.0867,
+      -107.6949
+     ],
+     "radius_mm": 0.6403190445748763,
+     "xi": 0.3718447412241461,
+     "t_att_mm": 7.831118091102264,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6876114217130626,
+    "lip_point": [
+     -598.5315,
+     61.9495,
+     -107.6957
+    ],
+    "lip_xi": 0.371834594551296,
+    "lip_t_att_mm": 7.831167091781512,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 701.1248047928468,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.4250",
+    "points": 1201,
+    "smallest_radius_mm": 0.6412500523701928,
+    "smallest_at": {
+     "point": [
+      -598.638,
+      62.1165,
+      -108.0823
+     ],
+     "xi": 0.3767856494481152,
+     "t_att_mm": 7.806702583093264,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 598.6380429452829
+    },
+    "smallest_plane_curve_radius_mm": 0.5993581115922445,
+    "worst_ratio": 1.603125130925482,
+    "worst_at": {
+     "point": [
+      -598.638,
+      62.1165,
+      -108.0823
+     ],
+     "radius_mm": 0.6412500523701928,
+     "xi": 0.3767856494481152,
+     "t_att_mm": 7.806702583093264,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6887827523232777,
+    "lip_point": [
+     -598.6504,
+     61.9757,
+     -108.0831
+    ],
+    "lip_xi": 0.37677532951210085,
+    "lip_t_att_mm": 7.806754721704319,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 702.2609031529662,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.4738",
+    "points": 1201,
+    "smallest_radius_mm": 0.6363173870430766,
+    "smallest_at": {
+     "point": [
+      -599.8227,
+      62.3539,
+      -113.9334
+     ],
+     "xi": 0.45271465728700416,
+     "t_att_mm": 7.305641581779081,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 599.8226808326658
+    },
+    "smallest_plane_curve_radius_mm": 0.6244408175235602,
+    "worst_ratio": 1.5907934676076914,
+    "worst_at": {
+     "point": [
+      -599.8227,
+      62.3539,
+      -113.9334
+     ],
+     "radius_mm": 0.6363173870430766,
+     "xi": 0.45271465728700416,
+     "t_att_mm": 7.305641581779081,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6773636969674532,
+    "lip_point": [
+     -599.8356,
+     62.2217,
+     -113.9346
+    ],
+    "lip_xi": 0.45271056438037693,
+    "lip_t_att_mm": 7.305674361620519,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 727.7863142624896,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.4771",
+    "points": 1201,
+    "smallest_radius_mm": 0.6348948734691251,
+    "smallest_at": {
+     "point": [
+      -599.8612,
+      62.3586,
+      -114.3242
+     ],
+     "xi": 0.45786443857656545,
+     "t_att_mm": 7.263930694867073,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 599.8611652296858
+    },
+    "smallest_plane_curve_radius_mm": 0.6244440726845998,
+    "worst_ratio": 1.5872371836728127,
+    "worst_at": {
+     "point": [
+      -599.8612,
+      62.3586,
+      -114.3242
+     ],
+     "radius_mm": 0.6348948734691251,
+     "xi": 0.45786443857656545,
+     "t_att_mm": 7.263930694867073,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6729928639541154,
+    "lip_point": [
+     -599.8741,
+     62.2298,
+     -114.3253
+    ],
+    "lip_xi": 0.45786080210266444,
+    "lip_t_att_mm": 7.263960464134007,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 730.1207708556832,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.5262",
+    "points": 1201,
+    "smallest_radius_mm": 0.602300531105916,
+    "smallest_at": {
+     "point": [
+      -599.823,
+      62.2659,
+      -120.1428
+     ],
+     "xi": 0.5354660340043845,
+     "t_att_mm": 6.53638768966641,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 599.8229905588114
+    },
+    "smallest_plane_curve_radius_mm": 0.6023005063773768,
+    "worst_ratio": 1.5057513277647898,
+    "worst_at": {
+     "point": [
+      -599.823,
+      62.2659,
+      -120.1428
+     ],
+     "radius_mm": 0.602300531105916,
+     "xi": 0.5354660340043845,
+     "t_att_mm": 6.53638768966641,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6383369481773139,
+    "lip_point": [
+     -599.8357,
+     62.1408,
+     -120.1443
+    ],
+    "lip_xi": 0.5354693083372974,
+    "lip_t_att_mm": 6.536353278247544,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 774.1255287340723,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.5294",
+    "points": 1201,
+    "smallest_radius_mm": 0.5996463921473455,
+    "smallest_at": {
+     "point": [
+      -599.7793,
+      62.2494,
+      -120.5259
+     ],
+     "xi": 0.5406272035632479,
+     "t_att_mm": 6.481802558349518,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 599.7793407581619
+    },
+    "smallest_plane_curve_radius_mm": 0.5996032094087023,
+    "worst_ratio": 1.4991159803683636,
+    "worst_at": {
+     "point": [
+      -599.7793,
+      62.2494,
+      -120.5259
+     ],
+     "radius_mm": 0.5996463921473455,
+     "xi": 0.5406272035632479,
+     "t_att_mm": 6.481802558349518,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6354221028116088,
+    "lip_point": [
+     -599.7921,
+     62.1243,
+     -120.5274
+    ],
+    "lip_xi": 0.5406309483651157,
+    "lip_t_att_mm": 6.481762711873708,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 777.8554346789018,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.5782",
+    "points": 1201,
+    "smallest_radius_mm": 0.5586752974560518,
+    "smallest_at": {
+     "point": [
+      -598.5211,
+      61.8344,
+      -126.1491
+     ],
+     "xi": 0.6168920666795537,
+     "t_att_mm": 5.598420097628677,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 598.5210708121008
+    },
+    "smallest_plane_curve_radius_mm": 0.5481484084307773,
+    "worst_ratio": 1.3966882436401296,
+    "worst_at": {
+     "point": [
+      -598.5211,
+      61.8344,
+      -126.1491
+     ],
+     "radius_mm": 0.5586752974560518,
+     "xi": 0.6168920666795537,
+     "t_att_mm": 5.598420097628677,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.596981371226758,
+    "lip_point": [
+     -598.5316,
+     61.7147,
+     -126.1506
+    ],
+    "lip_xi": 0.6169008300215506,
+    "lip_t_att_mm": 5.598310973812252,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 843.688504490269,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.5814",
+    "points": 1201,
+    "smallest_radius_mm": 0.5560896796613642,
+    "smallest_at": {
+     "point": [
+      -598.3972,
+      61.7979,
+      -126.5139
+     ],
+     "xi": 0.6218650590209363,
+     "t_att_mm": 5.536226272810252,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 598.3972253225978
+    },
+    "smallest_plane_curve_radius_mm": 0.5443077417221364,
+    "worst_ratio": 1.3902241991534106,
+    "worst_at": {
+     "point": [
+      -598.3972,
+      61.7979,
+      -126.5139
+     ],
+     "radius_mm": 0.5560896796613642,
+     "xi": 0.6218650590209363,
+     "t_att_mm": 5.536226272810252,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.594042353241278,
+    "lip_point": [
+     -598.4078,
+     61.6783,
+     -126.5155
+    ],
+    "lip_xi": 0.6218742410726518,
+    "lip_t_att_mm": 5.536110916108615,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 848.9089470836603,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.6294",
+    "points": 1201,
+    "smallest_radius_mm": 0.5245053824467584,
+    "smallest_at": {
+     "point": [
+      -595.9727,
+      61.0959,
+      -131.7892
+     ],
+     "xi": 0.6939200979995707,
+     "t_att_mm": 4.578592283338987,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 595.9726860339175
+    },
+    "smallest_plane_curve_radius_mm": 0.48740062930260597,
+    "worst_ratio": 1.3112634561168959,
+    "worst_at": {
+     "point": [
+      -595.9727,
+      61.0959,
+      -131.7892
+     ],
+     "radius_mm": 0.5245053824467584,
+     "xi": 0.6939200979995707,
+     "t_att_mm": 4.578592283338987,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.5663638601712394,
+    "lip_point": [
+     -595.9801,
+     60.9789,
+     -131.7905
+    ],
+    "lip_xi": 0.6939303512896084,
+    "lip_t_att_mm": 4.578448870359108,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 937.6759197485045,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.6326",
+    "points": 1201,
+    "smallest_radius_mm": 0.522976216691549,
+    "smallest_at": {
+     "point": [
+      -595.7741,
+      61.0415,
+      -132.1262
+     ],
+     "xi": 0.6985248688909312,
+     "t_att_mm": 4.513979500649387,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 595.7740790548714
+    },
+    "smallest_plane_curve_radius_mm": 0.48381284528157803,
+    "worst_ratio": 1.3074405417288726,
+    "worst_at": {
+     "point": [
+      -595.7741,
+      61.0415,
+      -132.1262
+     ],
+     "radius_mm": 0.522976216691549,
+     "xi": 0.6985248688909312,
+     "t_att_mm": 4.513979500649387,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.566866381785739,
+    "lip_point": [
+     -595.7813,
+     60.9214,
+     -132.1274
+    ],
+    "lip_xi": 0.6985351654751816,
+    "lip_t_att_mm": 4.513834568228562,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 943.4611051947339,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.6792",
+    "points": 1201,
+    "smallest_radius_mm": 0.5101898221063306,
+    "smallest_at": {
+     "point": [
+      -592.287,
+      60.1009,
+      -136.9224
+     ],
+     "xi": 0.7639240297638645,
+     "t_att_mm": 3.5560718137201723,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 592.2870099640614
+    },
+    "smallest_plane_curve_radius_mm": 0.43631473373280033,
+    "worst_ratio": 1.2754745552658264,
+    "worst_at": {
+     "point": [
+      -592.287,
+      60.1009,
+      -136.9224
+     ],
+     "radius_mm": 0.5101898221063306,
+     "xi": 0.7639240297638645,
+     "t_att_mm": 3.5560718137201723,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.5688042202476653,
+    "lip_point": [
+     -592.2915,
+     59.9672,
+     -136.9233
+    ],
+    "lip_xi": 0.763932576845507,
+    "lip_t_att_mm": 3.5559417099907193,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1063.8610543522198,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.6822",
+    "points": 1201,
+    "smallest_radius_mm": 0.5100219147315768,
+    "smallest_at": {
+     "point": [
+      -592.0223,
+      60.0312,
+      -137.2237
+     ],
+     "xi": 0.7680176276626017,
+     "t_att_mm": 3.493624247805817,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 592.0223179161919
+    },
+    "smallest_plane_curve_radius_mm": 0.43356784021301115,
+    "worst_ratio": 1.275054786828942,
+    "worst_at": {
+     "point": [
+      -592.0223,
+      60.0312,
+      -137.2237
+     ],
+     "radius_mm": 0.5100219147315768,
+     "xi": 0.7680176276626017,
+     "t_att_mm": 3.493624247805817,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.5709011813099116,
+    "lip_point": [
+     -592.0265,
+     59.8945,
+     -137.2245
+    ],
+    "lip_xi": 0.7680256344658002,
+    "lip_t_att_mm": 3.493501851104774,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1076.4107192754866,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.7270",
+    "points": 1201,
+    "smallest_radius_mm": 0.5144093984791848,
+    "smallest_at": {
+     "point": [
+      -587.6259,
+      58.889,
+      -141.4408
+     ],
+     "xi": 0.82497104625731,
+     "t_att_mm": 2.591026293942921,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 587.6259178464812
+    },
+    "smallest_plane_curve_radius_mm": 0.39701465816497883,
+    "worst_ratio": 1.2860234961979617,
+    "worst_at": {
+     "point": [
+      -587.6259,
+      58.889,
+      -141.4408
+     ],
+     "radius_mm": 0.5144093984791848,
+     "xi": 0.82497104625731,
+     "t_att_mm": 2.591026293942921,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.5988283082528801,
+    "lip_point": [
+     -587.6258,
+     58.7266,
+     -141.4407
+    ],
+    "lip_xi": 0.8249707550992467,
+    "lip_t_att_mm": 2.5910310600302187,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1270.4325283294024,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.7299",
+    "points": 1201,
+    "smallest_radius_mm": 0.5151464552314144,
+    "smallest_at": {
+     "point": [
+      -587.3073,
+      58.804,
+      -141.7011
+     ],
+     "xi": 0.8284606956134067,
+     "t_att_mm": 2.5338013477368295,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 587.3073176454774
+    },
+    "smallest_plane_curve_radius_mm": 0.39489258236191777,
+    "worst_ratio": 1.2878661380785361,
+    "worst_at": {
+     "point": [
+      -587.3073,
+      58.804,
+      -141.7011
+     ],
+     "radius_mm": 0.5151464552314144,
+     "xi": 0.8284606956134067,
+     "t_att_mm": 2.5338013477368295,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.5992680250034607,
+    "lip_point": [
+     -587.3066,
+     58.645,
+     -141.7009
+    ],
+    "lip_xi": 0.8284589269859342,
+    "lip_t_att_mm": 2.5338304016754045,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1303.7756438502067,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.7723",
+    "points": 1201,
+    "smallest_radius_mm": 0.5306472917501067,
+    "smallest_at": {
+     "point": [
+      -582.1943,
+      57.5213,
+      -145.2758
+     ],
+     "xi": 0.8759510198062543,
+     "t_att_mm": 1.7423844705231326,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 582.1942906251085
+    },
+    "smallest_plane_curve_radius_mm": 0.3659587572575617,
+    "worst_ratio": 1.3266182293752666,
+    "worst_at": {
+     "point": [
+      -582.1943,
+      57.5213,
+      -145.2758
+     ],
+     "radius_mm": 0.5306472917501067,
+     "xi": 0.8759510198062543,
+     "t_att_mm": 1.7423844705231326,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6439567080968714,
+    "lip_point": [
+     -582.1869,
+     57.3316,
+     -145.274
+    ],
+    "lip_xi": 0.8759305544137738,
+    "lip_t_att_mm": 1.7427271711219077,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1686.4640592641406,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.7751",
+    "points": 1201,
+    "smallest_radius_mm": 0.5316610286956286,
+    "smallest_at": {
+     "point": [
+      -581.8345,
+      57.4326,
+      -145.492
+     ],
+     "xi": 0.87879237244858,
+     "t_att_mm": 1.6948338624428987,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 581.8345001978133
+    },
+    "smallest_plane_curve_radius_mm": 0.3640212466672668,
+    "worst_ratio": 1.3291525717390713,
+    "worst_at": {
+     "point": [
+      -581.8345,
+      57.4326,
+      -145.492
+     ],
+     "radius_mm": 0.5316610286956286,
+     "xi": 0.87879237244858,
+     "t_att_mm": 1.6948338624428987,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6480607346997099,
+    "lip_point": [
+     -581.8263,
+     57.2401,
+     -145.49
+    ],
+    "lip_xi": 0.8787693167051698,
+    "lip_t_att_mm": 1.695219442589897,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1668.8531477483352,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.8147",
+    "points": 1201,
+    "smallest_radius_mm": 0.5109763623141378,
+    "smallest_at": {
+     "point": [
+      -576.2291,
+      56.0809,
+      -148.4013
+     ],
+     "xi": 0.9165829808076911,
+     "t_att_mm": 1.0712952707055874,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 576.2290850146045
+    },
+    "smallest_plane_curve_radius_mm": 0.31409864446046526,
+    "worst_ratio": 1.2774409057853444,
+    "worst_at": {
+     "point": [
+      -576.2291,
+      56.0809,
+      -148.4013
+     ],
+     "radius_mm": 0.5109763623141378,
+     "xi": 0.9165829808076911,
+     "t_att_mm": 1.0712952707055874,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6455115464451996,
+    "lip_point": [
+     -576.2132,
+     55.8748,
+     -148.3971
+    ],
+    "lip_xi": 0.9165332684519264,
+    "lip_t_att_mm": 1.0720969295344713,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 574.661,
+      "xi": 0.91169,
+      "side": "upper",
+      "y": 56.3273,
+      "to": "convex"
+     },
+     {
+      "span_mm": 575.067,
+      "xi": 0.91295,
+      "side": "upper",
+      "y": 56.3904,
+      "to": "concave"
+     },
+     {
+      "span_mm": 575.108,
+      "xi": 0.91308,
+      "side": "upper",
+      "y": 56.3967,
+      "to": "convex"
+     },
+     {
+      "span_mm": 574.46,
+      "xi": 0.91107,
+      "side": "lower",
+      "y": 55.1283,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 72.91839596866224,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.8172",
+    "points": 1201,
+    "smallest_radius_mm": 0.5068384850526872,
+    "smallest_at": {
+     "point": [
+      -575.8445,
+      55.9898,
+      -148.5732
+     ],
+     "xi": 0.9187862620436631,
+     "t_att_mm": 1.0358450461359414,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 575.8444990071814
+    },
+    "smallest_plane_curve_radius_mm": 0.30935636423404306,
+    "worst_ratio": 1.267096212631718,
+    "worst_at": {
+     "point": [
+      -575.8445,
+      55.9898,
+      -148.5732
+     ],
+     "radius_mm": 0.5068384850526872,
+     "xi": 0.9187862620436631,
+     "t_att_mm": 1.0358450461359414,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6402413399962431,
+    "lip_point": [
+     -575.8287,
+     55.7859,
+     -148.5691
+    ],
+    "lip_xi": 0.9187365751241701,
+    "lip_t_att_mm": 1.0366426569504357,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 574.276,
+      "xi": 0.91386,
+      "side": "upper",
+      "y": 56.2233,
+      "to": "convex"
+     },
+     {
+      "span_mm": 574.708,
+      "xi": 0.91522,
+      "side": "upper",
+      "y": 56.2924,
+      "to": "concave"
+     },
+     {
+      "span_mm": 574.748,
+      "xi": 0.91534,
+      "side": "upper",
+      "y": 56.2986,
+      "to": "convex"
+     },
+     {
+      "span_mm": 574.153,
+      "xi": 0.91348,
+      "side": "lower",
+      "y": 55.0669,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 53.418322405073674,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.8536",
+    "points": 1201,
+    "smallest_radius_mm": 0.29819467127128035,
+    "smallest_at": {
+     "point": [
+      -569.9954,
+      54.5996,
+      -151.0397
+     ],
+     "xi": 0.9498729297300178,
+     "t_att_mm": 0.5584531697128695,
+     "required_mm": 0.27922658485643476,
+     "side": "upper",
+     "span_mm": 569.9954094919324
+    },
+    "smallest_plane_curve_radius_mm": 0.18206251654393277,
+    "worst_ratio": 1.0679308040264077,
+    "worst_at": {
+     "point": [
+      -569.9954,
+      54.5996,
+      -151.0397
+     ],
+     "radius_mm": 0.29819467127128035,
+     "xi": 0.9498729297300178,
+     "t_att_mm": 0.5584531697128695,
+     "required_mm": 0.27922658485643476
+    },
+    "lip_radius_mm": 0.36979356920785045,
+    "lip_point": [
+     -569.9868,
+     54.4833,
+     -151.0372
+    ],
+    "lip_xi": 0.9498427997066473,
+    "lip_t_att_mm": 0.5588888665874004,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 569.153,
+      "xi": 0.94692,
+      "side": "upper",
+      "y": 54.735,
+      "to": "convex"
+     },
+     {
+      "span_mm": 569.409,
+      "xi": 0.94781,
+      "side": "upper",
+      "y": 54.7789,
+      "to": "concave"
+     },
+     {
+      "span_mm": 569.431,
+      "xi": 0.94789,
+      "side": "upper",
+      "y": 54.7826,
+      "to": "convex"
+     },
+     {
+      "span_mm": 569.142,
+      "xi": 0.94688,
+      "side": "lower",
+      "y": 54.1074,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 13.836115404901326,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.8559",
+    "points": 1201,
+    "smallest_radius_mm": 0.28259872270220343,
+    "smallest_at": {
+     "point": [
+      -569.6029,
+      54.507,
+      -151.2023
+     ],
+     "xi": 0.951886364268622,
+     "t_att_mm": 0.5294826544666328,
+     "required_mm": 0.2647413272333164,
+     "side": "upper",
+     "span_mm": 569.6029099634816
+    },
+    "smallest_plane_curve_radius_mm": 0.1725456383521159,
+    "worst_ratio": 1.0674522397220942,
+    "worst_at": {
+     "point": [
+      -569.6029,
+      54.507,
+      -151.2023
+     ],
+     "radius_mm": 0.28259872270220343,
+     "xi": 0.951886364268622,
+     "t_att_mm": 0.5294826544666328,
+     "required_mm": 0.2647413272333164
+    },
+    "lip_radius_mm": 0.35076688822187185,
+    "lip_point": [
+     -569.5947,
+     54.3961,
+     -151.1999
+    ],
+    "lip_xi": 0.951857205618094,
+    "lip_t_att_mm": 0.5299000269652345,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 568.8,
+      "xi": 0.94904,
+      "side": "upper",
+      "y": 54.6346,
+      "to": "convex"
+     },
+     {
+      "span_mm": 569.075,
+      "xi": 0.95002,
+      "side": "lower",
+      "y": 54.0821,
+      "to": "concave"
+     },
+     {
+      "span_mm": 569.052,
+      "xi": 0.94993,
+      "side": "lower",
+      "y": 54.0786,
+      "to": "convex"
+     },
+     {
+      "span_mm": 568.789,
+      "xi": 0.949,
+      "side": "lower",
+      "y": 54.0397,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 13.158586358867431,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.8886",
+    "points": 1201,
+    "smallest_radius_mm": 0.10896500874949973,
+    "smallest_at": {
+     "point": [
+      -563.7617,
+      53.1608,
+      -153.351
+     ],
+     "xi": 0.978035373211773,
+     "t_att_mm": 0.19047051553498057,
+     "required_mm": 0.09523525776749028,
+     "side": "upper",
+     "span_mm": 563.761685020835
+    },
+    "smallest_plane_curve_radius_mm": 0.06142413483512877,
+    "worst_ratio": 1.1441666805326405,
+    "worst_at": {
+     "point": [
+      -563.7617,
+      53.1608,
+      -153.351
+     ],
+     "radius_mm": 0.10896500874949973,
+     "xi": 0.978035373211773,
+     "t_att_mm": 0.19047051553498057,
+     "required_mm": 0.09523525776749028
+    },
+    "lip_radius_mm": 0.14161045707211783,
+    "lip_point": [
+     -563.7561,
+     53.119,
+     -153.3491
+    ],
+    "lip_xi": 0.9780126550489384,
+    "lip_t_att_mm": 0.19072680355064575,
+    "bending_reversals": 6,
+    "reversal_locations": [
+     {
+      "span_mm": 563.063,
+      "xi": 0.97521,
+      "side": "upper",
+      "y": 53.1521,
+      "to": "convex"
+     },
+     {
+      "span_mm": 563.106,
+      "xi": 0.97538,
+      "side": "upper",
+      "y": 53.1577,
+      "to": "concave"
+     },
+     {
+      "span_mm": 563.42,
+      "xi": 0.97665,
+      "side": "upper",
+      "y": 53.2073,
+      "to": "convex"
+     },
+     {
+      "span_mm": 563.423,
+      "xi": 0.97667,
+      "side": "lower",
+      "y": 52.987,
+      "to": "concave"
+     },
+     {
+      "span_mm": 563.121,
+      "xi": 0.97545,
+      "side": "lower",
+      "y": 52.9427,
+      "to": "convex"
+     },
+     {
+      "span_mm": 563.079,
+      "xi": 0.97527,
+      "side": "lower",
+      "y": 52.9351,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 3.855441842400374,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.8906",
+    "points": 1201,
+    "smallest_radius_mm": 0.10052738431608324,
+    "smallest_at": {
+     "point": [
+      -563.3783,
+      53.0761,
+      -153.4653
+     ],
+     "xi": 0.9793975163872806,
+     "t_att_mm": 0.17524962735968133,
+     "required_mm": 0.08762481367984067,
+     "side": "upper",
+     "span_mm": 563.3782759243394
+    },
+    "smallest_plane_curve_radius_mm": 0.05608743842977324,
+    "worst_ratio": 1.1472408358788484,
+    "worst_at": {
+     "point": [
+      -563.3782,
+      53.0767,
+      -153.4652
+     ],
+     "radius_mm": 0.10052966969607388,
+     "xi": 0.979397058595864,
+     "t_att_mm": 0.175254692043912,
+     "required_mm": 0.087627346021956
+    },
+    "lip_radius_mm": 0.13135738667813696,
+    "lip_point": [
+     -563.3729,
+     53.0378,
+     -153.4635
+    ],
+    "lip_xi": 0.979375454150708,
+    "lip_t_att_mm": 0.17549374942055904,
+    "bending_reversals": 6,
+    "reversal_locations": [
+     {
+      "span_mm": 562.73,
+      "xi": 0.97676,
+      "side": "upper",
+      "y": 53.068,
+      "to": "convex"
+     },
+     {
+      "span_mm": 562.763,
+      "xi": 0.97689,
+      "side": "upper",
+      "y": 53.0722,
+      "to": "concave"
+     },
+     {
+      "span_mm": 563.059,
+      "xi": 0.97809,
+      "side": "upper",
+      "y": 53.1189,
+      "to": "convex"
+     },
+     {
+      "span_mm": 563.062,
+      "xi": 0.97811,
+      "side": "lower",
+      "y": 52.916,
+      "to": "concave"
+     },
+     {
+      "span_mm": 562.777,
+      "xi": 0.97695,
+      "side": "lower",
+      "y": 52.8742,
+      "to": "convex"
+     },
+     {
+      "span_mm": 562.728,
+      "xi": 0.97675,
+      "side": "lower",
+      "y": 52.8656,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 3.604759637303684,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.9193",
+    "points": 1201,
+    "smallest_radius_mm": 0.02369320920817944,
+    "smallest_at": {
+     "point": [
+      -557.7977,
+      51.9109,
+      -154.6753
+     ],
+     "xi": 0.993467687229803,
+     "t_att_mm": 0.04085412658281346,
+     "required_mm": 0.02042706329140673,
+     "side": "upper",
+     "span_mm": 557.7977458777094
+    },
+    "smallest_plane_curve_radius_mm": 0.010950065136255174,
+    "worst_ratio": 1.1598930727427037,
+    "worst_at": {
+     "point": [
+      -557.7977,
+      51.9109,
+      -154.6753
+     ],
+     "radius_mm": 0.02369320920817944,
+     "xi": 0.993467687229803,
+     "t_att_mm": 0.04085412658281346,
+     "required_mm": 0.02042706329140673
+    },
+    "lip_radius_mm": 0.036964659470562745,
+    "lip_point": [
+     -557.7953,
+     51.9008,
+     -154.6744
+    ],
+    "lip_xi": 0.993456957212334,
+    "lip_t_att_mm": 0.04093514909321006,
+    "bending_reversals": 6,
+    "reversal_locations": [
+     {
+      "span_mm": 557.61,
+      "xi": 0.99264,
+      "side": "upper",
+      "y": 51.9041,
+      "to": "convex"
+     },
+     {
+      "span_mm": 557.624,
+      "xi": 0.9927,
+      "side": "upper",
+      "y": 51.9059,
+      "to": "concave"
+     },
+     {
+      "span_mm": 557.709,
+      "xi": 0.99308,
+      "side": "upper",
+      "y": 51.9193,
+      "to": "convex"
+     },
+     {
+      "span_mm": 557.71,
+      "xi": 0.99308,
+      "side": "lower",
+      "y": 51.8723,
+      "to": "concave"
+     },
+     {
+      "span_mm": 557.627,
+      "xi": 0.99271,
+      "side": "lower",
+      "y": 51.8604,
+      "to": "convex"
+     },
+     {
+      "span_mm": 557.614,
+      "xi": 0.99266,
+      "side": "lower",
+      "y": 51.8582,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 1.1954725989458628,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.9211",
+    "points": 1201,
+    "smallest_radius_mm": 0.021276358214380828,
+    "smallest_at": {
+     "point": [
+      -557.4401,
+      51.8396,
+      -154.7256
+     ],
+     "xi": 0.9940288625619356,
+     "t_att_mm": 0.03667472739617199,
+     "required_mm": 0.018337363698085994,
+     "side": "upper",
+     "span_mm": 557.4400895393474
+    },
+    "smallest_plane_curve_radius_mm": 0.009707173157409243,
+    "worst_ratio": 1.1602735575671435,
+    "worst_at": {
+     "point": [
+      -557.4401,
+      51.8396,
+      -154.7256
+     ],
+     "radius_mm": 0.021276358214380828,
+     "xi": 0.9940288625619356,
+     "t_att_mm": 0.03667472739617199,
+     "required_mm": 0.018337363698085994
+    },
+    "lip_radius_mm": 0.03361009210886504,
+    "lip_point": [
+     -557.4378,
+     51.8306,
+     -154.7248
+    ],
+    "lip_xi": 0.9940188289352104,
+    "lip_t_att_mm": 0.036748440458352176,
+    "bending_reversals": 6,
+    "reversal_locations": [
+     {
+      "span_mm": 557.278,
+      "xi": 0.99331,
+      "side": "upper",
+      "y": 51.8344,
+      "to": "convex"
+     },
+     {
+      "span_mm": 557.285,
+      "xi": 0.99334,
+      "side": "upper",
+      "y": 51.8354,
+      "to": "concave"
+     },
+     {
+      "span_mm": 557.359,
+      "xi": 0.99367,
+      "side": "upper",
+      "y": 51.847,
+      "to": "convex"
+     },
+     {
+      "span_mm": 557.36,
+      "xi": 0.99368,
+      "side": "lower",
+      "y": 51.8049,
+      "to": "concave"
+     },
+     {
+      "span_mm": 557.283,
+      "xi": 0.99334,
+      "side": "lower",
+      "y": 51.7939,
+      "to": "convex"
+     },
+     {
+      "span_mm": 557.269,
+      "xi": 0.99327,
+      "side": "lower",
+      "y": 51.7914,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 1.1201578048643803,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.9455",
+    "points": 1201,
+    "smallest_radius_mm": 0.003881935317364711,
+    "smallest_at": {
+     "point": [
+      -552.3664,
+      50.8617,
+      -155.1786
+     ],
+     "xi": 0.9987630777704397,
+     "t_att_mm": 0.006675296072567748,
+     "required_mm": 0.003337648036283874,
+     "side": "upper",
+     "span_mm": 552.3664306607644
+    },
+    "smallest_plane_curve_radius_mm": 0.0015116127949994604,
+    "worst_ratio": 1.1630750981421172,
+    "worst_at": {
+     "point": [
+      -552.3664,
+      50.8617,
+      -155.1786
+     ],
+     "radius_mm": 0.003881935317364711,
+     "xi": 0.9987630777704397,
+     "t_att_mm": 0.006675296072567748,
+     "required_mm": 0.003337648036283874
+    },
+    "lip_radius_mm": 0.00772989146143132,
+    "lip_point": [
+     -552.3658,
+     50.8599,
+     -155.1783
+    ],
+    "lip_xi": 0.9987600514230889,
+    "lip_t_att_mm": 0.006691856492264975,
+    "bending_reversals": 8,
+    "reversal_locations": [
+     {
+      "span_mm": 552.331,
+      "xi": 0.9986,
+      "side": "upper",
+      "y": 50.86,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.333,
+      "xi": 0.99861,
+      "side": "upper",
+      "y": 50.8603,
+      "to": "concave"
+     },
+     {
+      "span_mm": 552.349,
+      "xi": 0.99869,
+      "side": "upper",
+      "y": 50.8628,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.35,
+      "xi": 0.99869,
+      "side": "lower",
+      "y": 50.8552,
+      "to": "concave"
+     },
+     {
+      "span_mm": 552.333,
+      "xi": 0.99861,
+      "side": "lower",
+      "y": 50.8529,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.329,
+      "xi": 0.9986,
+      "side": "lower",
+      "y": 50.8523,
+      "to": "concave"
+     },
+     {
+      "span_mm": 552.324,
+      "xi": 0.99857,
+      "side": "lower",
+      "y": 50.8515,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.32,
+      "xi": 0.99855,
+      "side": "lower",
+      "y": 50.8508,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.27347574966517596,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.9470",
+    "points": 1201,
+    "smallest_radius_mm": 0.0034325179623535614,
+    "smallest_at": {
+     "point": [
+      -552.0503,
+      50.8024,
+      -155.1943
+     ],
+     "xi": 0.9989047590444927,
+     "t_att_mm": 0.005901637838640128,
+     "required_mm": 0.002950818919320064,
+     "side": "upper",
+     "span_mm": 552.050251782027
+    },
+    "smallest_plane_curve_radius_mm": 0.001326459468884755,
+    "worst_ratio": 1.1632424951187759,
+    "worst_at": {
+     "point": [
+      -552.0503,
+      50.8024,
+      -155.1943
+     ],
+     "radius_mm": 0.0034325179623535614,
+     "xi": 0.9989047590444927,
+     "t_att_mm": 0.005901637838640128,
+     "required_mm": 0.002950818919320064
+    },
+    "lip_radius_mm": 0.006931740655603895,
+    "lip_point": [
+     -552.0496,
+     50.8008,
+     -155.1941
+    ],
+    "lip_xi": 0.9989020211168088,
+    "lip_t_att_mm": 0.0059165588220521075,
+    "bending_reversals": 10,
+    "reversal_locations": [
+     {
+      "span_mm": 552.011,
+      "xi": 0.99873,
+      "side": "upper",
+      "y": 50.7998,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.015,
+      "xi": 0.99875,
+      "side": "upper",
+      "y": 50.8003,
+      "to": "concave"
+     },
+     {
+      "span_mm": 552.018,
+      "xi": 0.99876,
+      "side": "upper",
+      "y": 50.8007,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.021,
+      "xi": 0.99877,
+      "side": "upper",
+      "y": 50.8011,
+      "to": "concave"
+     },
+     {
+      "span_mm": 552.035,
+      "xi": 0.99884,
+      "side": "upper",
+      "y": 50.8033,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.035,
+      "xi": 0.99884,
+      "side": "lower",
+      "y": 50.7966,
+      "to": "concave"
+     },
+     {
+      "span_mm": 552.021,
+      "xi": 0.99877,
+      "side": "lower",
+      "y": 50.7946,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.019,
+      "xi": 0.99876,
+      "side": "lower",
+      "y": 50.7943,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.25206231556759573,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.9668",
+    "points": 1201,
+    "smallest_radius_mm": 0.00040232306623289184,
+    "smallest_at": {
+     "point": [
+      -547.7057,
+      49.998,
+      -155.3308
+     ],
+     "xi": 0.9998710263665798,
+     "t_att_mm": 0.0006913808803893594,
+     "required_mm": 0.0003456904401946797,
+     "side": "upper",
+     "span_mm": 547.7056539586503
+    },
+    "smallest_plane_curve_radius_mm": 0.00014456396483471492,
+    "worst_ratio": 1.163824680851223,
+    "worst_at": {
+     "point": [
+      -547.7057,
+      49.998,
+      -155.3308
+     ],
+     "radius_mm": 0.00040232306623289184,
+     "xi": 0.9998710263665798,
+     "t_att_mm": 0.0006913808803893594,
+     "required_mm": 0.0003456904401946797
+    },
+    "lip_radius_mm": 0.000920646167457807,
+    "lip_point": [
+     -547.7056,
+     49.9978,
+     -155.3307
+    ],
+    "lip_xi": 0.9998706457918674,
+    "lip_t_att_mm": 0.000693420423340579,
+    "bending_reversals": 14,
+    "reversal_locations": [
+     {
+      "span_mm": 547.699,
+      "xi": 0.99984,
+      "side": "upper",
+      "y": 49.9974,
+      "to": "convex"
+     },
+     {
+      "span_mm": 547.699,
+      "xi": 0.99984,
+      "side": "upper",
+      "y": 49.9975,
+      "to": "concave"
+     },
+     {
+      "span_mm": 547.7,
+      "xi": 0.99985,
+      "side": "upper",
+      "y": 49.9976,
+      "to": "convex"
+     },
+     {
+      "span_mm": 547.701,
+      "xi": 0.99985,
+      "side": "upper",
+      "y": 49.9977,
+      "to": "concave"
+     },
+     {
+      "span_mm": 547.701,
+      "xi": 0.99985,
+      "side": "upper",
+      "y": 49.9977,
+      "to": "convex"
+     },
+     {
+      "span_mm": 547.702,
+      "xi": 0.99985,
+      "side": "upper",
+      "y": 49.9978,
+      "to": "concave"
+     },
+     {
+      "span_mm": 547.704,
+      "xi": 0.99986,
+      "side": "upper",
+      "y": 49.9981,
+      "to": "convex"
+     },
+     {
+      "span_mm": 547.704,
+      "xi": 0.99986,
+      "side": "lower",
+      "y": 49.9973,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.03260109910646967,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.9680",
+    "points": 1201,
+    "smallest_radius_mm": 0.0003403936962811391,
+    "smallest_at": {
+     "point": [
+      -547.4448,
+      49.9502,
+      -155.3359
+     ],
+     "xi": 0.9998908640992935,
+     "t_att_mm": 0.0005850652961258251,
+     "required_mm": 0.00029253264806291255,
+     "side": "upper",
+     "span_mm": 547.4448049693392
+    },
+    "smallest_plane_curve_radius_mm": 0.00012199073161645556,
+    "worst_ratio": 1.1636092536513514,
+    "worst_at": {
+     "point": [
+      -547.4448,
+      49.9502,
+      -155.3359
+     ],
+     "radius_mm": 0.0003403936962811391,
+     "xi": 0.9998908640992935,
+     "t_att_mm": 0.0005850652961258251,
+     "required_mm": 0.00029253264806291255
+    },
+    "lip_radius_mm": 0.0007897316070773791,
+    "lip_point": [
+     -547.4447,
+     49.9501,
+     -155.3358
+    ],
+    "lip_xi": 0.9998905347159295,
+    "lip_t_att_mm": 0.0005868306015301714,
+    "bending_reversals": 12,
+    "reversal_locations": [
+     {
+      "span_mm": 547.439,
+      "xi": 0.99987,
+      "side": "upper",
+      "y": 49.9497,
+      "to": "convex"
+     },
+     {
+      "span_mm": 547.44,
+      "xi": 0.99987,
+      "side": "upper",
+      "y": 49.9498,
+      "to": "concave"
+     },
+     {
+      "span_mm": 547.44,
+      "xi": 0.99987,
+      "side": "upper",
+      "y": 49.9499,
+      "to": "convex"
+     },
+     {
+      "span_mm": 547.441,
+      "xi": 0.99987,
+      "side": "upper",
+      "y": 49.95,
+      "to": "concave"
+     },
+     {
+      "span_mm": 547.441,
+      "xi": 0.99988,
+      "side": "upper",
+      "y": 49.95,
+      "to": "convex"
+     },
+     {
+      "span_mm": 547.442,
+      "xi": 0.99988,
+      "side": "upper",
+      "y": 49.9501,
+      "to": "concave"
+     },
+     {
+      "span_mm": 547.443,
+      "xi": 0.99988,
+      "side": "upper",
+      "y": 49.9503,
+      "to": "convex"
+     },
+     {
+      "span_mm": 547.443,
+      "xi": 0.99988,
+      "side": "lower",
+      "y": 49.9496,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.028259163224748186,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.9830",
+    "points": 1201,
+    "smallest_radius_mm": 1.6639424715809083e-05,
+    "smallest_at": {
+     "point": [
+      -544.0192,
+      49.3262,
+      -155.3913
+     ],
+     "xi": 0.9999946713073693,
+     "t_att_mm": 2.8576390016645907e-05,
+     "required_mm": 1.4288195008322954e-05,
+     "side": "upper",
+     "span_mm": 544.0192378346994
+    },
+    "smallest_plane_curve_radius_mm": 5.82458600708076e-06,
+    "worst_ratio": 1.164557504017584,
+    "worst_at": {
+     "point": [
+      -544.0192,
+      49.3262,
+      -155.3913
+     ],
+     "radius_mm": 1.6639424715809083e-05,
+     "xi": 0.9999946713073693,
+     "t_att_mm": 2.8576390016645907e-05,
+     "required_mm": 1.4288195008322954e-05
+    },
+    "lip_radius_mm": 4.025526338811223e-05,
+    "lip_point": [
+     -544.0192,
+     49.3262,
+     -155.3913
+    ],
+    "lip_xi": 0.9999946547055711,
+    "lip_t_att_mm": 2.8665416348740617e-05,
+    "bending_reversals": 22,
+    "reversal_locations": [
+     {
+      "span_mm": 544.019,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.3261,
+      "to": "convex"
+     },
+     {
+      "span_mm": 544.019,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.3261,
+      "to": "concave"
+     },
+     {
+      "span_mm": 544.019,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.3262,
+      "to": "convex"
+     },
+     {
+      "span_mm": 544.019,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.3262,
+      "to": "concave"
+     },
+     {
+      "span_mm": 544.019,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.3262,
+      "to": "convex"
+     },
+     {
+      "span_mm": 544.019,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.3262,
+      "to": "concave"
+     },
+     {
+      "span_mm": 544.019,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.3262,
+      "to": "convex"
+     },
+     {
+      "span_mm": 544.019,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.3262,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.0014121248112283706,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.9838",
+    "points": 1201,
+    "smallest_radius_mm": 1.3035142497165507e-05,
+    "smallest_at": {
+     "point": [
+      -543.8251,
+      49.291,
+      -155.3941
+     ],
+     "xi": 0.9999958263623743,
+     "t_att_mm": 2.2382438602682196e-05,
+     "required_mm": 1.1191219301341098e-05,
+     "side": "upper",
+     "span_mm": 543.8251198111038
+    },
+    "smallest_plane_curve_radius_mm": 4.558460151586645e-06,
+    "worst_ratio": 1.1647651740327742,
+    "worst_at": {
+     "point": [
+      -543.8251,
+      49.291,
+      -155.3941
+     ],
+     "radius_mm": 1.3035142497165507e-05,
+     "xi": 0.9999958263623743,
+     "t_att_mm": 2.2382438602682196e-05,
+     "required_mm": 1.1191219301341098e-05
+    },
+    "lip_radius_mm": 3.116316095351757e-05,
+    "lip_point": [
+     -543.8251,
+     49.291,
+     -155.3941
+    ],
+    "lip_xi": 0.9999958137000104,
+    "lip_t_att_mm": 2.245034045973535e-05,
+    "bending_reversals": 22,
+    "reversal_locations": [
+     {
+      "span_mm": 543.825,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.2909,
+      "to": "convex"
+     },
+     {
+      "span_mm": 543.825,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.291,
+      "to": "concave"
+     },
+     {
+      "span_mm": 543.825,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.291,
+      "to": "convex"
+     },
+     {
+      "span_mm": 543.825,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.291,
+      "to": "concave"
+     },
+     {
+      "span_mm": 543.825,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.291,
+      "to": "convex"
+     },
+     {
+      "span_mm": 543.825,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.291,
+      "to": "concave"
+     },
+     {
+      "span_mm": 543.825,
+      "xi": 0.99999,
+      "side": "upper",
+      "y": 49.291,
+      "to": "convex"
+     },
+     {
+      "span_mm": 543.825,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 49.291,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.0011711175438415002,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.9938",
+    "points": 1201,
+    "smallest_radius_mm": 1.0666015851828576e-07,
+    "smallest_at": {
+     "point": [
+      -541.4683,
+      48.8647,
+      -155.4282
+     ],
+     "xi": 0.999999964028548,
+     "t_att_mm": 1.938991437945035e-07,
+     "required_mm": 9.694957189725175e-08,
+     "side": "upper",
+     "span_mm": 541.4683045110306
+    },
+    "smallest_plane_curve_radius_mm": 3.723121817306242e-08,
+    "worst_ratio": 1.1001612119682735,
+    "worst_at": {
+     "point": [
+      -541.4683,
+      48.8647,
+      -155.4282
+     ],
+     "radius_mm": 1.0666015851828576e-07,
+     "xi": 0.999999964028548,
+     "t_att_mm": 1.938991437945035e-07,
+     "required_mm": 9.694957189725175e-08
+    },
+    "lip_radius_mm": 2.549949426523523e-07,
+    "lip_point": [
+     -541.4683,
+     48.8647,
+     -155.4282
+    ],
+    "lip_xi": 0.9999999639390614,
+    "lip_t_att_mm": 1.9437903521684082e-07,
+    "bending_reversals": 46,
+    "reversal_locations": [
+     {
+      "span_mm": 541.468,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8646,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.468,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8646,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.468,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8646,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.468,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8646,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.468,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8646,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.468,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8646,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.468,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8647,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.468,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8647,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 9.709824097125282e-06,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.9943",
+    "points": 1201,
+    "smallest_radius_mm": 6.843729036225409e-08,
+    "smallest_at": {
+     "point": [
+      -541.3494,
+      48.8432,
+      -155.43
+     ],
+     "xi": 0.9999999764358718,
+     "t_att_mm": 1.2736164256664553e-07,
+     "required_mm": 6.368082128332277e-08,
+     "side": "upper",
+     "span_mm": 541.3494016680285
+    },
+    "smallest_plane_curve_radius_mm": 2.3829610526607924e-08,
+    "worst_ratio": 1.0746923325277054,
+    "worst_at": {
+     "point": [
+      -541.3494,
+      48.8432,
+      -155.43
+     ],
+     "radius_mm": 6.843729036225409e-08,
+     "xi": 0.9999999764358718,
+     "t_att_mm": 1.2736164256664553e-07,
+     "required_mm": 6.368082128332277e-08
+    },
+    "lip_radius_mm": 1.703638223243214e-07,
+    "lip_point": [
+     -541.3494,
+     48.8432,
+     -155.43
+    ],
+    "lip_xi": 0.9999999763740794,
+    "lip_t_att_mm": 1.276930235988732e-07,
+    "bending_reversals": 36,
+    "reversal_locations": [
+     {
+      "span_mm": 541.349,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8432,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.349,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8432,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.349,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8432,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.349,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8432,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.349,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8432,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.349,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8432,
+      "to": "concave"
+     },
+     {
+      "span_mm": 541.349,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8432,
+      "to": "convex"
+     },
+     {
+      "span_mm": 541.349,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.8432,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 1.2172256107694054e-05,
+    "pass": true
+   },
+   {
+    "name": "guide-plane p=0.9993",
+    "points": 1201,
+    "smallest_radius_mm": 2.7003155611393935e-12,
+    "smallest_at": {
+     "point": [
+      -540.1643,
+      48.6296,
+      -155.4475
+     ],
+     "xi": 1.0000000001803502,
+     "t_att_mm": 0.0,
+     "required_mm": 0.0,
+     "side": "upper",
+     "span_mm": 540.1643431387471
+    },
+    "smallest_plane_curve_radius_mm": 9.343461824313696e-13,
+    "worst_ratio": 1429.7826286900229,
+    "worst_at": {
+     "point": [
+      -540.1643,
+      48.6296,
+      -155.4475
+     ],
+     "radius_mm": 1.5380189416375872e-06,
+     "xi": 0.9999999997440003,
+     "t_att_mm": 2.151402473041278e-09,
+     "required_mm": 1.075701236520639e-09
+    },
+    "lip_radius_mm": 2.7003155611393935e-12,
+    "lip_point": [
+     -540.1643,
+     48.6296,
+     -155.4475
+    ],
+    "lip_xi": 1.0000000001803502,
+    "lip_t_att_mm": 0.0,
+    "bending_reversals": 64,
+    "reversal_locations": [
+     {
+      "span_mm": 540.164,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6295,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.164,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6296,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.164,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6296,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.164,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6296,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.164,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6296,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.164,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6296,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.164,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6296,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.164,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6296,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 1.49929215444301e-06,
+    "pass": true
+   },
+   {
+    "name": "between-plane p=0.9995",
+    "points": 1201,
+    "smallest_radius_mm": 2.4387229515105518e-12,
+    "smallest_at": {
+     "point": [
+      -540.1259,
+      48.6227,
+      -155.4481
+     ],
+     "xi": 1.0000000001713965,
+     "t_att_mm": 0.0,
+     "required_mm": 0.0,
+     "side": "upper",
+     "span_mm": 540.1258521700668
+    },
+    "smallest_plane_curve_radius_mm": 8.405258349740595e-13,
+    "worst_ratio": 1357.5835383841127,
+    "worst_at": {
+     "point": [
+      -540.1259,
+      48.6227,
+      -155.4481
+     ],
+     "radius_mm": 1.4656561918148535e-06,
+     "xi": 0.999999999742679,
+     "t_att_mm": 2.1592132644144703e-09,
+     "required_mm": 1.0796066322072351e-09
+    },
+    "lip_radius_mm": 2.4387229515105518e-12,
+    "lip_point": [
+     -540.1259,
+     48.6227,
+     -155.4481
+    ],
+    "lip_xi": 1.0000000001713965,
+    "lip_t_att_mm": 0.0,
+    "bending_reversals": 70,
+    "reversal_locations": [
+     {
+      "span_mm": 540.126,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6226,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.126,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6226,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.126,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6226,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.126,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6226,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.126,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6226,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.126,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6226,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.126,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6226,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.126,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6226,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 1.4285626174872538e-06,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.0005",
+    "points": 1201,
+    "smallest_radius_mm": 0.07102116511737598,
+    "smallest_at": {
+     "point": [
+      -540.177,
+      48.6615,
+      -67.9938
+     ],
+     "xi": 0.00010890407393063962,
+     "t_att_mm": 0.0025653911812144724,
+     "required_mm": 0.0012826955906072362,
+     "side": "lower",
+     "span_mm": 540.177005136895
+    },
+    "smallest_plane_curve_radius_mm": 0.013702792350599636,
+    "worst_ratio": 8.206218985401526,
+    "worst_at": {
+     "point": [
+      -540.1275,
+      48.7876,
+      -67.9938
+     ],
+     "radius_mm": 1.0286054537585592,
+     "xi": 0.00021827468043604208,
+     "t_att_mm": 0.25068925301369593,
+     "required_mm": 0.12534462650684797
+    },
+    "lip_radius_mm": 2.982990150489994,
+    "lip_point": [
+     -540.0,
+     48.4071,
+     -67.9938
+    ],
+    "lip_xi": 0.0005000000000001948,
+    "lip_t_att_mm": 0.4676774046259252,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 540.173,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 48.6854,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.176,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 48.6694,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.176,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.6553,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.17,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.636,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 0.39019654354900757,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.0005",
+    "points": 1201,
+    "smallest_radius_mm": 0.06822111659553211,
+    "smallest_at": {
+     "point": [
+      -540.0885,
+      48.6455,
+      -67.9766
+     ],
+     "xi": 0.00010891269337036109,
+     "t_att_mm": 0.0026549141944480757,
+     "required_mm": 0.0013274570972240378,
+     "side": "lower",
+     "span_mm": 540.0885268705364
+    },
+    "smallest_plane_curve_radius_mm": 0.025645713142919278,
+    "worst_ratio": 4.979337565503873,
+    "worst_at": {
+     "point": [
+      -540.0,
+      48.8748,
+      -67.9938
+     ],
+     "radius_mm": 1.1643618346956122,
+     "xi": 0.0005000000000001948,
+     "t_att_mm": 0.4676774046259252,
+     "required_mm": 0.2338387023129626
+    },
+    "lip_radius_mm": 1.3948400004882362,
+    "lip_point": [
+     -540.0,
+     48.4071,
+     -67.9938
+    ],
+    "lip_xi": 0.0005000000000001948,
+    "lip_t_att_mm": 0.4676774046259252,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 540.087,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 48.6686,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.088,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 48.6537,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.088,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.6389,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.085,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.6206,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 0.24099578996064497,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.002",
+    "points": 1201,
+    "smallest_radius_mm": 0.07506601147347583,
+    "smallest_at": {
+     "point": [
+      -540.8555,
+      48.7841,
+      -68.125
+     ],
+     "xi": 0.00010883590055363829,
+     "t_att_mm": 0.0017072404660036652,
+     "required_mm": 0.0008536202330018326,
+     "side": "lower",
+     "span_mm": 540.8555418796268
+    },
+    "smallest_plane_curve_radius_mm": 0.014371901281413253,
+    "worst_ratio": 8.282387085773355,
+    "worst_at": {
+     "point": [
+      -540.8051,
+      48.9107,
+      -68.125
+     ],
+     "radius_mm": 1.0490019125483163,
+     "xi": 0.0002205691394471302,
+     "t_att_mm": 0.2533090766429368,
+     "required_mm": 0.1266545383214684
+    },
+    "lip_radius_mm": 9.211088292804057,
+    "lip_point": [
+     -540.0,
+     48.1745,
+     -68.125
+    ],
+    "lip_xi": 0.0019999999999998053,
+    "lip_t_att_mm": 0.9829618106523819,
+    "bending_reversals": 6,
+    "reversal_locations": [
+     {
+      "span_mm": 540.852,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 48.8094,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.855,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 48.7914,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.854,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.7764,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.852,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.7705,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.852,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.7699,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.849,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.7573,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 0.3395794969313715,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.002",
+    "points": 1201,
+    "smallest_radius_mm": 0.07205350235795653,
+    "smallest_at": {
+     "point": [
+      -540.4284,
+      48.7064,
+      -68.0424
+     ],
+     "xi": 0.00010898772111109413,
+     "t_att_mm": 0.003339553731501907,
+     "required_mm": 0.0016697768657509536,
+     "side": "lower",
+     "span_mm": 540.4283504593335
+    },
+    "smallest_plane_curve_radius_mm": 0.027138461982622177,
+    "worst_ratio": 4.713424985582803,
+    "worst_at": {
+     "point": [
+      -540.2966,
+      48.9798,
+      -68.0678
+     ],
+     "radius_mm": 1.3372993643686257,
+     "xi": 0.0006910759391953003,
+     "t_att_mm": 0.5674427272987658,
+     "required_mm": 0.2837213636493829
+    },
+    "lip_radius_mm": 1.474551695303808,
+    "lip_point": [
+     -540.271,
+     48.3843,
+     -68.0727
+    ],
+    "lip_xi": 0.0008042193071763946,
+    "lip_t_att_mm": 0.6179373649293339,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 540.426,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 48.7332,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.428,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 48.7145,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.427,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 48.6997,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.425,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 48.6796,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 0.26790049564411783,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.01",
+    "points": 1201,
+    "smallest_radius_mm": 0.48474191628398855,
+    "smallest_at": {
+     "point": [
+      -544.4603,
+      49.4339,
+      -68.825
+     ],
+     "xi": 0.0001177828050735664,
+     "t_att_mm": 0.04160699261550243,
+     "required_mm": 0.020803496307751215,
+     "side": "lower",
+     "span_mm": 544.4602588558531
+    },
+    "smallest_plane_curve_radius_mm": 0.09448214815724522,
+    "worst_ratio": 8.124007958157739,
+    "worst_at": {
+     "point": [
+      -544.41,
+      49.5667,
+      -68.825
+     ],
+     "radius_mm": 1.0743749666294475,
+     "xi": 0.00023067591476422472,
+     "t_att_mm": 0.26449382427071894,
+     "required_mm": 0.13224691213535947
+    },
+    "lip_radius_mm": 10.429330997727723,
+    "lip_point": [
+     -543.5106,
+     48.7887,
+     -68.825
+    ],
+    "lip_xi": 0.0022444320737332333,
+    "lip_t_att_mm": 1.0391246301105397,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.01",
+    "points": 1201,
+    "smallest_radius_mm": 0.08108244065174426,
+    "smallest_at": {
+     "point": [
+      -542.2489,
+      49.0361,
+      -68.3949
+     ],
+     "xi": 0.00010907255925149963,
+     "t_att_mm": 0.00398403195933151,
+     "required_mm": 0.001992015979665755,
+     "side": "lower",
+     "span_mm": 542.248862613479
+    },
+    "smallest_plane_curve_radius_mm": 0.030178652509805212,
+    "worst_ratio": 4.692864495944322,
+    "worst_at": {
+     "point": [
+      -542.114,
+      49.3098,
+      -68.4207
+     ],
+     "radius_mm": 1.3473866483104746,
+     "xi": 0.0007056058643046594,
+     "t_att_mm": 0.5742278088254694,
+     "required_mm": 0.2871139044127347
+    },
+    "lip_radius_mm": 1.465533247098246,
+    "lip_point": [
+     -542.0898,
+     48.7118,
+     -68.4253
+    ],
+    "lip_xi": 0.0008127896852776109,
+    "lip_t_att_mm": 0.6215597639198396,
+    "bending_reversals": 6,
+    "reversal_locations": [
+     {
+      "span_mm": 542.247,
+      "xi": 0.00012,
+      "side": "upper",
+      "y": 49.0609,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.248,
+      "xi": 0.00011,
+      "side": "upper",
+      "y": 49.0432,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.248,
+      "xi": 0.00011,
+      "side": "lower",
+      "y": 49.0279,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.247,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 49.0227,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.247,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 49.0214,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.245,
+      "xi": 0.00012,
+      "side": "lower",
+      "y": 49.0099,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 0.3136283048212714,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.05",
+    "points": 1201,
+    "smallest_radius_mm": 0.6183167508053724,
+    "smallest_at": {
+     "point": [
+      -558.8952,
+      52.2948,
+      -72.325
+     ],
+     "xi": 0.008105115204721978,
+     "t_att_mm": 1.939501492529047,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 558.8952388693056
+    },
+    "smallest_plane_curve_radius_mm": 0.20193415308165064,
+    "worst_ratio": 1.545791877013431,
+    "worst_at": {
+     "point": [
+      -558.8952,
+      52.2948,
+      -72.325
+     ],
+     "radius_mm": 0.6183167508053724,
+     "xi": 0.008105115204721978,
+     "t_att_mm": 1.939501492529047,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 2.257754327443166,
+    "lip_point": [
+     -558.6753,
+     51.9553,
+     -72.325
+    ],
+    "lip_xi": 0.008621650588957051,
+    "lip_t_att_mm": 2.0024795631543557,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.05",
+    "points": 1201,
+    "smallest_radius_mm": 0.725020476612435,
+    "smallest_at": {
+     "point": [
+      -551.3794,
+      50.7567,
+      -70.2435
+     ],
+     "xi": 0.0009082998607836485,
+     "t_att_mm": 0.6602782394174516,
+     "required_mm": 0.3301391197087258,
+     "side": "upper",
+     "span_mm": 551.3793775225967
+    },
+    "smallest_plane_curve_radius_mm": 0.2786987432004898,
+    "worst_ratio": 2.1959359220774735,
+    "worst_at": {
+     "point": [
+      -551.3789,
+      50.7597,
+      -70.2436
+     ],
+     "radius_mm": 0.7258360619731362,
+     "xi": 0.0009103336282208686,
+     "t_att_mm": 0.6610721694342122,
+     "required_mm": 0.3305360847171061
+    },
+    "lip_radius_mm": 1.3765854966825382,
+    "lip_point": [
+     -551.2483,
+     50.4253,
+     -70.2675
+    ],
+    "lip_xi": 0.0014913681619167561,
+    "lip_t_att_mm": 0.8519064375827957,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.1",
+    "points": 1201,
+    "smallest_radius_mm": 0.6230859957413041,
+    "smallest_at": {
+     "point": [
+      -568.2303,
+      54.5832,
+      -76.7
+     ],
+     "xi": 0.03911505364610123,
+     "t_att_mm": 4.334085876438646,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 568.2303204437796
+    },
+    "smallest_plane_curve_radius_mm": 0.3026618795319402,
+    "worst_ratio": 1.55771498935326,
+    "worst_at": {
+     "point": [
+      -568.2303,
+      54.5832,
+      -76.7
+     ],
+     "radius_mm": 0.6230859957413041,
+     "xi": 0.03911505364610123,
+     "t_att_mm": 4.334085876438646,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 1.1173603225013098,
+    "lip_point": [
+     -568.1551,
+     54.3364,
+     -76.7
+    ],
+    "lip_xi": 0.03929224673531646,
+    "lip_t_att_mm": 4.34336051039033,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 729.9188944541684,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.1",
+    "points": 1201,
+    "smallest_radius_mm": 0.6189594486892848,
+    "smallest_at": {
+     "point": [
+      -560.9303,
+      52.778,
+      -73.0895
+     ],
+     "xi": 0.012487992123762046,
+     "t_att_mm": 2.435091490699655,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 560.9302815985727
+    },
+    "smallest_plane_curve_radius_mm": 0.32297231247346736,
+    "worst_ratio": 1.5473986217232119,
+    "worst_at": {
+     "point": [
+      -560.9303,
+      52.778,
+      -73.0895
+     ],
+     "radius_mm": 0.6189594486892848,
+     "xi": 0.012487992123762046,
+     "t_att_mm": 2.435091490699655,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.9101042142265888,
+    "lip_point": [
+     -560.8737,
+     52.5671,
+     -73.0993
+    ],
+    "lip_xi": 0.012738882546786741,
+    "lip_t_att_mm": 2.460874010954504,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 4539.582187799705,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.2",
+    "points": 1201,
+    "smallest_radius_mm": 0.5843062371590907,
+    "smallest_at": {
+     "point": [
+      -581.9325,
+      57.9766,
+      -85.45
+     ],
+     "xi": 0.11646498952928251,
+     "t_att_mm": 6.801674090383779,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 581.9325137347946
+    },
+    "smallest_plane_curve_radius_mm": 0.35253287849452236,
+    "worst_ratio": 1.4607655928977266,
+    "worst_at": {
+     "point": [
+      -581.9325,
+      57.9766,
+      -85.45
+     ],
+     "radius_mm": 0.5843062371590907,
+     "xi": 0.11646498952928251,
+     "t_att_mm": 6.801674090383779,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.8101064163254545,
+    "lip_point": [
+     -581.9081,
+     57.7686,
+     -85.45
+    ],
+    "lip_xi": 0.11652057585164947,
+    "lip_t_att_mm": 6.802736977459177,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 445.7636575784424,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.2",
+    "points": 1201,
+    "smallest_radius_mm": 0.6726602291409906,
+    "smallest_at": {
+     "point": [
+      -574.2477,
+      56.11,
+      -80.2558
+     ],
+     "xi": 0.06890969404027268,
+     "t_att_mm": 5.586492506008121,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 574.2476956138312
+    },
+    "smallest_plane_curve_radius_mm": 0.42066003434708105,
+    "worst_ratio": 1.6816505728524762,
+    "worst_at": {
+     "point": [
+      -574.2477,
+      56.11,
+      -80.2558
+     ],
+     "radius_mm": 0.6726602291409906,
+     "xi": 0.06890969404027268,
+     "t_att_mm": 5.586492506008121,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.8750185258579078,
+    "lip_point": [
+     -574.2211,
+     55.8831,
+     -80.2598
+    ],
+    "lip_xi": 0.06902200095164908,
+    "lip_t_att_mm": 5.590279546757512,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 632.5986143263851,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.3",
+    "points": 1201,
+    "smallest_radius_mm": 0.543199848153936,
+    "smallest_at": {
+     "point": [
+      -591.0201,
+      60.2439,
+      -94.2
+     ],
+     "xi": 0.20893148557067198,
+     "t_att_mm": 7.8687085773213195,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 591.0200976737915
+    },
+    "smallest_plane_curve_radius_mm": 0.41485186787092176,
+    "worst_ratio": 1.35799962038484,
+    "worst_at": {
+     "point": [
+      -591.0201,
+      60.2439,
+      -94.2
+     ],
+     "radius_mm": 0.543199848153936,
+     "xi": 0.20893148557067198,
+     "t_att_mm": 7.8687085773213195,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6253352577611837,
+    "lip_point": [
+     -591.0223,
+     60.091,
+     -94.2
+    ],
+    "lip_xi": 0.20892684959300642,
+    "lip_t_att_mm": 7.8686819066450875,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 887.5276626998527,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.3",
+    "points": 1201,
+    "smallest_radius_mm": 0.5550789991503998,
+    "smallest_at": {
+     "point": [
+      -585.3167,
+      58.809,
+      -88.2711
+     ],
+     "xi": 0.1448023464877745,
+     "t_att_mm": 7.2635906801778,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 585.3167216917077
+    },
+    "smallest_plane_curve_radius_mm": 0.4157714762812062,
+    "worst_ratio": 1.3876974978759995,
+    "worst_at": {
+     "point": [
+      -585.3167,
+      58.809,
+      -88.2711
+     ],
+     "radius_mm": 0.5550789991503998,
+     "xi": 0.1448023464877745,
+     "t_att_mm": 7.2635906801778,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6493631815865255,
+    "lip_point": [
+     -585.3113,
+     58.661,
+     -88.2718
+    ],
+    "lip_xi": 0.14482336508422175,
+    "lip_t_att_mm": 7.263880597399894,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1506.0943360569518,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.4",
+    "points": 1201,
+    "smallest_radius_mm": 0.6174855017487165,
+    "smallest_at": {
+     "point": [
+      -596.6489,
+      61.6356,
+      -102.95
+     ],
+     "xi": 0.31238201163120494,
+     "t_att_mm": 8.033627207281826,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 596.6489212564854
+    },
+    "smallest_plane_curve_radius_mm": 0.554346352341427,
+    "worst_ratio": 1.5437137543717911,
+    "worst_at": {
+     "point": [
+      -596.6489,
+      61.6356,
+      -102.95
+     ],
+     "radius_mm": 0.6174855017487165,
+     "xi": 0.31238201163120494,
+     "t_att_mm": 8.033627207281826,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6671775063509553,
+    "lip_point": [
+     -596.6572,
+     61.5041,
+     -102.95
+    ],
+    "lip_xi": 0.3123663984243877,
+    "lip_t_att_mm": 8.033656274004759,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 720.2758744341052,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.4",
+    "points": 1201,
+    "smallest_radius_mm": 0.5660249791259951,
+    "smallest_at": {
+     "point": [
+      -593.2188,
+      60.7906,
+      -97.0959
+     ],
+     "xi": 0.24214450428459153,
+     "t_att_mm": 8.009664912413971,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 593.2188242158495
+    },
+    "smallest_plane_curve_radius_mm": 0.49243140417486164,
+    "worst_ratio": 1.4150624478149878,
+    "worst_at": {
+     "point": [
+      -593.2188,
+      60.7906,
+      -97.0959
+     ],
+     "radius_mm": 0.5660249791259951,
+     "xi": 0.24214450428459153,
+     "t_att_mm": 8.009664912413971,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6195807210234064,
+    "lip_point": [
+     -593.2246,
+     60.6603,
+     -97.0953
+    ],
+    "lip_xi": 0.24212454294540312,
+    "lip_t_att_mm": 8.009608522823045,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 836.5349470801044,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.5",
+    "points": 1201,
+    "smallest_radius_mm": 0.6418357914709798,
+    "smallest_at": {
+     "point": [
+      -599.505,
+      62.3006,
+      -111.7
+     ],
+     "xi": 0.42345905391013,
+     "t_att_mm": 7.525115456653166,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 599.5049676110223
+    },
+    "smallest_plane_curve_radius_mm": 0.6313983478250074,
+    "worst_ratio": 1.6045894786774495,
+    "worst_at": {
+     "point": [
+      -599.505,
+      62.3006,
+      -111.7
+     ],
+     "radius_mm": 0.6418357914709798,
+     "xi": 0.42345905391013,
+     "t_att_mm": 7.525115456653166,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6828423078055409,
+    "lip_point": [
+     -599.5178,
+     62.1688,
+     -111.7
+    ],
+    "lip_xi": 0.4234385954985702,
+    "lip_t_att_mm": 7.525258171327138,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 758.5872616042432,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.5",
+    "points": 1201,
+    "smallest_radius_mm": 0.6370465805118647,
+    "smallest_at": {
+     "point": [
+      -598.1262,
+      62.0019,
+      -106.5171
+     ],
+     "xi": 0.35690242850070736,
+     "t_att_mm": 7.898059527663028,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 598.1262390077134
+    },
+    "smallest_plane_curve_radius_mm": 0.6155276780864527,
+    "worst_ratio": 1.5926164512796617,
+    "worst_at": {
+     "point": [
+      -598.1262,
+      62.0019,
+      -106.5171
+     ],
+     "radius_mm": 0.6370465805118647,
+     "xi": 0.35690242850070736,
+     "t_att_mm": 7.898059527663028,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.681163314040962,
+    "lip_point": [
+     -598.1382,
+     61.8649,
+     -106.516
+    ],
+    "lip_xi": 0.35686701428755774,
+    "lip_t_att_mm": 7.8982057672964725,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 808.7085475743747,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.6",
+    "points": 1201,
+    "smallest_radius_mm": 0.5992389620842986,
+    "smallest_at": {
+     "point": [
+      -599.7884,
+      62.2528,
+      -120.45
+     ],
+     "xi": 0.5396038621383562,
+     "t_att_mm": 6.492678693072882,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 599.7884056248421
+    },
+    "smallest_plane_curve_radius_mm": 0.5946395029752418,
+    "worst_ratio": 1.4980974052107465,
+    "worst_at": {
+     "point": [
+      -599.7884,
+      62.2528,
+      -120.45
+     ],
+     "radius_mm": 0.5992389620842986,
+     "xi": 0.5396038621383562,
+     "t_att_mm": 6.492678693072882,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6388227468117428,
+    "lip_point": [
+     -599.8013,
+     62.1244,
+     -120.45
+    ],
+    "lip_xi": 0.5395874208046566,
+    "lip_t_att_mm": 6.492853224304401,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 848.3956555845658,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.6",
+    "points": 1201,
+    "smallest_radius_mm": 0.624857318060778,
+    "smallest_at": {
+     "point": [
+      -599.9786,
+      62.3618,
+      -116.3515
+     ],
+     "xi": 0.48471684150223404,
+     "t_att_mm": 7.032802518465117,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 599.9785798922761
+    },
+    "smallest_plane_curve_radius_mm": 0.624222672425651,
+    "worst_ratio": 1.562143295151945,
+    "worst_at": {
+     "point": [
+      -599.9786,
+      62.3618,
+      -116.3515
+     ],
+     "radius_mm": 0.624857318060778,
+     "xi": 0.48471684150223404,
+     "t_att_mm": 7.032802518465117,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6634775562818036,
+    "lip_point": [
+     -599.9916,
+     62.2329,
+     -116.3506
+    ],
+    "lip_xi": 0.4846863619706899,
+    "lip_t_att_mm": 7.033077955687465,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 867.6901235874777,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.7",
+    "points": 1201,
+    "smallest_radius_mm": 0.5366637116453843,
+    "smallest_at": {
+     "point": [
+      -597.3172,
+      61.4766,
+      -129.2
+     ],
+     "xi": 0.65853271261351,
+     "t_att_mm": 5.061542210029504,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 597.3171806302811
+    },
+    "smallest_plane_curve_radius_mm": 0.4843524100973232,
+    "worst_ratio": 1.3416592791134607,
+    "worst_at": {
+     "point": [
+      -597.3172,
+      61.4766,
+      -129.2
+     ],
+     "radius_mm": 0.5366637116453843,
+     "xi": 0.65853271261351,
+     "t_att_mm": 5.061542210029504,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.5865370607227999,
+    "lip_point": [
+     -597.326,
+     61.3484,
+     -129.2
+    ],
+    "lip_xi": 0.6585245025984088,
+    "lip_t_att_mm": 5.061651526595596,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1004.872237516172,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.7",
+    "points": 1201,
+    "smallest_radius_mm": 0.5549843446896736,
+    "smallest_at": {
+     "point": [
+      -598.4288,
+      61.8034,
+      -126.4246
+     ],
+     "xi": 0.6206467159321656,
+     "t_att_mm": 5.551514936956795,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 598.4287579543033
+    },
+    "smallest_plane_curve_radius_mm": 0.5135179811287871,
+    "worst_ratio": 1.387460861724184,
+    "worst_at": {
+     "point": [
+      -598.4288,
+      61.8034,
+      -126.4246
+     ],
+     "radius_mm": 0.5549843446896736,
+     "xi": 0.6206467159321656,
+     "t_att_mm": 5.551514936956795,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6026698022761023,
+    "lip_point": [
+     -598.4389,
+     61.674,
+     -126.4242
+    ],
+    "lip_xi": 0.6206297435865776,
+    "lip_t_att_mm": 5.551727672839979,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1017.9789526306457,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.8",
+    "points": 1201,
+    "smallest_radius_mm": 0.5068537824037289,
+    "smallest_at": {
+     "point": [
+      -591.3602,
+      59.854,
+      -137.95
+     ],
+     "xi": 0.7778731787636477,
+     "t_att_mm": 3.3420052362506856,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 591.3601965469275
+    },
+    "smallest_plane_curve_radius_mm": 0.3641658476715688,
+    "worst_ratio": 1.2671344560093223,
+    "worst_at": {
+     "point": [
+      -591.3602,
+      59.854,
+      -137.95
+     ],
+     "radius_mm": 0.5068537824037289,
+     "xi": 0.7778731787636477,
+     "t_att_mm": 3.3420052362506856,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6191213760095224,
+    "lip_point": [
+     -591.3586,
+     59.6881,
+     -137.95
+    ],
+    "lip_xi": 0.7778740807849287,
+    "lip_t_att_mm": 3.3419912542109436,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1239.9325555926705,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.8",
+    "points": 1201,
+    "smallest_radius_mm": 0.5077930965798985,
+    "smallest_at": {
+     "point": [
+      -592.6092,
+      60.1824,
+      -136.5471
+     ],
+     "xi": 0.7588215480195375,
+     "t_att_mm": 3.633509693438018,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 592.609179076542
+    },
+    "smallest_plane_curve_radius_mm": 0.3737915585181831,
+    "worst_ratio": 1.269482741449746,
+    "worst_at": {
+     "point": [
+      -592.6092,
+      60.1824,
+      -136.5471
+     ],
+     "radius_mm": 0.5077930965798985,
+     "xi": 0.7588215480195375,
+     "t_att_mm": 3.633509693438018,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.6084442486870779,
+    "lip_point": [
+     -592.6096,
+     60.0254,
+     -136.5471
+    ],
+    "lip_xi": 0.7588211168329927,
+    "lip_t_att_mm": 3.633516216810253,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 1260.5082469942934,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.9",
+    "points": 1201,
+    "smallest_radius_mm": 0.5326671672964265,
+    "smallest_at": {
+     "point": [
+      -579.6988,
+      56.8852,
+      -146.7
+     ],
+     "xi": 0.8945906908214859,
+     "t_att_mm": 1.4315143226985472,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 579.6988436642497
+    },
+    "smallest_plane_curve_radius_mm": 0.2455124862346989,
+    "worst_ratio": 1.3316679182410662,
+    "worst_at": {
+     "point": [
+      -579.6988,
+      56.8852,
+      -146.7
+     ],
+     "radius_mm": 0.5326671672964265,
+     "xi": 0.8945906908214859,
+     "t_att_mm": 1.4315143226985472,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.9928942172660902,
+    "lip_point": [
+     -579.6299,
+     56.6249,
+     -146.7
+    ],
+    "lip_xi": 0.8946053773360002,
+    "lip_t_att_mm": 1.4312710048158914,
+    "bending_reversals": 1,
+    "reversal_locations": [
+     {
+      "span_mm": 577.014,
+      "xi": 0.89515,
+      "side": "upper",
+      "y": 57.0181,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 387.2666916055408,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.9",
+    "points": 1201,
+    "smallest_radius_mm": 0.5322573381802433,
+    "smallest_at": {
+     "point": [
+      -580.1323,
+      56.9904,
+      -146.4659
+     ],
+     "xi": 0.8915397614165801,
+     "t_att_mm": 1.482142335219791,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 580.1323148301866
+    },
+    "smallest_plane_curve_radius_mm": 0.2468168107931591,
+    "worst_ratio": 1.3306433454506084,
+    "worst_at": {
+     "point": [
+      -580.1323,
+      56.9904,
+      -146.4659
+     ],
+     "radius_mm": 0.5322573381802433,
+     "xi": 0.8915397614165801,
+     "t_att_mm": 1.482142335219791,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 0.997289671924349,
+    "lip_point": [
+     -580.0632,
+     56.729,
+     -146.4663
+    ],
+    "lip_xi": 0.8915602433477046,
+    "lip_t_att_mm": 1.4818018236064596,
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 911.5647262165307,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.93",
+    "points": 1201,
+    "smallest_radius_mm": 0.46728818391428084,
+    "smallest_at": {
+     "point": [
+      -574.0973,
+      55.5471,
+      -149.325
+     ],
+     "xi": 0.9283690646401761,
+     "t_att_mm": 0.883736371656576,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 574.0973354769011
+    },
+    "smallest_plane_curve_radius_mm": 0.17660404051727602,
+    "worst_ratio": 1.168220459785702,
+    "worst_at": {
+     "point": [
+      -574.0973,
+      55.5471,
+      -149.325
+     ],
+     "radius_mm": 0.46728818391428084,
+     "xi": 0.9283690646401761,
+     "t_att_mm": 0.883736371656576,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 1.1338286241909594,
+    "lip_point": [
+     -573.992,
+     55.2895,
+     -149.325
+    ],
+    "lip_xi": 0.928380110537451,
+    "lip_t_att_mm": 0.8835628957916996,
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 572.05,
+      "xi": 0.92858,
+      "side": "upper",
+      "y": 55.5772,
+      "to": "convex"
+     },
+     {
+      "span_mm": 571.938,
+      "xi": 0.92859,
+      "side": "lower",
+      "y": 54.6405,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 40.05416100817416,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.93",
+    "points": 1201,
+    "smallest_radius_mm": 0.46612517597310116,
+    "smallest_at": {
+     "point": [
+      -574.0635,
+      55.5392,
+      -149.3392
+     ],
+     "xi": 0.9285491438737073,
+     "t_att_mm": 0.8809088763547129,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 574.0634769362546
+    },
+    "smallest_plane_curve_radius_mm": 0.17629327013085663,
+    "worst_ratio": 1.1653129399327529,
+    "worst_at": {
+     "point": [
+      -574.0635,
+      55.5392,
+      -149.3392
+     ],
+     "radius_mm": 0.46612517597310116,
+     "xi": 0.9285491438737073,
+     "t_att_mm": 0.8809088763547129,
+     "required_mm": 0.4
+    },
+    "lip_radius_mm": 1.1301781751072386,
+    "lip_point": [
+     -573.9584,
+     55.2821,
+     -149.3391
+    ],
+    "lip_xi": 0.9285595558906802,
+    "lip_t_att_mm": 0.8807454358278249,
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 572.021,
+      "xi": 0.92874,
+      "side": "upper",
+      "y": 55.569,
+      "to": "convex"
+     },
+     {
+      "span_mm": 571.909,
+      "xi": 0.92875,
+      "side": "lower",
+      "y": 54.6353,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 39.90341134436589,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.95",
+    "points": 1201,
+    "smallest_radius_mm": 0.29282078062980704,
+    "smallest_at": {
+     "point": [
+      -569.9155,
+      54.5626,
+      -151.075
+     ],
+     "xi": 0.9503106484774981,
+     "t_att_mm": 0.5521303283185662,
+     "required_mm": 0.2760651641592831,
+     "side": "upper",
+     "span_mm": 569.9154676057565
+    },
+    "smallest_plane_curve_radius_mm": 0.10968356854431953,
+    "worst_ratio": 1.060694425251193,
+    "worst_at": {
+     "point": [
+      -569.9155,
+      54.5626,
+      -151.075
+     ],
+     "radius_mm": 0.29282078062980704,
+     "xi": 0.9503106484774981,
+     "t_att_mm": 0.5521303283185662,
+     "required_mm": 0.2760651641592831
+    },
+    "lip_radius_mm": 0.7147512747686847,
+    "lip_point": [
+     -569.8492,
+     54.4018,
+     -151.075
+    ],
+    "lip_xi": 0.9503129509036756,
+    "lip_t_att_mm": 0.5520971041021977,
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 568.617,
+      "xi": 0.95035,
+      "side": "upper",
+      "y": 54.5804,
+      "to": "convex"
+     },
+     {
+      "span_mm": 568.551,
+      "xi": 0.95036,
+      "side": "lower",
+      "y": 53.9944,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 27.580876598231335,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.95",
+    "points": 1201,
+    "smallest_radius_mm": 0.27991067773252293,
+    "smallest_at": {
+     "point": [
+      -569.5877,
+      54.486,
+      -151.2106
+     ],
+     "xi": 0.9519891792204151,
+     "t_att_mm": 0.5280115232154413,
+     "required_mm": 0.26400576160772066,
+     "side": "upper",
+     "span_mm": 569.5877409511817
+    },
+    "smallest_plane_curve_radius_mm": 0.10553087105896126,
+    "worst_ratio": 1.0602445796180577,
+    "worst_at": {
+     "point": [
+      -569.5877,
+      54.486,
+      -151.2106
+     ],
+     "radius_mm": 0.27991067773252293,
+     "xi": 0.9519891792204151,
+     "t_att_mm": 0.5280115232154413,
+     "required_mm": 0.26400576160772066
+    },
+    "lip_radius_mm": 0.6814071703627018,
+    "lip_point": [
+     -569.5241,
+     54.3314,
+     -151.2103
+    ],
+    "lip_xi": 0.9519874631000315,
+    "lip_t_att_mm": 0.5280360713690423,
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 568.349,
+      "xi": 0.95195,
+      "side": "upper",
+      "y": 54.5046,
+      "to": "convex"
+     },
+     {
+      "span_mm": 568.301,
+      "xi": 0.95195,
+      "side": "lower",
+      "y": 53.9456,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 26.423800700237273,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.97",
+    "points": 1201,
+    "smallest_radius_mm": 0.14723714579403124,
+    "smallest_at": {
+     "point": [
+      -565.3861,
+      53.5176,
+      -152.825
+     ],
+     "xi": 0.9717220458649533,
+     "t_att_mm": 0.26476626953486665,
+     "required_mm": 0.13238313476743332,
+     "side": "upper",
+     "span_mm": 565.386060680657
+    },
+    "smallest_plane_curve_radius_mm": 0.04687446637436236,
+    "worst_ratio": 1.112204708346671,
+    "worst_at": {
+     "point": [
+      -565.3861,
+      53.5176,
+      -152.825
+     ],
+     "radius_mm": 0.14723714579403124,
+     "xi": 0.9717220458649533,
+     "t_att_mm": 0.26476626953486665,
+     "required_mm": 0.13238313476743332
+    },
+    "lip_radius_mm": 0.5164003563328925,
+    "lip_point": [
+     -565.3314,
+     53.425,
+     -152.825
+    ],
+    "lip_xi": 0.9717202039929915,
+    "lip_t_att_mm": 0.2647887938697158,
+    "bending_reversals": 3,
+    "reversal_locations": [
+     {
+      "span_mm": 564.568,
+      "xi": 0.97169,
+      "side": "upper",
+      "y": 53.4951,
+      "to": "convex"
+     },
+     {
+      "span_mm": 564.557,
+      "xi": 0.97169,
+      "side": "lower",
+      "y": 53.211,
+      "to": "concave"
+     },
+     {
+      "span_mm": 563.888,
+      "xi": 0.97167,
+      "side": "lower",
+      "y": 53.0959,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 14.404338035208026,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.97",
+    "points": 1201,
+    "smallest_radius_mm": 0.1310432069014518,
+    "smallest_at": {
+     "point": [
+      -564.7427,
+      53.373,
+      -153.0415
+     ],
+     "xi": 0.9743289878200757,
+     "t_att_mm": 0.2333455322695214,
+     "required_mm": 0.1166727661347607,
+     "side": "upper",
+     "span_mm": 564.742665201102
+    },
+    "smallest_plane_curve_radius_mm": 0.0410780455619991,
+    "worst_ratio": 1.1231687671662194,
+    "worst_at": {
+     "point": [
+      -564.7427,
+      53.373,
+      -153.0415
+     ],
+     "radius_mm": 0.1310432069014518,
+     "xi": 0.9743289878200757,
+     "t_att_mm": 0.2333455322695214,
+     "required_mm": 0.1166727661347607
+    },
+    "lip_radius_mm": 0.4740448619277608,
+    "lip_point": [
+     -564.692,
+     53.2905,
+     -153.0411
+    ],
+    "lip_xi": 0.9743214756153226,
+    "lip_t_att_mm": 0.23343465687235082,
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 564.004,
+      "xi": 0.97422,
+      "side": "upper",
+      "y": 53.3524,
+      "to": "convex"
+     },
+     {
+      "span_mm": 564.003,
+      "xi": 0.97422,
+      "side": "lower",
+      "y": 53.1012,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 12.868169762930524,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.99",
+    "points": 1201,
+    "smallest_radius_mm": 0.02836890069781716,
+    "smallest_at": {
+     "point": [
+      -558.4553,
+      52.0412,
+      -154.575
+     ],
+     "xi": 0.9923406339898356,
+     "t_att_mm": 0.04959722376743371,
+     "required_mm": 0.024798611883716855,
+     "side": "upper",
+     "span_mm": 558.4552865411277
+    },
+    "smallest_plane_curve_radius_mm": 0.0044093248920563585,
+    "worst_ratio": 1.143971317057654,
+    "worst_at": {
+     "point": [
+      -558.4553,
+      52.0412,
+      -154.575
+     ],
+     "radius_mm": 0.02836890069781716,
+     "xi": 0.9923406339898356,
+     "t_att_mm": 0.04959722376743371,
+     "required_mm": 0.024798611883716855
+    },
+    "lip_radius_mm": 0.6598186943269688,
+    "lip_point": [
+     -558.3973,
+     52.0084,
+     -154.575
+    ],
+    "lip_xi": 0.9923345367750709,
+    "lip_t_att_mm": 0.04964582386451374,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 557.85,
+      "xi": 0.99228,
+      "side": "upper",
+      "y": 51.9531,
+      "to": "concave"
+     },
+     {
+      "span_mm": 558.137,
+      "xi": 0.99231,
+      "side": "upper",
+      "y": 52.0084,
+      "to": "convex"
+     },
+     {
+      "span_mm": 558.132,
+      "xi": 0.99231,
+      "side": "lower",
+      "y": 51.9536,
+      "to": "concave"
+     },
+     {
+      "span_mm": 557.862,
+      "xi": 0.99228,
+      "side": "lower",
+      "y": 51.9058,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 11.00035409728533,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.99",
+    "points": 1201,
+    "smallest_radius_mm": 0.01790403794864996,
+    "smallest_at": {
+     "point": [
+      -556.9219,
+      51.7362,
+      -154.7936
+     ],
+     "xi": 0.9947794934399575,
+     "t_att_mm": 0.03127424720718743,
+     "required_mm": 0.015637123603593716,
+     "side": "upper",
+     "span_mm": 556.9219364560732
+    },
+    "smallest_plane_curve_radius_mm": 0.00241226740883714,
+    "worst_ratio": 1.1449700342929605,
+    "worst_at": {
+     "point": [
+      -556.9219,
+      51.7362,
+      -154.7936
+     ],
+     "radius_mm": 0.01790403794864996,
+     "xi": 0.9947794934399575,
+     "t_att_mm": 0.03127424720718743,
+     "required_mm": 0.015637123603593716
+    },
+    "lip_radius_mm": 0.6005059650611773,
+    "lip_point": [
+     -556.8741,
+     51.713,
+     -154.793
+    ],
+    "lip_xi": 0.9947666077064886,
+    "lip_t_att_mm": 0.03136495636001147,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 556.473,
+      "xi": 0.99466,
+      "side": "upper",
+      "y": 51.6692,
+      "to": "concave"
+     },
+     {
+      "span_mm": 556.686,
+      "xi": 0.99472,
+      "side": "upper",
+      "y": 51.7095,
+      "to": "convex"
+     },
+     {
+      "span_mm": 556.688,
+      "xi": 0.99472,
+      "side": "lower",
+      "y": 51.6758,
+      "to": "concave"
+     },
+     {
+      "span_mm": 556.481,
+      "xi": 0.99466,
+      "side": "lower",
+      "y": 51.6391,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 9.461435510313512,
+    "pass": true
+   },
+   {
+    "name": "spanwise Z=const xi_att=0.997",
+    "points": 1201,
+    "smallest_radius_mm": 0.0035691484291252426,
+    "smallest_at": {
+     "point": [
+      -552.1899,
+      50.8284,
+      -155.1875
+     ],
+     "xi": 0.9988438639381648,
+     "t_att_mm": 0.006233772196747192,
+     "required_mm": 0.003116886098373596,
+     "side": "upper",
+     "span_mm": 552.1898899355227
+    },
+    "smallest_plane_curve_radius_mm": 0.00017368237040731675,
+    "worst_ratio": 1.1451006923184133,
+    "worst_at": {
+     "point": [
+      -552.1899,
+      50.8284,
+      -155.1875
+     ],
+     "radius_mm": 0.0035691484291252426,
+     "xi": 0.9988438639381648,
+     "t_att_mm": 0.006233772196747192,
+     "required_mm": 0.003116886098373596
+    },
+    "lip_radius_mm": 1.4021068682981677,
+    "lip_point": [
+     -552.1413,
+     50.8161,
+     -155.1875
+    ],
+    "lip_xi": 0.9988371628140151,
+    "lip_t_att_mm": 0.00627035667282808,
+    "bending_reversals": 3,
+    "reversal_locations": [
+     {
+      "span_mm": 551.943,
+      "xi": 0.99881,
+      "side": "upper",
+      "y": 50.7863,
+      "to": "concave"
+     },
+     {
+      "span_mm": 552.058,
+      "xi": 0.99883,
+      "side": "upper",
+      "y": 50.8077,
+      "to": "convex"
+     },
+     {
+      "span_mm": 552.059,
+      "xi": 0.99883,
+      "side": "lower",
+      "y": 50.801,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 14.836616450476857,
+    "pass": true
+   },
+   {
+    "name": "sweep-following xi=0.997",
+    "points": 1201,
+    "smallest_radius_mm": 0.0006812862767388572,
+    "smallest_at": {
+     "point": [
+      -548.6086,
+      50.1637,
+      -155.3112
+     ],
+     "xi": 0.9997796601352077,
+     "t_att_mm": 0.0011810132429042064,
+     "required_mm": 0.0005905066214521032,
+     "side": "upper",
+     "span_mm": 548.6086480717247
+    },
+    "smallest_plane_curve_radius_mm": 2.535586320746102e-05,
+    "worst_ratio": 1.1537318160184549,
+    "worst_at": {
+     "point": [
+      -548.6086,
+      50.1637,
+      -155.3112
+     ],
+     "radius_mm": 0.0006812862767388572,
+     "xi": 0.9997796601352077,
+     "t_att_mm": 0.0011810132429042064,
+     "required_mm": 0.0005905066214521032
+    },
+    "lip_radius_mm": 0.4924812303948315,
+    "lip_point": [
+     -548.5954,
+     50.1607,
+     -155.3111
+    ],
+    "lip_xi": 0.999775464805957,
+    "lip_t_att_mm": 0.0012034976902584415,
+    "bending_reversals": 4,
+    "reversal_locations": [
+     {
+      "span_mm": 548.544,
+      "xi": 0.99976,
+      "side": "upper",
+      "y": 50.1527,
+      "to": "concave"
+     },
+     {
+      "span_mm": 548.575,
+      "xi": 0.99977,
+      "side": "upper",
+      "y": 50.1583,
+      "to": "convex"
+     },
+     {
+      "span_mm": 548.575,
+      "xi": 0.99977,
+      "side": "lower",
+      "y": 50.157,
+      "to": "concave"
+     },
+     {
+      "span_mm": 548.545,
+      "xi": 0.99976,
+      "side": "lower",
+      "y": 50.1516,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 4.966470073023805,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-540.5",
+    "points": 3760,
+    "smallest_radius_mm": 2.0585815516784074e-11,
+    "smallest_at": {
+     "point": [
+      -540.5,
+      48.69,
+      -155.4425
+     ],
+     "xi": 1.0000000000032898,
+     "t_att_mm": 0.0,
+     "required_mm": 0.0,
+     "side": "upper",
+     "span_mm": 540.5000000000001
+    },
+    "smallest_plane_curve_radius_mm": 2.0585504170260853e-11,
+    "worst_ratio": 1.5057045671360407,
+    "worst_at": {
+     "point": [
+      -540.5,
+      48.3372,
+      -68.1652
+     ],
+     "radius_mm": 0.6022818268544163,
+     "xi": 0.0013562565938118867,
+     "t_att_mm": 0.8126116842456695,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -540.5,
+       48.7209,
+       -68.0562
+      ],
+      "radius_mm": 0.07591979462886551,
+      "xi": 0.00010878114308384875,
+      "t_att_mm": 8.623570736940412e-05
+     },
+     {
+      "point": [
+       -540.5,
+       48.69,
+       -155.4425
+      ],
+      "radius_mm": 2.0585815516784074e-11,
+      "xi": 1.0000000000032898,
+      "t_att_mm": 0.0
+     }
+    ],
+    "bending_reversals": 38,
+    "reversal_locations": [
+     {
+      "span_mm": 540.5,
+      "xi": 0.99989,
+      "side": "lower",
+      "y": 48.6907,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.5,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6901,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.5,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6901,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.5,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.6901,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.5,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.6901,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.5,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.6901,
+      "to": "concave"
+     },
+     {
+      "span_mm": 540.5,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.69,
+      "to": "convex"
+     },
+     {
+      "span_mm": 540.5,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.69,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 1.8863331971531587e-06,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-542",
+    "points": 3676,
+    "smallest_radius_mm": 4.681321780475689e-07,
+    "smallest_at": {
+     "point": [
+      -542.0,
+      48.9607,
+      -155.4205
+     ],
+     "xi": 0.9999998309200406,
+     "t_att_mm": 9.077153604701059e-07,
+     "required_mm": 4.5385768023505293e-07,
+     "side": "lower",
+     "span_mm": 542.0
+    },
+    "smallest_plane_curve_radius_mm": 4.6437640830016235e-07,
+    "worst_ratio": 1.0311387640501413,
+    "worst_at": {
+     "point": [
+      -542.0,
+      48.9607,
+      -155.4205
+     ],
+     "radius_mm": 4.6817761336560396e-07,
+     "xi": 0.9999998308522727,
+     "t_att_mm": 9.080787759868134e-07,
+     "required_mm": 4.540393879934067e-07
+    },
+    "lips": [
+     {
+      "point": [
+       -542.0,
+       48.9915,
+       -68.3467
+      ],
+      "radius_mm": 0.07959982009312574,
+      "xi": 0.00010893801566243506,
+      "t_att_mm": 0.002902833804931652
+     },
+     {
+      "point": [
+       -542.0,
+       48.9607,
+       -155.4205
+      ],
+      "radius_mm": 5.29781948017961e-07,
+      "xi": 0.9999998321653252,
+      "t_att_mm": 9.010373357187607e-07
+     }
+    ],
+    "bending_reversals": 30,
+    "reversal_locations": [
+     {
+      "span_mm": 542.0,
+      "xi": 0.99994,
+      "side": "lower",
+      "y": 48.961,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 0.99999,
+      "side": "lower",
+      "y": 48.9607,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.9607,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.9607,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.9607,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "upper",
+      "y": 48.9607,
+      "to": "concave"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.9607,
+      "to": "convex"
+     },
+     {
+      "span_mm": 542.0,
+      "xi": 1.0,
+      "side": "lower",
+      "y": 48.9607,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 5.73072778298335e-06,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-545",
+    "points": 3524,
+    "smallest_radius_mm": 4.321790626749058e-05,
+    "smallest_at": {
+     "point": [
+      -545.0,
+      49.5043,
+      -155.3768
+     ],
+     "xi": 0.9999842596259912,
+     "t_att_mm": 8.440652731080543e-05,
+     "required_mm": 4.2203263655402715e-05,
+     "side": "lower",
+     "span_mm": 545.0000000000003
+    },
+    "smallest_plane_curve_radius_mm": 4.283579561554575e-05,
+    "worst_ratio": 1.0238366484384969,
+    "worst_at": {
+     "point": [
+      -545.0,
+      49.5043,
+      -155.3768
+     ],
+     "radius_mm": 4.322172310155554e-05,
+     "xi": 0.9999842550812368,
+     "t_att_mm": 8.443089660342809e-05,
+     "required_mm": 4.2215448301714044e-05
+    },
+    "lips": [
+     {
+      "point": [
+       -545.0,
+       49.5442,
+       -68.9305
+      ],
+      "radius_mm": 0.8575235696626013,
+      "xi": 0.00012339601537942469,
+      "t_att_mm": 0.06893842569554637
+     },
+     {
+      "point": [
+       -545.0,
+       49.5043,
+       -155.3768
+      ],
+      "radius_mm": 4.949195521667203e-05,
+      "xi": 0.9999843913771714,
+      "t_att_mm": 8.370006790727063e-05
+     }
+    ],
+    "bending_reversals": 14,
+    "reversal_locations": [
+     {
+      "span_mm": 545.0,
+      "xi": 0.99988,
+      "side": "lower",
+      "y": 49.5048,
+      "to": "convex"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "concave"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99995,
+      "side": "lower",
+      "y": 49.5044,
+      "to": "convex"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "concave"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "convex"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99996,
+      "side": "lower",
+      "y": 49.5044,
+      "to": "concave"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "convex"
+     },
+     {
+      "span_mm": 545.0,
+      "xi": 0.99998,
+      "side": "upper",
+      "y": 49.5044,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.0005310270191850713,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-550",
+    "points": 3356,
+    "smallest_radius_mm": 0.0012521508547104468,
+    "smallest_at": {
+     "point": [
+      -550.0,
+      50.4195,
+      -155.2735
+     ],
+     "xi": 0.999543666566474,
+     "t_att_mm": 0.0024470000230146314,
+     "required_mm": 0.0012235000115073157,
+     "side": "lower",
+     "span_mm": 550.0
+    },
+    "smallest_plane_curve_radius_mm": 0.0012380665167280795,
+    "worst_ratio": 1.022881799038147,
+    "worst_at": {
+     "point": [
+      -550.0,
+      50.4194,
+      -155.2735
+     ],
+     "radius_mm": 0.001252775819376232,
+     "xi": 0.9995432007394206,
+     "t_att_mm": 0.002449502612235867,
+     "required_mm": 0.0012247513061179336
+    },
+    "lips": [
+     {
+      "point": [
+       -550.0,
+       50.4569,
+       -69.9414
+      ],
+      "radius_mm": 0.7738407408221032,
+      "xi": 0.0005331464301579901,
+      "t_att_mm": 0.4866147545997701
+     },
+     {
+      "point": [
+       -550.0,
+       50.4204,
+       -155.2739
+      ],
+      "radius_mm": 0.0014350318780595897,
+      "xi": 0.9995477460485951,
+      "t_att_mm": 0.0024250843510001266
+     }
+    ],
+    "bending_reversals": 12,
+    "reversal_locations": [
+     {
+      "span_mm": 550.0,
+      "xi": 0.99945,
+      "side": "upper",
+      "y": 50.4227,
+      "to": "convex"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99945,
+      "side": "upper",
+      "y": 50.4226,
+      "to": "concave"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99947,
+      "side": "upper",
+      "y": 50.4224,
+      "to": "convex"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99948,
+      "side": "upper",
+      "y": 50.4224,
+      "to": "concave"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99948,
+      "side": "upper",
+      "y": 50.4223,
+      "to": "convex"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99949,
+      "side": "upper",
+      "y": 50.4222,
+      "to": "concave"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99952,
+      "side": "upper",
+      "y": 50.422,
+      "to": "convex"
+     },
+     {
+      "span_mm": 550.0,
+      "xi": 0.99949,
+      "side": "lower",
+      "y": 50.4195,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.015916626205495454,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-560",
+    "points": 3066,
+    "smallest_radius_mm": 0.04189827098847688,
+    "smallest_at": {
+     "point": [
+      -560.0,
+      52.3312,
+      -154.2906
+     ],
+     "xi": 0.9890877885288747,
+     "t_att_mm": 0.07731409191819857,
+     "required_mm": 0.03865704595909929,
+     "side": "lower",
+     "span_mm": 559.9999999999998
+    },
+    "smallest_plane_curve_radius_mm": 0.04036513057602467,
+    "worst_ratio": 1.0826893164262736,
+    "worst_at": {
+     "point": [
+      -560.0,
+      52.3293,
+      -154.2893
+     ],
+     "radius_mm": 0.04193189534565309,
+     "xi": 0.9890717291536815,
+     "t_att_mm": 0.07745877734170561,
+     "required_mm": 0.03872938867085281
+    },
+    "lips": [
+     {
+      "point": [
+       -560.0,
+       52.5452,
+       -72.7268
+      ],
+      "radius_mm": 0.6255114262533636,
+      "xi": 0.010321290125588864,
+      "t_att_mm": 2.200959937864395
+     },
+     {
+      "point": [
+       -560.0,
+       52.3538,
+       -154.2971
+      ],
+      "radius_mm": 0.045288965832590594,
+      "xi": 0.9891655988056324,
+      "t_att_mm": 0.07661414122393101
+     }
+    ],
+    "bending_reversals": 10,
+    "reversal_locations": [
+     {
+      "span_mm": 560.0,
+      "xi": 0.9881,
+      "side": "upper",
+      "y": 52.4089,
+      "to": "convex"
+     },
+     {
+      "span_mm": 560.0,
+      "xi": 0.98916,
+      "side": "lower",
+      "y": 52.3469,
+      "to": "concave"
+     },
+     {
+      "span_mm": 560.0,
+      "xi": 0.98682,
+      "side": "lower",
+      "y": 52.3245,
+      "to": "convex"
+     },
+     {
+      "span_mm": 560.0,
+      "xi": 0.98699,
+      "side": "lower",
+      "y": 52.3239,
+      "to": "concave"
+     },
+     {
+      "span_mm": 560.0,
+      "xi": 0.98889,
+      "side": "lower",
+      "y": 52.3166,
+      "to": "convex"
+     },
+     {
+      "span_mm": 560.0,
+      "xi": 0.9886,
+      "side": "lower",
+      "y": 52.3114,
+      "to": "concave"
+     },
+     {
+      "span_mm": 560.0,
+      "xi": 0.3641,
+      "side": "lower",
+      "y": 50.8997,
+      "to": "convex"
+     },
+     {
+      "span_mm": 560.0,
+      "xi": 0.16507,
+      "side": "lower",
+      "y": 50.7685,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 0.6206450627925504,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-570",
+    "points": 2774,
+    "smallest_radius_mm": 0.29833836051051654,
+    "smallest_at": {
+     "point": [
+      -570.0,
+      54.4829,
+      -151.0308
+     ],
+     "xi": 0.9497636417471255,
+     "t_att_mm": 0.5600338167536952,
+     "required_mm": 0.2800169083768476,
+     "side": "lower",
+     "span_mm": 570.0000000000003
+    },
+    "smallest_plane_curve_radius_mm": 0.27050213785574145,
+    "worst_ratio": 1.0641174497333992,
+    "worst_at": {
+     "point": [
+      -570.0,
+      54.4679,
+      -151.0261
+     ],
+     "radius_mm": 0.2984152768545828,
+     "xi": 0.9497059135782961,
+     "t_att_mm": 0.5608690599507543,
+     "required_mm": 0.28043452997537716
+    },
+    "lips": [
+     {
+      "point": [
+       -570.0,
+       55.0095,
+       -77.7287
+      ],
+      "radius_mm": 0.6479927270531068,
+      "xi": 0.04758344294892087,
+      "t_att_mm": 4.748791099270911
+     },
+     {
+      "point": [
+       -570.0,
+       54.5576,
+       -151.041
+      ],
+      "radius_mm": 0.30819845459689266,
+      "xi": 0.9498890615381503,
+      "t_att_mm": 0.558219919256314
+     }
+    ],
+    "bending_reversals": 9,
+    "reversal_locations": [
+     {
+      "span_mm": 570.0,
+      "xi": 0.94167,
+      "side": "upper",
+      "y": 54.9785,
+      "to": "convex"
+     },
+     {
+      "span_mm": 570.0,
+      "xi": 0.94657,
+      "side": "lower",
+      "y": 54.2664,
+      "to": "concave"
+     },
+     {
+      "span_mm": 570.0,
+      "xi": 0.94191,
+      "side": "lower",
+      "y": 54.27,
+      "to": "convex"
+     },
+     {
+      "span_mm": 570.0,
+      "xi": 0.94503,
+      "side": "lower",
+      "y": 54.2571,
+      "to": "concave"
+     },
+     {
+      "span_mm": 570.0,
+      "xi": 0.42158,
+      "side": "lower",
+      "y": 52.9299,
+      "to": "convex"
+     },
+     {
+      "span_mm": 570.0,
+      "xi": 0.22777,
+      "side": "lower",
+      "y": 52.8888,
+      "to": "concave"
+     },
+     {
+      "span_mm": 570.0,
+      "xi": 0.22133,
+      "side": "lower",
+      "y": 52.9049,
+      "to": "convex"
+     },
+     {
+      "span_mm": 570.0,
+      "xi": 0.21127,
+      "side": "lower",
+      "y": 52.9311,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 10.553739358897682,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-575",
+    "points": 2618,
+    "smallest_radius_mm": 0.49475189717132134,
+    "smallest_at": {
+     "point": [
+      -575.0,
+      55.5701,
+      -148.9214
+     ],
+     "xi": 0.923240898233937,
+     "t_att_mm": 0.9647319346210076,
+     "required_mm": 0.4,
+     "side": "lower",
+     "span_mm": 575.0
+    },
+    "smallest_plane_curve_radius_mm": 0.4461280103456417,
+    "worst_ratio": 1.2368797429283034,
+    "worst_at": {
+     "point": [
+      -575.0,
+      55.5701,
+      -148.9214
+     ],
+     "radius_mm": 0.49475189717132134,
+     "xi": 0.923240898233937,
+     "t_att_mm": 0.9647319346210076,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -575.0,
+       56.232,
+       -80.7048
+      ],
+      "radius_mm": 0.6826958552274599,
+      "xi": 0.0727476455734751,
+      "t_att_mm": 5.712769881142529
+     },
+     {
+      "point": [
+       -575.0,
+       55.7174,
+       -148.9456
+      ],
+      "radius_mm": 0.5127120236035471,
+      "xi": 0.9235430864711762,
+      "t_att_mm": 0.9599355380751529
+     }
+    ],
+    "bending_reversals": 8,
+    "reversal_locations": [
+     {
+      "span_mm": 575.0,
+      "xi": 0.91385,
+      "side": "upper",
+      "y": 56.3662,
+      "to": "convex"
+     },
+     {
+      "span_mm": 575.0,
+      "xi": 0.91394,
+      "side": "lower",
+      "y": 55.2196,
+      "to": "concave"
+     },
+     {
+      "span_mm": 575.0,
+      "xi": 0.4456,
+      "side": "lower",
+      "y": 53.9658,
+      "to": "convex"
+     },
+     {
+      "span_mm": 575.0,
+      "xi": 0.222,
+      "side": "lower",
+      "y": 54.0937,
+      "to": "concave"
+     },
+     {
+      "span_mm": 575.0,
+      "xi": 0.2123,
+      "side": "lower",
+      "y": 54.1332,
+      "to": "convex"
+     },
+     {
+      "span_mm": 575.0,
+      "xi": 0.20216,
+      "side": "lower",
+      "y": 54.176,
+      "to": "concave"
+     },
+     {
+      "span_mm": 575.0,
+      "xi": 0.19703,
+      "side": "lower",
+      "y": 54.1985,
+      "to": "convex"
+     },
+     {
+      "span_mm": 575.0,
+      "xi": 0.89695,
+      "side": "upper",
+      "y": 56.6077,
+      "to": "concave"
+     }
+    ],
+    "concave_min_radius_mm": 19.95867818713618,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-580",
+    "points": 2446,
+    "smallest_radius_mm": 0.5483808945313808,
+    "smallest_at": {
+     "point": [
+      -580.0,
+      56.8427,
+      -146.5366
+     ],
+     "xi": 0.8924623206342001,
+     "t_att_mm": 1.4668138573610203,
+     "required_mm": 0.4,
+     "side": "lower",
+     "span_mm": 579.9999999999999
+    },
+    "smallest_plane_curve_radius_mm": 0.4749178808239638,
+    "worst_ratio": 1.370952236328452,
+    "worst_at": {
+     "point": [
+      -580.0,
+      56.8427,
+      -146.5366
+     ],
+     "radius_mm": 0.5483808945313808,
+     "xi": 0.8924623206342001,
+     "t_att_mm": 1.4668138573610203,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -580.0,
+       57.4455,
+       -84.0012
+      ],
+      "radius_mm": 0.625701476868791,
+      "xi": 0.10254191353449485,
+      "t_att_mm": 6.5132401343175435
+     },
+     {
+      "point": [
+       -580.0,
+       56.9056,
+       -146.5407
+      ],
+      "radius_mm": 0.5559358426775804,
+      "xi": 0.8925142334463648,
+      "t_att_mm": 1.4659518627521426
+     }
+    ],
+    "bending_reversals": 2,
+    "reversal_locations": [
+     {
+      "span_mm": 580.0,
+      "xi": 0.8255,
+      "side": "lower",
+      "y": 56.0781,
+      "to": "concave"
+     },
+     {
+      "span_mm": 580.0,
+      "xi": 0.48676,
+      "side": "lower",
+      "y": 55.081,
+      "to": "convex"
+     }
+    ],
+    "concave_min_radius_mm": 482.2183806519605,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-585",
+    "points": 2242,
+    "smallest_radius_mm": 0.5382551458723843,
+    "smallest_at": {
+     "point": [
+      -585.0,
+      58.1127,
+      -143.4472
+     ],
+     "xi": 0.8517643981034158,
+     "t_att_mm": 2.147435009564557,
+     "required_mm": 0.4,
+     "side": "lower",
+     "span_mm": 585.0000000000001
+    },
+    "smallest_plane_curve_radius_mm": 0.42480300620124806,
+    "worst_ratio": 1.3456378646809608,
+    "worst_at": {
+     "point": [
+      -585.0,
+      58.1127,
+      -143.4472
+     ],
+     "radius_mm": 0.5382551458723843,
+     "xi": 0.8517643981034158,
+     "t_att_mm": 2.147435009564557,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -585.0,
+       58.673,
+       -87.9854
+      ],
+      "radius_mm": 0.5740026238090121,
+      "xi": 0.14185300628587239,
+      "t_att_mm": 7.222188991459527
+     },
+     {
+      "point": [
+       -585.0,
+       58.1406,
+       -143.4481
+      ],
+      "radius_mm": 0.5411531558954413,
+      "xi": 0.8517757719063578,
+      "t_att_mm": 2.1472450068641615
+     }
+    ],
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": 725.5987509107916,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-590",
+    "points": 1990,
+    "smallest_radius_mm": 0.5300482906758683,
+    "smallest_at": {
+     "point": [
+      -590.0,
+      59.3975,
+      -139.3359
+     ],
+     "xi": 0.7966284824469566,
+     "t_att_mm": 3.04801829208237,
+     "required_mm": 0.4,
+     "side": "lower",
+     "span_mm": 590.0
+    },
+    "smallest_plane_curve_radius_mm": 0.3652149623845167,
+    "worst_ratio": 1.3251207266896707,
+    "worst_at": {
+     "point": [
+      -590.0,
+      59.3975,
+      -139.3359
+     ],
+     "radius_mm": 0.5300482906758683,
+     "xi": 0.7966284824469566,
+     "t_att_mm": 3.04801829208237,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -590.0,
+       59.9085,
+       -92.9885
+      ],
+      "radius_mm": 0.5582429358950209,
+      "xi": 0.19536369297861206,
+      "t_att_mm": 7.781191584406258
+     },
+     {
+      "point": [
+       -590.0,
+       59.4199,
+       -139.3366
+      ],
+      "radius_mm": 0.5307203771809139,
+      "xi": 0.7966369767267604,
+      "t_att_mm": 3.04788338325756
+     }
+    ],
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-595",
+    "points": 1624,
+    "smallest_radius_mm": 0.5425459876200271,
+    "smallest_at": {
+     "point": [
+      -595.0,
+      60.7457,
+      -133.3706
+     ],
+     "xi": 0.7155176532253,
+     "t_att_mm": 4.2723095727629445,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 595.0
+    },
+    "smallest_plane_curve_radius_mm": 0.2984014815246837,
+    "worst_ratio": 1.3563649690500679,
+    "worst_at": {
+     "point": [
+      -595.0,
+      60.7457,
+      -133.3706
+     ],
+     "radius_mm": 0.5425459876200271,
+     "xi": 0.7155176532253,
+     "t_att_mm": 4.2723095727629445,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -595.0,
+       61.1363,
+       -99.8459
+      ],
+      "radius_mm": 0.6188322781840804,
+      "xi": 0.27464496382180875,
+      "t_att_mm": 8.061668934154179
+     },
+     {
+      "point": [
+       -595.0,
+       60.7391,
+       -133.3707
+      ],
+      "radius_mm": 0.5429179996909109,
+      "xi": 0.7155186081229281,
+      "t_att_mm": 4.2722958377726075
+     }
+    ],
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-598",
+    "points": 1228,
+    "smallest_radius_mm": 0.5778716983962021,
+    "smallest_at": {
+     "point": [
+      -598.0,
+      61.5734,
+      -127.6198
+     ],
+     "xi": 0.6369413189349864,
+     "t_att_mm": 5.344325213048507,
+     "required_mm": 0.4,
+     "side": "upper",
+     "span_mm": 598.0000000000001
+    },
+    "smallest_plane_curve_radius_mm": 0.21111431554732396,
+    "worst_ratio": 1.4446792459905051,
+    "worst_at": {
+     "point": [
+      -598.0,
+      61.5734,
+      -127.6198
+     ],
+     "radius_mm": 0.5778716983962021,
+     "xi": 0.6369413189349864,
+     "t_att_mm": 5.344325213048507,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -598.0,
+       61.847,
+       -106.1317
+      ],
+      "radius_mm": 0.669943349028231,
+      "xi": 0.3520157231731809,
+      "t_att_mm": 7.917726825344454
+     },
+     {
+      "point": [
+       -598.0,
+       61.57,
+       -127.6199
+      ],
+      "radius_mm": 0.5782627106750953,
+      "xi": 0.636941672797652,
+      "t_att_mm": 5.344320654662343
+     }
+    ],
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-599.5",
+    "points": 770,
+    "smallest_radius_mm": 0.6203609716452715,
+    "smallest_at": {
+     "point": [
+      -599.5,
+      62.0233,
+      -122.4172
+     ],
+     "xi": 0.5661647716624005,
+     "t_att_mm": 6.20160184815613,
+     "required_mm": 0.4,
+     "side": "lower",
+     "span_mm": 599.5000000000001
+    },
+    "smallest_plane_curve_radius_mm": 0.11512860250612512,
+    "worst_ratio": 1.5509024291131785,
+    "worst_at": {
+     "point": [
+      -599.5,
+      62.0233,
+      -122.4172
+     ],
+     "radius_mm": 0.6203609716452715,
+     "xi": 0.5661647716624005,
+     "t_att_mm": 6.20160184815613,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -599.5,
+       62.1689,
+       -111.6018
+      ],
+      "radius_mm": 0.6799988352889046,
+      "xi": 0.42215953938314016,
+      "t_att_mm": 7.534143977451771
+     },
+     {
+      "point": [
+       -599.5,
+       62.0233,
+       -122.4172
+      ],
+      "radius_mm": 0.6203609716452715,
+      "xi": 0.5661647716624005,
+      "t_att_mm": 6.20160184815613
+     }
+    ],
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   },
+   {
+    "name": "chordwise X=-599.95",
+    "points": 308,
+    "smallest_radius_mm": 0.6483741344431518,
+    "smallest_at": {
+     "point": [
+      -599.95,
+      62.1892,
+      -118.7631
+     ],
+     "xi": 0.5169079909425816,
+     "t_att_mm": 6.726512871111527,
+     "required_mm": 0.4,
+     "side": "lower",
+     "span_mm": 599.9500000000002
+    },
+    "smallest_plane_curve_radius_mm": 0.037989334642659155,
+    "worst_ratio": 1.6209353361078795,
+    "worst_at": {
+     "point": [
+      -599.95,
+      62.1892,
+      -118.7631
+     ],
+     "radius_mm": 0.6483741344431518,
+     "xi": 0.5169079909425816,
+     "t_att_mm": 6.726512871111527,
+     "required_mm": 0.4
+    },
+    "lips": [
+     {
+      "point": [
+       -599.95,
+       62.2359,
+       -115.3362
+      ],
+      "radius_mm": 0.6685974885607164,
+      "xi": 0.4712224414168414,
+      "t_att_mm": 7.151872495902959
+     },
+     {
+      "point": [
+       -599.95,
+       62.1892,
+       -118.7631
+      ],
+      "radius_mm": 0.6483741344431518,
+      "xi": 0.5169079909425816,
+      "t_att_mm": 6.726512871111527
+     }
+    ],
+    "bending_reversals": 0,
+    "reversal_locations": [],
+    "concave_min_radius_mm": null,
+    "pass": true
+   }
+  ]
+ },
+ "seconds": 334.76218581199646
+}

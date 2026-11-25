@@ -1,0 +1,46 @@
+{
+ "boundary_row_change_upper_mm": 1.681428329902701e-10,
+ "boundary_row_change_lower_mm": 1.5015189092082437e-10,
+ "le_column_change_mm": 2.3362645151792094e-11,
+ "te_column_change_mm": 2.3362645151792094e-11,
+ "left_boundary_mirror_mismatch_mm": 8.998313205665909e-11,
+ "fit_quality_right_cap": {
+  "max_distance_to_analytic_cap_mm": 5.89615541558416e-05,
+  "max_kmax_error_relative_to_guide_peak": 0.001714107123973641,
+  "at_p": 0.8499999999999999,
+  "grid": "231 x 383 (p 0.002..0.998, w 0..2, dense through the lip)",
+  "max_kmax_error_relative_to_guide_peak_p_le_0.9": 0.001714107123973641,
+  "max_kmax_error_relative_to_guide_peak_p_le_0.95": 0.001714107123973641,
+  "max_kmax_error_relative_to_guide_peak_p_le_0.98": 0.001714107123973641,
+  "max_relative_error_of_guide_min_radius": 1.787691325427776e-05
+ },
+ "sewing": {
+  "free_edges": 0,
+  "multiple_edges": 0,
+  "degenerated_shapes": 4
+ },
+ "brepcheck_valid": true,
+ "volume_mm3": 1514991.8170703321,
+ "step_bytes": 16081904,
+ "cap_poles": [
+  511,
+  157
+ ],
+ "design": {
+  "A": 1.4631,
+  "B": 1.3569,
+  "C": 1.9858,
+  "K": 4,
+  "E_TE": 0.0837,
+  "P_A": 0.32,
+  "P_B": 0.88,
+  "w_knots": {
+   "coarse": 0.04,
+   "fine": 0.007,
+   "ramp": [
+    0.35,
+    0.65
+   ]
+  }
+ }
+}

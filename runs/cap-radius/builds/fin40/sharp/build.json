@@ -1,0 +1,20 @@
+{
+ "fit_max_error_mm": 1.459489960456672e-06,
+ "cap_poles": [
+  61,
+  29
+ ],
+ "cap_degrees": [
+  5,
+  5
+ ],
+ "alpha": -0.1,
+ "eps": 0.02,
+ "v_spans": 24,
+ "u_insert": 1,
+ "sewing_free_edges": 0,
+ "sewing_multiple_edges": 0,
+ "brepcheck_valid_before_export": true,
+ "volume_mm3": 368159.31586765265,
+ "step_bytes": 212042
+}

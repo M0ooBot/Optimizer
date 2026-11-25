@@ -1,0 +1,42 @@
+{
+ "valid": true,
+ "volume_mm3": 731173.8296207731,
+ "free_edges": 0,
+ "multiple_edges": 0,
+ "degenerated": 2,
+ "poles": [
+  241,
+  205
+ ],
+ "seconds": 4.445142507553101,
+ "step_bytes": 4950559,
+ "step_sha256": "18881aabebb7e63d17ba7329739efaf24dfa03552ed98ec935e3ab84ff836a20",
+ "design": {
+  "R_cap": 0.6,
+  "m_min": 2.1,
+  "alpha": 0.95,
+  "softmin_power": 12.0,
+  "m_slope": 3.0,
+  "taper_level_off_mm": 6.0,
+  "lip_bead": {
+   "h_gain": 0.12,
+   "t_full": 0.8,
+   "t_zero": 1.3,
+   "extra_gain": 0.08,
+   "extra_t": [
+    0.1,
+    0.5
+   ],
+   "width": 3.0
+  },
+  "xi_attach_p0": 0.02,
+  "guides": 241,
+  "guide_spacing": "cosine in p",
+  "wrap_intervals_per_side": 100,
+  "wrap_eps_fraction_of_lip_radius": 0.5,
+  "degrees": {
+   "across_guides": 3,
+   "wrap": 5
+  }
+ }
+}

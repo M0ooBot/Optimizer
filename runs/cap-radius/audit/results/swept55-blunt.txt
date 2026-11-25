@@ -1,0 +1,56 @@
+swept55 blunt  runs/cap-radius/builds/swept55/blunt/wing.step  sha256 7f7e6fb63931  family native
+OVERALL FAIL
+  [FAIL] 1 validity: solids 1, shells 1, closed True, valid True, strict False, faces 12
+  [PASS] 1 extent: projected span (Y) 900.000000 mm vs spec 900.000 (diff 7.71e-10); volume 1239793.360 mm3 (cap adds 48685.029; OCCT default integration gives 1239803.757)
+  [PASS] 2 retained skin: max deviation 1.23e-07 mm (parent->model 1.23e-07, model->parent 3.46e-13)
+  [PASS] 2 locked outline: max outermost lip deviation 1.54e-09 mm over 202 cut planes; outline-to-surface max 2.39e-08 mm
+  [PASS] 3 joins G1: 4 edges, 1596 samples: gap 3.60e-06 mm, angle 3.62e-05 deg; curvature mismatch 1.034e+01 /mm (cross-join normal curvature 1.034e+01 /mm); closest sample to an edge end 0.00032 mm, 48 samples near collapsed corners not judged
+  [PASS] 3 cap seams G1: 2 edges between curved cap faces: gap 3.47e-17 mm, angle 4.10e-15 deg, curvature mismatch 9.936e-16 /mm
+  [FAIL] 4 section rule: 40 cuts (0 failed to trace); thick zone min radius 0.0271259 mm at x/c 0.00100063 (24 of 26 below 0.4); thin zone min ratio 0.034 at x/c 0.99752169, t 0.45 mm (14 of 14 below 0.9); 34 of the failing cuts cross the lip more than 60 deg from square; bending reversals 284 on 40 cuts
+  [INFO] 4b lip-normal radius (informational): radius across the lip, perpendicular to the locked outline, at each cut's lip point; thick zone min 0.4299 mm at x/c 0.979955 (0 below 0.4); thin zone min ratio 1.075 at x/c 0.98501363 (0 below 0.9)
+  [FAIL] 5 whole-cap map: worst point radius 0.0665137 mm at x/c 1, t 0.4 mm, ratio 0.3326; tightest 0.0665137 mm at x/c 1; points within 0.05 mm of collapsed corners not judged (grid reaches 0.00033 mm; worst there 1.5 mm, score 36)
+  [FAIL] 6 TE closure: blunt face end; right (+Y): closes True, 0.02 mm before TE: t 0.4043, section min R 0.002089, ratio 0.0103; principal R within 0.1 mm of the TE face end min 0.06657 median 0.2104; left (-Y): closes True, 0.02 mm before TE: t 0.4043, section min R 0.002089, ratio 0.0103; principal R within 0.1 mm of the TE face end min 0.06657 median 0.2104
+  sections, right (+Y):
+      x/c          t(mm)   zone  minR(mm)  at-arc  lipR(mm)   ratio  rev outline-dev(mm) obliq(deg) lipNormalR(mm) verdict  note
+    0.0002467832      0.4  thin    0.01363  0.500   0.01363 0.06815   4      1.979e-10     89.60        1.9321   FAIL   thin zone, t = 0.4 mm (LE side)
+    0.00055902114      0.6  thin   0.020377  0.500  0.020377 0.06792   4      3.492e-10     89.39        1.9233   FAIL   thin zone, t = 0.6 mm (LE side)
+    0.001000634       0.8  thick  0.027126  0.500  0.027126     nan   4      4.225e-10     89.19        1.9175   FAIL   0.8 mm thickness crossing
+    0.02            3.398  thick     0.115  0.500     0.115     nan   2      5.446e-10     86.43        1.8453   FAIL   listed
+    0.05            5.122  thick   0.17273  0.500   0.17273     nan   2      6.625e-10     84.31        1.7411   FAIL   listed
+    0.1             6.756  thick   0.22536  0.500   0.22536     nan   2      3.295e-10     81.69        1.5594   FAIL   listed
+    0.25            8.613  thick   0.27475  0.500   0.27475     nan   2      4.097e-11     74.51        1.0289   FAIL   listed
+    0.4             8.467  thick   0.29606  0.500   0.29606     nan   6      8.122e-10     64.27       0.68196   FAIL   listed
+    0.5             7.767  thick   0.37659  0.500   0.37659     nan  14      6.624e-10     52.02       0.61191   FAIL   listed
+    0.65            6.135  thick   0.59455  0.500   0.59455     nan  14      4.258e-10      7.97       0.60034   pass   listed
+    0.8             3.986  thick   0.36423  0.500   0.36423     nan   6      1.508e-10     52.64       0.60021   FAIL   listed
+    0.9             2.301  thick   0.18039  0.500   0.18046     nan   2      1.576e-11     72.50       0.60021   FAIL   listed
+    0.95             1.38  thick   0.10704  0.500   0.10712     nan   2      5.388e-10     79.72       0.60039   FAIL   listed
+    0.97            0.995  thick  0.068227  0.500   0.06824     nan  14      4.032e-10     82.65       0.53343   FAIL   listed
+    0.97995538        0.8  thick  0.043035  0.500  0.043036     nan   8      2.763e-10     84.25       0.42992   FAIL   0.8 mm thickness crossing
+    0.98501363        0.7  thin   0.031772  0.500  0.031772 0.09078  10      2.210e-10     85.16       0.37634   FAIL   thin zone, t = 0.7 mm (TE side)
+    0.99           0.6008  thin   0.021689  0.500  0.021689  0.0722  14      7.000e-11     86.15       0.32339   FAIL   listed
+    0.99004029        0.6  thin   0.021611  0.500  0.021611 0.07204  14      7.778e-11     86.16       0.32296   FAIL   thin zone, t = 0.6 mm (TE side)
+    0.99503566        0.5  thin   0.012301  0.500  0.012301  0.0492  10      6.191e-11     87.38       0.26954   FAIL   thin zone, t = 0.5 mm (TE side)
+    0.99752169       0.45  thin    0.00765  0.500   0.00765   0.034   8      7.011e-11     88.19       0.24283   FAIL   thin zone, t = 0.45 mm (TE side)
+  sections, left (-Y):
+      x/c          t(mm)   zone  minR(mm)  at-arc  lipR(mm)   ratio  rev outline-dev(mm) obliq(deg) lipNormalR(mm) verdict  note
+    0.0002467832      0.4  thin   0.013634  0.500  0.013635 0.06817   4      6.358e-09     89.60        1.9328   FAIL   thin zone, t = 0.4 mm (LE side)
+    0.00055902114      0.6  thin   0.020377  0.500  0.020377 0.06792   4      3.590e-09     89.39        1.9233   FAIL   thin zone, t = 0.6 mm (LE side)
+    0.001000634       0.8  thick  0.027129  0.500  0.027129     nan   4      4.472e-09     89.19        1.9177   FAIL   0.8 mm thickness crossing
+    0.02            3.398  thick     0.115  0.500     0.115     nan   2      1.540e-09     86.43        1.8453   FAIL   listed
+    0.05            5.122  thick   0.17273  0.500   0.17273     nan   2      1.035e-09     84.31        1.7411   FAIL   listed
+    0.1             6.756  thick   0.22536  0.500   0.22536     nan   2      4.767e-11     81.69        1.5594   FAIL   listed
+    0.25            8.613  thick   0.27475  0.500   0.27475     nan   2      1.972e-10     74.51        1.0289   FAIL   listed
+    0.4             8.467  thick   0.29606  0.500   0.29606     nan   6      6.507e-10     64.27       0.68196   FAIL   listed
+    0.5             7.767  thick   0.37659  0.500   0.37659     nan  14      5.906e-10     52.02       0.61191   FAIL   listed
+    0.65            6.135  thick   0.59455  0.500   0.59455     nan  14      4.796e-10      7.97       0.60034   pass   listed
+    0.8             3.986  thick   0.36423  0.500   0.36423     nan   6      1.370e-10     52.64       0.60021   FAIL   listed
+    0.9             2.301  thick   0.18039  0.500   0.18046     nan   2      7.336e-11     72.50       0.60021   FAIL   listed
+    0.95             1.38  thick   0.10704  0.500   0.10712     nan   2      6.219e-10     79.72       0.60039   FAIL   listed
+    0.97            0.995  thick  0.068227  0.500   0.06824     nan  14      2.999e-10     82.65       0.53343   FAIL   listed
+    0.97995538        0.8  thick  0.043035  0.500  0.043036     nan   8      6.100e-10     84.25       0.42992   FAIL   0.8 mm thickness crossing
+    0.98501363        0.7  thin   0.031772  0.500  0.031772 0.09078  10      2.451e-10     85.16       0.37633   FAIL   thin zone, t = 0.7 mm (TE side)
+    0.99           0.6008  thin   0.021689  0.500  0.021689  0.0722  14      3.714e-10     86.15       0.32339   FAIL   listed
+    0.99004029        0.6  thin   0.021611  0.500  0.021611 0.07204  14      3.801e-10     86.16       0.32296   FAIL   thin zone, t = 0.6 mm (TE side)
+    0.99503566        0.5  thin   0.012301  0.500  0.012301  0.0492  10      6.043e-10     87.38       0.26954   FAIL   thin zone, t = 0.5 mm (TE side)
+    0.99752169       0.45  thin  0.0076499  0.500   0.00765   0.034   8      1.172e-09     88.19       0.24283   FAIL   thin zone, t = 0.45 mm (TE side)

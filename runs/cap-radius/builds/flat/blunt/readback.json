@@ -1,0 +1,2563 @@
+{
+ "step": {
+  "path": "runs/cap-radius/builds/flat/blunt/wing.step",
+  "sha256": "fdf987b5931fdd4719e184dc9dc414b82b53cd2f9e3445a92d15ce32ec6a0fd5",
+  "bytes": 140110
+ },
+ "solid": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 7,
+  "brepcheck_valid": true,
+  "free_boundary_edges": 0,
+  "shell_closed_flag": true,
+  "volume_mm3": 958092.9019379418,
+  "surface_area_mm2": 194944.0954304631,
+  "bounding_box_mm": [
+   -1e-07,
+   -400.0000001,
+   -6.241514455,
+   120.0000001,
+   400.0000001,
+   6.241514455
+  ],
+  "face_types": [
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_Plane",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_Plane"
+  ],
+  "max_shape_tolerance_mm": 1e-07
+ },
+ "evaluation_crosscheck_max_relative_difference_vs_OCC_D2": 1.6277239292164108e-13,
+ "parent_preserved": {
+  "upper_vs_parent_py_max_mm": 2.0707850546161724e-11,
+  "upper_poles_vs_parent_step_max_mm": 0.0,
+  "lower_vs_parent_py_max_mm": 2.0707850546161724e-11,
+  "lower_poles_vs_parent_step_max_mm": 0.0,
+  "te_face_vs_parent_py_max_mm": 1.214176601520669e-13,
+  "te_face_poles_vs_parent_step_max_mm": 0.0
+ },
+ "locked_dimensions": {
+  "chord_X_range_mm": [
+   -1.0000000000021684e-07,
+   120.00000010000001
+  ],
+  "span_Y_range_mm": [
+   -400.00000009990913,
+   400.00000009996904
+  ],
+  "projected_span_mm": 800.0000001998782,
+  "thickness_Z_range_mm": [
+   -6.241514455288798,
+   6.2415144552887964
+  ],
+  "cap_cut_edge_max_abs_Y_minus_350_mm": 0.0,
+  "outline": {
+   "right": {
+    "lip_max_distance_to_locked_outline_mm": 0.0026927486703072737,
+    "at_s": 0.9939539367790654,
+    "at_XY": [
+     119.99382334952682,
+     352.832529339208
+    ],
+    "lip_max_distance_for_s_below_0.99_mm": 0.001793781147367599,
+    "lip_max_abs_Z_mm": 1.6653345369377348e-16,
+    "tip_max_abs_Y_mm": 399.9999999971709,
+    "tip_at_X_mm": 60.000841596717336,
+    "s_range_where_distance_exceeds_1e-5_mm": [
+     0.9777750000000001,
+     0.9999754218710406
+    ],
+    "that_range_starts_at_XY": [
+     119.94986809265603,
+     356.8149147763218
+    ]
+   },
+   "left": {
+    "lip_max_distance_to_locked_outline_mm": 0.002692748670477802,
+    "at_s": 0.9939539367790654,
+    "at_XY": [
+     119.99382334952682,
+     -352.8325293391652
+    ],
+    "lip_max_distance_for_s_below_0.99_mm": 0.0017937811477797005,
+    "lip_max_abs_Z_mm": 1.6653345369377348e-16,
+    "tip_max_abs_Y_mm": 399.99999999711093,
+    "tip_at_X_mm": 60.000841596717336,
+    "s_range_where_distance_exceeds_1e-5_mm": [
+     0.9777750000000001,
+     0.9999754218710406
+    ],
+    "that_range_starts_at_XY": [
+     119.94986809265603,
+     -356.81491477630834
+    ]
+   }
+  },
+  "trailing_edge_closure": {
+   "right": {
+    "closure_curve_X_range_mm": [
+     119.99999999999991,
+     120.00000000000006
+    ],
+    "reach_beyond_attachment_mm": 0.35156250000619593,
+    "height_mm": 0.39999999999999997,
+    "apex_radius_in_face_plane_mm": 0.19999999999288573,
+    "min_radius_of_closure_curve_in_face_plane_mm": 0.1725115869216622,
+    "crease_angle_cap_to_TE_plane_deg": {
+     "at_corners": [
+      2.8535542110165086,
+      2.8535542110165086
+     ],
+     "at_apex": 0.09636870500464986,
+     "min": 0.09636870500464986,
+     "max": 2.8535542110165086
+    }
+   },
+   "left": {
+    "closure_curve_X_range_mm": [
+     119.99999999999991,
+     120.00000000000006
+    ],
+    "reach_beyond_attachment_mm": 0.35156249999994316,
+    "height_mm": 0.39999999999999997,
+    "apex_radius_in_face_plane_mm": 0.2,
+    "min_radius_of_closure_curve_in_face_plane_mm": 0.1725115869196584,
+    "crease_angle_cap_to_TE_plane_deg": {
+     "at_corners": [
+      2.8535542110165086,
+      2.8535542110165086
+     ],
+     "at_apex": 0.09636870516727516,
+     "min": 0.09636870516727516,
+     "max": 2.8535542110165086
+    }
+   },
+   "parent_skin_to_TE_face_crease_deg": 2.853554104881506
+  }
+ },
+ "joins": {
+  "right_upper": {
+   "samples": 4401,
+   "s_range": [
+    1e-06,
+    1.0
+   ],
+   "nearest_sample_to_collapsed_LE_point_mm": 3.35179870758037e-05,
+   "max_separation_mm": 1.1419854084768106e-11,
+   "max_tangent_plane_angle_deg": 1.4787793334710982e-06,
+   "at_s": 1.544282973740571e-05,
+   "max_abs_diff_normal_curvature_chordwise_per_mm": 2.237223462264737e-06,
+   "max_abs_diff_twist_curvature_per_mm": 1.2509039064050146e-17,
+   "max_abs_diff_normal_curvature_spanwise_per_mm": 6.963236393007356e-19,
+   "parent_curvature_range_chordwise_per_mm": [
+    -1.008721685344048,
+    -6.139770120116387e-06
+   ],
+   "cap_spanwise_curvature_max_abs_per_mm": 1.7456381581748426e-63,
+   "max_tangent_plane_angle_deg_s_above_1e-3": 1.4787793334710982e-06
+  },
+  "right_lower": {
+   "samples": 4401,
+   "s_range": [
+    1e-06,
+    1.0
+   ],
+   "nearest_sample_to_collapsed_LE_point_mm": 3.35179870758037e-05,
+   "max_separation_mm": 1.1419854084768106e-11,
+   "max_tangent_plane_angle_deg": 1.4787793334710982e-06,
+   "at_s": 1.544282973740571e-05,
+   "max_abs_diff_normal_curvature_chordwise_per_mm": 2.237223462264737e-06,
+   "max_abs_diff_twist_curvature_per_mm": 1.2509039064050146e-17,
+   "max_abs_diff_normal_curvature_spanwise_per_mm": 6.963236393007356e-19,
+   "parent_curvature_range_chordwise_per_mm": [
+    -1.008721685344048,
+    -6.139770120116387e-06
+   ],
+   "cap_spanwise_curvature_max_abs_per_mm": 1.7456381581748426e-63,
+   "max_tangent_plane_angle_deg_s_above_1e-3": 1.4787793334710982e-06
+  },
+  "left_upper": {
+   "samples": 4401,
+   "s_range": [
+    1e-06,
+    1.0
+   ],
+   "nearest_sample_to_collapsed_LE_point_mm": 3.35179870758037e-05,
+   "max_separation_mm": 1.1419854084768106e-11,
+   "max_tangent_plane_angle_deg": 1.4787793334710982e-06,
+   "at_s": 0.36000640000000006,
+   "max_abs_diff_normal_curvature_chordwise_per_mm": 2.237223462375759e-06,
+   "max_abs_diff_twist_curvature_per_mm": 1.2509039064050146e-17,
+   "max_abs_diff_normal_curvature_spanwise_per_mm": 6.963236393007348e-19,
+   "parent_curvature_range_chordwise_per_mm": [
+    -1.008721685344048,
+    -6.139770120116387e-06
+   ],
+   "cap_spanwise_curvature_max_abs_per_mm": 1.7456381581748426e-63,
+   "max_tangent_plane_angle_deg_s_above_1e-3": 1.4787793334710982e-06
+  },
+  "left_lower": {
+   "samples": 4401,
+   "s_range": [
+    1e-06,
+    1.0
+   ],
+   "nearest_sample_to_collapsed_LE_point_mm": 3.35179870758037e-05,
+   "max_separation_mm": 1.1419854084768106e-11,
+   "max_tangent_plane_angle_deg": 1.4787793334710982e-06,
+   "at_s": 0.36000640000000006,
+   "max_abs_diff_normal_curvature_chordwise_per_mm": 2.237223462375759e-06,
+   "max_abs_diff_twist_curvature_per_mm": 1.2509039064050146e-17,
+   "max_abs_diff_normal_curvature_spanwise_per_mm": 6.963236393007348e-19,
+   "parent_curvature_range_chordwise_per_mm": [
+    -1.008721685344048,
+    -6.139770120116387e-06
+   ],
+   "cap_spanwise_curvature_max_abs_per_mm": 1.7456381581748426e-63,
+   "max_tangent_plane_angle_deg_s_above_1e-3": 1.4787793334710982e-06
+  }
+ },
+ "curvature_map": {
+  "right": {
+   "grid": [
+    1580,
+    919
+   ],
+   "points": 1452020,
+   "grid_s_min": 1e-05,
+   "grid_reach_to_collapsed_LE_point_mm": 0.001971593087432666,
+   "smallest_radius_grid_mm": 0.3560903809937531,
+   "smallest_radius_at": {
+    "s": 1.0,
+    "w": 0.8400000000000001,
+    "XYZ": [
+     120.0,
+     350.1035,
+     0.19819
+    ],
+    "attachment_thickness_mm": 0.40000000000557184
+   },
+   "smallest_radius_where_thickness_ge_0.8_mm": 0.7429450831278872,
+   "its_location": {
+    "s": 0.7936,
+    "w": 0.0,
+    "XYZ": [
+     111.316035,
+     384.054742,
+     0.0
+    ],
+    "attachment_thickness_mm": 6.25100818609564
+   },
+   "smallest_radius_where_thickness_lt_0.8_mm": 0.3560903809937531,
+   "its_location_thin": {
+    "s": 1.0,
+    "w": 0.8400000000000001,
+    "XYZ": [
+     120.0,
+     350.1035,
+     0.1981899
+    ],
+    "attachment_thickness_mm": 0.40000000000557184,
+    "required_mm": 0.20000000000278592
+   },
+   "min_ratio_radius_over_required_grid": 1.7804519049437806,
+   "refined_local_minima_of_ratio": [
+    {
+     "s": 1.0,
+     "w": 0.8397554031198334,
+     "XYZ": [
+      120.0,
+      350.1036444,
+      0.1981819
+     ],
+     "radius_mm": 0.35608828695531497,
+     "attachment_thickness_mm": 0.40000000000557184,
+     "required_mm": 0.20000000000278592,
+     "ratio": 1.780441434751774
+    },
+    {
+     "s": 1.0,
+     "w": -0.8397554403813396,
+     "XYZ": [
+      120.0,
+      350.1036444,
+      -0.1981819
+     ],
+     "radius_mm": 0.3560882869553783,
+     "attachment_thickness_mm": 0.4000000000058737,
+     "required_mm": 0.20000000000293686,
+     "ratio": 1.7804414347718605
+    },
+    {
+     "s": 0.7937090478576888,
+     "w": -5.86606291856591e-09,
+     "XYZ": [
+      111.3272534,
+      384.0425957,
+      -0.0
+     ],
+     "radius_mm": 0.7429448933419271,
+     "attachment_thickness_mm": 6.248047586733207,
+     "required_mm": 0.4,
+     "ratio": 1.8573622333548179
+    },
+    {
+     "s": 0.9689939388711657,
+     "w": 0.6823109183821855,
+     "XYZ": [
+      119.9027915,
+      354.5208186,
+      0.5973414
+     ],
+     "radius_mm": 0.9741010716785939,
+     "attachment_thickness_mm": 1.2740192677205322,
+     "required_mm": 0.4,
+     "ratio": 2.4352526791964846
+    },
+    {
+     "s": 0.9689939347053287,
+     "w": -0.6823109889360028,
+     "XYZ": [
+      119.9027915,
+      354.5208182,
+      -0.5973415
+     ],
+     "radius_mm": 0.9741010716788354,
+     "attachment_thickness_mm": 1.2740193861354463,
+     "required_mm": 0.4,
+     "ratio": 2.4352526791970885
+    },
+    {
+     "s": 0.9714653798985433,
+     "w": 0.9999894925518605,
+     "XYZ": [
+      119.9180129,
+      350.0001682,
+      0.601904
+     ],
+     "radius_mm": 0.9913528231911527,
+     "attachment_thickness_mm": 1.2038079587572894,
+     "required_mm": 0.4,
+     "ratio": 2.4783820579778815
+    },
+    {
+     "s": 0.971465379839481,
+     "w": -0.999989514639363,
+     "XYZ": [
+      119.9180129,
+      350.0001678,
+      -0.601904
+     ],
+     "radius_mm": 0.9913528231911534,
+     "attachment_thickness_mm": 1.2038079604342828,
+     "required_mm": 0.4,
+     "ratio": 2.4783820579778832
+    },
+    {
+     "s": 0.9714653799593916,
+     "w": -0.999998072419957,
+     "XYZ": [
+      119.9180129,
+      350.0000309,
+      -0.601904
+     ],
+     "radius_mm": 0.9913528231911534,
+     "attachment_thickness_mm": 1.2038079570297031,
+     "required_mm": 0.4,
+     "ratio": 2.4783820579778832
+    }
+   ],
+   "points_failing_rule": 0,
+   "saddle_points_fraction": 0.05167421936336965,
+   "saddle_region_s_range": [
+    0.9990138869434917,
+    1.0
+   ],
+   "concave_points": 0
+  },
+  "left": {
+   "grid": [
+    1580,
+    919
+   ],
+   "points": 1452020,
+   "grid_s_min": 1e-05,
+   "grid_reach_to_collapsed_LE_point_mm": 0.0019715930865800146,
+   "smallest_radius_grid_mm": 0.35609038246887603,
+   "smallest_radius_at": {
+    "s": 1.0,
+    "w": 0.8400000000000001,
+    "XYZ": [
+     120.0,
+     -350.1035,
+     0.19819
+    ],
+    "attachment_thickness_mm": 0.40000000000557184
+   },
+   "smallest_radius_where_thickness_ge_0.8_mm": 0.7429450831298909,
+   "its_location": {
+    "s": 0.7936,
+    "w": 0.0,
+    "XYZ": [
+     111.316035,
+     -384.054742,
+     0.0
+    ],
+    "attachment_thickness_mm": 6.25100818609564
+   },
+   "smallest_radius_where_thickness_lt_0.8_mm": 0.35609038246887603,
+   "its_location_thin": {
+    "s": 1.0,
+    "w": 0.8400000000000001,
+    "XYZ": [
+     120.0,
+     -350.1035,
+     0.1981899
+    ],
+    "attachment_thickness_mm": 0.40000000000557184,
+    "required_mm": 0.20000000000278592
+   },
+   "min_ratio_radius_over_required_grid": 1.7804519123192775,
+   "refined_local_minima_of_ratio": [
+    {
+     "s": 1.0,
+     "w": -0.8397555607957635,
+     "XYZ": [
+      120.0,
+      -350.1036444,
+      -0.1981819
+     ],
+     "radius_mm": 0.3560882884302694,
+     "attachment_thickness_mm": 0.4000000000071815,
+     "required_mm": 0.20000000000359075,
+     "ratio": 1.7804414421193815
+    },
+    {
+     "s": 1.0,
+     "w": 0.8397553389961315,
+     "XYZ": [
+      120.0,
+      -350.1036445,
+      0.1981819
+     ],
+     "radius_mm": 0.35608828843430723,
+     "attachment_thickness_mm": 0.4000000000071815,
+     "required_mm": 0.20000000000359075,
+     "ratio": 1.7804414421395705
+    },
+    {
+     "s": 0.793709052148171,
+     "w": -7.121629897027995e-09,
+     "XYZ": [
+      111.3272538,
+      -384.0425952,
+      -0.0
+     ],
+     "radius_mm": 0.7429448933439206,
+     "attachment_thickness_mm": 6.248047470242145,
+     "required_mm": 0.4,
+     "ratio": 1.8573622333597943
+    },
+    {
+     "s": 0.9689938959058709,
+     "w": 0.6823095798630442,
+     "XYZ": [
+      119.9027912,
+      -354.5208383,
+      0.5973416
+     ],
+     "radius_mm": 0.974101071663862,
+     "attachment_thickness_mm": 1.2740204890181281,
+     "required_mm": 0.4,
+     "ratio": 2.435252679159655
+    },
+    {
+     "s": 0.9689938763057329,
+     "w": -0.6823086831185428,
+     "XYZ": [
+      119.9027911,
+      -354.5208505,
+      -0.5973415
+     ],
+     "radius_mm": 0.9741010716650929,
+     "attachment_thickness_mm": 1.2740210461560846,
+     "required_mm": 0.4,
+     "ratio": 2.435252679162732
+    },
+    {
+     "s": 0.9714653798981391,
+     "w": -0.9999895146149032,
+     "XYZ": [
+      119.9180129,
+      -350.0001678,
+      -0.601904
+     ],
+     "radius_mm": 0.9913528231911527,
+     "attachment_thickness_mm": 1.2038079587688075,
+     "required_mm": 0.4,
+     "ratio": 2.4783820579778815
+    },
+    {
+     "s": 0.9714653798830906,
+     "w": 0.9999894925768279,
+     "XYZ": [
+      119.9180129,
+      -350.0001682,
+      0.601904
+     ],
+     "radius_mm": 0.9913528231911536,
+     "attachment_thickness_mm": 1.2038079591956468,
+     "required_mm": 0.4,
+     "ratio": 2.4783820579778837
+    },
+    {
+     "s": 0.9714653798558794,
+     "w": -0.9999962069037266,
+     "XYZ": [
+      119.9180129,
+      -350.0000607,
+      -0.601904
+     ],
+     "radius_mm": 0.991352823191154,
+     "attachment_thickness_mm": 1.2038079599687648,
+     "required_mm": 0.4,
+     "ratio": 2.478382057977885
+    }
+   ],
+   "points_failing_rule": 0,
+   "saddle_points_fraction": 0.05167421936336965,
+   "saddle_region_s_range": [
+    0.9990138869434917,
+    1.0
+   ],
+   "concave_points": 0
+  }
+ },
+ "parent_context": {
+  "parent_skin_min_radius_mm": 0.9913871428665509,
+  "at_X_mm": 119.91675064931444,
+  "parent_skin_min_radius_for_X_above_119_mm": 0.9913871428665509
+ },
+ "sections": {
+  "note": "trace radius = curvature radius of the planar section curve; normal radius = radius of the surface normal curvature along the trace (equal when the plane contains the surface normal). Signed: positive = convex (bending toward the solid).",
+  "constant_X": [
+   {
+    "label": "X=0.000000 (s=0.0001)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.001001417127164588,
+    "min_trace_radius_at_XYZ": [
+     0.0,
+     350.01971,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 5724.787362400809,
+    "min_normal_radius_at_XYZ": [
+     0.0,
+     350.01971,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.001001417127164588,
+    "lip_normal_radius_mm": 5724.787362400809,
+    "lip_XYZ": [
+     0.0,
+     350.01971,
+     0.0
+    ],
+    "X_mm": 1.1494543873441752e-09,
+    "attachment_thickness_mm": 0.0067025583802713,
+    "required_radius_mm": 0.00335127919013565,
+    "principal_min_radius_on_section_mm": 1627.9401239263052,
+    "principal_min_at_XYZ": [
+     0.0,
+     350.0,
+     0.00335
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 0.019714181616336646
+   },
+   {
+    "label": "X=0.000001 (s=0.001)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.009994844442454354,
+    "min_trace_radius_at_XYZ": [
+     0.0,
+     350.19697,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 571.3733266425293,
+    "min_normal_radius_at_XYZ": [
+     0.0,
+     350.19697,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.009994844442454354,
+    "lip_normal_radius_mm": 571.3733266425293,
+    "lip_XYZ": [
+     0.0,
+     350.19697,
+     0.0
+    ],
+    "X_mm": 1.1479251009271344e-06,
+    "attachment_thickness_mm": 0.06693116053764861,
+    "required_radius_mm": 0.033465580268824305,
+    "principal_min_radius_on_section_mm": 162.08070678079605,
+    "principal_min_at_XYZ": [
+     0.0,
+     350.0,
+     0.03347
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 0.19696689046918436
+   },
+   {
+    "label": "X=0.001133 (s=0.01)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.09802893296762605,
+    "min_trace_radius_at_XYZ": [
+     0.00113,
+     351.95218,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 56.03458984896483,
+    "min_normal_radius_at_XYZ": [
+     0.00113,
+     351.95218,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.09802893296762605,
+    "lip_normal_radius_mm": 56.03458984896483,
+    "lip_XYZ": [
+     0.00113,
+     351.95218,
+     0.0
+    ],
+    "X_mm": 0.0011326919623840465,
+    "attachment_thickness_mm": 0.6599034227358948,
+    "required_radius_mm": 0.3299517113679474,
+    "principal_min_radius_on_section_mm": 15.50373152797074,
+    "principal_min_at_XYZ": [
+     0.00113,
+     350.0,
+     0.32995
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 1.9521763340376879
+   },
+   {
+    "label": "X=0.029679 (s=0.03)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.2815455488785974,
+    "min_trace_radius_at_XYZ": [
+     0.02968,
+     355.73991,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 17.86902084885314,
+    "min_normal_radius_at_XYZ": [
+     0.02968,
+     355.73991,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.2815455488785974,
+    "lip_normal_radius_mm": 17.86902084885314,
+    "lip_XYZ": [
+     0.02968,
+     355.73991,
+     0.0
+    ],
+    "X_mm": 0.02967919188445686,
+    "attachment_thickness_mm": 1.9176558327404947,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 4.7224008251973055,
+    "principal_min_at_XYZ": [
+     0.02968,
+     350.0,
+     0.95883
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 5.739911850979809
+   },
+   {
+    "label": "X=0.133288 (s=0.05)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.44892133066613854,
+    "min_trace_radius_at_XYZ": [
+     0.13329,
+     359.37216,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 10.247608966785835,
+    "min_normal_radius_at_XYZ": [
+     0.13329,
+     359.37216,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.44892133066613854,
+    "lip_normal_radius_mm": 10.247608966785835,
+    "lip_XYZ": [
+     0.13329,
+     359.37216,
+     0.0
+    ],
+    "X_mm": 0.13328786897490477,
+    "attachment_thickness_mm": 3.0942018279549406,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 2.78875941513439,
+    "principal_min_at_XYZ": [
+     0.13329,
+     350.0,
+     1.5471
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 9.37215780097904
+   },
+   {
+    "label": "X=0.986333 (s=0.1)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.801214104671414,
+    "min_trace_radius_at_XYZ": [
+     0.98633,
+     367.77251,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 4.595882645825458,
+    "min_normal_radius_at_XYZ": [
+     0.98633,
+     367.77251,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.801214104671414,
+    "lip_normal_radius_mm": 4.595882645825458,
+    "lip_XYZ": [
+     0.98633,
+     367.77251,
+     0.0
+    ],
+    "X_mm": 0.9863331290010061,
+    "attachment_thickness_mm": 5.692359807233212,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 2.6768254427105482,
+    "principal_min_at_XYZ": [
+     0.98633,
+     363.42219,
+     2.24106
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 17.772505532702098
+   },
+   {
+    "label": "X=3.070288 (s=0.15)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.0672459944876151,
+    "min_trace_radius_at_XYZ": [
+     3.07029,
+     375.20104,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 2.8382435501126335,
+    "min_normal_radius_at_XYZ": [
+     3.07029,
+     375.20104,
+     0.0
+    ],
+    "lip_trace_radius_mm": 1.0672459944876151,
+    "lip_normal_radius_mm": 2.8382435501126335,
+    "lip_XYZ": [
+     3.07029,
+     375.20104,
+     0.0
+    ],
+    "X_mm": 3.07028781004422,
+    "attachment_thickness_mm": 7.8232145472140795,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 2.838243550112634,
+    "principal_min_at_XYZ": [
+     3.07029,
+     375.20104,
+     0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 25.201042397781862
+   },
+   {
+    "label": "X=6.691586 (s=0.2)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.25688663687818,
+    "min_trace_radius_at_XYZ": [
+     6.69159,
+     381.65777,
+     -0.0
+    ],
+    "min_normal_curvature_radius_mm": 2.1045186836641707,
+    "min_normal_radius_at_XYZ": [
+     6.69159,
+     381.65777,
+     -0.0
+    ],
+    "lip_trace_radius_mm": 1.25688663687818,
+    "lip_normal_radius_mm": 2.1045186836641707,
+    "lip_XYZ": [
+     6.69159,
+     381.65777,
+     -0.0
+    ],
+    "X_mm": 6.69158627867179,
+    "attachment_thickness_mm": 9.515506657271349,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 2.104518683664171,
+    "principal_min_at_XYZ": [
+     6.69159,
+     381.65777,
+     -0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 31.657767346729997
+   },
+   {
+    "label": "X=18.899186 (s=0.3)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.4439825559820083,
+    "min_trace_radius_at_XYZ": [
+     18.89919,
+     391.65578,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 1.6296605836775697,
+    "min_normal_radius_at_XYZ": [
+     18.89919,
+     391.65578,
+     0.0
+    ],
+    "lip_trace_radius_mm": 1.4439825559820083,
+    "lip_normal_radius_mm": 1.6296605836775697,
+    "lip_XYZ": [
+     18.89919,
+     391.65578,
+     0.0
+    ],
+    "X_mm": 18.899185749328563,
+    "attachment_thickness_mm": 11.699365425115046,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 1.6296605836775695,
+    "principal_min_at_XYZ": [
+     18.89919,
+     391.65578,
+     0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 41.65577537386531
+   },
+   {
+    "label": "X=36.921459 (s=0.4)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.4314983073421577,
+    "min_trace_radius_at_XYZ": [
+     36.92146,
+     397.76651,
+     -0.0
+    ],
+    "min_normal_curvature_radius_mm": 1.4615124811171307,
+    "min_normal_radius_at_XYZ": [
+     36.92146,
+     397.76651,
+     -0.0
+    ],
+    "lip_trace_radius_mm": 1.4314983073421577,
+    "lip_normal_radius_mm": 1.4615124811171307,
+    "lip_XYZ": [
+     36.92146,
+     397.76651,
+     -0.0
+    ],
+    "X_mm": 36.921459341074225,
+    "attachment_thickness_mm": 12.473860985782204,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 1.4615124811171307,
+    "principal_min_at_XYZ": [
+     36.92146,
+     397.76651,
+     -0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 47.76651072444531
+   },
+   {
+    "label": "X=58.404020 (s=0.5)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.2804619516929172,
+    "min_trace_radius_at_XYZ": [
+     58.40402,
+     399.98993,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 1.2805638648518165,
+    "min_normal_radius_at_XYZ": [
+     58.40402,
+     399.98993,
+     0.0
+    ],
+    "lip_trace_radius_mm": 1.2804619516929172,
+    "lip_normal_radius_mm": 1.2805638648518165,
+    "lip_XYZ": [
+     58.40402,
+     399.98993,
+     0.0
+    ],
+    "X_mm": 58.40402046807455,
+    "attachment_thickness_mm": 12.068918214291674,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 1.2805638648518163,
+    "principal_min_at_XYZ": [
+     58.40402,
+     399.98993,
+     0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 49.98993448116789
+   },
+   {
+    "label": "X=80.130152 (s=0.6)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.0439335226446917,
+    "min_trace_radius_at_XYZ": [
+     80.13015,
+     398.32596,
+     -0.0
+    ],
+    "min_normal_curvature_radius_mm": 1.0596385410707925,
+    "min_normal_radius_at_XYZ": [
+     80.13015,
+     398.32596,
+     -0.0
+    ],
+    "lip_trace_radius_mm": 1.0439335226446917,
+    "lip_normal_radius_mm": 1.0596385410707925,
+    "lip_XYZ": [
+     80.13015,
+     398.32596,
+     -0.0
+    ],
+    "X_mm": 80.13015227272746,
+    "attachment_thickness_mm": 10.714461985658735,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 1.0596385410707927,
+    "principal_min_at_XYZ": [
+     80.13015,
+     398.32596,
+     -0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 48.3259555370679
+   },
+   {
+    "label": "X=98.825192 (s=0.7)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.7670062400103418,
+    "min_trace_radius_at_XYZ": [
+     98.82519,
+     392.77432,
+     -0.0
+    ],
+    "min_normal_curvature_radius_mm": 0.844815678912747,
+    "min_normal_radius_at_XYZ": [
+     98.82519,
+     392.77432,
+     -0.0
+    ],
+    "lip_trace_radius_mm": 0.7670062400103418,
+    "lip_normal_radius_mm": 0.844815678912747,
+    "lip_XYZ": [
+     98.82519,
+     392.77432,
+     -0.0
+    ],
+    "X_mm": 98.82519173988017,
+    "attachment_thickness_mm": 8.640417174898687,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 0.844815678912747,
+    "principal_min_at_XYZ": [
+     98.82519,
+     392.77432,
+     -0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 42.77431693112567
+   },
+   {
+    "label": "X=106.194829 (s=0.75)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.625307315331138,
+    "min_trace_radius_at_XYZ": [
+     106.19483,
+     388.54039,
+     -0.0
+    ],
+    "min_normal_curvature_radius_mm": 0.7691512031900642,
+    "min_normal_radius_at_XYZ": [
+     106.19483,
+     388.54039,
+     -0.0
+    ],
+    "lip_trace_radius_mm": 0.625307315331138,
+    "lip_normal_radius_mm": 0.7691512031900642,
+    "lip_XYZ": [
+     106.19483,
+     388.54039,
+     -0.0
+    ],
+    "X_mm": 106.19482890531275,
+    "attachment_thickness_mm": 7.405400574662873,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 0.7691512031900642,
+    "principal_min_at_XYZ": [
+     106.19483,
+     388.54039,
+     -0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 38.5403947508687
+   },
+   {
+    "label": "X=111.960914 (s=0.8)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.48681220578977924,
+    "min_trace_radius_at_XYZ": [
+     111.96091,
+     383.33404,
+     -0.0
+    ],
+    "min_normal_curvature_radius_mm": 0.7435909676199799,
+    "min_normal_radius_at_XYZ": [
+     111.96091,
+     383.33404,
+     -0.0
+    ],
+    "lip_trace_radius_mm": 0.48681220578977924,
+    "lip_normal_radius_mm": 0.7435909676199799,
+    "lip_XYZ": [
+     111.96091,
+     383.33404,
+     -0.0
+    ],
+    "X_mm": 111.96091381105487,
+    "attachment_thickness_mm": 6.076708657023333,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 0.74359096761998,
+    "principal_min_at_XYZ": [
+     111.96091,
+     383.33404,
+     -0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 33.334038164046376
+   },
+   {
+    "label": "X=116.056019 (s=0.85)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.3549247528471699,
+    "min_trace_radius_at_XYZ": [
+     116.05602,
+     377.15437,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 0.8054529836019036,
+    "min_normal_radius_at_XYZ": [
+     116.05602,
+     377.15437,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.3549247528471699,
+    "lip_normal_radius_mm": 0.8054529836019036,
+    "lip_XYZ": [
+     116.05602,
+     377.15437,
+     0.0
+    ],
+    "X_mm": 116.05601852424456,
+    "attachment_thickness_mm": 4.683082031359777,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 0.8054529836019036,
+    "principal_min_at_XYZ": [
+     116.05602,
+     377.15437,
+     0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 27.154374226679295
+   },
+   {
+    "label": "X=118.559915 (s=0.9)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.23257258698871186,
+    "min_trace_radius_at_XYZ": [
+     118.55992,
+     369.99825,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 1.0276996734236936,
+    "min_normal_radius_at_XYZ": [
+     118.55992,
+     369.99825,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.23257258698871186,
+    "lip_normal_radius_mm": 1.0276996734236936,
+    "lip_XYZ": [
+     118.55992,
+     369.99825,
+     0.0
+    ],
+    "X_mm": 118.55991549859907,
+    "attachment_thickness_mm": 3.253261307055053,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 1.0276996734236936,
+    "principal_min_at_XYZ": [
+     118.55992,
+     369.99825,
+     0.0
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 19.998247051976023
+   },
+   {
+    "label": "X=119.395430 (s=0.93)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.16480941250725376,
+    "min_trace_radius_at_XYZ": [
+     119.39543,
+     365.23031,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 1.3269154221377937,
+    "min_normal_radius_at_XYZ": [
+     119.39543,
+     365.23031,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.16480941250725376,
+    "lip_normal_radius_mm": 1.3269154221377937,
+    "lip_XYZ": [
+     119.39543,
+     365.23031,
+     0.0
+    ],
+    "X_mm": 119.39542952465827,
+    "attachment_thickness_mm": 2.38995179863204,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 1.2486938559328906,
+    "principal_min_at_XYZ": [
+     119.39543,
+     364.19678,
+     0.5578
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 15.230313044638706
+   },
+   {
+    "label": "X=119.724715 (s=0.95)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.12233895586739861,
+    "min_trace_radius_at_XYZ": [
+     119.72471,
+     361.84604,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 1.696767142278291,
+    "min_normal_radius_at_XYZ": [
+     119.72471,
+     361.84604,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.12233895586739861,
+    "lip_normal_radius_mm": 1.696767142278291,
+    "lip_XYZ": [
+     119.72471,
+     361.84604,
+     0.0
+    ],
+    "X_mm": 119.72471457799188,
+    "attachment_thickness_mm": 1.8159870934919145,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 1.0891335443956125,
+    "principal_min_at_XYZ": [
+     119.72471,
+     358.97271,
+     0.71276
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 11.846042944961766
+   },
+   {
+    "label": "X=119.909184 (s=0.97)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.08238640036814342,
+    "min_trace_radius_at_XYZ": [
+     119.90918,
+     358.2736,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 2.444683548554941,
+    "min_normal_radius_at_XYZ": [
+     119.90918,
+     358.2736,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.08238640036814342,
+    "lip_normal_radius_mm": 2.444683548554941,
+    "lip_XYZ": [
+     119.90918,
+     358.2736,
+     0.0
+    ],
+    "X_mm": 119.9091841984891,
+    "attachment_thickness_mm": 1.2454283275871159,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 0.9745747190484989,
+    "principal_min_at_XYZ": [
+     119.90918,
+     354.31167,
+     -0.58709
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 8.27359976954665
+   },
+   {
+    "label": "X=119.958886 (s=0.98)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.06369393856603801,
+    "min_trace_radius_at_XYZ": [
+     119.95889,
+     356.38507,
+     -0.0
+    ],
+    "min_normal_curvature_radius_mm": 3.2623031435630647,
+    "min_normal_radius_at_XYZ": [
+     119.95889,
+     356.38507,
+     -0.0
+    ],
+    "lip_trace_radius_mm": 0.06369393856603801,
+    "lip_normal_radius_mm": 3.2623031435630647,
+    "lip_XYZ": [
+     119.95889,
+     356.38507,
+     -0.0
+    ],
+    "X_mm": 119.95888624056376,
+    "attachment_thickness_mm": 0.9620009840563553,
+    "required_radius_mm": 0.4,
+    "principal_min_radius_on_section_mm": 1.0354364537492053,
+    "principal_min_at_XYZ": [
+     119.95889,
+     352.97314,
+     0.46206
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 6.385067385210846
+   },
+   {
+    "label": "X=119.987247 (s=0.99)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.04915752669256695,
+    "min_trace_radius_at_XYZ": [
+     119.98725,
+     354.13511,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 7.197592430106766,
+    "min_normal_radius_at_XYZ": [
+     119.98725,
+     354.13511,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.04915752669256695,
+    "lip_normal_radius_mm": 7.197592430106766,
+    "lip_XYZ": [
+     119.98725,
+     354.13511,
+     0.0
+    ],
+    "X_mm": 119.9872469266284,
+    "attachment_thickness_mm": 0.680114899960696,
+    "required_radius_mm": 0.340057449980348,
+    "principal_min_radius_on_section_mm": 1.0502105801667618,
+    "principal_min_at_XYZ": [
+     119.98725,
+     352.18062,
+     0.31981
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 4.135110431390501
+   },
+   {
+    "label": "X=119.995201 (s=0.995)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.052665123256547444,
+    "min_trace_radius_at_XYZ": [
+     119.9952,
+     352.43159,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 16.565030743656674,
+    "min_normal_radius_at_XYZ": [
+     119.9952,
+     352.43159,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.052665123256547444,
+    "lip_normal_radius_mm": 16.565030743656674,
+    "lip_XYZ": [
+     119.9952,
+     352.43159,
+     0.0
+    ],
+    "X_mm": 119.99520098014288,
+    "attachment_thickness_mm": 0.5398216817380577,
+    "required_radius_mm": 0.26991084086902883,
+    "principal_min_radius_on_section_mm": 0.9949912967436019,
+    "principal_min_at_XYZ": [
+     119.9952,
+     351.12156,
+     -0.25961
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.0,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 2.4315886057133866
+   },
+   {
+    "label": "X=119.999256 (s=0.999)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.10450207810412133,
+    "min_trace_radius_at_XYZ": [
+     119.99926,
+     350.77006,
+     0.0
+    ],
+    "min_normal_curvature_radius_mm": 55.566838845428194,
+    "min_normal_radius_at_XYZ": [
+     119.99926,
+     350.77006,
+     0.0
+    ],
+    "lip_trace_radius_mm": 0.10450207810412133,
+    "lip_normal_radius_mm": 55.566838845428194,
+    "lip_XYZ": [
+     119.99926,
+     350.77006,
+     0.0
+    ],
+    "X_mm": 119.99925563575387,
+    "attachment_thickness_mm": 0.42792523404342453,
+    "required_radius_mm": 0.21396261702171226,
+    "principal_min_radius_on_section_mm": 0.6162214797843111,
+    "principal_min_at_XYZ": [
+     119.99926,
+     350.27753,
+     0.21029
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.00208382220732411,
+    "normal_curvature_peak_before_lip": false,
+    "reach_mm": 0.7700579762351936
+   },
+   {
+    "label": "X=119.999930 (s=0.9999)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.17364356154782593,
+    "min_trace_radius_at_XYZ": [
+     119.99993,
+     350.36896,
+     -0.08963
+    ],
+    "min_normal_curvature_radius_mm": 28.810631323323054,
+    "min_normal_radius_at_XYZ": [
+     119.99993,
+     350.13974,
+     -0.19808
+    ],
+    "lip_trace_radius_mm": 0.18142513288326248,
+    "lip_normal_radius_mm": 106.70428380372368,
+    "lip_XYZ": [
+     119.99993,
+     350.39299,
+     0.0
+    ],
+    "X_mm": 119.9999299510068,
+    "attachment_thickness_mm": 0.40279162679897423,
+    "required_radius_mm": 0.20139581339948712,
+    "principal_min_radius_on_section_mm": 0.3880915662155493,
+    "principal_min_at_XYZ": [
+     119.99993,
+     350.11948,
+     0.19938
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.025337714508742528,
+    "normal_curvature_peak_before_lip": true,
+    "reach_mm": 0.3929850007929758
+   },
+   {
+    "label": "X=120.000000 (s=1.0)",
+    "points": 8001,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.1725115869216842,
+    "min_trace_radius_at_XYZ": [
+     120.0,
+     350.31104,
+     -0.11787
+    ],
+    "min_normal_curvature_radius_mm": 24.650873371303078,
+    "min_normal_radius_at_XYZ": [
+     120.0,
+     350.12005,
+     -0.19711
+    ],
+    "lip_trace_radius_mm": 0.19999999999288573,
+    "lip_normal_radius_mm": 118.90957032608915,
+    "lip_XYZ": [
+     120.0,
+     350.35156,
+     -0.0
+    ],
+    "X_mm": 119.99999999999999,
+    "attachment_thickness_mm": 0.40000000000471037,
+    "required_radius_mm": 0.20000000000235518,
+    "principal_min_radius_on_section_mm": 0.35608828809003984,
+    "principal_min_at_XYZ": [
+     120.0,
+     350.10365,
+     -0.19818
+    ],
+    "normal_curvature_max_drop_before_lip_per_mm": 0.032156761984503665,
+    "normal_curvature_peak_before_lip": true,
+    "reach_mm": 0.35156250000619593
+   }
+  ],
+  "normal_to_outline": [
+   {
+    "label": "normal to outline at p=0.02",
+    "points": 4979,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.9823704078439677,
+    "min_trace_radius_at_XYZ": [
+     119.91539,
+     353.05632,
+     0.59604
+    ],
+    "min_normal_curvature_radius_mm": 0.9824347735971654,
+    "min_normal_radius_at_XYZ": [
+     119.91539,
+     353.05632,
+     0.59604
+    ],
+    "lip_trace_radius_mm": 27.00144506409569,
+    "lip_normal_radius_mm": 27.00144506409569,
+    "lip_XYZ": [
+     0.00931,
+     353.92,
+     0.00137
+    ],
+    "plane_residual_mm": 4.4875214655348827e-13,
+    "w_range": [
+     -0.9649764304050963,
+     0.9649764304050971
+    ],
+    "s_range": [
+     0.02028798570233899,
+     0.9933448143527784
+    ],
+    "min_ratio_trace_radius_over_required": 2.455926019609919,
+    "min_ratio_normal_radius_over_required": 2.4560869339929132,
+    "principal_min_radius_on_section_mm": 0.9823973909334166,
+    "attachment_thickness_at_tightest_trace_point_mm": 1.2164324175585424
+   },
+   {
+    "label": "normal to outline at p=0.05",
+    "points": 4813,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.9742749900586489,
+    "min_trace_radius_at_XYZ": [
+     119.90906,
+     354.09537,
+     -0.59302
+    ],
+    "min_normal_curvature_radius_mm": 0.9755368468203479,
+    "min_normal_radius_at_XYZ": [
+     119.90906,
+     354.09537,
+     -0.59302
+    ],
+    "lip_trace_radius_mm": 10.085574546874573,
+    "lip_normal_radius_mm": 10.085574546874597,
+    "lip_XYZ": [
+     0.13898,
+     359.5,
+     0.00327
+    ],
+    "plane_residual_mm": 5.497824417943775e-13,
+    "w_range": [
+     -0.9393512111538989,
+     0.939351211153902
+    ],
+    "s_range": [
+     0.05071995855291621,
+     0.9901502287859082
+    ],
+    "min_ratio_trace_radius_over_required": 2.435687475146622,
+    "min_ratio_normal_radius_over_required": 2.4388421170508696,
+    "principal_min_radius_on_section_mm": 0.9750535076047426,
+    "attachment_thickness_at_tightest_trace_point_mm": 1.2459827690064342
+   },
+   {
+    "label": "normal to outline at p=0.1",
+    "points": 2914,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 2.9772612817106965,
+    "min_trace_radius_at_XYZ": [
+     1.51403,
+     367.91127,
+     1.91748
+    ],
+    "min_normal_curvature_radius_mm": 2.9781151854086976,
+    "min_normal_radius_at_XYZ": [
+     1.51403,
+     367.91127,
+     1.91748
+    ],
+    "lip_trace_radius_mm": 4.517791705051095,
+    "lip_normal_radius_mm": 4.517791705051291,
+    "lip_XYZ": [
+     1.0272,
+     368.0,
+     0.00601
+    ],
+    "plane_residual_mm": 2.1725357868263018e-06,
+    "w_range": [
+     -1.0,
+     1.0
+    ],
+    "s_range": [
+     0.10143989291695853,
+     0.7060232968853052
+    ],
+    "min_ratio_trace_radius_over_required": 7.443153204276741,
+    "min_ratio_normal_radius_over_required": 7.445287963521744,
+    "principal_min_radius_on_section_mm": 2.972115577883572,
+    "attachment_thickness_at_tightest_trace_point_mm": 6.439817052957141
+   },
+   {
+    "label": "normal to outline at p=0.2",
+    "points": 1742,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 2.0780085518104325,
+    "min_trace_radius_at_XYZ": [
+     6.95042,
+     381.99999,
+     0.01001
+    ],
+    "min_normal_curvature_radius_mm": 2.078008551810943,
+    "min_normal_radius_at_XYZ": [
+     6.95042,
+     381.99999,
+     0.01001
+    ],
+    "lip_trace_radius_mm": 2.0780085518104325,
+    "lip_normal_radius_mm": 2.078008551810943,
+    "lip_XYZ": [
+     6.95042,
+     381.99999,
+     0.01001
+    ],
+    "plane_residual_mm": 3.9834802123550617e-13,
+    "w_range": [
+     -0.9999999844187073,
+     0.9999999844187073
+    ],
+    "s_range": [
+     0.20287958182046012,
+     0.4555212985994104
+    ],
+    "min_ratio_trace_radius_over_required": 5.195021379526081,
+    "min_ratio_normal_radius_over_required": 5.195021379527357,
+    "principal_min_radius_on_section_mm": 2.0780083622685708,
+    "attachment_thickness_at_tightest_trace_point_mm": 9.60021276584951
+   },
+   {
+    "label": "normal to outline at p=0.3",
+    "points": 1280,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.6205654293676381,
+    "min_trace_radius_at_XYZ": [
+     19.56962,
+     391.99996,
+     -0.01226
+    ],
+    "min_normal_curvature_radius_mm": 1.6205654293677323,
+    "min_normal_radius_at_XYZ": [
+     19.56962,
+     391.99996,
+     -0.01226
+    ],
+    "lip_trace_radius_mm": 1.6205654293676424,
+    "lip_normal_radius_mm": 1.6205654293677365,
+    "lip_XYZ": [
+     19.56962,
+     391.99996,
+     0.01226
+    ],
+    "plane_residual_mm": 2.0250467969162855e-13,
+    "w_range": [
+     -0.9999999919685145,
+     0.9999999919685145
+    ],
+    "s_range": [
+     0.30431890190861943,
+     0.41854732147617235
+    ],
+    "min_ratio_trace_radius_over_required": 4.0514135734190955,
+    "min_ratio_normal_radius_over_required": 4.051413573419331,
+    "principal_min_radius_on_section_mm": 1.6205654157401628,
+    "attachment_thickness_at_tightest_trace_point_mm": 11.760283248206441
+   },
+   {
+    "label": "normal to outline at p=0.4",
+    "points": 1046,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.4524660304492316,
+    "min_trace_radius_at_XYZ": [
+     38.09281,
+     397.99994,
+     -0.01301
+    ],
+    "min_normal_curvature_radius_mm": 1.4524660304493013,
+    "min_normal_radius_at_XYZ": [
+     38.09281,
+     397.99994,
+     -0.01301
+    ],
+    "lip_trace_radius_mm": 1.452466030449232,
+    "lip_normal_radius_mm": 1.452466030449302,
+    "lip_XYZ": [
+     38.09281,
+     397.99994,
+     0.01301
+    ],
+    "plane_residual_mm": 6.394884621840902e-14,
+    "w_range": [
+     -0.9999999969515225,
+     0.9999999969515225
+    ],
+    "s_range": [
+     0.4057578615405115,
+     0.44968356290034067
+    ],
+    "min_ratio_trace_radius_over_required": 3.6311650761230787,
+    "min_ratio_normal_radius_over_required": 3.6311650761232532,
+    "principal_min_radius_on_section_mm": 1.4524660233796207,
+    "attachment_thickness_at_tightest_trace_point_mm": 12.480345916331105
+   },
+   {
+    "label": "normal to outline at p=0.5",
+    "points": 900,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.2658848363483424,
+    "min_trace_radius_at_XYZ": [
+     60.0,
+     399.99994,
+     0.01251
+    ],
+    "min_normal_curvature_radius_mm": 1.2658848363484756,
+    "min_normal_radius_at_XYZ": [
+     60.0,
+     399.99994,
+     0.01251
+    ],
+    "lip_trace_radius_mm": 1.2658848363483424,
+    "lip_normal_radius_mm": 1.2658848363484756,
+    "lip_XYZ": [
+     60.0,
+     399.99994,
+     0.01251
+    ],
+    "plane_residual_mm": 2.842170943040401e-14,
+    "w_range": [
+     -1.0,
+     1.0
+    ],
+    "s_range": [
+     0.5071962057859949,
+     0.5071962057859951
+    ],
+    "min_ratio_trace_radius_over_required": 3.164712090870856,
+    "min_ratio_normal_radius_over_required": 3.164712090871189,
+    "principal_min_radius_on_section_mm": 1.2658848253631771,
+    "attachment_thickness_at_tightest_trace_point_mm": 12.000411318357408
+   },
+   {
+    "label": "normal to outline at p=0.6",
+    "points": 1046,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.0400229325945067,
+    "min_trace_radius_at_XYZ": [
+     81.90719,
+     397.99994,
+     0.01101
+    ],
+    "min_normal_curvature_radius_mm": 1.0400229325947044,
+    "min_normal_radius_at_XYZ": [
+     81.90719,
+     397.99994,
+     0.01101
+    ],
+    "lip_trace_radius_mm": 1.0400229325945067,
+    "lip_normal_radius_mm": 1.0400229325947044,
+    "lip_XYZ": [
+     81.90719,
+     397.99994,
+     0.01101
+    ],
+    "plane_residual_mm": 6.285943987549558e-14,
+    "w_range": [
+     -0.9999999971183174,
+     0.9999999971183174
+    ],
+    "s_range": [
+     0.5647084508461927,
+     0.6086332594235098
+    ],
+    "min_ratio_trace_radius_over_required": 2.6000573314862665,
+    "min_ratio_normal_radius_over_required": 2.6000573314867608,
+    "principal_min_radius_on_section_mm": 1.040022918345317,
+    "attachment_thickness_at_tightest_trace_point_mm": 10.560500953194136
+   },
+   {
+    "label": "normal to outline at p=0.7",
+    "points": 1280,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.8269815377489151,
+    "min_trace_radius_at_XYZ": [
+     100.43038,
+     391.99996,
+     0.00876
+    ],
+    "min_normal_curvature_radius_mm": 0.8269815377490414,
+    "min_normal_radius_at_XYZ": [
+     100.43038,
+     391.99996,
+     0.00876
+    ],
+    "lip_trace_radius_mm": 0.8269815377489151,
+    "lip_normal_radius_mm": 0.8269815377490414,
+    "lip_XYZ": [
+     100.43038,
+     391.99996,
+     0.00876
+    ],
+    "plane_residual_mm": 1.1252110354575962e-13,
+    "w_range": [
+     -0.9999999931201674,
+     0.9999999931201674
+    ],
+    "s_range": [
+     0.5958441186054745,
+     0.7100671799053481
+    ],
+    "min_ratio_trace_radius_over_required": 2.0674538443722876,
+    "min_ratio_normal_radius_over_required": 2.0674538443726034,
+    "principal_min_radius_on_section_mm": 0.8269815285745642,
+    "attachment_thickness_at_tightest_trace_point_mm": 8.400671637919146
+   },
+   {
+    "label": "normal to outline at p=0.8",
+    "points": 1742,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.7483926272591077,
+    "min_trace_radius_at_XYZ": [
+     113.04958,
+     381.99999,
+     0.00601
+    ],
+    "min_normal_curvature_radius_mm": 0.748392627259114,
+    "min_normal_radius_at_XYZ": [
+     113.04958,
+     381.99999,
+     0.00601
+    ],
+    "lip_trace_radius_mm": 0.7483926272591077,
+    "lip_normal_radius_mm": 0.748392627259114,
+    "lip_XYZ": [
+     113.04958,
+     381.99999,
+     0.00601
+    ],
+    "plane_residual_mm": 2.5490720645393594e-13,
+    "w_range": [
+     -0.9999999841642875,
+     0.9999999841642873
+    ],
+    "s_range": [
+     0.5588707931799373,
+     0.8114909650752824
+    ],
+    "min_ratio_trace_radius_over_required": 1.8709815681477693,
+    "min_ratio_normal_radius_over_required": 1.870981568147785,
+    "principal_min_radius_on_section_mm": 0.7483926263909176,
+    "attachment_thickness_at_tightest_trace_point_mm": 5.7611304447291305
+   },
+   {
+    "label": "normal to outline at p=0.85",
+    "points": 2146,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.8404082056622393,
+    "min_trace_radius_at_XYZ": [
+     116.80656,
+     375.5,
+     -0.00452
+    ],
+    "min_normal_curvature_radius_mm": 0.8404082056622794,
+    "min_normal_radius_at_XYZ": [
+     116.80656,
+     375.5,
+     -0.00452
+    ],
+    "lip_trace_radius_mm": 0.8404082056622412,
+    "lip_normal_radius_mm": 0.8404082056622815,
+    "lip_XYZ": [
+     116.80656,
+     375.5,
+     0.00452
+    ],
+    "plane_residual_mm": 5.182460682817691e-09,
+    "w_range": [
+     -1.0,
+     1.0
+    ],
+    "s_range": [
+     0.4882633480141336,
+     0.8621894893149924
+    ],
+    "min_ratio_trace_radius_over_required": 2.101020514155598,
+    "min_ratio_normal_radius_over_required": 2.101020514155698,
+    "principal_min_radius_on_section_mm": 0.8404081936887967,
+    "attachment_thickness_at_tightest_trace_point_mm": 4.3367442753067005
+   },
+   {
+    "label": "normal to outline at p=0.9",
+    "points": 2914,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.132098091582003,
+    "min_trace_radius_at_XYZ": [
+     118.9728,
+     368.0,
+     0.00301
+    ],
+    "min_normal_curvature_radius_mm": 1.1320980915820273,
+    "min_normal_radius_at_XYZ": [
+     118.9728,
+     368.0,
+     0.00301
+    ],
+    "lip_trace_radius_mm": 1.132098091582003,
+    "lip_normal_radius_mm": 1.1320980915820273,
+    "lip_XYZ": [
+     118.9728,
+     368.0,
+     0.00301
+    ],
+    "plane_residual_mm": 2.044580938331819e-06,
+    "w_range": [
+     -1.0,
+     1.0
+    ],
+    "s_range": [
+     0.30836310909526987,
+     0.9128507395230568
+    ],
+    "min_ratio_trace_radius_over_required": 2.830245228955007,
+    "min_ratio_normal_radius_over_required": 2.8302452289550684,
+    "principal_min_radius_on_section_mm": 1.1320980642287255,
+    "attachment_thickness_at_tightest_trace_point_mm": 2.8834224257388077
+   },
+   {
+    "label": "normal to outline at p=0.95",
+    "points": 4829,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.0982882793550315,
+    "min_trace_radius_at_XYZ": [
+     119.72639,
+     359.49392,
+     0.66085
+    ],
+    "min_normal_curvature_radius_mm": 1.0983101866833727,
+    "min_normal_radius_at_XYZ": [
+     119.72639,
+     359.49392,
+     0.66085
+    ],
+    "lip_trace_radius_mm": 25.75627073240635,
+    "lip_normal_radius_mm": 25.79242889680992,
+    "lip_XYZ": [
+     0.01061,
+     354.09175,
+     0.00143
+    ],
+    "plane_residual_mm": 4.1300296516055823e-13,
+    "w_range": [
+     -0.9393512071571093,
+     0.9393512071571095
+    ],
+    "s_range": [
+     0.021196244172764077,
+     0.9632705919406291
+    ],
+    "min_ratio_trace_radius_over_required": 2.7457206983875784,
+    "min_ratio_normal_radius_over_required": 2.7457754667084315,
+    "principal_min_radius_on_section_mm": 1.098261179911356,
+    "attachment_thickness_at_tightest_trace_point_mm": 1.8121549698693018
+   },
+   {
+    "label": "normal to outline at p=0.98",
+    "points": 4975,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.9759493381822018,
+    "min_trace_radius_at_XYZ": [
+     119.91161,
+     353.91943,
+     -0.59064
+    ],
+    "min_normal_curvature_radius_mm": 0.9759503646520458,
+    "min_normal_radius_at_XYZ": [
+     119.91161,
+     353.91943,
+     -0.59064
+    ],
+    "lip_trace_radius_mm": 35.14545469191504,
+    "lip_normal_radius_mm": 35.1477947451892,
+    "lip_XYZ": [
+     0.00438,
+     353.05574,
+     0.00107
+    ],
+    "plane_residual_mm": 4.476419235288631e-13,
+    "w_range": [
+     -0.9649764292823623,
+     0.9649764292823612
+    ],
+    "s_range": [
+     0.015743020360805743,
+     0.9907315947149352
+    ],
+    "min_ratio_trace_radius_over_required": 2.439873345455504,
+    "min_ratio_normal_radius_over_required": 2.4398759116301143,
+    "principal_min_radius_on_section_mm": 0.9759430453727926,
+    "attachment_thickness_at_tightest_trace_point_mm": 1.2342324669486835
+   }
+  ],
+  "constant_Y": [
+   {
+    "label": "Y=350.05",
+    "points": 4936,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.8738392019898336,
+    "min_trace_radius_at_XYZ": [
+     120.0,
+     350.05,
+     -0.19981
+    ],
+    "min_normal_curvature_radius_mm": 0.8738393357427187,
+    "min_normal_radius_at_XYZ": [
+     120.0,
+     350.05,
+     -0.19981
+    ],
+    "lip_trace_radius_mm": 2256.081493421337,
+    "lip_normal_radius_mm": 2256.0814934227656,
+    "lip_XYZ": [
+     0.0,
+     350.05,
+     2e-05
+    ],
+    "plane_residual_mm": 3.979039320256561e-13,
+    "w_range": [
+     -0.9994998747717732,
+     0.9994998747717729
+    ],
+    "s_range": [
+     0.00025366327052127243,
+     0.9999999945429967
+    ],
+    "min_ratio_trace_radius_over_required": 2.4784130180501864,
+    "min_ratio_normal_radius_over_required": 2.4784130180515542,
+    "principal_min_radius_on_section_mm": 0.8641056025395499,
+    "attachment_thickness_at_tightest_trace_point_mm": 0.4000001523398211
+   },
+   {
+    "label": "Y=350.2",
+    "points": 5122,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.5098258765415147,
+    "min_trace_radius_at_XYZ": [
+     119.99966,
+     350.2,
+     0.203
+    ],
+    "min_normal_curvature_radius_mm": 0.5098268114847635,
+    "min_normal_radius_at_XYZ": [
+     119.99966,
+     350.2,
+     0.203
+    ],
+    "lip_trace_radius_mm": 562.6753580042633,
+    "lip_normal_radius_mm": 562.675358095783,
+    "lip_XYZ": [
+     0.0,
+     350.2,
+     7e-05
+    ],
+    "plane_residual_mm": 4.547473508864641e-13,
+    "w_range": [
+     -0.9979979953262279,
+     0.9979979953262279
+    ],
+    "s_range": [
+     0.0010154157859603116,
+     0.9999999917050324
+    ],
+    "min_ratio_trace_radius_over_required": 2.465229183308487,
+    "min_ratio_normal_radius_over_required": 2.4652335886286627,
+    "principal_min_radius_on_section_mm": 0.5087173332289217,
+    "attachment_thickness_at_tightest_trace_point_mm": 0.4133128594683629
+   },
+   {
+    "label": "Y=350.5",
+    "points": 5235,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.7860838435504502,
+    "min_trace_radius_at_XYZ": [
+     119.99843,
+     350.5,
+     -0.22103
+    ],
+    "min_normal_curvature_radius_mm": 0.7860851075365278,
+    "min_normal_radius_at_XYZ": [
+     119.99843,
+     350.5,
+     -0.22103
+    ],
+    "lip_trace_radius_mm": 84.46678093482679,
+    "lip_normal_radius_mm": 84.46691010654303,
+    "lip_XYZ": [
+     119.99975,
+     350.5,
+     0.00043
+    ],
+    "plane_residual_mm": 4.547473508864641e-13,
+    "w_range": [
+     -0.9949874354422379,
+     0.9949874354422386
+    ],
+    "s_range": [
+     0.002542370264030553,
+     0.9996428609652603
+    ],
+    "min_ratio_trace_radius_over_required": 2.4783476076173123,
+    "min_ratio_normal_radius_over_required": 2.4783476221120284,
+    "principal_min_radius_on_section_mm": 0.7851899150995382,
+    "attachment_thickness_at_tightest_trace_point_mm": 0.4551340613061978
+   },
+   {
+    "label": "Y=352",
+    "points": 5053,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.9889444489251705,
+    "min_trace_radius_at_XYZ": [
+     119.91723,
+     352.0,
+     0.60057
+    ],
+    "min_normal_curvature_radius_mm": 0.9889462554268609,
+    "min_normal_radius_at_XYZ": [
+     119.91723,
+     352.0,
+     0.60057
+    ],
+    "lip_trace_radius_mm": 54.65105770087004,
+    "lip_normal_radius_mm": 54.6511499246878,
+    "lip_XYZ": [
+     0.00122,
+     352.0,
+     0.0007
+    ],
+    "plane_residual_mm": 3.979039320256561e-13,
+    "w_range": [
+     -0.979795890352521,
+     0.9797958903525211
+    ],
+    "s_range": [
+     0.010247514121302717,
+     0.9960741708923403
+    ],
+    "min_ratio_trace_radius_over_required": 2.4723611223129263,
+    "min_ratio_normal_radius_over_required": 2.472365638567152,
+    "principal_min_radius_on_section_mm": 0.9889443939884213,
+    "attachment_thickness_at_tightest_trace_point_mm": 1.2076140649107059
+   },
+   {
+    "label": "Y=355",
+    "points": 4899,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.9754123778071515,
+    "min_trace_radius_at_XYZ": [
+     119.89341,
+     355.0,
+     -0.60494
+    ],
+    "min_normal_curvature_radius_mm": 0.9755008933379384,
+    "min_normal_radius_at_XYZ": [
+     119.89341,
+     355.0,
+     -0.60494
+    ],
+    "lip_trace_radius_mm": 20.77836806645864,
+    "lip_normal_radius_mm": 20.77982899802383,
+    "lip_XYZ": [
+     0.0195,
+     355.0,
+     0.00175
+    ],
+    "plane_residual_mm": 5.115907697472721e-13,
+    "w_range": [
+     -0.9486832805943287,
+     0.9486832805943278
+    ],
+    "s_range": [
+     0.02602781236020248,
+     0.9866374539440149
+    ],
+    "min_ratio_trace_radius_over_required": 2.4385309445178787,
+    "min_ratio_normal_radius_over_required": 2.438752233344846,
+    "principal_min_radius_on_section_mm": 0.9754519607947288,
+    "attachment_thickness_at_tightest_trace_point_mm": 1.3139206540583068
+   },
+   {
+    "label": "Y=360",
+    "points": 4631,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.117470324171885,
+    "min_trace_radius_at_XYZ": [
+     119.69911,
+     360.0,
+     -0.65979
+    ],
+    "min_normal_curvature_radius_mm": 1.1189541913475691,
+    "min_normal_radius_at_XYZ": [
+     119.69911,
+     360.0,
+     -0.65979
+    ],
+    "lip_trace_radius_mm": 9.480188528860845,
+    "lip_normal_radius_mm": 9.492179343147235,
+    "lip_XYZ": [
+     0.16282,
+     360.0,
+     0.00344
+    ],
+    "plane_residual_mm": 3.979039320256561e-13,
+    "w_range": [
+     -0.8944271539697152,
+     0.8944271539697157
+    ],
+    "s_range": [
+     0.0535464845476609,
+     0.96048429708827
+    ],
+    "min_ratio_trace_radius_over_required": 2.7936758104297126,
+    "min_ratio_normal_radius_over_required": 2.7973854783689225,
+    "principal_min_radius_on_section_mm": 1.1187208533434696,
+    "attachment_thickness_at_tightest_trace_point_mm": 1.8727681733368589
+   },
+   {
+    "label": "Y=370",
+    "points": 4009,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 1.0009566185107017,
+    "min_trace_radius_at_XYZ": [
+     118.5595,
+     370.0,
+     0.00339
+    ],
+    "min_normal_curvature_radius_mm": 1.0276268933086652,
+    "min_normal_radius_at_XYZ": [
+     118.5595,
+     370.0,
+     0.00339
+    ],
+    "lip_trace_radius_mm": 3.811858872795695,
+    "lip_normal_radius_mm": 3.913426002756053,
+    "lip_XYZ": [
+     1.4405,
+     370.0,
+     0.00662
+    ],
+    "plane_residual_mm": 4.547473508864641e-13,
+    "w_range": [
+     -0.7745965837237617,
+     0.7745965837237632
+    ],
+    "s_range": [
+     0.11432444778766583,
+     0.8999883768244802
+    ],
+    "min_ratio_trace_radius_over_required": 2.5023915462767543,
+    "min_ratio_normal_radius_over_required": 2.569067233271663,
+    "principal_min_radius_on_section_mm": 1.0276265154179383,
+    "attachment_thickness_at_tightest_trace_point_mm": 3.253595667854376
+   },
+   {
+    "label": "Y=380",
+    "points": 3273,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.6435794916105237,
+    "min_trace_radius_at_XYZ": [
+     114.4544,
+     380.0,
+     -0.00553
+    ],
+    "min_normal_curvature_radius_mm": 0.7642173679131996,
+    "min_normal_radius_at_XYZ": [
+     114.4544,
+     380.0,
+     -0.00553
+    ],
+    "lip_trace_radius_mm": 1.8933283351371593,
+    "lip_normal_radius_mm": 2.2482461203829347,
+    "lip_XYZ": [
+     5.5456,
+     380.0,
+     0.00949
+    ],
+    "plane_residual_mm": 4.547473508864641e-13,
+    "w_range": [
+     -0.6324553749272701,
+     0.6324553749272688
+    ],
+    "s_range": [
+     0.1864182978502479,
+     0.8279471476724661
+    ],
+    "min_ratio_trace_radius_over_required": 1.6089487290263094,
+    "min_ratio_normal_radius_over_required": 1.910543419782999,
+    "principal_min_radius_on_section_mm": 0.7642018437836646,
+    "attachment_thickness_at_tightest_trace_point_mm": 5.303913983298935
+   },
+   {
+    "label": "Y=390",
+    "points": 2317,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.41666875241524837,
+    "min_trace_radius_at_XYZ": [
+     104.00574,
+     390.0,
+     0.00815
+    ],
+    "min_normal_curvature_radius_mm": 0.7895869296828136,
+    "min_normal_radius_at_XYZ": [
+     104.00574,
+     390.0,
+     0.00815
+    ],
+    "lip_trace_radius_mm": 0.41666875241524837,
+    "lip_normal_radius_mm": 0.7895869296828136,
+    "lip_XYZ": [
+     104.00574,
+     390.0,
+     0.00815
+    ],
+    "plane_residual_mm": 3.979039320256561e-13,
+    "w_range": [
+     -0.44721329925296205,
+     0.44721329925296444
+    ],
+    "s_range": [
+     0.28037276202837125,
+     0.7340111161339975
+    ],
+    "min_ratio_trace_radius_over_required": 1.041671881038121,
+    "min_ratio_normal_radius_over_required": 1.973967324207034,
+    "principal_min_radius_on_section_mm": 0.7893707707613248,
+    "attachment_thickness_at_tightest_trace_point_mm": 7.811894570478659
+   },
+   {
+    "label": "Y=395",
+    "points": 1637,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.29849412957679394,
+    "min_trace_radius_at_XYZ": [
+     93.27491,
+     395.0,
+     0.00978
+    ],
+    "min_normal_curvature_radius_mm": 0.9100360477729511,
+    "min_normal_radius_at_XYZ": [
+     93.27491,
+     395.0,
+     0.00978
+    ],
+    "lip_trace_radius_mm": 0.5068035711807095,
+    "lip_normal_radius_mm": 1.545430224943693,
+    "lip_XYZ": [
+     26.72509,
+     395.0,
+     0.01275
+    ],
+    "plane_residual_mm": 3.410605131648481e-13,
+    "w_range": [
+     -0.316227294680897,
+     0.31622729468089567
+    ],
+    "s_range": [
+     0.34680859131351843,
+     0.6675802615997914
+    ],
+    "min_ratio_trace_radius_over_required": 0.7462353239419848,
+    "min_ratio_normal_radius_over_required": 2.275090119432378,
+    "principal_min_radius_on_section_mm": 0.9091673495057702,
+    "attachment_thickness_at_tightest_trace_point_mm": 9.377575877485542
+   },
+   {
+    "label": "Y=398",
+    "points": 1037,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.19787558656224255,
+    "min_trace_radius_at_XYZ": [
+     81.90689,
+     398.0,
+     0.01101
+    ],
+    "min_normal_curvature_radius_mm": 1.0431406122791027,
+    "min_normal_radius_at_XYZ": [
+     81.90689,
+     398.0,
+     0.01101
+    ],
+    "lip_trace_radius_mm": 0.19787558656224255,
+    "lip_normal_radius_mm": 1.0431406122791027,
+    "lip_XYZ": [
+     81.90689,
+     398.0,
+     0.01101
+    ],
+    "plane_residual_mm": 4.547473508864641e-13,
+    "w_range": [
+     -0.19999920501189966,
+     0.19999920501190427
+    ],
+    "s_range": [
+     0.40575931366468504,
+     0.6086318073339091
+    ],
+    "min_ratio_trace_radius_over_required": 0.49468896640560633,
+    "min_ratio_normal_radius_over_required": 2.6078515306977565,
+    "principal_min_radius_on_section_mm": 1.0400262423669808,
+    "attachment_thickness_at_tightest_trace_point_mm": 10.560527291679577
+   },
+   {
+    "label": "Y=399.5",
+    "points": 517,
+    "reversals": 0,
+    "reversal_locations_XYZ": [],
+    "min_trace_radius_mm": 0.10638773924085605,
+    "min_trace_radius_at_XYZ": [
+     71.17455,
+     399.5,
+     0.01187
+    ],
+    "min_normal_curvature_radius_mm": 1.1704383346221592,
+    "min_normal_radius_at_XYZ": [
+     71.17455,
+     399.5,
+     0.01187
+    ],
+    "lip_trace_radius_mm": 0.12531470295679825,
+    "lip_normal_radius_mm": 1.3800230170579828,
+    "lip_XYZ": [
+     48.82545,
+     399.5,
+     0.01291
+    ],
+    "plane_residual_mm": 3.979039320256561e-13,
+    "w_range": [
+     -0.09999835973643781,
+     0.09999835973645854
+    ],
+    "s_range": [
+     0.45648022069023864,
+     0.5579118828592688
+    ],
+    "min_ratio_trace_radius_over_required": 0.2659693481021401,
+    "min_ratio_normal_radius_over_required": 2.926095836555398,
+    "principal_min_radius_on_section_mm": 1.1557231404827177,
+    "attachment_thickness_at_tightest_trace_point_mm": 11.385494935169012
+   }
+  ]
+ },
+ "zebra": {
+  "stripe_period_deg_of_reflected_ray": 4.0,
+  "views": 50,
+  "stripe_angles": 8,
+  "joins": 4,
+  "samples_per_join": 6301,
+  "s_range": [
+   0.0001,
+   1.0
+  ],
+  "excluded": "s < 1e-4 at the collapsed leading-edge point of the cap (its wrap shrinks to the point; derivatives in w vanish there)",
+  "light_dark_crossings_checked": 34032,
+  "worst": {
+   "phase_mismatch_stripes": 6.990037704213137e-08,
+   "gradient_mismatch_relative": 5.992010157824059e-06,
+   "crossing_direction_mismatch_deg": 6.219544996877659e-13
+  },
+  "where": {
+   "phase": {
+    "join": "right_upper",
+    "s": 0.9995000500000001,
+    "XYZ": [
+     119.99964,
+     350.0,
+     0.20698
+    ]
+   },
+   "gradient": {
+    "join": "left_lower",
+    "s": 0.9992421231136374,
+    "XYZ": [
+     119.99944,
+     -350.0,
+     -0.21058
+    ],
+    "view": [
+     -0.683,
+     0.683,
+     -0.259
+    ]
+   },
+   "crossing_direction_mismatch": {
+    "join": "left_upper",
+    "s": 0.56754325,
+    "XYZ": [
+     73.25987,
+     -350.0,
+     5.62204
+    ],
+    "view": [
+     0.354,
+     0.354,
+     0.866
+    ]
+   }
+  }
+ },
+ "elapsed_s": 51.935683488845825
+}
