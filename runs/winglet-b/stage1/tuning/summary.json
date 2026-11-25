@@ -1,0 +1,99 @@
+{
+  "baseline": {
+    "height_mm": 60.0,
+    "te_sweep_deg": 10.0,
+    "tip_chord_mm": null,
+    "bend_fraction": null,
+    "ramp_in": 0.35,
+    "ramp_out": 0.35
+  },
+  "baseline_label": "Baseline: 60 mm, 75\u00b0 cant, overall sweep 35\u00b0 LE / 10\u00b0 TE aft, 2\u00b0 toe-out, centred bend",
+  "groups": {
+    "tuning": "Being tuned"
+  },
+  "configs": {
+    "baseline": {
+      "group": "tuning",
+      "label": "Baseline",
+      "overrides": {},
+      "fits": true,
+      "attach_mm": 526.1987273577835,
+      "length_mm": 100.4676206994315,
+      "bend_fraction": 1.0,
+      "tightest_bend_radius_mm": 55.282802145024384,
+      "height_mm": 60.00000000001952,
+      "tip_cant_deg": 74.99999999948236,
+      "tip_le_sweep_deg": 42.80204535176766,
+      "le_root_angle_deg": 26.496644769319854,
+      "le_tip_angle_deg": 42.80294074023957,
+      "te_root_angle_deg": -2.8590474604772154,
+      "te_tip_angle_deg": 23.30191789301625,
+      "te_overall_sweep_deg": 10.000000000000012,
+      "planform": {
+        "leading_edge": {
+          "first_seen_deg": 26.496662716136854,
+          "tip_deg": 42.802797476846415,
+          "turn_deg": 16.30613476070956,
+          "counter_turn_deg": 0.0
+        },
+        "trailing_edge": {
+          "first_seen_deg": -2.8818476634448436,
+          "tip_deg": 23.301647635353945,
+          "turn_deg": 26.18349529879879,
+          "counter_turn_deg": 0.0
+        },
+        "chord_line_25pct": {
+          "first_seen_deg": 19.598351479512523,
+          "tip_deg": 38.73836982237069,
+          "turn_deg": 19.14001834285817,
+          "counter_turn_deg": 0.0
+        },
+        "chord_line_50pct": {
+          "first_seen_deg": 12.103362484934639,
+          "tip_deg": 34.15302710381978,
+          "turn_deg": 22.049664618885142,
+          "counter_turn_deg": 0.0
+        },
+        "chord_line_75pct": {
+          "first_seen_deg": 4.478953269562597,
+          "tip_deg": 29.010638768915626,
+          "turn_deg": 24.53168549935303,
+          "counter_turn_deg": 0.0
+        },
+        "skin_guides_worst_counter_turn_deg": 0.11450358612212597
+      },
+      "guides_bend_aft_progressively": true,
+      "chord_line_guides_worst_counter_turn_deg": 0.0,
+      "cant_deg": 75.0,
+      "toe_out_deg": 1.9999999999999707,
+      "tip_chord_mm": 49.73187998081389,
+      "span_mm": 599.9999999981279,
+      "le_radius_min_mm": 0.7259833945963068,
+      "le_radius_streamwise_min_mm": 0.5651106610192291,
+      "le_radius_passes": true,
+      "trailing_edge_mm": {
+        "min": 0.3999999999999017,
+        "max": 0.4000000000000927
+      },
+      "checks": {
+        "chord_decreases_throughout": true,
+        "bend_curvature_never_negative": true,
+        "dihedral_rises_throughout": true,
+        "guides_bend_aft_progressively": true,
+        "trailing_edge_counter_bend_ratio": 0.0,
+        "every_section_has_positive_thickness": true
+      },
+      "front_view_sag": {
+        "outline_top_below_tangent_mm": 0.006809529969956429,
+        "wing_outline_top_curvature_per_mm": -0.00026327708353629357,
+        "outline_bottom_below_tangent_mm": 5.414477755039115e-10,
+        "wing_outline_bottom_curvature_per_mm": 1.7614865051530436e-05,
+        "upper_skin_lines_below_tangent_mm": 0.029547352087317513,
+        "lower_skin_lines_below_tangent_mm": 0.02956742707465776
+      },
+      "join_max_second_derivative_jump": 5.6652699562424994e-09,
+      "join_max_position_gap_mm": 7.322087278468253e-09,
+      "same_as": null
+    }
+  }
+}

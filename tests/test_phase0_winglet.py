@@ -86,29 +86,29 @@ def test_bend_reaches_cant_with_rising_dihedral(winglet):
     assert winglet.kappa(winglet.s_tip) == pytest.approx(0.0, abs=1e-15)
 
 
-def test_drawn_edges_give_a_tapering_chord_and_a_one_way_trailing_edge(winglet):
+def test_drawn_edges_give_a_tapering_chord_that_meets_the_tip_chord(winglet):
     s = np.linspace(0, winglet.s_tip, 200)
     chord = np.array([winglet.frame(float(t)).chord_mm for t in s])
     assert np.all(np.diff(chord) < 0)
     assert chord[-1] == pytest.approx(32.0, abs=1e-6)
-    te_z = np.array([winglet.frame(float(t)).te[2] for t in s])
-    assert np.all(np.diff(te_z) > 0) or np.all(np.diff(te_z) < 0)
 
 
 @pytest.mark.parametrize("edge", ["le", "te"])
-def test_edges_turn_one_way_seen_from_outboard(winglet, edge):
-    """Each edge's direction seen from outboard (up against aft) changes one way only, and its
-    overall sweep is the requested one; the tip direction is free."""
+def test_edges_bend_aft_progressively_in_the_winglet_planform(winglet, edge):
+    """Each edge's aft slope against the winglet's span direction only grows (it bends aft, like
+    a parabola), and the leading edge's overall sweep is the requested one; the tip direction
+    is free."""
+    axis = winglet._span_axis()
     s = winglet.stations(301)
     pts = np.array([winglet.frame(float(t)).le if edge == "le" else winglet.frame(float(t)).te for t in s])
-    slope = np.gradient(pts[:, 2], s) / np.gradient(pts[:, 1], s)  # dZ/dy
-    seen = np.gradient(pts[:, 1], s) > 0.3 * np.gradient(pts[:, 1], s).max()
-    steps = np.diff(slope[seen])
-    assert np.all(steps >= -1e-9) or np.all(steps <= 1e-9)
-    sweep = winglet.d.sweep_deg if edge == "le" else None
-    if sweep is not None:
-        height = pts[-1, 1] - pts[0, 1]
-        assert math.degrees(math.atan(-(pts[-1, 2] - pts[0, 2]) / height)) == pytest.approx(sweep, abs=1e-6)
+    u, aft = pts[:, :2] @ axis, -pts[:, 2]
+    du = np.gradient(u, s)
+    seen = du > 0.3 * du.max()
+    slope = (np.gradient(aft, s) / du)[seen]
+    assert np.all(np.diff(slope) >= -1e-9)
+    if edge == "le":
+        overall = math.degrees(math.atan((aft[-1] - aft[0]) / (u[-1] - u[0])))
+        assert overall == pytest.approx(winglet.d.sweep_deg, abs=1e-6)
 
 
 def test_trailing_edge_holds_its_thickness_and_height_is_met(winglet):

@@ -61,9 +61,9 @@ def facts(row):
         ["Bend", f"{row['bend_fraction']:.0%} of the winglet"
                  + ("" if row["bend_fraction"] >= 1 else ", then straight")],
         ["Tightest bend radius", f"{row['tightest_bend_radius_mm']:.1f} mm"],
-        ["LE from outboard", f"{row['le_root_angle_deg']:.0f}° → {row['le_tip_angle_deg']:.0f}° aft"],
-        ["TE from outboard", f"{row['te_root_angle_deg']:.0f}° → {row['te_tip_angle_deg']:.0f}° aft"],
-        ["Edges turn one way", "yes" if row["edges_turn_one_way"] else "NO"],
+        ["LE in planform", f"{row['le_root_angle_deg']:.0f}° → {row['le_tip_angle_deg']:.0f}° aft"],
+        ["TE in planform", f"{row['te_root_angle_deg']:.0f}° → {row['te_tip_angle_deg']:.0f}° aft"],
+        ["Guides bend aft progressively", "yes" if row["guides_bend_aft_progressively"] else "NO"],
         ["Toe-out", f"{row['toe_out_deg']:.1f}°"],
         ["Tip chord", f"{row['tip_chord_mm']:.1f} mm"],
         ["LE radius, smallest", (f"{row['le_radius_min_mm']:.2f} mm across the edge "
@@ -78,24 +78,31 @@ def main():
     args.add_argument("--select", default="bend-centred", help="configuration shown on opening")
     args.add_argument("--mode", default="shaded", choices=("shaded", "stripes"))
     args.add_argument("--camera", default="Oblique", help="camera preset on opening (for screenshots)")
-    args.add_argument("--output", type=Path, default=HERE / "viewer.html")
+    args.add_argument("--all", action="store_true",
+                      help="view the whole configuration study (default: the baseline being tuned)")
+    args.add_argument("--output", type=Path, default=None)
     opts = args.parse_args()
+    source = HERE / ("configs" if opts.all else "tuning")
+    if opts.output is None:
+        opts.output = HERE / ("viewer.html" if opts.all else "tuning.html")
+    if not opts.all and opts.select == "bend-centred":
+        opts.select = "baseline"
     sys.path.insert(0, str(opts.converter_src))
     from airfoil_converter import geometry as converter
 
-    summary = json.loads((HERE / "configs" / "summary.json").read_text())
+    summary = json.loads((source / "summary.json").read_text())
     groups = {g: {"title": t, "members": []} for g, t in summary["groups"].items()}
     configs, shapes = {}, {}
     for name, row in summary["configs"].items():
         groups[row["group"]]["members"].append(name)
-        entry = {"label": row["label"], "fits": row["fits"]}
+        entry = {"label": row["label"], "fits": row["fits"], "cant": row.get("cant_deg", 75.0)}
         if not row["fits"]:
             entry["reason"] = row["reason"]
         else:
-            source = row.get("same_as") or name
-            if source not in shapes:
-                shapes[source] = geometry(build.make(converter, **summary["configs"][source]["overrides"]))
-            entry.update(shape=source, facts=facts(row))
+            origin = row.get("same_as") or name
+            if origin not in shapes:
+                shapes[origin] = geometry(build.make(converter, **summary["configs"][origin]["overrides"]))
+            entry.update(shape=origin, facts=facts(row))
         configs[name] = entry
 
     page = (TEMPLATE.replace("/*PLOTLY*/", get_plotlyjs())
@@ -177,6 +184,10 @@ const DATA = /*DATA*/;
 const WING = [0x7f / 255, 0xa7 / 255, 0xc9 / 255], WINGLET = [0xe8 / 255, 0xa8 / 255, 0x68 / 255];
 const LIGHT = (() => { const v = [0.35, -0.55, 0.76], n = Math.hypot(...v); return v.map(x => x / n); })();
 const PERIOD = 7, PARENT_RINGS = 31;
+function planformCamera() {
+  const g = (DATA.configs[state.config].cant || 75) * Math.PI / 180;
+  return [[2.5 * Math.sin(g), 0, -2.5 * Math.cos(g)], [Math.cos(g), 0, Math.sin(g)]];
+}
 const CAMERAS = {"Oblique": [[1.4, -1.6, 0.9], [0, 0, 1]], "Front": [[0, -2.5, 0], [0, 0, 1]], "Plan": [[0, 0, 2.5], [0, -1, 0]],
   "From behind": [[0, 2.5, 0.25], [0, 0, 1]], "From outboard": [[2.5, 0, 0.2], [0, 0, 1]], "Below": [[0.3, -0.6, -2.4], [0, -1, 0]]};
 const state = {config: DATA.select, mode: DATA.mode, edges: true, sections: true, span: true, ghost: false,
@@ -248,7 +259,7 @@ function draw() {
   const cfg = DATA.configs[state.config], g = build(cfg.shape), traces = [];
   const sides = state.mirror ? [false, true] : [false];
   if (state.ghost) {
-    const base = build(DATA.configs["bend-centred"].shape);
+    const base = build((DATA.configs["bend-centred"] || DATA.configs["baseline"]).shape);
     for (const m of sides) traces.push(meshTrace(base, m, "ghost"));
   }
   for (const m of sides) traces.push(meshTrace(g, m, state.mode));
@@ -264,7 +275,7 @@ function draw() {
             zaxis: {title: {text: "up (mm)"}, range: r.z}, aspectmode: "manual", aspectratio: r.aspect,
             bgcolor: "#eef2f5", uirevision: "keep"}};
   if (!document.getElementById("plot").layout) {
-    const [eye, up] = CAMERAS[DATA.camera] || CAMERAS["Oblique"];
+    const [eye, up] = DATA.camera === "Winglet planform" ? planformCamera() : (CAMERAS[DATA.camera] || CAMERAS["Oblique"]);
     layout.scene.camera = {eye: {x: eye[0], y: eye[1], z: eye[2]}, up: {x: up[0], y: up[1], z: up[2]},
                            projection: {type: "orthographic"}};
   }
@@ -284,7 +295,7 @@ for (const [g, group] of Object.entries(DATA.groups)) {
   for (const name of group.members) {
     const cfg = DATA.configs[name], b = document.createElement("button");
     b.textContent = cfg.label; b.dataset.config = name;
-    if (cfg.fits && cfg.shape === "bend-centred") b.classList.add("baseline");
+    if (cfg.fits && (cfg.shape === "bend-centred" || cfg.shape === "baseline")) b.classList.add("baseline");
     if (!cfg.fits) { b.disabled = true; b.title = cfg.reason; }
     b.onclick = () => { state.config = name; draw(); };
     row.append(b);
@@ -298,6 +309,13 @@ for (const [name, [eye, up]] of Object.entries(CAMERAS)) {
   b.onclick = () => Plotly.relayout("plot", {"scene.camera": {eye: {x: eye[0], y: eye[1], z: eye[2]}, up: {x: up[0], y: up[1], z: up[2]},
                                                center: {x: 0, y: 0, z: 0}, projection: {type: "orthographic"}}});
   document.getElementById("cameras").append(b);
+}
+{ // looking straight at the winglet's outer face, its span direction up the screen
+  const b = document.createElement("button"); b.textContent = "Winglet planform";
+  b.onclick = () => { const [eye, up] = planformCamera(); Plotly.relayout("plot", {"scene.camera": {
+    eye: {x: eye[0], y: eye[1], z: eye[2]}, up: {x: up[0], y: up[1], z: up[2]}, center: {x: 0, y: 0, z: 0},
+    projection: {type: "orthographic"}}}); };
+  document.getElementById("cameras").prepend(b);
 }
 draw();
 </script>

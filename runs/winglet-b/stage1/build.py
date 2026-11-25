@@ -155,25 +155,24 @@ def front_view_sag(w, upto=0.6):
     return out
 
 
-def side_view_turns(w):
-    """How each guide turns seen from outboard (up against aft), the view the edge laws are
-    drawn in. Counter-turn is the total turning, in degrees, against the guide's own overall
-    direction of turn. The first stretch, where the view sees the wing nearly end-on (side-view
+def planform_turns(w):
+    """How each guide bends in the winglet's planform: looking straight at its face, along its
+    span direction against aft. The rule from review is that every guide bends aft
+    progressively, like a parabola: its aft slope only grows. Counter-turn is the total turning
+    forward, in degrees. The first stretch, where the view sees the wing nearly end-on (span-wise
     speed under 30% of its largest), is skipped: directions there are not visible."""
+    axis = w._span_axis()
     s = w.stations(401)
     frames = [w.frame(float(t)) for t in s]
 
     def turn(points):
-        h, v = -points[:, 2], points[:, 1]
-        dh, dv = np.gradient(h, s), np.gradient(v, s)
-        speed = np.hypot(dh, dv)
-        seen = speed >= 0.3 * speed.max()
-        angle = np.degrees(np.unwrap(np.arctan2(dh, dv)))[seen]
+        u, aft = points[:, :2] @ axis, -points[:, 2]
+        du, da = np.gradient(u, s), np.gradient(aft, s)
+        seen = du >= 0.3 * du.max()
+        angle = np.degrees(np.arctan2(da, du))[seen]
         steps = np.diff(angle)
-        total = float(steps.sum())
-        counter = float(np.clip(-np.sign(total) * steps, 0, None).sum())
-        return {"first_seen_deg": float(angle[0]), "tip_deg": float(angle[-1]), "turn_deg": total,
-                "counter_turn_deg": counter}
+        return {"first_seen_deg": float(angle[0]), "tip_deg": float(angle[-1]),
+                "turn_deg": float(steps.sum()), "counter_turn_deg": float(np.clip(-steps, 0, None).sum())}
 
     out = {"leading_edge": turn(np.array([f.le for f in frames])),
            "trailing_edge": turn(np.array([f.te for f in frames]))}
@@ -237,7 +236,7 @@ def measure(w):
                       "second_derivative_scale_per_mm": float(max(np.linalg.norm(a2), np.linalg.norm(b2)))}
 
     chords = np.array([f.chord_mm for f in frames])
-    side = side_view_turns(w)
+    side = planform_turns(w)
     dihedral = angle_along(le)
     return frames, {
         "law": w.to_dict(),
@@ -256,9 +255,14 @@ def measure(w):
             # Informational: an aft-swept trailing edge must turn Wing B's slightly forward-running
             # edge around once, so it cannot also keep one direction.
             "trailing_edge_keeps_one_direction": bool(np.all(te_rate > 0) or np.all(te_rate < 0)),
-            # Seen from outboard, the leading and trailing edges each turn one way only.
-            "edges_turn_one_way": bool(side["leading_edge"]["counter_turn_deg"] < 0.05
-                                       and side["trailing_edge"]["counter_turn_deg"] < 0.05),
+            # In the winglet's planform every guide bends aft progressively: edges and chord-line
+            # guides by construction, skin guides within a tenth of a degree or so.
+            "guides_bend_aft_progressively": bool(
+                w.to_dict()["edges_bend_aft"]
+                and all(side[k]["counter_turn_deg"] < 0.05 for k in
+                        ("leading_edge", "trailing_edge", "chord_line_25pct", "chord_line_50pct",
+                         "chord_line_75pct"))
+                and side["skin_guides_worst_counter_turn_deg"] < 0.25),
             # Wing B's own trailing-edge bend is carried through the join for smoothness, so a
             # small opposite bend can remain near it; this is its size against the main bend.
             "trailing_edge_counter_bend_ratio": te_reversal,
@@ -266,7 +270,7 @@ def measure(w):
             "every_section_has_positive_thickness": bool(all((f.profile.half_thickness[1:] > 0).all()
                                                              for f in frames)),
             "front_view_sag": front_view_sag(w),
-            "side_view": side,
+            "planform": side,
         },
         "le_radius": {"rule_mm": RULE_MM, "worst": worst_le,
                       "passes": bool(worst_le["normal_to_le_mm"] >= RULE_MM), "stations": le_rows},
@@ -400,10 +404,11 @@ def summarise(name, group, label, overrides, w, report):
         "le_root_angle_deg": law["leading_edge_root_angle_deg"], "le_tip_angle_deg": law["leading_edge_tip_angle_deg"],
         "te_root_angle_deg": law["trailing_edge_root_angle_deg"], "te_tip_angle_deg": law["trailing_edge_tip_angle_deg"],
         "te_overall_sweep_deg": law["trailing_edge_overall_sweep_deg"],
-        "side_view": m["side_view"],
-        "edges_turn_one_way": m["edges_turn_one_way"],
-        "chord_line_guides_worst_counter_turn_deg": max(m["side_view"][f"chord_line_{p}pct"]["counter_turn_deg"]
+        "planform": m["planform"],
+        "guides_bend_aft_progressively": m["guides_bend_aft_progressively"],
+        "chord_line_guides_worst_counter_turn_deg": max(m["planform"][f"chord_line_{p}pct"]["counter_turn_deg"]
                                                         for p in (25, 50, 75)),
+        "cant_deg": law["cant_deg"],
         "toe_out_deg": m["toe_out_deg"], "tip_chord_mm": m["tip_chord_mm"],
         "span_mm": report["span"]["with_cap_allowance_mm"],
         "le_radius_min_mm": report["le_radius"]["worst"]["normal_to_le_mm"],
@@ -411,7 +416,7 @@ def summarise(name, group, label, overrides, w, report):
         "le_radius_passes": report["le_radius"]["passes"],
         "trailing_edge_mm": m["trailing_edge_mm"],
         "checks": {k: m[k] for k in ("chord_decreases_throughout", "bend_curvature_never_negative",
-                                     "dihedral_rises_throughout", "edges_turn_one_way",
+                                     "dihedral_rises_throughout", "guides_bend_aft_progressively",
                                      "trailing_edge_counter_bend_ratio",
                                      "every_section_has_positive_thickness")},
         "front_view_sag": m["front_view_sag"],
@@ -424,10 +429,16 @@ def summarise(name, group, label, overrides, w, report):
 def main():
     args = argparse.ArgumentParser()
     args.add_argument("--converter-src", required=True, type=Path)
+    args.add_argument("--all", action="store_true",
+                      help="build the whole configuration study into configs/ (default: only the "
+                           "baseline being tuned, into tuning/)")
     opts = args.parse_args()
     sys.path.insert(0, str(opts.converter_src))
     from airfoil_converter import geometry as converter
 
+    if not opts.all:
+        tune(converter)
+        return
     out = HERE / "configs"
     summary, built = {}, {}
     for group, (group_title, members) in GROUPS.items():
@@ -458,11 +469,28 @@ def main():
                   f"LE r {row['le_radius_min_mm']:.2f}/{row['le_radius_streamwise_min_mm']:.2f}  "
                   f"sag {row['front_view_sag']['outline_top_below_tangent_mm']:.3f}  "
                   f"LE {row['le_root_angle_deg']:.0f}>{row['le_tip_angle_deg']:.0f} TE {row['te_root_angle_deg']:.0f}>{row['te_tip_angle_deg']:.0f} "
-                  f"one-way {row['edges_turn_one_way']} chord-line {row['chord_line_guides_worst_counter_turn_deg']:.1f} "
-                  f"skin {row['side_view']['skin_guides_worst_counter_turn_deg']:.1f}  "
+                  f"aft {row['guides_bend_aft_progressively']} chord-line {row['chord_line_guides_worst_counter_turn_deg']:.2f} "
+                  f"skin {row['planform']['skin_guides_worst_counter_turn_deg']:.2f}  "
                   f"checks {all(v for k, v in row['checks'].items() if k != 'trailing_edge_counter_bend_ratio')}")
         else:
             print(f"{config:22s} does not fit: {row['reason'][:90]}")
+
+
+def tune(converter):
+    """Build only the baseline, the configuration being tuned, into tuning/."""
+    out = HERE / "tuning"
+    w = make(converter)
+    report = write_variant(w, "bend-centred", BASELINE_LABEL, out / "baseline")
+    row = summarise("baseline", "tuning", "Baseline", {}, w, report)
+    row["same_as"] = None
+    (out / "summary.json").write_text(json.dumps({
+        "baseline": BASELINE, "baseline_label": BASELINE_LABEL,
+        "groups": {"tuning": "Being tuned"}, "configs": {"baseline": row}}, indent=2) + "\n")
+    keys = ("attach_mm", "bend_fraction", "tightest_bend_radius_mm", "tip_chord_mm", "le_root_angle_deg",
+            "le_tip_angle_deg", "te_root_angle_deg", "te_tip_angle_deg", "le_radius_min_mm",
+            "guides_bend_aft_progressively", "chord_line_guides_worst_counter_turn_deg")
+    print(json.dumps({k: row[k] for k in keys}, indent=1))
+    print("checks", row["checks"])
 
 
 if __name__ == "__main__":
