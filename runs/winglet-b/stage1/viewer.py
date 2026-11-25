@@ -54,7 +54,6 @@ def geometry(w):
 
 
 def facts(row):
-    sweep = row["trailing_edge_tip_sweep_deg"]
     return [
         ["Starts at", f"{row['attach_mm']:.1f} mm"],
         ["Height", f"{row['height_mm']:.1f} mm"],
@@ -62,8 +61,9 @@ def facts(row):
         ["Bend", f"{row['bend_fraction']:.0%} of the winglet"
                  + ("" if row["bend_fraction"] >= 1 else ", then straight")],
         ["Tightest bend radius", f"{row['tightest_bend_radius_mm']:.1f} mm"],
-        ["Tip LE sweep", f"{row['tip_le_sweep_deg']:.1f}° aft"],
-        ["Tip TE sweep", f"{abs(sweep):.1f}° {'forward' if sweep < 0 else 'aft'}"],
+        ["LE from outboard", f"{row['le_root_angle_deg']:.0f}° → {row['le_tip_angle_deg']:.0f}° aft"],
+        ["TE from outboard", f"{row['te_root_angle_deg']:.0f}° → {row['te_tip_angle_deg']:.0f}° aft"],
+        ["Edges turn one way", "yes" if row["edges_turn_one_way"] else "NO"],
         ["Toe-out", f"{row['toe_out_deg']:.1f}°"],
         ["Tip chord", f"{row['tip_chord_mm']:.1f} mm"],
         ["LE radius, smallest", (f"{row['le_radius_min_mm']:.2f} mm across the edge "
@@ -77,6 +77,7 @@ def main():
     args.add_argument("--converter-src", required=True, type=Path)
     args.add_argument("--select", default="bend-centred", help="configuration shown on opening")
     args.add_argument("--mode", default="shaded", choices=("shaded", "stripes"))
+    args.add_argument("--camera", default="Oblique", help="camera preset on opening (for screenshots)")
     args.add_argument("--output", type=Path, default=HERE / "viewer.html")
     opts = args.parse_args()
     sys.path.insert(0, str(opts.converter_src))
@@ -100,7 +101,8 @@ def main():
     page = (TEMPLATE.replace("/*PLOTLY*/", get_plotlyjs())
             .replace("/*DATA*/", json.dumps({"groups": groups, "configs": configs, "shapes": shapes,
                                              "baseline": summary["baseline_label"],
-                                             "select": opts.select, "mode": opts.mode})))
+                                             "select": opts.select, "mode": opts.mode,
+                                             "camera": opts.camera})))
     opts.output.write_text(page, encoding="utf-8")
     print(opts.output, f"{opts.output.stat().st_size / 1e6:.1f} MB")
 
@@ -175,6 +177,8 @@ const DATA = /*DATA*/;
 const WING = [0x7f / 255, 0xa7 / 255, 0xc9 / 255], WINGLET = [0xe8 / 255, 0xa8 / 255, 0x68 / 255];
 const LIGHT = (() => { const v = [0.35, -0.55, 0.76], n = Math.hypot(...v); return v.map(x => x / n); })();
 const PERIOD = 7, PARENT_RINGS = 31;
+const CAMERAS = {"Oblique": [[1.4, -1.6, 0.9], [0, 0, 1]], "Front": [[0, -2.5, 0], [0, 0, 1]], "Plan": [[0, 0, 2.5], [0, -1, 0]],
+  "From behind": [[0, 2.5, 0.25], [0, 0, 1]], "From outboard": [[2.5, 0, 0.2], [0, 0, 1]], "Below": [[0.3, -0.6, -2.4], [0, -1, 0]]};
 const state = {config: DATA.select, mode: DATA.mode, edges: true, sections: true, span: true, ghost: false,
                mirror: false, frame: "tip"};
 const unpack = b64 => { const s = atob(b64), u = new Uint8Array(s.length);
@@ -259,7 +263,11 @@ function draw() {
     scene: {xaxis: {title: {text: "outboard (mm)"}, range: r.x}, yaxis: {title: {text: "aft (mm)"}, range: r.y},
             zaxis: {title: {text: "up (mm)"}, range: r.z}, aspectmode: "manual", aspectratio: r.aspect,
             bgcolor: "#eef2f5", uirevision: "keep"}};
-  if (!document.getElementById("plot").layout) layout.scene.camera = {eye: {x: 1.4, y: -1.6, z: 0.9}, projection: {type: "orthographic"}};
+  if (!document.getElementById("plot").layout) {
+    const [eye, up] = CAMERAS[DATA.camera] || CAMERAS["Oblique"];
+    layout.scene.camera = {eye: {x: eye[0], y: eye[1], z: eye[2]}, up: {x: up[0], y: up[1], z: up[2]},
+                           projection: {type: "orthographic"}};
+  }
   Plotly.react("plot", traces, layout, {displaylogo: false, responsive: true});
   document.getElementById("facts").innerHTML = cfg.facts.map(([k, v]) => "<dt>" + k + "</dt><dd>" + v + "</dd>").join("");
   document.querySelectorAll("#configs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.config === state.config));
@@ -285,8 +293,6 @@ for (const [g, group] of Object.entries(DATA.groups)) {
 document.querySelectorAll("#modes button").forEach(b => b.onclick = () => { state.mode = b.dataset.mode; draw(); });
 document.querySelectorAll("#layers button").forEach(b => b.onclick = () => { state[b.dataset.layer] = !state[b.dataset.layer]; draw(); });
 document.querySelectorAll("#frames button").forEach(b => b.onclick = () => { state.frame = b.dataset.frame; draw(); });
-const CAMERAS = {"Oblique": [[1.4, -1.6, 0.9], [0, 0, 1]], "Front": [[0, -2.5, 0], [0, 0, 1]], "Plan": [[0, 0, 2.5], [0, -1, 0]],
-  "From behind": [[0, 2.5, 0.25], [0, 0, 1]], "From outboard": [[2.5, 0, 0.2], [0, 0, 1]], "Below": [[0.3, -0.6, -2.4], [0, -1, 0]]};
 for (const [name, [eye, up]] of Object.entries(CAMERAS)) {
   const b = document.createElement("button"); b.textContent = name;
   b.onclick = () => Plotly.relayout("plot", {"scene.camera": {eye: {x: eye[0], y: eye[1], z: eye[2]}, up: {x: up[0], y: up[1], z: up[2]},

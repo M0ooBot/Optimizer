@@ -95,6 +95,22 @@ def test_drawn_edges_give_a_tapering_chord_and_a_one_way_trailing_edge(winglet):
     assert np.all(np.diff(te_z) > 0) or np.all(np.diff(te_z) < 0)
 
 
+@pytest.mark.parametrize("edge", ["le", "te"])
+def test_edges_turn_one_way_seen_from_outboard(winglet, edge):
+    """Each edge's direction seen from outboard (up against aft) changes one way only, and its
+    overall sweep is the requested one; the tip direction is free."""
+    s = winglet.stations(301)
+    pts = np.array([winglet.frame(float(t)).le if edge == "le" else winglet.frame(float(t)).te for t in s])
+    slope = np.gradient(pts[:, 2], s) / np.gradient(pts[:, 1], s)  # dZ/dy
+    seen = np.gradient(pts[:, 1], s) > 0.3 * np.gradient(pts[:, 1], s).max()
+    steps = np.diff(slope[seen])
+    assert np.all(steps >= -1e-9) or np.all(steps <= 1e-9)
+    sweep = winglet.d.sweep_deg if edge == "le" else None
+    if sweep is not None:
+        height = pts[-1, 1] - pts[0, 1]
+        assert math.degrees(math.atan(-(pts[-1, 2] - pts[0, 2]) / height)) == pytest.approx(sweep, abs=1e-6)
+
+
 def test_trailing_edge_holds_its_thickness_and_height_is_met(winglet):
     for s in winglet.stations(21):
         frame = winglet.frame(float(s))

@@ -24,6 +24,7 @@ REPO = HERE.parents[2]
 sys.path.insert(0, str(REPO / "src"))
 from planeopt.phase0_geometry import _profile, load_definition
 from planeopt.phase0_winglet import (
+    XI,
     BlendedWinglet,
     ProfileFamily,
     WingletDefinition,
@@ -41,7 +42,7 @@ RULE_MM = 0.4
 # not fit the span; it then picks the gentlest bend that does.
 BASELINE = {"height_mm": 60.0, "te_sweep_deg": 10.0, "tip_chord_mm": None, "bend_fraction": None,
             "ramp_in": 0.35, "ramp_out": 0.35}
-BASELINE_LABEL = "Baseline: 60 mm, 75° cant, 35° LE / 10° TE sweep aft, 2° toe-out, centred bend"
+BASELINE_LABEL = "Baseline: 60 mm, 75° cant, overall sweep 35° LE / 10° TE aft, 2° toe-out, centred bend"
 GROUPS = {
     "bend": ("Bend distribution (ramps in / out)", [
         ("even", "Even 20 / 20", {"ramp_in": 0.2, "ramp_out": 0.2}),
@@ -50,10 +51,10 @@ GROUPS = {
         ("early", "Early peak 30 / 60", {"ramp_in": 0.3, "ramp_out": 0.6}),
         ("late", "Late peak 50 / 25", {"ramp_in": 0.5, "ramp_out": 0.25}),
     ]),
-    "te": ("Trailing-edge sweep at the tip", [
+    "te": ("Trailing-edge sweep, overall", [
         (f"te{v:+d}", f"{abs(v)}° {'forward' if v < 0 else 'aft'}" if v else "0°", {"te_sweep_deg": float(v)})
         for v in (-10, 0, 10, 15, 20, 25)]),
-    "le": ("Leading-edge sweep at the tip", [
+    "le": ("Leading-edge sweep, overall", [
         (f"le{v}", f"{v}°", {"sweep_deg": float(v)}) for v in (20, 25, 35, 45, 50)]),
     "height": ("Height", [(f"h{v}", f"{v} mm", {"height_mm": float(v)}) for v in (45, 50, 55, 60, 65, 70)]),
     "cant": ("Cant at the tip", [(f"cant{v}", f"{v}°", {"cant_deg": float(v)}) for v in (60, 65, 70, 75, 80, 85)]),
@@ -154,6 +155,41 @@ def front_view_sag(w, upto=0.6):
     return out
 
 
+def side_view_turns(w):
+    """How each guide turns seen from outboard (up against aft), the view the edge laws are
+    drawn in. Counter-turn is the total turning, in degrees, against the guide's own overall
+    direction of turn. The first stretch, where the view sees the wing nearly end-on (side-view
+    speed under 30% of its largest), is skipped: directions there are not visible."""
+    s = w.stations(401)
+    frames = [w.frame(float(t)) for t in s]
+
+    def turn(points):
+        h, v = -points[:, 2], points[:, 1]
+        dh, dv = np.gradient(h, s), np.gradient(v, s)
+        speed = np.hypot(dh, dv)
+        seen = speed >= 0.3 * speed.max()
+        angle = np.degrees(np.unwrap(np.arctan2(dh, dv)))[seen]
+        steps = np.diff(angle)
+        total = float(steps.sum())
+        counter = float(np.clip(-np.sign(total) * steps, 0, None).sum())
+        return {"first_seen_deg": float(angle[0]), "tip_deg": float(angle[-1]), "turn_deg": total,
+                "counter_turn_deg": counter}
+
+    out = {"leading_edge": turn(np.array([f.le for f in frames])),
+           "trailing_edge": turn(np.array([f.te for f in frames]))}
+    for x in (0.25, 0.5, 0.75):
+        pts = np.array([f.point(f.profile.x0 + x * (f.profile.x1 - f.profile.x0),
+                                float(np.interp(x, XI, f.profile.camber))) for f in frames])
+        out[f"chord_line_{int(100 * x)}pct"] = turn(pts)
+    skin = 0.0
+    for index in range(4, len(XI) - 1, 12):
+        for upper in (True, False):
+            pts = np.array([f.point(*(f.profile.upper() if upper else f.profile.lower())[index]) for f in frames])
+            skin = max(skin, turn(pts)["counter_turn_deg"])
+    out["skin_guides_worst_counter_turn_deg"] = skin
+    return out
+
+
 def measure(w):
     stations = w.stations(161)
     frames = [w.frame(float(s)) for s in stations]
@@ -201,6 +237,7 @@ def measure(w):
                       "second_derivative_scale_per_mm": float(max(np.linalg.norm(a2), np.linalg.norm(b2)))}
 
     chords = np.array([f.chord_mm for f in frames])
+    side = side_view_turns(w)
     dihedral = angle_along(le)
     return frames, {
         "law": w.to_dict(),
@@ -219,9 +256,9 @@ def measure(w):
             # Informational: an aft-swept trailing edge must turn Wing B's slightly forward-running
             # edge around once, so it cannot also keep one direction.
             "trailing_edge_keeps_one_direction": bool(np.all(te_rate > 0) or np.all(te_rate < 0)),
-            # The S the first revision had: the edge's bend reverses. Wing B's own bend carried
-            # through the join leaves a small reversal; past 10% of the main bend counts as an S.
-            "trailing_edge_turns_one_way": bool(te_reversal < 0.1),
+            # Seen from outboard, the leading and trailing edges each turn one way only.
+            "edges_turn_one_way": bool(side["leading_edge"]["counter_turn_deg"] < 0.05
+                                       and side["trailing_edge"]["counter_turn_deg"] < 0.05),
             # Wing B's own trailing-edge bend is carried through the join for smoothness, so a
             # small opposite bend can remain near it; this is its size against the main bend.
             "trailing_edge_counter_bend_ratio": te_reversal,
@@ -229,6 +266,7 @@ def measure(w):
             "every_section_has_positive_thickness": bool(all((f.profile.half_thickness[1:] > 0).all()
                                                              for f in frames)),
             "front_view_sag": front_view_sag(w),
+            "side_view": side,
         },
         "le_radius": {"rule_mm": RULE_MM, "worst": worst_le,
                       "passes": bool(worst_le["normal_to_le_mm"] >= RULE_MM), "stations": le_rows},
@@ -359,7 +397,13 @@ def summarise(name, group, label, overrides, w, report):
         "attach_mm": m["attach_mm"], "length_mm": law["length_mm"], "bend_fraction": law["bend_fraction"],
         "tightest_bend_radius_mm": law["tightest_bend_radius_mm"], "height_mm": m["height_mm"],
         "tip_cant_deg": m["tip_cant_deg"], "tip_le_sweep_deg": m["tip_le_sweep_deg"],
-        "trailing_edge_tip_sweep_deg": law["trailing_edge_tip_sweep_deg"],
+        "le_root_angle_deg": law["leading_edge_root_angle_deg"], "le_tip_angle_deg": law["leading_edge_tip_angle_deg"],
+        "te_root_angle_deg": law["trailing_edge_root_angle_deg"], "te_tip_angle_deg": law["trailing_edge_tip_angle_deg"],
+        "te_overall_sweep_deg": law["trailing_edge_overall_sweep_deg"],
+        "side_view": m["side_view"],
+        "edges_turn_one_way": m["edges_turn_one_way"],
+        "chord_line_guides_worst_counter_turn_deg": max(m["side_view"][f"chord_line_{p}pct"]["counter_turn_deg"]
+                                                        for p in (25, 50, 75)),
         "toe_out_deg": m["toe_out_deg"], "tip_chord_mm": m["tip_chord_mm"],
         "span_mm": report["span"]["with_cap_allowance_mm"],
         "le_radius_min_mm": report["le_radius"]["worst"]["normal_to_le_mm"],
@@ -367,7 +411,7 @@ def summarise(name, group, label, overrides, w, report):
         "le_radius_passes": report["le_radius"]["passes"],
         "trailing_edge_mm": m["trailing_edge_mm"],
         "checks": {k: m[k] for k in ("chord_decreases_throughout", "bend_curvature_never_negative",
-                                     "dihedral_rises_throughout", "trailing_edge_turns_one_way",
+                                     "dihedral_rises_throughout", "edges_turn_one_way",
                                      "trailing_edge_counter_bend_ratio",
                                      "every_section_has_positive_thickness")},
         "front_view_sag": m["front_view_sag"],
@@ -413,6 +457,9 @@ def main():
                   f"R {row['tightest_bend_radius_mm']:5.1f}  tip chord {row['tip_chord_mm']:5.1f}  "
                   f"LE r {row['le_radius_min_mm']:.2f}/{row['le_radius_streamwise_min_mm']:.2f}  "
                   f"sag {row['front_view_sag']['outline_top_below_tangent_mm']:.3f}  "
+                  f"LE {row['le_root_angle_deg']:.0f}>{row['le_tip_angle_deg']:.0f} TE {row['te_root_angle_deg']:.0f}>{row['te_tip_angle_deg']:.0f} "
+                  f"one-way {row['edges_turn_one_way']} chord-line {row['chord_line_guides_worst_counter_turn_deg']:.1f} "
+                  f"skin {row['side_view']['skin_guides_worst_counter_turn_deg']:.1f}  "
                   f"checks {all(v for k, v in row['checks'].items() if k != 'trailing_edge_counter_bend_ratio')}")
         else:
             print(f"{config:22s} does not fit: {row['reason'][:90]}")

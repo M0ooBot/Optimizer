@@ -57,6 +57,11 @@ def _smoothstep_integral(x):
     return 2.5 * x**4 - 3 * x**5 + x**6
 
 
+def _smoothstep_double_integral(x):
+    x = np.clip(x, 0.0, 1.0)
+    return 0.5 * x**5 - 0.5 * x**6 + x**7 / 7
+
+
 # ----------------------------------------------------------------- profiles
 
 
@@ -187,7 +192,11 @@ def naca_symmetric(thickness_ratio: float, points_per_side: int = 401) -> np.nda
 class WingletDefinition:
     cant_deg: float = 75.0  # front-view angle of the leading edge at the winglet tip, above horizontal
     height_mm: float = 65.0  # LE rise from the attachment to the winglet tip station
-    sweep_deg: float = 35.0  # LE sweep at the winglet tip, against its front-view direction
+    # Edge sweeps are overall: the side view's straight line from the attachment to the tip,
+    # seen from outboard (up against aft), aft positive. Each edge leaves the attachment in Wing
+    # B's direction and curvature, eases into a steady one-way turn and keeps turning to the
+    # tip; its tip direction follows.
+    sweep_deg: float = 35.0
     # The trailing edge's tip direction is set one of two ways: by its sweep (aft positive, in the
     # same sense as the leading edge's), with the tip chord following; or by the tip chord, with
     # the sweep solved to give it. Set exactly one.
@@ -208,6 +217,13 @@ class WingletDefinition:
     # saves room sideways at the price of a tighter bend.
     # None solves it: the gentlest bend that fits, starting as far inboard as the hinge allows.
     bend_fraction: float | None = 1.0
+    # Share of the winglet's height over which each edge eases from Wing B's turning into its
+    # steady turn.
+    edge_ease: float = 0.15
+    # How the steady turn fades toward the tip: turning rate ~ (1 - y / height) ** edge_fade.
+    # 0 turns at a constant rate to the tip; larger values turn most near the root and leave
+    # the edge nearly straight at the tip (its direction is still not forced).
+    edge_fade: float = 2.0
     hinge_clearance_mm: float = 10.0  # the winglet starts at least this far outboard of the hinge end
     # True: sweep, taper, twist, morph and plane rotation advance with the turn already made,
     # so each section changes while the skin is already rising. False: with distance along it.
@@ -225,6 +241,10 @@ class WingletDefinition:
             raise ValueError("tip_chord_mm must be positive")
         if not (0 < self.ramp_in and 0 < self.ramp_out and self.ramp_in + self.ramp_out <= 1):
             raise ValueError("ramp_in and ramp_out must be positive and together at most 1")
+        if not 0 < self.edge_ease < 1:
+            raise ValueError("edge_ease must be in (0, 1)")
+        if self.edge_fade < 0:
+            raise ValueError("edge_fade must be at least 0")
         if self.bend_fraction is not None and not 0 < self.bend_fraction <= 1:
             raise ValueError("bend_fraction must be in (0, 1] or None to solve")
         if self.attach_fraction is not None and not 0 < self.attach_fraction < 1:
@@ -311,7 +331,7 @@ class BlendedWinglet:
 
     def _parent_q(self, f):
         frame = section_frame(self.parent, f)
-        return np.array([*frame.le, frame.chord_mm, _twist_deg(self.parent, f), frame.te[2]])
+        return np.array([*frame.le, frame.chord_mm, _twist_deg(self.parent, f), frame.te[2], frame.te[1]])
 
     def _join(self, f0):
         h = 1e-3
@@ -332,6 +352,7 @@ class BlendedWinglet:
         self.le_aft = _Taylor(q_s[2], q_ss[2], 0.0)  # dZ/ds of the leading edge and its slope
         self.te_aft = _Taylor(q_s[5], q_ss[5], 0.0)  # the same for the trailing edge
         self.te_z0 = q[5]
+        self.te_y0, self.te_y_s, self.te_y_ss = q[6], q_s[6], q_ss[6]
         self.chord_p = _Taylor(q[3], q_s[3], q_ss[3])
         self.twist_p = _Taylor(q[4], q_s[4], q_ss[4])
 
@@ -366,13 +387,7 @@ class BlendedWinglet:
         if self.kappa_peak <= 0:
             raise ValueError("The winglet turns less than Wing B already bends; raise the cant")
         S = self.s_tip
-        if self.d.te_sweep_deg is not None:
-            self.te_tan = math.tan(math.radians(self.d.te_sweep_deg))
-        else:  # the trailing-edge sweep that gives the tip chord: Z_te(S) is linear in tan(sweep)
-            base = self.te_z0 + _quad(lambda t: (1 - self._weight(t)) * self.te_aft(t), 0, S)
-            weight = _quad(self._weight, 0, S)
-            cos_toe = math.cos(math.radians(self.d.toe_out_deg))
-            self.te_tan = (base - self._z(S) + self.d.tip_chord_mm * cos_toe) / weight
+        self._configure_edges()
         tip_chord = self.chord(S)
         if tip_chord <= 0:
             raise ValueError(f"The drawn edges cross before the tip (tip chord {tip_chord:.1f} mm); "
@@ -385,6 +400,118 @@ class BlendedWinglet:
         turn = self.gamma_c - self.gamma0
         self.kappa_peak = ((turn / self.s_bend - self.kappa0 * d.ramp_in / 2)
                            / (1 - (d.ramp_in + d.ramp_out) / 2))
+
+    # -------------------------------------------------------------- edges in the side view
+
+    def _configure_edges(self):
+        """Each edge's aft coordinate Z as a function of its own height y above its own start,
+        as seen from outboard. Its slope m = dZ/dy starts at Wing B's, with Wing B's rate of
+        change, eases (over edge_ease of the edge's height) into a turn whose rate fades toward
+        the tip. With dm/dy of one sign the edge turns one way; its tip direction is not forced.
+        Z is linear in the turn rate K, so the overall sweep fixes K directly."""
+        height = self._front(self.s_tip)[1] - self.le0[1]
+        y_s, y_ss = math.sin(self.gamma0), math.cos(self.gamma0) * self.kappa0
+        self.edges = {
+            "le": self._edge(self.le0[2], self.le0[1], self.le_aft.value, self.le_aft.d1, y_s, y_ss, height),
+            "te": self._edge(self.te_z0, self.te_y0, self.te_aft.value, self.te_aft.d1,
+                             self.te_y_s, self.te_y_ss, height),
+        }
+        le = self.edges["le"]
+        le["k"] = self._edge_rate_for(le, -height * math.tan(math.radians(self.d.sweep_deg)))
+        te = self.edges["te"]
+        theta_tip = math.radians(-self.d.toe_out_deg)
+        rise_y = -math.cos(self.gamma_c) * math.sin(theta_tip)  # chord direction's height at the tip
+        if self.d.te_sweep_deg is None:
+            chord = self.d.tip_chord_mm
+            te_y = self._front(self.s_tip)[1] + chord * rise_y
+            self._set_edge_height(te, te_y - te["y0"])
+            target = self._edge_z("le", height) - chord * math.cos(theta_tip)
+            te["k"] = self._edge_rate_for(te, target - te["z0"])
+            return
+        for _ in range(30):  # the trailing edge's own height depends on the tip chord it gets
+            te["k"] = self._edge_rate_for(te, -te["height"] * math.tan(math.radians(self.d.te_sweep_deg)))
+            _, _, te_y = self._trailing_edge(self.s_tip)
+            previous = te["height"]
+            self._set_edge_height(te, te_y - te["y0"])
+            if abs(te["height"] - previous) < 1e-10:
+                break
+        te["k"] = self._edge_rate_for(te, -te["height"] * math.tan(math.radians(self.d.te_sweep_deg)))
+
+    def _edge(self, z0, y0, z_s, z_ss, y_s, y_ss, height):
+        edge = {"z0": z0, "y0": y0, "m0": z_s / y_s, "m1": (z_ss * y_s - z_s * y_ss) / y_s**3, "k": 0.0}
+        self._set_edge_height(edge, height)
+        return edge
+
+    def _set_edge_height(self, edge, height):
+        edge["height"] = height
+        edge["ease"] = self.d.edge_ease * height
+
+    def _turn_shape(self, t, edge):
+        """Turn-rate profile: eased in from zero, fading toward the tip."""
+        fade = max(0.0, 1.0 - t / edge["height"]) ** self.d.edge_fade
+        return float(smoothstep(t / edge["ease"])) * fade
+
+    def _edge_integrals(self, y, edge):
+        """For Z(y) = Z0 + m0 y + m1 A(y) + K B(y): A and B are the (y - t)-weighted integrals of
+        the two turning-rate parts, (1 - W) for Wing B's turning and the turn profile."""
+        ell = edge["ease"]
+        x = min(y / ell, 1.0)
+        a = ell**2 * (x * x / 2 - _smoothstep_double_integral(x))
+        if y > ell:
+            a += ell / 2 * (y - ell)
+        b = _quad(lambda t: (y - t) * self._turn_shape(t, edge), 0, min(y, ell))
+        if y > ell:
+            b += _quad(lambda t: (y - t) * self._turn_shape(t, edge), ell, y)
+        return a, b
+
+    def _edge_rate_for(self, edge, rise):
+        a, b = self._edge_integrals(edge["height"], edge)
+        return (rise - edge["m0"] * edge["height"] - edge["m1"] * a) / b
+
+    def _edge_z(self, name, y):
+        edge = self.edges[name]
+        a, b = self._edge_integrals(y, edge)
+        return edge["z0"] + edge["m0"] * y + edge["m1"] * a + edge["k"] * b
+
+    def edge_slope(self, name, y):
+        """dZ/dy of an edge seen from outboard (negative is aft), y above the edge's start."""
+        edge = self.edges[name]
+        ell = edge["ease"]
+        x = min(y / ell, 1.0)
+        i1 = ell * (x - float(_smoothstep_integral(x)))
+        iq = _quad(lambda t: self._turn_shape(t, edge), 0, min(y, ell))
+        if y > ell:
+            iq += _quad(lambda t: self._turn_shape(t, edge), ell, y)
+        return edge["m0"] + edge["m1"] * i1 + edge["k"] * iq
+
+    def _basics(self, s):
+        """Leading-edge point, front-view angle, plane tilt and twist at s."""
+        front = self._front(s)
+        le = np.array([front[0], front[1], self._edge_z("le", float(front[1] - self.le0[1]))])
+        gamma = self.gamma(s)
+        return le, gamma, self._weight(s) * gamma, self.twist_deg(s)
+
+    def _trailing_edge(self, s, basics=None):
+        """The trailing edge's aft position, the chord and the edge's height at s. The edge is
+        drawn against its own height, which itself depends on the chord through the twist and
+        the plane tilt, so the two are solved together (the coupling is weak)."""
+        le, _, phi, theta_deg = basics or self._basics(s)
+        theta = math.radians(theta_deg)
+        rise_y = -math.cos(phi) * math.sin(theta)
+        z = self._edge_z("te", max(0.0, le[1] - self.edges["te"]["y0"]))
+        for _ in range(60):
+            chord = (le[2] - z) / math.cos(theta)
+            y = le[1] + chord * rise_y
+            z_next = self._edge_z("te", max(0.0, y - self.edges["te"]["y0"]))
+            if abs(z_next - z) < 1e-12:
+                z = z_next
+                break
+            z = z_next
+        chord = (le[2] - z) / math.cos(theta)
+        return z, chord, le[1] + chord * rise_y
+
+    def _height(self, s):
+        return float(self._front(s)[1] - self.le0[1])
 
     def kappa(self, s):
         d, x = self.d, s / self.s_bend
@@ -428,19 +555,11 @@ class BlendedWinglet:
         progress = (self.gamma(s) - self.gamma0) / (self.gamma_c - self.gamma0)
         return float(smoothstep(progress))
 
-    def le_aft_rate(self, s):
-        w = self._weight(s)
-        return (1 - w) * self.le_aft(s) - w * math.tan(math.radians(self.d.sweep_deg))
-
-    def te_aft_rate(self, s):
-        w = self._weight(s)
-        return (1 - w) * self.te_aft(s) - w * self.te_tan
-
     def _z(self, s):
-        return self.le0[2] + _quad(self.le_aft_rate, 0, s)
+        return self._edge_z("le", self._height(s))
 
     def _te_z(self, s):
-        return self.te_z0 + _quad(self.te_aft_rate, 0, s)
+        return self._trailing_edge(s)[0]
 
     def twist_deg(self, s):
         w = self._weight(s)
@@ -448,7 +567,7 @@ class BlendedWinglet:
 
     def chord(self, s):
         """From the two drawn edges: the chord spans their aft separation at the section's twist."""
-        return (self._z(s) - self._te_z(s)) / math.cos(math.radians(self.twist_deg(s)))
+        return self._trailing_edge(s)[1]
 
     def morph(self, s):
         return self._weight(s)
@@ -469,17 +588,14 @@ class BlendedWinglet:
     def frame(self, s) -> Frame:
         if s < 0:
             return self.parent_frame(self.parent_fraction(s), s)
-        front = self._front(s)
-        le = np.array([front[0], front[1], self._z(s)])
-        gamma = self.gamma(s)
-        phi = self._weight(s) * gamma
-        theta_deg = self.twist_deg(s)
+        basics = self._basics(s)
+        le, gamma, phi, theta_deg = basics
         theta = math.radians(theta_deg)
         up = np.array([math.sin(phi), math.cos(phi), 0.0])
         chord_axis = np.array([-up[0] * math.sin(theta), -up[1] * math.sin(theta), -math.cos(theta)])
         up_axis = np.array([up[0] * math.cos(theta), up[1] * math.cos(theta), -math.sin(theta)])
         normal = np.array([-math.cos(phi), math.sin(phi), 0.0])
-        chord = (le[2] - self._te_z(s)) / math.cos(theta)
+        chord = self._trailing_edge(s, basics)[1]
         return Frame(float(s), le, chord_axis, up_axis, normal, chord, self.profile(s, chord),
                      gamma, phi, theta_deg)
 
@@ -501,8 +617,9 @@ class BlendedWinglet:
         if s <= self.s_tip:
             return self.frame(s)
         tip = self.frame(self.s_tip)
+        slope = self.edge_slope("le", self.edges["le"]["height"])
         direction = np.array([-math.cos(self.gamma_c), math.sin(self.gamma_c),
-                              -math.tan(math.radians(self.d.sweep_deg))])
+                              slope * math.sin(self.gamma_c)])
         return replace(tip, s=float(s), le=tip.le + direction * (s - self.s_tip))
 
     def projected_span(self, include_allowance=True):
@@ -562,6 +679,13 @@ class BlendedWinglet:
         out.update(attach_mm=self.f0 * self.guide_span, length_mm=self.s_tip, bend_length_mm=self.s_bend,
                    peak_curvature_per_mm=float(kappa.max()), peak_at_fraction=float(s[kappa.argmax()] / self.s_tip),
                    tightest_bend_radius_mm=float(1 / kappa.max()),
-                   trailing_edge_tip_sweep_deg=math.degrees(math.atan(self.te_tan)),
+                   leading_edge_tip_angle_deg=math.degrees(math.atan(
+                       -self.edge_slope("le", self.edges["le"]["height"]))),
+                   trailing_edge_tip_angle_deg=math.degrees(math.atan(
+                       -self.edge_slope("te", self.edges["te"]["height"]))),
+                   leading_edge_root_angle_deg=math.degrees(math.atan(-self.edges["le"]["m0"])),
+                   trailing_edge_root_angle_deg=math.degrees(math.atan(-self.edges["te"]["m0"])),
+                   trailing_edge_overall_sweep_deg=math.degrees(math.atan(
+                       -(self._edge_z("te", self.edges["te"]["height"]) - self.te_z0) / self.edges["te"]["height"])),
                    parent_dihedral_deg=math.degrees(self.gamma0), parent_curvature_per_mm=self.kappa0)
         return out
