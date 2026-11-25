@@ -6907,14 +6907,14 @@
   "pass": false
  },
  "timing_s": {
-  "validity": 0.7,
-  "preservation": 627.1,
-  "outline_scan": 18.9,
+  "validity": 0.6,
+  "preservation": 37.6,
+  "outline_scan": 16.6,
   "outline_surface": 6.9,
   "joins": 0.3,
-  "sections": 6.1,
-  "cap_map": 35.0,
+  "sections": 5.3,
+  "cap_map": 34.5,
   "te_closure": 0.9,
-  "total": 696.4
+  "total": 102.7
  }
 }
