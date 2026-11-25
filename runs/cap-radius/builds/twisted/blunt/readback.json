@@ -1,0 +1,2812 @@
+{
+ "model": "twisted/blunt: parent + rounded caps at both tips (right cap mirrored to the left)",
+ "units": "mm",
+ "step": {
+  "file": "runs/cap-radius/builds/twisted/blunt/wing.step",
+  "sha256": "bdd49456f03306c299bcff6a91c0df492f6b5c8c40907473b3c1207d14421a3c",
+  "bytes": 13185489
+ },
+ "reimport": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 12,
+  "edges": 21,
+  "degenerated_edges": 2,
+  "edges_not_shared_by_two_faces": 0,
+  "brepcheck_valid": true,
+  "volume_mm3": 1549642.734108597,
+  "bounding_box_mm": [
+   -0.01413552354987824,
+   189.89964442746455,
+   -500.0027180753201,
+   500.00271807537035,
+   -7.685968980576549,
+   51.86583060114394
+  ]
+ },
+ "parent_preserved": {
+  "parent_bspline_faces_in_parent_step": 6,
+  "matched_identically_in_wing_step": 6,
+  "max_pole_difference_mm": 0.0,
+  "planar_end_faces_remaining": 0,
+  "note": "each parent B-spline face's poles compared with parent.step; the two planar attachment faces are replaced by the caps",
+  "cap_faces": 6
+ },
+ "locked_dimensions": {
+  "plan_silhouette_outside_outline_leading_edge_half_max_mm": 0.020528933304796906,
+  "plan_silhouette_outside_outline_trailing_edge_half_max_mm": 0.019119619249619944,
+  "parent_attachment_section_ahead_of_rim_start_in_plan_mm": 0.018347818451047715,
+  "span_extent_Y_mm": [
+   -500.0027180753201,
+   500.00271807537035
+  ],
+  "finished_projected_span_mm": 1000.0054361506905,
+  "spec_projected_span_mm": 1000.0,
+  "rim_to_cap_surface_max_mm": 2.9207640770659494e-05,
+  "rim_worst_p": 0.999375,
+  "plan_silhouette_outside_locked_outline_max_mm": 0.020528933304796906,
+  "silhouette_worst_at": [
+   90.12881,
+   440.71514,
+   38.83383
+  ],
+  "silhouette_worst_rim_p": 0.0037700000000000003,
+  "silhouette_note": "the lip is symmetric about the parent's mid surface; near the trailing edge the locked rim lies up to 0.091 mm below that mid surface, so the lip apex (plan silhouette) sits slightly outboard of the rim"
+ },
+ "joins": {
+  "right": {
+   "upper": {
+    "samples": 5805,
+    "excluded_samples": 196,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 3.43714720612747e-13,
+     "at": [
+      172.58183,
+      440.0,
+      46.29383
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 0.001972864369346622,
+     "at": [
+      188.63101,
+      440.0,
+      44.20824
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 0.018628801513224148,
+     "at": [
+      188.63101,
+      440.0,
+      44.20824
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 8.82576403149829e-09,
+     "at": [
+      188.63849,
+      440.0,
+      44.20711
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 5.0606074780504295e-05,
+     "at": [
+      188.1374,
+      440.0,
+      44.28285
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 6.688695343167812,
+     "at": [
+      188.63101,
+      440.0,
+      44.20824
+     ]
+    },
+    "all_samples_including_end_points": {
+     "samples": 6001,
+     "excluded_samples": 0,
+     "samples_with_undefined_derivatives": 0,
+     "separation_mm": {
+      "max": 3.43714720612747e-13,
+      "at": [
+       172.58183,
+       440.0,
+       46.29383
+      ]
+     },
+     "tangent_plane_angle_deg": {
+      "max": 0.001972864369346622,
+      "at": [
+       188.63101,
+       440.0,
+       44.20824
+      ]
+     },
+     "cross_join_normal_curvature_jump_per_mm": {
+      "max": 0.018628801513224148,
+      "at": [
+       188.63101,
+       440.0,
+       44.20824
+      ]
+     },
+     "along_join_normal_curvature_jump_per_mm": {
+      "max": 1.929890204974312e-07,
+      "at": [
+       189.84749,
+       440.0,
+       44.02135
+      ]
+     },
+     "twist_jump_per_mm": {
+      "max": 5.0606074780504295e-05,
+      "at": [
+       188.1374,
+       440.0,
+       44.28285
+      ]
+     },
+     "cross_join_curvature_jump_relative": {
+      "max": 6.688695343167812,
+      "at": [
+       188.63101,
+       440.0,
+       44.20824
+      ]
+     }
+    },
+    "exclusion": "samples within 0.01 mm of the leading-edge point or the trailing-edge corner (the corners of the cap face, where the band edge meets the attachment)",
+    "zebra": {
+     "stripe_period_in_r_dot_d": 0.25,
+     "views": 34,
+     "stripe_directions_per_view": 6,
+     "max_phase_mismatch_fraction_of_period": 0.0002677687385041374,
+     "phase_worst": {
+      "at": [
+       188.63101,
+       440.0,
+       44.20824
+      ],
+      "view": [
+       0.0,
+       -0.0,
+       -1.0
+      ],
+      "stripe_dir": [
+       0.0,
+       -1.0,
+       0.0
+      ]
+     },
+     "crossings_examined": 1134,
+     "max_stripe_direction_change_at_crossings_deg": 38.258931123563194,
+     "direction_worst": {
+      "at": [
+       188.01506,
+       440.0,
+       44.30124
+      ],
+      "view": [
+       0.0,
+       0.93969,
+       -0.34202
+      ],
+      "stripe_dir": [
+       1.0,
+       -0.0,
+       0.0
+      ]
+     },
+     "max_stripe_spacing_change_at_crossings_relative": 0.20851533956179535,
+     "spacing_worst": {
+      "at": [
+       188.01506,
+       440.0,
+       44.30124
+      ],
+      "view": [
+       0.0,
+       0.93969,
+       -0.34202
+      ],
+      "stripe_dir": [
+       1.0,
+       -0.0,
+       0.0
+      ]
+     }
+    }
+   },
+   "lower": {
+    "samples": 5806,
+    "excluded_samples": 195,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 3.4135644425146874e-13,
+     "at": [
+      137.52263,
+      440.0,
+      37.42806
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 0.001988178530692612,
+     "at": [
+      188.64386,
+      440.0,
+      43.46366
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 0.01878133838981877,
+     "at": [
+      188.64386,
+      440.0,
+      43.46366
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 1.855148902877267e-09,
+     "at": [
+      189.85844,
+      440.0,
+      43.6206
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 5.085264638208396e-05,
+     "at": [
+      188.14375,
+      440.0,
+      43.39931
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 18.781338389818767,
+     "at": [
+      188.64386,
+      440.0,
+      43.46366
+     ]
+    },
+    "all_samples_including_end_points": {
+     "samples": 6001,
+     "excluded_samples": 0,
+     "samples_with_undefined_derivatives": 0,
+     "separation_mm": {
+      "max": 3.4135644425146874e-13,
+      "at": [
+       137.52263,
+       440.0,
+       37.42806
+      ]
+     },
+     "tangent_plane_angle_deg": {
+      "max": 0.001988178530692612,
+      "at": [
+       188.64386,
+       440.0,
+       43.46366
+      ]
+     },
+     "cross_join_normal_curvature_jump_per_mm": {
+      "max": 0.01878133838981877,
+      "at": [
+       188.64386,
+       440.0,
+       43.46366
+      ]
+     },
+     "along_join_normal_curvature_jump_per_mm": {
+      "max": 8.39637024351329e-08,
+      "at": [
+       189.86843,
+       440.0,
+       43.6219
+      ]
+     },
+     "twist_jump_per_mm": {
+      "max": 5.085264638208396e-05,
+      "at": [
+       188.14375,
+       440.0,
+       43.39931
+      ]
+     },
+     "cross_join_curvature_jump_relative": {
+      "max": 18.781338389818767,
+      "at": [
+       188.64386,
+       440.0,
+       43.46366
+      ]
+     }
+    },
+    "exclusion": "samples within 0.01 mm of the leading-edge point or the trailing-edge corner (the corners of the cap face, where the band edge meets the attachment)",
+    "zebra": {
+     "stripe_period_in_r_dot_d": 0.25,
+     "views": 34,
+     "stripe_directions_per_view": 6,
+     "max_phase_mismatch_fraction_of_period": 0.000271271208918974,
+     "phase_worst": {
+      "at": [
+       188.64386,
+       440.0,
+       43.46366
+      ],
+      "view": [
+       0.0,
+       -0.0,
+       -1.0
+      ],
+      "stripe_dir": [
+       0.0,
+       -1.0,
+       0.0
+      ]
+     },
+     "crossings_examined": 917,
+     "max_stripe_direction_change_at_crossings_deg": 89.95983085977352,
+     "direction_worst": {
+      "at": [
+       189.76584,
+       440.0,
+       43.6086
+      ],
+      "view": [
+       0.40558,
+       -0.40558,
+       -0.81915
+      ],
+      "stripe_dir": [
+       -0.70711,
+       -0.70711,
+       0.0
+      ]
+     },
+     "max_stripe_spacing_change_at_crossings_relative": 11.629232488789695,
+     "spacing_worst": {
+      "at": [
+       189.76584,
+       440.0,
+       43.6086
+      ],
+      "view": [
+       0.40558,
+       -0.40558,
+       -0.81915
+      ],
+      "stripe_dir": [
+       -0.70711,
+       -0.70711,
+       0.0
+      ]
+     }
+    }
+   },
+   "trailing_edge_segment": {
+    "samples": 761,
+    "excluded_samples": 40,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 1.0132650830161608e-11,
+     "at": [
+      189.85289,
+      440.0,
+      43.91849
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 0.1264081930990663,
+     "at": [
+      189.86791,
+      440.0,
+      43.63188
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 5.022944127984268,
+     "at": [
+      189.86791,
+      440.0,
+      43.63188
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 2.1100478414396083e-07,
+     "at": [
+      189.85978,
+      440.0,
+      43.78717
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 0.7999790965197321,
+     "at": [
+      189.86781,
+      440.0,
+      43.63388
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 5022.944127984269,
+     "at": [
+      189.86791,
+      440.0,
+      43.63188
+     ]
+    },
+    "exclusion": "within 0.01 mm of the two trailing-edge corners (the parent's own creases end there)",
+    "zebra": {
+     "stripe_period_in_r_dot_d": 0.25,
+     "views": 34,
+     "stripe_directions_per_view": 6,
+     "max_phase_mismatch_fraction_of_period": 0.01685197010612568,
+     "phase_worst": {
+      "at": [
+       189.86791,
+       440.0,
+       43.63188
+      ],
+      "view": [
+       -0.93969,
+       0.0,
+       -0.34202
+      ],
+      "stripe_dir": [
+       0.0,
+       1.0,
+       -0.0
+      ]
+     },
+     "crossings_examined": 0,
+     "max_stripe_direction_change_at_crossings_deg": 0.0,
+     "direction_worst": null,
+     "max_stripe_spacing_change_at_crossings_relative": 0.0,
+     "spacing_worst": null
+    }
+   },
+   "band_edge_upper": {
+    "samples": 3999,
+    "excluded_samples": 0,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 5.655192182834315e-06,
+     "at": [
+      182.43769,
+      467.50212,
+      47.59869
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 78.1423758317023,
+     "at": [
+      189.84751,
+      440.00038,
+      44.02138
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 189.40792765507007,
+     "at": [
+      189.84162,
+      440.02206,
+      44.02437
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 24.807736768675735,
+     "at": [
+      189.84751,
+      440.00151,
+      44.02149
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 133.83700030144348,
+     "at": [
+      189.84676,
+      440.00855,
+      44.02226
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 1.0113400046220968,
+     "at": [
+      188.15833,
+      455.20915,
+      45.69923
+     ]
+    },
+    "cross_join_curvature_jump_by_rim_parameter": {
+     "p<0.78 (superelliptic m=3 / nose, designed curvature-continuous)": 3.244070614856835,
+     "0.78<=p<0.925 (blend to inscribed circle)": 1.7773267214631214,
+     "p>=0.925 (inscribed circle, rule-mandated half-round: curvature jump expected)": 189.40792765507007
+    },
+    "zebra": {
+     "stripe_period_in_r_dot_d": 0.25,
+     "views": 34,
+     "stripe_directions_per_view": 6,
+     "max_phase_mismatch_fraction_of_period": 0.4998535535928604,
+     "phase_worst": {
+      "at": [
+       189.84747,
+       440.00266,
+       44.0216
+      ],
+      "view": [
+       0.0,
+       0.0,
+       1.0
+      ],
+      "stripe_dir": [
+       -0.5,
+       -0.86603,
+       0.0
+      ]
+     },
+     "crossings_examined": 1928,
+     "max_stripe_direction_change_at_crossings_deg": 89.96972531994923,
+     "direction_worst": {
+      "at": [
+       189.84438,
+       440.01641,
+       44.02339
+      ],
+      "view": [
+       0.66446,
+       0.66446,
+       0.34202
+      ],
+      "stripe_dir": [
+       0.24184,
+       0.24184,
+       -0.93969
+      ]
+     },
+     "max_stripe_spacing_change_at_crossings_relative": 0.9999972719219911,
+     "spacing_worst": {
+      "at": [
+       189.84751,
+       440.00151,
+       44.02149
+      ],
+      "view": [
+       0.0,
+       0.0,
+       1.0
+      ],
+      "stripe_dir": [
+       -1.0,
+       0.0,
+       0.0
+      ]
+     }
+    }
+   },
+   "band_edge_lower": {
+    "samples": 3999,
+    "excluded_samples": 0,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 3.7840097376522134e-06,
+     "at": [
+      182.43067,
+      467.72673,
+      45.04494
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 85.72912111358954,
+     "at": [
+      189.86844,
+      440.00038,
+      43.62193
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 188.47026877660028,
+     "at": [
+      189.86744,
+      440.00917,
+      43.62256
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 29.427279451434288,
+     "at": [
+      189.86844,
+      440.00038,
+      43.62193
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 142.6169759744574,
+     "at": [
+      189.86753,
+      440.00875,
+      43.62254
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 1.0167117893682542,
+     "at": [
+      183.20723,
+      466.95541,
+      45.07801
+     ]
+    },
+    "cross_join_curvature_jump_by_rim_parameter": {
+     "p<0.78 (superelliptic m=3 / nose, designed curvature-continuous)": 2.9749675818341803,
+     "0.78<=p<0.925 (blend to inscribed circle)": 1.746267776993928,
+     "p>=0.925 (inscribed circle, rule-mandated half-round: curvature jump expected)": 188.47026877660028
+    },
+    "zebra": {
+     "stripe_period_in_r_dot_d": 0.25,
+     "views": 34,
+     "stripe_directions_per_view": 6,
+     "max_phase_mismatch_fraction_of_period": 0.4999785689274366,
+     "phase_worst": {
+      "at": [
+       189.86599,
+       440.01396,
+       43.62278
+      ],
+      "view": [
+       0.0,
+       -0.0,
+       -1.0
+      ],
+      "stripe_dir": [
+       -0.86603,
+       -0.5,
+       0.0
+      ]
+     },
+     "crossings_examined": 1768,
+     "max_stripe_direction_change_at_crossings_deg": 89.75288522994957,
+     "direction_worst": {
+      "at": [
+       189.8649,
+       440.01669,
+       43.62287
+      ],
+      "view": [
+       0.40558,
+       -0.40558,
+       -0.81915
+      ],
+      "stripe_dir": [
+       0.32276,
+       0.90199,
+       -0.28679
+      ]
+     },
+     "max_stripe_spacing_change_at_crossings_relative": 0.999993627851338,
+     "spacing_worst": {
+      "at": [
+       189.86779,
+       440.00749,
+       43.62246
+      ],
+      "view": [
+       -0.0,
+       -0.57358,
+       -0.81915
+      ],
+      "stripe_dir": [
+       0.5,
+       0.70941,
+       -0.49673
+      ]
+     }
+    }
+   }
+  },
+  "left": {
+   "upper": {
+    "samples": 5805,
+    "excluded_samples": 196,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 3.43714720612747e-13,
+     "at": [
+      172.58183,
+      -440.0,
+      46.29383
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 0.0019728639998688622,
+     "at": [
+      188.63101,
+      -440.0,
+      44.20824
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 0.018628881036827603,
+     "at": [
+      188.63101,
+      -440.0,
+      44.20824
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 8.825784100080503e-09,
+     "at": [
+      188.63849,
+      -440.0,
+      44.20711
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 5.0606301678931886e-05,
+     "at": [
+      188.1374,
+      -440.0,
+      44.28285
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 6.6887239468651805,
+     "at": [
+      188.63101,
+      -440.0,
+      44.20824
+     ]
+    },
+    "all_samples_including_end_points": {
+     "samples": 6001,
+     "excluded_samples": 0,
+     "samples_with_undefined_derivatives": 0,
+     "separation_mm": {
+      "max": 3.43714720612747e-13,
+      "at": [
+       172.58183,
+       -440.0,
+       46.29383
+      ]
+     },
+     "tangent_plane_angle_deg": {
+      "max": 0.0019728639998688622,
+      "at": [
+       188.63101,
+       -440.0,
+       44.20824
+      ]
+     },
+     "cross_join_normal_curvature_jump_per_mm": {
+      "max": 0.018628881036827603,
+      "at": [
+       188.63101,
+       -440.0,
+       44.20824
+      ]
+     },
+     "along_join_normal_curvature_jump_per_mm": {
+      "max": 1.929890204974312e-07,
+      "at": [
+       189.84749,
+       -440.0,
+       44.02135
+      ]
+     },
+     "twist_jump_per_mm": {
+      "max": 5.0606301678931886e-05,
+      "at": [
+       188.1374,
+       -440.0,
+       44.28285
+      ]
+     },
+     "cross_join_curvature_jump_relative": {
+      "max": 6.6887239468651805,
+      "at": [
+       188.63101,
+       -440.0,
+       44.20824
+      ]
+     }
+    },
+    "exclusion": "samples within 0.01 mm of the leading-edge point or the trailing-edge corner (the corners of the cap face, where the band edge meets the attachment)"
+   },
+   "lower": {
+    "samples": 5806,
+    "excluded_samples": 195,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 3.4135644425146874e-13,
+     "at": [
+      137.52263,
+      -440.0,
+      37.42806
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 0.001988178714008495,
+     "at": [
+      188.64386,
+      -440.0,
+      43.46366
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 0.018781258558696626,
+     "at": [
+      188.64386,
+      -440.0,
+      43.46366
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 1.855241558035986e-09,
+     "at": [
+      189.85844,
+      -440.0,
+      43.6206
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 5.085243413437914e-05,
+     "at": [
+      188.14375,
+      -440.0,
+      43.39931
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 18.781258558696624,
+     "at": [
+      188.64386,
+      -440.0,
+      43.46366
+     ]
+    },
+    "all_samples_including_end_points": {
+     "samples": 6001,
+     "excluded_samples": 0,
+     "samples_with_undefined_derivatives": 0,
+     "separation_mm": {
+      "max": 3.4135644425146874e-13,
+      "at": [
+       137.52263,
+       -440.0,
+       37.42806
+      ]
+     },
+     "tangent_plane_angle_deg": {
+      "max": 0.001988178714008495,
+      "at": [
+       188.64386,
+       -440.0,
+       43.46366
+      ]
+     },
+     "cross_join_normal_curvature_jump_per_mm": {
+      "max": 0.018781258558696626,
+      "at": [
+       188.64386,
+       -440.0,
+       43.46366
+      ]
+     },
+     "along_join_normal_curvature_jump_per_mm": {
+      "max": 8.39637024351329e-08,
+      "at": [
+       189.86843,
+       -440.0,
+       43.6219
+      ]
+     },
+     "twist_jump_per_mm": {
+      "max": 5.085243413437914e-05,
+      "at": [
+       188.14375,
+       -440.0,
+       43.39931
+      ]
+     },
+     "cross_join_curvature_jump_relative": {
+      "max": 18.781258558696624,
+      "at": [
+       188.64386,
+       -440.0,
+       43.46366
+      ]
+     }
+    },
+    "exclusion": "samples within 0.01 mm of the leading-edge point or the trailing-edge corner (the corners of the cap face, where the band edge meets the attachment)"
+   },
+   "trailing_edge_segment": {
+    "samples": 761,
+    "excluded_samples": 40,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 1.0010521093768118e-10,
+     "at": [
+      189.85321,
+      -440.0,
+      43.9125
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 0.12640821164694058,
+     "at": [
+      189.86791,
+      -440.0,
+      43.63188
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 5.022944665863056,
+     "at": [
+      189.86791,
+      -440.0,
+      43.63188
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 2.5200838946567116e-07,
+     "at": [
+      189.85004,
+      -440.0,
+      43.97291
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 0.7999793076475782,
+     "at": [
+      189.86781,
+      -440.0,
+      43.63388
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 5022.944665863056,
+     "at": [
+      189.86791,
+      -440.0,
+      43.63188
+     ]
+    },
+    "exclusion": "within 0.01 mm of the two trailing-edge corners (the parent's own creases end there)"
+   },
+   "band_edge_upper": {
+    "samples": 3999,
+    "excluded_samples": 0,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 5.655193660790907e-06,
+     "at": [
+      182.43769,
+      -467.50212,
+      47.59869
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 78.14237579730755,
+     "at": [
+      189.84751,
+      -440.00038,
+      44.02138
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 189.40792276138927,
+     "at": [
+      189.84162,
+      -440.02206,
+      44.02437
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 24.807736960447947,
+     "at": [
+      189.84751,
+      -440.00151,
+      44.02149
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 133.83699968289764,
+     "at": [
+      189.84676,
+      -440.00855,
+      44.02226
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 1.0113400045865621,
+     "at": [
+      188.15833,
+      -455.20915,
+      45.69923
+     ]
+    },
+    "cross_join_curvature_jump_by_rim_parameter": {
+     "p<0.78 (superelliptic m=3 / nose, designed curvature-continuous)": 2.529392911545722,
+     "0.78<=p<0.925 (blend to inscribed circle)": 1.7773267709600908,
+     "p>=0.925 (inscribed circle, rule-mandated half-round: curvature jump expected)": 189.40792276138927
+    }
+   },
+   "band_edge_lower": {
+    "samples": 3999,
+    "excluded_samples": 0,
+    "samples_with_undefined_derivatives": 0,
+    "separation_mm": {
+     "max": 3.7840082876215483e-06,
+     "at": [
+      182.43067,
+      -467.72673,
+      45.04494
+     ]
+    },
+    "tangent_plane_angle_deg": {
+     "max": 85.72912107878103,
+     "at": [
+      189.86844,
+      -440.00038,
+      43.62193
+     ]
+    },
+    "cross_join_normal_curvature_jump_per_mm": {
+     "max": 188.47027556532876,
+     "at": [
+      189.86744,
+      -440.00917,
+      43.62256
+     ]
+    },
+    "along_join_normal_curvature_jump_per_mm": {
+     "max": 29.427279506042275,
+     "at": [
+      189.86844,
+      -440.00038,
+      43.62193
+     ]
+    },
+    "twist_jump_per_mm": {
+     "max": 142.61697607572845,
+     "at": [
+      189.86753,
+      -440.00875,
+      43.62254
+     ]
+    },
+    "cross_join_curvature_jump_relative": {
+     "max": 1.0167117895134274,
+     "at": [
+      183.20723,
+      -466.95541,
+      45.07801
+     ]
+    },
+    "cross_join_curvature_jump_by_rim_parameter": {
+     "p<0.78 (superelliptic m=3 / nose, designed curvature-continuous)": 2.2759366023391254,
+     "0.78<=p<0.925 (blend to inscribed circle)": 1.746267748273425,
+     "p>=0.925 (inscribed circle, rule-mandated half-round: curvature jump expected)": 188.47027556532876
+    }
+   }
+  }
+ },
+ "curvature_map": {
+  "right": {
+   "lip": {
+    "grid": [
+     1592,
+     233
+    ],
+    "u_range_evaluated": [
+     0.0006281407035175,
+     1.0
+    ],
+    "outside_corner_zone": {
+     "radius_mm": 0.202574007540931,
+     "ratio_to_rule": 0.9937659209282643,
+     "at": [
+      189.82727,
+      440.2021,
+      43.99836
+     ],
+     "chord_fraction": 0.9997302051753216,
+     "attachment_thickness_mm": 0.40768958418640305,
+     "rule_radius_mm": 0.20384479209320153,
+     "span_beyond_attachment_mm": 0.20210345816650488,
+     "uv": [
+      0.9252512562815001,
+      0.7848479893708598
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 0.20229450135371602,
+     "smallest_radius_at": [
+      189.83302,
+      440.20257,
+      43.99203
+     ],
+     "smallest_radius_chord_fraction": 0.9997841873421945,
+     "smallest_radius_attachment_thickness_mm": 0.4061450385810637,
+     "points_below_rule": 1396,
+     "points": 344381
+    },
+    "te_corner_zone": {
+     "radius_mm": 0.0029661744540579907,
+     "ratio_to_rule": 0.014823224338710994,
+     "at": [
+      189.86797,
+      440.01389,
+      43.62417
+     ],
+     "chord_fraction": 0.999991709890488,
+     "attachment_thickness_mm": 0.40020637700419837,
+     "rule_radius_mm": 0.20010318850209918,
+     "span_beyond_attachment_mm": 0.013890222420570808,
+     "uv": [
+      0.9915143819376361,
+      0.005268295088059625
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 0.0029661744531033767,
+     "smallest_radius_at": [
+      189.86785,
+      440.01333,
+      43.62389
+     ],
+     "smallest_radius_chord_fraction": 0.9999904706965999,
+     "smallest_radius_attachment_thickness_mm": 0.4002418436432856,
+     "points_below_rule": 11335,
+     "points": 26555
+    },
+    "thick_zone_min_radius_mm": 0.42050633361142936,
+    "thin_zone_min_ratio_to_half_thickness": 0.9937718499048724,
+    "grid_closest_to_leading_edge_pole_mm": 0.0006824215674356103,
+    "note": "the lip's g = 0 row collapses to the leading-edge point (derivatives undefined): excluded"
+   },
+   "up": {
+    "grid": [
+     2001,
+     129
+    ],
+    "u_range_evaluated": [
+     0.0,
+     1.0
+    ],
+    "outside_corner_zone": {
+     "radius_mm": 0.9853455025283788,
+     "ratio_to_rule": 2.572768022796662,
+     "at": [
+      188.54954,
+      440.15875,
+      44.24209
+     ],
+     "chord_fraction": 0.9871060575964105,
+     "attachment_thickness_mm": 0.7659808376017393,
+     "rule_radius_mm": 0.38299041880086965,
+     "span_beyond_attachment_mm": 0.15874703304655213,
+     "uv": [
+      0.9315449012650495,
+      440.1587470330502
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 0.9717294158578285,
+     "smallest_radius_at": [
+      188.62825,
+      440.16,
+      44.23041
+     ],
+     "smallest_radius_chord_fraction": 0.9878858347996551,
+     "smallest_radius_attachment_thickness_mm": 0.7440163819188518,
+     "points_below_rule": 0,
+     "points": 248781
+    },
+    "te_corner_zone": {
+     "radius_mm": 1.0320375353311497,
+     "ratio_to_rule": 3.019321145872282,
+     "at": [
+      188.84421,
+      440.15875,
+      44.197
+     ],
+     "chord_fraction": 0.9900259551641731,
+     "attachment_thickness_mm": 0.6836222352445348,
+     "rule_radius_mm": 0.3418111176222674,
+     "span_beyond_attachment_mm": 0.15874705311978232,
+     "uv": [
+      0.94202681443675,
+      440.1587470531259
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 1.0320375353311497,
+     "smallest_radius_at": [
+      188.84424,
+      440.16,
+      44.19714
+     ],
+     "smallest_radius_chord_fraction": 0.9900259766756406,
+     "smallest_radius_attachment_thickness_mm": 0.6836216273525162,
+     "points_below_rule": 0,
+     "points": 9348
+    },
+    "thick_zone_min_radius_mm": 1.0689791785416025,
+    "thin_zone_min_ratio_to_half_thickness": 2.575260616376281,
+    "note": "trimmed continued-skin face: only grid points inside the band-edge trim are evaluated"
+   },
+   "lo": {
+    "grid": [
+     2001,
+     129
+    ],
+    "u_range_evaluated": [
+     0.0,
+     1.0
+    ],
+    "outside_corner_zone": {
+     "radius_mm": 0.9624371182366881,
+     "ratio_to_rule": 2.4837616236942757,
+     "at": [
+      188.55852,
+      440.15825,
+      43.45969
+     ],
+     "chord_fraction": 0.9867862242942234,
+     "attachment_thickness_mm": 0.7749834839666995,
+     "rule_radius_mm": 0.38749174198334974,
+     "span_beyond_attachment_mm": 0.15825276670489075,
+     "uv": [
+      0.9315535293080992,
+      440.15825276670853
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 0.9498701964795978,
+     "smallest_radius_at": [
+      188.63747,
+      440.16,
+      43.46985
+     ],
+     "smallest_radius_chord_fraction": 0.9875796788123032,
+     "smallest_radius_attachment_thickness_mm": 0.7526426464367963,
+     "points_below_rule": 0,
+     "points": 248863
+    },
+    "te_corner_zone": {
+     "radius_mm": 1.0188108399161602,
+     "ratio_to_rule": 2.979466940353249,
+     "at": [
+      188.87972,
+      440.15825,
+      43.50144
+     ],
+     "chord_fraction": 0.9900165506339864,
+     "attachment_thickness_mm": 0.6838879976264269,
+     "rule_radius_mm": 0.34194399881321347,
+     "span_beyond_attachment_mm": 0.15825288428874273,
+     "uv": [
+      0.94297307041425,
+      440.1582528842944
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 1.0188108399161602,
+     "smallest_radius_at": [
+      188.87976,
+      440.16,
+      43.50155
+     ],
+     "smallest_radius_chord_fraction": 0.9900165455065812,
+     "smallest_radius_attachment_thickness_mm": 0.6838881425216405,
+     "points_below_rule": 0,
+     "points": 9266
+    },
+    "thick_zone_min_radius_mm": 1.016396225927486,
+    "thin_zone_min_ratio_to_half_thickness": 2.488273033069366,
+    "note": "trimmed continued-skin face: only grid points inside the band-edge trim are evaluated"
+   }
+  },
+  "left": {
+   "lip": {
+    "grid": [
+     796,
+     117
+    ],
+    "u_range_evaluated": [
+     0.001256281407035,
+     1.0
+    ],
+    "outside_corner_zone": {
+     "radius_mm": 0.20256368614074116,
+     "ratio_to_rule": 0.9937839367109017,
+     "at": [
+      189.82774,
+      -440.21799,
+      43.99962
+     ],
+     "chord_fraction": 0.9997311894967833,
+     "attachment_thickness_mm": 0.4076614214779128,
+     "rule_radius_mm": 0.2038307107389564,
+     "span_beyond_attachment_mm": 0.21799347635806043,
+     "uv": [
+      0.922110552764,
+      0.7844827586209999
+     ],
+     "smallest_radius_in_zone_mm": 0.20235941476477004,
+     "smallest_radius_at": [
+      189.83125,
+      -440.20553,
+      43.99438
+     ],
+     "smallest_radius_chord_fraction": 0.9997669625937141,
+     "smallest_radius_attachment_thickness_mm": 0.4066378872165302,
+     "points_below_rule": 346,
+     "points": 86438
+    },
+    "te_corner_zone": {
+     "radius_mm": 0.002966174448456211,
+     "ratio_to_rule": 0.014823224341353988,
+     "at": [
+      189.86797,
+      -440.01389,
+      43.62417
+     ],
+     "chord_fraction": 0.999991709919389,
+     "attachment_thickness_mm": 0.40020637617703003,
+     "rule_radius_mm": 0.20010318808851502,
+     "span_beyond_attachment_mm": 0.013890209763530947,
+     "uv": [
+      0.9915143889911773,
+      0.005268296097364256
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 0.002966174448456211,
+     "smallest_radius_at": [
+      189.8677,
+      -440.00795,
+      43.62249
+     ],
+     "smallest_radius_chord_fraction": 0.999989750378006,
+     "smallest_radius_attachment_thickness_mm": 0.40026245966425467,
+     "points_below_rule": 2894,
+     "points": 6694
+    },
+    "thick_zone_min_radius_mm": 0.4205063332021411,
+    "thin_zone_min_ratio_to_half_thickness": 0.9937839367109017,
+    "grid_closest_to_leading_edge_pole_mm": 0.0012442746191302632,
+    "note": "the lip's g = 0 row collapses to the leading-edge point (derivatives undefined): excluded"
+   },
+   "up": {
+    "grid": [
+     1001,
+     65
+    ],
+    "u_range_evaluated": [
+     0.0,
+     1.0
+    ],
+    "outside_corner_zone": {
+     "radius_mm": 0.9853454940936389,
+     "ratio_to_rule": 2.5727680734111016,
+     "at": [
+      188.54954,
+      -440.15875,
+      44.24209
+     ],
+     "chord_fraction": 0.9871060583645347,
+     "attachment_thickness_mm": 0.7659808159755495,
+     "rule_radius_mm": 0.38299040798777473,
+     "span_beyond_attachment_mm": 0.15874701286657,
+     "uv": [
+      0.9315449038528243,
+      440.1587470129024
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 0.9718673126543317,
+     "smallest_radius_at": [
+      188.64271,
+      -440.16,
+      44.22821
+     ],
+     "smallest_radius_chord_fraction": 0.9880291561324445,
+     "smallest_radius_attachment_thickness_mm": 0.7399770033306748,
+     "points_below_rule": 0,
+     "points": 62671
+    },
+    "te_corner_zone": {
+     "radius_mm": 1.0383053178829857,
+     "ratio_to_rule": 3.0531691489976085,
+     "at": [
+      188.85664,
+      -440.16,
+      44.19522
+     ],
+     "chord_fraction": 0.990148847346835,
+     "attachment_thickness_mm": 0.6801492267297891,
+     "rule_radius_mm": 0.34007461336489453,
+     "span_beyond_attachment_mm": 0.1599999999370425,
+     "uv": [
+      0.9424999424255001,
+      440.16
+     ],
+     "smallest_radius_in_zone_mm": 1.0383053178829857,
+     "smallest_radius_at": [
+      188.85664,
+      -440.16,
+      44.19522
+     ],
+     "smallest_radius_chord_fraction": 0.990148847346835,
+     "smallest_radius_attachment_thickness_mm": 0.6801492267297891,
+     "points_below_rule": 0,
+     "points": 2394
+    },
+    "thick_zone_min_radius_mm": 1.0689791851361725,
+    "thin_zone_min_ratio_to_half_thickness": 2.57526066452665,
+    "note": "trimmed continued-skin face: only grid points inside the band-edge trim are evaluated"
+   },
+   "lo": {
+    "grid": [
+     1001,
+     65
+    ],
+    "u_range_evaluated": [
+     0.0,
+     1.0
+    ],
+    "outside_corner_zone": {
+     "radius_mm": 0.9624373726033619,
+     "ratio_to_rule": 2.483761603999275,
+     "at": [
+      188.55852,
+      -440.15825,
+      43.45969
+     ],
+     "chord_fraction": 0.986786216797541,
+     "attachment_thickness_mm": 0.7749836949356779,
+     "rule_radius_mm": 0.38749184746783893,
+     "span_beyond_attachment_mm": 0.15825278682490307,
+     "uv": [
+      0.9315535045752523,
+      440.1582527868608
+     ],
+     "refined": true,
+     "smallest_radius_in_zone_mm": 0.9500082426857552,
+     "smallest_radius_at": [
+      188.65203,
+      -440.16,
+      43.47173
+     ],
+     "smallest_radius_chord_fraction": 0.9877260362948964,
+     "smallest_radius_attachment_thickness_mm": 0.7485192873840791,
+     "points_below_rule": 0,
+     "points": 62692
+    },
+    "te_corner_zone": {
+     "radius_mm": 1.0257608949976214,
+     "ratio_to_rule": 3.015248349681447,
+     "at": [
+      188.8921,
+      -440.16,
+      43.50318
+     ],
+     "chord_fraction": 0.9901405982975936,
+     "attachment_thickness_mm": 0.6803823606145014,
+     "rule_radius_mm": 0.3401911803072507,
+     "span_beyond_attachment_mm": 0.15999999994585323,
+     "uv": [
+      0.943446198403,
+      440.16
+     ],
+     "smallest_radius_in_zone_mm": 1.0257608949976214,
+     "smallest_radius_at": [
+      188.8921,
+      -440.16,
+      43.50318
+     ],
+     "smallest_radius_chord_fraction": 0.9901405982975936,
+     "smallest_radius_attachment_thickness_mm": 0.6803823606145014,
+     "points_below_rule": 0,
+     "points": 2373
+    },
+    "thick_zone_min_radius_mm": 1.016396220944553,
+    "thin_zone_min_ratio_to_half_thickness": 2.48827301133746,
+    "note": "trimmed continued-skin face: only grid points inside the band-edge trim are evaluated"
+   }
+  }
+ },
+ "printable_rule_summary": {
+  "rule": "radius >= 0.4 mm where the attachment section is >= 0.8 mm thick at that chord fraction; else a half-round of radius t/2",
+  "outside_trailing_edge_corner_zone": {
+   "min_ratio_radius_to_rule": 0.9937659209282643,
+   "at": [
+    189.82727,
+    440.2021,
+    43.99836
+   ],
+   "radius_mm": 0.202574007540931,
+   "chord_fraction": 0.9997302051753216,
+   "attachment_thickness_mm": 0.40768958418640305,
+   "rule_radius_mm": 0.20384479209320153,
+   "smallest_radius_mm": 0.20229450135371602,
+   "smallest_radius_at": [
+    189.83302,
+    440.20257,
+    43.99203
+   ],
+   "smallest_radius_chord_fraction": 0.9997841873421945,
+   "smallest_radius_attachment_thickness_mm": 0.4061450385810637
+  },
+  "te_corner_zone": {
+   "definition": "span < 0.20 mm beyond the attachment and chord fraction > 0.99: the blunt TE's sharp corners open into the half-round",
+   "min_radius_mm": 0.002966174448456211,
+   "min_ratio": 0.014823224338710994
+  }
+ },
+ "sections": [
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.001,
+   "plane_point": [
+    90.0388,
+    440.1885,
+    38.51154
+   ],
+   "plane_normal": [
+    0.20209,
+    0.97561,
+    0.08574
+   ],
+   "points": 1364,
+   "cap_points": 1202,
+   "includes_parent_skin": true,
+   "min_radius_on_cap_mm": 0.7689729757460894,
+   "min_radius_at": [
+    90.02779,
+    440.18407,
+    38.58786
+   ],
+   "min_radius_chord_fraction": -5.826429738281859e-05,
+   "rule_at_min_point_mm": 0.15835166136183154,
+   "radius_at_rim_point_mm": 1.6306473556132854,
+   "radius_at_lip_apex_mm": 1.7206289493427447,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.3216102827593579,
+   "rule_radius_mm": 0.16080514137967894,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 3.3827529719840648,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.005,
+   "plane_point": [
+    90.19889,
+    440.94244,
+    38.5784
+   ],
+   "plane_normal": [
+    0.21174,
+    0.97344,
+    0.0871
+   ],
+   "points": 1339,
+   "cap_points": 1202,
+   "includes_parent_skin": true,
+   "min_radius_on_cap_mm": 0.7922070210503978,
+   "min_radius_at": [
+    90.17525,
+    440.91325,
+    38.96208
+   ],
+   "min_radius_chord_fraction": 8.785188542401885e-05,
+   "rule_at_min_point_mm": 0.23008180377083667,
+   "radius_at_rim_point_mm": 1.6233352819310007,
+   "radius_at_lip_apex_mm": 1.6200216711787652,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.4225818725234469,
+   "rule_radius_mm": 0.21129093626172346,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 2.1313823065082302,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.02,
+   "plane_point": [
+    90.86795,
+    443.76743,
+    38.83956
+   ],
+   "plane_normal": [
+    0.24703,
+    0.96463,
+    0.09203
+   ],
+   "points": 1259,
+   "cap_points": 1202,
+   "includes_parent_skin": true,
+   "min_radius_on_cap_mm": 1.585665322344496,
+   "min_radius_at": [
+    90.85581,
+    443.7623,
+    38.92596
+   ],
+   "min_radius_chord_fraction": 0.0009213489418137944,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 1.5953387640350012,
+   "radius_at_lip_apex_mm": 1.592991264148838,
+   "attachment_thickness_at_rim_chord_fraction_mm": 1.1567999244350213,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 3.96416330586124,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.05,
+   "plane_point": [
+    92.52088,
+    449.38607,
+    39.40849
+   ],
+   "plane_normal": [
+    0.31372,
+    0.94412,
+    0.1011
+   ],
+   "points": 1057,
+   "cap_points": 1057,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 1.5165327836106706,
+   "min_radius_at": [
+    92.50669,
+    449.37966,
+    39.51233
+   ],
+   "min_radius_chord_fraction": 0.006081637700582509,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 1.523908429800338,
+   "radius_at_lip_apex_mm": 1.522278823183134,
+   "attachment_thickness_at_rim_chord_fraction_mm": 2.745255444436241,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 3.7913319590266763,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.1,
+   "plane_point": [
+    96.14114,
+    458.54102,
+    40.475
+   ],
+   "plane_normal": [
+    0.41519,
+    0.90261,
+    0.11363
+   ],
+   "points": 999,
+   "cap_points": 999,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 1.4658580337175877,
+   "min_radius_at": [
+    96.14277,
+    458.54159,
+    40.46448
+   ],
+   "min_radius_chord_fraction": 0.024481450421282712,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 1.4658580337175877,
+   "radius_at_lip_apex_mm": 1.4658580337175877,
+   "attachment_thickness_at_rim_chord_fraction_mm": 5.242578827615901,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 3.6646450842939693,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.2,
+   "plane_point": [
+    106.09179,
+    475.26712,
+    42.8714
+   ],
+   "plane_normal": [
+    0.5953,
+    0.79327,
+    0.12782
+   ],
+   "points": 1086,
+   "cap_points": 1086,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 2.2911620324324393,
+   "min_radius_at": [
+    106.08726,
+    475.2648,
+    42.90683
+   ],
+   "min_radius_chord_fraction": 0.09546933575546258,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 2.2911620324324393,
+   "radius_at_lip_apex_mm": 2.2911620324324393,
+   "attachment_thickness_at_rim_chord_fraction_mm": 9.315318107894266,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 5.727905081081098,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.3,
+   "plane_point": [
+    118.60775,
+    488.54102,
+    45.22634
+   ],
+   "plane_normal": [
+    0.76437,
+    0.63273,
+    0.12409
+   ],
+   "points": 1249,
+   "cap_points": 1202,
+   "includes_parent_skin": true,
+   "min_radius_on_cap_mm": 2.4932349112456347,
+   "min_radius_at": [
+    118.60584,
+    488.53982,
+    45.24421
+   ],
+   "min_radius_chord_fraction": 0.20610009914261584,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 2.4932349112456347,
+   "radius_at_lip_apex_mm": 2.4932349112456347,
+   "attachment_thickness_at_rim_chord_fraction_mm": 11.684430584006618,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 6.233087278114087,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.4,
+   "plane_point": [
+    132.47853,
+    497.06339,
+    47.07405
+   ],
+   "plane_normal": [
+    0.92082,
+    0.37825,
+    0.09495
+   ],
+   "points": 1327,
+   "cap_points": 1202,
+   "includes_parent_skin": true,
+   "min_radius_on_cap_mm": 2.2029517793672584,
+   "min_radius_at": [
+    132.48055,
+    497.0649,
+    47.04839
+   ],
+   "min_radius_chord_fraction": 0.3454946663312369,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 2.2029517793672584,
+   "radius_at_lip_apex_mm": 2.2029517793672584,
+   "attachment_thickness_at_rim_chord_fraction_mm": 12.095004317383713,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 5.5073794484181455,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.5,
+   "plane_point": [
+    146.63634,
+    500.0,
+    48.12247
+   ],
+   "plane_normal": [
+    0.99883,
+    0.0,
+    0.04837
+   ],
+   "points": 1233,
+   "cap_points": 1202,
+   "includes_parent_skin": true,
+   "min_radius_on_cap_mm": 1.6561541861657418,
+   "min_radius_at": [
+    146.63203,
+    499.99246,
+    48.21153
+   ],
+   "min_radius_chord_fraction": 0.500021121488591,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 1.6563840834309664,
+   "radius_at_lip_apex_mm": 1.6561541861657418,
+   "attachment_thickness_at_rim_chord_fraction_mm": 10.80648909033002,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 4.140385465414354,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.6,
+   "plane_point": [
+    160.14279,
+    497.06339,
+    48.42257
+   ],
+   "plane_normal": [
+    0.91128,
+    -0.41176,
+    -0.00553
+   ],
+   "points": 1249,
+   "cap_points": 1202,
+   "includes_parent_skin": true,
+   "min_radius_on_cap_mm": 1.0726556787654637,
+   "min_radius_at": [
+    160.14278,
+    497.06335,
+    48.42344
+   ],
+   "min_radius_chord_fraction": 0.6545089838038395,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 1.0726556787654637,
+   "radius_at_lip_apex_mm": 1.0726556787654637,
+   "attachment_thickness_at_rim_chord_fraction_mm": 8.418805854908339,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 2.6816391969136593,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.7,
+   "plane_point": [
+    172.12892,
+    488.54102,
+    47.98334
+   ],
+   "plane_normal": [
+    0.70148,
+    -0.71093,
+    -0.05016
+   ],
+   "points": 1126,
+   "cap_points": 1126,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.5931097899126421,
+   "min_radius_at": [
+    172.1302,
+    488.54019,
+    48.01297
+   ],
+   "min_radius_chord_fraction": 0.7939260825513955,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 0.5931097899126421,
+   "radius_at_lip_apex_mm": 0.5931097899126421,
+   "attachment_thickness_at_rim_chord_fraction_mm": 5.604809557757144,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.4827744747816052,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.8,
+   "plane_point": [
+    181.69834,
+    475.26712,
+    46.91301
+   ],
+   "plane_normal": [
+    0.46536,
+    -0.8818,
+    -0.0766
+   ],
+   "points": 729,
+   "cap_points": 729,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.42209465624333464,
+   "min_radius_at": [
+    181.70417,
+    475.26508,
+    46.97186
+   ],
+   "min_radius_chord_fraction": 0.9046072252646442,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 0.4329858310199982,
+   "radius_at_lip_apex_mm": 0.42209465624333464,
+   "attachment_thickness_at_rim_chord_fraction_mm": 2.9754661638967748,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.0552366406083364,
+   "bending_reversals": 0,
+   "reversal_locations": []
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.85,
+   "plane_point": [
+    185.28211,
+    467.23943,
+    46.20147
+   ],
+   "plane_normal": [
+    0.34743,
+    -0.93393,
+    -0.08403
+   ],
+   "points": 599,
+   "cap_points": 599,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.5609800022521467,
+   "min_radius_at": [
+    185.28821,
+    467.23386,
+    46.28858
+   ],
+   "min_radius_chord_fraction": 0.9456205014857283,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 0.5748338782915675,
+   "radius_at_lip_apex_mm": 0.5609800022521467,
+   "attachment_thickness_at_rim_chord_fraction_mm": 1.9071120272442779,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.4024500056303668,
+   "bending_reversals": 3,
+   "reversal_locations": [
+    [
+     182.94649,
+     466.2608,
+     47.42137
+    ],
+    [
+     183.47855,
+     466.46319,
+     47.37186
+    ],
+    [
+     183.46859,
+     466.66516,
+     45.08597
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.9,
+   "plane_point": [
+    187.90794,
+    458.54102,
+    45.41243
+   ],
+   "plane_normal": [
+    0.22818,
+    -0.9696,
+    -0.08839
+   ],
+   "points": 602,
+   "cap_points": 602,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.6075302882017825,
+   "min_radius_at": [
+    187.81658,
+    458.48056,
+    45.83976
+   ],
+   "min_radius_chord_fraction": 0.9748447761194061,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 0.6203702403255374,
+   "radius_at_lip_apex_mm": 0.6218849801529945,
+   "attachment_thickness_at_rim_chord_fraction_mm": 1.0895709695986682,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.518825720504456,
+   "bending_reversals": 1,
+   "reversal_locations": [
+    [
+     184.18425,
+     457.7557,
+     44.41447
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.92,
+   "plane_point": [
+    188.66511,
+    454.92139,
+    45.08228
+   ],
+   "plane_normal": [
+    0.17962,
+    -0.97967,
+    -0.08937
+   ],
+   "points": 596,
+   "cap_points": 596,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.4689187790976886,
+   "min_radius_at": [
+    188.57543,
+    454.86979,
+    45.46775
+   ],
+   "min_radius_chord_fraction": 0.9836008201994816,
+   "rule_at_min_point_mm": 0.4,
+   "radius_at_rim_point_mm": 0.4857048919078195,
+   "radius_at_lip_apex_mm": 0.48944433495991824,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.8450960215384374,
+   "rule_radius_mm": 0.4,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.1722969477442213,
+   "bending_reversals": 5,
+   "reversal_locations": [
+    [
+     187.85931,
+     454.71747,
+     45.69814
+    ],
+    [
+     188.2477,
+     454.79329,
+     45.64758
+    ],
+    [
+     188.23352,
+     454.87844,
+     44.6857
+    ],
+    [
+     187.66174,
+     454.78126,
+     44.60174
+    ],
+    [
+     183.99755,
+     454.15665,
+     44.08406
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.94,
+   "plane_point": [
+    189.24488,
+    451.24288,
+    44.74688
+   ],
+   "plane_normal": [
+    0.13039,
+    -0.98737,
+    -0.08995
+   ],
+   "points": 590,
+   "cap_points": 590,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.3643573705913758,
+   "min_radius_at": [
+    189.17824,
+    451.20455,
+    45.07096
+   ],
+   "min_radius_chord_fraction": 0.9906523038494279,
+   "rule_at_min_point_mm": 0.3329577710555184,
+   "radius_at_rim_point_mm": 0.38001394998650295,
+   "radius_at_lip_apex_mm": 0.38614749035397417,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.6520407892814025,
+   "rule_radius_mm": 0.32602039464070126,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.0884311157026632,
+   "bending_reversals": 5,
+   "reversal_locations": [
+    [
+     187.82124,
+     450.99924,
+     45.35758
+    ],
+    [
+     188.55643,
+     451.1051,
+     45.26125
+    ],
+    [
+     188.35513,
+     451.1586,
+     44.38223
+    ],
+    [
+     187.61376,
+     451.07007,
+     44.27927
+    ],
+    [
+     183.3029,
+     450.55449,
+     43.68964
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.96,
+   "plane_point": [
+    189.64128,
+    447.51999,
+    44.4082
+   ],
+   "plane_normal": [
+    0.08038,
+    -0.99268,
+    -0.09015
+   ],
+   "points": 576,
+   "cap_points": 576,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.28040149966767575,
+   "min_radius_at": [
+    189.58867,
+    447.49009,
+    44.69063
+   ],
+   "min_radius_chord_fraction": 0.9956845872043809,
+   "rule_at_min_point_mm": 0.2615698916736562,
+   "radius_at_rim_point_mm": 0.2936576122521247,
+   "radius_at_lip_apex_mm": 0.3058394528239396,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.5125559862086649,
+   "rule_radius_mm": 0.25627799310433247,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.0689735637907312,
+   "bending_reversals": 4,
+   "reversal_locations": [
+    [
+     187.77997,
+     447.31371,
+     45.0201
+    ],
+    [
+     188.41394,
+     447.3728,
+     44.93463
+    ],
+    [
+     188.24825,
+     447.43976,
+     44.04959
+    ],
+    [
+     187.46606,
+     447.3859,
+     43.94529
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.98,
+   "plane_point": [
+    189.84887,
+    443.76743,
+    44.06817
+   ],
+   "plane_normal": [
+    0.02951,
+    -0.99551,
+    -0.08999
+   ],
+   "points": 571,
+   "cap_points": 571,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.22473456308956394,
+   "min_radius_at": [
+    189.80985,
+    443.74344,
+    44.32077
+   ],
+   "min_radius_chord_fraction": 0.998760697729856,
+   "rule_at_min_point_mm": 0.21770553432458137,
+   "radius_at_rim_point_mm": 0.23636654081535746,
+   "radius_at_lip_apex_mm": 0.261402870292628,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.4282205130384835,
+   "rule_radius_mm": 0.21411025651924176,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.0295216076801332,
+   "bending_reversals": 4,
+   "reversal_locations": [
+    [
+     187.63259,
+     443.64468,
+     44.69939
+    ],
+    [
+     188.29506,
+     443.67266,
+     44.60703
+    ],
+    [
+     188.22544,
+     443.74997,
+     43.72894
+    ],
+    [
+     187.06935,
+     443.72907,
+     43.58103
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.99,
+   "plane_point": [
+    189.88034,
+    441.88465,
+    43.89822
+   ],
+   "plane_normal": [
+    0.00374,
+    -0.99596,
+    -0.08977
+   ],
+   "points": 571,
+   "cap_points": 571,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.20823589618340094,
+   "min_radius_at": [
+    189.84408,
+    441.86231,
+    44.14448
+   ],
+   "min_radius_chord_fraction": 0.9995248091081459,
+   "rule_at_min_point_mm": 0.2067827141160195,
+   "radius_at_rim_point_mm": 0.21875405776051238,
+   "radius_at_lip_apex_mm": 0.25312167563138865,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.4070603128305043,
+   "rule_radius_mm": 0.20353015641525216,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": true,
+   "min_ratio_pointwise": 1.0049269083386445,
+   "bending_reversals": 3,
+   "reversal_locations": [
+    [
+     187.6973,
+     441.8205,
+     44.51896
+    ],
+    [
+     188.34334,
+     441.8311,
+     44.42831
+    ],
+    [
+     187.98737,
+     441.90965,
+     43.542
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.995,
+   "plane_point": [
+    189.87774,
+    440.94244,
+    43.81335
+   ],
+   "plane_normal": [
+    -0.00923,
+    -0.99593,
+    -0.08963
+   ],
+   "points": 570,
+   "cap_points": 570,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.20370092116792934,
+   "min_radius_at": [
+    189.8425,
+    440.92077,
+    44.05772
+   ],
+   "min_radius_chord_fraction": 0.9997189778811725,
+   "rule_at_min_point_mm": 0.20400540381525117,
+   "radius_at_rim_point_mm": 0.2140747823824882,
+   "radius_at_lip_apex_mm": 0.25143565008173435,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.40176542900707896,
+   "rule_radius_mm": 0.20088271450353948,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": false,
+   "min_ratio_pointwise": 0.9964175178678928,
+   "bending_reversals": 3,
+   "reversal_locations": [
+    [
+     187.56583,
+     440.90633,
+     44.45267
+    ],
+    [
+     188.19169,
+     440.90855,
+     44.36352
+    ],
+    [
+     188.08919,
+     440.98948,
+     43.47489
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.998,
+   "plane_point": [
+    189.87028,
+    440.37699,
+    43.76249
+   ],
+   "plane_normal": [
+    -0.01704,
+    -0.99584,
+    -0.08954
+   ],
+   "points": 571,
+   "cap_points": 571,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.20244273569909513,
+   "min_radius_at": [
+    189.83534,
+    440.35566,
+    44.00635
+   ],
+   "min_radius_chord_fraction": 0.9997734386489764,
+   "rule_at_min_point_mm": 0.203226295061722,
+   "radius_at_rim_point_mm": 0.21279018166236335,
+   "radius_at_lip_apex_mm": 0.2510179653166399,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.400282496218298,
+   "rule_radius_mm": 0.200141248109149,
+   "passes_rule_section_thickness": true,
+   "passes_rule_pointwise": false,
+   "min_ratio_pointwise": 0.994044548738354,
+   "bending_reversals": 3,
+   "reversal_locations": [
+    [
+     187.56253,
+     440.35896,
+     44.40225
+    ],
+    [
+     188.18732,
+     440.3563,
+     44.31286
+    ],
+    [
+     187.93655,
+     440.44184,
+     43.4092
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.9993,
+   "plane_point": [
+    189.86567,
+    440.13195,
+    43.74046
+   ],
+   "plane_normal": [
+    -0.02043,
+    -0.99578,
+    -0.0895
+   ],
+   "points": 572,
+   "cap_points": 572,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.15598585904924833,
+   "min_radius_at": [
+    189.82206,
+    440.10927,
+    44.00271
+   ],
+   "min_radius_chord_fraction": 0.9997055459785069,
+   "rule_at_min_point_mm": 0.20419755042863058,
+   "radius_at_rim_point_mm": 0.16468393922681765,
+   "radius_at_lip_apex_mm": 0.21695067353594455,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.4000346109294965,
+   "rule_radius_mm": 0.20001730546474825,
+   "passes_rule_section_thickness": false,
+   "passes_rule_pointwise": false,
+   "min_ratio_pointwise": 0.7633797638775189,
+   "bending_reversals": 13,
+   "reversal_locations": [
+    [
+     187.50003,
+     440.12215,
+     44.38951
+    ],
+    [
+     188.12719,
+     440.11752,
+     44.29784
+    ],
+    [
+     189.87024,
+     440.12,
+     43.87233
+    ],
+    [
+     189.87038,
+     440.12085,
+     43.86284
+    ],
+    [
+     189.87054,
+     440.12184,
+     43.85176
+    ],
+    [
+     189.87065,
+     440.12255,
+     43.84384
+    ],
+    [
+     189.87081,
+     440.12355,
+     43.83276
+    ],
+    [
+     189.87083,
+     440.12369,
+     43.83118
+    ],
+    [
+     189.871,
+     440.12482,
+     43.81852
+    ],
+    [
+     189.87108,
+     440.12539,
+     43.81218
+    ]
+   ]
+  },
+  {
+   "kind": "perpendicular to the rim",
+   "rim_p": 0.9997,
+   "plane_point": [
+    189.86409,
+    440.05655,
+    43.73368
+   ],
+   "plane_normal": [
+    -0.02148,
+    -0.99576,
+    -0.08948
+   ],
+   "points": 574,
+   "cap_points": 574,
+   "includes_parent_skin": false,
+   "min_radius_on_cap_mm": 0.015556310088846196,
+   "min_radius_at": [
+    189.8411,
+    440.03093,
+    44.02433
+   ],
+   "min_radius_chord_fraction": 0.9999281824334246,
+   "rule_at_min_point_mm": 0.20101225340116338,
+   "radius_at_rim_point_mm": 127.73068449065758,
+   "radius_at_lip_apex_mm": 0.0751099478444531,
+   "attachment_thickness_at_rim_chord_fraction_mm": 0.40000635893255226,
+   "rule_radius_mm": 0.20000317946627613,
+   "passes_rule_section_thickness": false,
+   "passes_rule_pointwise": false,
+   "min_ratio_pointwise": 0.07738985970074282,
+   "bending_reversals": 17,
+   "reversal_locations": [
+    [
+     189.85084,
+     440.03268,
+     44.00252
+    ],
+    [
+     189.8514,
+     440.03356,
+     43.99259
+    ],
+    [
+     189.85184,
+     440.03424,
+     43.98486
+    ],
+    [
+     189.8522,
+     440.03483,
+     43.97823
+    ],
+    [
+     189.85263,
+     440.03551,
+     43.97051
+    ],
+    [
+     189.853,
+     440.0361,
+     43.96388
+    ],
+    [
+     189.85354,
+     440.03698,
+     43.95395
+    ],
+    [
+     189.85408,
+     440.03786,
+     43.94401
+    ],
+    [
+     189.86398,
+     440.05631,
+     43.7364
+    ],
+    [
+     189.8642,
+     440.0568,
+     43.73087
+    ]
+   ]
+  },
+  {
+   "kind": "constant chord fraction, following the sweep",
+   "chord_fraction": 0.01,
+   "points": 1238,
+   "cap_points": 1202,
+   "min_radius_on_cap_mm": 0.21907976360193912,
+   "min_radius_at": [
+    93.41301,
+    451.97528,
+    39.84895
+   ],
+   "attachment_thickness_mm": 3.4562453583270916,
+   "rule_radius_mm": 0.4,
+   "min_ratio_pointwise": 0.5476994090048478,
+   "bending_reversals": 0,
+   "reversal_locations": [],
+   "note": "oblique to the rim where the rim is not perpendicular to the cut: by Meusnier such cuts show a tighter curve than the surface's true principal radius"
+  },
+  {
+   "kind": "constant chord fraction, following the sweep",
+   "chord_fraction": 0.1,
+   "points": 1238,
+   "cap_points": 1202,
+   "min_radius_on_cap_mm": 1.0515662279380846,
+   "min_radius_at": [
+    106.64516,
+    476.00519,
+    43.12807
+   ],
+   "attachment_thickness_mm": 9.47289028029795,
+   "rule_radius_mm": 0.4,
+   "min_ratio_pointwise": 2.6289155698452116,
+   "bending_reversals": 0,
+   "reversal_locations": [],
+   "note": "oblique to the rim where the rim is not perpendicular to the cut: by Meusnier such cuts show a tighter curve than the surface's true principal radius"
+  },
+  {
+   "kind": "constant chord fraction, following the sweep",
+   "chord_fraction": 0.3,
+   "points": 1238,
+   "cap_points": 1202,
+   "min_radius_on_cap_mm": 1.8635746196921354,
+   "min_radius_at": [
+    128.10947,
+    494.99121,
+    46.6692
+   ],
+   "attachment_thickness_mm": 12.171035905575456,
+   "rule_radius_mm": 0.4,
+   "min_ratio_pointwise": 4.658936549230338,
+   "bending_reversals": 0,
+   "reversal_locations": [],
+   "note": "oblique to the rim where the rim is not perpendicular to the cut: by Meusnier such cuts show a tighter curve than the surface's true principal radius"
+  },
+  {
+   "kind": "constant chord fraction, following the sweep",
+   "chord_fraction": 0.5,
+   "points": 1238,
+   "cap_points": 1202,
+   "min_radius_on_cap_mm": 1.6445821912793788,
+   "min_radius_at": [
+    146.65118,
+    500.00118,
+    48.09966
+   ],
+   "attachment_thickness_mm": 10.806489090330022,
+   "rule_radius_mm": 0.4,
+   "min_ratio_pointwise": 4.1114554781984465,
+   "bending_reversals": 0,
+   "reversal_locations": [],
+   "note": "oblique to the rim where the rim is not perpendicular to the cut: by Meusnier such cuts show a tighter curve than the surface's true principal radius"
+  },
+  {
+   "kind": "constant chord fraction, following the sweep",
+   "chord_fraction": 0.7,
+   "points": 1238,
+   "cap_points": 1202,
+   "min_radius_on_cap_mm": 0.8101238131270582,
+   "min_radius_at": [
+    164.06403,
+    494.97791,
+    48.4701
+   ],
+   "attachment_thickness_mm": 7.562481586699957,
+   "rule_radius_mm": 0.4,
+   "min_ratio_pointwise": 2.025309532817645,
+   "bending_reversals": 0,
+   "reversal_locations": [],
+   "note": "oblique to the rim where the rim is not perpendicular to the cut: by Meusnier such cuts show a tighter curve than the surface's true principal radius"
+  },
+  {
+   "kind": "constant chord fraction, following the sweep",
+   "chord_fraction": 0.85,
+   "points": 1238,
+   "cap_points": 1202,
+   "min_radius_on_cap_mm": 0.2894591997986014,
+   "min_radius_at": [
+    176.96765,
+    482.84838,
+    47.63051
+   ],
+   "attachment_thickness_mm": 4.3157100135596895,
+   "rule_radius_mm": 0.4,
+   "min_ratio_pointwise": 0.7236479994965035,
+   "bending_reversals": 0,
+   "reversal_locations": [],
+   "note": "oblique to the rim where the rim is not perpendicular to the cut: by Meusnier such cuts show a tighter curve than the surface's true principal radius"
+  },
+  {
+   "kind": "constant chord fraction, following the sweep",
+   "chord_fraction": 0.95,
+   "points": 1238,
+   "cap_points": 1202,
+   "min_radius_on_cap_mm": 0.21867906924081584,
+   "min_radius_at": [
+    185.67145,
+    466.17041,
+    46.23038
+   ],
+   "attachment_thickness_mm": 1.786607348114606,
+   "rule_radius_mm": 0.4,
+   "min_ratio_pointwise": 0.5466976731020395,
+   "bending_reversals": 8,
+   "reversal_locations": [
+    [
+     184.83299,
+     440.99553,
+     44.85649
+    ],
+    [
+     185.63498,
+     465.70901,
+     46.60772
+    ],
+    [
+     184.83852,
+     441.17121,
+     44.87203
+    ],
+    [
+     185.63417,
+     465.6944,
+     46.61312
+    ],
+    [
+     184.93829,
+     441.37427,
+     43.10852
+    ],
+    [
+     185.67051,
+     464.92625,
+     45.3896
+    ],
+    [
+     184.91847,
+     440.74419,
+     43.05197
+    ],
+    [
+     185.6708,
+     464.94109,
+     45.39443
+    ]
+   ],
+   "note": "oblique to the rim where the rim is not perpendicular to the cut: by Meusnier such cuts show a tighter curve than the surface's true principal radius"
+  },
+  {
+   "kind": "constant chord fraction, following the sweep",
+   "chord_fraction": 0.98,
+   "points": 1238,
+   "cap_points": 1202,
+   "min_radius_on_cap_mm": 0.12898152769124097,
+   "min_radius_at": [
+    188.29091,
+    456.84617,
+    45.37973
+   ],
+   "attachment_thickness_mm": 0.9651432661173611,
+   "rule_radius_mm": 0.4,
+   "min_ratio_pointwise": 0.3224538192281024,
+   "bending_reversals": 6,
+   "reversal_locations": [
+    [
+     187.85609,
+     441.05325,
+     44.42417
+    ],
+    [
+     188.26283,
+     456.38456,
+     45.64517
+    ],
+    [
+     187.91225,
+     441.26661,
+     43.47769
+    ],
+    [
+     188.28822,
+     455.84183,
+     44.84263
+    ],
+    [
+     187.87925,
+     440.0,
+     43.36533
+    ],
+    [
+     188.28882,
+     455.87355,
+     44.84995
+    ]
+   ],
+   "note": "oblique to the rim where the rim is not perpendicular to the cut: by Meusnier such cuts show a tighter curve than the surface's true principal radius"
+  }
+ ],
+ "seconds": 504.5295822620392
+}

@@ -1,0 +1,51 @@
+{
+ "valid": true,
+ "exact_valid_before_export": true,
+ "edge_fix": {
+  "attachment_up_cap_pcurve_max_deviation_mm": 4.248775941531229e-09,
+  "attachment_lo_cap_pcurve_max_deviation_mm": 4.248775941531229e-09,
+  "te_arch_lo_max_deviation_mm": 3.13931295832007e-13,
+  "tip_v_on_cap": 0.01624415449941984,
+  "tip_xyz": [
+   149.94629260592757,
+   0.0,
+   241.28897745773816
+  ],
+  "te_arch_up_max_deviation_mm": 3.13931295832007e-13,
+  "lip_te_edge_range": [
+   0.01624415449941984,
+   1.0
+  ]
+ },
+ "solids": 1,
+ "shells": 1,
+ "faces": 6,
+ "volume_mm3": 368288.0157373959,
+ "parent_volume_mm3": 350160.4305024175,
+ "cap_volume_untrimmed_mm3": 18127.590845001712,
+ "cap_volume_trimmed_mm3": 18127.585227935233,
+ "skin_fit": {
+  "fit_max_error_mm": 2.1722639784553484e-08,
+  "fit_max_error_at_t_v": [
+   0.07180783208205241,
+   0.8150000000000001
+  ],
+  "poles_t_v": [
+   59,
+   74
+  ],
+  "degree_t_v": [
+   5,
+   5
+  ],
+  "attachment_row_max_error_mm": 4.1929443019842315e-10
+ },
+ "design_constants_mm": {
+  "WE": 1.5,
+  "W2": 20.0,
+  "ELL": 3.0
+ },
+ "te_face_closure_height_above_attachment_mm": 1.2889774608283773,
+ "step_bytes": 1237099,
+ "step_sha256": "37aab02295472f274e9002f25fb175c5caecdd5cf7c1667c59111ad5b69726fe"
+}

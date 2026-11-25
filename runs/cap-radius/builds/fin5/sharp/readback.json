@@ -1,0 +1,5418 @@
+{
+ "file": "runs/cap-radius/builds/fin5/sharp/wing.step",
+ "sha256": "1a1fd864578361a11637fc53015c09a11635f47662e0b848b330b5fcd0e4c2a2",
+ "bytes": 288894,
+ "reimport": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 5,
+  "face_types": [
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_Plane",
+   "GeomAbs_BSplineSurface",
+   "GeomAbs_BSplineSurface"
+  ],
+  "brepcheck_valid": true,
+  "free_edges": 0,
+  "volume_mm3": 352471.23,
+  "area_mm2": 63657.433,
+  "bounding_box_mm": [
+   -1e-07,
+   -9.6000001,
+   -1e-07,
+   160.0,
+   9.6000001,
+   245.0
+  ]
+ },
+ "parent_preserved": {
+  "skin_vs_parent_py_max_mm": 2.6606222e-08,
+  "skin_poles_vs_parent_step_max_mm": 0.0,
+  "skin_knots_identical_to_parent_step": true,
+  "root_face_plane_z_mm": 0.0,
+  "sample_grid": "401 chord parameters x 121 stations per skin"
+ },
+ "locked_dimensions": {
+  "finished_height_mm": 245.0,
+  "crown_point_mm": [
+   108.07292,
+   0.0,
+   245.0
+  ],
+  "crown_row_spread_mm": 1.214176e-13,
+  "attachment_edge_max_abs_z_minus_240_mm": 1.4210855e-13,
+  "root_chord_extent_x_mm": [
+   -1e-07,
+   160.0
+  ],
+  "outline_max_deviation_mm": 4.8349165e-09,
+  "outline_max_abs_y_mm": 6.2456987e-16,
+  "outline_spec_samples_max_deviation_mm": 3.7104293e-09,
+  "note": "outline deviation = max |X - X_outline(h)| at the same height Z (h = (Z - 240)/5), 4,400 heights per branch up to 1 - h = 2e-8 (Z within 0.1 micrometre of the crown; above that the comparison is limited by round-off in Z), both perimeter branches of both cap faces; the normal distance to the outline is never larger. The crown point itself is compared separately.",
+  "crown_vs_outline_crown_mm": 6.6935539e-12
+ },
+ "joins": {
+  "upper_skin_to_cap": {
+   "points": 2399,
+   "max_separation_mm": 6.3554426e-14,
+   "max_projection_gap_mm": 1.7053257e-13,
+   "max_tangent_plane_angle_deg": 1.4787793e-06,
+   "at_xyz": [
+    65.000001,
+    0.00087783626,
+    240.0
+   ],
+   "max_second_fundamental_form_difference_per_mm": 9.5598033e-10,
+   "max_relative_curvature_difference": 3.6685954e-08,
+   "at_xyz_curvature": [
+    150.0,
+    0.00013784576,
+    240.0
+   ]
+  },
+  "lower_skin_to_cap": {
+   "points": 2399,
+   "max_separation_mm": 6.3554426e-14,
+   "max_projection_gap_mm": 1.7053257e-13,
+   "max_tangent_plane_angle_deg": 1.4787793e-06,
+   "at_xyz": [
+    65.000001,
+    -0.00087783626,
+    240.0
+   ],
+   "max_second_fundamental_form_difference_per_mm": 9.5598033e-10,
+   "max_relative_curvature_difference": 3.6685954e-08,
+   "at_xyz_curvature": [
+    150.0,
+    -0.00013784576,
+    240.0
+   ]
+  },
+  "perimeter_leading_edge_branch": {
+   "points": 2099,
+   "v_max": 0.9999,
+   "closest_sample_to_crown_mm": 0.0072259052,
+   "max_separation_mm": 0.0,
+   "max_tangent_plane_angle_deg": 1.7075473e-06,
+   "at_xyz": [
+    79.045087,
+    0.0,
+    244.02857
+   ],
+   "max_second_fundamental_form_difference_per_mm": 8.053569e-07,
+   "max_relative_curvature_difference": 4.6539325e-06
+  },
+  "perimeter_trailing_edge_branch": {
+   "points": 2099,
+   "v_max": 0.9999,
+   "closest_sample_to_crown_mm": 0.0072258937,
+   "max_separation_mm": 1.2491397e-15,
+   "max_tangent_plane_angle_deg": 1.4787793e-06,
+   "at_xyz": [
+    149.99811,
+    6.2446679e-16,
+    240.04488
+   ],
+   "max_second_fundamental_form_difference_per_mm": 8.0529884e-07,
+   "max_relative_curvature_difference": 4.6326982e-06
+  },
+  "note": "skin and cap are evaluated at the same chord parameter (the cap reuses the parent's u parameter); projection gap is an independent check. Curvature: second fundamental form of both faces in a common orthonormal tangent frame (e1 along the join). The perimeter is the shared edge of the +Y and -Y cap patches; it ends at the collapsed crown pole and is sampled up to v = 1 - 1e-4 (7 micrometres from the crown); closer than that the degenerate parametrization loses the second derivatives to round-off (crown curvature from the limit is reported under curvature_map)."
+ },
+ "curvature_map": {
+  "upper": {
+   "grid": "860 u x 759 v (u dense toward both ends, v up to 1 - 1e-4)",
+   "smallest_radius_grid_mm": 0.61243838,
+   "at_xyz": [
+    149.99634,
+    6.2437341e-16,
+    240.08538
+   ],
+   "tightest_per_chordwise_band": [
+    {
+     "u_band": [
+      0,
+      0.02
+     ],
+     "R_mm": 0.63403155,
+     "u": 0.0,
+     "v": 0.0014285009,
+     "xyz": [
+      65.003867,
+      0.0,
+      240.01427
+     ],
+     "chord_fraction_sweep": 5.8178119e-09,
+     "attachment_thickness_mm": 0.0015560015,
+     "required_mm": 0.00077800074
+    },
+    {
+     "u_band": [
+      0.02,
+      0.1
+     ],
+     "R_mm": 0.88745192,
+     "u": 0.02,
+     "v": 0.0014284128,
+     "xyz": [
+      65.087726,
+      0.32021484,
+      240.01427
+     ],
+     "chord_fraction_sweep": 0.00098664159,
+     "attachment_thickness_mm": 0.64046518,
+     "required_mm": 0.32023259
+    },
+    {
+     "u_band": [
+      0.1,
+      0.3
+     ],
+     "R_mm": 2.0318273,
+     "u": 0.10040521,
+     "v": 0.1943691,
+     "xyz": [
+      68.43581,
+      1.5095581,
+      241.75479
+     ],
+     "chord_fraction_sweep": 0.035056204,
+     "attachment_thickness_mm": 3.7520068,
+     "required_mm": 0.4
+    },
+    {
+     "u_band": [
+      0.3,
+      0.7
+     ],
+     "R_mm": 3.7426768,
+     "u": 0.69875859,
+     "v": 0.24724893,
+     "xyz": [
+      131.37259,
+      3.8167879,
+      242.16683
+     ],
+     "chord_fraction_sweep": 0.78016491,
+     "attachment_thickness_mm": 8.4483497,
+     "required_mm": 0.4
+    },
+    {
+     "u_band": [
+      0.7,
+      0.9
+     ],
+     "R_mm": 1.9463606,
+     "u": 0.89959479,
+     "v": 0.19865665,
+     "xyz": [
+      146.91197,
+      1.5059394,
+      241.78924
+     ],
+     "chord_fraction_sweep": 0.96431254,
+     "attachment_thickness_mm": 3.7843989,
+     "required_mm": 0.4
+    },
+    {
+     "u_band": [
+      0.9,
+      0.98
+     ],
+     "R_mm": 0.86771938,
+     "u": 0.97992927,
+     "v": 0.1014721,
+     "xyz": [
+      149.72434,
+      0.31815562,
+      240.96324
+     ],
+     "chord_fraction_sweep": 0.99721929,
+     "attachment_thickness_mm": 1.074245,
+     "required_mm": 0.4
+    },
+    {
+     "u_band": [
+      0.98,
+      1.0
+     ],
+     "R_mm": 0.61243789,
+     "u": 1.0,
+     "v": 0.0080188757,
+     "xyz": [
+      149.99659,
+      6.2438617e-16,
+      240.07987
+     ],
+     "chord_fraction_sweep": 0.99999898,
+     "attachment_thickness_mm": 0.020592202,
+     "required_mm": 0.010296101
+    }
+   ],
+   "smallest_radius_refined_mm": 0.61243789,
+   "smallest_margin_R_over_required": 1.6757833,
+   "margin_at_xyz": [
+    149.82734,
+    6.1894377e-16,
+    240.92462
+   ],
+   "margin_attachment_thickness_mm": 0.81113104,
+   "margin_radius_mm": 0.67031331,
+   "points_failing_rule": 0,
+   "closest_grid_point_to_crown_mm": 0.00075999656,
+   "crown_principal_radii_limit_mm": [
+    5.7638908,
+    522.13868
+   ]
+  },
+  "lower": {
+   "grid": "860 u x 759 v (u dense toward both ends, v up to 1 - 1e-4)",
+   "smallest_radius_grid_mm": 0.61243838,
+   "at_xyz": [
+    149.99634,
+    -6.2437341e-16,
+    240.08538
+   ],
+   "tightest_per_chordwise_band": [
+    {
+     "u_band": [
+      0,
+      0.02
+     ],
+     "R_mm": 0.63403155,
+     "u": 0.0,
+     "v": 0.0014285009,
+     "xyz": [
+      65.003867,
+      0.0,
+      240.01427
+     ],
+     "chord_fraction_sweep": 5.8178119e-09,
+     "attachment_thickness_mm": 0.0015560015,
+     "required_mm": 0.00077800074
+    },
+    {
+     "u_band": [
+      0.02,
+      0.1
+     ],
+     "R_mm": 0.88745192,
+     "u": 0.02,
+     "v": 0.0014284128,
+     "xyz": [
+      65.087726,
+      -0.32021484,
+      240.01427
+     ],
+     "chord_fraction_sweep": 0.00098664159,
+     "attachment_thickness_mm": 0.64046518,
+     "required_mm": 0.32023259
+    },
+    {
+     "u_band": [
+      0.1,
+      0.3
+     ],
+     "R_mm": 2.0318273,
+     "u": 0.10040521,
+     "v": 0.1943691,
+     "xyz": [
+      68.43581,
+      -1.5095581,
+      241.75479
+     ],
+     "chord_fraction_sweep": 0.035056204,
+     "attachment_thickness_mm": 3.7520068,
+     "required_mm": 0.4
+    },
+    {
+     "u_band": [
+      0.3,
+      0.7
+     ],
+     "R_mm": 3.7426768,
+     "u": 0.69875859,
+     "v": 0.24724893,
+     "xyz": [
+      131.37259,
+      -3.8167879,
+      242.16683
+     ],
+     "chord_fraction_sweep": 0.78016491,
+     "attachment_thickness_mm": 8.4483497,
+     "required_mm": 0.4
+    },
+    {
+     "u_band": [
+      0.7,
+      0.9
+     ],
+     "R_mm": 1.9463606,
+     "u": 0.89959479,
+     "v": 0.19865665,
+     "xyz": [
+      146.91197,
+      -1.5059394,
+      241.78924
+     ],
+     "chord_fraction_sweep": 0.96431254,
+     "attachment_thickness_mm": 3.7843989,
+     "required_mm": 0.4
+    },
+    {
+     "u_band": [
+      0.9,
+      0.98
+     ],
+     "R_mm": 0.86771938,
+     "u": 0.97992927,
+     "v": 0.1014721,
+     "xyz": [
+      149.72434,
+      -0.31815562,
+      240.96324
+     ],
+     "chord_fraction_sweep": 0.99721929,
+     "attachment_thickness_mm": 1.074245,
+     "required_mm": 0.4
+    },
+    {
+     "u_band": [
+      0.98,
+      1.0
+     ],
+     "R_mm": 0.61243789,
+     "u": 1.0,
+     "v": 0.0080188757,
+     "xyz": [
+      149.99659,
+      -6.2438617e-16,
+      240.07987
+     ],
+     "chord_fraction_sweep": 0.99999898,
+     "attachment_thickness_mm": 0.020592202,
+     "required_mm": 0.010296101
+    }
+   ],
+   "smallest_radius_refined_mm": 0.61243789,
+   "smallest_margin_R_over_required": 1.6757833,
+   "margin_at_xyz": [
+    149.82734,
+    -6.1894377e-16,
+    240.92462
+   ],
+   "margin_attachment_thickness_mm": 0.81113104,
+   "margin_radius_mm": 0.67031331,
+   "points_failing_rule": 0,
+   "closest_grid_point_to_crown_mm": 0.00075999656,
+   "crown_principal_radii_limit_mm": [
+    5.7638908,
+    522.13868
+   ]
+  },
+  "evaluator_vs_occt_geomlprop_max_relative_difference": 2.4127989e-08,
+  "parent_skin_smallest_radius_mm_z200_240": 0.61253105,
+  "rule": "required radius = 0.4 mm where the attachment thickness at the point's sweep-following chord fraction (X - LE(Z))/c(Z) is >= 0.8 mm, else half that thickness (full half-round)",
+  "smallest_cap_radius_mm": 0.61243789
+ },
+ "sections": {
+  "traces": [
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.0005,
+    "plane_origin": [
+     65.0425,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 0.45604381,
+    "required_radius_mm": 0.22802191,
+    "points_on_cap": 100,
+    "points_total": 1134,
+    "smallest_section_radius_mm": 0.17310676,
+    "at_xyz": [
+     65.0425,
+     5.0391078e-22,
+     240.1546
+    ],
+    "cos_plane_to_surface_normal_there": 0.27231868,
+    "smallest_surface_radius_mm": 0.63567715,
+    "surface_radius_at_xyz": [
+     65.0425,
+     5.0391078e-22,
+     240.1546
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.63567715,
+    "lip": [
+     {
+      "xyz": [
+       65.0425,
+       5.0391078e-22,
+       240.1546
+      ],
+      "section_radius_mm": 0.17310676,
+      "normal_radius_mm": 0.63567715,
+      "cos_plane_to_surface_normal": 0.27231868
+     },
+     {
+      "xyz": [
+       65.0425,
+       -5.0391078e-22,
+       240.1546
+      ],
+      "section_radius_mm": 0.17310676,
+      "normal_radius_mm": 0.63567715,
+      "cos_plane_to_surface_normal": 0.27231868
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.001,
+    "plane_origin": [
+     65.085,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 0.64478201,
+    "required_radius_mm": 0.322391,
+    "points_on_cap": 100,
+    "points_total": 1130,
+    "smallest_section_radius_mm": 0.19308722,
+    "at_xyz": [
+     65.085,
+     8.3290512e-22,
+     240.29736
+    ],
+    "cos_plane_to_surface_normal_there": 0.30119928,
+    "smallest_surface_radius_mm": 0.64106135,
+    "surface_radius_at_xyz": [
+     65.085,
+     8.3290512e-22,
+     240.29736
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.64106135,
+    "lip": [
+     {
+      "xyz": [
+       65.085,
+       8.3290512e-22,
+       240.29736
+      ],
+      "section_radius_mm": 0.19308722,
+      "normal_radius_mm": 0.64106135,
+      "cos_plane_to_surface_normal": 0.30119928
+     },
+     {
+      "xyz": [
+       65.085,
+       -8.3290512e-22,
+       240.29736
+      ],
+      "section_radius_mm": 0.19308722,
+      "normal_radius_mm": 0.64106135,
+      "cos_plane_to_surface_normal": 0.30119928
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.0015,
+    "plane_origin": [
+     65.1275,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 0.78949581,
+    "required_radius_mm": 0.39474791,
+    "points_on_cap": 122,
+    "points_total": 1148,
+    "smallest_section_radius_mm": 0.22113998,
+    "at_xyz": [
+     65.1275,
+     6.509974e-22,
+     240.42325
+    ],
+    "cos_plane_to_surface_normal_there": 0.34040966,
+    "smallest_surface_radius_mm": 0.64962898,
+    "surface_radius_at_xyz": [
+     65.1275,
+     6.509974e-22,
+     240.42325
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.64962898,
+    "lip": [
+     {
+      "xyz": [
+       65.1275,
+       6.509974e-22,
+       240.42325
+      ],
+      "section_radius_mm": 0.22113998,
+      "normal_radius_mm": 0.64962898,
+      "cos_plane_to_surface_normal": 0.34040966
+     },
+     {
+      "xyz": [
+       65.1275,
+       -6.509974e-22,
+       240.42325
+      ],
+      "section_radius_mm": 0.22113998,
+      "normal_radius_mm": 0.64962898,
+      "cos_plane_to_surface_normal": 0.34040966
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.002,
+    "plane_origin": [
+     65.17,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 0.91140296,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 148,
+    "points_total": 1170,
+    "smallest_section_radius_mm": 0.25345902,
+    "at_xyz": [
+     65.17,
+     2.7755539e-17,
+     240.53287
+    ],
+    "cos_plane_to_surface_normal_there": 0.38358602,
+    "smallest_surface_radius_mm": 0.66076189,
+    "surface_radius_at_xyz": [
+     65.17,
+     2.7755539e-17,
+     240.53287
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.66076189,
+    "lip": [
+     {
+      "xyz": [
+       65.17,
+       2.7755539e-17,
+       240.53287
+      ],
+      "section_radius_mm": 0.25345902,
+      "normal_radius_mm": 0.66076189,
+      "cos_plane_to_surface_normal": 0.38358602
+     },
+     {
+      "xyz": [
+       65.17,
+       -2.7755539e-17,
+       240.53287
+      ],
+      "section_radius_mm": 0.25345902,
+      "normal_radius_mm": 0.66076189,
+      "cos_plane_to_surface_normal": 0.38358602
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.003,
+    "plane_origin": [
+     65.255,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 1.1156767,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 192,
+    "points_total": 1212,
+    "smallest_section_radius_mm": 0.32257519,
+    "at_xyz": [
+     65.255,
+     0.0,
+     240.71374
+    ],
+    "cos_plane_to_surface_normal_there": 0.46836967,
+    "smallest_surface_radius_mm": 0.6887192,
+    "surface_radius_at_xyz": [
+     65.255,
+     0.0,
+     240.71374
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.6887192,
+    "lip": [
+     {
+      "xyz": [
+       65.255,
+       0.0,
+       240.71374
+      ],
+      "section_radius_mm": 0.32257519,
+      "normal_radius_mm": 0.6887192,
+      "cos_plane_to_surface_normal": 0.46836967
+     },
+     {
+      "xyz": [
+       65.255,
+       0.0,
+       240.71374
+      ],
+      "section_radius_mm": 0.32257519,
+      "normal_radius_mm": 0.6887192,
+      "cos_plane_to_surface_normal": 0.46836967
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.005,
+    "plane_origin": [
+     65.425,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 1.4388871,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 262,
+    "points_total": 1276,
+    "smallest_section_radius_mm": 0.45882042,
+    "at_xyz": [
+     65.425,
+     0.0,
+     240.97981
+    ],
+    "cos_plane_to_surface_normal_there": 0.60505353,
+    "smallest_surface_radius_mm": 0.75831377,
+    "surface_radius_at_xyz": [
+     65.425,
+     0.0,
+     240.97981
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.75831377,
+    "lip": [
+     {
+      "xyz": [
+       65.425,
+       0.0,
+       240.97981
+      ],
+      "section_radius_mm": 0.45882042,
+      "normal_radius_mm": 0.75831377,
+      "cos_plane_to_surface_normal": 0.60505353
+     },
+     {
+      "xyz": [
+       65.425,
+       0.0,
+       240.97981
+      ],
+      "section_radius_mm": 0.45882042,
+      "normal_radius_mm": 0.75831377,
+      "cos_plane_to_surface_normal": 0.60505353
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.01,
+    "plane_origin": [
+     65.85,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 2.0297744,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 378,
+    "points_total": 1390,
+    "smallest_section_radius_mm": 0.75492388,
+    "at_xyz": [
+     65.85,
+     0.0,
+     241.40327
+    ],
+    "cos_plane_to_surface_normal_there": 0.78788985,
+    "smallest_surface_radius_mm": 0.95815916,
+    "surface_radius_at_xyz": [
+     65.85,
+     0.0,
+     241.40327
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.95815916,
+    "lip": [
+     {
+      "xyz": [
+       65.85,
+       0.0,
+       241.40327
+      ],
+      "section_radius_mm": 0.75492388,
+      "normal_radius_mm": 0.95815916,
+      "cos_plane_to_surface_normal": 0.78788985
+     },
+     {
+      "xyz": [
+       65.85,
+       0.0,
+       241.40327
+      ],
+      "section_radius_mm": 0.75492388,
+      "normal_radius_mm": 0.95815916,
+      "cos_plane_to_surface_normal": 0.78788985
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.02,
+    "plane_origin": [
+     66.7,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 2.856,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 528,
+    "points_total": 1534,
+    "smallest_section_radius_mm": 1.2183937,
+    "at_xyz": [
+     66.7,
+     1.2287961e-23,
+     241.9052
+    ],
+    "cos_plane_to_surface_normal_there": 0.90729905,
+    "smallest_surface_radius_mm": 1.3428799,
+    "surface_radius_at_xyz": [
+     66.7,
+     1.2287961e-23,
+     241.9052
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.3428799,
+    "lip": [
+     {
+      "xyz": [
+       66.7,
+       1.2287961e-23,
+       241.9052
+      ],
+      "section_radius_mm": 1.2183937,
+      "normal_radius_mm": 1.3428799,
+      "cos_plane_to_surface_normal": 0.90729905
+     },
+     {
+      "xyz": [
+       66.7,
+       -1.2287961e-23,
+       241.9052
+      ],
+      "section_radius_mm": 1.2183937,
+      "normal_radius_mm": 1.3428799,
+      "cos_plane_to_surface_normal": 0.90729905
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.05,
+    "plane_origin": [
+     69.25,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 4.4460769,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 786,
+    "points_total": 1788,
+    "smallest_section_radius_mm": 2.0567991,
+    "at_xyz": [
+     69.25,
+     1.3422055,
+     242.24242
+    ],
+    "cos_plane_to_surface_normal_there": 0.9713212,
+    "smallest_surface_radius_mm": 2.1157234,
+    "surface_radius_at_xyz": [
+     69.25,
+     1.3338506,
+     242.2492
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.1174874,
+    "lip": [
+     {
+      "xyz": [
+       69.25,
+       0.0,
+       242.71491
+      ],
+      "section_radius_mm": 2.1764304,
+      "normal_radius_mm": 2.234018,
+      "cos_plane_to_surface_normal": 0.97422239
+     },
+     {
+      "xyz": [
+       69.25,
+       0.0,
+       242.71491
+      ],
+      "section_radius_mm": 2.1764304,
+      "normal_radius_mm": 2.234018,
+      "cos_plane_to_surface_normal": 0.97422239
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.1,
+    "plane_origin": [
+     73.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 6.12,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1038,
+    "points_total": 2038,
+    "smallest_section_radius_mm": 2.8051296,
+    "at_xyz": [
+     73.5,
+     2.3099337,
+     242.41331
+    ],
+    "cos_plane_to_surface_normal_there": 0.9888046,
+    "smallest_surface_radius_mm": 2.8342785,
+    "surface_radius_at_xyz": [
+     73.5,
+     2.2981338,
+     242.42712
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.8368532,
+    "lip": [
+     {
+      "xyz": [
+       73.5,
+       0.0,
+       243.4486
+      ],
+      "section_radius_mm": 3.2164933,
+      "normal_radius_mm": 3.2445962,
+      "cos_plane_to_surface_normal": 0.99133855
+     },
+     {
+      "xyz": [
+       73.5,
+       0.0,
+       243.4486
+      ],
+      "section_radius_mm": 3.2164933,
+      "normal_radius_mm": 3.2445962,
+      "cos_plane_to_surface_normal": 0.99133855
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.2,
+    "plane_origin": [
+     82.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 8.16,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1326,
+    "points_total": 2326,
+    "smallest_section_radius_mm": 3.6462744,
+    "at_xyz": [
+     82.0,
+     3.4903921,
+     242.40477
+    ],
+    "cos_plane_to_surface_normal_there": 0.99650854,
+    "smallest_surface_radius_mm": 3.6572703,
+    "surface_radius_at_xyz": [
+     82.0,
+     3.4856333,
+     242.41243
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 3.6590397,
+    "lip": [
+     {
+      "xyz": [
+       82.0,
+       2.7755568e-17,
+       244.25007
+      ],
+      "section_radius_mm": 4.4901695,
+      "normal_radius_mm": 4.5003931,
+      "cos_plane_to_surface_normal": 0.99772828
+     },
+     {
+      "xyz": [
+       82.0,
+       -2.7755568e-17,
+       244.25007
+      ],
+      "section_radius_mm": 4.4901695,
+      "normal_radius_mm": 4.5003931,
+      "cos_plane_to_surface_normal": 0.99772828
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.3,
+    "plane_origin": [
+     90.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 9.3484544,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1488,
+    "points_total": 2488,
+    "smallest_section_radius_mm": 4.0870544,
+    "at_xyz": [
+     90.5,
+     4.2939359,
+     242.08141
+    ],
+    "cos_plane_to_surface_normal_there": 0.998757,
+    "smallest_surface_radius_mm": 4.0914409,
+    "surface_radius_at_xyz": [
+     90.5,
+     4.2898336,
+     242.09052
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.0921384,
+    "lip": [
+     {
+      "xyz": [
+       90.5,
+       0.0,
+       244.68699
+      ],
+      "section_radius_mm": 5.232455,
+      "normal_radius_mm": 5.2362063,
+      "cos_plane_to_surface_normal": 0.99928358
+     },
+     {
+      "xyz": [
+       90.5,
+       0.0,
+       244.68699
+      ],
+      "section_radius_mm": 5.232455,
+      "normal_radius_mm": 5.2362063,
+      "cos_plane_to_surface_normal": 0.99928358
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.4,
+    "plane_origin": [
+     99.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 9.9939182,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1574,
+    "points_total": 2574,
+    "smallest_section_radius_mm": 4.2548818,
+    "at_xyz": [
+     99.0,
+     4.8554904,
+     241.41831
+    ],
+    "cos_plane_to_surface_normal_there": 0.99970208,
+    "smallest_surface_radius_mm": 4.256087,
+    "surface_radius_at_xyz": [
+     99.0,
+     4.8554904,
+     241.41831
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.2561498,
+    "lip": [
+     {
+      "xyz": [
+       99.0,
+       6.9388925e-18,
+       244.92011
+      ],
+      "section_radius_mm": 5.6389027,
+      "normal_radius_mm": 5.6398029,
+      "cos_plane_to_surface_normal": 0.99984039
+     },
+     {
+      "xyz": [
+       99.0,
+       -6.9388925e-18,
+       244.92011
+      ],
+      "section_radius_mm": 5.6389027,
+      "normal_radius_mm": 5.6398029,
+      "cos_plane_to_surface_normal": 0.99984039
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.5,
+    "plane_origin": [
+     107.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 10.2,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1604,
+    "points_total": 2604,
+    "smallest_section_radius_mm": 4.2647905,
+    "at_xyz": [
+     107.5,
+     5.0492065,
+     240.96235
+    ],
+    "cos_plane_to_surface_normal_there": 0.99999995,
+    "smallest_surface_radius_mm": 4.2647831,
+    "surface_radius_at_xyz": [
+     107.5,
+     5.0492065,
+     240.96235
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.2647907,
+    "lip": [
+     {
+      "xyz": [
+       107.5,
+       0.0,
+       244.99969
+      ],
+      "section_radius_mm": 5.7736499,
+      "normal_radius_mm": 5.7736534,
+      "cos_plane_to_surface_normal": 0.9999994
+     },
+     {
+      "xyz": [
+       107.5,
+       0.0,
+       244.99969
+      ],
+      "section_radius_mm": 5.7736499,
+      "normal_radius_mm": 5.7736534,
+      "cos_plane_to_surface_normal": 0.9999994
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.6,
+    "plane_origin": [
+     116.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 9.9939182,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1580,
+    "points_total": 2580,
+    "smallest_section_radius_mm": 4.2421206,
+    "at_xyz": [
+     116.0,
+     4.8564043,
+     241.44706
+    ],
+    "cos_plane_to_surface_normal_there": 0.99972522,
+    "smallest_surface_radius_mm": 4.2431116,
+    "surface_radius_at_xyz": [
+     116.0,
+     4.8564043,
+     241.44706
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.2432866,
+    "lip": [
+     {
+      "xyz": [
+       116.0,
+       1.0238144e-16,
+       244.93901
+      ],
+      "section_radius_mm": 5.6516552,
+      "normal_radius_mm": 5.6523416,
+      "cos_plane_to_surface_normal": 0.99987855
+     },
+     {
+      "xyz": [
+       116.0,
+       -1.0238144e-16,
+       244.93901
+      ],
+      "section_radius_mm": 5.6516552,
+      "normal_radius_mm": 5.6523416,
+      "cos_plane_to_surface_normal": 0.99987855
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.7,
+    "plane_origin": [
+     124.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 9.3484544,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1496,
+    "points_total": 2496,
+    "smallest_section_radius_mm": 4.0612824,
+    "at_xyz": [
+     124.5,
+     4.3227921,
+     242.07403
+    ],
+    "cos_plane_to_surface_normal_there": 0.99882562,
+    "smallest_surface_radius_mm": 4.0651245,
+    "surface_radius_at_xyz": [
+     124.5,
+     4.3187428,
+     242.08335
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.0660558,
+    "lip": [
+     {
+      "xyz": [
+       124.5,
+       2.1395852e-16,
+       244.72644
+      ],
+      "section_radius_mm": 5.2583732,
+      "normal_radius_mm": 5.2616427,
+      "cos_plane_to_surface_normal": 0.99937862
+     },
+     {
+      "xyz": [
+       124.5,
+       -2.1395852e-16,
+       244.72644
+      ],
+      "section_radius_mm": 5.2583732,
+      "normal_radius_mm": 5.2616427,
+      "cos_plane_to_surface_normal": 0.99937862
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.8,
+    "plane_origin": [
+     133.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 8.16,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1340,
+    "points_total": 2340,
+    "smallest_section_radius_mm": 3.6171499,
+    "at_xyz": [
+     133.0,
+     3.5522445,
+     242.39031
+    ],
+    "cos_plane_to_surface_normal_there": 0.9966653,
+    "smallest_surface_radius_mm": 3.6271524,
+    "surface_radius_at_xyz": [
+     133.0,
+     3.5476104,
+     242.3982
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 3.6292395,
+    "lip": [
+     {
+      "xyz": [
+       133.0,
+       3.2997365e-16,
+       244.31464
+      ],
+      "section_radius_mm": 4.531402,
+      "normal_radius_mm": 4.5406936,
+      "cos_plane_to_surface_normal": 0.9979537
+     },
+     {
+      "xyz": [
+       133.0,
+       -3.2997365e-16,
+       244.31464
+      ],
+      "section_radius_mm": 4.531402,
+      "normal_radius_mm": 4.5406936,
+      "cos_plane_to_surface_normal": 0.9979537
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.9,
+    "plane_origin": [
+     141.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 6.12,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1062,
+    "points_total": 2062,
+    "smallest_section_radius_mm": 2.788603,
+    "at_xyz": [
+     141.5,
+     2.4114758,
+     242.41925
+    ],
+    "cos_plane_to_surface_normal_there": 0.98935999,
+    "smallest_surface_radius_mm": 2.8155277,
+    "surface_radius_at_xyz": [
+     141.5,
+     2.4059652,
+     242.42629
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.818584,
+    "lip": [
+     {
+      "xyz": [
+       141.5,
+       4.5613059e-16,
+       243.55224
+      ],
+      "section_radius_mm": 3.2793063,
+      "normal_radius_mm": 3.3052059,
+      "cos_plane_to_surface_normal": 0.992164
+     },
+     {
+      "xyz": [
+       141.5,
+       -4.5613059e-16,
+       243.55224
+      ],
+      "section_radius_mm": 3.2793063,
+      "normal_radius_mm": 3.3052059,
+      "cos_plane_to_surface_normal": 0.992164
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.95,
+    "plane_origin": [
+     145.75,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 4.4460769,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 820,
+    "points_total": 1820,
+    "smallest_section_radius_mm": 2.0698337,
+    "at_xyz": [
+     145.75,
+     1.512023,
+     242.25713
+    ],
+    "cos_plane_to_surface_normal_there": 0.97330551,
+    "smallest_surface_radius_mm": 2.1239666,
+    "surface_radius_at_xyz": [
+     145.75,
+     1.4976208,
+     242.27097
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.1265041,
+    "lip": [
+     {
+      "xyz": [
+       145.75,
+       5.2824242e-16,
+       242.85828
+      ],
+      "section_radius_mm": 2.2559815,
+      "normal_radius_mm": 2.3087147,
+      "cos_plane_to_surface_normal": 0.97715906
+     },
+     {
+      "xyz": [
+       145.75,
+       -5.2824242e-16,
+       242.85828
+      ],
+      "section_radius_mm": 2.2559815,
+      "normal_radius_mm": 2.3087147,
+      "cos_plane_to_surface_normal": 0.97715906
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.98,
+    "plane_origin": [
+     148.3,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 2.856,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 574,
+    "points_total": 1574,
+    "smallest_section_radius_mm": 1.3038506,
+    "at_xyz": [
+     148.3,
+     0.48724028,
+     242.01446
+    ],
+    "cos_plane_to_surface_normal_there": 0.92049553,
+    "smallest_surface_radius_mm": 1.4160601,
+    "surface_radius_at_xyz": [
+     148.3,
+     0.45940845,
+     242.02527
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.4164001,
+    "lip": [
+     {
+      "xyz": [
+       148.3,
+       5.7929958e-16,
+       242.10855
+      ],
+      "section_radius_mm": 1.3102912,
+      "normal_radius_mm": 1.4217022,
+      "cos_plane_to_surface_normal": 0.92163545
+     },
+     {
+      "xyz": [
+       148.3,
+       -5.7929958e-16,
+       242.10855
+      ],
+      "section_radius_mm": 1.3102912,
+      "normal_radius_mm": 1.4217022,
+      "cos_plane_to_surface_normal": 0.92163545
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.99,
+    "plane_origin": [
+     149.15,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 2.0297744,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 436,
+    "points_total": 1436,
+    "smallest_section_radius_mm": 0.84579845,
+    "at_xyz": [
+     149.15,
+     5.9961809e-16,
+     241.66051
+    ],
+    "cos_plane_to_surface_normal_there": 0.82552251,
+    "smallest_surface_radius_mm": 1.0245613,
+    "surface_radius_at_xyz": [
+     149.15,
+     5.9961809e-16,
+     241.66051
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.0245613,
+    "lip": [
+     {
+      "xyz": [
+       149.15,
+       5.9961809e-16,
+       241.66051
+      ],
+      "section_radius_mm": 0.84579845,
+      "normal_radius_mm": 1.0245613,
+      "cos_plane_to_surface_normal": 0.82552251
+     },
+     {
+      "xyz": [
+       149.15,
+       -5.9961809e-16,
+       241.66051
+      ],
+      "section_radius_mm": 0.84579845,
+      "normal_radius_mm": 1.0245613,
+      "cos_plane_to_surface_normal": 0.82552251
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.995,
+    "plane_origin": [
+     149.575,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 1.4388871,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 328,
+    "points_total": 1328,
+    "smallest_section_radius_mm": 0.53592287,
+    "at_xyz": [
+     149.575,
+     6.1123747e-16,
+     241.29721
+    ],
+    "cos_plane_to_surface_normal_there": 0.66977179,
+    "smallest_surface_radius_mm": 0.80015742,
+    "surface_radius_at_xyz": [
+     149.575,
+     6.1123747e-16,
+     241.29721
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.80015742,
+    "lip": [
+     {
+      "xyz": [
+       149.575,
+       6.1123747e-16,
+       241.29721
+      ],
+      "section_radius_mm": 0.53592287,
+      "normal_radius_mm": 0.80015742,
+      "cos_plane_to_surface_normal": 0.66977179
+     },
+     {
+      "xyz": [
+       149.575,
+       -6.1123747e-16,
+       241.29721
+      ],
+      "section_radius_mm": 0.53592287,
+      "normal_radius_mm": 0.80015742,
+      "cos_plane_to_surface_normal": 0.66977179
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.997,
+    "plane_origin": [
+     149.745,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 1.1156767,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 266,
+    "points_total": 1266,
+    "smallest_section_radius_mm": 0.37866777,
+    "at_xyz": [
+     149.745,
+     6.1635403e-16,
+     241.07393
+    ],
+    "cos_plane_to_surface_normal_there": 0.53285087,
+    "smallest_surface_radius_mm": 0.71064493,
+    "surface_radius_at_xyz": [
+     149.745,
+     6.1635403e-16,
+     241.07393
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.71064493,
+    "lip": [
+     {
+      "xyz": [
+       149.745,
+       6.1635403e-16,
+       241.07393
+      ],
+      "section_radius_mm": 0.37866777,
+      "normal_radius_mm": 0.71064493,
+      "cos_plane_to_surface_normal": 0.53285087
+     },
+     {
+      "xyz": [
+       149.745,
+       -6.1635403e-16,
+       241.07393
+      ],
+      "section_radius_mm": 0.37866777,
+      "normal_radius_mm": 0.71064493,
+      "cos_plane_to_surface_normal": 0.53285087
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.998,
+    "plane_origin": [
+     149.83,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 0.91140296,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 224,
+    "points_total": 1224,
+    "smallest_section_radius_mm": 0.28548852,
+    "at_xyz": [
+     149.83,
+     6.1902832e-16,
+     240.91901
+    ],
+    "cos_plane_to_surface_normal_there": 0.42669236,
+    "smallest_surface_radius_mm": 0.66907342,
+    "surface_radius_at_xyz": [
+     149.83,
+     6.1902832e-16,
+     240.91901
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.66907342,
+    "lip": [
+     {
+      "xyz": [
+       149.83,
+       6.1902832e-16,
+       240.91901
+      ],
+      "section_radius_mm": 0.28548852,
+      "normal_radius_mm": 0.66907342,
+      "cos_plane_to_surface_normal": 0.42669236
+     },
+     {
+      "xyz": [
+       149.83,
+       -6.1902832e-16,
+       240.91901
+      ],
+      "section_radius_mm": 0.28548852,
+      "normal_radius_mm": 0.66907342,
+      "cos_plane_to_surface_normal": 0.42669236
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.9985,
+    "plane_origin": [
+     149.8725,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 0.78949581,
+    "required_radius_mm": 0.39474791,
+    "points_on_cap": 198,
+    "points_total": 1198,
+    "smallest_section_radius_mm": 0.23276799,
+    "at_xyz": [
+     149.8725,
+     6.2037753e-16,
+     240.81943
+    ],
+    "cos_plane_to_surface_normal_there": 0.35806314,
+    "smallest_surface_radius_mm": 0.65007525,
+    "surface_radius_at_xyz": [
+     149.8725,
+     6.2037753e-16,
+     240.81943
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.65007525,
+    "lip": [
+     {
+      "xyz": [
+       149.8725,
+       6.2037753e-16,
+       240.81943
+      ],
+      "section_radius_mm": 0.23276799,
+      "normal_radius_mm": 0.65007525,
+      "cos_plane_to_surface_normal": 0.35806314
+     },
+     {
+      "xyz": [
+       149.8725,
+       -6.2037753e-16,
+       240.81943
+      ],
+      "section_radius_mm": 0.23276799,
+      "normal_radius_mm": 0.65007525,
+      "cos_plane_to_surface_normal": 0.35806314
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.999,
+    "plane_origin": [
+     149.915,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 0.64478201,
+    "required_radius_mm": 0.322391,
+    "points_on_cap": 164,
+    "points_total": 1166,
+    "smallest_section_radius_mm": 0.17364085,
+    "at_xyz": [
+     149.915,
+     6.2171483e-16,
+     240.69179
+    ],
+    "cos_plane_to_surface_normal_there": 0.27429229,
+    "smallest_surface_radius_mm": 0.63305042,
+    "surface_radius_at_xyz": [
+     149.915,
+     6.2171483e-16,
+     240.69179
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.63305042,
+    "lip": [
+     {
+      "xyz": [
+       149.915,
+       6.2171483e-16,
+       240.69179
+      ],
+      "section_radius_mm": 0.17364085,
+      "normal_radius_mm": 0.63305042,
+      "cos_plane_to_surface_normal": 0.27429229
+     },
+     {
+      "xyz": [
+       149.915,
+       -6.2171483e-16,
+       240.69179
+      ],
+      "section_radius_mm": 0.17364085,
+      "normal_radius_mm": 0.63305042,
+      "cos_plane_to_surface_normal": 0.27429229
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "chordwise X = const",
+    "chord_fraction": 0.9995,
+    "plane_origin": [
+     149.9575,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "attachment_thickness_mm": 0.45604381,
+    "required_radius_mm": 0.22802191,
+    "points_on_cap": 118,
+    "points_total": 1120,
+    "smallest_section_radius_mm": 0.10393648,
+    "at_xyz": [
+     149.9575,
+     6.2302411e-16,
+     240.50266
+    ],
+    "cos_plane_to_surface_normal_there": 0.1678567,
+    "smallest_surface_radius_mm": 0.61919767,
+    "surface_radius_at_xyz": [
+     149.9575,
+     6.2302411e-16,
+     240.50266
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.61919767,
+    "lip": [
+     {
+      "xyz": [
+       149.9575,
+       6.2302411e-16,
+       240.50266
+      ],
+      "section_radius_mm": 0.10393648,
+      "normal_radius_mm": 0.61919767,
+      "cos_plane_to_surface_normal": 0.1678567
+     },
+     {
+      "xyz": [
+       149.9575,
+       -6.2302411e-16,
+       240.50266
+      ],
+      "section_radius_mm": 0.10393648,
+      "normal_radius_mm": 0.61919767,
+      "cos_plane_to_surface_normal": 0.1678567
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.0005,
+    "plane_origin": [
+     65.0425,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96526442,
+     0.0,
+     -0.26127496
+    ],
+    "attachment_thickness_mm": 0.45604381,
+    "required_radius_mm": 0.22802191,
+    "points_on_cap": 148,
+    "points_total": 1190,
+    "smallest_section_radius_mm": 0.11886327,
+    "at_xyz": [
+     65.212987,
+     4.0451875e-22,
+     240.62986
+    ],
+    "cos_plane_to_surface_normal_there": 0.17633051,
+    "smallest_surface_radius_mm": 0.67409363,
+    "surface_radius_at_xyz": [
+     65.212987,
+     4.0451875e-22,
+     240.62986
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.67409363,
+    "lip": [
+     {
+      "xyz": [
+       65.212987,
+       4.0451875e-22,
+       240.62986
+      ],
+      "section_radius_mm": 0.11886327,
+      "normal_radius_mm": 0.67409363,
+      "cos_plane_to_surface_normal": 0.17633051
+     },
+     {
+      "xyz": [
+       65.212987,
+       -4.0451875e-22,
+       240.62986
+      ],
+      "section_radius_mm": 0.11886327,
+      "normal_radius_mm": 0.67409363,
+      "cos_plane_to_surface_normal": 0.17633051
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.001,
+    "plane_origin": [
+     65.085,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96530245,
+     0.0,
+     -0.26113442
+    ],
+    "attachment_thickness_mm": 0.64478201,
+    "required_radius_mm": 0.322391,
+    "points_on_cap": 192,
+    "points_total": 1232,
+    "smallest_section_radius_mm": 0.18807319,
+    "at_xyz": [
+     65.299641,
+     5.7257172e-23,
+     240.79344
+    ],
+    "cos_plane_to_surface_normal_there": 0.26653327,
+    "smallest_surface_radius_mm": 0.70562746,
+    "surface_radius_at_xyz": [
+     65.299641,
+     5.7257172e-23,
+     240.79344
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.70562746,
+    "lip": [
+     {
+      "xyz": [
+       65.299641,
+       5.7257172e-23,
+       240.79344
+      ],
+      "section_radius_mm": 0.18807319,
+      "normal_radius_mm": 0.70562746,
+      "cos_plane_to_surface_normal": 0.26653327
+     },
+     {
+      "xyz": [
+       65.299641,
+       -5.7257172e-23,
+       240.79344
+      ],
+      "section_radius_mm": 0.18807319,
+      "normal_radius_mm": 0.70562746,
+      "cos_plane_to_surface_normal": 0.26653327
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.0015,
+    "plane_origin": [
+     65.1275,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96534046,
+     0.0,
+     -0.26099387
+    ],
+    "attachment_thickness_mm": 0.78949581,
+    "required_radius_mm": 0.39474791,
+    "points_on_cap": 222,
+    "points_total": 1262,
+    "smallest_section_radius_mm": 0.24568029,
+    "at_xyz": [
+     65.37302,
+     4.893851e-22,
+     240.90811
+    ],
+    "cos_plane_to_surface_normal_there": 0.33393076,
+    "smallest_surface_radius_mm": 0.73572225,
+    "surface_radius_at_xyz": [
+     65.37302,
+     4.893851e-22,
+     240.90811
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.73572225,
+    "lip": [
+     {
+      "xyz": [
+       65.37302,
+       4.893851e-22,
+       240.90811
+      ],
+      "section_radius_mm": 0.24568029,
+      "normal_radius_mm": 0.73572225,
+      "cos_plane_to_surface_normal": 0.33393076
+     },
+     {
+      "xyz": [
+       65.37302,
+       -4.893851e-22,
+       240.90811
+      ],
+      "section_radius_mm": 0.24568029,
+      "normal_radius_mm": 0.73572225,
+      "cos_plane_to_surface_normal": 0.33393076
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.002,
+    "plane_origin": [
+     65.17,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96537845,
+     0.0,
+     -0.2608533
+    ],
+    "attachment_thickness_mm": 0.91140296,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 248,
+    "points_total": 1286,
+    "smallest_section_radius_mm": 0.29672674,
+    "at_xyz": [
+     65.440028,
+     0.0,
+     240.99933
+    ],
+    "cos_plane_to_surface_normal_there": 0.38788007,
+    "smallest_surface_radius_mm": 0.76499611,
+    "surface_radius_at_xyz": [
+     65.440028,
+     0.0,
+     240.99933
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.76499611,
+    "lip": [
+     {
+      "xyz": [
+       65.440028,
+       0.0,
+       240.99933
+      ],
+      "section_radius_mm": 0.29672674,
+      "normal_radius_mm": 0.76499611,
+      "cos_plane_to_surface_normal": 0.38788007
+     },
+     {
+      "xyz": [
+       65.440028,
+       0.0,
+       240.99933
+      ],
+      "section_radius_mm": 0.29672674,
+      "normal_radius_mm": 0.76499611,
+      "cos_plane_to_surface_normal": 0.38788007
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.003,
+    "plane_origin": [
+     65.255,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96545439,
+     0.0,
+     -0.26057212
+    ],
+    "attachment_thickness_mm": 1.1156767,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 290,
+    "points_total": 1326,
+    "smallest_section_radius_mm": 0.38661576,
+    "at_xyz": [
+     65.563644,
+     5.4350306e-23,
+     241.14357
+    ],
+    "cos_plane_to_surface_normal_there": 0.47047635,
+    "smallest_surface_radius_mm": 0.82175386,
+    "surface_radius_at_xyz": [
+     65.563644,
+     5.4350306e-23,
+     241.14357
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.82175386,
+    "lip": [
+     {
+      "xyz": [
+       65.563644,
+       5.4350306e-23,
+       241.14357
+      ],
+      "section_radius_mm": 0.38661576,
+      "normal_radius_mm": 0.82175386,
+      "cos_plane_to_surface_normal": 0.47047635
+     },
+     {
+      "xyz": [
+       65.563644,
+       -5.4350306e-23,
+       241.14357
+      ],
+      "section_radius_mm": 0.38661576,
+      "normal_radius_mm": 0.82175386,
+      "cos_plane_to_surface_normal": 0.47047635
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.005,
+    "plane_origin": [
+     65.425,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96560605,
+     0.0,
+     -0.26000954
+    ],
+    "attachment_thickness_mm": 1.4388871,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 350,
+    "points_total": 1386,
+    "smallest_section_radius_mm": 0.53791978,
+    "at_xyz": [
+     65.789847,
+     2.7754889e-17,
+     241.35494
+    ],
+    "cos_plane_to_surface_normal_there": 0.57877891,
+    "smallest_surface_radius_mm": 0.92940461,
+    "surface_radius_at_xyz": [
+     65.789847,
+     2.7754889e-17,
+     241.35494
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.92940461,
+    "lip": [
+     {
+      "xyz": [
+       65.789847,
+       2.7754889e-17,
+       241.35494
+      ],
+      "section_radius_mm": 0.53791978,
+      "normal_radius_mm": 0.92940461,
+      "cos_plane_to_surface_normal": 0.57877891
+     },
+     {
+      "xyz": [
+       65.789847,
+       -2.7754889e-17,
+       241.35494
+      ],
+      "section_radius_mm": 0.53791978,
+      "normal_radius_mm": 0.92940461,
+      "cos_plane_to_surface_normal": 0.57877891
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.01,
+    "plane_origin": [
+     65.85,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96598397,
+     0.0,
+     -0.25860196
+    ],
+    "attachment_thickness_mm": 2.0297744,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 456,
+    "points_total": 1496,
+    "smallest_section_radius_mm": 0.83570654,
+    "at_xyz": [
+     66.306244,
+     3.8345955e-23,
+     241.70426
+    ],
+    "cos_plane_to_surface_normal_there": 0.7137923,
+    "smallest_surface_radius_mm": 1.1707979,
+    "surface_radius_at_xyz": [
+     66.306244,
+     3.8345955e-23,
+     241.70426
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.1707979,
+    "lip": [
+     {
+      "xyz": [
+       66.306244,
+       3.8345955e-23,
+       241.70426
+      ],
+      "section_radius_mm": 0.83570654,
+      "normal_radius_mm": 1.1707979,
+      "cos_plane_to_surface_normal": 0.7137923
+     },
+     {
+      "xyz": [
+       66.306244,
+       -3.8345955e-23,
+       241.70426
+      ],
+      "section_radius_mm": 0.83570654,
+      "normal_radius_mm": 1.1707979,
+      "cos_plane_to_surface_normal": 0.7137923
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.02,
+    "plane_origin": [
+     66.7,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96673453,
+     0.0,
+     -0.25578184
+    ],
+    "attachment_thickness_mm": 2.856,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 594,
+    "points_total": 1628,
+    "smallest_section_radius_mm": 1.2823625,
+    "at_xyz": [
+     67.266202,
+     1.0869873e-23,
+     242.13997
+    ],
+    "cos_plane_to_surface_normal_there": 0.81619697,
+    "smallest_surface_radius_mm": 1.555554,
+    "surface_radius_at_xyz": [
+     67.225373,
+     0.62012394,
+     241.98566
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.5681861,
+    "lip": [
+     {
+      "xyz": [
+       67.266202,
+       1.0869873e-23,
+       242.13997
+      ],
+      "section_radius_mm": 1.2823625,
+      "normal_radius_mm": 1.5711434,
+      "cos_plane_to_surface_normal": 0.81619697
+     },
+     {
+      "xyz": [
+       67.266202,
+       -1.0869873e-23,
+       242.13997
+      ],
+      "section_radius_mm": 1.2823625,
+      "normal_radius_mm": 1.5711434,
+      "cos_plane_to_surface_normal": 0.81619697
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.05,
+    "plane_origin": [
+     69.25,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.96894344,
+     0.0,
+     -0.24728244
+    ],
+    "attachment_thickness_mm": 4.4460769,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 840,
+    "points_total": 1882,
+    "smallest_section_radius_mm": 2.0938688,
+    "at_xyz": [
+     69.86475,
+     1.3606553,
+     242.40882
+    ],
+    "cos_plane_to_surface_normal_there": 0.91514555,
+    "smallest_surface_radius_mm": 2.2380799,
+    "surface_radius_at_xyz": [
+     69.820065,
+     1.5550466,
+     242.23373
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.2843807,
+    "lip": [
+     {
+      "xyz": [
+       69.983583,
+       3.9055374e-25,
+       242.87445
+      ],
+      "section_radius_mm": 2.1952682,
+      "normal_radius_mm": 2.4399607,
+      "cos_plane_to_surface_normal": 0.89971456
+     },
+     {
+      "xyz": [
+       69.983583,
+       -3.9055374e-25,
+       242.87445
+      ],
+      "section_radius_mm": 2.1952682,
+      "normal_radius_mm": 2.4399607,
+      "cos_plane_to_surface_normal": 0.89971456
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.1,
+    "plane_origin": [
+     73.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.97247918,
+     0.0,
+     -0.2329898
+    ],
+    "attachment_thickness_mm": 6.12,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1080,
+    "points_total": 2118,
+    "smallest_section_radius_mm": 2.8504855,
+    "at_xyz": [
+     74.114801,
+     2.2937732,
+     242.56613
+    ],
+    "cos_plane_to_surface_normal_there": 0.95579708,
+    "smallest_surface_radius_mm": 2.9092549,
+    "surface_radius_at_xyz": [
+     74.073642,
+     2.4353023,
+     242.39433
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.9798483,
+    "lip": [
+     {
+      "xyz": [
+       74.352172,
+       2.3956166e-24,
+       243.55689
+      ],
+      "section_radius_mm": 3.1919487,
+      "normal_radius_mm": 3.4061254,
+      "cos_plane_to_surface_normal": 0.93712014
+     },
+     {
+      "xyz": [
+       74.352172,
+       -2.3956166e-24,
+       243.55689
+      ],
+      "section_radius_mm": 3.1919487,
+      "normal_radius_mm": 3.4061254,
+      "cos_plane_to_surface_normal": 0.93712014
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.2,
+    "plane_origin": [
+     82.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.97898042,
+     0.0,
+     -0.20395425
+    ],
+    "attachment_thickness_mm": 8.16,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1354,
+    "points_total": 2374,
+    "smallest_section_radius_mm": 3.7113841,
+    "at_xyz": [
+     82.529806,
+     3.4524648,
+     242.54307
+    ],
+    "cos_plane_to_surface_normal_there": 0.98135555,
+    "smallest_surface_radius_mm": 3.6914368,
+    "surface_radius_at_xyz": [
+     82.494821,
+     3.5563878,
+     242.37514
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 3.7805112,
+    "lip": [
+     {
+      "xyz": [
+       82.897681,
+       2.7755571e-17,
+       244.30887
+      ],
+      "section_radius_mm": 4.432381,
+      "normal_radius_mm": 4.5975302,
+      "cos_plane_to_surface_normal": 0.96407871
+     },
+     {
+      "xyz": [
+       82.897681,
+       -2.7755571e-17,
+       244.30887
+      ],
+      "section_radius_mm": 4.432381,
+      "normal_radius_mm": 4.5975302,
+      "cos_plane_to_surface_normal": 0.96407871
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.3,
+    "plane_origin": [
+     90.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.98468013,
+     0.0,
+     -0.17437044
+    ],
+    "attachment_thickness_mm": 9.3484544,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1506,
+    "points_total": 2524,
+    "smallest_section_radius_mm": 4.1616038,
+    "at_xyz": [
+     90.892209,
+     4.2524717,
+     242.21483
+    ],
+    "cos_plane_to_surface_normal_there": 0.99226739,
+    "smallest_surface_radius_mm": 4.1035719,
+    "surface_radius_at_xyz": [
+     90.863197,
+     4.3270161,
+     242.05099
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.1933152,
+    "lip": [
+     {
+      "xyz": [
+       91.335425,
+       6.9388948e-18,
+       244.71769
+      ],
+      "section_radius_mm": 5.1718657,
+      "normal_radius_mm": 5.2890406,
+      "cos_plane_to_surface_normal": 0.97784572
+     },
+     {
+      "xyz": [
+       91.335425,
+       -6.9388948e-18,
+       244.71769
+      ],
+      "section_radius_mm": 5.1718657,
+      "normal_radius_mm": 5.2890406,
+      "cos_plane_to_surface_normal": 0.97784572
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.4,
+    "plane_origin": [
+     99.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.98953298,
+     0.0,
+     -0.14430689
+    ],
+    "attachment_thickness_mm": 9.9939182,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1586,
+    "points_total": 2602,
+    "smallest_section_radius_mm": 4.3287227,
+    "at_xyz": [
+     99.225112,
+     4.8278373,
+     241.54363
+    ],
+    "cos_plane_to_surface_normal_there": 0.9980458,
+    "smallest_surface_radius_mm": 4.2573643,
+    "surface_radius_at_xyz": [
+     99.203023,
+     4.8669607,
+     241.39216
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.336934,
+    "lip": [
+     {
+      "xyz": [
+       99.719312,
+       0.0,
+       244.93242
+      ],
+      "section_radius_mm": 5.5877572,
+      "normal_radius_mm": 5.6611413,
+      "cos_plane_to_surface_normal": 0.98703723
+     },
+     {
+      "xyz": [
+       99.719312,
+       0.0,
+       244.93242
+      ],
+      "section_radius_mm": 5.5877572,
+      "normal_radius_mm": 5.6611413,
+      "cos_plane_to_surface_normal": 0.98703723
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.5,
+    "plane_origin": [
+     107.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99349927,
+     0.0,
+     -0.11383846
+    ],
+    "attachment_thickness_mm": 10.2,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1604,
+    "points_total": 2618,
+    "smallest_section_radius_mm": 4.3199461,
+    "at_xyz": [
+     107.60996,
+     5.049576,
+     240.95969
+    ],
+    "cos_plane_to_surface_normal_there": 0.99988892,
+    "smallest_surface_radius_mm": 4.2647164,
+    "surface_radius_at_xyz": [
+     107.60996,
+     5.049576,
+     240.95969
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.320426,
+    "lip": [],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.6,
+    "plane_origin": [
+     116.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99654576,
+     0.0,
+     -0.08304548
+    ],
+    "attachment_thickness_mm": 9.9939182,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1580,
+    "points_total": 2590,
+    "smallest_section_radius_mm": 4.2740083,
+    "at_xyz": [
+     116.12229,
+     4.8482496,
+     241.46748
+    ],
+    "cos_plane_to_surface_normal_there": 0.99999523,
+    "smallest_surface_radius_mm": 4.2420529,
+    "surface_radius_at_xyz": [
+     116.12229,
+     4.8482496,
+     241.46748
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.2740284,
+    "lip": [
+     {
+      "xyz": [
+       116.41104,
+       1.0771928e-16,
+       244.93242
+      ],
+      "section_radius_mm": 5.6273574,
+      "normal_radius_mm": 5.6398997,
+      "cos_plane_to_surface_normal": 0.99777615
+     },
+     {
+      "xyz": [
+       116.41104,
+       -1.0771928e-16,
+       244.93242
+      ],
+      "section_radius_mm": 5.6273574,
+      "normal_radius_mm": 5.6398997,
+      "cos_plane_to_surface_normal": 0.99777615
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.7,
+    "plane_origin": [
+     124.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99864642,
+     0.0,
+     -0.052012834
+    ],
+    "attachment_thickness_mm": 9.3484544,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1496,
+    "points_total": 2504,
+    "smallest_section_radius_mm": 4.075664,
+    "at_xyz": [
+     124.60889,
+     4.3097907,
+     242.09061
+    ],
+    "cos_plane_to_surface_normal_there": 0.99961258,
+    "smallest_surface_radius_mm": 4.0612933,
+    "surface_radius_at_xyz": [
+     124.60889,
+     4.3097907,
+     242.09061
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.0772398,
+    "lip": [
+     {
+      "xyz": [
+       124.74571,
+       2.1723334e-16,
+       244.71769
+      ],
+      "section_radius_mm": 5.2452213,
+      "normal_radius_mm": 5.2459031,
+      "cos_plane_to_surface_normal": 0.99987003
+     },
+     {
+      "xyz": [
+       124.74571,
+       -2.1723334e-16,
+       244.71769
+      ],
+      "section_radius_mm": 5.2452213,
+      "normal_radius_mm": 5.2459031,
+      "cos_plane_to_surface_normal": 0.99987003
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.8,
+    "plane_origin": [
+     133.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99978306,
+     0.0,
+     -0.020828814
+    ],
+    "attachment_thickness_mm": 8.16,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1340,
+    "points_total": 2342,
+    "smallest_section_radius_mm": 3.6207941,
+    "at_xyz": [
+     133.04992,
+     3.5441803,
+     242.39596
+    ],
+    "cos_plane_to_surface_normal_there": 0.99745783,
+    "smallest_surface_radius_mm": 3.6236566,
+    "surface_radius_at_xyz": [
+     133.05008,
+     3.5395575,
+     242.40377
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 3.6300105,
+    "lip": [
+     {
+      "xyz": [
+       133.08977,
+       3.3123764e-16,
+       244.30887
+      ],
+      "section_radius_mm": 4.5265659,
+      "normal_radius_mm": 4.5308624,
+      "cos_plane_to_surface_normal": 0.99905173
+     },
+     {
+      "xyz": [
+       133.08977,
+       -3.3123764e-16,
+       244.30887
+      ],
+      "section_radius_mm": 4.5265659,
+      "normal_radius_mm": 4.5308624,
+      "cos_plane_to_surface_normal": 0.99905173
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.9,
+    "plane_origin": [
+     141.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99994575,
+     0.0,
+     0.010416102
+    ],
+    "attachment_thickness_mm": 6.12,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1064,
+    "points_total": 2074,
+    "smallest_section_radius_mm": 2.7879683,
+    "at_xyz": [
+     141.47482,
+     2.4175182,
+     242.41751
+    ],
+    "cos_plane_to_surface_normal_there": 0.98845264,
+    "smallest_surface_radius_mm": 2.8188005,
+    "surface_radius_at_xyz": [
+     141.47474,
+     2.4120261,
+     242.42457
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.820528,
+    "lip": [
+     {
+      "xyz": [
+       141.46295,
+       4.5554068e-16,
+       243.55689
+      ],
+      "section_radius_mm": 3.2821017,
+      "normal_radius_mm": 3.3123424,
+      "cos_plane_to_surface_normal": 0.99087031
+     },
+     {
+      "xyz": [
+       141.46295,
+       -4.5554068e-16,
+       243.55689
+      ],
+      "section_radius_mm": 3.2821017,
+      "normal_radius_mm": 3.3123424,
+      "cos_plane_to_surface_normal": 0.99087031
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.95,
+    "plane_origin": [
+     145.75,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99966109,
+     0.0,
+     0.026032841
+    ],
+    "attachment_thickness_mm": 4.4460769,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 824,
+    "points_total": 1830,
+    "smallest_section_radius_mm": 2.0714929,
+    "at_xyz": [
+     145.69105,
+     1.5249709,
+     242.26384
+    ],
+    "cos_plane_to_surface_normal_there": 0.96936953,
+    "smallest_surface_radius_mm": 2.1363445,
+    "surface_radius_at_xyz": [
+     145.69087,
+     1.517867,
+     242.27078
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.1369358,
+    "lip": [
+     {
+      "xyz": [
+       145.67514,
+       5.2686914e-16,
+       242.87445
+      ],
+      "section_radius_mm": 2.264863,
+      "normal_radius_mm": 2.3302661,
+      "cos_plane_to_surface_normal": 0.9719332
+     },
+     {
+      "xyz": [
+       145.67514,
+       -5.2686914e-16,
+       242.87445
+      ],
+      "section_radius_mm": 2.264863,
+      "normal_radius_mm": 2.3302661,
+      "cos_plane_to_surface_normal": 0.9719332
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.98,
+    "plane_origin": [
+     148.3,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99937342,
+     0.0,
+     0.035394475
+    ],
+    "attachment_thickness_mm": 2.856,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 582,
+    "points_total": 1588,
+    "smallest_section_radius_mm": 1.3159333,
+    "at_xyz": [
+     148.22844,
+     0.54932092,
+     242.02062
+    ],
+    "cos_plane_to_surface_normal_there": 0.91136091,
+    "smallest_surface_radius_mm": 1.4438983,
+    "surface_radius_at_xyz": [
+     148.22821,
+     0.5352225,
+     242.02696
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.4439164,
+    "lip": [
+     {
+      "xyz": [
+       148.22421,
+       5.7760978e-16,
+       242.13997
+      ],
+      "section_radius_mm": 1.3256576,
+      "normal_radius_mm": 1.4538251,
+      "cos_plane_to_surface_normal": 0.91184114
+     },
+     {
+      "xyz": [
+       148.22421,
+       -5.7760978e-16,
+       242.13997
+      ],
+      "section_radius_mm": 1.3256576,
+      "normal_radius_mm": 1.4538251,
+      "cos_plane_to_surface_normal": 0.91184114
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.99,
+    "plane_origin": [
+     149.15,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9992581,
+     0.0,
+     0.038513072
+    ],
+    "attachment_thickness_mm": 2.0297744,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 446,
+    "points_total": 1450,
+    "smallest_section_radius_mm": 0.86449315,
+    "at_xyz": [
+     149.08432,
+     5.979339e-16,
+     241.70426
+    ],
+    "cos_plane_to_surface_normal_there": 0.81719693,
+    "smallest_surface_radius_mm": 1.0578762,
+    "surface_radius_at_xyz": [
+     149.08432,
+     5.979339e-16,
+     241.70426
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.0578762,
+    "lip": [
+     {
+      "xyz": [
+       149.08432,
+       5.979339e-16,
+       241.70426
+      ],
+      "section_radius_mm": 0.86449315,
+      "normal_radius_mm": 1.0578762,
+      "cos_plane_to_surface_normal": 0.81719693
+     },
+     {
+      "xyz": [
+       149.08432,
+       -5.979339e-16,
+       241.70426
+      ],
+      "section_radius_mm": 0.86449315,
+      "normal_radius_mm": 1.0578762,
+      "cos_plane_to_surface_normal": 0.81719693
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.995,
+    "plane_origin": [
+     149.575,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991968,
+     0.0,
+     0.040071955
+    ],
+    "attachment_thickness_mm": 1.4388871,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 342,
+    "points_total": 1350,
+    "smallest_section_radius_mm": 0.55663252,
+    "at_xyz": [
+     149.52066,
+     6.0966764e-16,
+     241.35494
+    ],
+    "cos_plane_to_surface_normal_there": 0.67117914,
+    "smallest_surface_radius_mm": 0.82933525,
+    "surface_radius_at_xyz": [
+     149.52066,
+     6.0966764e-16,
+     241.35494
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.82933525,
+    "lip": [
+     {
+      "xyz": [
+       149.52066,
+       6.0966764e-16,
+       241.35494
+      ],
+      "section_radius_mm": 0.55663252,
+      "normal_radius_mm": 0.82933525,
+      "cos_plane_to_surface_normal": 0.67117914
+     },
+     {
+      "xyz": [
+       149.52066,
+       -6.0966764e-16,
+       241.35494
+      ],
+      "section_radius_mm": 0.55663252,
+      "normal_radius_mm": 0.82933525,
+      "cos_plane_to_surface_normal": 0.67117914
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.997,
+    "plane_origin": [
+     149.745,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991716,
+     0.0,
+     0.040695427
+    ],
+    "attachment_thickness_mm": 1.1156767,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 282,
+    "points_total": 1284,
+    "smallest_section_radius_mm": 0.4001178,
+    "at_xyz": [
+     149.69842,
+     6.1491962e-16,
+     241.14357
+    ],
+    "cos_plane_to_surface_normal_there": 0.54463858,
+    "smallest_surface_radius_mm": 0.7346483,
+    "surface_radius_at_xyz": [
+     149.69842,
+     6.1491962e-16,
+     241.14357
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.7346483,
+    "lip": [
+     {
+      "xyz": [
+       149.69842,
+       6.1491962e-16,
+       241.14357
+      ],
+      "section_radius_mm": 0.4001178,
+      "normal_radius_mm": 0.7346483,
+      "cos_plane_to_surface_normal": 0.54463858
+     },
+     {
+      "xyz": [
+       149.69842,
+       -6.1491962e-16,
+       241.14357
+      ],
+      "section_radius_mm": 0.4001178,
+      "normal_radius_mm": 0.7346483,
+      "cos_plane_to_surface_normal": 0.54463858
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.998,
+    "plane_origin": [
+     149.83,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99915885,
+     0.0,
+     0.041007145
+    ],
+    "attachment_thickness_mm": 0.91140296,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 242,
+    "points_total": 1248,
+    "smallest_section_radius_mm": 0.30710977,
+    "at_xyz": [
+     149.78899,
+     6.1773035e-16,
+     240.99933
+    ],
+    "cos_plane_to_surface_normal_there": 0.44594512,
+    "smallest_surface_radius_mm": 0.68867166,
+    "surface_radius_at_xyz": [
+     149.78899,
+     6.1773035e-16,
+     240.99933
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.68867166,
+    "lip": [
+     {
+      "xyz": [
+       149.78899,
+       6.1773035e-16,
+       240.99933
+      ],
+      "section_radius_mm": 0.30710977,
+      "normal_radius_mm": 0.68867166,
+      "cos_plane_to_surface_normal": 0.44594512
+     },
+     {
+      "xyz": [
+       149.78899,
+       -6.1773035e-16,
+       240.99933
+      ],
+      "section_radius_mm": 0.30710977,
+      "normal_radius_mm": 0.68867166,
+      "cos_plane_to_surface_normal": 0.44594512
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.9985,
+    "plane_origin": [
+     149.8725,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99915244,
+     0.0,
+     0.041162999
+    ],
+    "attachment_thickness_mm": 0.78949581,
+    "required_radius_mm": 0.39474791,
+    "points_on_cap": 218,
+    "points_total": 1224,
+    "smallest_section_radius_mm": 0.25428548,
+    "at_xyz": [
+     149.83509,
+     6.1918988e-16,
+     240.90811
+    ],
+    "cos_plane_to_surface_normal_there": 0.38139817,
+    "smallest_surface_radius_mm": 0.66671919,
+    "surface_radius_at_xyz": [
+     149.83509,
+     6.1918988e-16,
+     240.90811
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.66671919,
+    "lip": [
+     {
+      "xyz": [
+       149.83509,
+       6.1918988e-16,
+       240.90811
+      ],
+      "section_radius_mm": 0.25428548,
+      "normal_radius_mm": 0.66671919,
+      "cos_plane_to_surface_normal": 0.38139817
+     },
+     {
+      "xyz": [
+       149.83509,
+       -6.1918988e-16,
+       240.90811
+      ],
+      "section_radius_mm": 0.25428548,
+      "normal_radius_mm": 0.66671919,
+      "cos_plane_to_surface_normal": 0.38139817
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.999,
+    "plane_origin": [
+     149.915,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99914601,
+     0.0,
+     0.041318851
+    ],
+    "attachment_thickness_mm": 0.64478201,
+    "required_radius_mm": 0.322391,
+    "points_on_cap": 186,
+    "points_total": 1194,
+    "smallest_section_radius_mm": 0.19466705,
+    "at_xyz": [
+     149.88219,
+     6.2068411e-16,
+     240.79344
+    ],
+    "cos_plane_to_surface_normal_there": 0.30134676,
+    "smallest_surface_radius_mm": 0.64599018,
+    "surface_radius_at_xyz": [
+     149.88219,
+     6.2068411e-16,
+     240.79344
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.64599018,
+    "lip": [
+     {
+      "xyz": [
+       149.88219,
+       6.2068411e-16,
+       240.79344
+      ],
+      "section_radius_mm": 0.19466705,
+      "normal_radius_mm": 0.64599018,
+      "cos_plane_to_surface_normal": 0.30134676
+     },
+     {
+      "xyz": [
+       149.88219,
+       -6.2068411e-16,
+       240.79344
+      ],
+      "section_radius_mm": 0.19466705,
+      "normal_radius_mm": 0.64599018,
+      "cos_plane_to_surface_normal": 0.30134676
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "sweep-following (parent ruling)",
+    "chord_fraction": 0.9995,
+    "plane_origin": [
+     149.9575,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.99913955,
+     0.0,
+     0.041474699
+    ],
+    "attachment_thickness_mm": 0.45604381,
+    "required_radius_mm": 0.22802191,
+    "points_on_cap": 144,
+    "points_total": 1148,
+    "smallest_section_radius_mm": 0.12303468,
+    "at_xyz": [
+     149.93135,
+     6.2222223e-16,
+     240.62986
+    ],
+    "cos_plane_to_surface_normal_there": 0.19615115,
+    "smallest_surface_radius_mm": 0.62724423,
+    "surface_radius_at_xyz": [
+     149.93135,
+     6.2222223e-16,
+     240.62986
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.62724423,
+    "lip": [
+     {
+      "xyz": [
+       149.93135,
+       6.2222223e-16,
+       240.62986
+      ],
+      "section_radius_mm": 0.12303468,
+      "normal_radius_mm": 0.62724423,
+      "cos_plane_to_surface_normal": 0.19615115
+     },
+     {
+      "xyz": [
+       149.93135,
+       -6.2222223e-16,
+       240.62986
+      ],
+      "section_radius_mm": 0.12303468,
+      "normal_radius_mm": 0.62724423,
+      "cos_plane_to_surface_normal": 0.19615115
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": false,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.02)",
+    "chord_fraction": null,
+    "plane_origin": [
+     65.027253,
+     0.0,
+     240.1
+    ],
+    "plane_normal": [
+     0.26599062,
+     0.0,
+     0.96397562
+    ],
+    "attachment_thickness_mm": 0.028849957,
+    "required_radius_mm": 0.014424978,
+    "points_on_cap": 160,
+    "points_total": 4032,
+    "smallest_section_radius_mm": 0.63463848,
+    "at_xyz": [
+     65.027253,
+     3.2953961e-23,
+     240.1
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.63463848,
+    "surface_radius_at_xyz": [
+     65.027253,
+     3.2953961e-23,
+     240.1
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.63463848,
+    "lip": [
+     {
+      "xyz": [
+       65.027253,
+       3.2953961e-23,
+       240.1
+      ],
+      "section_radius_mm": 0.63463848,
+      "normal_radius_mm": 0.63463848,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       65.027253,
+       -3.2953961e-23,
+       240.1
+      ],
+      "section_radius_mm": 0.63463848,
+      "normal_radius_mm": 0.63463848,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.02)",
+    "chord_fraction": null,
+    "plane_origin": [
+     149.99566,
+     0.0,
+     240.1
+    ],
+    "plane_normal": [
+     -0.046713137,
+     0.0,
+     0.99890835
+    ],
+    "attachment_thickness_mm": 0.028849957,
+    "required_radius_mm": 0.014424978,
+    "points_on_cap": 558,
+    "points_total": 17598,
+    "smallest_section_radius_mm": 0.61244459,
+    "at_xyz": [
+     149.99566,
+     6.243395e-16,
+     240.1
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.61244459,
+    "surface_radius_at_xyz": [
+     149.99566,
+     6.243395e-16,
+     240.1
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.61244459,
+    "lip": [
+     {
+      "xyz": [
+       149.99566,
+       6.243395e-16,
+       240.1
+      ],
+      "section_radius_mm": 0.61244459,
+      "normal_radius_mm": 0.61244459,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       149.99566,
+       -6.243395e-16,
+       240.1
+      ],
+      "section_radius_mm": 0.61244459,
+      "normal_radius_mm": 0.61244459,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.05)",
+    "chord_fraction": null,
+    "plane_origin": [
+     65.070362,
+     0.0,
+     240.25
+    ],
+    "plane_normal": [
+     0.28969264,
+     0.0,
+     0.95711973
+    ],
+    "attachment_thickness_mm": 0.11403947,
+    "required_radius_mm": 0.057019733,
+    "points_on_cap": 282,
+    "points_total": 3822,
+    "smallest_section_radius_mm": 0.63881517,
+    "at_xyz": [
+     65.070362,
+     6.0665302e-23,
+     240.25
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.63881517,
+    "surface_radius_at_xyz": [
+     65.070362,
+     6.0665302e-23,
+     240.25
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.63881517,
+    "lip": [
+     {
+      "xyz": [
+       65.070362,
+       6.0665302e-23,
+       240.25
+      ],
+      "section_radius_mm": 0.63881517,
+      "normal_radius_mm": 0.63881517,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       65.070362,
+       -6.0665302e-23,
+       240.25
+      ],
+      "section_radius_mm": 0.63881517,
+      "normal_radius_mm": 0.63881517,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.05)",
+    "chord_fraction": null,
+    "plane_origin": [
+     149.98693,
+     0.0,
+     240.25
+    ],
+    "plane_normal": [
+     -0.073306826,
+     0.0,
+     0.99730944
+    ],
+    "attachment_thickness_mm": 0.11403947,
+    "required_radius_mm": 0.057019733,
+    "points_on_cap": 826,
+    "points_total": 14500,
+    "smallest_section_radius_mm": 0.61307213,
+    "at_xyz": [
+     149.98693,
+     6.239687e-16,
+     240.25
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.61307213,
+    "surface_radius_at_xyz": [
+     149.98693,
+     6.239687e-16,
+     240.25
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.61307213,
+    "lip": [
+     {
+      "xyz": [
+       149.98693,
+       6.239687e-16,
+       240.25
+      ],
+      "section_radius_mm": 0.61307213,
+      "normal_radius_mm": 0.61307213,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       149.98693,
+       -6.239687e-16,
+       240.25
+      ],
+      "section_radius_mm": 0.61307213,
+      "normal_radius_mm": 0.61307213,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.1)",
+    "chord_fraction": null,
+    "plane_origin": [
+     65.156633,
+     0.0,
+     240.5
+    ],
+    "plane_normal": [
+     0.36985597,
+     0.0,
+     0.9290891
+    ],
+    "attachment_thickness_mm": 0.32255232,
+    "required_radius_mm": 0.16127616,
+    "points_on_cap": 392,
+    "points_total": 3166,
+    "smallest_section_radius_mm": 0.65701799,
+    "at_xyz": [
+     65.156633,
+     2.7755504e-17,
+     240.5
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.65701799,
+    "surface_radius_at_xyz": [
+     65.156633,
+     2.7755504e-17,
+     240.5
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.65701799,
+    "lip": [
+     {
+      "xyz": [
+       65.156633,
+       2.7755504e-17,
+       240.5
+      ],
+      "section_radius_mm": 0.65701799,
+      "normal_radius_mm": 0.65701799,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       65.156633,
+       -2.7755504e-17,
+       240.5
+      ],
+      "section_radius_mm": 0.65701799,
+      "normal_radius_mm": 0.65701799,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.1)",
+    "chord_fraction": null,
+    "plane_origin": [
+     149.95795,
+     0.0,
+     240.5
+    ],
+    "plane_normal": [
+     -0.16655832,
+     0.0,
+     0.98603161
+    ],
+    "attachment_thickness_mm": 0.32255232,
+    "required_radius_mm": 0.16127616,
+    "points_on_cap": 740,
+    "points_total": 6806,
+    "smallest_section_radius_mm": 0.61907575,
+    "at_xyz": [
+     149.95795,
+     6.2303789e-16,
+     240.5
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.61907575,
+    "surface_radius_at_xyz": [
+     149.95795,
+     6.2303789e-16,
+     240.5
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.61907575,
+    "lip": [
+     {
+      "xyz": [
+       149.95795,
+       6.2303789e-16,
+       240.5
+      ],
+      "section_radius_mm": 0.61907575,
+      "normal_radius_mm": 0.61907575,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       149.95795,
+       -6.2303789e-16,
+       240.5
+      ],
+      "section_radius_mm": 0.61907575,
+      "normal_radius_mm": 0.61907575,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.15)",
+    "chord_fraction": null,
+    "plane_origin": [
+     65.274706,
+     0.0,
+     240.75
+    ],
+    "plane_normal": [
+     0.48669853,
+     0.0,
+     0.87357
+    ],
+    "attachment_thickness_mm": 0.59256645,
+    "required_radius_mm": 0.29628323,
+    "points_on_cap": 436,
+    "points_total": 2546,
+    "smallest_section_radius_mm": 0.69602836,
+    "at_xyz": [
+     65.274706,
+     1.51308e-23,
+     240.75
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.69602836,
+    "surface_radius_at_xyz": [
+     65.274706,
+     1.51308e-23,
+     240.75
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.69602836,
+    "lip": [
+     {
+      "xyz": [
+       65.274706,
+       1.51308e-23,
+       240.75
+      ],
+      "section_radius_mm": 0.69602836,
+      "normal_radius_mm": 0.69602836,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       65.274706,
+       -1.51308e-23,
+       240.75
+      ],
+      "section_radius_mm": 0.69602836,
+      "normal_radius_mm": 0.69602836,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.15)",
+    "chord_fraction": null,
+    "plane_origin": [
+     149.89717,
+     0.0,
+     240.75
+    ],
+    "plane_normal": [
+     -0.31163809,
+     0.0,
+     0.95020087
+    ],
+    "attachment_thickness_mm": 0.59256645,
+    "required_radius_mm": 0.29628323,
+    "points_on_cap": 616,
+    "points_total": 3878,
+    "smallest_section_radius_mm": 0.63989574,
+    "at_xyz": [
+     149.89717,
+     6.2115644e-16,
+     240.75
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.63989574,
+    "surface_radius_at_xyz": [
+     149.89717,
+     6.2115644e-16,
+     240.75
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.63989574,
+    "lip": [
+     {
+      "xyz": [
+       149.89717,
+       6.2115644e-16,
+       240.75
+      ],
+      "section_radius_mm": 0.63989574,
+      "normal_radius_mm": 0.63989574,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       149.89717,
+       -6.2115644e-16,
+       240.75
+      ],
+      "section_radius_mm": 0.63989574,
+      "normal_radius_mm": 0.63989574,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.2)",
+    "chord_fraction": null,
+    "plane_origin": [
+     65.440548,
+     0.0,
+     241.0
+    ],
+    "plane_normal": [
+     0.6152165,
+     0.0,
+     0.78835821
+    ],
+    "attachment_thickness_mm": 0.91231573,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 458,
+    "points_total": 2132,
+    "smallest_section_radius_mm": 0.76522856,
+    "at_xyz": [
+     65.440548,
+     0.0,
+     241.0
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.76522856,
+    "surface_radius_at_xyz": [
+     65.440548,
+     0.0,
+     241.0
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.76522856,
+    "lip": [
+     {
+      "xyz": [
+       65.440548,
+       0.0,
+       241.0
+      ],
+      "section_radius_mm": 0.76522856,
+      "normal_radius_mm": 0.76522856,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       65.440548,
+       0.0,
+       241.0
+      ],
+      "section_radius_mm": 0.76522856,
+      "normal_radius_mm": 0.76522856,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.2)",
+    "chord_fraction": null,
+    "plane_origin": [
+     149.78862,
+     0.0,
+     241.0
+    ],
+    "plane_normal": [
+     -0.48273224,
+     0.0,
+     0.875768
+    ],
+    "attachment_thickness_mm": 0.91231573,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 546,
+    "points_total": 2662,
+    "smallest_section_radius_mm": 0.68885163,
+    "at_xyz": [
+     149.78862,
+     6.1771878e-16,
+     241.0
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.68885163,
+    "surface_radius_at_xyz": [
+     149.78862,
+     6.1771878e-16,
+     241.0
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.68885163,
+    "lip": [
+     {
+      "xyz": [
+       149.78862,
+       6.1771878e-16,
+       241.0
+      ],
+      "section_radius_mm": 0.68885163,
+      "normal_radius_mm": 0.68885163,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       149.78862,
+       -6.1771878e-16,
+       241.0
+      ],
+      "section_radius_mm": 0.68885163,
+      "normal_radius_mm": 0.68885163,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.25)",
+    "chord_fraction": null,
+    "plane_origin": [
+     65.670348,
+     0.0,
+     241.25
+    ],
+    "plane_normal": [
+     0.7303115,
+     0.0,
+     0.68311427
+    ],
+    "attachment_thickness_mm": 1.275,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 482,
+    "points_total": 1886,
+    "smallest_section_radius_mm": 0.87226964,
+    "at_xyz": [
+     65.670348,
+     2.7755483e-17,
+     241.25
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.87226964,
+    "surface_radius_at_xyz": [
+     65.670348,
+     2.7755483e-17,
+     241.25
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.87226964,
+    "lip": [
+     {
+      "xyz": [
+       65.670348,
+       2.7755483e-17,
+       241.25
+      ],
+      "section_radius_mm": 0.87226964,
+      "normal_radius_mm": 0.87226964,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       65.670348,
+       -2.7755483e-17,
+       241.25
+      ],
+      "section_radius_mm": 0.87226964,
+      "normal_radius_mm": 0.87226964,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.25)",
+    "chord_fraction": null,
+    "plane_origin": [
+     149.61611,
+     0.0,
+     241.25
+    ],
+    "plane_normal": [
+     -0.64315824,
+     0.0,
+     0.7657333
+    ],
+    "attachment_thickness_mm": 1.275,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 520,
+    "points_total": 2108,
+    "smallest_section_radius_mm": 0.77815585,
+    "at_xyz": [
+     149.61611,
+     6.1244528e-16,
+     241.25
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.77815585,
+    "surface_radius_at_xyz": [
+     149.61611,
+     6.1244528e-16,
+     241.25
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.77815585,
+    "lip": [
+     {
+      "xyz": [
+       149.61611,
+       6.1244528e-16,
+       241.25
+      ],
+      "section_radius_mm": 0.77815585,
+      "normal_radius_mm": 0.77815585,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       149.61611,
+       -6.1244528e-16,
+       241.25
+      ],
+      "section_radius_mm": 0.77815585,
+      "normal_radius_mm": 0.77815585,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.3)",
+    "chord_fraction": null,
+    "plane_origin": [
+     65.98074,
+     0.0,
+     241.5
+    ],
+    "plane_normal": [
+     0.81867158,
+     0.0,
+     0.574262
+    ],
+    "attachment_thickness_mm": 1.676031,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 516,
+    "points_total": 1764,
+    "smallest_section_radius_mm": 1.0202753,
+    "at_xyz": [
+     65.98074,
+     0.0,
+     241.5
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 1.0202753,
+    "surface_radius_at_xyz": [
+     65.98074,
+     0.0,
+     241.5
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.0202753,
+    "lip": [
+     {
+      "xyz": [
+       65.98074,
+       0.0,
+       241.5
+      ],
+      "section_radius_mm": 1.0202753,
+      "normal_radius_mm": 1.0202753,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       65.98074,
+       0.0,
+       241.5
+      ],
+      "section_radius_mm": 1.0202753,
+      "normal_radius_mm": 1.0202753,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.3)",
+    "chord_fraction": null,
+    "plane_origin": [
+     149.36301,
+     0.0,
+     241.5
+    ],
+    "plane_normal": [
+     -0.76728471,
+     0.0,
+     0.64130662
+    ],
+    "attachment_thickness_mm": 1.676031,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 530,
+    "points_total": 1858,
+    "smallest_section_radius_mm": 0.91361183,
+    "at_xyz": [
+     149.36301,
+     6.052662e-16,
+     241.5
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 0.91361183,
+    "surface_radius_at_xyz": [
+     149.36301,
+     6.052662e-16,
+     241.5
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 0.91361183,
+    "lip": [
+     {
+      "xyz": [
+       149.36301,
+       6.052662e-16,
+       241.5
+      ],
+      "section_radius_mm": 0.91361183,
+      "normal_radius_mm": 0.91361183,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       149.36301,
+       -6.052662e-16,
+       241.5
+      ],
+      "section_radius_mm": 0.91361183,
+      "normal_radius_mm": 0.91361183,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.4)",
+    "chord_fraction": null,
+    "plane_origin": [
+     66.913987,
+     0.0,
+     242.0
+    ],
+    "plane_normal": [
+     0.9206826,
+     0.0,
+     0.39031212
+    ],
+    "attachment_thickness_mm": 2.5804186,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 618,
+    "points_total": 1720,
+    "smallest_section_radius_mm": 1.4316977,
+    "at_xyz": [
+     66.913987,
+     1.2843402e-23,
+     242.0
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 1.4316977,
+    "surface_radius_at_xyz": [
+     66.913987,
+     1.2843402e-23,
+     242.0
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.4316977,
+    "lip": [
+     {
+      "xyz": [
+       66.913987,
+       1.2843402e-23,
+       242.0
+      ],
+      "section_radius_mm": 1.4316977,
+      "normal_radius_mm": 1.4316977,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       66.913987,
+       -1.2843402e-23,
+       242.0
+      ],
+      "section_radius_mm": 1.4316977,
+      "normal_radius_mm": 1.4316977,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.4)",
+    "chord_fraction": null,
+    "plane_origin": [
+     148.54435,
+     0.0,
+     242.0
+    ],
+    "plane_normal": [
+     -0.90517826,
+     0.0,
+     0.42503214
+    ],
+    "attachment_thickness_mm": 2.5804186,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 610,
+    "points_total": 1726,
+    "smallest_section_radius_mm": 1.3147452,
+    "at_xyz": [
+     148.54435,
+     5.8486198e-16,
+     242.0
+    ],
+    "cos_plane_to_surface_normal_there": 1.0,
+    "smallest_surface_radius_mm": 1.3147452,
+    "surface_radius_at_xyz": [
+     148.54435,
+     5.8486198e-16,
+     242.0
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.3147452,
+    "lip": [
+     {
+      "xyz": [
+       148.54435,
+       5.8486198e-16,
+       242.0
+      ],
+      "section_radius_mm": 1.3147452,
+      "normal_radius_mm": 1.3147452,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       148.54435,
+       -5.8486198e-16,
+       242.0
+      ],
+      "section_radius_mm": 1.3147452,
+      "normal_radius_mm": 1.3147452,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.5)",
+    "chord_fraction": null,
+    "plane_origin": [
+     68.396745,
+     0.0,
+     242.5
+    ],
+    "plane_normal": [
+     0.96421731,
+     0.0,
+     0.26511315
+    ],
+    "attachment_thickness_mm": 3.6062446,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 750,
+    "points_total": 1794,
+    "smallest_section_radius_mm": 1.9654768,
+    "at_xyz": [
+     68.424937,
+     0.63837447,
+     242.39747
+    ],
+    "cos_plane_to_surface_normal_there": 0.99985873,
+    "smallest_surface_radius_mm": 1.9302447,
+    "surface_radius_at_xyz": [
+     68.464753,
+     0.97166547,
+     242.25266
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.965743,
+    "lip": [
+     {
+      "xyz": [
+       68.396745,
+       5.4236669e-25,
+       242.5
+      ],
+      "section_radius_mm": 1.9707401,
+      "normal_radius_mm": 1.9707401,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       68.396745,
+       -5.4236669e-25,
+       242.5
+      ],
+      "section_radius_mm": 1.9707401,
+      "normal_radius_mm": 1.9707401,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.5)",
+    "chord_fraction": null,
+    "plane_origin": [
+     147.17617,
+     0.0,
+     242.5
+    ],
+    "plane_normal": [
+     -0.95954099,
+     0.0,
+     0.28156898
+    ],
+    "attachment_thickness_mm": 3.6062446,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 738,
+    "points_total": 1784,
+    "smallest_section_radius_mm": 1.8496208,
+    "at_xyz": [
+     147.14471,
+     0.63389203,
+     242.39279
+    ],
+    "cos_plane_to_surface_normal_there": 0.99979797,
+    "smallest_surface_radius_mm": 1.8063857,
+    "surface_radius_at_xyz": [
+     147.09806,
+     0.97528633,
+     242.2338
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 1.8499802,
+    "lip": [
+     {
+      "xyz": [
+       147.17617,
+       5.5556203e-16,
+       242.5
+      ],
+      "section_radius_mm": 1.8555635,
+      "normal_radius_mm": 1.8555635,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       147.17617,
+       -5.5556203e-16,
+       242.5
+      ],
+      "section_radius_mm": 1.8555635,
+      "normal_radius_mm": 1.8555635,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.7)",
+    "chord_fraction": null,
+    "plane_origin": [
+     73.895711,
+     0.0,
+     243.5
+    ],
+    "plane_normal": [
+     0.99198297,
+     0.0,
+     0.12637158
+    ],
+    "attachment_thickness_mm": 5.9737526,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1068,
+    "points_total": 2078,
+    "smallest_section_radius_mm": 2.9431586,
+    "at_xyz": [
+     74.025771,
+     2.3554407,
+     242.47907
+    ],
+    "cos_plane_to_surface_normal_there": 0.99827025,
+    "smallest_surface_radius_mm": 2.9030885,
+    "surface_radius_at_xyz": [
+     74.028372,
+     2.3735479,
+     242.45865
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.9482189,
+    "lip": [
+     {
+      "xyz": [
+       73.895711,
+       2.7755571e-17,
+       243.5
+      ],
+      "section_radius_mm": 3.3209169,
+      "normal_radius_mm": 3.3209169,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       73.895711,
+       -2.7755571e-17,
+       243.5
+      ],
+      "section_radius_mm": 3.3209169,
+      "normal_radius_mm": 3.3209169,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.7)",
+    "chord_fraction": null,
+    "plane_origin": [
+     141.90637,
+     0.0,
+     243.5
+    ],
+    "plane_normal": [
+     -0.99149977,
+     0.0,
+     0.13010844
+    ],
+    "attachment_thickness_mm": 5.9737526,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1056,
+    "points_total": 2062,
+    "smallest_section_radius_mm": 2.8239121,
+    "at_xyz": [
+     141.77031,
+     2.3247449,
+     242.46316
+    ],
+    "cos_plane_to_surface_normal_there": 0.99789449,
+    "smallest_surface_radius_mm": 2.7805913,
+    "surface_radius_at_xyz": [
+     141.76761,
+     2.3421357,
+     242.44257
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 2.8298007,
+    "lip": [
+     {
+      "xyz": [
+       141.90637,
+       4.6263455e-16,
+       243.5
+      ],
+      "section_radius_mm": 3.2255366,
+      "normal_radius_mm": 3.2255366,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       141.90637,
+       -4.6263455e-16,
+       243.5
+      ],
+      "section_radius_mm": 3.2255366,
+      "normal_radius_mm": 3.2255366,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.85)",
+    "chord_fraction": null,
+    "plane_origin": [
+     81.998981,
+     0.0,
+     244.25
+    ],
+    "plane_normal": [
+     0.99772797,
+     0.0,
+     0.067371386
+    ],
+    "attachment_thickness_mm": 7.993345,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1330,
+    "points_total": 2330,
+    "smallest_section_radius_mm": 3.684475,
+    "at_xyz": [
+     82.12254,
+     3.4928497,
+     242.42016
+    ],
+    "cos_plane_to_surface_normal_there": 0.99889636,
+    "smallest_surface_radius_mm": 3.665825,
+    "surface_radius_at_xyz": [
+     82.12254,
+     3.4928497,
+     242.42016
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 3.6885253,
+    "lip": [
+     {
+      "xyz": [
+       81.998981,
+       2.7755571e-17,
+       244.25
+      ],
+      "section_radius_mm": 4.5002798,
+      "normal_radius_mm": 4.5002798,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       81.998981,
+       -2.7755571e-17,
+       244.25
+      ],
+      "section_radius_mm": 4.5002798,
+      "normal_radius_mm": 4.5002798,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.85)",
+    "chord_fraction": null,
+    "plane_origin": [
+     133.97498,
+     0.0,
+     244.25
+    ],
+    "plane_normal": [
+     -0.99765624,
+     0.0,
+     0.068425386
+    ],
+    "attachment_thickness_mm": 7.993345,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1320,
+    "points_total": 2320,
+    "smallest_section_radius_mm": 3.5862328,
+    "at_xyz": [
+     133.8496,
+     3.4502367,
+     242.42204
+    ],
+    "cos_plane_to_surface_normal_there": 0.99874176,
+    "smallest_surface_radius_mm": 3.5661325,
+    "surface_radius_at_xyz": [
+     133.8496,
+     3.4502367,
+     242.42204
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 3.590708,
+    "lip": [
+     {
+      "xyz": [
+       133.97498,
+       3.4375954e-16,
+       244.25
+      ],
+      "section_radius_mm": 4.4309591,
+      "normal_radius_mm": 4.4309591,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       133.97498,
+       -3.4375954e-16,
+       244.25
+      ],
+      "section_radius_mm": 4.4309591,
+      "normal_radius_mm": 4.4309591,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.95)",
+    "chord_fraction": null,
+    "plane_origin": [
+     92.27413,
+     0.0,
+     244.75
+    ],
+    "plane_normal": [
+     0.99944897,
+     0.0,
+     0.033192597
+    ],
+    "attachment_thickness_mm": 9.4446437,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1512,
+    "points_total": 2512,
+    "smallest_section_radius_mm": 4.1535884,
+    "at_xyz": [
+     92.366518,
+     4.4377191,
+     241.96816
+    ],
+    "cos_plane_to_surface_normal_there": 0.9995092,
+    "smallest_surface_radius_mm": 4.148458,
+    "surface_radius_at_xyz": [
+     92.366201,
+     4.4337928,
+     241.97769
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.1556266,
+    "lip": [
+     {
+      "xyz": [
+       92.27413,
+       1.3877785e-17,
+       244.75
+      ],
+      "section_radius_mm": 5.3447757,
+      "normal_radius_mm": 5.3447757,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       92.27413,
+       -1.3877785e-17,
+       244.75
+      ],
+      "section_radius_mm": 5.3447757,
+      "normal_radius_mm": 5.3447757,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.95)",
+    "chord_fraction": null,
+    "plane_origin": [
+     123.81441,
+     0.0,
+     244.75
+    ],
+    "plane_normal": [
+     -0.9994405,
+     0.0,
+     0.033446874
+    ],
+    "attachment_thickness_mm": 9.4446437,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1506,
+    "points_total": 2506,
+    "smallest_section_radius_mm": 4.0972759,
+    "at_xyz": [
+     123.72368,
+     4.3776618,
+     242.03889
+    ],
+    "cos_plane_to_surface_normal_there": 0.99945651,
+    "smallest_surface_radius_mm": 4.0912216,
+    "surface_radius_at_xyz": [
+     123.72368,
+     4.3776618,
+     242.03889
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.099504,
+    "lip": [
+     {
+      "xyz": [
+       123.81441,
+       2.0483963e-16,
+       244.75
+      ],
+      "section_radius_mm": 5.3041425,
+      "normal_radius_mm": 5.3041425,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       123.81441,
+       -2.0483963e-16,
+       244.75
+      ],
+      "section_radius_mm": 5.3041425,
+      "normal_radius_mm": 5.3041425,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (LE branch, h=0.99)",
+    "chord_fraction": null,
+    "plane_origin": [
+     100.87604,
+     0.0,
+     244.95
+    ],
+    "plane_normal": [
+     0.99990175,
+     0.0,
+     0.014017681
+    ],
+    "attachment_thickness_mm": 10.047383,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1586,
+    "points_total": 2586,
+    "smallest_section_radius_mm": 4.2651568,
+    "at_xyz": [
+     100.92796,
+     4.9372301,
+     241.24681
+    ],
+    "cos_plane_to_surface_normal_there": 0.99987037,
+    "smallest_surface_radius_mm": 4.2646555,
+    "surface_radius_at_xyz": [
+     100.92796,
+     4.9372301,
+     241.24681
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.2657098,
+    "lip": [
+     {
+      "xyz": [
+       100.87604,
+       2.6551717e-26,
+       244.95
+      ],
+      "section_radius_mm": 5.6915029,
+      "normal_radius_mm": 5.6915029,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       100.87604,
+       -2.6551717e-26,
+       244.95
+      ],
+      "section_radius_mm": 5.6915029,
+      "normal_radius_mm": 5.6915029,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   },
+   {
+    "kind": "normal to perimeter (TE branch, h=0.99)",
+    "chord_fraction": null,
+    "plane_origin": [
+     115.25833,
+     0.0,
+     244.95
+    ],
+    "plane_normal": [
+     -0.99990111,
+     0.0,
+     0.014062852
+    ],
+    "attachment_thickness_mm": 10.047383,
+    "required_radius_mm": 0.4,
+    "points_on_cap": 1584,
+    "points_total": 2584,
+    "smallest_section_radius_mm": 4.250012,
+    "at_xyz": [
+     115.20812,
+     4.8909867,
+     241.37942
+    ],
+    "cos_plane_to_surface_normal_there": 0.99983745,
+    "smallest_surface_radius_mm": 4.2491169,
+    "surface_radius_at_xyz": [
+     115.20812,
+     4.8909867,
+     241.37942
+    ],
+    "smallest_normal_curvature_radius_along_trace_mm": 4.250703,
+    "lip": [
+     {
+      "xyz": [
+       115.25833,
+       9.2760158e-17,
+       244.95
+      ],
+      "section_radius_mm": 5.6732213,
+      "normal_radius_mm": 5.6732213,
+      "cos_plane_to_surface_normal": 1.0
+     },
+     {
+      "xyz": [
+       115.25833,
+       -9.2760158e-17,
+       244.95
+      ],
+      "section_radius_mm": 5.6732213,
+      "normal_radius_mm": 5.6732213,
+      "cos_plane_to_surface_normal": 1.0
+     }
+    ],
+    "curvature_reversals": 0,
+    "reversal_xyz": [],
+    "meets_rule_section_radius": true,
+    "meets_rule_surface_radius": true
+   }
+  ],
+  "count": 80,
+  "total_reversals": 0,
+  "worst_section_radius_vs_rule": {
+   "kind": "chordwise X = const",
+   "chord_fraction": 0.9995,
+   "smallest_section_radius_mm": 0.10393648,
+   "at_xyz": [
+    149.9575,
+    6.2302411e-16,
+    240.50266
+   ],
+   "cos_plane_to_surface_normal_there": 0.1678567,
+   "attachment_thickness_mm": 0.45604381,
+   "required_radius_mm": 0.22802191
+  },
+  "worst_surface_radius_vs_rule": {
+   "kind": "chordwise X = const",
+   "chord_fraction": 0.0015,
+   "smallest_surface_radius_mm": 0.64962898,
+   "surface_radius_at_xyz": [
+    65.1275,
+    6.509974e-22,
+    240.42325
+   ],
+   "attachment_thickness_mm": 0.78949581,
+   "required_radius_mm": 0.39474791
+  },
+  "note": "section radius = curvature of the planar cut curve; where the plane is far from containing the surface normal (cos_plane_to_surface_normal small: the plane grazes the surface) it exceeds the surface's own curvature by 1/cos. Surface radius = 1/(larger principal curvature) at trace points. Traces start at Z = 235 on the parent skin; samples within 0.01 mm of the collapsed crown pole are skipped.",
+  "traces_failing_rule_on_section_radius": [
+   [
+    "chordwise X = const",
+    0.0005,
+    0.17310676,
+    0.27231868,
+    0.45604381
+   ],
+   [
+    "chordwise X = const",
+    0.001,
+    0.19308722,
+    0.30119928,
+    0.64478201
+   ],
+   [
+    "chordwise X = const",
+    0.0015,
+    0.22113998,
+    0.34040966,
+    0.78949581
+   ],
+   [
+    "chordwise X = const",
+    0.002,
+    0.25345902,
+    0.38358602,
+    0.91140296
+   ],
+   [
+    "chordwise X = const",
+    0.003,
+    0.32257519,
+    0.46836967,
+    1.1156767
+   ],
+   [
+    "chordwise X = const",
+    0.997,
+    0.37866777,
+    0.53285087,
+    1.1156767
+   ],
+   [
+    "chordwise X = const",
+    0.998,
+    0.28548852,
+    0.42669236,
+    0.91140296
+   ],
+   [
+    "chordwise X = const",
+    0.9985,
+    0.23276799,
+    0.35806314,
+    0.78949581
+   ],
+   [
+    "chordwise X = const",
+    0.999,
+    0.17364085,
+    0.27429229,
+    0.64478201
+   ],
+   [
+    "chordwise X = const",
+    0.9995,
+    0.10393648,
+    0.1678567,
+    0.45604381
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.0005,
+    0.11886327,
+    0.17633051,
+    0.45604381
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.001,
+    0.18807319,
+    0.26653327,
+    0.64478201
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.0015,
+    0.24568029,
+    0.33393076,
+    0.78949581
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.002,
+    0.29672674,
+    0.38788007,
+    0.91140296
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.003,
+    0.38661576,
+    0.47047635,
+    1.1156767
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.998,
+    0.30710977,
+    0.44594512,
+    0.91140296
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.9985,
+    0.25428548,
+    0.38139817,
+    0.78949581
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.999,
+    0.19466705,
+    0.30134676,
+    0.64478201
+   ],
+   [
+    "sweep-following (parent ruling)",
+    0.9995,
+    0.12303468,
+    0.19615115,
+    0.45604381
+   ]
+  ],
+  "traces_failing_rule_on_surface_radius": []
+ },
+ "zebra": {
+  "views": 40,
+  "stripe_axes_per_view": 6,
+  "period": 0.1,
+  "joins": {
+   "upper": {
+    "crossings": 5901,
+    "max_phase_jump_periods": 1.4404216e-09,
+    "max_gradient_relative_difference": 1.0051972e-05,
+    "gradient_difference_where": {
+     "view": "+Y az30 el60",
+     "stripe_axis_deg": 30,
+     "xyz": [
+      149.99999,
+      0.0026351202,
+      240.0
+     ]
+    },
+    "max_stripe_direction_change_at_crossings_deg": 1.3553236e-05
+   },
+   "lower": {
+    "crossings": 5901,
+    "max_phase_jump_periods": 1.4404216e-09,
+    "max_gradient_relative_difference": 1.0051972e-05,
+    "gradient_difference_where": {
+     "view": "-Y az30 el60",
+     "stripe_axis_deg": 150,
+     "xyz": [
+      149.99999,
+      -0.0026351202,
+      240.0
+     ]
+    },
+    "max_stripe_direction_change_at_crossings_deg": 1.3553236e-05
+   },
+   "perimeter_leading_edge_branch": {
+    "crossings": 2876,
+    "max_phase_jump_periods": 9.2253099e-08,
+    "max_gradient_relative_difference": 0.0004220225,
+    "gradient_difference_where": {
+     "view": "+Y az-30 el30",
+     "stripe_axis_deg": 150,
+     "xyz": [
+      108.06552,
+      0.0,
+      245.0
+     ]
+    },
+    "max_stripe_direction_change_at_crossings_deg": 5.5626482e-05
+   },
+   "perimeter_trailing_edge_branch": {
+    "crossings": 3268,
+    "max_phase_jump_periods": 9.2260939e-08,
+    "max_gradient_relative_difference": 0.00042199503,
+    "gradient_difference_where": {
+     "view": "+Y az30 el30",
+     "stripe_axis_deg": 30,
+     "xyz": [
+      108.08031,
+      9.5242688e-20,
+      245.0
+     ]
+    },
+    "max_stripe_direction_change_at_crossings_deg": 5.204519e-05
+   }
+  },
+  "max_phase_jump_periods": 9.2260939e-08,
+  "max_phase_jump_where": {
+   "join": "perimeter_trailing_edge_branch",
+   "view": "+Y az60 el60",
+   "stripe_axis_deg": 30,
+   "xyz": [
+    108.08031,
+    9.5242688e-20,
+    245.0
+   ]
+  },
+  "max_gradient_relative_difference": 0.0004220225,
+  "max_gradient_difference_where": {
+   "join": "perimeter_leading_edge_branch",
+   "view": "+Y az-30 el30",
+   "stripe_axis_deg": 150,
+   "xyz": [
+    108.06552,
+    0.0,
+    245.0
+   ],
+   "gradient_per_mm": 0.019152061
+  },
+  "max_stripe_direction_change_at_crossings_deg": 5.5626482e-05,
+  "max_stripe_direction_change_where": {
+   "join": "perimeter_leading_edge_branch",
+   "view": "-Y az-30 el30",
+   "stripe_axis_deg": 120,
+   "xyz": [
+    108.05565,
+    0.0,
+    245.0
+   ]
+  },
+  "note": "phase p = (R . A)/period with R the view ray reflected about the exact CAD normal and A a stripe axis normal to the view; 40 views (+/-Y sides, azimuth -60..60, elevation -30..60) x 6 stripe axes; only points visible from the view on both faces count. Gradient from the exact shape operator. The perimeter join is sampled up to v = 1 - 1e-6 from the collapsed crown, where surface derivatives are undefined. Gradient difference is relative to the larger of the two gradient magnitudes (floored at 1e-3 stripe periods per mm)."
+ },
+ "pictures": {
+  "pictures": [
+   {
+    "file": "zebra_fin_full.png",
+    "view_ray": [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    "stripe_axis_deg_in_view": 75.0,
+    "stripe_period": 0.15,
+    "lowest_z_drawn_mm": 0.0,
+    "pixels": [
+     900,
+     1372
+    ]
+   },
+   {
+    "file": "zebra_tip_side.png",
+    "view_ray": [
+     0.0,
+     -1.0,
+     0.0
+    ],
+    "stripe_axis_deg_in_view": 75.0,
+    "stripe_period": 0.15,
+    "lowest_z_drawn_mm": 228.0,
+    "pixels": [
+     1600,
+     334
+    ]
+   },
+   {
+    "file": "zebra_tip_oblique.png",
+    "view_ray": [
+     -0.3502,
+     -0.7505,
+     -0.5604
+    ],
+    "stripe_axis_deg_in_view": 90.0,
+    "stripe_period": 0.15,
+    "lowest_z_drawn_mm": 230.0,
+    "pixels": [
+     1600,
+     632
+    ]
+   },
+   {
+    "file": "zebra_tip_oblique_axis30.png",
+    "view_ray": [
+     -0.3502,
+     -0.7505,
+     -0.5604
+    ],
+    "stripe_axis_deg_in_view": 30.0,
+    "stripe_period": 0.15,
+    "lowest_z_drawn_mm": 230.0,
+    "pixels": [
+     1600,
+     632
+    ]
+   },
+   {
+    "file": "zebra_tip_above.png",
+    "view_ray": [
+     -0.0,
+     -0.4512,
+     -0.8924
+    ],
+    "stripe_axis_deg_in_view": 90.0,
+    "stripe_period": 0.15,
+    "lowest_z_drawn_mm": 236.0,
+    "pixels": [
+     1600,
+     246
+    ]
+   }
+  ],
+  "note": "orthographic, exact CAD normals on dense parameter grids (no tessellation), no edge lines, back faces culled; camera and stripes fixed in verify_cap.py"
+ },
+ "summary": {
+  "closed_valid_single_solid": true,
+  "finished_height_mm": 245.0,
+  "max_join_tangent_angle_deg": 1.7075473e-06,
+  "max_join_separation_mm": 6.3554426e-14,
+  "max_join_relative_curvature_difference": 4.6539325e-06,
+  "smallest_cap_principal_radius_mm": 0.61243789,
+  "smallest_cap_radius_location": {
+   "u_band": [
+    0.98,
+    1.0
+   ],
+   "R_mm": 0.61243789,
+   "u": 1.0,
+   "v": 0.0080188757,
+   "xyz": [
+    149.99659,
+    6.2438617e-16,
+    240.07987
+   ],
+   "chord_fraction_sweep": 0.99999898,
+   "attachment_thickness_mm": 0.020592202,
+   "required_mm": 0.010296101
+  },
+  "smallest_rule_margin_R_over_required": 1.6757833,
+  "printable_rule_met_everywhere": true,
+  "smallest_section_surface_radius_mm": 0.61244459,
+  "zebra_max_phase_jump_periods": 9.2260939e-08,
+  "zebra_max_stripe_direction_change_deg": 5.5626482e-05,
+  "zebra_max_gradient_relative_difference": 0.0004220225
+ }
+}

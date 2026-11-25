@@ -1,0 +1,22 @@
+{
+ "cap_poles": [
+  89,
+  93
+ ],
+ "degree": [
+  5,
+  5
+ ],
+ "u_knots_distinct": 85,
+ "t_knots_distinct": 89,
+ "fit_samples": [
+  1320,
+  1039
+ ],
+ "fit_max_error_mm": 0.00035788050834734115,
+ "fit_rms_error_mm": 9.127247743831381e-06,
+ "fit_max_error_mm_u_le_0p99": 6.877848415216829e-05,
+ "eps": 0.25,
+ "brepcheck_valid_before_export": true,
+ "step_bytes": 816285
+}

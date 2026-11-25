@@ -1,0 +1,2920 @@
+{
+ "summary": {
+  "closed_valid_single_solid": true,
+  "parent_skin_preserved_max_mm": 8.898800447174168e-09,
+  "finished_height_mm": 280.0,
+  "outline_max_deviation_mm": 0.0007070476078624341,
+  "outline_max_deviation_where_lip_is_silhouette_mm": 0.0004916885146310851,
+  "attachment_join_max_separation_mm": 4.247592154744198e-09,
+  "attachment_join_max_normal_angle_deg": 1.4787793334710982e-06,
+  "attachment_join_max_curvature_difference_per_mm": 8.819258207006691e-07,
+  "printable_rule": {
+   "smallest_principal_radius_mm": 0.5765413123908262,
+   "at_xyz": [
+    146.58995901580917,
+    1.1008147532324416e-07,
+    260.0786523331419
+   ],
+   "attachment_thickness_there_mm": 4.0223559138797995,
+   "required_there_mm": 0.4,
+   "smallest_ratio_radius_over_required": 1.441353729851718,
+   "met": true,
+   "smallest_normal_cut_section_radius_mm": 0.5765425272659979,
+   "normal_cut": "normal to outline, TE branch h = 0.5",
+   "smallest_normal_section_radius_on_chord_cuts_mm": 0.5772110876343144,
+   "smallest_plane_section_radius_on_chord_cuts_mm": 0.028562387653419636,
+   "chord_cut_note": "constant-X cuts near the LE and TE cross the lip at a grazing angle (incidence 0.045 at X = 149.9150 (chord fraction 0.999)); their plane-section radius is the oblique slice of a ~0.6 mm round, not a surface radius"
+  },
+  "zebra_attachment_worst": {
+   "phase_mismatch_stripes": 1.1508137589544276e-06,
+   "gradient_abs_mismatch_stripes_per_mm": 0.0002900264334570471,
+   "gradient_rel_mismatch": 0.005185047780287333,
+   "gradient_angle_deg": 0.91070317477565,
+   "crossing_direction_change_deg": 0.0010034179773904946
+  }
+ },
+ "file": "runs/cap-radius/builds/fin40/blunt/wing.step",
+ "step_sha256": "37aab02295472f274e9002f25fb175c5caecdd5cf7c1667c59111ad5b69726fe",
+ "step_bytes": 1237099,
+ "units": "mm",
+ "reimport": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 6,
+  "face_names_and_types": {
+   "parent_up": "GeomAbs_BSplineSurface",
+   "parent_lo": "GeomAbs_BSplineSurface",
+   "root": "GeomAbs_Plane",
+   "te": "GeomAbs_Plane",
+   "cap_up": "GeomAbs_BSplineSurface",
+   "cap_lo": "GeomAbs_BSplineSurface"
+  },
+  "brepcheck_valid": true,
+  "brepcheck_exact_valid": true,
+  "free_edges_none": true,
+  "shells_closed": [
+   true
+  ],
+  "volume_mm3": 368288.0157373937,
+  "max_edge_tolerance_mm": 1e-07,
+  "bounding_box_mm": [
+   -1.0000000259514632e-07,
+   -9.601041766270622,
+   -1e-07,
+   160.00000010000002,
+   9.601041766270622,
+   280.0000001
+  ]
+ },
+ "parent_preserved": {
+  "parent_up_max_distance_to_parent_py_mm": 8.898800447174168e-09,
+  "parent_lo_max_distance_to_parent_py_mm": 8.898800447174168e-09,
+  "te_face_max_distance_to_parent_py_mm": 1.5926304656797925e-12,
+  "wing_vs_parent_step_skin_max_mm": {
+   "parent_up": 1.3504985793665164e-13,
+   "parent_lo": 1.3504985793665164e-13,
+   "te": 1.5926304656807372e-12
+  }
+ },
+ "locked_dimensions": {
+  "crown_point_mm": [
+   112.08333333333,
+   0.0,
+   280.0
+  ],
+  "z_min_mm": -1e-07,
+  "z_max_mm": 280.0000001,
+  "finished_height_from_crown_point_mm": 280.0,
+  "outline_max_deviation_section_to_outline_mm": 0.0007070476078624341,
+  "outline_max_deviation_at_xz": [
+   149.9462926059263,
+   241.28897745773025
+  ],
+  "outline_max_deviation_where_lip_forms_silhouette_mm (z > closure)": 0.0004916885146310851,
+  "outline_max_deviation_where_lip_forms_silhouette_at_xz": [
+   149.94495825942502,
+   241.31478910731556
+  ],
+  "outline_deviation_note": "below the trailing-edge face closure the silhouette is the flat trailing-edge face, which lies on the parent's trailing-edge line; the locked outline departs from that line by a h^3/2, at most 7.1e-4 mm at the closure height",
+  "outline_max_deviation_outline_to_section_mm": 0.0006449636048208322,
+  "outline_max_deviation_outline_to_section_at_xz": [
+   149.94727114343877,
+   241.25
+  ],
+  "te_face_closure_height_above_attachment_mm": 1.2889774608283773,
+  "outline_departure_from_te_line_at_closure_mm": 0.0007077104342840812,
+  "design_lip_offset_from_outline_above_closure_max_mm": 0.0007077104342556595,
+  "attachment_section": {
+   "LE_x": 65.0,
+   "TE_x": 150.0,
+   "chord_mm": 85.0
+  },
+  "te_face_width_mm_at_z": {
+   "0.0": 0.4,
+   "60.0": 0.400000000062,
+   "120.0": 0.400000000062,
+   "180.0": 0.400000000062,
+   "239.0": 0.400000000062,
+   "240.0": 0.400000000062
+  },
+  "root_chord_mm": 160.0
+ },
+ "joins": {
+  "parent_up__cap_up": {
+   "samples": 2397,
+   "max_separation_mm": 4.247592154744198e-09,
+   "at": 0.47550000000000003,
+   "max_normal_angle_deg": 1.4787793334710982e-06,
+   "angle_at": 0.00021461411978584036,
+   "max_abs_curvature_difference_per_mm": {
+    "along_join_II(e1,e1)": 9.180427129606983e-08,
+    "twist_II(e1,e2)": 7.277738328648198e-09,
+    "across_join_II(e2,e2)": 8.819258207006691e-07
+   },
+   "across_join_curvature_at_worst": {
+    "label": 0.9999965108987866,
+    "parent_up": -0.00020712807717747359,
+    "cap_up": -0.00020801000299817425
+   },
+   "max_projection_gap_mm": 4.240130577893555e-09,
+   "label": "parent chord parameter s (0 = LE, 1 = TE corner)"
+  },
+  "parent_lo__cap_lo": {
+   "samples": 2397,
+   "max_separation_mm": 4.247592154744198e-09,
+   "at": 0.47550000000000003,
+   "max_normal_angle_deg": 1.4787793334710982e-06,
+   "angle_at": 0.00021461411978584036,
+   "max_abs_curvature_difference_per_mm": {
+    "along_join_II(e1,e1)": 9.180427129606983e-08,
+    "twist_II(e1,e2)": 7.277738328648198e-09,
+    "across_join_II(e2,e2)": 8.819258207006691e-07
+   },
+   "across_join_curvature_at_worst": {
+    "label": 0.9999965108987866,
+    "parent_lo": -0.00020712807717747359,
+    "cap_lo": -0.00020801000299817425
+   },
+   "max_projection_gap_mm": 4.240130577893555e-09,
+   "label": "parent chord parameter s (0 = LE, 1 = TE corner)"
+  },
+  "cap_up__cap_lo (lip)": {
+   "samples": 2080,
+   "max_separation_mm": 2.895193261163553e-17,
+   "at": 10.388,
+   "max_normal_angle_deg": 1.7075472925031877e-06,
+   "angle_at": 0.309,
+   "max_abs_curvature_difference_per_mm": {
+    "along_join_II(e1,e1)": 0.0,
+    "twist_II(e1,e2)": 5.000918959884532e-16,
+    "across_join_II(e2,e2)": 0.0
+   },
+   "across_join_curvature_at_worst": {
+    "label": 0.001,
+    "cap_up": -1.5770218656036723,
+    "cap_lo": -1.5770218656036723
+   },
+   "max_projection_gap_mm": 1.7975467373757876e-13,
+   "label": "v on the cap patch (+10 for the trailing-edge branch); v = 1 is the crown"
+  },
+  "te_face_crease": {
+   "note": "angle between the cap skin and the flat trailing-edge face along their shared edge; the parent has the same corner along its whole span",
+   "parent_corner_angle_deg_at_z0_120_240": [
+    9.841690203821484,
+    12.767758481865972,
+    18.08902895083683
+   ],
+   "cap_corner_angle_deg_at_attachment": 18.089091105748913,
+   "cap_corner_angle_deg_near_closure (w, halfwidth, deg)": [
+    [
+     1.2889677051641777,
+     0.00036613113423597234,
+     0.625725278242164
+    ],
+    [
+     1.288971940783198,
+     0.0002754079923350944,
+     0.6253226641967314
+    ],
+    [
+     1.288974337422512,
+     0.00020716568786740926,
+     0.6250947434468305
+    ],
+    [
+     1.2889756935123713,
+     0.0001558330237607972,
+     0.6249657435722779
+    ],
+    [
+     1.2889764608283774,
+     0.00011721996112896227,
+     0.62489274037524
+    ]
+   ],
+   "closure_height_mm": 1.2889774608283773
+  }
+ },
+ "wrap_sections": {
+  "chord_cuts": [
+   {
+    "label": "X = 65.0425 (chord fraction 0.0005)",
+    "samples": 3127,
+    "min_normal_section_radius_mm": 0.6339301755961199,
+    "min_normal_section_at_xyz": [
+     65.04250000000002,
+     2.775556999291713e-17,
+     240.15691834271098
+    ],
+    "normal_section_required_mm": 0.22806575806118703,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.2614375149783389,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.1657331297776316,
+    "min_radius_at_xyz": [
+     65.04250000000002,
+     2.775556999291713e-17,
+     240.15691834271098
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.1657331297776316,
+    "lip_at_xyz": [
+     65.04250000000002,
+     2.775556999291713e-17,
+     240.15691834271098
+    ],
+    "attachment_thickness_used_mm": 0.45613151612229813,
+    "required_radius_mm": 0.22806575806114907,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.0005
+   },
+   {
+    "label": "X = 65.1700 (chord fraction 0.002)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.6328911611757262,
+    "min_normal_section_at_xyz": [
+     65.17,
+     0.0,
+     240.62739025154616
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.2617669245806039,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.16566997285521715,
+    "min_radius_at_xyz": [
+     65.17,
+     0.0,
+     240.62739025154616
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.16566997285521715,
+    "lip_at_xyz": [
+     65.17,
+     0.0,
+     240.62739025154616
+    ],
+    "attachment_thickness_used_mm": 0.9115784990882643,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.002
+   },
+   {
+    "label": "X = 65.8500 (chord fraction 0.01)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.628427655985211,
+    "min_normal_section_at_xyz": [
+     65.85,
+     0.0,
+     243.10227181410505
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.26987658021807687,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.16959790671175082,
+    "min_radius_at_xyz": [
+     65.85,
+     0.0,
+     243.10227181410505
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.16959790671175082,
+    "lip_at_xyz": [
+     65.85,
+     0.0,
+     243.10227181410505
+    ],
+    "attachment_thickness_used_mm": 2.030168465916061,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.01
+   },
+   {
+    "label": "X = 69.2500 (chord fraction 0.05)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.6237423097060355,
+    "min_normal_section_at_xyz": [
+     69.25,
+     0.0,
+     253.06594702345097
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.39724686250259855,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.24777967554084676,
+    "min_radius_at_xyz": [
+     69.25,
+     0.0,
+     253.06594702345097
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.24777967554084676,
+    "lip_at_xyz": [
+     69.25,
+     0.0,
+     253.06594702345097
+    ],
+    "attachment_thickness_used_mm": 4.446976500949831,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.05
+   },
+   {
+    "label": "X = 73.5000 (chord fraction 0.1)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.6362240463744987,
+    "min_normal_section_at_xyz": [
+     73.49999999999999,
+     0.0,
+     260.80399277664696
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.5673252089456153,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.36094594004563735,
+    "min_radius_at_xyz": [
+     73.49999999999999,
+     0.0,
+     260.80399277664696
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.36094594004563735,
+    "lip_at_xyz": [
+     73.49999999999999,
+     0.0,
+     260.80399277664696
+    ],
+    "attachment_thickness_used_mm": 6.121307049968985,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.1
+   },
+   {
+    "label": "X = 82.0000 (chord fraction 0.2)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.6725076932904326,
+    "min_normal_section_at_xyz": [
+     82.0,
+     0.0,
+     269.8533947202548
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.7851848446292212,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.5280428486682043,
+    "min_radius_at_xyz": [
+     82.0,
+     0.0,
+     269.8533947202548
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.5280428486682043,
+    "lip_at_xyz": [
+     82.0,
+     0.0,
+     269.8533947202548
+    ],
+    "attachment_thickness_used_mm": 8.161960548789732,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.2
+   },
+   {
+    "label": "X = 90.5000 (chord fraction 0.3)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.7008243350089387,
+    "min_normal_section_at_xyz": [
+     90.49999999999999,
+     0.0,
+     275.1279147941621
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9018702258901037,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6320526013237933,
+    "min_radius_at_xyz": [
+     90.49999999999999,
+     0.0,
+     275.1279147941621
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6320526013237933,
+    "lip_at_xyz": [
+     90.49999999999999,
+     0.0,
+     275.1279147941621
+    ],
+    "attachment_thickness_used_mm": 9.351021334592282,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.3
+   },
+   {
+    "label": "X = 99.0000 (chord fraction 0.4)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.7151349112703574,
+    "min_normal_section_at_xyz": [
+     98.99999999999999,
+     6.938042520150027e-18,
+     278.26634504961
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9657573998522345,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6906468324520189,
+    "min_radius_at_xyz": [
+     98.99999999999999,
+     6.938042520150027e-18,
+     278.26634504961
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6906468324520189,
+    "lip_at_xyz": [
+     98.99999999999999,
+     6.938042520150027e-18,
+     278.26634504961
+    ],
+    "attachment_thickness_used_mm": 9.997119585160519,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.4
+   },
+   {
+    "label": "X = 107.5000 (chord fraction 0.5)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.7152173217026057,
+    "min_normal_section_at_xyz": [
+     107.49999999999999,
+     0.0,
+     279.7883658919014
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9957782573722032,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.7121978582474352,
+    "min_radius_at_xyz": [
+     107.49999999999999,
+     0.0,
+     279.7883658919014
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.7121978582474352,
+    "lip_at_xyz": [
+     107.49999999999999,
+     0.0,
+     279.7883658919014
+    ],
+    "attachment_thickness_used_mm": 10.203920815059279,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.5
+   },
+   {
+    "label": "X = 111.8350 (chord fraction 0.551)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.7099978382830024,
+    "min_normal_section_at_xyz": [
+     111.835,
+     0.0,
+     279.9993746163384
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.999987323392234,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.7099888379188918,
+    "min_radius_at_xyz": [
+     111.835,
+     0.0,
+     279.9993746163384
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.7099888379188918,
+    "lip_at_xyz": [
+     111.835,
+     0.0,
+     279.9993746163384
+    ],
+    "attachment_thickness_used_mm": 10.151144164083181,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.551
+   },
+   {
+    "label": "X = 116.0000 (chord fraction 0.6)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.7017322026617109,
+    "min_normal_section_at_xyz": [
+     116.0,
+     1.3863912568748957e-18,
+     279.8425036371743
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9967349646180936,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6994410221913973,
+    "min_radius_at_xyz": [
+     116.0,
+     1.3863912568748957e-18,
+     279.8425036371743
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6994410221913973,
+    "lip_at_xyz": [
+     116.0,
+     1.3863912568748957e-18,
+     279.8425036371743
+    ],
+    "attachment_thickness_used_mm": 9.998719918069513,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.6
+   },
+   {
+    "label": "X = 124.5000 (chord fraction 0.7)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.6752088026386608,
+    "min_normal_section_at_xyz": [
+     124.5,
+     -1.4020523460196129e-18,
+     278.3424952243463
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9631799921442374,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6503476092212253,
+    "min_radius_at_xyz": [
+     124.5,
+     -1.4020523460196129e-18,
+     278.3424952243463
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6503476092212253,
+    "lip_at_xyz": [
+     124.5,
+     -1.4020523460196129e-18,
+     278.3424952243463
+    ],
+    "attachment_thickness_used_mm": 9.354442794736629,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.7
+   },
+   {
+    "label": "X = 133.0000 (chord fraction 0.8)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.636661254247222,
+    "min_normal_section_at_xyz": [
+     133.00000000000003,
+     2.647740176493421e-18,
+     274.88170992656035
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.8737597326338126,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.5562889672893604,
+    "min_radius_at_xyz": [
+     133.00000000000003,
+     2.647740176493421e-18,
+     274.88170992656035
+    ],
+    "min_radius_face": "cap_lo",
+    "lip_radius_mm": 0.5562889672893604,
+    "lip_at_xyz": [
+     133.00000000000003,
+     2.647740176493421e-18,
+     274.88170992656035
+    ],
+    "attachment_thickness_used_mm": 8.167839371584144,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.8
+   },
+   {
+    "label": "X = 141.5000 (chord fraction 0.9)",
+    "samples": 3125,
+    "min_normal_section_radius_mm": 0.5922155050901322,
+    "min_normal_section_at_xyz": [
+     141.5,
+     -3.594852407280495e-18,
+     268.1256711546445
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.6632884945716964,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 2293.3273965736585,
+        "distance_to_lip_mm": 28.26497096080532
+       }
+      ]
+     },
+     "-Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 2293.3273940629906,
+        "distance_to_lip_mm": 28.2649709608
+       }
+      ]
+     }
+    },
+    "min_radius_mm": 0.39280973083325055,
+    "min_radius_at_xyz": [
+     141.5,
+     -3.594852407280495e-18,
+     268.1256711546445
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.39280973083325055,
+    "lip_at_xyz": [
+     141.5,
+     -3.594852407280495e-18,
+     268.1256711546445
+    ],
+    "attachment_thickness_used_mm": 6.131753419699789,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.9
+   },
+   {
+    "label": "X = 145.7500 (chord fraction 0.95)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.5772110876343144,
+    "min_normal_section_at_xyz": [
+     145.75000000000003,
+     8.352547027794327e-18,
+     261.8748110796977
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.45260151074233024,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 555.4395931480975,
+        "distance_to_lip_mm": 21.920954154214733
+       },
+       {
+        "radius_mm": 1173.8879000081092,
+        "distance_to_lip_mm": 21.10405388099874
+       }
+      ]
+     },
+     "-Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 555.4395937120066,
+        "distance_to_lip_mm": 21.920954154212907
+       },
+       {
+        "radius_mm": 1173.8879007405494,
+        "distance_to_lip_mm": 21.10405388099241
+       }
+      ]
+     }
+    },
+    "min_radius_mm": 0.26124661028051427,
+    "min_radius_at_xyz": [
+     145.75000000000003,
+     8.352547027794327e-18,
+     261.8748110796977
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.26124661028051427,
+    "lip_at_xyz": [
+     145.75000000000003,
+     8.352547027794327e-18,
+     261.8748110796977
+    ],
+    "attachment_thickness_used_mm": 4.463137909587835,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [
+     10.818687279682774,
+     11.353385678699853,
+     53.0713532477882,
+     53.62090438278172
+    ],
+    "n_reversals": 4,
+    "most_concave_curvature_per_mm": -0.000851870097641429,
+    "chord_fraction": 0.95
+   },
+   {
+    "label": "X = 148.3000 (chord fraction 0.98)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.5828765413704153,
+    "min_normal_section_at_xyz": [
+     148.3,
+     1.102962998466024e-17,
+     255.00726215005164
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.24734241743989796,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 101.82816311392948,
+        "distance_to_lip_mm": 14.898199982068167
+       },
+       {
+        "radius_mm": 123.56910120065093,
+        "distance_to_lip_mm": 14.052621796093609
+       }
+      ]
+     },
+     "-Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 101.8281631250331,
+        "distance_to_lip_mm": 14.898199982071418
+       },
+       {
+        "radius_mm": 123.56910119103664,
+        "distance_to_lip_mm": 14.052621796105058
+       }
+      ]
+     }
+    },
+    "min_radius_mm": 0.14417009281156523,
+    "min_radius_at_xyz": [
+     148.3,
+     1.102962998466024e-17,
+     255.00726215005164
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.14417009281156523,
+    "lip_at_xyz": [
+     148.3,
+     1.102962998466024e-17,
+     255.00726215005164
+    ],
+    "attachment_thickness_used_mm": 2.883320308255745,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [
+     10.7211029624104,
+     11.410093594985657,
+     38.920299384959954,
+     39.60929000660493
+    ],
+    "n_reversals": 4,
+    "most_concave_curvature_per_mm": -0.008092637968241022,
+    "chord_fraction": 0.98
+   },
+   {
+    "label": "X = 149.1500 (chord fraction 0.99)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.5972566303567567,
+    "min_normal_section_at_xyz": [
+     149.15,
+     1.5388989426122431e-18,
+     250.77606012570712
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.15058417408448957,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 39.59308033014807,
+        "distance_to_lip_mm": 10.590929188239116
+       },
+       {
+        "radius_mm": 44.89697225362716,
+        "distance_to_lip_mm": 9.73094498828192
+       }
+      ]
+     },
+     "-Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 39.593080328971524,
+        "distance_to_lip_mm": 10.59092918823869
+       },
+       {
+        "radius_mm": 44.896972249341566,
+        "distance_to_lip_mm": 9.730944988280083
+       }
+      ]
+     }
+    },
+    "min_radius_mm": 0.08993739639875747,
+    "min_radius_at_xyz": [
+     149.15,
+     1.5388989426122431e-18,
+     250.77606012570712
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.08993739639875747,
+    "lip_at_xyz": [
+     149.15,
+     1.5388989426122431e-18,
+     250.77606012570712
+    ],
+    "attachment_thickness_used_mm": 2.0684254881430943,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [
+     10.723672900272977,
+     11.42156732688306,
+     30.29585766809569,
+     30.993860558440126
+    ],
+    "n_reversals": 4,
+    "most_concave_curvature_per_mm": -0.022273216876326565,
+    "chord_fraction": 0.99
+   },
+   {
+    "label": "X = 149.5750 (chord fraction 0.995)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.6113753050631536,
+    "min_normal_section_at_xyz": [
+     149.575,
+     -2.5972614277581555e-18,
+     247.24540024910166
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.09186140859690883,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 19.4895410446235,
+        "distance_to_lip_mm": 7.004621711588028
+       },
+       {
+        "radius_mm": 21.90945317715516,
+        "distance_to_lip_mm": 6.14047673058054
+       }
+      ]
+     },
+     "-Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 19.489541044623437,
+        "distance_to_lip_mm": 7.004621711588108
+       },
+       {
+        "radius_mm": 21.909453175347924,
+        "distance_to_lip_mm": 6.140476730580655
+       }
+      ]
+     }
+    },
+    "min_radius_mm": 0.05616179670446614,
+    "min_radius_at_xyz": [
+     149.575,
+     -2.5972614277581555e-18,
+     247.24540024910166
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.05616179670446614,
+    "lip_at_xyz": [
+     149.575,
+     -2.5972614277581555e-18,
+     247.24540024910166
+    ],
+    "attachment_thickness_used_mm": 1.4931831769746473,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [
+     10.733739994900418,
+     11.417374835661393,
+     23.130089336513056,
+     23.81913210506794
+    ],
+    "n_reversals": 4,
+    "most_concave_curvature_per_mm": -0.04564239883107534,
+    "chord_fraction": 0.995
+   },
+   {
+    "label": "X = 149.8300 (chord fraction 0.998)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.6234703838462983,
+    "min_normal_section_at_xyz": [
+     149.82999999999998,
+     4.722032344601611e-19,
+     243.68619293376392
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.05487942384515129,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 9.44103280022378,
+        "distance_to_lip_mm": 3.388000766973276
+       },
+       {
+        "radius_mm": 11.315876295462877,
+        "distance_to_lip_mm": 2.5255218880291253
+       }
+      ]
+     },
+     "-Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 9.441032799678531,
+        "distance_to_lip_mm": 3.388000766972633
+       },
+       {
+        "radius_mm": 11.315876296476144,
+        "distance_to_lip_mm": 2.525521888026935
+       }
+      ]
+     }
+    },
+    "min_radius_mm": 0.034215695450000166,
+    "min_radius_at_xyz": [
+     149.82999999999998,
+     4.722032344601611e-19,
+     243.68619293376392
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.034215695450000166,
+    "lip_at_xyz": [
+     149.82999999999998,
+     4.722032344601611e-19,
+     243.68619293376392
+    ],
+    "attachment_thickness_used_mm": 0.9951559475781289,
+    "required_radius_mm": 0.4,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [
+     10.780384942324602,
+     11.411628764353132,
+     15.950634524462933,
+     16.581863618087567
+    ],
+    "n_reversals": 4,
+    "most_concave_curvature_per_mm": -0.08837141498276647,
+    "chord_fraction": 0.998
+   },
+   {
+    "label": "X = 149.9150 (chord fraction 0.999)",
+    "samples": 3123,
+    "min_normal_section_radius_mm": 0.6279937439217064,
+    "min_normal_section_at_xyz": [
+     149.91500000000005,
+     3.6840477199613885e-18,
+     241.97871138556636
+    ],
+    "normal_section_required_mm": 0.37933620971370546,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.0454819620893876,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 5.810130177048297,
+        "distance_to_lip_mm": 1.622354604759785
+       },
+       {
+        "radius_mm": 12.457410469183323,
+        "distance_to_lip_mm": 0.7837535083005776
+       }
+      ]
+     },
+     "-Y": {
+      "interior_radius_minima": [
+       {
+        "radius_mm": 5.810130177043095,
+        "distance_to_lip_mm": 1.6223546047594564
+       },
+       {
+        "radius_mm": 12.457410467240685,
+        "distance_to_lip_mm": 0.7837535082997196
+       }
+      ]
+     }
+    },
+    "min_radius_mm": 0.028562387653419636,
+    "min_radius_at_xyz": [
+     149.91500000000005,
+     3.6840477199613885e-18,
+     241.97871138556636
+    ],
+    "min_radius_face": "cap_lo",
+    "lip_radius_mm": 0.028562387653419636,
+    "lip_at_xyz": [
+     149.91500000000005,
+     3.6840477199613885e-18,
+     241.97871138556636
+    ],
+    "attachment_thickness_used_mm": 0.7586724194275057,
+    "required_radius_mm": 0.37933620971375287,
+    "meets_rule": false,
+    "curvature_reversals_at_arclength_mm": [
+     10.924219895571248,
+     11.346348452258852,
+     12.585926392791604,
+     13.008067214544447
+    ],
+    "n_reversals": 4,
+    "most_concave_curvature_per_mm": -0.08027350488528134,
+    "chord_fraction": 0.999
+   },
+   {
+    "label": "X = 149.9575 (chord fraction 0.9995)",
+    "samples": 4624,
+    "min_normal_section_radius_mm": 3.2616144220680763,
+    "min_normal_section_at_xyz": [
+     149.95750045896034,
+     -0.08490871843998235,
+     241.01958606200785
+    ],
+    "normal_section_required_mm": 0.30327121361959686,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.15226115476975505,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.4966171783177813,
+    "min_radius_at_xyz": [
+     149.95750045896034,
+     0.08490871843998012,
+     241.01958606200787
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.4966171783177813,
+    "lip_at_xyz": [
+     149.95750045896034,
+     0.08490871843998012,
+     241.01958606200787
+    ],
+    "attachment_thickness_used_mm": 0.6065442770317775,
+    "required_radius_mm": 0.30327213851588875,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.9995
+   },
+   {
+    "label": "X = 149.9915 (chord fraction 0.9999)",
+    "samples": 4624,
+    "min_normal_section_radius_mm": 9.361515738593281,
+    "min_normal_section_at_xyz": [
+     149.99156615449073,
+     0.19802597038612552,
+     240.2022068964551
+    ],
+    "normal_section_required_mm": 0.2243168156123959,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.3113687610195971,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 2.9148835567912483,
+    "min_radius_at_xyz": [
+     149.99156615449073,
+     0.19802597038612552,
+     240.2022068964551
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 2.9148835567915605,
+    "lip_at_xyz": [
+     149.99156615449073,
+     -0.19802597038612324,
+     240.202206896455
+    ],
+    "attachment_thickness_used_mm": 0.4489942520790542,
+    "required_radius_mm": 0.2244971260395271,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0,
+    "chord_fraction": 0.9999
+   }
+  ],
+  "normal_cuts": [
+   {
+    "label": "normal to outline, LE branch h = 0.002",
+    "samples": 3403,
+    "min_normal_section_radius_mm": 0.6341065247241268,
+    "min_normal_section_at_xyz": [
+     65.02166683661831,
+     2.7755570864677744e-17,
+     240.07999999999956
+    ],
+    "normal_section_required_mm": 0.1628608119627489,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0000000000000002,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.634106524724127,
+    "min_radius_at_xyz": [
+     65.02166683661831,
+     2.7755570864677744e-17,
+     240.07999999999956
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.634106524724127,
+    "lip_at_xyz": [
+     65.02166683661831,
+     2.7755570864677744e-17,
+     240.07999999999956
+    ],
+    "attachment_thickness_used_mm": 0.3257216239254978,
+    "required_radius_mm": 0.1628608119627489,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.01",
+    "samples": 3361,
+    "min_normal_section_radius_mm": 0.6333849465644682,
+    "min_normal_section_at_xyz": [
+     65.10835455208897,
+     0.0,
+     240.39999999999992
+    ],
+    "normal_section_required_mm": 0.3640163401900368,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9999999999999999,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6333849465644682,
+    "min_radius_at_xyz": [
+     65.10835455208897,
+     0.0,
+     240.39999999999992
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6333849465644682,
+    "lip_at_xyz": [
+     65.10835455208897,
+     0.0,
+     240.39999999999992
+    ],
+    "attachment_thickness_used_mm": 0.7280326803800736,
+    "required_radius_mm": 0.3640163401900368,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.02",
+    "samples": 3313,
+    "min_normal_section_radius_mm": 0.63252655324759,
+    "min_normal_section_at_xyz": [
+     65.216836167006,
+     0.0,
+     240.79999999999993
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.63252655324759,
+    "min_radius_at_xyz": [
+     65.216836167006,
+     0.0,
+     240.79999999999993
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.63252655324759,
+    "lip_at_xyz": [
+     65.216836167006,
+     0.0,
+     240.79999999999993
+    ],
+    "attachment_thickness_used_mm": 1.0292374864309572,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.05",
+    "samples": 3165,
+    "min_normal_section_radius_mm": 0.6302212045286031,
+    "min_normal_section_at_xyz": [
+     65.54430346782944,
+     -1.1102226394940562e-16,
+     241.99999999999724
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6302212045286031,
+    "min_radius_at_xyz": [
+     65.54430346782944,
+     -1.1102226394940562e-16,
+     241.99999999999724
+    ],
+    "min_radius_face": "cap_lo",
+    "lip_radius_mm": 0.6302212045286031,
+    "lip_at_xyz": [
+     65.54430346782944,
+     -1.1102226394940562e-16,
+     241.99999999999724
+    ],
+    "attachment_thickness_used_mm": 1.6275347654834376,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.1",
+    "samples": 2505,
+    "min_normal_section_radius_mm": 0.6271744760290885,
+    "min_normal_section_at_xyz": [
+     66.1042760704516,
+     0.0,
+     243.99999999996436
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9999999999999999,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6271744760290885,
+    "min_radius_at_xyz": [
+     66.1042760704516,
+     0.0,
+     243.99999999996436
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6271744760290885,
+    "lip_at_xyz": [
+     66.1042760704516,
+     0.0,
+     243.99999999996436
+    ],
+    "attachment_thickness_used_mm": 2.3104924499745243,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.2",
+    "samples": 1469,
+    "min_normal_section_radius_mm": 0.6236085229301914,
+    "min_normal_section_at_xyz": [
+     67.3319979932854,
+     0.0,
+     248.00000000000614
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6236085229301914,
+    "min_radius_at_xyz": [
+     67.3319979932854,
+     0.0,
+     248.00000000000614
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6236085229301914,
+    "lip_at_xyz": [
+     67.3319979932854,
+     0.0,
+     248.00000000000614
+    ],
+    "attachment_thickness_used_mm": 3.3329582438283274,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.3",
+    "samples": 1181,
+    "min_normal_section_radius_mm": 0.6232502246069211,
+    "min_normal_section_at_xyz": [
+     68.80219029062074,
+     5.5511151207512793e-17,
+     251.99999999938507
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6232502246069211,
+    "min_radius_at_xyz": [
+     68.80219029062074,
+     5.5511151207512793e-17,
+     251.99999999938507
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6232502246069211,
+    "lip_at_xyz": [
+     68.80219029062074,
+     5.5511151207512793e-17,
+     251.99999999938507
+    ],
+    "attachment_thickness_used_mm": 4.2178166898295615,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.4",
+    "samples": 1075,
+    "min_normal_section_radius_mm": 0.6265375982790787,
+    "min_normal_section_at_xyz": [
+     70.63449614179318,
+     2.7755575612506235e-17,
+     255.9999999998495
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6265375982790787,
+    "min_radius_at_xyz": [
+     70.63449614179318,
+     2.7755575612506235e-17,
+     255.9999999998495
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6265375982790787,
+    "lip_at_xyz": [
+     70.63449614179318,
+     2.7755575612506235e-17,
+     255.9999999998495
+    ],
+    "attachment_thickness_used_mm": 5.0762624564283065,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.5",
+    "samples": 1033,
+    "min_normal_section_radius_mm": 0.6341333688891115,
+    "min_normal_section_at_xyz": [
+     72.95972676557004,
+     -2.775557561594043e-17,
+     260.0000000000265
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0000000000000002,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6341333688891118,
+    "min_radius_at_xyz": [
+     72.95972676557004,
+     -2.775557561594043e-17,
+     260.0000000000265
+    ],
+    "min_radius_face": "cap_lo",
+    "lip_radius_mm": 0.6341333688891118,
+    "lip_at_xyz": [
+     72.95972676557004,
+     -2.775557561594043e-17,
+     260.0000000000265
+    ],
+    "attachment_thickness_used_mm": 5.944445108570286,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.6",
+    "samples": 1013,
+    "min_normal_section_radius_mm": 0.6464450133674787,
+    "min_normal_section_at_xyz": [
+     75.93928738726642,
+     0.0,
+     263.99999999992116
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6464450133674787,
+    "min_radius_at_xyz": [
+     75.93928738726642,
+     0.0,
+     263.99999999992116
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6464450133674787,
+    "lip_at_xyz": [
+     75.93928738726642,
+     0.0,
+     263.99999999992116
+    ],
+    "attachment_thickness_used_mm": 6.832749472640622,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.7",
+    "samples": 999,
+    "min_normal_section_radius_mm": 0.6633496865897595,
+    "min_normal_section_at_xyz": [
+     79.80591003657948,
+     0.0,
+     267.99999999976313
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9999999999999999,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6633496865897593,
+    "min_radius_at_xyz": [
+     79.80591003657948,
+     0.0,
+     267.99999999976313
+    ],
+    "min_radius_face": "cap_lo",
+    "lip_radius_mm": 0.6633496865897593,
+    "lip_at_xyz": [
+     79.80591003657948,
+     0.0,
+     267.99999999976313
+    ],
+    "attachment_thickness_used_mm": 7.738916145013284,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.8",
+    "samples": 985,
+    "min_normal_section_radius_mm": 0.6838536615201839,
+    "min_normal_section_at_xyz": [
+     84.97029287242427,
+     1.387778775760222e-17,
+     271.999999999067
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6838536615201839,
+    "min_radius_at_xyz": [
+     84.97029287242427,
+     1.387778775760222e-17,
+     271.999999999067
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6838536615201839,
+    "lip_at_xyz": [
+     84.97029287242427,
+     1.387778775760222e-17,
+     271.999999999067
+    ],
+    "attachment_thickness_used_mm": 8.651042678895694,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.9",
+    "samples": 967,
+    "min_normal_section_radius_mm": 0.7053427479438132,
+    "min_normal_section_at_xyz": [
+     92.42873775132831,
+     2.7755575615513737e-17,
+     275.99999999662356
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.7053427479438132,
+    "min_radius_at_xyz": [
+     92.42873775132831,
+     2.7755575615513737e-17,
+     275.99999999662356
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.7053427479438132,
+    "lip_at_xyz": [
+     92.42873775132831,
+     2.7755575615513737e-17,
+     275.99999999662356
+    ],
+    "attachment_thickness_used_mm": 9.539821638213608,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.95",
+    "samples": 957,
+    "min_normal_section_radius_mm": 0.7142486364757438,
+    "min_normal_section_at_xyz": [
+     98.04607339122488,
+     0.0,
+     277.9999999952393
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.7142486364757438,
+    "min_radius_at_xyz": [
+     98.04607339122488,
+     0.0,
+     277.9999999952393
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.7142486364757438,
+    "lip_at_xyz": [
+     98.04607339122488,
+     0.0,
+     277.9999999952393
+    ],
+    "attachment_thickness_used_mm": 9.947567784236195,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, LE branch h = 0.99",
+    "samples": 949,
+    "min_normal_section_radius_mm": 0.716316768974583,
+    "min_normal_section_at_xyz": [
+     105.77941171431064,
+     0.0,
+     279.60000000201677
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9999999999999999,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.7163167689745829,
+    "min_radius_at_xyz": [
+     105.77941171431064,
+     0.0,
+     279.60000000201677
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.7163167689745829,
+    "lip_at_xyz": [
+     105.77941171431064,
+     0.0,
+     279.60000000201677
+    ],
+    "attachment_thickness_used_mm": 10.195402925846828,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.002",
+    "samples": 4862,
+    "min_normal_section_radius_mm": 0.7130788789050301,
+    "min_normal_section_at_xyz": [
+     149.9961685133205,
+     -0.20138094925551328,
+     240.07997924751618
+    ],
+    "normal_section_required_mm": 0.21139471433077792,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9999987490562371,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.713077986883454,
+    "min_radius_at_xyz": [
+     149.9961685133205,
+     -0.20138094925551328,
+     240.07997924751618
+    ],
+    "min_radius_face": "cap_lo",
+    "lip_radius_mm": 0.713077986883454,
+    "lip_at_xyz": [
+     149.9961685133205,
+     -0.20138094925551328,
+     240.07997924751618
+    ],
+    "attachment_thickness_used_mm": 0.42278942866155583,
+    "required_radius_mm": 0.21139471433077792,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.01",
+    "samples": 4596,
+    "min_normal_section_radius_mm": 0.7073425886826877,
+    "min_normal_section_at_xyz": [
+     149.9813066719132,
+     -0.1938796057462806,
+     240.39991612084418
+    ],
+    "normal_section_required_mm": 0.25073253633019493,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9997195965542945,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.7071442473835269,
+    "min_radius_at_xyz": [
+     149.9813066719132,
+     -0.1938796057462806,
+     240.39991612084418
+    ],
+    "min_radius_face": "cap_lo",
+    "lip_radius_mm": 0.7071442473835269,
+    "lip_at_xyz": [
+     149.9813066719132,
+     -0.1938796057462806,
+     240.39991612084418
+    ],
+    "attachment_thickness_used_mm": 0.5014650726603899,
+    "required_radius_mm": 0.25073253633019493,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.02",
+    "samples": 3440,
+    "min_normal_section_radius_mm": 0.6730435611344063,
+    "min_normal_section_at_xyz": [
+     149.9638251876326,
+     0.14432076743573263,
+     240.799886970104
+    ],
+    "normal_section_required_mm": 0.29024490143855697,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9992545471096436,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6725418388664229,
+    "min_radius_at_xyz": [
+     149.9638251876326,
+     0.14432076743573263,
+     240.799886970104
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6725418388664229,
+    "lip_at_xyz": [
+     149.9638251876326,
+     0.14432076743573263,
+     240.799886970104
+    ],
+    "attachment_thickness_used_mm": 0.5804898028771139,
+    "required_radius_mm": 0.29024490143855697,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.05",
+    "samples": 861,
+    "min_normal_section_radius_mm": 0.627941802848759,
+    "min_normal_section_at_xyz": [
+     149.91402986551694,
+     -3.721495111689193e-18,
+     242.00000000000017
+    ],
+    "normal_section_required_mm": 0.3808944205832914,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9999999999999999,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6279418028487589,
+    "min_radius_at_xyz": [
+     149.91402986551694,
+     -3.721495111689193e-18,
+     242.00000000000017
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6279418028487589,
+    "lip_at_xyz": [
+     149.91402986551694,
+     -3.721495111689193e-18,
+     242.00000000000017
+    ],
+    "attachment_thickness_used_mm": 0.7617888411665829,
+    "required_radius_mm": 0.3808944205832914,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.1",
+    "samples": 545,
+    "min_normal_section_radius_mm": 0.6225501025618856,
+    "min_normal_section_at_xyz": [
+     149.81239059619887,
+     -4.7895218523421165e-19,
+     243.99999999999193
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6225501025618856,
+    "min_radius_at_xyz": [
+     149.81239059619887,
+     -4.7895218523421165e-19,
+     243.99999999999193
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6225501025618856,
+    "lip_at_xyz": [
+     149.81239059619887,
+     -4.7895218523421165e-19,
+     243.99999999999193
+    ],
+    "attachment_thickness_used_mm": 1.037378971295372,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.2",
+    "samples": 489,
+    "min_normal_section_radius_mm": 0.6084278295899851,
+    "min_normal_section_at_xyz": [
+     149.50133534004607,
+     -3.1183122844419098e-18,
+     248.0000000000017
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0000000000000002,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6084278295899852,
+    "min_radius_at_xyz": [
+     149.50133534004607,
+     -3.1183122844419098e-18,
+     248.0000000000017
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6084278295899852,
+    "lip_at_xyz": [
+     149.50133534004607,
+     -3.1183122844419098e-18,
+     248.0000000000017
+    ],
+    "attachment_thickness_used_mm": 1.6081667591152826,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.3",
+    "samples": 557,
+    "min_normal_section_radius_mm": 0.5925351678714099,
+    "min_normal_section_at_xyz": [
+     148.94780970917864,
+     5.140058700137277e-18,
+     251.99999999969492
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.5925351678714099,
+    "min_radius_at_xyz": [
+     148.94780970917864,
+     5.140058700137277e-18,
+     251.99999999969492
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.5925351678714099,
+    "lip_at_xyz": [
+     148.94780970917864,
+     5.140058700137277e-18,
+     251.99999999969492
+    ],
+    "attachment_thickness_used_mm": 2.290365441685311,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.4",
+    "samples": 649,
+    "min_normal_section_radius_mm": 0.5805656528886737,
+    "min_normal_section_at_xyz": [
+     148.03217052481855,
+     8.302237270757534e-18,
+     255.99999999990098
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.5805656528886737,
+    "min_radius_at_xyz": [
+     148.03217052481855,
+     8.302237270757534e-18,
+     255.99999999990098
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.5805656528886737,
+    "lip_at_xyz": [
+     148.03217052481855,
+     8.302237270757534e-18,
+     255.99999999990098
+    ],
+    "attachment_thickness_used_mm": 3.093176593262759,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.5",
+    "samples": 741,
+    "min_normal_section_radius_mm": 0.5765425272659979,
+    "min_normal_section_at_xyz": [
+     146.6236065677659,
+     1.7130150508998764e-18,
+     260.0000000000184
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.5765425272659979,
+    "min_radius_at_xyz": [
+     146.6236065677659,
+     1.7130150508998764e-18,
+     260.0000000000184
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.5765425272659979,
+    "lip_at_xyz": [
+     146.6236065677659,
+     1.7130150508998764e-18,
+     260.0000000000184
+    ],
+    "attachment_thickness_used_mm": 4.0034765893931,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.6",
+    "samples": 823,
+    "min_normal_section_radius_mm": 0.5799226825117032,
+    "min_normal_section_at_xyz": [
+     144.56071261270847,
+     4.810807455348853e-18,
+     263.9999999999272
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.5799226825117032,
+    "min_radius_at_xyz": [
+     144.56071261270847,
+     4.810807455348853e-18,
+     263.9999999999272
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.5799226825117032,
+    "lip_at_xyz": [
+     144.56071261270847,
+     4.810807455348853e-18,
+     263.9999999999272
+    ],
+    "attachment_thickness_used_mm": 5.007630935497424,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.7",
+    "samples": 887,
+    "min_normal_section_radius_mm": 0.5916896851512888,
+    "min_normal_section_at_xyz": [
+     141.61075663003095,
+     -3.6843450884764e-18,
+     267.99999999976285
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.5916896851512888,
+    "min_radius_at_xyz": [
+     141.61075663003095,
+     -3.6843450884764e-18,
+     267.99999999976285
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.5916896851512888,
+    "lip_at_xyz": [
+     141.61075663003095,
+     -3.6843450884764e-18,
+     267.99999999976285
+    ],
+    "attachment_thickness_used_mm": 6.096235751147756,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.8",
+    "samples": 929,
+    "min_normal_section_radius_mm": 0.6136035833313046,
+    "min_normal_section_at_xyz": [
+     137.36304046075912,
+     -3.6570089376119326e-19,
+     271.999999999016
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6136035833313046,
+    "min_radius_at_xyz": [
+     137.36304046075912,
+     -3.6570089376119326e-19,
+     271.999999999016
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6136035833313046,
+    "lip_at_xyz": [
+     137.36304046075912,
+     -3.6570089376119326e-19,
+     271.999999999016
+    ],
+    "attachment_thickness_used_mm": 7.266943270298311,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.9",
+    "samples": 949,
+    "min_normal_section_radius_mm": 0.6475385847847487,
+    "min_normal_section_at_xyz": [
+     130.8212622484027,
+     2.4815552621365236e-18,
+     275.9999999963832
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6475385847847487,
+    "min_radius_at_xyz": [
+     130.8212622484027,
+     2.4815552621365236e-18,
+     275.9999999963832
+    ],
+    "min_radius_face": "cap_lo",
+    "lip_radius_mm": 0.6475385847847487,
+    "lip_at_xyz": [
+     130.8212622484027,
+     2.4815552621365236e-18,
+     275.9999999963832
+    ],
+    "attachment_thickness_used_mm": 8.534420749524832,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.95",
+    "samples": 951,
+    "min_normal_section_radius_mm": 0.6706032066390478,
+    "min_normal_section_at_xyz": [
+     125.66225994192241,
+     -2.4202373501407955e-18,
+     277.9999999949564
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9999999999999999,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6706032066390477,
+    "min_radius_at_xyz": [
+     125.66225994192241,
+     -2.4202373501407955e-18,
+     277.9999999949564
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6706032066390477,
+    "lip_at_xyz": [
+     125.66225994192241,
+     -2.4202373501407955e-18,
+     277.9999999949564
+    ],
+    "attachment_thickness_used_mm": 9.227882154558415,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "normal to outline, TE branch h = 0.99",
+    "samples": 949,
+    "min_normal_section_radius_mm": 0.6958340267920458,
+    "min_normal_section_at_xyz": [
+     118.29558828570443,
+     1.6962424005533413e-18,
+     279.60000000207356
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 1.0,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.6958340267920458,
+    "min_radius_at_xyz": [
+     118.29558828570443,
+     1.6962424005533413e-18,
+     279.60000000207356
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.6958340267920458,
+    "lip_at_xyz": [
+     118.29558828570443,
+     1.6962424005533413e-18,
+     279.60000000207356
+    ],
+    "attachment_thickness_used_mm": 9.87052910763844,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   },
+   {
+    "label": "crown, X = 112.0833",
+    "samples": 3062,
+    "min_normal_section_radius_mm": 0.7111407154655841,
+    "min_normal_section_at_xyz": [
+     112.08333333000004,
+     0.027369431055440204,
+     279.99947216819845
+    ],
+    "normal_section_required_mm": 0.4,
+    "normal_section_meets_rule": true,
+    "cut_incidence_at_min": 0.9999999999992479,
+    "progression": {
+     "+Y": {
+      "interior_radius_minima": []
+     },
+     "-Y": {
+      "interior_radius_minima": []
+     }
+    },
+    "min_radius_mm": 0.7111407154650493,
+    "min_radius_at_xyz": [
+     112.08333333000004,
+     0.027369431055440204,
+     279.99947216819845
+    ],
+    "min_radius_face": "cap_up",
+    "lip_radius_mm": 0.7111407154650493,
+    "lip_at_xyz": [
+     112.08333333000004,
+     0.027369431055440204,
+     279.99947216819845
+    ],
+    "attachment_thickness_used_mm": 10.14488183532633,
+    "required_radius_mm": 0.4,
+    "meets_rule": true,
+    "curvature_reversals_at_arclength_mm": [],
+    "n_reversals": 0,
+    "most_concave_curvature_per_mm": 0.0
+   }
+  ]
+ },
+ "curvature_map": {
+  "cap_up": {
+   "grid": [
+    600,
+    1217
+   ],
+   "evaluated_points": 721206,
+   "grid_min_radius_mm": 0.5765414919406873,
+   "grid_min_at_uv": [
+    3.14159265359,
+    0.29375
+   ],
+   "grid_min_ratio_to_required": 1.441353729851718,
+   "refined_minima": [
+    {
+     "u": 3.141592628654866,
+     "v": 0.29428497842890533,
+     "xyz": [
+      146.58995901580917,
+      1.1008147532324416e-07,
+      260.0786523331419
+     ],
+     "radius_mm": 0.5765413123908262,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.0223559138797995,
+     "ratio": 1.4413532809770653
+    },
+    {
+     "u": 3.141592638488622,
+     "v": 0.29428497029985967,
+     "xyz": [
+      146.58995921288025,
+      6.666825915295105e-08,
+      260.0786518741987
+     ],
+     "radius_mm": 0.5765413123908277,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022355803612046,
+     "ratio": 1.4413532809770693
+    },
+    {
+     "u": 3.1415926296375387,
+     "v": 0.2942849102448334,
+     "xyz": [
+      146.5899606687842,
+      1.0574326319127743e-07,
+      260.07864848365983
+     ],
+     "radius_mm": 0.5765413123908278,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022354988985771,
+     "ratio": 1.4413532809770695
+    },
+    {
+     "u": 3.141592625055872,
+     "v": 0.29428493347929013,
+     "xyz": [
+      146.58996010551522,
+      1.2597000781224227e-07,
+      260.0786497954124
+     ],
+     "radius_mm": 0.5765413123908284,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022355304153361,
+     "ratio": 1.4413532809770708
+    },
+    {
+     "u": 3.1415926312496967,
+     "v": 0.2942850000545344,
+     "xyz": [
+      146.58995849154263,
+      9.862603968897045e-08,
+      260.0786535540644
+     ],
+     "radius_mm": 0.5765413123908287,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022356207224165,
+     "ratio": 1.4413532809770717
+    },
+    {
+     "u": 3.1415926337026834,
+     "v": 0.2942849203898453,
+     "xyz": [
+      146.58996042284042,
+      8.779681193714442e-08,
+      260.0786490564189
+     ],
+     "radius_mm": 0.5765413123908294,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022355126599438,
+     "ratio": 1.4413532809770735
+    }
+   ],
+   "smallest_radius_mm": 0.5765413123908262,
+   "crown_excluded_within_mm": 0.0006278688560413544,
+   "note": "v > 1 - 1e-5 excluded: the patch collapses to the crown point there (derivatives undefined)"
+  },
+  "cap_up_ratio_quantiles": [
+   1.441353729851718,
+   1.4418023536911142,
+   1.466453959372525,
+   9.720907246060975
+  ],
+  "cap_lo": {
+   "grid": [
+    600,
+    1217
+   ],
+   "evaluated_points": 721206,
+   "grid_min_radius_mm": 0.5765414919406873,
+   "grid_min_at_uv": [
+    3.14159265359,
+    0.29375
+   ],
+   "grid_min_ratio_to_required": 1.441353729851718,
+   "refined_minima": [
+    {
+     "u": 3.141592628654866,
+     "v": 0.29428497842890533,
+     "xyz": [
+      146.58995901580917,
+      -1.1008147532324416e-07,
+      260.0786523331419
+     ],
+     "radius_mm": 0.5765413123908262,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.0223559138797995,
+     "ratio": 1.4413532809770653
+    },
+    {
+     "u": 3.141592638488622,
+     "v": 0.29428497029985967,
+     "xyz": [
+      146.58995921288025,
+      -6.666825915295105e-08,
+      260.0786518741987
+     ],
+     "radius_mm": 0.5765413123908277,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022355803612046,
+     "ratio": 1.4413532809770693
+    },
+    {
+     "u": 3.1415926296375387,
+     "v": 0.2942849102448334,
+     "xyz": [
+      146.5899606687842,
+      -1.0574326319127743e-07,
+      260.07864848365983
+     ],
+     "radius_mm": 0.5765413123908278,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022354988985771,
+     "ratio": 1.4413532809770695
+    },
+    {
+     "u": 3.141592625055872,
+     "v": 0.29428493347929013,
+     "xyz": [
+      146.58996010551522,
+      -1.2597000781224227e-07,
+      260.0786497954124
+     ],
+     "radius_mm": 0.5765413123908284,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022355304153361,
+     "ratio": 1.4413532809770708
+    },
+    {
+     "u": 3.1415926312496967,
+     "v": 0.2942850000545344,
+     "xyz": [
+      146.58995849154263,
+      -9.862603968897045e-08,
+      260.0786535540644
+     ],
+     "radius_mm": 0.5765413123908287,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022356207224165,
+     "ratio": 1.4413532809770717
+    },
+    {
+     "u": 3.1415926337026834,
+     "v": 0.2942849203898453,
+     "xyz": [
+      146.58996042284042,
+      -8.779681193714442e-08,
+      260.0786490564189
+     ],
+     "radius_mm": 0.5765413123908294,
+     "required_mm": 0.4,
+     "attachment_thickness_mm": 4.022355126599438,
+     "ratio": 1.4413532809770735
+    }
+   ],
+   "smallest_radius_mm": 0.5765413123908262,
+   "crown_excluded_within_mm": 0.0006278688560413544,
+   "note": "v > 1 - 1e-5 excluded: the patch collapses to the crown point there (derivatives undefined)"
+  },
+  "cap_lo_ratio_quantiles": [
+   1.441353729851718,
+   1.4418023536911142,
+   1.466453959372525,
+   9.720907246060975
+  ]
+ },
+ "zebra": {
+  "parent_up__cap_up": {
+   "views": 25,
+   "stripe_axes": 6,
+   "stripes_per_turn": 36,
+   "visible_samples": 240840,
+   "crossings_checked": 6570,
+   "worst": {
+    "phase_mismatch_stripes": {
+     "value": 1.1508137589544276e-06,
+     "where": {
+      "s": 0.015,
+      "view_az_el": [
+       -30,
+       45
+      ],
+      "stripe_axis_deg": 30,
+      "xyz": [
+       65.04602783610872,
+       0.23733778516453657,
+       240.0
+      ],
+      "gradient_magnitude": 562.9207422645053,
+      "median_gradient_this_view": 0.05501932043691374
+     }
+    },
+    "gradient_abs_mismatch_stripes_per_mm": {
+     "value": 0.0002900264334570471,
+     "where": {
+      "s": 0.015,
+      "view_az_el": [
+       -30,
+       45
+      ],
+      "stripe_axis_deg": 30,
+      "xyz": [
+       65.04602783610872,
+       0.23733778516453657,
+       240.0
+      ],
+      "gradient_magnitude": 562.9207422645053,
+      "median_gradient_this_view": 0.05501932043691374
+     }
+    },
+    "gradient_rel_mismatch": {
+     "value": 0.005185047780287333,
+     "where": {
+      "s": 0.97375,
+      "view_az_el": [
+       60,
+       0
+      ],
+      "stripe_axis_deg": 0,
+      "xyz": [
+       149.72362128557103,
+       0.6140501112279084,
+       240.0
+      ],
+      "gradient_magnitude": 0.0010220164627176536,
+      "median_gradient_this_view": 0.0024253444838489707
+     }
+    },
+    "gradient_angle_deg": {
+     "value": 0.91070317477565,
+     "where": {
+      "s": 0.834375,
+      "view_az_el": [
+       30,
+       0
+      ],
+      "stripe_axis_deg": 0,
+      "xyz": [
+       143.69477782773043,
+       2.6799516547584563,
+       240.0
+      ],
+      "gradient_magnitude": 8.796675317981188e-06,
+      "median_gradient_this_view": 0.018534034443591706
+     }
+    },
+    "crossing_direction_change_deg": {
+     "value": 0.0010034179773904946,
+     "where": {
+      "s": 0.973125,
+      "view_az_el": [
+       30,
+       -45
+      ],
+      "stripe_axis_deg": 90,
+      "xyz": [
+       149.7136199801457,
+       0.6238696839937197,
+       240.0
+      ]
+     }
+    }
+   },
+   "sampled_region": "attachment join, parent chord parameter s in [1e-5, 1 - 1e-5]",
+   "undefined_endpoints": "none on this join; s = 0 and 1 (LE point, TE corner) not sampled"
+  },
+  "parent_lo__cap_lo": {
+   "views": 25,
+   "stripe_axes": 6,
+   "stripes_per_turn": 36,
+   "visible_samples": 240840,
+   "crossings_checked": 6570,
+   "worst": {
+    "phase_mismatch_stripes": {
+     "value": 1.1508137589544276e-06,
+     "where": {
+      "s": 0.015,
+      "view_az_el": [
+       -30,
+       45
+      ],
+      "stripe_axis_deg": 150,
+      "xyz": [
+       65.04602783610872,
+       -0.23733778516453657,
+       240.0
+      ],
+      "gradient_magnitude": 562.9207422645053,
+      "median_gradient_this_view": 0.05501932043691374
+     }
+    },
+    "gradient_abs_mismatch_stripes_per_mm": {
+     "value": 0.0002900264334570471,
+     "where": {
+      "s": 0.015,
+      "view_az_el": [
+       -30,
+       45
+      ],
+      "stripe_axis_deg": 150,
+      "xyz": [
+       65.04602783610872,
+       -0.23733778516453657,
+       240.0
+      ],
+      "gradient_magnitude": 562.9207422645053,
+      "median_gradient_this_view": 0.05501932043691374
+     }
+    },
+    "gradient_rel_mismatch": {
+     "value": 0.005185047780287333,
+     "where": {
+      "s": 0.97375,
+      "view_az_el": [
+       60,
+       0
+      ],
+      "stripe_axis_deg": 0,
+      "xyz": [
+       149.72362128557103,
+       -0.6140501112279084,
+       240.0
+      ],
+      "gradient_magnitude": 0.0010220164627176536,
+      "median_gradient_this_view": 0.0024253444838489707
+     }
+    },
+    "gradient_angle_deg": {
+     "value": 0.91070317477565,
+     "where": {
+      "s": 0.834375,
+      "view_az_el": [
+       30,
+       0
+      ],
+      "stripe_axis_deg": 0,
+      "xyz": [
+       143.69477782773043,
+       -2.6799516547584563,
+       240.0
+      ],
+      "gradient_magnitude": 8.796675317981188e-06,
+      "median_gradient_this_view": 0.018534034443591706
+     }
+    },
+    "crossing_direction_change_deg": {
+     "value": 0.001003418703836693,
+     "where": {
+      "s": 0.973125,
+      "view_az_el": [
+       30,
+       -45
+      ],
+      "stripe_axis_deg": 90,
+      "xyz": [
+       149.7136199801457,
+       -0.6238696839937197,
+       240.0
+      ]
+     }
+    }
+   },
+   "sampled_region": "attachment join, parent chord parameter s in [1e-5, 1 - 1e-5]",
+   "undefined_endpoints": "none on this join; s = 0 and 1 (LE point, TE corner) not sampled"
+  }
+ }
+}

@@ -1,0 +1,3296 @@
+{
+ "tool": "runs/cap-radius/audit/audit.py",
+ "shape": "fin5",
+ "variant": "sharp",
+ "model": "runs/cap-radius/builds/fin5/sharp/wing.step",
+ "step_sha256": "1a1fd864578361a11637fc53015c09a11635f47662e0b848b330b5fcd0e4c2a2",
+ "family": "native",
+ "family_definition": "plane through the attachment chord-line point at chord fraction f, containing the attachment section's thickness direction and the tangent of the parent's constant-chord-fraction line d(chord point at f)/d(span)",
+ "rule": {
+  "min_radius_mm": 0.4,
+  "thick_gate_mm": 0.8,
+  "thin_ratio_pass": 0.9
+ },
+ "tolerances": {
+  "extent_mm": 0.001,
+  "retained_skin_mm": 0.0001,
+  "outline_mm": 0.001,
+  "join_gap_mm": 0.0001,
+  "join_angle_deg": 0.01,
+  "te_point_mm": 0.001
+ },
+ "validity": {
+  "solids": 1,
+  "shells": 1,
+  "faces": 5,
+  "face_types": [
+   "BSplineSurface",
+   "BSplineSurface",
+   "Plane",
+   "BSplineSurface",
+   "BSplineSurface"
+  ],
+  "face_roles": [
+   "0:retained",
+   "1:retained",
+   "2:retained",
+   "3:cap@top (+Z)",
+   "4:cap@top (+Z)"
+  ],
+  "shell_closed": true,
+  "brepcheck_valid": true,
+  "brepcheck_strict_valid": true,
+  "bounding_box_mm": [
+   -1e-07,
+   160.0000001,
+   -9.600000099999635,
+   9.600000099999635,
+   -1e-07,
+   245.00000010000002
+  ],
+  "extent": {
+   "what": "height (Z) above the root",
+   "measured_mm": 245.00000010000002,
+   "spec_mm": 245.0,
+   "difference_mm": 1.0000002248489182e-07,
+   "outermost_points": {
+    "top (+Z)": [
+     108.07291666666,
+     1.3016779786282764e-18,
+     245.00000000000003
+    ]
+   },
+   "bounding_box_note": "AddOptimal box shown for reference; extents come from surface optimisation",
+   "pass": true
+  },
+  "volume_mm3": 352471.2285168475,
+  "volume_occt_default_mm3": 352471.23133503925,
+  "straddling_faces": [],
+  "parent_volume_mm3": 350036.25331829593,
+  "cap_volume_mm3": 2434.975198551547,
+  "pass": true
+ },
+ "preservation": {
+  "parent_to_model": {
+   "samples": 5246,
+   "max_mm": 8.513643500367058e-09,
+   "at_xyz": [
+    86.5694265176282,
+    9.567559543926265,
+    0.001
+   ],
+   "what": "parent.py skin (and blunt TE face) points to the model's retained faces"
+  },
+  "model_to_parent": {
+   "samples": 2621,
+   "max_mm": 9.45482510571428e-14,
+   "at_xyz": [
+    147.91990194113654,
+    1.575986671268688,
+    240.0
+   ],
+   "what": "points on the model's retained faces to the parent.step surfaces (attachment end faces excluded)"
+  },
+  "max_mm": 8.513643500367058e-09,
+  "pass": true
+ },
+ "outline": {
+  "lip_scan": {
+   "top (+Z)": {
+    "kind": "midplane",
+    "planes": 101,
+    "errors": 0,
+    "max_deviation_mm": 1.6697155108601774e-07,
+    "at_fraction": 0.5,
+    "max_abs_lip_outboard_offset_mm": 1.7187704640988764e-09,
+    "max_outline_to_trace_mm": 1.6697155108601774e-07
+   }
+  },
+  "outline_to_surface": [
+   {
+    "tip": "top (+Z)",
+    "samples": 401,
+    "max_mm": 4.093402069200495e-09,
+    "at_p": 0.985,
+    "at_xyz": [
+     149.99317656253552,
+     0.0,
+     240.15
+    ]
+   }
+  ]
+ },
+ "joins": {
+  "edges": [
+   {
+    "samples": 399,
+    "skipped_degenerate": 0,
+    "samples_near_collapse": 0,
+    "closest_sample_to_ends_mm": [
+     0.000247080002134394,
+     0.00024708000213228426
+    ],
+    "chord_fraction_range": [
+     5.867824744005307e-10,
+     0.9999999994132173
+    ],
+    "length_mm": 86.84752088148203,
+    "gap_mm": {
+     "max": 0.0,
+     "at_xyz": [
+      65.0000000498765,
+      0.0002470799971002639,
+      240.0
+     ],
+     "at_chord_fraction": 5.867824744005307e-10,
+     "median": 0.0,
+     "max_including_near_collapse": 0.0,
+     "at_xyz_including_near_collapse": [
+      65.0000000498765,
+      0.0002470799971002639,
+      240.0
+     ]
+    },
+    "angle_deg": {
+     "max": 4.778277967622127e-09,
+     "at_xyz": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "median": 8.398636185552546e-10,
+     "max_including_near_collapse": 4.778277967622127e-09,
+     "at_xyz_including_near_collapse": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ]
+    },
+    "curvature_mismatch_per_mm": {
+     "max": 9.596009497704966e-10,
+     "at_xyz": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "median": 1.8073107350729767e-10,
+     "max_including_near_collapse": 9.596009497704966e-10,
+     "at_xyz_including_near_collapse": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ],
+     "II_parent_side_at_max": [
+      [
+       -1.6325640052941095,
+       0.00010382755384575491
+      ],
+      [
+       0.00010382755384575494,
+       -6.603208728472998e-09
+      ]
+     ],
+     "II_cap_side_at_max": [
+      [
+       -1.6325640052884367,
+       0.00010382755409175655
+      ],
+      [
+       0.00010382755409175655,
+       -5.643624609618741e-09
+      ]
+     ]
+    },
+    "cross_join_normal_curvature_mismatch_per_mm": {
+     "max": 9.595841188542567e-10,
+     "at_xyz": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "median": 1.8072609363629488e-10,
+     "max_including_near_collapse": 9.595841188542567e-10,
+     "at_xyz_including_near_collapse": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ]
+    },
+    "kind": "parent skin to cap",
+    "faces": [
+     0,
+     3
+    ],
+    "tip": "top (+Z)"
+   },
+   {
+    "samples": 399,
+    "skipped_degenerate": 0,
+    "samples_near_collapse": 0,
+    "closest_sample_to_ends_mm": [
+     0.000247080002134394,
+     0.00024708000213228426
+    ],
+    "chord_fraction_range": [
+     5.867824744005307e-10,
+     0.9999999994132173
+    ],
+    "length_mm": 86.84752088148203,
+    "gap_mm": {
+     "max": 0.0,
+     "at_xyz": [
+      65.0000000498765,
+      -0.0002470799971002639,
+      240.0
+     ],
+     "at_chord_fraction": 5.867824744005307e-10,
+     "median": 0.0,
+     "max_including_near_collapse": 0.0,
+     "at_xyz_including_near_collapse": [
+      65.0000000498765,
+      -0.0002470799971002639,
+      240.0
+     ]
+    },
+    "angle_deg": {
+     "max": 4.778277967622127e-09,
+     "at_xyz": [
+      149.9999992020036,
+      -0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "median": 8.398636185552546e-10,
+     "max_including_near_collapse": 4.778277967622127e-09,
+     "at_xyz_including_near_collapse": [
+      149.9999992020036,
+      -0.0009883047415387841,
+      240.0
+     ]
+    },
+    "curvature_mismatch_per_mm": {
+     "max": 9.596009497704966e-10,
+     "at_xyz": [
+      149.9999992020036,
+      -0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "median": 1.8073107350729767e-10,
+     "max_including_near_collapse": 9.596009497704966e-10,
+     "at_xyz_including_near_collapse": [
+      149.9999992020036,
+      -0.0009883047415387841,
+      240.0
+     ],
+     "II_parent_side_at_max": [
+      [
+       -1.6325640052941095,
+       -0.00010382755384575491
+      ],
+      [
+       -0.00010382755384575494,
+       -6.603208728472998e-09
+      ]
+     ],
+     "II_cap_side_at_max": [
+      [
+       -1.6325640052884367,
+       -0.00010382755409175655
+      ],
+      [
+       -0.00010382755409175655,
+       -5.643624609618741e-09
+      ]
+     ]
+    },
+    "cross_join_normal_curvature_mismatch_per_mm": {
+     "max": 9.595841188542567e-10,
+     "at_xyz": [
+      149.9999992020036,
+      -0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "median": 1.8072609363629488e-10,
+     "max_including_near_collapse": 9.595841188542567e-10,
+     "at_xyz_including_near_collapse": [
+      149.9999992020036,
+      -0.0009883047415387841,
+      240.0
+     ]
+    },
+    "kind": "parent skin to cap",
+    "faces": [
+     1,
+     4
+    ],
+    "tip": "top (+Z)"
+   },
+   {
+    "samples": 399,
+    "skipped_degenerate": 0,
+    "samples_near_collapse": 6,
+    "closest_sample_to_ends_mm": [
+     0.0001597662389054922,
+     0.001114318925829773
+    ],
+    "chord_fraction_range": [
+     7.57307004912913e-15,
+     0.49998664486835925
+    ],
+    "length_mm": 44.287104615520484,
+    "gap_mm": {
+     "max": 0.0,
+     "at_xyz": [
+      65.00004176536795,
+      0.0,
+      240.00015421058697
+     ],
+     "at_chord_fraction": 7.57307004912913e-15,
+     "median": 0.0,
+     "max_including_near_collapse": 0.0,
+     "at_xyz_including_near_collapse": [
+      65.00004176536795,
+      0.0,
+      240.00015421058697
+     ]
+    },
+    "angle_deg": {
+     "max": 1.1863428837061372e-07,
+     "at_xyz": [
+      65.00417184785067,
+      0.0,
+      240.01540145279387
+     ],
+     "at_chord_fraction": 7.30691170783673e-09,
+     "median": 1.4623521412906643e-08,
+     "max_including_near_collapse": 1.1863428837061372e-07,
+     "at_xyz_including_near_collapse": [
+      65.00417184785067,
+      0.0,
+      240.01540145279387
+     ]
+    },
+    "curvature_mismatch_per_mm": {
+     "max": 9.738670926819635e-10,
+     "at_xyz": [
+      65.50773025457812,
+      0.0,
+      241.0816035714408
+     ],
+     "at_chord_fraction": 0.0025370999599719575,
+     "median": 2.5905102407958315e-11,
+     "max_including_near_collapse": 9.738670926819635e-10,
+     "at_xyz_including_near_collapse": [
+      65.50773025457812,
+      0.0,
+      241.0816035714408
+     ],
+     "II_parent_side_at_max": [
+      [
+       -0.4779062849988732,
+       3.4431401260492224e-10
+      ],
+      [
+       3.443140126049222e-10,
+       -1.256676598722324
+      ]
+     ],
+     "II_cap_side_at_max": [
+      [
+       -0.4779062849988732,
+       -3.4431401260492213e-10
+      ],
+      [
+       -3.443140126049222e-10,
+       -1.256676598722324
+      ]
+     ]
+    },
+    "cross_join_normal_curvature_mismatch_per_mm": {
+     "max": 0.0,
+     "at_xyz": [
+      65.00004176536795,
+      0.0,
+      240.00015421058697
+     ],
+     "at_chord_fraction": 7.57307004912913e-15,
+     "median": 0.0,
+     "max_including_near_collapse": 0.0,
+     "at_xyz_including_near_collapse": [
+      65.00004176536795,
+      0.0,
+      240.00015421058697
+     ]
+    },
+    "kind": "cap seam",
+    "faces": [
+     3,
+     4
+    ],
+    "tip": "top (+Z)"
+   },
+   {
+    "samples": 399,
+    "skipped_degenerate": 0,
+    "samples_near_collapse": 6,
+    "closest_sample_to_ends_mm": [
+     0.00015434439230500586,
+     0.001114318653336634
+    ],
+    "chord_fraction_range": [
+     0.50001335513148,
+     0.9999999999999922
+    ],
+    "length_mm": 43.36595605254817,
+    "gap_mm": {
+     "max": 1.3043005054941391e-15,
+     "at_xyz": [
+      149.9999935745582,
+      6.521502527470696e-16,
+      240.00015421058697
+     ],
+     "at_chord_fraction": 0.9999999999999922,
+     "median": 8.188570210662764e-16,
+     "max_including_near_collapse": 1.3043005054941391e-15,
+     "at_xyz_including_near_collapse": [
+      149.9999935745582,
+      6.521502527470696e-16,
+      240.00015421058697
+     ]
+    },
+    "angle_deg": {
+     "max": 1.3279465693355987e-07,
+     "at_xyz": [
+      149.99653351376736,
+      6.291976878681949e-16,
+      240.08102590835344
+     ],
+     "at_chord_fraction": 0.9999989360746221,
+     "median": 1.592949314109949e-08,
+     "max_including_near_collapse": 1.3279465693355987e-07,
+     "at_xyz_including_near_collapse": [
+      149.99653351376736,
+      6.291976878681949e-16,
+      240.08102590835344
+     ]
+    },
+    "curvature_mismatch_per_mm": {
+     "max": 1.167454569998686e-09,
+     "at_xyz": [
+      149.6430490256543,
+      6.322061508695209e-16,
+      241.21710456672406
+     ],
+     "at_chord_fraction": 0.9963810029158536,
+     "median": 2.030709857851663e-11,
+     "max_including_near_collapse": 1.167454569998686e-09,
+     "at_xyz_including_near_collapse": [
+      149.6430490256543,
+      6.322061508695209e-16,
+      241.21710456672406
+     ],
+     "II_parent_side_at_max": [
+      [
+       -0.5982287876550086,
+       -4.1275753484669863e-10
+      ],
+      [
+       -4.1275753484669863e-10,
+       -1.3092215752457481
+      ]
+     ],
+     "II_cap_side_at_max": [
+      [
+       -0.5982287876550086,
+       4.1275750832659734e-10
+      ],
+      [
+       4.127575083265972e-10,
+       -1.3092215752457481
+      ]
+     ]
+    },
+    "cross_join_normal_curvature_mismatch_per_mm": {
+     "max": 0.0,
+     "at_xyz": [
+      149.9999935745582,
+      6.521502527470696e-16,
+      240.00015421058697
+     ],
+     "at_chord_fraction": 0.9999999999999922,
+     "median": 0.0,
+     "max_including_near_collapse": 0.0,
+     "at_xyz_including_near_collapse": [
+      149.9999935745582,
+      6.521502527470696e-16,
+      240.00015421058697
+     ]
+    },
+    "kind": "cap seam",
+    "faces": [
+     3,
+     4
+    ],
+    "tip": "top (+Z)"
+   }
+  ],
+  "summary": {
+   "parent skin to cap": {
+    "edges": 2,
+    "samples": 798,
+    "skipped_degenerate": 0,
+    "samples_near_collapse": 0,
+    "closest_sample_to_edge_ends_mm": 0.00024708000213228426,
+    "gap_mm": {
+     "max": 0.0,
+     "at_xyz": [
+      65.0000000498765,
+      0.0002470799971002639,
+      240.0
+     ],
+     "at_chord_fraction": 5.867824744005307e-10,
+     "max_including_near_collapse": 0.0
+    },
+    "angle_deg": {
+     "max": 4.778277967622127e-09,
+     "at_xyz": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "max_including_near_collapse": 4.778277967622127e-09
+    },
+    "curvature_mismatch_per_mm": {
+     "max": 9.596009497704966e-10,
+     "at_xyz": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "max_including_near_collapse": 9.596009497704966e-10
+    },
+    "cross_join_normal_curvature_mismatch_per_mm": {
+     "max": 9.595841188542567e-10,
+     "at_xyz": [
+      149.9999992020036,
+      0.0009883047415387841,
+      240.0
+     ],
+     "at_chord_fraction": 0.9999999906118071,
+     "max_including_near_collapse": 9.595841188542567e-10
+    }
+   },
+   "cap seam": {
+    "edges": 2,
+    "samples": 798,
+    "skipped_degenerate": 0,
+    "samples_near_collapse": 12,
+    "closest_sample_to_edge_ends_mm": 0.00015434439230500586,
+    "gap_mm": {
+     "max": 1.3043005054941391e-15,
+     "at_xyz": [
+      149.9999935745582,
+      6.521502527470696e-16,
+      240.00015421058697
+     ],
+     "at_chord_fraction": 0.9999999999999922,
+     "max_including_near_collapse": 1.3043005054941391e-15
+    },
+    "angle_deg": {
+     "max": 1.3279465693355987e-07,
+     "at_xyz": [
+      149.99653351376736,
+      6.291976878681949e-16,
+      240.08102590835344
+     ],
+     "at_chord_fraction": 0.9999989360746221,
+     "max_including_near_collapse": 1.3279465693355987e-07
+    },
+    "curvature_mismatch_per_mm": {
+     "max": 1.167454569998686e-09,
+     "at_xyz": [
+      149.6430490256543,
+      6.322061508695209e-16,
+      241.21710456672406
+     ],
+     "at_chord_fraction": 0.9963810029158536,
+     "max_including_near_collapse": 1.167454569998686e-09
+    },
+    "cross_join_normal_curvature_mismatch_per_mm": {
+     "max": 0.0,
+     "at_xyz": [
+      65.00004176536795,
+      0.0,
+      240.00015421058697
+     ],
+     "at_chord_fraction": 7.57307004912913e-15,
+     "max_including_near_collapse": 0.0
+    }
+   }
+  },
+  "pass_G1": true,
+  "cap_seams_pass_G1": true
+ },
+ "sections": {
+  "top (+Z)": [
+   {
+    "fraction": 0.00038461544153305235,
+    "label": "thin zone, t = 0.4 mm (LE side)",
+    "attachment_thickness_mm": 0.4000000000000026,
+    "zone": "thin",
+    "plane_point": [
+     65.03269231253032,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9652556396988353,
+     -0.0,
+     -0.2613073860984265
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 1.3591353312808694,
+    "samples": 220,
+    "plane_error_mm": 7.44838909965776e-14,
+    "trace_ends_thickness_mm": 0.39999999982973083,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      65.18893002815281,
+      0.0,
+      240.57713384374625
+     ],
+     "radius_mm": 0.09986847009945203,
+     "principal_radius_mm": 0.6664039450873043,
+     "signed_curvature_per_mm": 10.013170312954328,
+     "arclength_fraction": 0.4999999999999991,
+     "cut_obliquity_deg": 81.38108163858512,
+     "lip_normal_radius_mm": 0.6664039450873043
+    },
+    "outermost": {
+     "xyz": [
+      65.18893002815278,
+      5.710247727441775e-08,
+      240.57713384374625
+     ],
+     "radius_mm": 0.09986847009945767,
+     "arclength_fraction": 0.4999999999999991
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.05771338545964717,
+     "xyz": [
+      65.1889300310901,
+      0.0,
+      240.57713385459647
+     ],
+     "outermost_offset_mm": -1.1240772652881648e-08,
+     "trace_distance_mm": 1.1240765226084602e-08,
+     "deviation_mm": 1.1240772652881648e-08
+    },
+    "min_radius": {
+     "radius_mm": 0.09986847009943399,
+     "xyz": [
+      65.18893002815278,
+      1.3528310610633199e-08,
+      240.57713384374625
+     ],
+     "signed_curvature_per_mm": 10.013170312956136,
+     "normal_section_radius_mm": 0.6664039450872894,
+     "principal_radius_mm": 0.6664039450872806,
+     "arclength_fraction": 0.4999999999999991,
+     "distance_from_lip_mm": 1.3528310610663055e-08,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.09988660362092958,
+      "arclength_fraction": 0.49901114867867685
+     },
+     "lower": {
+      "radius_mm": 0.09986847009945203,
+      "arclength_fraction": 0.4999999999999991
+     }
+    },
+    "required_radius_mm": 0.18000000000000116,
+    "ratio_to_half_thickness": 0.49934235049716674,
+    "lip_ratio_to_half_thickness": 0.49934235049725695,
+    "pass": false
+   },
+   {
+    "fraction": 0.0008658015153781989,
+    "label": "thin zone, t = 0.6 mm (LE side)",
+    "attachment_thickness_mm": 0.5999999999999881,
+    "zone": "thin",
+    "plane_point": [
+     65.07359312880715,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9652922415896132,
+     -0.0,
+     -0.26117214309129466
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 1.827949420127196,
+    "samples": 214,
+    "plane_error_mm": 3.5045416580918576e-14,
+    "trace_ends_thickness_mm": 0.599999999934328,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      65.27820874037525,
+      0.0,
+      240.7562593009231
+     ],
+     "radius_mm": 0.17099219093496806,
+     "principal_radius_mm": 0.6973539822369502,
+     "signed_curvature_per_mm": 5.848220287324823,
+     "arclength_fraction": 0.5000000000000012,
+     "cut_obliquity_deg": 75.80626452304612,
+     "lip_normal_radius_mm": 0.6973539822369502
+    },
+    "outermost": {
+     "xyz": [
+      65.27820874037525,
+      1.7871166574368047e-08,
+      240.7562593009231
+     ],
+     "radius_mm": 0.1709921909349569,
+     "arclength_fraction": 0.5000000000000012
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.07562592913701295,
+     "xyz": [
+      65.27820873779058,
+      0.0,
+      240.75625929137013
+     ],
+     "outermost_offset_mm": 9.896444807811099e-09,
+     "trace_distance_mm": 9.896444807812705e-09,
+     "deviation_mm": 9.896444807812705e-09
+    },
+    "min_radius": {
+     "radius_mm": 0.17099219093495627,
+     "xyz": [
+      65.27820874037525,
+      2.985250732723266e-08,
+      240.7562593009231
+     ],
+     "signed_curvature_per_mm": 5.848220287325227,
+     "normal_section_radius_mm": 0.697353982236922,
+     "principal_radius_mm": 0.6973539822369105,
+     "arclength_fraction": 0.5000000000000012,
+     "distance_from_lip_mm": 2.985250732723266e-08,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.17105669057452325,
+      "arclength_fraction": 0.4980352883933449
+     },
+     "lower": {
+      "radius_mm": 0.17099219093496806,
+      "arclength_fraction": 0.5000000000000012
+     }
+    },
+    "required_radius_mm": 0.26999999999999463,
+    "ratio_to_half_thickness": 0.5699739697831989,
+    "lip_ratio_to_half_thickness": 0.5699739697832382,
+    "pass": false
+   },
+   {
+    "fraction": 0.001540242396621122,
+    "label": "0.8 mm thickness crossing",
+    "attachment_thickness_mm": 0.7999999999999918,
+    "zone": "thin",
+    "plane_point": [
+     65.1309206037128,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9653435163700287,
+     -0.0,
+     -0.2609825576592201
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 2.2613876909812456,
+    "samples": 216,
+    "plane_error_mm": 2.154746189254757e-14,
+    "trace_ends_thickness_mm": 0.7999999999949452,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      65.37860167032477,
+      0.0,
+      240.91614287914862
+     ],
+     "radius_mm": 0.249993496631559,
+     "principal_radius_mm": 0.738104861947794,
+     "signed_curvature_per_mm": 4.00010405660193,
+     "arclength_fraction": 0.4999999999999991,
+     "cut_obliquity_deg": 70.20252362757952,
+     "lip_normal_radius_mm": 0.7381048619477941
+    },
+    "outermost": {
+     "xyz": [
+      65.37860167032476,
+      3.157237518647271e-08,
+      240.91614287914862
+     ],
+     "radius_mm": 0.24999349663154485,
+     "arclength_fraction": 0.4999999999999991
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.09161428879128224,
+     "xyz": [
+      65.3786016726942,
+      0.0,
+      240.91614288791283
+     ],
+     "outermost_offset_mm": -9.07885140901687e-09,
+     "trace_distance_mm": 9.078847700239827e-09,
+     "deviation_mm": 9.07885140901687e-09
+    },
+    "min_radius": {
+     "radius_mm": 0.2499934966315392,
+     "xyz": [
+      65.37860167032476,
+      7.554266942544352e-08,
+      240.91614287914862
+     ],
+     "signed_curvature_per_mm": 4.000104056602247,
+     "normal_section_radius_mm": 0.7381048619477265,
+     "principal_radius_mm": 0.7381048619476988,
+     "arclength_fraction": 0.4999999999999991,
+     "distance_from_lip_mm": 7.554266942544486e-08,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.2500510872082396,
+      "arclength_fraction": 0.4980360088284329
+     },
+     "lower": {
+      "radius_mm": 0.249993496631559,
+      "arclength_fraction": 0.4999999999999991
+     }
+    },
+    "required_radius_mm": 0.3599999999999963,
+    "ratio_to_half_thickness": 0.6249837415788544,
+    "lip_ratio_to_half_thickness": 0.6249837415789039,
+    "pass": false
+   },
+   {
+    "fraction": 0.02,
+    "label": "listed",
+    "attachment_thickness_mm": 2.856000000000001,
+    "zone": "thick",
+    "plane_point": [
+     66.7,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9667345283484019,
+     -0.0,
+     -0.25578184395885717
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 5.950890543123382,
+    "samples": 200,
+    "plane_error_mm": 2.0394374566376028e-14,
+    "trace_ends_thickness_mm": 2.8559999993005847,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      67.26620170825666,
+      0.0,
+      242.13997496034
+     ],
+     "radius_mm": 1.2823624553914814,
+     "principal_radius_mm": 1.5711433726954105,
+     "signed_curvature_per_mm": 0.7798107280789959,
+     "arclength_fraction": 0.49999999999999983,
+     "cut_obliquity_deg": 35.294112188774285,
+     "lip_normal_radius_mm": 1.5711433726954105
+    },
+    "outermost": {
+     "xyz": [
+      67.26620170825666,
+      6.013493580869778e-08,
+      242.13997496034003
+     ],
+     "radius_mm": 1.2823624553913202,
+     "arclength_fraction": 0.49999999999999983
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.21399749611301747,
+     "xyz": [
+      67.26620170846573,
+      0.0,
+      242.13997496113018
+     ],
+     "outermost_offset_mm": -8.173435010910246e-10,
+     "trace_distance_mm": 8.173709773402406e-10,
+     "deviation_mm": 8.173709773402406e-10
+    },
+    "min_radius": {
+     "radius_mm": 1.2823624552873347,
+     "xyz": [
+      67.26620170753671,
+      8.496632905222179e-05,
+      242.1399749576188
+     ],
+     "signed_curvature_per_mm": 0.779810728142328,
+     "normal_section_radius_mm": 1.5711433721869303,
+     "principal_radius_mm": 1.5711433718868582,
+     "arclength_fraction": 0.49999999999999983,
+     "distance_from_lip_mm": 8.496632909884792e-05,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 1.2823702537888981,
+      "arclength_fraction": 0.49608500396902355
+     },
+     "lower": {
+      "radius_mm": 1.2823624553914814,
+      "arclength_fraction": 0.49999999999999983
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 0.8823624552873347,
+    "pass": true
+   },
+   {
+    "fraction": 0.05,
+    "label": "listed",
+    "attachment_thickness_mm": 4.4460769224114856,
+    "zone": "thick",
+    "plane_point": [
+     69.25,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9689434422976263,
+     -0.0,
+     -0.24728244100304925
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 8.40666712906966,
+    "samples": 210,
+    "plane_error_mm": 2.465810297979115e-14,
+    "trace_ends_thickness_mm": 4.446076922451631,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      69.98358322106077,
+      0.0,
+      242.87444853966664
+     ],
+     "radius_mm": 2.1952681755373358,
+     "principal_radius_mm": 2.4399606955731206,
+     "signed_curvature_per_mm": 0.45552521151782743,
+     "arclength_fraction": 0.4999999999999999,
+     "cut_obliquity_deg": 25.879426584097605,
+     "lip_normal_radius_mm": 2.4399606955731206
+    },
+    "outermost": {
+     "xyz": [
+      69.98358322106077,
+      8.649596991427977e-08,
+      242.87444853966664
+     ],
+     "radius_mm": 2.195268175536937,
+     "arclength_fraction": 0.4999999999999999
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.28744485394724223,
+     "xyz": [
+      69.98358322101122,
+      0.0,
+      242.8744485394724
+     ],
+     "outermost_offset_mm": 2.0045537270763116e-10,
+     "trace_distance_mm": 2.0045537337452516e-10,
+     "deviation_mm": 2.0045537337452516e-10
+    },
+    "min_radius": {
+     "radius_mm": 2.0938680394352986,
+     "xyz": [
+      69.86508440913511,
+      -1.3590007201155634,
+      242.41012666436606
+     ],
+     "signed_curvature_per_mm": 0.47758501546720816,
+     "normal_section_radius_mm": 2.2881301669596623,
+     "principal_radius_mm": 2.2527935369383942,
+     "arclength_fraction": 0.6760086421268311,
+     "distance_from_lip_mm": 1.44101343837768,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 2.0938859635046545,
+      "arclength_fraction": 0.3239913578731397
+     },
+     "lower": {
+      "radius_mm": 2.0938859635046505,
+      "arclength_fraction": 0.6760086421268311
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 1.6938680394352987,
+    "pass": true
+   },
+   {
+    "fraction": 0.1,
+    "label": "listed",
+    "attachment_thickness_mm": 6.119999999999998,
+    "zone": "thick",
+    "plane_point": [
+     73.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9724791780123202,
+     -0.0,
+     -0.23298980306546094
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 10.806957963612978,
+    "samples": 218,
+    "plane_error_mm": 6.508459595351307e-14,
+    "trace_ends_thickness_mm": 6.11999999628877,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      74.35217235419967,
+      0.0,
+      243.5568933044854
+     ],
+     "radius_mm": 3.191948727460586,
+     "principal_radius_mm": 3.4061253992057687,
+     "signed_curvature_per_mm": 0.31328824031442654,
+     "arclength_fraction": 0.5,
+     "cut_obliquity_deg": 20.426586268959394,
+     "lip_normal_radius_mm": 3.4061253992057687
+    },
+    "outermost": {
+     "xyz": [
+      74.35217235419967,
+      9.148647275858401e-08,
+      243.5568933044854
+     ],
+     "radius_mm": 3.1919487274598755,
+     "arclength_fraction": 0.5
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.35568933044900675,
+     "xyz": [
+      74.35217235420079,
+      0.0,
+      243.55689330449007
+     ],
+     "outermost_offset_mm": -4.794449137509281e-12,
+     "trace_distance_mm": 4.794452595387309e-12,
+     "deviation_mm": 4.794452595387309e-12
+    },
+    "min_radius": {
+     "radius_mm": 2.850485490441895,
+     "xyz": [
+      74.1148947613938,
+      -2.2934234329353442,
+      242.5665172649479
+     ],
+     "signed_curvature_per_mm": 0.35081743210170685,
+     "normal_section_radius_mm": 2.98233596285198,
+     "principal_radius_mm": 2.9199898912473334,
+     "arclength_fraction": 0.7384248187003848,
+     "distance_from_lip_mm": 2.5093697213592727,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 2.850506595417575,
+      "arclength_fraction": 0.26157518129956947
+     },
+     "lower": {
+      "radius_mm": 2.850506595417562,
+      "arclength_fraction": 0.7384248187003848
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 2.450485490441895,
+    "pass": true
+   },
+   {
+    "fraction": 0.25,
+    "label": "listed",
+    "attachment_thickness_mm": 8.833459118601274,
+    "zone": "thick",
+    "plane_point": [
+     86.25,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9819334174013805,
+     -0.0,
+     -0.18922675231173366
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 14.420679613432592,
+    "samples": 190,
+    "plane_error_mm": 2.790822626938565e-14,
+    "trace_ends_thickness_mm": 8.833459111426421,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      87.12543570227429,
+      0.0,
+      244.54280148207175
+     ],
+     "radius_mm": 4.849013995721661,
+     "principal_radius_mm": 4.989914683203539,
+     "signed_curvature_per_mm": 0.20622749302895624,
+     "arclength_fraction": 0.5000000000000001,
+     "cut_obliquity_deg": 13.648184742919899,
+     "lip_normal_radius_mm": 4.98991468320354
+    },
+    "outermost": {
+     "xyz": [
+      87.1254357022743,
+      1.4176393599296677e-07,
+      244.54280148207178
+     ],
+     "radius_mm": 4.84901399571889,
+     "arclength_fraction": 0.5000000000000001
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.4542801482080352,
+     "xyz": [
+      87.12543570227596,
+      0.0,
+      244.54280148208036
+     ],
+     "outermost_offset_mm": -8.74290597793826e-12,
+     "trace_distance_mm": 8.773519760866472e-12,
+     "deviation_mm": 8.773519760866472e-12
+    },
+    "min_radius": {
+     "radius_mm": 3.97624867393212,
+     "xyz": [
+      86.716048311557,
+      3.8819508258373645,
+      242.41841285997137
+     ],
+     "signed_curvature_per_mm": 0.2514933249914418,
+     "normal_section_radius_mm": 4.025889319242877,
+     "principal_radius_mm": 3.939247440671414,
+     "arclength_fraction": 0.17598202534176483,
+     "distance_from_lip_mm": 4.444116027694064,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 3.9762738184543847,
+      "arclength_fraction": 0.17598202534176483
+     },
+     "lower": {
+      "radius_mm": 3.9762738184544,
+      "arclength_fraction": 0.8240179746586256
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 3.57624867393212,
+    "pass": true
+   },
+   {
+    "fraction": 0.4,
+    "label": "listed",
+    "attachment_thickness_mm": 9.993918150555366,
+    "zone": "thick",
+    "plane_point": [
+     99.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9895329810632801,
+     -0.0,
+     -0.14430689307173772
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 15.867280748527266,
+    "samples": 186,
+    "plane_error_mm": 3.7529497648325424e-14,
+    "trace_ends_thickness_mm": 9.99391814455258,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      99.7193118550126,
+      0.0,
+      244.93242414865765
+     ],
+     "radius_mm": 5.58775723998763,
+     "principal_radius_mm": 5.661141328410093,
+     "signed_curvature_per_mm": 0.17896267805689672,
+     "arclength_fraction": 0.5,
+     "cut_obliquity_deg": 9.235424043310365,
+     "lip_normal_radius_mm": 5.661141328410091
+    },
+    "outermost": {
+     "xyz": [
+      99.7193118550126,
+      0.0,
+      244.93242414865765
+     ],
+     "radius_mm": 5.58775723998763,
+     "arclength_fraction": 0.5
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.4932424148660941,
+     "xyz": [
+      99.7193118550131,
+      0.0,
+      244.93242414866094
+     ],
+     "outermost_offset_mm": -3.3341847379260773e-12,
+     "trace_distance_mm": 3.33422509988557e-12,
+     "deviation_mm": 3.33422509988557e-12
+    },
+    "min_radius": {
+     "radius_mm": 4.328722310451377,
+     "xyz": [
+      99.22478531548961,
+      -4.828459741400025,
+      241.54138502049992
+     ],
+     "signed_curvature_per_mm": 0.23101504977244086,
+     "normal_section_radius_mm": 4.3371782849815474,
+     "principal_radius_mm": 4.259098206441313,
+     "arclength_fraction": 0.9017366538110277,
+     "distance_from_lip_mm": 5.920956539387038,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 4.328733589681971,
+      "arclength_fraction": 0.09826334618897602
+     },
+     "lower": {
+      "radius_mm": 4.328733589681969,
+      "arclength_fraction": 0.9017366538110277
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 3.9287223104513767,
+    "pass": true
+   },
+   {
+    "fraction": 0.5,
+    "label": "listed",
+    "attachment_thickness_mm": 10.2,
+    "zone": "thick",
+    "plane_point": [
+     107.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9934992729729988,
+     -0.0,
+     -0.11383845836149885
+    ],
+    "pieces_unused": 1,
+    "max_junction_gap_mm": 0.0,
+    "length_mm": 8.048744672360742,
+    "samples": 92,
+    "plane_error_mm": 9.509114082621672e-14,
+    "trace_ends_thickness_mm": 5.0990666515289655,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      108.07291666666671,
+      1.6697155108600988e-07,
+      245.00000000000003
+     ],
+     "radius_mm": 5.735973289772866,
+     "principal_radius_mm": 5.77350527153204,
+     "signed_curvature_per_mm": 0.1743383292566898,
+     "arclength_fraction": 1.0,
+     "cut_obliquity_deg": 6.536633648797639,
+     "lip_normal_radius_mm": 5.77350527153204
+    },
+    "outermost": {
+     "xyz": [
+      108.07291666666671,
+      2.245044319208806e-07,
+      245.00000000000003
+     ],
+     "radius_mm": 5.735973289772902,
+     "arclength_fraction": 1.0
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.5,
+     "xyz": [
+      108.07291666666667,
+      0.0,
+      245.0
+     ],
+     "outermost_offset_mm": 3.3090173034089704e-14,
+     "trace_distance_mm": 1.6697155108601774e-07,
+     "deviation_mm": 1.6697155108601774e-07
+    },
+    "min_radius": {
+     "radius_mm": 4.319930740385449,
+     "xyz": [
+      107.61008236755029,
+      5.049439812322034,
+      240.9607188440754
+     ],
+     "signed_curvature_per_mm": 0.23148519272574591,
+     "normal_section_radius_mm": 4.320412415456418,
+     "principal_radius_mm": 4.264706566241607,
+     "arclength_fraction": 0.12530359084950338,
+     "distance_from_lip_mm": 6.482811780167901,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 4.320204680586928,
+      "arclength_fraction": 0.12530359084950338
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 3.9199307403854493,
+    "pass": true
+   },
+   {
+    "fraction": 0.65,
+    "label": "listed",
+    "attachment_thickness_mm": 9.730179854452844,
+    "zone": "thick",
+    "plane_point": [
+     120.25,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9977156421439828,
+     -0.0,
+     -0.06755366327017495
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 3.2645895260250037e-16,
+    "length_mm": 15.4648811960826,
+    "samples": 186,
+    "plane_error_mm": 2.8356784075185225e-14,
+    "trace_ends_thickness_mm": 9.730179854420333,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      120.57806451584493,
+      1.6322947630125019e-16,
+      244.8452605417092
+     ],
+     "radius_mm": 5.472908065667238,
+     "principal_radius_mm": 5.477751584620883,
+     "signed_curvature_per_mm": 0.18271821634885865,
+     "arclength_fraction": 0.5000000000000001,
+     "cut_obliquity_deg": 2.4096222879901683,
+     "lip_normal_radius_mm": 5.477751584620882
+    },
+    "outermost": {
+     "xyz": [
+      120.5780645158449,
+      2.1176823807728118e-07,
+      244.8452605417092
+     ],
+     "radius_mm": 5.472908065659362,
+     "arclength_fraction": 0.5000000000000001
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.5154739458283251,
+     "xyz": [
+      120.57806451584545,
+      0.0,
+      244.84526054171675
+     ],
+     "outermost_offset_mm": -7.580344380473543e-12,
+     "trace_distance_mm": 7.578437107859693e-12,
+     "deviation_mm": 7.580344380473543e-12
+    },
+    "min_radius": {
+     "radius_mm": 4.202726241369223,
+     "xyz": [
+      120.37312466001772,
+      4.609472456286505,
+      241.81845651718461
+     ],
+     "signed_curvature_per_mm": 0.23794078951814052,
+     "normal_section_radius_mm": 4.203100301337911,
+     "principal_radius_mm": 4.180004068202457,
+     "arclength_fraction": 0.12154141094091292,
+     "distance_from_lip_mm": 5.518222474008149,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 4.202809416001087,
+      "arclength_fraction": 0.12154141094091292
+     },
+     "lower": {
+      "radius_mm": 4.202809416001093,
+      "arclength_fraction": 0.8784585890590129
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 3.8027262413692227,
+    "pass": true
+   },
+   {
+    "fraction": 0.8,
+    "label": "listed",
+    "attachment_thickness_mm": 8.159999999999998,
+    "zone": "thick",
+    "plane_point": [
+     133.0,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9997830567281119,
+     -0.0,
+     -0.020828813681845134
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 6.228456374193337e-16,
+    "length_mm": 13.404635978600277,
+    "samples": 190,
+    "plane_error_mm": 5.683108706353504e-14,
+    "trace_ends_thickness_mm": 8.159999996117856,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      133.08976811208464,
+      3.1142281870966685e-16,
+      244.30886938006276
+     ],
+     "radius_mm": 4.526565919139588,
+     "principal_radius_mm": 4.5308624032780545,
+     "signed_curvature_per_mm": 0.2209180243618501,
+     "arclength_fraction": 0.49999999999999994,
+     "cut_obliquity_deg": 2.495388243025036,
+     "lip_normal_radius_mm": 4.530862403278054
+    },
+    "outermost": {
+     "xyz": [
+      133.0897681120847,
+      1.372223813328466e-07,
+      244.30886938006276
+     ],
+     "radius_mm": 4.526565919137513,
+     "arclength_fraction": 0.49999999999999994
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.5691130619936234,
+     "xyz": [
+      133.0897681120847,
+      0.0,
+      244.30886938006375
+     ],
+     "outermost_offset_mm": -9.945440236118633e-13,
+     "trace_distance_mm": 9.963826527801427e-13,
+     "deviation_mm": 9.963826527801427e-13
+    },
+    "min_radius": {
+     "radius_mm": 3.6207940586587086,
+     "xyz": [
+      133.04991134155384,
+      -3.5443105664927788,
+      242.3957443945839
+     ],
+     "signed_curvature_per_mm": 0.2761825123990734,
+     "normal_section_radius_mm": 3.6300229358974914,
+     "principal_radius_mm": 3.6236693213360223,
+     "arclength_fraction": 0.8124354547134934,
+     "distance_from_lip_mm": 4.027874521875408,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 3.6209058959957137,
+      "arclength_fraction": 0.187564545286638
+     },
+     "lower": {
+      "radius_mm": 3.6209058959956897,
+      "arclength_fraction": 0.8124354547134934
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 3.2207940586587087,
+    "pass": true
+   },
+   {
+    "fraction": 0.9,
+    "label": "listed",
+    "attachment_thickness_mm": 6.119999999999999,
+    "zone": "thick",
+    "plane_point": [
+     141.5,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9999457509425375,
+     -0.0,
+     0.010416101572308626
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 8.161198021691905e-16,
+    "length_mm": 10.641742926917756,
+    "samples": 200,
+    "plane_error_mm": 9.590458293948507e-14,
+    "trace_ends_thickness_mm": 6.119999996287138,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      141.4629490280783,
+      4.0805990108459523e-16,
+      243.55689330448462
+     ],
+     "radius_mm": 3.282101705040359,
+     "principal_radius_mm": 3.3123423707886315,
+     "signed_curvature_per_mm": 0.30468281908031347,
+     "arclength_fraction": 0.4999999999999999,
+     "cut_obliquity_deg": 7.748125782541671,
+     "lip_normal_radius_mm": 3.3123423707886315
+    },
+    "outermost": {
+     "xyz": [
+      141.4629490280783,
+      4.0805990108459523e-16,
+      243.55689330448462
+     ],
+     "radius_mm": 3.282101705040359,
+     "arclength_fraction": 0.4999999999999999
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.6443106695509943,
+     "xyz": [
+      141.46294902807827,
+      0.0,
+      243.55689330449005
+     ],
+     "outermost_offset_mm": -5.428548051088369e-12,
+     "trace_distance_mm": 5.428620918414583e-12,
+     "deviation_mm": 5.428620918414583e-12
+    },
+    "min_radius": {
+     "radius_mm": 2.787968021204276,
+     "xyz": [
+      141.47482613759271,
+      -2.4181554090207156,
+      242.41669079110312
+     ],
+     "signed_curvature_per_mm": 0.358684171552314,
+     "normal_section_radius_mm": 2.820541661035789,
+     "principal_radius_mm": 2.818824163529136,
+     "arclength_fraction": 0.761868152018537,
+     "distance_from_lip_mm": 2.6735142452263174,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 2.788050656463434,
+      "arclength_fraction": 0.23813184798138992
+     },
+     "lower": {
+      "radius_mm": 2.788050656463418,
+      "arclength_fraction": 0.761868152018537
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 2.387968021204276,
+    "pass": true
+   },
+   {
+    "fraction": 0.95,
+    "label": "listed",
+    "attachment_thickness_mm": 4.446076922411487,
+    "zone": "thick",
+    "plane_point": [
+     145.75,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9996610881683445,
+     -0.0,
+     0.026032840837707835
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.0805815419874033e-15,
+    "length_mm": 8.253434825345176,
+    "samples": 214,
+    "plane_error_mm": 4.611546952147253e-14,
+    "trace_ends_thickness_mm": 4.446076922448831,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      145.67514456927955,
+      5.402907709937017e-16,
+      242.87444853966556
+     ],
+     "radius_mm": 2.264863022761247,
+     "principal_radius_mm": 2.3302661302487517,
+     "signed_curvature_per_mm": 0.44152780541263487,
+     "arclength_fraction": 0.4999999999999999,
+     "cut_obliquity_deg": 13.606771728442693,
+     "lip_normal_radius_mm": 2.3302661302487517
+    },
+    "outermost": {
+     "xyz": [
+      145.6751445692796,
+      6.991529441502387e-08,
+      242.8744485396656
+     ],
+     "radius_mm": 2.2648630227608813,
+     "arclength_fraction": 0.4999999999999999
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.712555146052759,
+     "xyz": [
+      145.6751445692846,
+      0.0,
+      242.8744485394724
+     ],
+     "outermost_offset_mm": 1.9324710923080131e-10,
+     "trace_distance_mm": 1.932201791271292e-10,
+     "deviation_mm": 1.9324710923080131e-10
+    },
+    "min_radius": {
+     "radius_mm": 2.0714928009364115,
+     "xyz": [
+      145.69105424223187,
+      1.5253025903039172,
+      242.26351709829734
+     ],
+     "signed_curvature_per_mm": 0.4827436520889444,
+     "normal_section_radius_mm": 2.1369504096907206,
+     "principal_radius_mm": 2.136370786154418,
+     "arclength_fraction": 0.29662447074521475,
+     "distance_from_lip_mm": 1.643179337666325,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 2.0715033163164143,
+      "arclength_fraction": 0.29662447074521475
+     },
+     "lower": {
+      "radius_mm": 2.0715033163164196,
+      "arclength_fraction": 0.7033755292548535
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 1.6714928009364116,
+    "pass": true
+   },
+   {
+    "fraction": 0.97,
+    "label": "listed",
+    "attachment_thickness_mm": 3.479979310283323,
+    "zone": "thick",
+    "plane_point": [
+     147.45,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9994790315271437,
+     -0.0,
+     0.03227484372638786
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.1614304047683926e-15,
+    "length_mm": 6.802415991409142,
+    "samples": 206,
+    "plane_error_mm": 5.506589931672071e-14,
+    "trace_ends_thickness_mm": 3.4799793103339347,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      147.37116638199262,
+      5.807152023841963e-16,
+      242.4412991382924
+     ],
+     "radius_mm": 1.688614030016392,
+     "principal_radius_mm": 1.7861026046443091,
+     "signed_curvature_per_mm": 0.5922016412420147,
+     "arclength_fraction": 0.5000000000000002,
+     "cut_obliquity_deg": 19.0176449216288,
+     "lip_normal_radius_mm": 1.7861026046443091
+    },
+    "outermost": {
+     "xyz": [
+      147.37116638199268,
+      6.85678429312997e-08,
+      242.4412991382924
+     ],
+     "radius_mm": 1.6886140300162047,
+     "arclength_fraction": 0.5000000000000002
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.7558700862032598,
+     "xyz": [
+      147.37116638200314,
+      0.0,
+      242.4412991379674
+     ],
+     "outermost_offset_mm": 3.251705001049515e-10,
+     "trace_distance_mm": 3.251723354062244e-10,
+     "deviation_mm": 3.251723354062244e-10
+    },
+    "min_radius": {
+     "radius_mm": 1.6273670596495573,
+     "xyz": [
+      147.3813103184184,
+      -0.9756401341781965,
+      242.12716433285007
+     ],
+     "signed_curvature_per_mm": 0.6144895179427703,
+     "normal_section_radius_mm": 1.7244944556722566,
+     "principal_radius_mm": 1.7243149214846352,
+     "arclength_fraction": 0.652603074504909,
+     "distance_from_lip_mm": 1.025015730052839,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 1.6273703085829214,
+      "arclength_fraction": 0.34739692549500434
+     },
+     "lower": {
+      "radius_mm": 1.6273703085829176,
+      "arclength_fraction": 0.652603074504909
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 1.2273670596495574,
+    "pass": true
+   },
+   {
+    "fraction": 0.99,
+    "label": "listed",
+    "attachment_thickness_mm": 2.0297743716975045,
+    "zone": "thick",
+    "plane_point": [
+     149.15,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9992580964141508,
+     -0.0,
+     0.038513072465952605
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.2013887408373575e-15,
+    "length_mm": 4.468148318480781,
+    "samples": 194,
+    "plane_error_mm": 4.1323405027183087e-14,
+    "trace_ends_thickness_mm": 2.0297743713519107,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.08431509787562,
+      6.006943704186788e-16,
+      241.70425691998554
+     ],
+     "radius_mm": 0.8644931545346908,
+     "principal_radius_mm": 1.0578761658532754,
+     "signed_curvature_per_mm": 1.1567471584413471,
+     "arclength_fraction": 0.5000000000000004,
+     "cut_obliquity_deg": 35.19482707541389,
+     "lip_normal_radius_mm": 1.0578761658532754
+    },
+    "outermost": {
+     "xyz": [
+      149.0843150978756,
+      1.5198939443128445e-07,
+      241.70425691998557
+     ],
+     "radius_mm": 0.8644931545344864,
+     "arclength_fraction": 0.5000000000000004
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.8295743079141291,
+     "xyz": [
+      149.08431509784194,
+      0.0,
+      241.7042569208587
+     ],
+     "outermost_offset_mm": -8.737915623481403e-10,
+     "trace_distance_mm": 8.738210579720868e-10,
+     "deviation_mm": 8.738210579720868e-10
+    },
+    "min_radius": {
+     "radius_mm": 0.8644931545305007,
+     "xyz": [
+      149.08431509787619,
+      5.24251623415517e-06,
+      241.70425691996968
+     ],
+     "signed_curvature_per_mm": 1.1567471584469537,
+     "normal_section_radius_mm": 1.0578761658475364,
+     "principal_radius_mm": 1.0578761658473768,
+     "arclength_fraction": 0.5000000000000004,
+     "distance_from_lip_mm": 5.242516233578495e-06,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.8645396349846679,
+      "arclength_fraction": 0.49608343719300657
+     },
+     "lower": {
+      "radius_mm": 0.8644931545346908,
+      "arclength_fraction": 0.5000000000000007
+     }
+    },
+    "required_radius_mm": 0.4,
+    "margin_mm": 0.46449315453050066,
+    "pass": true
+   },
+   {
+    "fraction": 0.9984597576033789,
+    "label": "0.8 mm thickness crossing",
+    "attachment_thickness_mm": 0.7999999999999939,
+    "zone": "thin",
+    "plane_point": [
+     149.8690793962872,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991529612753931,
+     -0.0,
+     0.04115045533906965
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.2643865446135146e-15,
+    "length_mm": 2.2028257938896436,
+    "samples": 216,
+    "plane_error_mm": 4.184346050123186e-14,
+    "trace_ends_thickness_mm": 0.7999999999860994,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.83134773948066,
+      6.321932723067573e-16,
+      240.91614287913544
+     ],
+     "radius_mm": 0.2587490756700168,
+     "principal_radius_mm": 0.6684479499831316,
+     "signed_curvature_per_mm": 3.864748105517107,
+     "arclength_fraction": 0.4999999999999984,
+     "cut_obliquity_deg": 67.22648745985943,
+     "lip_normal_radius_mm": 0.6684479499831317
+    },
+    "outermost": {
+     "xyz": [
+      149.8313477394807,
+      2.4687760918906676e-08,
+      240.91614287913544
+     ],
+     "radius_mm": 0.2587490756700243,
+     "arclength_fraction": 0.4999999999999984
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.9083857112087181,
+     "xyz": [
+      149.83134773911917,
+      0.0,
+      240.91614288791283
+     ],
+     "outermost_offset_mm": -8.784833351106408e-09,
+     "trace_distance_mm": 8.784832181541116e-09,
+     "deviation_mm": 8.784833351106408e-09
+    },
+    "min_radius": {
+     "radius_mm": 0.2587490756700139,
+     "xyz": [
+      149.83134773948066,
+      8.826359759739333e-08,
+      240.9161428791354
+     ],
+     "signed_curvature_per_mm": 3.8647481055171506,
+     "normal_section_radius_mm": 0.6684479499830713,
+     "principal_radius_mm": 0.6684479499830457,
+     "arclength_fraction": 0.4999999999999984,
+     "distance_from_lip_mm": 8.826359696520464e-08,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.25879787436382456,
+      "arclength_fraction": 0.49803657930170503
+     },
+     "lower": {
+      "radius_mm": 0.2587490756700168,
+      "arclength_fraction": 0.499999999999999
+     }
+    },
+    "required_radius_mm": 0.35999999999999727,
+    "ratio_to_half_thickness": 0.6468726891750396,
+    "lip_ratio_to_half_thickness": 0.6468726891750469,
+    "pass": false
+   },
+   {
+    "fraction": 0.9988211786231449,
+    "label": "thin zone, t = 0.7 mm (TE side)",
+    "attachment_thickness_mm": 0.7000000000000107,
+    "zone": "thin",
+    "plane_point": [
+     149.8998001829673,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991483151161886,
+     -0.0,
+     0.04126311186133974
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.2719437875397022e-15,
+    "length_mm": 1.994304030204743,
+    "samples": 214,
+    "plane_error_mm": 9.688971916686355e-14,
+    "trace_ends_thickness_mm": 0.6999999999901942,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.8651876063546,
+      6.359718937698511e-16,
+      240.83811171878023
+     ],
+     "radius_mm": 0.21698572981713513,
+     "principal_radius_mm": 0.6532257207750025,
+     "signed_curvature_per_mm": 4.6085979978625815,
+     "arclength_fraction": 0.4999999999999997,
+     "cut_obliquity_deg": 70.599116069056,
+     "lip_normal_radius_mm": 0.6532257207750026
+    },
+    "outermost": {
+     "xyz": [
+      149.8651876063546,
+      6.359718937698511e-16,
+      240.83811171878023
+     ],
+     "radius_mm": 0.21698572981713513,
+     "arclength_fraction": 0.4999999999999997
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.9161888274765918,
+     "xyz": [
+      149.86518760608817,
+      0.0,
+      240.83811172523409
+     ],
+     "outermost_offset_mm": -6.459356543064039e-09,
+     "trace_distance_mm": 6.4593565439692806e-09,
+     "deviation_mm": 6.4593565439692806e-09
+    },
+    "min_radius": {
+     "radius_mm": 0.21698572981712447,
+     "xyz": [
+      149.86518760635465,
+      5.579092621221804e-08,
+      240.8381117187802
+     ],
+     "signed_curvature_per_mm": 4.608597997862808,
+     "normal_section_radius_mm": 0.6532257207749604,
+     "principal_radius_mm": 0.6532257207749428,
+     "arclength_fraction": 0.4999999999999997,
+     "distance_from_lip_mm": 5.5790925576282345e-08,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.21705838075272366,
+      "arclength_fraction": 0.4976848532752488
+     },
+     "lower": {
+      "radius_mm": 0.21698572981713513,
+      "arclength_fraction": 0.5000000000000003
+     }
+    },
+    "required_radius_mm": 0.31500000000000483,
+    "ratio_to_half_thickness": 0.6199592280489176,
+    "lip_ratio_to_half_thickness": 0.619959228048948,
+    "pass": false
+   },
+   {
+    "fraction": 0.9991341984846218,
+    "label": "thin zone, t = 0.6 mm (TE side)",
+    "attachment_thickness_mm": 0.5999999999999881,
+    "zone": "thin",
+    "plane_point": [
+     149.92640687119285,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991442809367389,
+     -0.0,
+     0.04136068025802662
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.280864297558717e-15,
+    "length_mm": 1.779072780590722,
+    "samples": 216,
+    "plane_error_mm": 4.8120999360254737e-14,
+    "trace_ends_thickness_mm": 0.5999999999162444,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.89510068275376,
+      6.404321487793585e-16,
+      240.75625930090428
+     ],
+     "radius_mm": 0.1769887525911,
+     "principal_radius_mm": 0.6407196749734757,
+     "signed_curvature_per_mm": 5.650076546447651,
+     "arclength_fraction": 0.49999999999999883,
+     "cut_obliquity_deg": 73.96441861785875,
+     "lip_normal_radius_mm": 0.6407196749734757
+    },
+    "outermost": {
+     "xyz": [
+      149.89510068275376,
+      2.26619367993397e-08,
+      240.75625930090428
+     ],
+     "radius_mm": 0.17698875259108326,
+     "arclength_fraction": 0.49999999999999883
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.924374070863002,
+     "xyz": [
+      149.89510068314843,
+      0.0,
+      240.75625929137
+     ],
+     "outermost_offset_mm": 9.542454694171156e-09,
+     "trace_distance_mm": 9.54245469418926e-09,
+     "deviation_mm": 9.54245469418926e-09
+    },
+    "min_radius": {
+     "radius_mm": 0.17698875259108265,
+     "xyz": [
+      149.89510068275376,
+      3.408195511922507e-08,
+      240.75625930090428
+     ],
+     "signed_curvature_per_mm": 5.650076546448204,
+     "normal_section_radius_mm": 0.6407196749734464,
+     "principal_radius_mm": 0.640719674973435,
+     "arclength_fraction": 0.49999999999999883,
+     "distance_from_lip_mm": 3.408195447879292e-08,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.17704457181014024,
+      "arclength_fraction": 0.4980358232662763
+     },
+     "lower": {
+      "radius_mm": 0.1769887525911,
+      "arclength_fraction": 0.49999999999999956
+     }
+    },
+    "required_radius_mm": 0.26999999999999463,
+    "ratio_to_half_thickness": 0.5899625086369539,
+    "lip_ratio_to_half_thickness": 0.5899625086370117,
+    "pass": false
+   },
+   {
+    "fraction": 0.9993989082003747,
+    "label": "thin zone, t = 0.5 mm (TE side)",
+    "attachment_thickness_mm": 0.4999999999999981,
+    "zone": "thin",
+    "plane_point": [
+     149.94890719703184,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991408619653281,
+     -0.0,
+     0.04144318944267152
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.2894684425108043e-15,
+    "length_mm": 1.555546131635556,
+    "samples": 214,
+    "plane_error_mm": 7.198531802437847e-14,
+    "trace_ends_thickness_mm": 0.4999999998046838,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.92112863982413,
+      6.447342212554022e-16,
+      240.66970452723112
+     ],
+     "radius_mm": 0.13901011126776155,
+     "principal_radius_mm": 0.6308164032427367,
+     "signed_curvature_per_mm": 7.193721311925274,
+     "arclength_fraction": 0.5000000000000023,
+     "cut_obliquity_deg": 77.2695027329667,
+     "lip_normal_radius_mm": 0.6308164032427366
+    },
+    "outermost": {
+     "xyz": [
+      149.92112863982413,
+      6.447342212554022e-16,
+      240.66970452723112
+     ],
+     "radius_mm": 0.13901011126776155,
+     "arclength_fraction": 0.5000000000000023
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.9330295486251373,
+     "xyz": [
+      149.9211286403834,
+      0.0,
+      240.66970451374863
+     ],
+     "outermost_offset_mm": 1.3494085514814231e-08,
+     "trace_distance_mm": 1.349408551482379e-08,
+     "deviation_mm": 1.349408551482379e-08
+    },
+    "min_radius": {
+     "radius_mm": 0.13901011126774462,
+     "xyz": [
+      149.92112863982416,
+      1.7330904072965225e-08,
+      240.6697045272311
+     ],
+     "signed_curvature_per_mm": 7.193721311926151,
+     "normal_section_radius_mm": 0.6308164032427197,
+     "principal_radius_mm": 0.6308164032427137,
+     "arclength_fraction": 0.5000000000000023,
+     "distance_from_lip_mm": 1.7330903428277613e-08,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.13906964963877955,
+      "arclength_fraction": 0.49803355883442463
+     },
+     "lower": {
+      "radius_mm": 0.13901011126776155,
+      "arclength_fraction": 0.5000000000000032
+     }
+    },
+    "required_radius_mm": 0.22499999999999915,
+    "ratio_to_half_thickness": 0.5560404450709806,
+    "lip_ratio_to_half_thickness": 0.5560404450710483,
+    "pass": false
+   },
+   {
+    "fraction": 0.999615384558467,
+    "label": "thin zone, t = 0.4 mm (TE side)",
+    "attachment_thickness_mm": 0.39999999999997465,
+    "zone": "thin",
+    "plane_point": [
+     149.9673076874697,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991380609254787,
+     -0.0,
+     0.041510663811534884
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.2964994518770077e-15,
+    "length_mm": 1.3213396715627375,
+    "samples": 208,
+    "plane_error_mm": 8.748649152474517e-14,
+    "trace_ends_thickness_mm": 0.3999999997939994,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.94332981104026,
+      6.482497259385039e-16,
+      240.57713384371903
+     ],
+     "radius_mm": 0.10337405501256142,
+     "principal_radius_mm": 0.6233419719702696,
+     "signed_curvature_per_mm": 9.673607172307266,
+     "arclength_fraction": 0.5000000000000022,
+     "cut_obliquity_deg": 80.45405273897893,
+     "lip_normal_radius_mm": 0.6233419719702696
+    },
+    "outermost": {
+     "xyz": [
+      149.94332981104026,
+      6.482497259385039e-16,
+      240.57713384371903
+     ],
+     "radius_mm": 0.10337405501256142,
+     "arclength_fraction": 0.5000000000000022
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.9422866145403789,
+     "xyz": [
+      149.9433298105883,
+      0.0,
+      240.5771338545962
+     ],
+     "outermost_offset_mm": -1.0886572921962687e-08,
+     "trace_distance_mm": 1.0886572922092698e-08,
+     "deviation_mm": 1.0886572922092698e-08
+    },
+    "min_radius": {
+     "radius_mm": 0.10337405501255346,
+     "xyz": [
+      149.94332981104023,
+      1.905200233687232e-08,
+      240.57713384371897
+     ],
+     "signed_curvature_per_mm": 9.67360717230801,
+     "normal_section_radius_mm": 0.6233419719702616,
+     "principal_radius_mm": 0.6233419719702474,
+     "arclength_fraction": 0.5000000000000022,
+     "distance_from_lip_mm": 1.9052001688728592e-08,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 0.0,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.10343773356596628,
+      "arclength_fraction": 0.4980254633427426
+     },
+     "lower": {
+      "radius_mm": 0.10337405501256142,
+      "arclength_fraction": 0.5000000000000032
+     }
+    },
+    "required_radius_mm": 0.17999999999998859,
+    "ratio_to_half_thickness": 0.5168702750628,
+    "lip_ratio_to_half_thickness": 0.5168702750628399,
+    "pass": false
+   },
+   {
+    "fraction": 0.9997836902343067,
+    "label": "thin zone, t = 0.3 mm (TE side)",
+    "attachment_thickness_mm": 0.3000000000000203,
+    "zone": "thin",
+    "plane_point": [
+     149.98161366991607,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991358800400242,
+     -0.0,
+     0.041563123278291376
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.3011948646532718e-15,
+    "length_mm": 1.0725479861752827,
+    "samples": 228,
+    "plane_error_mm": 4.431930114179598e-14,
+    "trace_ends_thickness_mm": 0.2999999999742967,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.9617953125957,
+      6.505974323266359e-16,
+      240.4764134723387
+     ],
+     "radius_mm": 0.07052144275630151,
+     "principal_radius_mm": 0.6180628338716584,
+     "signed_curvature_per_mm": 14.180084254028452,
+     "arclength_fraction": 0.4999999999999988,
+     "cut_obliquity_deg": 83.44823964211662,
+     "lip_normal_radius_mm": 0.6180628338716584
+    },
+    "outermost": {
+     "xyz": [
+      149.96179531259574,
+      1.4487732624690608e-08,
+      240.4764134723387
+     ],
+     "radius_mm": 0.07052144275630635,
+     "arclength_fraction": 0.4999999999999988
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.9523586499812253,
+     "xyz": [
+      149.96179531143719,
+      0.0,
+      240.47641350018776
+     ],
+     "outermost_offset_mm": -2.787315702116674e-08,
+     "trace_distance_mm": 2.787315583988824e-08,
+     "deviation_mm": 2.787315702116674e-08
+    },
+    "min_radius": {
+     "radius_mm": 0.07052144275630151,
+     "xyz": [
+      149.9617953125957,
+      6.505974323266359e-16,
+      240.4764134723387
+     ],
+     "signed_curvature_per_mm": 14.180084254028452,
+     "normal_section_radius_mm": 0.6180628338716586,
+     "principal_radius_mm": 0.6180628338716584,
+     "arclength_fraction": 0.4999999999999988,
+     "distance_from_lip_mm": 0.0,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 1.4787793334710982e-06,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.07053912598282075,
+      "arclength_fraction": 0.49898795837624976
+     },
+     "lower": {
+      "radius_mm": 0.07052144275630151,
+      "arclength_fraction": 0.5
+     }
+    },
+    "required_radius_mm": 0.13500000000000914,
+    "ratio_to_half_thickness": 0.4701429517086449,
+    "lip_ratio_to_half_thickness": 0.4701429517086449,
+    "pass": false
+   },
+   {
+    "fraction": 0.9999038738816456,
+    "label": "thin zone, t = 0.2 mm (TE side)",
+    "attachment_thickness_mm": 0.19999999999998208,
+    "zone": "thin",
+    "plane_point": [
+     149.99182927993988,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991343210344202,
+     -0.0,
+     0.04160058330225938
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.302184663703701e-15,
+    "length_mm": 0.8018177426768088,
+    "samples": 230,
+    "plane_error_mm": 9.685284886557232e-14,
+    "trace_ends_thickness_mm": 0.2000000002304675,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.9766913850975,
+      6.510923318518505e-16,
+      240.363571591662
+     ],
+     "radius_mm": 0.04111220826335897,
+     "principal_radius_mm": 0.6146918352429306,
+     "signed_curvature_per_mm": 24.32367518655631,
+     "arclength_fraction": 0.5000000000000014,
+     "cut_obliquity_deg": 86.16504824551247,
+     "lip_normal_radius_mm": 0.6146918352429308
+    },
+    "outermost": {
+     "xyz": [
+      149.9766913850975,
+      6.510923318518505e-16,
+      240.363571591662
+     ],
+     "radius_mm": 0.04111220826335897,
+     "arclength_fraction": 0.5000000000000014
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.9636428453993613,
+     "xyz": [
+      149.9766913869984,
+      0.0,
+      240.3635715460064
+     ],
+     "outermost_offset_mm": 4.5695166326327046e-08,
+     "trace_distance_mm": 4.569516632634905e-08,
+     "deviation_mm": 4.569516632634905e-08
+    },
+    "min_radius": {
+     "radius_mm": 0.04111220826335897,
+     "xyz": [
+      149.9766913850975,
+      6.510923318518505e-16,
+      240.363571591662
+     ],
+     "signed_curvature_per_mm": 24.32367518655631,
+     "normal_section_radius_mm": 0.614691835242931,
+     "principal_radius_mm": 0.6146918352429306,
+     "arclength_fraction": 0.5000000000000014,
+     "distance_from_lip_mm": 0.0,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 2.2588727439225506e-06,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.04113066653161963,
+      "arclength_fraction": 0.49899214864795866
+     },
+     "lower": {
+      "radius_mm": 0.04111220826335897,
+      "arclength_fraction": 0.500000000000003
+     }
+    },
+    "required_radius_mm": 0.08999999999999193,
+    "ratio_to_half_thickness": 0.41112208263362654,
+    "lip_ratio_to_half_thickness": 0.41112208263362654,
+    "pass": false
+   },
+   {
+    "fraction": 0.9999759702030375,
+    "label": "thin zone, t = 0.1 mm (TE side)",
+    "attachment_thickness_mm": 0.1000000000008017,
+    "zone": "thin",
+    "plane_point": [
+     149.99795746725817,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991333851393104,
+     -0.0,
+     0.041623054910258646
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.2895798399365744e-15,
+    "length_mm": 0.49120677470081797,
+    "samples": 242,
+    "plane_error_mm": 8.394704439011157e-14,
+    "trace_ends_thickness_mm": 0.10000000009446304,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.98841603342052,
+      6.447899199682872e-16,
+      240.22903568971205
+     ],
+     "radius_mm": 0.01633177614980644,
+     "principal_radius_mm": 0.6129046716383726,
+     "signed_curvature_per_mm": 61.230327358598515,
+     "arclength_fraction": 0.5000000000000179,
+     "cut_obliquity_deg": 88.4730814368824,
+     "lip_normal_radius_mm": 0.6129046716383725
+    },
+    "outermost": {
+     "xyz": [
+      149.98841603342052,
+      6.447899199682872e-16,
+      240.22903568971205
+     ],
+     "radius_mm": 0.01633177614980644,
+     "arclength_fraction": 0.5000000000000179
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.9770964278020094,
+     "xyz": [
+      149.9884160320763,
+      0.0,
+      240.2290357219799
+     ],
+     "outermost_offset_mm": -3.22958361310537e-08,
+     "trace_distance_mm": 3.229583613105884e-08,
+     "deviation_mm": 3.229583613105884e-08
+    },
+    "min_radius": {
+     "radius_mm": 0.016331776149802878,
+     "xyz": [
+      149.9884160334205,
+      6.178423495040164e-09,
+      240.22903568971196
+     ],
+     "signed_curvature_per_mm": 61.230327358611866,
+     "normal_section_radius_mm": 0.6129046716384581,
+     "principal_radius_mm": 0.6129046716383648,
+     "arclength_fraction": 0.5000000000000179,
+     "distance_from_lip_mm": 6.178422850903966e-09,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 4.90455619685548e-06,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.01633647371835425,
+      "arclength_fraction": 0.4995028755088162
+     },
+     "lower": {
+      "radius_mm": 0.01633177614980644,
+      "arclength_fraction": 0.5000000000000204
+     }
+    },
+    "required_radius_mm": 0.045000000000360765,
+    "ratio_to_half_thickness": 0.3266355229934389,
+    "lip_ratio_to_half_thickness": 0.3266355229935102,
+    "pass": false
+   },
+   {
+    "fraction": 0.9999939926590291,
+    "label": "thin zone, t = 0.05 mm (TE side)",
+    "attachment_thickness_mm": 0.050000000000042365,
+    "zone": "thin",
+    "plane_point": [
+     149.9994893760175,
+     0.0,
+     240.0
+    ],
+    "plane_normal": [
+     0.9991331511079311,
+     -0.0,
+     0.04162867229609784
+    ],
+    "pieces_unused": 0,
+    "max_junction_gap_mm": 1.2685811772765636e-15,
+    "length_mm": 0.30318073221252756,
+    "samples": 248,
+    "plane_error_mm": 5.978604567280782e-14,
+    "trace_ends_thickness_mm": 0.0499999995927419,
+    "lip": {
+     "defined_as": "trace point at the locked outline",
+     "xyz": [
+      149.99347785183718,
+      6.342905886382818e-16,
+      240.14428308100963
+     ],
+     "radius_mm": 0.006485170266876488,
+     "principal_radius_mm": 0.612511770748208,
+     "signed_curvature_per_mm": 154.19795608259938,
+     "arclength_fraction": 0.499999999999977,
+     "cut_obliquity_deg": 89.39334804923256,
+     "lip_normal_radius_mm": 0.612511770748208
+    },
+    "outermost": {
+     "xyz": [
+      149.99347785183718,
+      6.342905886382818e-16,
+      240.14428308100963
+     ],
+     "radius_mm": 0.006485170266876488,
+     "arclength_fraction": 0.499999999999977
+    },
+    "outline": {
+     "kind": "midplane",
+     "p": 0.9855716536353045,
+     "xyz": [
+      149.99347783589468,
+      0.0,
+      240.14428346364696
+     ],
+     "outermost_offset_mm": -3.829693010343092e-07,
+     "trace_distance_mm": 3.8296930103430923e-07,
+     "deviation_mm": 3.8296930103430923e-07
+    },
+    "min_radius": {
+     "radius_mm": 0.006485170266850677,
+     "xyz": [
+      149.9934778518372,
+      3.0651918780932874e-09,
+      240.1442830810096
+     ],
+     "signed_curvature_per_mm": 154.19795608321309,
+     "normal_section_radius_mm": 0.6125117707483914,
+     "principal_radius_mm": 0.6125117707482023,
+     "arclength_fraction": 0.499999999999977,
+     "distance_from_lip_mm": 3.0651912440662367e-09,
+     "convex": true
+    },
+    "reversals": [],
+    "max_face_junction_turn_deg": 1.2605816820395112e-05,
+    "side_peaks": {
+     "upper": {
+      "radius_mm": 0.006488255731109904,
+      "arclength_fraction": 0.4996007119853192
+     },
+     "lower": {
+      "radius_mm": 0.006485170266876488,
+      "arclength_fraction": 0.49999999999998124
+     }
+    },
+    "required_radius_mm": 0.022500000000019064,
+    "ratio_to_half_thickness": 0.2594068106738073,
+    "lip_ratio_to_half_thickness": 0.2594068106748397,
+    "pass": false
+   }
+  ]
+ },
+ "cap_map": {
+  "collapse_exclusion_mm": 0.05,
+  "faces": [
+   {
+    "face": 3,
+    "tip": "top (+Z)",
+    "surface": "BSplineSurface",
+    "grid": [
+     320,
+     320
+    ],
+    "points_evaluated": 102400,
+    "points_outside_trim": 0,
+    "points_excluded_undefined_derivatives": 320,
+    "points_within_collapse_exclusion": 468,
+    "points_outside_chord_range": 0,
+    "collapsed_points": [
+     {
+      "what": "collapsed side v=max",
+      "xyz": [
+       108.07291666665999,
+       -7.898486050548003e-18,
+       245.00000000000006
+      ],
+      "nearest_grid_point_with_derivatives_mm": 0.0029290295013849185
+     },
+     {
+      "what": "degenerated edge",
+      "xyz": [
+       108.07291666666,
+       0.0,
+       245.0
+      ],
+      "nearest_grid_point_with_derivatives_mm": 0.002929029501384897
+     }
+    ],
+    "near_collapse": [
+     {
+      "distance_mm": [
+       0.001,
+       0.01
+      ],
+      "points": 64,
+      "min_radius_mm": 5.773492400670162,
+      "worst": {
+       "xyz": [
+        108.08221461505667,
+        0.002761024645847287,
+        244.99999925701863
+       ],
+       "uv": [
+        0.6083333333333333,
+        0.9996145181203615
+       ],
+       "radius_mm": 5.773492400670162,
+       "signed_curvature_per_mm": 0.17320538949422093,
+       "chord_fraction": 0.5001114371055864,
+       "attachment_thickness_mm": 10.1999996343799,
+       "required_radius_mm": 0.4,
+       "score_radius_over_required": 14.433731001675405,
+       "distance_to_collapsed_corner_mm": 0.009699232033209226,
+       "zone": "thick",
+       "margin_mm": 5.373492400670162
+      }
+     },
+     {
+      "distance_mm": [
+       0.01,
+       0.05
+      ],
+      "points": 404,
+      "min_radius_mm": 5.773215557258397,
+      "worst": {
+       "xyz": [
+        108.09035795614975,
+        0.04673757595398696,
+        244.99981052880278
+       ],
+       "uv": [
+        0.5125,
+        0.9938441702975689
+       ],
+       "radius_mm": 5.773215557258397,
+       "signed_curvature_per_mm": 0.1732136952244484,
+       "chord_fraction": 0.5002092942301978,
+       "attachment_thickness_mm": 10.199998754846737,
+       "required_radius_mm": 0.4,
+       "score_radius_over_required": 14.433038893145993,
+       "distance_to_collapsed_corner_mm": 0.0498862253979407,
+       "zone": "thick",
+       "margin_mm": 5.373215557258397
+      }
+     }
+    ],
+    "worst": {
+     "xyz": [
+      149.8313477394807,
+      4.215769000004421e-07,
+      240.916142879135
+     ],
+     "uv": [
+      0.9999999734541126,
+      0.09624592716149485
+     ],
+     "radius_mm": 0.6684479499828978,
+     "signed_curvature_per_mm": 1.4960027927762887,
+     "chord_fraction": 0.9984597576033788,
+     "attachment_thickness_mm": 0.8000000000000228,
+     "required_radius_mm": 0.4,
+     "score_radius_over_required": 1.6711198749572445,
+     "distance_to_collapsed_corner_mm": 41.95765072840895,
+     "zone": "thick",
+     "margin_mm": 0.2684479499828978
+    },
+    "tightest": {
+     "xyz": [
+      149.99658557505265,
+      2.244282207852777e-07,
+      240.07986811747386
+     ],
+     "uv": [
+      0.9999999859884825,
+      0.00801896363669835
+     ],
+     "radius_mm": 0.6124378907427931,
+     "signed_curvature_per_mm": 1.6328186337183572,
+     "chord_fraction": 0.9999989810335127,
+     "attachment_thickness_mm": 0.020645075313795544,
+     "required_radius_mm": 0.009290283891207994,
+     "score_radius_over_required": 65.92240860609041,
+     "distance_to_collapsed_corner_mm": 42.211393159690644,
+     "zone": "thin",
+     "ratio_to_half_thickness": 59.330167745481376
+    },
+    "zone_worst": {
+     "thick": {
+      "xyz": [
+       149.8313477394807,
+       4.215769000004421e-07,
+       240.916142879135
+      ],
+      "uv": [
+       0.9999999734541126,
+       0.09624592716149485
+      ],
+      "radius_mm": 0.6684479499828978,
+      "signed_curvature_per_mm": 1.4960027927762887,
+      "chord_fraction": 0.9984597576033788,
+      "attachment_thickness_mm": 0.8000000000000228,
+      "required_radius_mm": 0.4,
+      "score_radius_over_required": 1.6711198749572445,
+      "distance_to_collapsed_corner_mm": 41.95765072840895,
+      "zone": "thick",
+      "margin_mm": 0.2684479499828978
+     },
+     "thin": {
+      "xyz": [
+       149.8325958177625,
+       0.024480100936392052,
+       240.91241319444032
+      ],
+      "uv": [
+       0.998458666866564,
+       0.09583333333333333
+      ],
+      "radius_mm": 0.6688315388839678,
+      "signed_curvature_per_mm": 1.4951448038300192,
+      "chord_fraction": 0.9984726770581902,
+      "attachment_thickness_mm": 0.7966336016847502,
+      "required_radius_mm": 0.3584851207581376,
+      "score_radius_over_required": 1.8657163161179413,
+      "distance_to_collapsed_corner_mm": 41.95926319624013,
+      "zone": "thin",
+      "ratio_to_half_thickness": 1.6791446845061473
+     }
+    }
+   },
+   {
+    "face": 4,
+    "tip": "top (+Z)",
+    "surface": "BSplineSurface",
+    "grid": [
+     320,
+     320
+    ],
+    "points_evaluated": 102400,
+    "points_outside_trim": 0,
+    "points_excluded_undefined_derivatives": 320,
+    "points_within_collapse_exclusion": 468,
+    "points_outside_chord_range": 0,
+    "collapsed_points": [
+     {
+      "what": "collapsed side v=max",
+      "xyz": [
+       108.07291666665999,
+       7.898486050548003e-18,
+       245.00000000000006
+      ],
+      "nearest_grid_point_with_derivatives_mm": 0.0029290295013849185
+     },
+     {
+      "what": "degenerated edge",
+      "xyz": [
+       108.07291666666,
+       0.0,
+       245.0
+      ],
+      "nearest_grid_point_with_derivatives_mm": 0.002929029501384897
+     }
+    ],
+    "near_collapse": [
+     {
+      "distance_mm": [
+       0.001,
+       0.01
+      ],
+      "points": 64,
+      "min_radius_mm": 5.773492400670162,
+      "worst": {
+       "xyz": [
+        108.08221461505667,
+        -0.002761024645847287,
+        244.99999925701863
+       ],
+       "uv": [
+        0.6083333333333333,
+        0.9996145181203615
+       ],
+       "radius_mm": 5.773492400670162,
+       "signed_curvature_per_mm": 0.17320538949422093,
+       "chord_fraction": 0.5001114371055864,
+       "attachment_thickness_mm": 10.1999996343799,
+       "required_radius_mm": 0.4,
+       "score_radius_over_required": 14.433731001675405,
+       "distance_to_collapsed_corner_mm": 0.009699232033209226,
+       "zone": "thick",
+       "margin_mm": 5.373492400670162
+      }
+     },
+     {
+      "distance_mm": [
+       0.01,
+       0.05
+      ],
+      "points": 404,
+      "min_radius_mm": 5.773215557258397,
+      "worst": {
+       "xyz": [
+        108.09035795614975,
+        -0.04673757595398696,
+        244.99981052880278
+       ],
+       "uv": [
+        0.5125,
+        0.9938441702975689
+       ],
+       "radius_mm": 5.773215557258397,
+       "signed_curvature_per_mm": 0.1732136952244484,
+       "chord_fraction": 0.5002092942301978,
+       "attachment_thickness_mm": 10.199998754846737,
+       "required_radius_mm": 0.4,
+       "score_radius_over_required": 14.433038893145993,
+       "distance_to_collapsed_corner_mm": 0.0498862253979407,
+       "zone": "thick",
+       "margin_mm": 5.373215557258397
+      }
+     }
+    ],
+    "worst": {
+     "xyz": [
+      149.8313477394807,
+      -4.215769000004421e-07,
+      240.916142879135
+     ],
+     "uv": [
+      0.9999999734541126,
+      0.09624592716149485
+     ],
+     "radius_mm": 0.6684479499828978,
+     "signed_curvature_per_mm": 1.4960027927762887,
+     "chord_fraction": 0.9984597576033788,
+     "attachment_thickness_mm": 0.8000000000000228,
+     "required_radius_mm": 0.4,
+     "score_radius_over_required": 1.6711198749572445,
+     "distance_to_collapsed_corner_mm": 41.95765072840895,
+     "zone": "thick",
+     "margin_mm": 0.2684479499828978
+    },
+    "tightest": {
+     "xyz": [
+      149.99658557505265,
+      -2.244282207852777e-07,
+      240.07986811747386
+     ],
+     "uv": [
+      0.9999999859884825,
+      0.00801896363669835
+     ],
+     "radius_mm": 0.6124378907427931,
+     "signed_curvature_per_mm": 1.6328186337183572,
+     "chord_fraction": 0.9999989810335127,
+     "attachment_thickness_mm": 0.020645075313795544,
+     "required_radius_mm": 0.009290283891207994,
+     "score_radius_over_required": 65.92240860609041,
+     "distance_to_collapsed_corner_mm": 42.211393159690644,
+     "zone": "thin",
+     "ratio_to_half_thickness": 59.330167745481376
+    },
+    "zone_worst": {
+     "thick": {
+      "xyz": [
+       149.8313477394807,
+       -4.215769000004421e-07,
+       240.916142879135
+      ],
+      "uv": [
+       0.9999999734541126,
+       0.09624592716149485
+      ],
+      "radius_mm": 0.6684479499828978,
+      "signed_curvature_per_mm": 1.4960027927762887,
+      "chord_fraction": 0.9984597576033788,
+      "attachment_thickness_mm": 0.8000000000000228,
+      "required_radius_mm": 0.4,
+      "score_radius_over_required": 1.6711198749572445,
+      "distance_to_collapsed_corner_mm": 41.95765072840895,
+      "zone": "thick",
+      "margin_mm": 0.2684479499828978
+     },
+     "thin": {
+      "xyz": [
+       149.8325958177625,
+       -0.024480100936392052,
+       240.91241319444032
+      ],
+      "uv": [
+       0.998458666866564,
+       0.09583333333333333
+      ],
+      "radius_mm": 0.6688315388839678,
+      "signed_curvature_per_mm": 1.4951448038300192,
+      "chord_fraction": 0.9984726770581902,
+      "attachment_thickness_mm": 0.7966336016847502,
+      "required_radius_mm": 0.3584851207581376,
+      "score_radius_over_required": 1.8657163161179413,
+      "distance_to_collapsed_corner_mm": 41.95926319624013,
+      "zone": "thin",
+      "ratio_to_half_thickness": 1.6791446845061473
+     }
+    }
+   }
+  ],
+  "worst": {
+   "xyz": [
+    149.8313477394807,
+    4.215769000004421e-07,
+    240.916142879135
+   ],
+   "uv": [
+    0.9999999734541126,
+    0.09624592716149485
+   ],
+   "radius_mm": 0.6684479499828978,
+   "signed_curvature_per_mm": 1.4960027927762887,
+   "chord_fraction": 0.9984597576033788,
+   "attachment_thickness_mm": 0.8000000000000228,
+   "required_radius_mm": 0.4,
+   "score_radius_over_required": 1.6711198749572445,
+   "distance_to_collapsed_corner_mm": 41.95765072840895,
+   "zone": "thick",
+   "margin_mm": 0.2684479499828978
+  },
+  "worst_face": 3,
+  "tightest": {
+   "xyz": [
+    149.99658557505265,
+    2.244282207852777e-07,
+    240.07986811747386
+   ],
+   "uv": [
+    0.9999999859884825,
+    0.00801896363669835
+   ],
+   "radius_mm": 0.6124378907427931,
+   "signed_curvature_per_mm": 1.6328186337183572,
+   "chord_fraction": 0.9999989810335127,
+   "attachment_thickness_mm": 0.020645075313795544,
+   "required_radius_mm": 0.009290283891207994,
+   "score_radius_over_required": 65.92240860609041,
+   "distance_to_collapsed_corner_mm": 42.211393159690644,
+   "zone": "thin",
+   "ratio_to_half_thickness": 59.330167745481376
+  },
+  "tightest_face": 3,
+  "worst_within_collapse_exclusion": {
+   "xyz": [
+    108.09035795614975,
+    0.04673757595398696,
+    244.99981052880278
+   ],
+   "uv": [
+    0.5125,
+    0.9938441702975689
+   ],
+   "radius_mm": 5.773215557258397,
+   "signed_curvature_per_mm": 0.1732136952244484,
+   "chord_fraction": 0.5002092942301978,
+   "attachment_thickness_mm": 10.199998754846737,
+   "required_radius_mm": 0.4,
+   "score_radius_over_required": 14.433038893145993,
+   "distance_to_collapsed_corner_mm": 0.0498862253979407,
+   "zone": "thick",
+   "margin_mm": 5.373215557258397
+  },
+  "closest_grid_approach_to_collapse_mm": 0.002929029501384897,
+  "pass": true
+ },
+ "te_closure": {
+  "kind": "sharp point",
+  "tips": [
+   {
+    "tip": "top (+Z)",
+    "approach_sections": [
+     {
+      "distance_to_te_mm": 1.0,
+      "fraction": 0.9882352941176471,
+      "attachment_thickness_mm": 2.1996363335787983,
+      "min_radius_mm": 0.9569040988221298,
+      "lip_radius_mm": 0.9569040988316326,
+      "lip_normal_radius_mm": 1.1335322397008705,
+      "cut_obliquity_deg": 32.415922609933666,
+      "ratio_to_half_thickness": null,
+      "pass": true,
+      "error": null
+     },
+     {
+      "distance_to_te_mm": 0.5,
+      "fraction": 0.9941176470588236,
+      "attachment_thickness_mm": 1.5599999999999983,
+      "min_radius_mm": 0.6177166932219612,
+      "lip_radius_mm": 0.6177166932226273,
+      "lip_normal_radius_mm": 0.8709684714054465,
+      "cut_obliquity_deg": 44.82772393004791,
+      "ratio_to_half_thickness": null,
+      "pass": true,
+      "error": null
+     },
+     {
+      "distance_to_te_mm": 0.2,
+      "fraction": 0.9976470588235294,
+      "attachment_thickness_mm": 0.9883804935347457,
+      "min_radius_mm": 0.34154204207373207,
+      "lip_radius_mm": 0.34154204207374916,
+      "lip_normal_radius_mm": 0.7046600922883837,
+      "cut_obliquity_deg": 61.00780547595011,
+      "ratio_to_half_thickness": null,
+      "pass": false,
+      "error": null
+     },
+     {
+      "distance_to_te_mm": 0.1,
+      "fraction": 0.9988235294117647,
+      "attachment_thickness_mm": 0.6993025096480195,
+      "min_radius_mm": 0.21670037745714432,
+      "lip_radius_mm": 0.2167003774571554,
+      "lip_normal_radius_mm": 0.6531291833782173,
+      "cut_obliquity_deg": 70.62267144360627,
+      "ratio_to_half_thickness": 0.6197614750909911,
+      "pass": false,
+      "error": null
+     },
+     {
+      "distance_to_te_mm": 0.05,
+      "fraction": 0.9994117647058823,
+      "attachment_thickness_mm": 0.49462713229260613,
+      "min_radius_mm": 0.137032562901114,
+      "lip_radius_mm": 0.13703256290113072,
+      "lip_normal_radius_mm": 0.6303549009493202,
+      "cut_obliquity_deg": 77.44424407237497,
+      "ratio_to_half_thickness": 0.5540842948342339,
+      "pass": false,
+      "error": null
+     },
+     {
+      "distance_to_te_mm": 0.02,
+      "fraction": 0.9997647058823529,
+      "attachment_thickness_mm": 0.3128848989644941,
+      "min_radius_mm": 0.0745783069200093,
+      "lip_radius_mm": 0.0745783069200093,
+      "lip_normal_radius_mm": 0.6186294151376109,
+      "cut_obliquity_deg": 83.07591848459585,
+      "ratio_to_half_thickness": 0.47671400675986203,
+      "pass": false,
+      "error": null
+     }
+    ],
+    "parent_te_point": [
+     150.0,
+     6.245698675651501e-16,
+     240.0
+    ],
+    "nearest_cap_vertex_or_collapse_mm": 6.245698706780085e-16,
+    "cap_principal_radius_within_0p1mm_of_te_point": {
+     "points": 76,
+     "min_mm": 0.612438047356482,
+     "closest_point_mm": 2.7686159402129384e-17
+    },
+    "closes": true,
+    "pass": false
+   }
+  ],
+  "pass": false
+ },
+ "summary": {
+  "requirements": [
+   {
+    "name": "1 validity",
+    "pass": true,
+    "detail": "solids 1, shells 1, closed True, valid True, strict True, faces 5"
+   },
+   {
+    "name": "1 extent",
+    "pass": true,
+    "detail": "height (Z) above the root 245.000000 mm vs spec 245.000 (diff 1.00e-07); volume 352471.229 mm3 (cap adds 2434.975; OCCT default integration gives 352471.231)"
+   },
+   {
+    "name": "2 retained skin",
+    "pass": true,
+    "detail": "max deviation 8.51e-09 mm (parent->model 8.51e-09, model->parent 9.45e-14)"
+   },
+   {
+    "name": "2 locked outline",
+    "pass": true,
+    "detail": "max outermost lip deviation 1.67e-07 mm over 101 cut planes; outline-to-surface max 4.09e-09 mm"
+   },
+   {
+    "name": "3 joins G1",
+    "pass": true,
+    "detail": "2 edges, 798 samples: gap 0.00e+00 mm, angle 4.78e-09 deg; curvature mismatch 9.596e-10 /mm (cross-join normal curvature 9.596e-10 /mm); closest sample to an edge end 0.00025 mm, 0 samples near collapsed corners not judged"
+   },
+   {
+    "name": "3 cap seams G1",
+    "pass": true,
+    "detail": "2 edges between curved cap faces: gap 1.30e-15 mm, angle 1.33e-07 deg, curvature mismatch 1.167e-09 /mm"
+   },
+   {
+    "name": "4 section rule",
+    "pass": false,
+    "detail": "24 cuts (0 failed to trace); thick zone min radius 0.864493 mm at x/c 0.99 (0 of 12 below 0.4); thin zone min ratio 0.2594 at x/c 0.99999399, t 0.05 mm (12 of 12 below 0.9); 12 of the failing cuts cross the lip more than 60 deg from square; bending reversals 0 on 0 cuts"
+   },
+   {
+    "name": "4b lip-normal radius (informational)",
+    "pass": null,
+    "detail": "radius across the lip, perpendicular to the locked outline, at each cut's lip point; thick zone min 1.058 mm at x/c 0.99 (0 below 0.4); thin zone min ratio 1.671 at x/c 0.99845976 (0 below 0.9)"
+   },
+   {
+    "name": "5 whole-cap map",
+    "pass": true,
+    "detail": "worst point radius 0.668448 mm at x/c 0.99846, t 0.8 mm, margin 0.2684 mm; tightest 0.612438 mm at x/c 0.999999; points within 0.05 mm of collapsed corners not judged (grid reaches 0.0029 mm; worst there 5.77 mm, score 14.4)"
+   },
+   {
+    "name": "6 TE closure",
+    "pass": false,
+    "detail": "sharp point; top (+Z): closes True, 0.02 mm before TE: t 0.3129, section min R 0.07458, ratio 0.4767; principal R within 0.1 mm of the TE point min 0.6124"
+   }
+  ],
+  "pass": false
+ },
+ "timing_s": {
+  "validity": 0.2,
+  "preservation": 121.6,
+  "outline_scan": 4.7,
+  "outline_surface": 0.6,
+  "joins": 0.3,
+  "sections": 0.9,
+  "cap_map": 19.5,
+  "te_closure": 0.2,
+  "total": 147.9
+ }
+}

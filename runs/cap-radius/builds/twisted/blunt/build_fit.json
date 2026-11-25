@@ -1,0 +1,33 @@
+{
+ "lip_max_mm": 0.0001666849309761273,
+ "lip_worst_p": 0.9999365857410962,
+ "upper_flat_surface_max_mm": 6.144768978717257e-06,
+ "lower_flat_surface_max_mm": 6.144768417581654e-06,
+ "poles": {
+  "lip": [
+   401,
+   61
+  ],
+  "flat": [
+   511,
+   37
+  ]
+ },
+ "brepcheck_valid_before_export": true,
+ "sewing_free_edges": 0,
+ "volume_mm3": 1549643.0589746716,
+ "sew_tolerance_mm": 0.0002,
+ "samples": {
+  "g": 1201,
+  "lip": 161,
+  "flat": 61
+ },
+ "control_points": {
+  "g": 401,
+  "lip": 61,
+  "flat": 21
+ },
+ "degree": 3,
+ "step_bytes": 13177357,
+ "seconds": 503.7699568271637
+}
