@@ -21,10 +21,6 @@ dependencies = [
 cad = [
     "cadquery>=2.4",
 ]
-# Agent interface for the local Phase 0 geometry study.
-phase0 = [
-    "mcp>=1.13,<2",
-]
 # Desktop GUI (M5). Opt-in so a CLI-only or headless install stays light.
 # pyside6-essentials, not the pyside6 meta-package: we need Core/Gui/Widgets
 # only, and the addons (WebEngine, 3D, Charts, Multimedia) are hundreds of MB

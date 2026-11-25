@@ -12,6 +12,8 @@ The docs are the spec, in reading order:
 
 The M0ooBot fork's proposed redesign is tracked in the [CAD-based wing and tail optimization spec](docs/SHAPE_OPTIMIZATION.md).
 
+Wing and winglet CAD development has moved to the separate private Wing Builder repository. The historical geometry studies remain available in this branch’s Git history.
+
 ## Quick start
 
 Needs [uv](https://docs.astral.sh/uv/) and nothing else — it fetches the Python
