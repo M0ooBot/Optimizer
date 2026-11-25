@@ -4024,7 +4024,7 @@ function draw() {
   const cfg = DATA.configs[state.config], g = build(cfg.shape), traces = [];
   const sides = state.mirror ? [false, true] : [false];
   if (state.ghost) {
-    const base = build(DATA.configs["bend-centred"].shape);
+    const base = build((DATA.configs["bend-centred"] || DATA.configs["baseline"]).shape);
     for (const m of sides) traces.push(meshTrace(base, m, "ghost"));
   }
   for (const m of sides) traces.push(meshTrace(g, m, state.mode));
@@ -4060,7 +4060,7 @@ for (const [g, group] of Object.entries(DATA.groups)) {
   for (const name of group.members) {
     const cfg = DATA.configs[name], b = document.createElement("button");
     b.textContent = cfg.label; b.dataset.config = name;
-    if (cfg.fits && cfg.shape === "bend-centred") b.classList.add("baseline");
+    if (cfg.fits && (cfg.shape === "bend-centred" || cfg.shape === "baseline")) b.classList.add("baseline");
     if (!cfg.fits) { b.disabled = true; b.title = cfg.reason; }
     b.onclick = () => { state.config = name; draw(); };
     row.append(b);
