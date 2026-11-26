@@ -10,6 +10,8 @@ The docs are the spec, in reading order:
 3. `docs/EXECUTION_PLAN.md` — this codebase's structure and milestones
 4. `docs/DESIGN_SPEC.md` — the sample/test aircraft (a fixture, not the scope)
 
+The [agent-led aircraft design studies draft](docs/AIRCRAFT_DESIGN_STUDIES.md) describes the proposed redesign, from sizing an aircraft with no geometry to verifying the designer’s fuselage and incorporating CFD results.
+
 ## Quick start
 
 Needs [uv](https://docs.astral.sh/uv/) and nothing else — it fetches the Python
